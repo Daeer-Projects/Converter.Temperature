@@ -5,18 +5,18 @@
     <version>$version$</version>
     <authors>$author$</authors>
     <owners>$owners$</owners>
-    <licenseUrl>https://raw.githubusercontent.com/Tazmainiandevil/Useful.Extensions/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/Tazmainiandevil/Useful.Extensions</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/daeer73/TempConversionExtensions/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/daeer73/TempConversionExtensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <tags>tazmainiandevil useful.extensions useful extensions</tags>
+    <tags>daeer73 TempConversionExtensions temperature temp convert conversion extensions</tags>
     <releaseNotes>$releaseNotes$</releaseNotes>
   </metadata>
   <files>
-    <file src="src\Useful.Extensions\bin\Release\netcoreapp2.0\Useful.Extensions.dll" target="lib\netcoreapp2.0\Useful.Extensions.dll" />
-    <file src="src\Useful.Extensions\bin\Release\netstandard2.0\Useful.Extensions.dll" target="lib\netstandard2.0\Useful.Extensions.dll" />
-    <file src="src\Useful.Extensions\bin\Release\net452\Useful.Extensions.dll" target="lib\net452\Useful.Extensions.dll" />
-    <file src="src\Useful.Extensions\bin\Release\net46\Useful.Extensions.dll" target="lib\net46\Useful.Extensions.dll" />
-    <file src="src\Useful.Extensions\bin\Release\net461\Useful.Extensions.dll" target="lib\net461\Useful.Extensions.dll" />
+    <file src="src\TemperatureConverter\bin\Release\netcoreapp2.0\TemperatureConverter.dll" target="lib\netcoreapp2.0\TemperatureConverter.dll" />
+    <file src="src\TemperatureConverter\bin\Release\netstandard2.0\TemperatureConverter.dll" target="lib\netstandard2.0\TemperatureConverter.dll" />
+    <file src="src\TemperatureConverter\bin\Release\net452\TemperatureConverter.dll" target="lib\net452\TemperatureConverter.dll" />
+    <file src="src\TemperatureConverter\bin\Release\net46\TemperatureConverter.dll" target="lib\net46\TemperatureConverter.dll" />
+    <file src="src\TemperatureConverter\bin\Release\net461\TemperatureConverter.dll" target="lib\net461\TemperatureConverter.dll" />
   </files>
 </package>
