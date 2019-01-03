@@ -18,5 +18,7 @@
     <file src="src\TemperatureConverter\bin\Release\net452\TemperatureConverter.dll" target="lib\net452\TemperatureConverter.dll" />
     <file src="src\TemperatureConverter\bin\Release\net46\TemperatureConverter.dll" target="lib\net46\TemperatureConverter.dll" />
     <file src="src\TemperatureConverter\bin\Release\net461\TemperatureConverter.dll" target="lib\net461\TemperatureConverter.dll" />
+    <file src="src\TemperatureConverter\bin\Release\net462\TemperatureConverter.dll" target="lib\net462\TemperatureConverter.dll" />
+    <file src="src\TemperatureConverter\bin\Release\net472\TemperatureConverter.dll" target="lib\net472\TemperatureConverter.dll" />
   </files>
 </package>

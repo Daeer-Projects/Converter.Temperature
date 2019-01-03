@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Globalization;
 
-namespace TemperatureConverter
+namespace Converter.Temperature
 {
     /// <summary>
-    /// Temperature converter class.
+    /// The Temperature converter class.
     /// </summary>
-    internal static class TemperatureConverter
+    public static class Temperature
     {
         /// <summary>
         /// Temperature out of range error message.
@@ -75,7 +76,8 @@ namespace TemperatureConverter
             {
                 throw new ArgumentOutOfRangeException(TemperatureTooLowForGasError);
             }
-            else if (firstTemp < 115)
+
+            if (firstTemp < 115)
             {
                 gasTemp = 0.25;
             }
