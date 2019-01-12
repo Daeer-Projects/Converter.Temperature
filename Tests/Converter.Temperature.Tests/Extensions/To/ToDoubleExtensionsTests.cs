@@ -121,7 +121,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
         
         [Fact]
-        public void Test_to_gas_with_celsius_returns_same_value()
+        public void Test_to_gas_with_celsius_returns_correct_value()
         {
             // Arrange.
             const double expected = 6d;
@@ -149,7 +149,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_gas_with_gas_returns_correct_value()
+        public void Test_to_gas_with_gas_returns_same_value()
         {
             // Arrange.
             var input = new GasDouble(7);
@@ -176,7 +176,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
         
         [Fact]
-        public void Test_to_kelvin_with_celsius_returns_same_value()
+        public void Test_to_kelvin_with_celsius_returns_correct_value()
         {
             // Arrange.
             const double expected = 473.15d;
@@ -218,7 +218,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_kelvin_with_kelvin_returns_correct_value()
+        public void Test_to_kelvin_with_kelvin_returns_same_value()
         {
             // Arrange.
             var input = new KelvinDouble(473.15);

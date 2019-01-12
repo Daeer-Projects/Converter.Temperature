@@ -20,11 +20,15 @@ namespace Converter.Temperature.Extensions.To
 
         public static float ToCelsius(this FahrenheitFloat input)
         {
+            var result = input.Temperature;
             var convertedTemp = 0f;
-            float.TryParse(
-                Temperature.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out convertedTemp);
-            return convertedTemp;
+            if (float.TryParse(
+                Temperature.FahrenheitToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                out convertedTemp))
+            {
+                result = convertedTemp;
+            }
+            return result;
         }
 
         public static float ToCelsius(this GasFloat input)
@@ -47,11 +51,15 @@ namespace Converter.Temperature.Extensions.To
 
         public static float ToFahrenheit(this CelsiusFloat input)
         {
+            var result = input.Temperature;
             var convertedTemp = 0f;
-            float.TryParse(
+            if (float.TryParse(
                 Temperature.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out convertedTemp);
-            return convertedTemp;
+                out convertedTemp))
+            {
+                result = convertedTemp;
+            }
+            return result;
         }
 
         public static float ToFahrenheit(this FahrenheitFloat input)
