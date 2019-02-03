@@ -38,13 +38,18 @@ namespace Converter.Temperature
         /// <summary>
         /// The celsius to fahrenheit conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double CelsiusToFahrenheit(double firstTemp)
+        public static double CelsiusToFahrenheit(double input)
         {
-            var fahrenheitTemp = (firstTemp * 1.8) + 32;
+            var fahrenheitTemp = (input * 1.8) + 32;
+
+            if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(input),"Value out of range for type.");
+            }
             return fahrenheitTemp;
         }
 
