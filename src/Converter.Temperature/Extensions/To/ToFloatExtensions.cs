@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
@@ -51,14 +52,15 @@ namespace Converter.Temperature.Extensions.To
 
         public static float ToFahrenheit(this CelsiusFloat input)
         {
-            var result = input.Temperature;
-            var convertedTemp = 0f;
-            if (float.TryParse(
-                Temperature.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out convertedTemp))
+            var experimentalTemp = Temperature.CelsiusToFahrenheit(input.Temperature);
+
+            if (experimentalTemp > float.MaxValue || experimentalTemp < float.MinValue)
             {
-                result = convertedTemp;
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
+
+            var result = (float) experimentalTemp;
+
             return result;
         }
 

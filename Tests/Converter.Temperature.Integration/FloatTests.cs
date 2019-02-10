@@ -8,26 +8,29 @@ namespace Converter.Temperature.Integration
 {
     public class FloatTests
     {
-        [Fact]
-        public void Test_float_extension_from_and_to_celsius_returns_correct_float_value()
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(-345.65d)]
+        [InlineData(0.0d)]
+        [InlineData(7564.2334d)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_from_and_to_celsius_returns_correct_float_value(float value)
         {
             // Arrange.
-            const float expected = 39f;
-
             // Act.
-            var result = expected.FromCelsius().ToCelsius();
+            var result = value.FromCelsius().ToCelsius();
 
             // Assert.
-            result.Should().Be(expected);
+            result.Should().Be(value);
         }
 
-        [Fact]
-        public void Test_float_extension_from_celsius_and_to_fahrenheit_returns_correct_float_value()
+        [Theory]
+        [InlineData(-152436784.334563d, -274386179.8022134d)]
+        [InlineData(0.0d, 32.0d)]
+        [InlineData(26431662.73648262d, 47577024.925668716d)]
+        public void Test_float_extension_from_celsius_and_to_fahrenheit_returns_correct_float_value(float input, float expected)
         {
             // Arrange.
-            const float expected = 53.6f;
-            const float input = 12f;
-
             // Act.
             var result = input.FromCelsius().ToFahrenheit();
 
@@ -35,18 +38,17 @@ namespace Converter.Temperature.Integration
             result.Should().Be(expected);
         }
 
-        [Fact]
-        public void Test_float_extension_from_celsius_and_to_fahrenheit_with_max_value_returns_correct_float_value()
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_from_celsius_and_to_fahrenheit_with_max_value_throws_out_of_range_exception(float input)
         {
             // Arrange.
-            const float expected = float.MaxValue;
-            const float input = float.MaxValue;
-
             // Act.
-            var result = input.FromCelsius().ToFahrenheit();
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToFahrenheit());
 
             // Assert.
-            result.Should().Be(expected);
+            result.Message.Should().Contain("Value out of range for type.");
         }
 
         [Fact]
