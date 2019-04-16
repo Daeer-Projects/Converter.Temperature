@@ -1,19 +1,22 @@
 ﻿namespace Converter.Temperature
 {
-    public class Constants
+    /// <summary>
+    /// A collection of constant messages exposed to the user.
+    /// </summary>
+    public static class Constants
     {
         /// <summary>
-        /// Temperature out of range error message.
+        /// <see cref="Temperature"/> out of range error message.
         /// </summary>
         public const string TemperatureOutOfRangeError = "Temp too low or too high for gas mark!";
 
         /// <summary>
-        /// Temperature too high error message.
+        /// <see cref="Temperature"/> too high error message.
         /// </summary>
         public const string TemperatureTooHighForGasError = "Temp too high for gas mark!";
 
         /// <summary>
-        /// Temperature too low error message.
+        /// <see cref="Temperature"/> too low error message.
         /// </summary>
         public const string TemperatureTooLowForGasError = "Temp too low for gas mark!";
 

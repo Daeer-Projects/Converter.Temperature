@@ -5,7 +5,7 @@ namespace Converter.Temperature
     /// <summary>
     /// The Temperature converter class.
     /// </summary>
-    public static class Temperature
+    internal static class Temperature
     {
         /// <summary>
         /// The celsius to celsius conversion.
