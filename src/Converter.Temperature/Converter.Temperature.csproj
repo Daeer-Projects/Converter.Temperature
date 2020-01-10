@@ -1,16 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>
-        net452;net462;net472;
-        netcoreapp1.1;netcoreapp2.1
-    </TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>Converter.Temperature.Extensions</PackageId>
-    <Authors>David Clark</Authors>
-    <Company>Daeer73</Company>
-    <Product>Converter.Temperature.Extensions</Product>
-    <Version>1.0.0</Version>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
 </Project>
