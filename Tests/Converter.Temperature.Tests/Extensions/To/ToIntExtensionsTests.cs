@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Converter.Temperature.Extensions.To;
+﻿using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
@@ -69,7 +66,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_fahrenheit_with_celsius_returns_same_value()
+        public void Test_to_fahrenheit_with_celsius_returns_correct_value()
         {
             // Arrange.
             const int expected = 54;

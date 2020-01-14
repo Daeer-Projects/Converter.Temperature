@@ -1,4 +1,6 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
+
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
@@ -35,7 +37,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToCelsius(this KelvinInt input)
         {
             int.TryParse(
-                Temperature.KelvinToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Math.Round(Temperature.KelvinToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -43,7 +45,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToFahrenheit(this CelsiusInt input)
         {
             int.TryParse(
-                Temperature.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Math.Round(Temperature.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -67,7 +69,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToFahrenheit(this KelvinInt input)
         {
             int.TryParse(
-                Temperature.KelvinToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+               Math.Round(Temperature.KelvinToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -107,7 +109,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToKelvin(this CelsiusInt input)
         {
             int.TryParse(
-                Temperature.CelsiusToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Math.Round(Temperature.CelsiusToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -115,7 +117,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToKelvin(this FahrenheitInt input)
         {
             int.TryParse(
-                Temperature.FahrenheitToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Math.Round(Temperature.FahrenheitToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -123,7 +125,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToKelvin(this GasInt input)
         {
             int.TryParse(
-                Temperature.GasToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Math.Round(Temperature.GasToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
