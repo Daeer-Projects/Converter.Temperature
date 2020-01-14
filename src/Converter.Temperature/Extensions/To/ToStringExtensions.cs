@@ -113,14 +113,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                try
-                {
-                    convertedTemp = Temperature.FahrenheitToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-                }
-                catch (ArgumentOutOfRangeException rangeException)
-                {
-                    convertedTemp = rangeException.Message;
-                }
+                convertedTemp = Temperature.FahrenheitToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -131,14 +124,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                try
-                {
-                    convertedTemp = Temperature.GasToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-                }
-                catch (ArgumentOutOfRangeException rangeException)
-                {
-                    convertedTemp = rangeException.Message;
-                }
+                convertedTemp = Temperature.GasToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -149,14 +135,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                try
-                {
-                    convertedTemp = Temperature.KelvinToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-                }
-                catch (ArgumentOutOfRangeException rangeException)
-                {
-                    convertedTemp = rangeException.Message;
-                }
+                convertedTemp = Temperature.KelvinToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;

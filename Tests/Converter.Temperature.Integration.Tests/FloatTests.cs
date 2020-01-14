@@ -26,6 +26,38 @@ namespace Converter.Temperature.Integration.Tests
         }
 
         [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(-345.65d)]
+        [InlineData(0.0d)]
+        [InlineData(7564.2334d)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_from_and_to_fahrenheit_returns_correct_float_value(float value)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromFahrenheit().ToFahrenheit();
+
+            // Assert.
+            result.Should().Be(value);
+        }
+
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(-345.65d)]
+        [InlineData(0.0d)]
+        [InlineData(7564.2334d)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_from_and_to_kelvin_returns_correct_float_value(float value)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromKelvin().ToKelvin();
+
+            // Assert.
+            result.Should().Be(value);
+        }
+
+        [Theory]
         [InlineData(-152436784.334563d, -274386179.8022134d)]
         [InlineData(0.0d, 32.0d)]
         [InlineData(26431662.73648262d, 47577024.925668716d)]

@@ -1,4 +1,5 @@
-﻿using Converter.Temperature.Extensions.To;
+﻿using System;
+using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
@@ -135,6 +136,32 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
+        public void Test_to_gas_from_celsius_throws_out_of_range_exception_too_low()
+        {
+            // Arrange.
+            var input = new CelsiusString("79");
+
+            // Act.
+             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low for gas mark!");
+        }
+
+        [Fact]
+        public void Test_to_gas_from_celsius_throws_out_of_range_exception_too_high()
+        {
+            // Arrange.
+            var input = new CelsiusString("271");
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too high for gas mark!");
+        }
+
+        [Fact]
         public void Test_to_gas_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
@@ -146,6 +173,32 @@ namespace Converter.Temperature.Tests.Extensions.To
 
             // Assert.
             result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_gas_from_fahrenheit_throws_out_of_range_exception_too_low()
+        {
+            // Arrange.
+            var input = new FahrenheitString("174");
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low for gas mark!");
+        }
+
+        [Fact]
+        public void Test_to_gas_from_fahrenheit_throws_out_of_range_exception_too_high()
+        {
+            // Arrange.
+            var input = new FahrenheitString("520");
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too high for gas mark!");
         }
 
         [Fact]
@@ -166,13 +219,39 @@ namespace Converter.Temperature.Tests.Extensions.To
         {
             // Arrange.
             const string expected = "6";
-            var input = new KelvinString("473.15");
+            var input = new KelvinString("478.15");
 
             // Act.
             var result = input.ToGas();
 
             // Assert.
             result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_gas_from_kelvin_throws_out_of_range_exception_too_low()
+        {
+            // Arrange.
+            var input = new KelvinString("174");
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low for gas mark!");
+        }
+
+        [Fact]
+        public void Test_to_gas_from_kelvin_throws_out_of_range_exception_too_high()
+        {
+            // Arrange.
+            var input = new KelvinString("544.15");
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too high for gas mark!");
         }
 
         [Fact]
