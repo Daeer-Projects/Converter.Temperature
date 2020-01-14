@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Converter.Temperature.Extensions.To;
+﻿using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
@@ -14,7 +11,7 @@ namespace Converter.Temperature.Tests.Extensions.To
     public class ToStringExtensionsTests
     {
         [Fact]
-        public void Test_to_celsius_with_celsius_returns_same_value()
+        public void Test_to_celsius_from_celsius_returns_same_value()
         {
             // Arrange.
             var input = new CelsiusString("42");
@@ -27,7 +24,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_celsius_with_fahrenheit_returns_correct_value()
+        public void Test_to_celsius_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
             const string expected = "10";
@@ -41,7 +38,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_celsius_with_gas_returns_correct_value()
+        public void Test_to_celsius_from_gas_returns_correct_value()
         {
             // Arrange.
             const string expected = "220";
@@ -55,7 +52,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_celsius_with_kelvin_returns_correct_value()
+        public void Test_to_celsius_from_kelvin_returns_correct_value()
         {
             // Arrange.
             const string expected = "1";
@@ -69,7 +66,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_fahrenheit_with_celsius_returns_same_value()
+        public void Test_to_fahrenheit_from_celsius_returns_same_value()
         {
             // Arrange.
             const string expected = "53.6";
@@ -83,7 +80,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_fahrenheit_with_fahrenheit_returns_correct_value()
+        public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
             var input = new FahrenheitString("50");
@@ -96,7 +93,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_fahrenheit_with_gas_returns_correct_value()
+        public void Test_to_fahrenheit_from_gas_returns_correct_value()
         {
             // Arrange.
             const string expected = "428";
@@ -110,7 +107,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_fahrenheit_with_kelvin_returns_correct_value()
+        public void Test_to_fahrenheit_from_kelvin_returns_correct_value()
         {
             // Arrange.
             const string expected = "33.8";
@@ -124,7 +121,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_gas_with_celsius_returns_correct_value()
+        public void Test_to_gas_from_celsius_returns_correct_value()
         {
             // Arrange.
             const string expected = "6";
@@ -138,7 +135,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_gas_with_fahrenheit_returns_correct_value()
+        public void Test_to_gas_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
             const string expected = "6";
@@ -152,7 +149,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_gas_with_gas_returns_same_value()
+        public void Test_to_gas_from_gas_returns_same_value()
         {
             // Arrange.
             var input = new GasString("7");
@@ -165,7 +162,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_gas_with_kelvin_returns_correct_value()
+        public void Test_to_gas_from_kelvin_returns_correct_value()
         {
             // Arrange.
             const string expected = "6";
@@ -179,7 +176,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_kelvin_with_celsius_returns_correct_value()
+        public void Test_to_kelvin_from_celsius_returns_correct_value()
         {
             // Arrange.
             const string expected = "473.15";
@@ -193,7 +190,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_kelvin_with_fahrenheit_returns_correct_value()
+        public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
             const string expected = "473.15";
@@ -207,7 +204,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_kelvin_with_gas_returns_correct_value()
+        public void Test_to_kelvin_from_gas_returns_correct_value()
         {
             // Arrange.
             const string expected = "473.15";
@@ -221,7 +218,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_kelvin_with_kelvin_returns_same_value()
+        public void Test_to_kelvin_from_kelvin_returns_same_value()
         {
             // Arrange.
             var input = new KelvinString("473.15");
