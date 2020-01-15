@@ -4,6 +4,8 @@
 > This project was created to extract out the main conversion code from the *Temperature Converter* applications in the other repositories.
 > I am using this as a way to show how my development skills have changed over the years, as I get to be a better developer.
 
+[![Build status](https://daeer73.visualstudio.com/Converter.Temperature/_apis/build/status/Converter.Temperature-.NET%20Desktop-CI)](https://daeer73.visualstudio.com/Converter.Temperature/_build/latest?definitionId=7)
+
 ## Introduction
 
 These extension methods will convert different types of temperatures to other types.
@@ -33,7 +35,7 @@ Originally, the extensions looked like this:
     var convertedTemp = tempToConvert.CelsiusToFahrenheit();
 ```
 
-Then I thought that this looked a bit naf, so went with setting up the *from* first, then the *to*.
+Then I thought that this looked a bit naf, so went with setting up the *from* first, then the *to*.  This follows the *fluent* pattern.
 
 Now it is used like this:
 
