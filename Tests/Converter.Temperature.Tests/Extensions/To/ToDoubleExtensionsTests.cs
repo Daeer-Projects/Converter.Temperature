@@ -1,4 +1,5 @@
-﻿using Converter.Temperature.Extensions.To;
+﻿using System;
+using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
@@ -70,6 +71,21 @@ namespace Converter.Temperature.Tests.Extensions.To
 
             // Assert.
             result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(0.24d)]
+        [InlineData(10.1d)]
+        public void Test_to_celsius_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+        {
+            // Arrange.
+            var inputGas = new GasDouble(input);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low or too high for gas mark!");
         }
 
         [Fact]
@@ -170,11 +186,27 @@ namespace Converter.Temperature.Tests.Extensions.To
         {
             // Arrange.
             var inputCelsius = new CelsiusDouble(input);
+
             // Act.
             var result = inputCelsius.ToGas();
 
             // Assert.
             result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(79d, "Temp too low for gas mark!")]
+        [InlineData(270d, "Temp too high for gas mark!")]
+        public void Test_to_gas_from_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(double input, string expectedErrorMessage)
+        {
+            // Arrange.
+            var inputGas = new CelsiusDouble(input);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain(expectedErrorMessage);
         }
 
         [Fact]
@@ -230,6 +262,19 @@ namespace Converter.Temperature.Tests.Extensions.To
 
             // Assert.
             result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception()
+        {
+            // Arrange.
+            var input = new CelsiusDouble(double.MaxValue);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToKelvin());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
         }
 
         [Fact]

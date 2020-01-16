@@ -84,6 +84,19 @@ namespace Converter.Temperature.Integration.Tests
             result.Message.Should().Contain("Value out of range for type.");
         }
 
+        [Theory]
+        [InlineData(double.MinValue)]
+        [InlineData(double.MaxValue)]
+        public void Test_double_extension_from_celsius_and_to_kelvin_throws_out_of_range_exception(double input)
+        {
+            // Arrange.
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToKelvin());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
+
         [Fact]
         public void Test_double_extension_from_celsius_and_to_gas_returns_correct_double_value()
         {

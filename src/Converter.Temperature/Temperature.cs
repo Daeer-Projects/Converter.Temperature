@@ -49,7 +49,7 @@ namespace Converter.Temperature
         /// </returns>
         public static double CelsiusToKelvin(double input)
         {
-            var kelvinTemp = input + 273.15;
+            var kelvinTemp = input + 273.15d;
 
             if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
             {
