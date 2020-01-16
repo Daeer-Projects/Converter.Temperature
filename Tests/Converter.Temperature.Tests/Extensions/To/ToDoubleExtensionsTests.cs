@@ -82,7 +82,7 @@ namespace Converter.Temperature.Tests.Extensions.To
             var inputGas = new GasDouble(input);
 
             // Act.
-            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToGas());
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToCelsius());
 
             // Assert.
             result.Message.Should().Contain("Temp too low or too high for gas mark!");
@@ -236,6 +236,21 @@ namespace Converter.Temperature.Tests.Extensions.To
             result.Should().Be(input.Temperature);
         }
 
+        [Theory]
+        [InlineData(0.24d)]
+        [InlineData(10.1d)]
+        public void Test_to_gas_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+        {
+            // Arrange.
+            var inputGas = new GasDouble(input);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low or too high for gas mark!");
+        }
+
         [Fact]
         public void Test_to_gas_from_kelvin_returns_correct_value()
         {
@@ -264,14 +279,16 @@ namespace Converter.Temperature.Tests.Extensions.To
             result.Should().Be(expected);
         }
 
-        [Fact]
-        public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception()
+        [Theory]
+        [InlineData(double.MinValue)]
+        [InlineData(double.MaxValue)]
+        public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception(double input)
         {
             // Arrange.
-            var input = new CelsiusDouble(double.MaxValue);
+            var inputCelsius = new CelsiusDouble(input);
 
             // Act.
-            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToKelvin());
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToKelvin());
 
             // Assert.
             result.Message.Should().Contain("Value out of range for type.");
