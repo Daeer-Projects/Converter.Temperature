@@ -103,7 +103,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
         
         [Fact]
-        public void Test_to_fahrenheit_from_celsius_returns_same_value()
+        public void Test_to_fahrenheit_from_celsius_returns_correct_value()
         {
             // Arrange.
             const double expected = 53.6d;
@@ -116,8 +116,23 @@ namespace Converter.Temperature.Tests.Extensions.To
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(double.MinValue)]
+        [InlineData(double.MaxValue)]
+        public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(double input)
+        {
+            // Arrange.
+            var inputCelsius = new CelsiusDouble(input);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
+
         [Fact]
-        public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
+        public void Test_to_fahrenheit_from_fahrenheit_returns_same_value()
         {
             // Arrange.
             var input = new FahrenheitDouble(50);

@@ -48,13 +48,13 @@ namespace Converter.Temperature
         /// </returns>
         public static double CelsiusToKelvin(double input)
         {
-            var experimentTemp = (input * 1.01d) + 273.15d;
-            if (double.IsPositiveInfinity(experimentTemp) || double.IsNegativeInfinity(experimentTemp))
+            var kelvinTemp = (input * 1.01d) + 273.15d;
+            if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            var kelvinTemp = (input * 1d) + 273.15d;
+            kelvinTemp = (input * 1d) + 273.15d;
 
             return kelvinTemp;
         }

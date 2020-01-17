@@ -56,11 +56,23 @@ Should this throw an exception, or just return the original value?
 
 Well, returning the same value would seem like all is well, even though the converted value is wrong.  Thinking about this means, that for me, it should throw an exception for the calling application to handle.
 
-If anyone has any better ideas, then, I would be willing to change this behavior.
+If anyone has any better ideas, then, I would be willing to change this behaviour.
 
 ## How to use
 
 This section will go through the ways to use the extensions for the different types.
+
+### Caveat
+
+When you use a double, and you set a value to convert that is at or just below double.MaxValue, then your conversion will fail.  This is because the double.MaxValue is so big, the conversion calculations are too small for the double to notice.
+
+For example, if I want to convert double.MaxValue (Celsius) to Kelvin, (which adds 273 to it), I would expect the calculation to return double.Infinity.  However, it doesn't, so I had to work around that problem.
+
+If your value, times it by 1.01 doesn't hit the infinity, then this library will return a valid value.  Your application may not be able to display it though.
+
+### Exceptions
+
+The library will throw the System.ArgumentOutOfRangeException exception if the value can not be converted.
 
 ### int extensions
 
@@ -217,8 +229,7 @@ This time, a FromFahrenheit ToKelvin method.
 
 I have the code working mostly, but I am going through unit tests to check the code *does actually* work!
 
-1. Add unit tests to prove the code base.
-2. Add tests for extremes (edge cases).
-3. Add extra error checking for the extremes (edge cases).
-4. Set up the AppVeyor build.
-5. Add to NuGet - it will then be ready for consumption in other apps.
+1. Add unit tests to prove the code base - done.
+2. Add tests for extremes (edge cases) - in progress.
+3. Add extra error checking for the extremes (edge cases) - in progress.
+4. Add to NuGet - it will then be ready for consumption in other apps.

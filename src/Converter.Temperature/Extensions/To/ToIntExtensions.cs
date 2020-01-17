@@ -44,10 +44,9 @@ namespace Converter.Temperature.Extensions.To
 
         public static int ToFahrenheit(this CelsiusInt input)
         {
-            int.TryParse(
-                Math.Round(Temperature.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            var convertedTemp = Math.Round(Temperature.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            if (!int.TryParse(convertedTemp, out var validTemp)) throw  new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            return validTemp;
         }
 
         public static int ToFahrenheit(this FahrenheitInt input)
@@ -108,10 +107,9 @@ namespace Converter.Temperature.Extensions.To
 
         public static int ToKelvin(this CelsiusInt input)
         {
-            int.TryParse(
-                Math.Round(Temperature.CelsiusToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            var convertedTemp = Math.Round(Temperature.CelsiusToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            return validTemp;
         }
 
         public static int ToKelvin(this FahrenheitInt input)

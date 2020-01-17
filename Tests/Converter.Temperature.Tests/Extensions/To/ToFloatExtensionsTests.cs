@@ -1,4 +1,5 @@
-﻿using Converter.Temperature.Extensions.To;
+﻿using System;
+using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
@@ -118,6 +119,21 @@ namespace Converter.Temperature.Tests.Extensions.To
 
             // Assert.
             result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(float.MaxValue)]
+        public void Test_to_fahrenheit_from_kelvin_with_invalid_parameter_throws_exception(float input)
+        {
+            // Arrange.
+            var inputKelvin = new KelvinFloat(input);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputKelvin.ToFahrenheit());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
         }
 
         [Fact]

@@ -124,5 +124,18 @@ namespace Converter.Temperature.Integration.Tests
             // Assert.
             result.Message.Should().Contain("Temp too high for gas mark!");
         }
+        
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_from_kelvin_and_to_fahrenheit_with_max_value_throws_out_of_range_exception(float input)
+        {
+            // Arrange.
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin().ToFahrenheit());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
     }
 }

@@ -47,16 +47,13 @@ namespace Converter.Temperature.Extensions.To
 
         public static float ToFahrenheit(this CelsiusFloat input)
         {
-            var experimentalTemp = Temperature.CelsiusToFahrenheit(input.Temperature);
+            float.TryParse(
+                Temperature.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                out var convertedTemp);
 
-            if (experimentalTemp > float.MaxValue || experimentalTemp < float.MinValue)
-            {
-                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-            }
+            if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
 
-            var result = (float) experimentalTemp;
-
-            return result;
+            return convertedTemp;
         }
 
         public static float ToFahrenheit(this FahrenheitFloat input)
@@ -80,6 +77,9 @@ namespace Converter.Temperature.Extensions.To
             float.TryParse(
                 Temperature.KelvinToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
+
+            if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+
             return (float)Math.Round(convertedTemp, 2);
         }
 
@@ -141,10 +141,9 @@ namespace Converter.Temperature.Extensions.To
 
         public static float ToKelvin(this KelvinFloat input)
         {
-            float convertedTemp;
             float.TryParse(
                 Temperature.KelvinToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out convertedTemp);
+                out var convertedTemp);
             return convertedTemp;
         }
     }
