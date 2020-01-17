@@ -30,7 +30,6 @@ namespace Converter.Temperature
         public static double CelsiusToFahrenheit(double input)
         {
             var fahrenheitTemp = (input * 1.8) + 32;
-
             if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
