@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
@@ -37,7 +38,7 @@ namespace Converter.Temperature.Tests.Extensions.To
             // Assert.
             result.Should().Be(expected);
         }
-
+        
         [Fact]
         public void Test_to_celsius_from_gas_returns_correct_value()
         {

@@ -1,5 +1,5 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
+
 using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;

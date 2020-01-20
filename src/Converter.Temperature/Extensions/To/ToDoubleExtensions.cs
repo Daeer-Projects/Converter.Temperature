@@ -5,8 +5,18 @@ using Converter.Temperature.Types.Kelvin;
 
 namespace Converter.Temperature.Extensions.To
 {
+    /// <summary>
+    /// The to <see langword="double"/> extensions.
+    /// </summary>
     public static class ToDoubleExtensions
     {
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius <see langword="double"/> result.
+        /// </returns>
         public static double ToCelsius(this CelsiusDouble input)
         {
             return Temperature.CelsiusToCelsius(input.Temperature);
