@@ -8,8 +8,18 @@ using Converter.Temperature.Types.Kelvin;
 
 namespace Converter.Temperature.Extensions.To
 {
+    /// <summary>
+    /// The to <see langword="int"/> extensions.
+    /// </summary>
     public static class ToIntExtensions
     {
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius <see langword="int"/> result.
+        /// </returns>
         public static int ToCelsius(this CelsiusInt input)
         {
             int.TryParse(
@@ -18,6 +28,13 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius <see langword="int"/> result.
+        /// </returns>
         public static int ToCelsius(this FahrenheitInt input)
         {
             int.TryParse(
@@ -26,6 +43,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Gas <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Celsius <see langword="int"/> result.
+        /// </returns>
         public static int ToCelsius(this GasInt input)
         {
             int.TryParse(
@@ -34,6 +59,13 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Kelvin <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius <see langword="int"/> result.
+        /// </returns>
         public static int ToCelsius(this KelvinInt input)
         {
             int.TryParse(
@@ -42,6 +74,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Fahrenheit
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Fahrenheit <see langword="int"/> result.
+        /// </returns>
         public static int ToFahrenheit(this CelsiusInt input)
         {
             var convertedTemp = Math.Round(Temperature.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
@@ -49,6 +89,13 @@ namespace Converter.Temperature.Extensions.To
             return validTemp;
         }
 
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Fahrenheit
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Fahrenheit <see langword="int"/> result.
+        /// </returns>
         public static int ToFahrenheit(this FahrenheitInt input)
         {
             int.TryParse(
@@ -57,6 +104,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Gas <paramref name="input"/> to Fahrenheit
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Fahrenheit <see langword="int"/> result.
+        /// </returns>
         public static int ToFahrenheit(this GasInt input)
         {
             int.TryParse(
@@ -65,6 +120,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Kelvin <paramref name="input"/> to Fahrenheit
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Fahrenheit <see langword="int"/> result.
+        /// </returns>
         public static int ToFahrenheit(this KelvinInt input)
         {
             int.TryParse(
@@ -73,6 +136,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Gas
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Gas <see langword="int"/> result.
+        /// </returns>
         public static int ToGas(this CelsiusInt input)
         {
             int.TryParse(
@@ -81,6 +152,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Gas
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Gas <see langword="int"/> result.
+        /// </returns>
         public static int ToGas(this FahrenheitInt input)
         {
             int.TryParse(
@@ -89,6 +168,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Gas <paramref name="input"/> to Gas
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Gas <see langword="int"/> result.
+        /// </returns>
         public static int ToGas(this GasInt input)
         {
             int.TryParse(
@@ -97,6 +184,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Kelvin <paramref name="input"/> to Gas
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Gas <see langword="int"/> result.
+        /// </returns>
         public static int ToGas(this KelvinInt input)
         {
             int.TryParse(
@@ -105,6 +200,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Kelvin
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Kelvin <see langword="int"/> result.
+        /// </returns>
         public static int ToKelvin(this CelsiusInt input)
         {
             var convertedTemp = Math.Round(Temperature.CelsiusToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture);
@@ -112,6 +215,14 @@ namespace Converter.Temperature.Extensions.To
             return validTemp;
         }
 
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Kelvin
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Kelvin <see langword="int"/> result.
+        /// </returns>
         public static int ToKelvin(this FahrenheitInt input)
         {
             int.TryParse(
@@ -120,6 +231,14 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Gas <paramref name="input"/> to Kelvin
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Kelvin <see langword="int"/> result.
+        /// </returns>
         public static int ToKelvin(this GasInt input)
         {
             int.TryParse(
@@ -128,6 +247,13 @@ namespace Converter.Temperature.Extensions.To
             return convertedTemp;
         }
 
+        /// <summary>
+        /// Converts the Kelvin <paramref name="input"/> to Kelvin
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Kelvin <see langword="int"/> result.
+        /// </returns>
         public static int ToKelvin(this KelvinInt input)
         {
             int.TryParse(
