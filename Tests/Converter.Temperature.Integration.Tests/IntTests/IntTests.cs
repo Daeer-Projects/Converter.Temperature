@@ -3,7 +3,7 @@ using Converter.Temperature.Extensions.To;
 using FluentAssertions;
 using Xunit;
 
-namespace Converter.Temperature.Integration.Tests
+namespace Converter.Temperature.Integration.Tests.IntTests
 {
     public class IntTests
     {

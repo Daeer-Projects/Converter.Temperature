@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Text;
+﻿using System.Globalization;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using FluentAssertions;
 using Xunit;
 
-namespace Converter.Temperature.Integration.Tests
+namespace Converter.Temperature.Integration.Tests.StringTests
 {
     public class StringTests
     {

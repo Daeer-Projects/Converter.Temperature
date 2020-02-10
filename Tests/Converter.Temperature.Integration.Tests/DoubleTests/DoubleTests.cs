@@ -1,11 +1,10 @@
 ﻿using System;
-
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using FluentAssertions;
 using Xunit;
 
-namespace Converter.Temperature.Integration.Tests
+namespace Converter.Temperature.Integration.Tests.DoubleTests
 {
     public class DoubleTests
     {
