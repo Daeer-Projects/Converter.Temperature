@@ -94,6 +94,19 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
             result.Should().Be(value);
         }
 
+        [Theory]
+        [InlineData(0.24f)]
+        [InlineData(10.1f)]
+        public void Test_float_extension_from_and_to_gas_throws_exception(float value)
+        {
+            // Arrange.
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => value.FromGas().ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low or too high for gas mark!");
+        }
+
         #endregion From Gas
     }
 }

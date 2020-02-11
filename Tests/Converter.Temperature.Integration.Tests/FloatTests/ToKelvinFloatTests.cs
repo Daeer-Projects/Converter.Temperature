@@ -10,10 +10,37 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         #region From Celsius
 
 
+        [Fact]
+        public void Test_float_extensions_from_celsius_to_kelvin_returns_correct_value()
+        {
+            // Arrange.
+            const float expected = 473.15f;
+            var input = 200f;
+
+            // Act.
+            var result = input.FromCelsius().ToKelvin();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         #endregion From Celsius
 
         #region From Fahrenheit
 
+        [Fact]
+        public void Test_float_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
+        {
+            // Arrange.
+            const float expected = 473.15f;
+            var input = 392f;
+
+            // Act.
+            var result = input.FromFahrenheit().ToKelvin();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
 
         #endregion From Fahrenheit
 
@@ -39,7 +66,19 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
 
         #region From Gas
 
+        [Fact]
+        public void Test_float_extension_from_gas_to_kelvin_returns_correct_value()
+        {
+            // Arrange.
+            const float expected = 473.15f;
+            var input = 6f;
 
+            // Act.
+            var result = input.FromGas().ToKelvin();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
 
         #endregion From Gas
     }

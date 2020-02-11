@@ -68,7 +68,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_fahrenheit_from_celsius_returns_same_value()
+        public void Test_to_fahrenheit_from_celsius_returns_correct_value()
         {
             // Arrange.
             const float expected = 53.6f;
