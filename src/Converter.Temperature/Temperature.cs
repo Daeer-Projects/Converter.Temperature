@@ -135,12 +135,18 @@ namespace Converter.Temperature
         /// The fahrenheit to celsius conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
         public static double FahrenheitToCelsius(double firstTemp)
         {
             var celsiusTemp = (firstTemp - 32) * 5 / 9;
+            if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+            }
+
             return celsiusTemp;
         }
 

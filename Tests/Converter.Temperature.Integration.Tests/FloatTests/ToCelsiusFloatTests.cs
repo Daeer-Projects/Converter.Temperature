@@ -8,7 +8,6 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
 {
     public class ToCelsiusFloatTests
     {
-
         #region From Celsius
 
         [Theory]

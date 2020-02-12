@@ -8,8 +8,7 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
     public class ToKelvinFloatTests
     {
         #region From Celsius
-
-
+        
         [Fact]
         public void Test_float_extensions_from_celsius_to_kelvin_returns_correct_value()
         {

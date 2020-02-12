@@ -26,6 +26,7 @@ namespace Converter.Temperature.Extensions.To
         /// Converts the Fahrenheit <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
         /// The Celsius <see langword="double"/> result.
         /// </returns>
