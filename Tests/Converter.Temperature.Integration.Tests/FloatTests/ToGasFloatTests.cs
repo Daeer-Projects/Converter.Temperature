@@ -25,6 +25,41 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(80f, 0.25f)]
+        [InlineData(114f, 0.25f)]
+        [InlineData(115f, 0.5f)]
+        [InlineData(134f, 0.5f)]
+        [InlineData(135f, 1f)]
+        [InlineData(144f, 1f)]
+        [InlineData(145f, 2f)]
+        [InlineData(154f, 2f)]
+        [InlineData(155f, 3f)]
+        [InlineData(174f, 3f)]
+        [InlineData(175f, 4f)]
+        [InlineData(184f, 4f)]
+        [InlineData(185f, 5f)]
+        [InlineData(194f, 5f)]
+        [InlineData(195f, 6f)]
+        [InlineData(209f, 6f)]
+        [InlineData(210f, 7f)]
+        [InlineData(224f, 7f)]
+        [InlineData(225f, 8f)]
+        [InlineData(234f, 8f)]
+        [InlineData(235f, 9f)]
+        [InlineData(244f, 9f)]
+        [InlineData(245f, 10f)]
+        [InlineData(269f, 10f)]
+        public void Test_float_extensions_from_celsius_to_gas_returns_correct_gas_value(float input, float expected)
+        {
+            // Arrange.
+            // Act.
+            var result = input.FromCelsius().ToGas();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_float_extensions_from_celsius_to_gas_with_large_value_throws_exception()
         {
@@ -36,6 +71,19 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
 
             // Assert.
             result.Message.Should().Contain("Temp too high for gas mark!");
+        }
+
+        [Theory]
+        [InlineData(79f, "Temp too low for gas mark!")]
+        [InlineData(270f, "Temp too high for gas mark!")]
+        public void Test_float_extensions_from_celsius_to_gas_with_invalid_parameters_throws_exception(float input, string expectedError)
+        {
+            // Arrange.
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToGas());
+
+            // Assert.
+            result.Message.Should().Contain(expectedError);
         }
 
         #endregion From Celsius
