@@ -127,7 +127,6 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
             result.Should().Be(expected);
         }
 
-
         [Theory]
         [InlineData(0.24d)]
         [InlineData(10.1d)]

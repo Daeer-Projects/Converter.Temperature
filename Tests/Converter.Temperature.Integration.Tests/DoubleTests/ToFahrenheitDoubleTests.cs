@@ -5,16 +5,16 @@ using Converter.Temperature.Extensions.To;
 using FluentAssertions;
 using Xunit;
 
-namespace Converter.Temperature.Integration.Tests.FloatTests
+namespace Converter.Temperature.Integration.Tests.DoubleTests
 {
-    public class ToFahrenheitFloatTests
+    public class ToFahrenheitDoubleTests
     {
         #region From Celsius
 
         [Theory]
-        [InlineData(float.MinValue)]
-        [InlineData(float.MaxValue)]
-        public void Test_float_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(float input)
+        [InlineData(double.MinValue)]
+        [InlineData(double.MaxValue)]
+        public void Test_double_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(double input)
         {
             // Arrange.
             // Act.
@@ -25,10 +25,10 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         }
 
         [Theory]
-        [InlineData(-152436784.334563f, -274386179.8022134f)]
-        [InlineData(0.0f, 32.0f)]
-        [InlineData(26431662.73648262f, 47577024.925668716f)]
-        public void Test_float_extension_from_celsius_and_to_fahrenheit_returns_correct_float_value(float input, float expected)
+        [InlineData(-152436784.334563d, -274386179.8022134d)]
+        [InlineData(0.0d, 32.0d)]
+        [InlineData(26431662.73648262d, 47577024.925668716d)]
+        public void Test_double_extension_from_celsius_and_to_fahrenheit_returns_correct_double_value(double input, double expected)
         {
             // Arrange.
             // Act.
@@ -43,12 +43,12 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         #region From Fahrenheit
 
         [Theory]
-        [InlineData(float.MinValue)]
-        [InlineData(-345.65f)]
-        [InlineData(0.0f)]
-        [InlineData(7564.2334f)]
-        [InlineData(float.MaxValue)]
-        public void Test_float_extension_from_and_to_fahrenheit_returns_correct_float_value(float value)
+        [InlineData(double.MinValue)]
+        [InlineData(-345.65d)]
+        [InlineData(0.0d)]
+        [InlineData(7564.2334d)]
+        [InlineData(double.MaxValue)]
+        public void Test_double_extension_from_and_to_fahrenheit_returns_correct_double_value(double value)
         {
             // Arrange.
             // Act.
@@ -63,11 +63,11 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         #region From Kelvin
 
         [Fact]
-        public void Test_float_extensions_from_kelvin_to_fahrenheit_returns_correct_float_value()
+        public void Test_double_extensions_from_kelvin_to_fahrenheit_returns_correct_double_value()
         {
             // Arrange.
-            const float expected = 33.8f;
-            const float input = 274.15f;
+            const double expected = 33.8d;
+            const double input = 274.15d;
 
             // Act.
             var result = input.FromKelvin().ToFahrenheit();
@@ -77,9 +77,9 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         }
 
         [Theory]
-        [InlineData(float.MinValue)]
-        [InlineData(float.MaxValue)]
-        public void Test_float_extension_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(float input)
+        [InlineData(double.MinValue)]
+        [InlineData(double.MaxValue)]
+        public void Test_double_extension_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(double input)
         {
             // Arrange.
             // Act.
@@ -94,11 +94,11 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         #region From Gas
 
         [Fact]
-        public void Test_float_extensions_from_gas_to_fahrenheit_returns_correct_float_value()
+        public void Test_double_extensions_from_gas_to_fahrenheit_returns_correct_double_value()
         {
             // Arrange.
-            const float expected = 428f;
-            const float input = 7f;
+            const double expected = 428d;
+            const double input = 7d;
 
             // Act.
             var result = input.FromGas().ToFahrenheit();
@@ -108,5 +108,6 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         }
 
         #endregion From Gas
+
     }
 }
