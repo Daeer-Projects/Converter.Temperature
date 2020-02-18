@@ -32,13 +32,14 @@ namespace Converter.Temperature.Extensions.To
         /// Converts the Fahrenheit <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The Celsius <see langword="int"/> result.
         /// </returns>
         public static int ToCelsius(this FahrenheitInt input)
         {
             int.TryParse(
-                Temperature.FahrenheitToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Math.Round(Temperature.FahrenheitToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -63,15 +64,15 @@ namespace Converter.Temperature.Extensions.To
         /// Converts the Kelvin <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The Celsius <see langword="int"/> result.
         /// </returns>
         public static int ToCelsius(this KelvinInt input)
         {
-            int.TryParse(
-                Math.Round(Temperature.KelvinToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            var convertedTemp = Math.Round(Temperature.KelvinToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            return validTemp;
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Converter.Temperature.Extensions.To
         public static int ToFahrenheit(this CelsiusInt input)
         {
             var convertedTemp = Math.Round(Temperature.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
-            if (!int.TryParse(convertedTemp, out var validTemp)) throw  new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
             return validTemp;
         }
 

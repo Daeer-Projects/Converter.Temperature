@@ -30,27 +30,14 @@ namespace Converter.Temperature.Integration.Tests.IntTests
         #endregion From Celsius
 
         #region From Fahrenheit
-
-        //[Fact]
-        //public void Test_int_extension_from_fahrenheit_and_to_celsius_with_min_value_throws_exception()
-        //{
-        //    // Arrange.
-        //    const int input = int.MinValue;
-
-        //    // Act.
-        //    var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromFahrenheit().ToCelsius());
-
-        //    // Assert.
-        //    result.Message.Should().Contain("Value out of range for type.");
-        //}
-
-        [Fact]
-        public void Test_int_extensions_from_fahrenheit_to_celsius_returns_correct_int_value()
+        
+        [Theory]
+        [InlineData(50, 10)]
+        [InlineData(int.MinValue, -1193046489)]
+        [InlineData(int.MaxValue, 1193046453)]
+        public void Test_int_extensions_from_fahrenheit_to_celsius_returns_correct_int_value(int input, int expected)
         {
             // Arrange.
-            const int expected = 10;
-            const int input = 50;
-
             // Act.
             var result = input.FromFahrenheit().ToCelsius();
 
@@ -76,45 +63,44 @@ namespace Converter.Temperature.Integration.Tests.IntTests
             result.Should().Be(expected);
         }
 
-        //[Fact]
-        //public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value()
-        //{
-        //    // Arrange.
-        //    const int expected = int.MinValue;
-        //    const int input = int.MinValue;
+        [Fact]
+        public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value()
+        {
+            // Arrange.
+            const int input = int.MinValue;
 
-        //    // Act.
-        //    var result = input.FromKelvin().ToCelsius();
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin().ToCelsius());
 
-        //    // Assert.
-        //    result.Should().Be(expected);
-        //}
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
 
         #endregion From Kelvin
 
         #region From Gas
 
-        //[Theory]
-        //[InlineData(1, 140d)]
-        //[InlineData(2, 150d)]
-        //[InlineData(3, 165d)]
-        //[InlineData(4, 190d)]
-        //[InlineData(5, 200d)]
-        //[InlineData(6, 220d)]
-        //[InlineData(7, 230d)]
-        //[InlineData(8, 240d)]
-        //[InlineData(9, 260d)]
-        //[InlineData(10, 260d)]
-        //public void Test_int_extensions_from_gas_to_celsius_returns_correct_int_value(int input, int expected)
-        //{
-        //    // Arrange.
-        //    // Act.
-        //    var result = input.FromGas().ToCelsius();
+        [Theory]
+        [InlineData(1, 140)]
+        [InlineData(2, 150)]
+        [InlineData(3, 165)]
+        [InlineData(4, 180)]
+        [InlineData(5, 190)]
+        [InlineData(6, 200)]
+        [InlineData(7, 220)]
+        [InlineData(8, 230)]
+        [InlineData(9, 240)]
+        [InlineData(10, 260)]
+        public void Test_int_extensions_from_gas_to_celsius_returns_correct_int_value(int input, int expected)
+        {
+            // Arrange.
+            // Act.
+            var result = input.FromGas().ToCelsius();
 
-        //    // Assert.
-        //    result.Should().Be(expected);
-        //}
-        
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Theory]
         [InlineData(0)]
         [InlineData(11)]
