@@ -75,8 +75,8 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         }
 
         [Theory]
-        [InlineData(79f, "Temp too low for gas mark!")]
-        [InlineData(270f, "Temp too high for gas mark!")]
+        [InlineData(79d, "Temp too low for gas mark!")]
+        [InlineData(270d, "Temp too high for gas mark!")]
         public void Test_double_extensions_from_celsius_to_gas_with_invalid_parameters_throws_exception(double input, string expectedError)
         {
             // Arrange.
