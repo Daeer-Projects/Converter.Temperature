@@ -131,10 +131,9 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static int ToFahrenheit(this KelvinInt input)
         {
-            int.TryParse(
-               Math.Round(Temperature.KelvinToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            var convertedTemp = Math.Round(Temperature.KelvinToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            return validTemp;
         }
 
         /// <summary>
