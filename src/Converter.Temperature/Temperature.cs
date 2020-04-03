@@ -1,27 +1,12 @@
 ﻿using System;
 
-namespace TemperatureConverter
+namespace Converter.Temperature
 {
     /// <summary>
-    /// Temperature converter class.
+    /// The Temperature converter class.
     /// </summary>
-    internal static class TemperatureConverter
+    internal static class Temperature
     {
-        /// <summary>
-        /// Temperature out of range error message.
-        /// </summary>
-        private const string TemperatureOutOfRangeError = "Temp too low or too high for gas mark!";
-
-        /// <summary>
-        /// Temperature too high error message.
-        /// </summary>
-        private const string TemperatureTooHighForGasError = "Temp too high for gas mark!";
-
-        /// <summary>
-        /// Temperature too low error message.
-        /// </summary>
-        private const string TemperatureTooLowForGasError = "Temp too low for gas mark!";
-
         /// <summary>
         /// The celsius to celsius conversion.
         /// </summary>
@@ -37,95 +22,110 @@ namespace TemperatureConverter
         /// <summary>
         /// The celsius to fahrenheit conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double CelsiusToFahrenheit(double firstTemp)
+        public static double CelsiusToFahrenheit(double input)
         {
-            var fahrenheitTemp = (firstTemp * 1.8) + 32;
+            var fahrenheitTemp = (input * 1.8) + 32;
+            if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+            }
+
             return fahrenheitTemp;
         }
 
         /// <summary>
         /// The celsius to kelvin conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double CelsiusToKelvin(double firstTemp)
+        public static double CelsiusToKelvin(double input)
         {
-            var kelvinTemp = firstTemp + 273.15;
+            var kelvinTemp = (input * 1.01d) + 273.15d;
+            if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+            }
+
+            kelvinTemp = (input * 1d) + 273.15d;
+
             return kelvinTemp;
         }
 
         /// <summary>
         /// The celsius to gas conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <param name="input"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double CelsiusToGas(double firstTemp)
+        public static double CelsiusToGas(double input)
         {
             double gasTemp;
-            if (firstTemp < 80)
+            if (input < 80)
             {
-                throw new ArgumentOutOfRangeException(TemperatureTooLowForGasError);
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureTooLowForGasError);
             }
-            else if (firstTemp < 115)
+
+            if (input < 115)
             {
                 gasTemp = 0.25;
             }
-            else if (firstTemp < 135)
+            else if (input < 135)
             {
                 gasTemp = 0.5;
             }
-            else if (firstTemp < 145)
+            else if (input < 145)
             {
                 gasTemp = 1;
             }
-            else if (firstTemp < 155)
+            else if (input < 155)
             {
                 gasTemp = 2;
             }
-            else if (firstTemp < 175)
+            else if (input < 175)
             {
                 gasTemp = 3;
             }
-            else if (firstTemp < 185)
+            else if (input < 185)
             {
                 gasTemp = 4;
             }
-            else if (firstTemp < 195)
+            else if (input < 195)
             {
                 gasTemp = 5;
             }
-            else if (firstTemp < 210)
+            else if (input < 210)
             {
                 gasTemp = 6;
             }
-            else if (firstTemp < 225)
+            else if (input < 225)
             {
                 gasTemp = 7;
             }
-            else if (firstTemp < 235)
+            else if (input < 235)
             {
                 gasTemp = 8;
             }
-            else if (firstTemp < 245)
+            else if (input < 245)
             {
                 gasTemp = 9;
             }
-            else if (firstTemp < 270)
+            else if (input < 270)
             {
                 gasTemp = 10;
             }
             else
             {
-                throw new ArgumentOutOfRangeException(TemperatureTooHighForGasError);
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureTooHighForGasError);
             }
 
             return gasTemp;
@@ -135,12 +135,18 @@ namespace TemperatureConverter
         /// The fahrenheit to celsius conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
         public static double FahrenheitToCelsius(double firstTemp)
         {
             var celsiusTemp = (firstTemp - 32) * 5 / 9;
+            if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+            }
+
             return celsiusTemp;
         }
 
@@ -160,6 +166,7 @@ namespace TemperatureConverter
         /// The fahrenheit to kelvin conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
@@ -174,7 +181,7 @@ namespace TemperatureConverter
         /// The fahrenheit to gas conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
@@ -202,6 +209,7 @@ namespace TemperatureConverter
         /// The kelvin to fahrenheit conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
@@ -228,7 +236,7 @@ namespace TemperatureConverter
         /// The kelvin to gas conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
@@ -242,55 +250,56 @@ namespace TemperatureConverter
         /// <summary>
         /// The gas to celsius conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <param name="input"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double GasToCelsius(double firstTemp)
+        public static double GasToCelsius(double input)
         {
             double celTemp;
-            if (firstTemp < .25 || firstTemp > 10)
+            if (input < .25 || input > 10)
             {
-                throw new ArgumentOutOfRangeException(TemperatureOutOfRangeError);
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
             }
-            else if (firstTemp < 1)
+
+            if (input < 1)
             {
                 celTemp = 125;
             }
-            else if (firstTemp < 1.5)
+            else if (input < 1.5)
             {
                 celTemp = 140;
             }
-            else if (firstTemp < 2.5)
+            else if (input < 2.5)
             {
                 celTemp = 150;
             }
-            else if (firstTemp < 3.5)
+            else if (input < 3.5)
             {
                 celTemp = 165;
             }
-            else if (firstTemp < 4.5)
+            else if (input < 4.5)
             {
                 celTemp = 180;
             }
-            else if (firstTemp < 5.5)
+            else if (input < 5.5)
             {
                 celTemp = 190;
             }
-            else if (firstTemp < 6.5)
+            else if (input < 6.5)
             {
                 celTemp = 200;
             }
-            else if (firstTemp < 7.5)
+            else if (input < 7.5)
             {
                 celTemp = 220;
             }
-            else if (firstTemp < 8.5)
+            else if (input < 8.5)
             {
                 celTemp = 230;
             }
-            else if (firstTemp < 9.5)
+            else if (input < 9.5)
             {
                 celTemp = 240;
             }
@@ -306,7 +315,7 @@ namespace TemperatureConverter
         /// The gas to fahrenheit conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
@@ -321,7 +330,7 @@ namespace TemperatureConverter
         /// The gas to kelvin conversion.
         /// </summary>
         /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
@@ -335,21 +344,19 @@ namespace TemperatureConverter
         /// <summary>
         /// The gas to gas conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
-        /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+        /// <param name="input"> The temperature to convert. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double GasToGas(double firstTemp)
+        public static double GasToGas(double input)
         {
-            if (firstTemp < .25 || firstTemp > 10)
+            if (input < .25 || input > 10)
             {
-                throw new ArgumentOutOfRangeException(TemperatureOutOfRangeError);
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
             }
-            else
-            {
-                return firstTemp;
-            }
+
+            return input;
         }
     }
 }
