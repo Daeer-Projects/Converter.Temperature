@@ -1,22 +1,23 @@
 ﻿using System;
+using System.Globalization;
 
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using FluentAssertions;
 using Xunit;
 
-namespace Converter.Temperature.Integration.Tests.DoubleTests
+namespace Converter.Temperature.Integration.Tests.StringTests
 {
-    public class ToKelvinDoubleTests
+    public class ToKelvinStringTests
     {
         #region From Celsius
 
         [Fact]
-        public void Test_double_extensions_from_celsius_to_kelvin_returns_correct_value()
+        public void Test_string_extensions_from_celsius_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const double expected = 473.15d;
-            var input = 200d;
+            const string expected = "473.15";
+            var input = "200";
 
             // Act.
             var result = input.FromCelsius().ToKelvin();
@@ -28,11 +29,11 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         [Theory]
         [InlineData(double.MinValue)]
         [InlineData(double.MaxValue)]
-        public void Test_double_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(double input)
+        public void Test_string_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(double input)
         {
             // Arrange.
             // Act.
-            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToKelvin());
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToString(CultureInfo.InvariantCulture).FromCelsius().ToKelvin());
 
             // Assert.
             result.Message.Should().Contain("Value out of range for type.");
@@ -43,11 +44,11 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         #region From Fahrenheit
 
         [Fact]
-        public void Test_double_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
+        public void Test_string_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const double expected = 473.15d;
-            var input = 392d;
+            const string expected = "473.15";
+            var input = "392";
 
             // Act.
             var result = input.FromFahrenheit().ToKelvin();
@@ -66,14 +67,14 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         [InlineData(0.0d)]
         [InlineData(7564.2334d)]
         [InlineData(double.MaxValue)]
-        public void Test_double_extension_from_and_to_kelvin_returns_correct_double_value(double value)
+        public void Test_string_extension_from_and_to_kelvin_returns_correct_string_value(double value)
         {
             // Arrange.
             // Act.
-            var result = value.FromKelvin().ToKelvin();
+            var result = value.ToString(CultureInfo.InvariantCulture).FromKelvin().ToKelvin();
 
             // Assert.
-            result.Should().Be(value);
+            result.Should().Be(value.ToString(CultureInfo.InvariantCulture));
         }
 
         #endregion From Kelvin
@@ -81,11 +82,11 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         #region From Gas
 
         [Fact]
-        public void Test_double_extension_from_gas_to_kelvin_returns_correct_value()
+        public void Test_string_extension_from_gas_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const double expected = 473.15d;
-            var input = 6d;
+            const string expected = "473.15";
+            var input = "6";
 
             // Act.
             var result = input.FromGas().ToKelvin();

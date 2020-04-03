@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using FluentAssertions;
