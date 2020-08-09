@@ -23,7 +23,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToCelsius(this CelsiusFloat input)
         {
             float.TryParse(
-                Temperature.CelsiusToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Celsius.CelsiusToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -39,7 +39,7 @@ namespace Converter.Temperature.Extensions.To
         {
             var result = input.Temperature;
             if (float.TryParse(
-                Temperature.FahrenheitToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Fahrenheit.FahrenheitToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp))
             {
                 result = convertedTemp;
@@ -58,7 +58,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToCelsius(this GasFloat input)
         {
             float.TryParse(
-                Temperature.GasToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Gas.GasToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -73,7 +73,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToCelsius(this KelvinFloat input)
         {
             float.TryParse(
-                Temperature.KelvinToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Kelvin.KelvinToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return (float)Math.Round(convertedTemp, 2);
         }
@@ -89,7 +89,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToFahrenheit(this CelsiusFloat input)
         {
             float.TryParse(
-                Temperature.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Celsius.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
 
             if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
@@ -107,7 +107,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToFahrenheit(this FahrenheitFloat input)
         {
             float.TryParse(
-                Temperature.FahrenheitToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Fahrenheit.FahrenheitToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -123,7 +123,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToFahrenheit(this GasFloat input)
         {
             float.TryParse(
-                Temperature.GasToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Gas.GasToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -139,7 +139,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToFahrenheit(this KelvinFloat input)
         {
             float.TryParse(
-                Temperature.KelvinToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Kelvin.KelvinToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
 
             if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
@@ -158,7 +158,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToGas(this CelsiusFloat input)
         {
             float.TryParse(
-                Temperature.CelsiusToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Celsius.CelsiusToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -174,7 +174,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToGas(this FahrenheitFloat input)
         {
             float.TryParse(
-                Temperature.FahrenheitToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Fahrenheit.FahrenheitToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -190,7 +190,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToGas(this GasFloat input)
         {
             float.TryParse(
-                Temperature.GasToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Gas.GasToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -206,7 +206,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToGas(this KelvinFloat input)
         {
             float.TryParse(
-                Temperature.KelvinToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Kelvin.KelvinToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -222,7 +222,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToKelvin(this CelsiusFloat input)
         {
             float.TryParse(
-                Temperature.CelsiusToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Celsius.CelsiusToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -238,7 +238,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToKelvin(this FahrenheitFloat input)
         {
             float.TryParse(
-                Temperature.FahrenheitToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Fahrenheit.FahrenheitToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -254,7 +254,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToKelvin(this GasFloat input)
         {
             float.TryParse(
-                Temperature.GasToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Gas.GasToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
@@ -269,7 +269,7 @@ namespace Converter.Temperature.Extensions.To
         public static float ToKelvin(this KelvinFloat input)
         {
             float.TryParse(
-                Temperature.KelvinToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                Kelvin.KelvinToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }

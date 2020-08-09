@@ -24,7 +24,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.CelsiusToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Celsius.CelsiusToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -42,7 +42,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.FahrenheitToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Fahrenheit.FahrenheitToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -61,7 +61,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.GasToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Gas.GasToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -79,7 +79,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.KelvinToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Kelvin.KelvinToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -98,7 +98,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.CelsiusToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Celsius.CelsiusToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -116,7 +116,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.FahrenheitToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Fahrenheit.FahrenheitToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -135,7 +135,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.GasToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Gas.GasToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -154,7 +154,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.KelvinToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Kelvin.KelvinToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -173,7 +173,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.CelsiusToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Celsius.CelsiusToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -192,7 +192,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.FahrenheitToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Fahrenheit.FahrenheitToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -211,7 +211,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.GasToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Gas.GasToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -230,7 +230,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.KelvinToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Kelvin.KelvinToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -249,7 +249,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.CelsiusToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Celsius.CelsiusToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -268,7 +268,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.FahrenheitToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Fahrenheit.FahrenheitToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -287,7 +287,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.GasToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Gas.GasToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -305,7 +305,7 @@ namespace Converter.Temperature.Extensions.To
             var convertedTemp = string.Empty;
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
-                convertedTemp = Temperature.KelvinToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+                convertedTemp = Kelvin.KelvinToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
