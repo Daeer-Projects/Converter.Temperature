@@ -19,7 +19,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToCelsius(this CelsiusDouble input)
         {
-            return Temperature.CelsiusToCelsius(input.Temperature);
+            return Celsius.CelsiusToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToCelsius(this FahrenheitDouble input)
         {
-            return Temperature.FahrenheitToCelsius(input.Temperature);
+            return Fahrenheit.FahrenheitToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToCelsius(this GasDouble input)
         {
-            return Temperature.GasToCelsius(input.Temperature);
+            return Gas.GasToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToCelsius(this KelvinDouble input)
         {
-            return Temperature.KelvinToCelsius(input.Temperature);
+            return Kelvin.KelvinToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToFahrenheit(this CelsiusDouble input)
         {
-            return Temperature.CelsiusToFahrenheit(input.Temperature);
+            return Celsius.CelsiusToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToFahrenheit(this FahrenheitDouble input)
         {
-            return Temperature.FahrenheitToFahrenheit(input.Temperature);
+            return Fahrenheit.FahrenheitToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToFahrenheit(this GasDouble input)
         {
-            return Temperature.GasToFahrenheit(input.Temperature);
+            return Gas.GasToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToFahrenheit(this KelvinDouble input)
         {
-            return Temperature.KelvinToFahrenheit(input.Temperature);
+            return Kelvin.KelvinToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToGas(this CelsiusDouble input)
         {
-            return Temperature.CelsiusToGas(input.Temperature);
+            return Celsius.CelsiusToGas(input.Temperature);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToGas(this FahrenheitDouble input)
         {
-            return Temperature.FahrenheitToGas(input.Temperature);
+            return Fahrenheit.FahrenheitToGas(input.Temperature);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToGas(this GasDouble input)
         {
-            return Temperature.GasToGas(input.Temperature);
+            return Gas.GasToGas(input.Temperature);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToGas(this KelvinDouble input)
         {
-            return Temperature.KelvinToGas(input.Temperature);
+            return Kelvin.KelvinToGas(input.Temperature);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToKelvin(this CelsiusDouble input)
         {
-            return Temperature.CelsiusToKelvin(input.Temperature);
+            return Celsius.CelsiusToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -186,7 +186,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToKelvin(this FahrenheitDouble input)
         {
-            return Temperature.FahrenheitToKelvin(input.Temperature);
+            return Fahrenheit.FahrenheitToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToKelvin(this GasDouble input)
         {
-            return Temperature.GasToKelvin(input.Temperature);
+            return Gas.GasToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -211,7 +211,7 @@ namespace Converter.Temperature.Extensions.To
         /// </returns>
         public static double ToKelvin(this KelvinDouble input)
         {
-            return Temperature.KelvinToKelvin(input.Temperature);
+            return Kelvin.KelvinToKelvin(input.Temperature);
         }
     }
 }
