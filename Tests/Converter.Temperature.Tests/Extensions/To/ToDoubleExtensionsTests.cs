@@ -395,7 +395,7 @@ namespace Converter.Temperature.Tests.Extensions.To
         }
 
         [Fact]
-        public void Test_to_kelvin_from_rankine_returns_same_value()
+        public void Test_to_kelvin_from_rankine_returns_correct_value()
         {
             // Arrange.
             const double expected = 473.1499999999999d;

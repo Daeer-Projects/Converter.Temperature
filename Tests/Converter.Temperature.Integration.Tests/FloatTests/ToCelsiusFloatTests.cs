@@ -143,5 +143,38 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(0f, -273.15f)]
+        [InlineData(-100f, -328.71f)]
+        [InlineData(100f, -217.59f)]
+        [InlineData(1000f, 282.41f)]
+        public void Test_float_extension_from_rankine_to_celsius_returns_correct_float_value(float input, float expected)
+        {
+            // Arrange.
+            // Act.
+            var result = input.FromRankine().ToCelsius();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_float_extension_from_rankine_and_to_celsius_with_min_value_returns_correct_float_value()
+        {
+            // Arrange.
+            const float expected = -1.8904575E+38f;
+            const float input = float.MinValue;
+
+            // Act.
+            var result = input.FromRankine().ToCelsius();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        #endregion From Rankine
     }
 }
