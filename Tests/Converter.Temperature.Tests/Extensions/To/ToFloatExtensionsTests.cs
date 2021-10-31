@@ -304,5 +304,74 @@ namespace Converter.Temperature.Tests.Extensions.To
             // Assert.
             result.Should().Be(expected);
         }
+
+        [Fact]
+        public void Test_to_rankine_from_celsius_returns_correct_value()
+        {
+            // Arrange.
+            const float expected = 851.6699999999998f;
+            var input = new CelsiusFloat(200);
+
+            // Act.
+            var result = input.ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_rankine_from_fahrenheit_returns_correct_value()
+        {
+            // Arrange.
+            const float expected = 851.6700000000001f;
+            var input = new FahrenheitFloat(392);
+
+            // Act.
+            var result = input.ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_rankine_from_gas_returns_correct_value()
+        {
+            // Arrange.
+            const float expected = 851.6699999999998f;
+            var input = new GasFloat(6);
+
+            // Act.
+            var result = input.ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_rankine_from_kelvin_returns_same_value()
+        {
+            // Arrange.
+            const float expected = 851.6699999999998f;
+            var input = new KelvinFloat(473.15f);
+
+            // Act.
+            var result = input.ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_to_rankine_from_rankine_returns_same_value()
+        {
+            // Arrange.
+            var input = new RankineFloat(851.67f);
+
+            // Act.
+            var result = input.ToRankine();
+
+            // Assert.
+            result.Should().Be(input.Temperature);
+        }
     }
 }
