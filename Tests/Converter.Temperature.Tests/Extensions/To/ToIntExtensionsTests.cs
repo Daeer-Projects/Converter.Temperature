@@ -38,7 +38,7 @@
             // Assert.
             result.Should().Be(expected);
         }
-        
+
         [Fact]
         public void Test_to_celsius_from_gas_returns_correct_value()
         {

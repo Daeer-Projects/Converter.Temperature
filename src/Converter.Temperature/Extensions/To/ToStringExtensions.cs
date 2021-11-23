@@ -85,6 +85,24 @@
         }
 
         /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius string result.
+        /// </returns>
+        public static string ToCelsius(this RankineString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Rankine.RankineToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
         /// Converts the Celsius <paramref name="input"/> to Fahrenheit
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
@@ -154,6 +172,25 @@
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
                 convertedTemp = Kelvin.KelvinToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Fahrenheit
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Fahrenheit string result.
+        /// </returns>
+        public static string ToFahrenheit(this RankineString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Rankine.RankineToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
@@ -236,6 +273,25 @@
         }
 
         /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Gas
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Gas string result.
+        /// </returns>
+        public static string ToGas(this RankineString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Rankine.RankineToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
         /// Converts the Celsius <paramref name="input"/> to Kelvin
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
@@ -305,6 +361,117 @@
             if (double.TryParse(input.Temperature, out var inputAsDouble))
             {
                 convertedTemp = Kelvin.KelvinToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Kelvin
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Kelvin string result.
+        /// </returns>
+        public static string ToKelvin(this RankineString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Rankine.RankineToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Rankine
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Rankine string result.
+        /// </returns>
+        public static string ToRankine(this CelsiusString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Celsius.CelsiusToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Rankine
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Rankine string result.
+        /// </returns>
+        public static string ToRankine(this FahrenheitString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Fahrenheit.FahrenheitToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Gas <paramref name="input"/> to Rankine
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Rankine string result.
+        /// </returns>
+        public static string ToRankine(this GasString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Gas.GasToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Kelvin <paramref name="input"/> to Rankine
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine string result.
+        /// </returns>
+        public static string ToRankine(this KelvinString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Kelvin.KelvinToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Rankine
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine string result.
+        /// </returns>
+        public static string ToRankine(this RankineString input)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(input.Temperature, out var inputAsDouble))
+            {
+                convertedTemp = Rankine.RankineToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
             }
 
             return convertedTemp;
