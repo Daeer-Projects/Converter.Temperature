@@ -1,12 +1,11 @@
-﻿using System.Globalization;
-
-using Converter.Temperature.Types.Celsius;
-using Converter.Temperature.Types.Fahrenheit;
-using Converter.Temperature.Types.Gas;
-using Converter.Temperature.Types.Kelvin;
-
-namespace Converter.Temperature.Extensions.To
+﻿namespace Converter.Temperature.Extensions.To
 {
+    using System.Globalization;
+    using Converter.Temperature.Types.Celsius;
+    using Converter.Temperature.Types.Fahrenheit;
+    using Converter.Temperature.Types.Gas;
+    using Converter.Temperature.Types.Kelvin;
+
     /// <summary>
     /// The to string extensions.
     /// </summary>
