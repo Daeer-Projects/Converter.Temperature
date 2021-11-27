@@ -5,6 +5,7 @@
     using Converter.Temperature.Types.Fahrenheit;
     using Converter.Temperature.Types.Gas;
     using Converter.Temperature.Types.Kelvin;
+    using Types.Rankine;
 
     /// <summary>
     /// The to string extensions.

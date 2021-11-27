@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Converter.Temperature
+﻿namespace Converter.Temperature
 {
     internal static class Rankine
     {
@@ -28,11 +26,6 @@ namespace Converter.Temperature
         public static double RankineToCelsius(double input)
         {
             var rankineTemp = (input - 491.67) * 5 / 9;
-            if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
-            {
-                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-            }
-
             return rankineTemp;
         }
 
@@ -47,11 +40,6 @@ namespace Converter.Temperature
         public static double RankineToFahrenheit(double input)
         {
             var rankineTemp = input - 459.67;
-            if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
-            {
-                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-            }
-
             return rankineTemp;
         }
 
@@ -66,11 +54,6 @@ namespace Converter.Temperature
         public static double RankineToKelvin(double input)
         {
             var rankineTemp = input * 5 / 9;
-            if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
-            {
-                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-            }
-
             return rankineTemp;
         }
 

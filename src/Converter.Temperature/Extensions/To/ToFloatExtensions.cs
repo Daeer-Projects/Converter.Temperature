@@ -168,7 +168,6 @@ namespace Converter.Temperature.Extensions.To
         /// Converts the Rankine <paramref name="input"/> to Fahrenheit
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
-        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
         /// The Fahrenheit <see langword="float"/> result.
         /// </returns>
@@ -177,9 +176,6 @@ namespace Converter.Temperature.Extensions.To
             float.TryParse(
                 Rankine.RankineToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
-
-            if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
-
             return convertedTemp;
         }
 

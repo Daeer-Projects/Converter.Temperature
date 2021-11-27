@@ -95,5 +95,26 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(-1000d, -555.5555555555555d)]
+        [InlineData(0d, 0d)]
+        [InlineData(50d, 27.77777777777778d)]
+        [InlineData(100d, 55.55555555555556d)]
+        [InlineData(500d, 277.77777777777777d)]
+        [InlineData(1000d, 555.5555555555555d)]
+        public void Test_double_extension_from_rankine_and_to_kelvin_returns_correct_double_value(double value, double expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToKelvin();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        #endregion From Rankine
     }
 }

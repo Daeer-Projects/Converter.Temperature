@@ -85,8 +85,9 @@
         /// </returns>
         public static int ToCelsius(this RankineInt input)
         {
-            var convertedTemp = Math.Round(Rankine.RankineToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture);
-            if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            int.TryParse(
+                Math.Round(Rankine.RankineToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                out var validTemp);
             return validTemp;
         }
 
@@ -161,8 +162,9 @@
         /// </returns>
         public static int ToFahrenheit(this RankineInt input)
         {
-            var convertedTemp = Math.Round(Rankine.RankineToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
-            if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+            int.TryParse(
+                Math.Round(Rankine.RankineToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                out var validTemp);
             return validTemp;
         }
 
