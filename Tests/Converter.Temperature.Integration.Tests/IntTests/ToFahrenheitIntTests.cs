@@ -1,5 +1,4 @@
 ﻿using System;
-
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using FluentAssertions;
@@ -128,5 +127,26 @@ namespace Converter.Temperature.Integration.Tests.IntTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(-1000, -1460)]
+        [InlineData(0, -460)]
+        [InlineData(50, -410)]
+        [InlineData(100, -360)]
+        [InlineData(500, 40)]
+        [InlineData(1000, 540)]
+        public void Test_int_extension_from_rankine_and_to_fahrenheit_returns_correct_int_value(int value, int expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToFahrenheit();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        #endregion From Rankine
     }
 }

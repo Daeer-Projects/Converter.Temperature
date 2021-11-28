@@ -1,11 +1,9 @@
-﻿using Converter.Temperature.Extensions.From;
-using System;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.FloatTests
+﻿namespace Converter.Temperature.Integration.Tests.FloatTests
 {
+    using Extensions.From;
     using Extensions.To;
     using FluentAssertions;
+    using Xunit;
 
     public class ToRankineFloatTests
     {

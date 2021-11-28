@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Globalization;
-
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using FluentAssertions;
@@ -109,5 +108,26 @@ namespace Converter.Temperature.Integration.Tests.StringTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(-1000d, -1459.67d)]
+        [InlineData(0d, -459.67d)]
+        [InlineData(50d, -409.67d)]
+        [InlineData(100d, -359.67d)]
+        [InlineData(500d, 40.329999999999984d)]
+        [InlineData(1000d, 540.3299999999999d)]
+        public void Test_string_extension_from_rankine_and_to_fahrenheit_returns_correct_string_value(double value, double expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.ToString(CultureInfo.InvariantCulture).FromRankine().ToFahrenheit();
+
+            // Assert.
+            result.Should().Be(expected.ToString(CultureInfo.InvariantCulture));
+        }
+
+        #endregion From Rankine
     }
 }
