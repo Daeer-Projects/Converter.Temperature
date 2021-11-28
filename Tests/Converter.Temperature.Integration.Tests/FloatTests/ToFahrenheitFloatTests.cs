@@ -108,5 +108,26 @@ namespace Converter.Temperature.Integration.Tests.FloatTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(-1000d, -1459.67f)]
+        [InlineData(0d, -459.67f)]
+        [InlineData(50d, -409.67f)]
+        [InlineData(100d, -359.67f)]
+        [InlineData(500d, 40.329999999999984f)]
+        [InlineData(1000d, 540.3299999999999f)]
+        public void Test_float_extension_from_rankine_and_to_fahrenheit_returns_correct_float_value(float value, float expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToFahrenheit();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        #endregion From Rankine
     }
 }
