@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace Converter.Temperature
+﻿namespace Converter.Temperature
 {
+    using System;
+
     internal static class Fahrenheit
     {
         /// <summary>

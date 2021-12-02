@@ -1,14 +1,14 @@
-﻿using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Types.Celsius;
-using Converter.Temperature.Types.Fahrenheit;
-using Converter.Temperature.Types.Gas;
-using Converter.Temperature.Types.Kelvin;
-using Converter.Temperature.Types.Rankine;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Tests.Extensions.From
+﻿namespace Converter.Temperature.Tests.Extensions.From
 {
+    using FluentAssertions;
+    using Temperature.Extensions.From;
+    using Types.Celsius;
+    using Types.Fahrenheit;
+    using Types.Gas;
+    using Types.Kelvin;
+    using Types.Rankine;
+    using Xunit;
+
     public class FromFloatExtensionsTests
     {
         [Fact]

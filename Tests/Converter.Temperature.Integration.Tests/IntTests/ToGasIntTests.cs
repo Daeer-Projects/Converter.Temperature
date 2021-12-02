@@ -1,11 +1,11 @@
-﻿using System;
-using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.IntTests
 {
+    using System;
+    using Extensions.From;
+    using Extensions.To;
+    using FluentAssertions;
+    using Xunit;
+
     public class ToGasIntTests
     {
         #region From Celsius

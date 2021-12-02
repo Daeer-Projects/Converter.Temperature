@@ -1,10 +1,10 @@
-﻿using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.FloatTests
+﻿namespace Converter.Temperature.Integration.Tests.FloatTests
 {
+    using Extensions.From;
+    using Extensions.To;
+    using FluentAssertions;
+    using Xunit;
+
     public class ToKelvinFloatTests
     {
         #region From Celsius

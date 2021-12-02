@@ -1,16 +1,14 @@
-﻿using System;
-
-using Converter.Temperature.Extensions.To;
-using Converter.Temperature.Types.Celsius;
-using Converter.Temperature.Types.Fahrenheit;
-using Converter.Temperature.Types.Gas;
-using Converter.Temperature.Types.Kelvin;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Tests.Extensions.To
+﻿namespace Converter.Temperature.Tests.Extensions.To
 {
+    using System;
+    using FluentAssertions;
+    using Temperature.Extensions.To;
+    using Types.Celsius;
+    using Types.Fahrenheit;
+    using Types.Gas;
+    using Types.Kelvin;
     using Types.Rankine;
+    using Xunit;
 
     public class ToFloatExtensionsTests
     {

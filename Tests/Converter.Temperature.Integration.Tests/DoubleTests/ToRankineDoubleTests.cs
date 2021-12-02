@@ -1,11 +1,10 @@
-﻿using Converter.Temperature.Extensions.From;
-using System;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.DoubleTests
+﻿namespace Converter.Temperature.Integration.Tests.DoubleTests
 {
+    using System;
+    using Extensions.From;
     using Extensions.To;
     using FluentAssertions;
+    using Xunit;
 
     public class ToRankineDoubleTests
     {
