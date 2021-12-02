@@ -1,12 +1,11 @@
-﻿using System;
-
-using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.DoubleTests
+﻿namespace Converter.Temperature.Integration.Tests.DoubleTests
 {
+    using System;
+    using Extensions.From;
+    using Extensions.To;
+    using FluentAssertions;
+    using Xunit;
+
     public class ToCelsiusDoubleTests
     {
         #region From Celsius
@@ -141,5 +140,25 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(0d, -273.15d)]
+        [InlineData(50d, -245.3722222222222d)]
+        [InlineData(100d, -217.59444444444446d)]
+        [InlineData(500d, 4.627777777777769d)]
+        [InlineData(1000d, 282.40555555555557d)]
+        public void Test_double_extension_from_rankine_and_to_celsius_returns_correct_double_value(double value, double expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToCelsius();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        #endregion From Rankine
     }
 }

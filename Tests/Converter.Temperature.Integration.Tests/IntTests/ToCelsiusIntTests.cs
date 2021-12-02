@@ -1,12 +1,11 @@
-﻿using System;
-
-using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.IntTests
 {
+    using System;
+    using Extensions.From;
+    using Extensions.To;
+    using FluentAssertions;
+    using Xunit;
+
     public class ToCelsiusIntTests
     {
         #region From Celsius
@@ -30,7 +29,7 @@ namespace Converter.Temperature.Integration.Tests.IntTests
         #endregion From Celsius
 
         #region From Fahrenheit
-        
+
         [Theory]
         [InlineData(50, 10)]
         [InlineData(int.MinValue, -1193046489)]
@@ -115,5 +114,25 @@ namespace Converter.Temperature.Integration.Tests.IntTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(-345)]
+        [InlineData(0)]
+        [InlineData(7564)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extension_from_and_to_rankine_returns_correct_int_value(int value)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToRankine();
+
+            // Assert.
+            result.Should().Be(value);
+        }
+
+        #endregion From Rankine
     }
 }

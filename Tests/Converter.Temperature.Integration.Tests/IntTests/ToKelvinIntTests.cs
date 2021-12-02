@@ -1,15 +1,13 @@
-﻿using System;
-
-using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.IntTests
 {
+    using System;
+    using Extensions.From;
+    using Extensions.To;
+    using FluentAssertions;
+    using Xunit;
+
     public class ToKelvinIntTests
     {
-
         #region From Celsius
 
         [Theory]
@@ -95,5 +93,26 @@ namespace Converter.Temperature.Integration.Tests.IntTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Theory]
+        [InlineData(-1000, -556)]
+        [InlineData(0, 0)]
+        [InlineData(50, 28)]
+        [InlineData(100, 56d)]
+        [InlineData(500, 278)]
+        [InlineData(1000, 556)]
+        public void Test_int_extension_from_rankine_and_to_kelvin_returns_correct_int_value(int value, int expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToKelvin();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        #endregion From Rankine
     }
 }

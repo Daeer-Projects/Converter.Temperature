@@ -1,12 +1,11 @@
-﻿using System;
-
-using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using FluentAssertions;
-using Xunit;
-
-namespace Converter.Temperature.Integration.Tests.DoubleTests
+﻿namespace Converter.Temperature.Integration.Tests.DoubleTests
 {
+    using System;
+    using Extensions.From;
+    using Extensions.To;
+    using FluentAssertions;
+    using Xunit;
+
     public class ToGasDoubleTests
     {
         #region From Celsius
@@ -156,5 +155,49 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests
         }
 
         #endregion From Gas
+
+        #region From Rankine
+
+        [Fact]
+        public void Test_double_extensions_from_rankine_to_gas_returns_correct_double_value()
+        {
+            // Arrange.
+            const double expected = 3d;
+            const double input = 806.67d;
+
+            // Act.
+            var result = input.FromRankine().ToGas();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_double_extensions_from_rankine_to_gas_with_low_invalid_value_throws_exception()
+        {
+            // Arrange.
+            const double input = 405.2368d;
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine().ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too low for gas mark!");
+        }
+
+        [Fact]
+        public void Test_double_extensions_from_rankine_to_gas_with_high_invalid_value_throws_exception()
+        {
+            // Arrange.
+            const double input = 1002.89786d;
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine().ToGas());
+
+            // Assert.
+            result.Message.Should().Contain("Temp too high for gas mark!");
+        }
+
+        #endregion From Rankine
     }
 }

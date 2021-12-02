@@ -1,10 +1,11 @@
-﻿using Converter.Temperature.Types.Celsius;
-using Converter.Temperature.Types.Fahrenheit;
-using Converter.Temperature.Types.Gas;
-using Converter.Temperature.Types.Kelvin;
-
-namespace Converter.Temperature.Extensions.To
+﻿namespace Converter.Temperature.Extensions.To
 {
+    using Types.Celsius;
+    using Types.Fahrenheit;
+    using Types.Gas;
+    using Types.Kelvin;
+    using Types.Rankine;
+
     /// <summary>
     /// The to <see langword="double"/> extensions.
     /// </summary>
@@ -61,6 +62,18 @@ namespace Converter.Temperature.Extensions.To
         }
 
         /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Celsius
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Celsius <see langword="double"/> result.
+        /// </returns>
+        public static double ToCelsius(this RankineDouble input)
+        {
+            return Rankine.RankineToCelsius(input.Temperature);
+        }
+
+        /// <summary>
         /// Converts the Celsius <paramref name="input"/> to Fahrenheit
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
@@ -109,6 +122,19 @@ namespace Converter.Temperature.Extensions.To
         public static double ToFahrenheit(this KelvinDouble input)
         {
             return Kelvin.KelvinToFahrenheit(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Fahrenheit
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Fahrenheit <see langword="double"/> result.
+        /// </returns>
+        public static double ToFahrenheit(this RankineDouble input)
+        {
+            return Rankine.RankineToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -164,6 +190,19 @@ namespace Converter.Temperature.Extensions.To
         }
 
         /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Gas
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+        /// <returns>
+        /// The Gas <see langword="double"/> result.
+        /// </returns>
+        public static double ToGas(this RankineDouble input)
+        {
+            return Rankine.RankineToGas(input.Temperature);
+        }
+
+        /// <summary>
         /// Converts the Celsius <paramref name="input"/> to Kelvin
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
@@ -212,6 +251,79 @@ namespace Converter.Temperature.Extensions.To
         public static double ToKelvin(this KelvinDouble input)
         {
             return Kelvin.KelvinToKelvin(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Kelvin
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
+        /// <returns>
+        /// The Kelvin <see langword="double"/> result.
+        /// </returns>
+        public static double ToKelvin(this RankineDouble input)
+        {
+            return Rankine.RankineToKelvin(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Celsius <paramref name="input"/> to Ranking
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine <see langword="double"/> result.
+        /// </returns>
+        public static double ToRankine(this CelsiusDouble input)
+        {
+            return Celsius.CelsiusToRankine(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Ranking
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine <see langword="double"/> result.
+        /// </returns>
+        public static double ToRankine(this FahrenheitDouble input)
+        {
+            return Fahrenheit.FahrenheitToRankine(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Fahrenheit <paramref name="input"/> to Ranking
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine <see langword="double"/> result.
+        /// </returns>
+        public static double ToRankine(this GasDouble input)
+        {
+            return Gas.GasToRankine(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Kelvin <paramref name="input"/> to Ranking
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine <see langword="double"/> result.
+        /// </returns>
+        public static double ToRankine(this KelvinDouble input)
+        {
+            return Kelvin.KelvinToRankine(input.Temperature);
+        }
+
+        /// <summary>
+        /// Converts the Rankine <paramref name="input"/> to Ranking
+        /// </summary>
+        /// <param name="input"> The value to be converted. </param>
+        /// <returns>
+        /// The Rankine <see langword="double"/> result.
+        /// </returns>
+        public static double ToRankine(this RankineDouble input)
+        {
+            return Rankine.RankineToRankine(input.Temperature);
         }
     }
 }

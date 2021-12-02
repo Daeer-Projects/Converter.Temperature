@@ -1,10 +1,11 @@
-﻿using Converter.Temperature.Types.Celsius;
-using Converter.Temperature.Types.Fahrenheit;
-using Converter.Temperature.Types.Gas;
-using Converter.Temperature.Types.Kelvin;
-
-namespace Converter.Temperature.Extensions.From
+﻿namespace Converter.Temperature.Extensions.From
 {
+    using Types.Celsius;
+    using Types.Fahrenheit;
+    using Types.Gas;
+    using Types.Kelvin;
+    using Types.Rankine;
+
     /// <summary>
     /// The from string extensions.
     /// </summary>
@@ -56,6 +57,18 @@ namespace Converter.Temperature.Extensions.From
         public static KelvinString FromKelvin(this string input)
         {
             return new KelvinString(input);
+        }
+
+        /// <summary>
+        /// Sets the conversion to be from Rankine.
+        /// </summary>
+        /// <param name="input"> The value that is to be converted. </param>
+        /// <returns>
+        /// The Rankine String class for the 'To' extensions to use.
+        /// </returns>
+        public static RankineString FromRankine(this string input)
+        {
+            return new RankineString(input);
         }
     }
 }
