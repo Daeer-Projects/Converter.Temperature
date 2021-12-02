@@ -16,6 +16,7 @@ These extension methods will convert different types of temperatures to other ty
 * Fahrenheit
 * Kelvin
 * Gas
+* Rankine
 
 ### Data types
 
@@ -26,7 +27,7 @@ These extension methods will convert different types of temperatures to other ty
 
 ## Ideas
 
-I had a few ideas on how to do the extension methods, but decided on using a fluent style.
+I had a few ideas on how to do the extension methods but decided on using a fluent style.
 
 Originally, the extensions looked like this:
 
@@ -35,7 +36,7 @@ Originally, the extensions looked like this:
     var convertedTemp = tempToConvert.CelsiusToFahrenheit();
 ```
 
-Then I thought that this looked a bit naf, so went with setting up the *from* first, then the *to*.  This follows the *fluent* pattern.
+Then I thought that this looked a bit naf so, I went with setting up the *from* first, then the *to*.  This follows the *fluent* pattern.
 
 Now it is used like this:
 
@@ -50,13 +51,13 @@ I'm working on what I want the library to do when an exception could be thrown. 
 
 E.g.:
 
-From a float type with a value close to the max value of a float, converted from celsius to fahrenheit.  As a fahrenheit value is greater than the celsius value, then we can't convert correctly.
+From a float type with a value close to the max value of a float, converted from Celsius to Fahrenheit.  Because a Fahrenheit value is greater than the celsius value, then we can't convert correctly.
 
-Should this throw an exception, or just return the original value?
+Should this throw an exception or just return the original value?
 
-Well, returning the same value would seem like all is well, even though the converted value is wrong.  Thinking about this means, that for me, it should throw an exception for the calling application to handle.
+Well, returning the same value would seem like all is well, even though the converted value is wrong.  Thinking about this means that for me, it should throw an exception for the calling application to handle.
 
-If anyone has any better ideas, then, I would be willing to change this behaviour.
+If anyone has any better ideas, then I would be willing to change this behaviour.
 
 ## How to use
 
@@ -64,11 +65,11 @@ This section will go through the ways to use the extensions for the different ty
 
 ### Caveat
 
-When you use a double, and you set a value to convert that is at or just below double.MaxValue, then your conversion will fail.  This is because the double.MaxValue is so big, the conversion calculations are too small for the double to notice.
+When you use a double, and you set a value to convert that is at or just below double.MaxValue, then your conversion will fail.  This is because the `double.MaxValue` is so big, the conversion calculations are too small for the double to notice.
 
-For example, if I want to convert double.MaxValue (Celsius) to Kelvin, (which adds 273 to it), I would expect the calculation to return double.Infinity.  However, it doesn't, so I had to work around that problem.
+For example, if I want to convert `double.MaxValue` (Celsius) to Kelvin (which adds 273 to it), I would expect the calculation to return `double.Infinity`.  However, it doesn't, so I had to work around that problem.
 
-If your value, times it by 1.01 doesn't hit the infinity, then this library will return a valid value.  Your application may not be able to display it though.
+If your value, times it by 1.01 doesn't hit the infinity, then this library will return a valid value.  Your application may not be able to display it.
 
 ### Exceptions
 
@@ -108,6 +109,13 @@ For each of the different temperature types, you can convert to something else.
     var convertedTemp = tempToConvert.FromCelsius().ToGas();
 ```
 
+* To Rankine.
+
+``` csharp
+    var tempToConvert = 34; // an int.
+    var convertedTemp = tempToConvert.FromCelsius().ToRankine();
+```
+
 #### From Fahrenheit
 
 * To Celsius.
@@ -136,6 +144,13 @@ For each of the different temperature types, you can convert to something else.
 ``` csharp
     var tempToConvert = 34; // an int.
     var convertedTemp = tempToConvert.FromFahrenheit().ToGas();
+```
+
+* To Rankine.
+
+``` csharp
+    var tempToConvert = 34; // an int.
+    var convertedTemp = tempToConvert.FromFahrenheit().ToRankine();
 ```
 
 #### From Kelvin
@@ -168,6 +183,13 @@ For each of the different temperature types, you can convert to something else.
     var convertedTemp = tempToConvert.FromKelvin().ToGas();
 ```
 
+* To Rankine.
+
+``` csharp
+    var tempToConvert = 34; // an int.
+    var convertedTemp = tempToConvert.FromKelvin().ToRankine();
+```
+
 #### From Gas
 
 * To Celsius.
@@ -196,6 +218,13 @@ For each of the different temperature types, you can convert to something else.
 ``` csharp
     var tempToConvert = 34; // an int.
     var convertedTemp = tempToConvert.FromGas().ToGas();
+```
+
+* To Rankine.
+
+``` csharp
+    var tempToConvert = 34; // an int.
+    var convertedTemp = tempToConvert.FromGas().ToRankine();
 ```
 
 ### float extensions
