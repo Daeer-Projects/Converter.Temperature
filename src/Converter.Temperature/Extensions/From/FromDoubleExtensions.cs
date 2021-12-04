@@ -3,7 +3,6 @@
     using System;
     using BaseTypes;
     using TemperatureTypes;
-    using Types;
     using Types.Celsius;
     using Types.Fahrenheit;
     using Types.Gas;

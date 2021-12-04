@@ -1,8 +1,8 @@
 ﻿namespace Converter.Temperature.Extensions.From
 {
-using Converter.Temperature.BaseTypes;
-using Converter.Temperature.TemperatureTypes;
-using System;
+    using System;
+    using BaseTypes;
+    using TemperatureTypes;
     using Types.Celsius;
     using Types.Fahrenheit;
     using Types.Gas;
