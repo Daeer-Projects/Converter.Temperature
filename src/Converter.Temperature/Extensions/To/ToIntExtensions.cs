@@ -23,13 +23,13 @@
         public static int ToCelsius(this CelsiusInt input)
         {
             int.TryParse(
-                Celsius.CelsiusToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                CelsiusConverter.CelsiusToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Fahrenheit <paramref name="input"/> to Celsius
+        /// Converts the FahrenheitConverter <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -39,13 +39,13 @@
         public static int ToCelsius(this FahrenheitInt input)
         {
             int.TryParse(
-                Math.Round(Fahrenheit.FahrenheitToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(FahrenheitConverter.FahrenheitToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Gas <paramref name="input"/> to Celsius
+        /// Converts the GasConverter <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
@@ -55,13 +55,13 @@
         public static int ToCelsius(this GasInt input)
         {
             int.TryParse(
-                Gas.GasToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                GasConverter.GasToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Kelvin <paramref name="input"/> to Celsius
+        /// Converts the KelvinConverter <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -70,13 +70,13 @@
         /// </returns>
         public static int ToCelsius(this KelvinInt input)
         {
-            var convertedTemp = Math.Round(Kelvin.KelvinToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            var convertedTemp = Math.Round(KelvinConverter.KelvinToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture);
             if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Rankine <paramref name="input"/> to Celsius
+        /// Converts the RankineConverter <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -86,318 +86,318 @@
         public static int ToCelsius(this RankineInt input)
         {
             int.TryParse(
-                Math.Round(Rankine.RankineToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(RankineConverter.RankineToCelsius(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var validTemp);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Celsius <paramref name="input"/> to Fahrenheit
+        /// Converts the Celsius <paramref name="input"/> to FahrenheitConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The FahrenheitConverter <see langword="int"/> result.
         /// </returns>
         public static int ToFahrenheit(this CelsiusInt input)
         {
-            var convertedTemp = Math.Round(Celsius.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            var convertedTemp = Math.Round(CelsiusConverter.CelsiusToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
             if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Fahrenheit <paramref name="input"/> to Fahrenheit
+        /// Converts the FahrenheitConverter <paramref name="input"/> to FahrenheitConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The FahrenheitConverter <see langword="int"/> result.
         /// </returns>
         public static int ToFahrenheit(this FahrenheitInt input)
         {
             int.TryParse(
-                Fahrenheit.FahrenheitToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                FahrenheitConverter.FahrenheitToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Gas <paramref name="input"/> to Fahrenheit
+        /// Converts the GasConverter <paramref name="input"/> to FahrenheitConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The FahrenheitConverter <see langword="int"/> result.
         /// </returns>
         public static int ToFahrenheit(this GasInt input)
         {
             int.TryParse(
-                Gas.GasToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                GasConverter.GasToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Kelvin <paramref name="input"/> to Fahrenheit
+        /// Converts the KelvinConverter <paramref name="input"/> to FahrenheitConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The FahrenheitConverter <see langword="int"/> result.
         /// </returns>
         public static int ToFahrenheit(this KelvinInt input)
         {
-            var convertedTemp = Math.Round(Kelvin.KelvinToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            var convertedTemp = Math.Round(KelvinConverter.KelvinToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture);
             if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Rankine <paramref name="input"/> to Fahrenheit
+        /// Converts the RankineConverter <paramref name="input"/> to FahrenheitConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The FahrenheitConverter <see langword="int"/> result.
         /// </returns>
         public static int ToFahrenheit(this RankineInt input)
         {
             int.TryParse(
-                Math.Round(Rankine.RankineToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(RankineConverter.RankineToFahrenheit(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var validTemp);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Celsius <paramref name="input"/> to Gas
+        /// Converts the Celsius <paramref name="input"/> to GasConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The GasConverter <see langword="int"/> result.
         /// </returns>
         public static int ToGas(this CelsiusInt input)
         {
             int.TryParse(
-                Celsius.CelsiusToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                CelsiusConverter.CelsiusToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Fahrenheit <paramref name="input"/> to Gas
+        /// Converts the FahrenheitConverter <paramref name="input"/> to GasConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The GasConverter <see langword="int"/> result.
         /// </returns>
         public static int ToGas(this FahrenheitInt input)
         {
             int.TryParse(
-                Fahrenheit.FahrenheitToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                FahrenheitConverter.FahrenheitToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Gas <paramref name="input"/> to Gas
+        /// Converts the GasConverter <paramref name="input"/> to GasConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The GasConverter <see langword="int"/> result.
         /// </returns>
         public static int ToGas(this GasInt input)
         {
             int.TryParse(
-                Gas.GasToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                GasConverter.GasToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Kelvin <paramref name="input"/> to Gas
+        /// Converts the KelvinConverter <paramref name="input"/> to GasConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The GasConverter <see langword="int"/> result.
         /// </returns>
         public static int ToGas(this KelvinInt input)
         {
             int.TryParse(
-                Kelvin.KelvinToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                KelvinConverter.KelvinToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Rankine <paramref name="input"/> to Gas
+        /// Converts the RankineConverter <paramref name="input"/> to GasConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The GasConverter <see langword="int"/> result.
         /// </returns>
         public static int ToGas(this RankineInt input)
         {
             int.TryParse(
-                Rankine.RankineToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                RankineConverter.RankineToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Celsius <paramref name="input"/> to Kelvin
+        /// Converts the Celsius <paramref name="input"/> to KelvinConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The KelvinConverter <see langword="int"/> result.
         /// </returns>
         public static int ToKelvin(this CelsiusInt input)
         {
-            var convertedTemp = Math.Round(Celsius.CelsiusToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            var convertedTemp = Math.Round(CelsiusConverter.CelsiusToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture);
             if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Fahrenheit <paramref name="input"/> to Kelvin
+        /// Converts the FahrenheitConverter <paramref name="input"/> to KelvinConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The KelvinConverter <see langword="int"/> result.
         /// </returns>
         public static int ToKelvin(this FahrenheitInt input)
         {
             int.TryParse(
-                Math.Round(Fahrenheit.FahrenheitToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(FahrenheitConverter.FahrenheitToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Gas <paramref name="input"/> to Kelvin
+        /// Converts the GasConverter <paramref name="input"/> to KelvinConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The KelvinConverter <see langword="int"/> result.
         /// </returns>
         public static int ToKelvin(this GasInt input)
         {
             int.TryParse(
-                Math.Round(Gas.GasToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(GasConverter.GasToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Kelvin <paramref name="input"/> to Kelvin
+        /// Converts the KelvinConverter <paramref name="input"/> to KelvinConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The KelvinConverter <see langword="int"/> result.
         /// </returns>
         public static int ToKelvin(this KelvinInt input)
         {
             int.TryParse(
-                Kelvin.KelvinToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                KelvinConverter.KelvinToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Rankine <paramref name="input"/> to Kelvin
+        /// Converts the RankineConverter <paramref name="input"/> to KelvinConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The KelvinConverter <see langword="int"/> result.
         /// </returns>
         public static int ToKelvin(this RankineInt input)
         {
             int.TryParse(
-                Math.Round(Rankine.RankineToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(RankineConverter.RankineToKelvin(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Celsius <paramref name="input"/> to Rankine
+        /// Converts the Celsius <paramref name="input"/> to RankineConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The RankineConverter <see langword="int"/> result.
         /// </returns>
         public static int ToRankine(this CelsiusInt input)
         {
-            var convertedTemp = Math.Round(Celsius.CelsiusToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture);
+            var convertedTemp = Math.Round(CelsiusConverter.CelsiusToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture);
             if (!int.TryParse(convertedTemp, out var validTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
             return validTemp;
         }
 
         /// <summary>
-        /// Converts the Fahrenheit <paramref name="input"/> to Rankine
+        /// Converts the FahrenheitConverter <paramref name="input"/> to RankineConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">If calculated value is beyond the limits of the type.</exception>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The RankineConverter <see langword="int"/> result.
         /// </returns>
         public static int ToRankine(this FahrenheitInt input)
         {
             int.TryParse(
-                Math.Round(Fahrenheit.FahrenheitToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(FahrenheitConverter.FahrenheitToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Gas <paramref name="input"/> to Rankine
+        /// Converts the GasConverter <paramref name="input"/> to RankineConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The RankineConverter <see langword="int"/> result.
         /// </returns>
         public static int ToRankine(this GasInt input)
         {
             int.TryParse(
-                Math.Round(Gas.GasToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(GasConverter.GasToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Kelvin <paramref name="input"/> to Rankine
+        /// Converts the KelvinConverter <paramref name="input"/> to RankineConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The RankineConverter <see langword="int"/> result.
         /// </returns>
         public static int ToRankine(this KelvinInt input)
         {
             int.TryParse(
-                Math.Round(Kelvin.KelvinToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture),
+                Math.Round(KelvinConverter.KelvinToRankine(input.Temperature)).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }
 
         /// <summary>
-        /// Converts the Rankine <paramref name="input"/> to Rankine
+        /// Converts the RankineConverter <paramref name="input"/> to RankineConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The RankineConverter <see langword="int"/> result.
         /// </returns>
         public static int ToRankine(this RankineInt input)
         {
             int.TryParse(
-                Rankine.RankineToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
+                RankineConverter.RankineToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
         }

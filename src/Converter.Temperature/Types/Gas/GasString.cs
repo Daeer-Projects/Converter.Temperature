@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Gas
 {
-    public class GasString
+    using BaseTypes;
+
+    public class GasString : StringBase
     {
         public GasString(string temp)
         {

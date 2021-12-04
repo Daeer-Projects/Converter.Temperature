@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Celsius
 {
-    public class CelsiusDouble
+    using BaseTypes;
+
+    public class CelsiusDouble : DoubleBase
     {
         public CelsiusDouble(double temp)
         {

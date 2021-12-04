@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Kelvin
 {
-    public class KelvinDouble
+    using BaseTypes;
+
+    public class KelvinDouble : DoubleBase
     {
         public KelvinDouble(double temp)
         {

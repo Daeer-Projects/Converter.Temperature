@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Rankine
 {
-    public class RankineString
+    using BaseTypes;
+
+    public class RankineString : StringBase
     {
         public RankineString(string temp)
         {

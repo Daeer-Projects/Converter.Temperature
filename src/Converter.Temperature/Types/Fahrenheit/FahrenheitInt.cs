@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Fahrenheit
 {
-    public class FahrenheitInt
+    using BaseTypes;
+
+    public class FahrenheitInt : IntBase
     {
         public FahrenheitInt(int temp)
         {

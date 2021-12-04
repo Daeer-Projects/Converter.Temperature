@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Fahrenheit
 {
-    public class FahrenheitDouble
+    using BaseTypes;
+
+    public class FahrenheitDouble : DoubleBase
     {
         public FahrenheitDouble(double temp)
         {

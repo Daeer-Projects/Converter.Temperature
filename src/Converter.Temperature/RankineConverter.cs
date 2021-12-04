@@ -1,6 +1,6 @@
 ﻿namespace Converter.Temperature
 {
-    internal static class Rankine
+    internal static class RankineConverter
     {
         /// <summary>
         /// The rankine to rankine conversion.
@@ -68,7 +68,7 @@
         public static double RankineToGas(double input)
         {
             var celsiusTemp = RankineToCelsius(input);
-            var gasTemp = Celsius.CelsiusToGas(celsiusTemp);
+            var gasTemp = CelsiusConverter.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
     }

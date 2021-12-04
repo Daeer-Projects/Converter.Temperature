@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal static class Celsius
+    internal static class CelsiusConverter
     {
         /// <summary>
         /// The celsius to celsius conversion.

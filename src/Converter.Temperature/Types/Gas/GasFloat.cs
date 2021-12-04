@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Gas
 {
-    public class GasFloat
+    using BaseTypes;
+
+    public class GasFloat : FloatBase
     {
         public GasFloat(float temp)
         {

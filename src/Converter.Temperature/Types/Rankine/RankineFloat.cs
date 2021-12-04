@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Rankine
 {
-    public class RankineFloat
+    using BaseTypes;
+
+    public class RankineFloat : FloatBase
     {
         public RankineFloat(float temp)
         {

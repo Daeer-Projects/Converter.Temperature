@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Fahrenheit
 {
-    public class FahrenheitString
+    using BaseTypes;
+
+    public class FahrenheitString : StringBase
     {
         public FahrenheitString(string temp)
         {
