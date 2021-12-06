@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class CelsiusDouble : DoubleBase
+    public sealed class CelsiusDouble : DoubleBase
     {
         public CelsiusDouble(double temp)
         {

@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class FahrenheitFloat : FloatBase
+    public sealed class FahrenheitFloat : FloatBase
     {
         public FahrenheitFloat(float temp)
         {

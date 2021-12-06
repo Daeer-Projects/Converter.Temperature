@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class FahrenheitDouble : DoubleBase
+    public sealed class FahrenheitDouble : DoubleBase
     {
         public FahrenheitDouble(double temp)
         {

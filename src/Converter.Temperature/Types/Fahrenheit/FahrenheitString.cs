@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class FahrenheitString : StringBase
+    public sealed class FahrenheitString : StringBase
     {
         public FahrenheitString(string temp)
         {

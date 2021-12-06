@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class CelsiusFloat : FloatBase
+    public sealed class CelsiusFloat : FloatBase
     {
         public CelsiusFloat(float temp)
         {

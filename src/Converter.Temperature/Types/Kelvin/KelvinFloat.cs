@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class KelvinFloat : FloatBase
+    public sealed class KelvinFloat : FloatBase
     {
         public KelvinFloat(float temp)
         {

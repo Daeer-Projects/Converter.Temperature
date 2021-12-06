@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class KelvinString : StringBase
+    public sealed class KelvinString : StringBase
     {
         public KelvinString(string temp)
         {

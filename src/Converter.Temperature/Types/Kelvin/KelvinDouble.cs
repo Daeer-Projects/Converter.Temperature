@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class KelvinDouble : DoubleBase
+    public sealed class KelvinDouble : DoubleBase
     {
         public KelvinDouble(double temp)
         {

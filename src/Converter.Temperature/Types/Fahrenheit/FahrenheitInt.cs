@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class FahrenheitInt : IntBase
+    public sealed class FahrenheitInt : IntBase
     {
         public FahrenheitInt(int temp)
         {

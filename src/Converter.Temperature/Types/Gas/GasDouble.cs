@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class GasDouble : DoubleBase
+    public sealed class GasDouble : DoubleBase
     {
         public GasDouble(double temp)
         {

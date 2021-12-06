@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class RankineString : StringBase
+    public sealed class RankineString : StringBase
     {
         public RankineString(string temp)
         {

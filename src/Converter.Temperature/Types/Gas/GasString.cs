@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class GasString : StringBase
+    public sealed class GasString : StringBase
     {
         public GasString(string temp)
         {

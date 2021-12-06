@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class RankineInt : IntBase
+    public sealed class RankineInt : IntBase
     {
         public RankineInt(int temp)
         {

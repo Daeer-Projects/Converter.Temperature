@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class RankineDouble : DoubleBase
+    public sealed class RankineDouble : DoubleBase
     {
         public RankineDouble(double temp)
         {

@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class GasInt : IntBase
+    public sealed class GasInt : IntBase
     {
         public GasInt(int temp)
         {

@@ -2,7 +2,7 @@
 {
     using BaseTypes;
 
-    public class RankineFloat : FloatBase
+    public sealed class RankineFloat : FloatBase
     {
         public RankineFloat(float temp)
         {
