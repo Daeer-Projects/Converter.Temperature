@@ -2,6 +2,8 @@
 {
     using System;
     using System.Globalization;
+    using BaseTypes;
+    using TemperatureTypes;
     using Types.Celsius;
     using Types.Fahrenheit;
     using Types.Gas;
@@ -416,6 +418,49 @@
                 RankineConverter.RankineToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the float input to the correct float value.
+        /// </summary>
+        /// <typeparam name="TInput"> The temperature type to be converted to. </typeparam>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="ArgumentException"> The TInput type is not a valid type for this method. </exception>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static float To<TInput>(this FloatBase input)
+            where TInput : TemperatureBase
+        {
+            return typeof(TInput).Name switch
+            {
+                nameof(Celsius) when input is CelsiusFloat castInput => castInput.ToCelsius(),
+                nameof(Celsius) when input is FahrenheitFloat castInput => castInput.ToCelsius(),
+                nameof(Celsius) when input is KelvinFloat castInput => castInput.ToCelsius(),
+                nameof(Celsius) when input is GasFloat castInput => castInput.ToCelsius(),
+                nameof(Celsius) when input is RankineFloat castInput => castInput.ToCelsius(),
+                nameof(Fahrenheit) when input is CelsiusFloat castInput => castInput.ToFahrenheit(),
+                nameof(Fahrenheit) when input is FahrenheitFloat castInput => castInput.ToFahrenheit(),
+                nameof(Fahrenheit) when input is KelvinFloat castInput => castInput.ToFahrenheit(),
+                nameof(Fahrenheit) when input is GasFloat castInput => castInput.ToFahrenheit(),
+                nameof(Fahrenheit) when input is RankineFloat castInput => castInput.ToFahrenheit(),
+                nameof(Kelvin) when input is CelsiusFloat castInput => castInput.ToKelvin(),
+                nameof(Kelvin) when input is FahrenheitFloat castInput => castInput.ToKelvin(),
+                nameof(Kelvin) when input is KelvinFloat castInput => castInput.ToKelvin(),
+                nameof(Kelvin) when input is GasFloat castInput => castInput.ToKelvin(),
+                nameof(Kelvin) when input is RankineFloat castInput => castInput.ToKelvin(),
+                nameof(Gas) when input is CelsiusFloat castInput => castInput.ToGas(),
+                nameof(Gas) when input is FahrenheitFloat castInput => castInput.ToGas(),
+                nameof(Gas) when input is KelvinFloat castInput => castInput.ToGas(),
+                nameof(Gas) when input is GasFloat castInput => castInput.ToGas(),
+                nameof(Gas) when input is RankineFloat castInput => castInput.ToGas(),
+                nameof(Rankine) when input is CelsiusFloat castInput => castInput.ToRankine(),
+                nameof(Rankine) when input is FahrenheitFloat castInput => castInput.ToRankine(),
+                nameof(Rankine) when input is KelvinFloat castInput => castInput.ToRankine(),
+                nameof(Rankine) when input is GasFloat castInput => castInput.ToRankine(),
+                nameof(Rankine) when input is RankineFloat castInput => castInput.ToRankine(),
+                _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
+            };
         }
     }
 }
