@@ -9,7 +9,7 @@
         {
             Console.WriteLine("Running Benchmarks...");
 
-            var summary = BenchmarkRunner.Run<CelsiusDoubleBenchies>();
+            BenchmarkRunner.Run<DoubleBenchies>();
         }
     }
 }
