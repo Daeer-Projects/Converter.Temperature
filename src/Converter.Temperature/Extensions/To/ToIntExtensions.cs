@@ -2,6 +2,8 @@
 {
     using System;
     using System.Globalization;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.TemperatureTypes;
     using Types.Celsius;
     using Types.Fahrenheit;
     using Types.Gas;
@@ -400,6 +402,49 @@
                 RankineConverter.RankineToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
                 out var convertedTemp);
             return convertedTemp;
+        }
+
+        /// <summary>
+        /// Converts the Int input to the correct int value.
+        /// </summary>
+        /// <typeparam name="TInput"> The temperature type to be converted to. </typeparam>
+        /// <param name="input"> The value to be converted. </param>
+        /// <exception cref="ArgumentException"> The TInput type is not a valid type for this method. </exception>
+        /// <returns>
+        /// The result of the conversion.
+        /// </returns>
+        public static int To<TInput>(this IntBase input)
+            where TInput : TemperatureBase
+        {
+            return typeof(TInput).Name switch
+            {
+                nameof(Celsius) when input is CelsiusInt castInput => int.Parse(CelsiusConverter.CelsiusToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Celsius) when input is FahrenheitInt castInput => int.Parse(FahrenheitConverter.FahrenheitToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Celsius) when input is KelvinInt castInput => int.Parse(KelvinConverter.KelvinToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Celsius) when input is GasInt castInput => int.Parse(GasConverter.GasToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Celsius) when input is RankineInt castInput => int.Parse(RankineConverter.RankineToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Fahrenheit) when input is CelsiusInt castInput => int.Parse(CelsiusConverter.CelsiusToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Fahrenheit) when input is FahrenheitInt castInput => int.Parse(FahrenheitConverter.FahrenheitToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Fahrenheit) when input is KelvinInt castInput => int.Parse(KelvinConverter.KelvinToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Fahrenheit) when input is GasInt castInput => int.Parse(GasConverter.GasToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Fahrenheit) when input is RankineInt castInput => int.Parse(RankineConverter.RankineToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Kelvin) when input is CelsiusInt castInput => int.Parse(CelsiusConverter.CelsiusToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Kelvin) when input is FahrenheitInt castInput => int.Parse(FahrenheitConverter.FahrenheitToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Kelvin) when input is KelvinInt castInput => int.Parse(KelvinConverter.KelvinToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Kelvin) when input is GasInt castInput => int.Parse(GasConverter.GasToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Kelvin) when input is RankineInt castInput => int.Parse(RankineConverter.RankineToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Gas) when input is CelsiusInt castInput => int.Parse(CelsiusConverter.CelsiusToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Gas) when input is FahrenheitInt castInput => int.Parse(FahrenheitConverter.FahrenheitToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Gas) when input is KelvinInt castInput => int.Parse(KelvinConverter.KelvinToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Gas) when input is GasInt castInput => int.Parse(GasConverter.GasToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Gas) when input is RankineInt castInput => int.Parse(RankineConverter.RankineToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Rankine) when input is CelsiusInt castInput => int.Parse(CelsiusConverter.CelsiusToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Rankine) when input is FahrenheitInt castInput => int.Parse(FahrenheitConverter.FahrenheitToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Rankine) when input is KelvinInt castInput => int.Parse(KelvinConverter.KelvinToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Rankine) when input is GasInt castInput => int.Parse(GasConverter.GasToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Rankine) when input is RankineInt castInput => int.Parse(RankineConverter.RankineToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
+            };
         }
     }
 }

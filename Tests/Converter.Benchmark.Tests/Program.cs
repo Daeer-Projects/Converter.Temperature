@@ -10,6 +10,7 @@
             Console.WriteLine("Running Benchmarks...");
 
             BenchmarkRunner.Run<DoubleBenchies>();
+            BenchmarkRunner.Run<FloatBenchies>();
         }
     }
 }

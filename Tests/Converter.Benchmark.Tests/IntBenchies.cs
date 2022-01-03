@@ -6,86 +6,86 @@
     using Temperature.TemperatureTypes;
 
     [MemoryDiagnoser]
-    public class DoubleBenchies
+    public class IntBenchies
     {
         #region Celsius
 
         [Benchmark]
-        public double ConvertFromCelsiusToCelsius()
+        public int ConvertFromCelsiusToCelsius()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromCelsius().ToCelsius();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToCelsiusGeneric()
+        public int ConvertFromCelsiusToCelsiusGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Celsius>().To<Celsius>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToFahrenheit()
+        public int ConvertFromCelsiusToFahrenheit()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromCelsius().ToFahrenheit();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToFahrenheitGeneric()
+        public int ConvertFromCelsiusToFahrenheitGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Celsius>().To<Fahrenheit>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToGas()
+        public int ConvertFromCelsiusToGas()
         {
-            const double input = 176.2598d;
+            const int input = 176;
             var result = input.FromCelsius().ToGas();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToGasGeneric()
+        public int ConvertFromCelsiusToGasGeneric()
         {
-            const double input = 176.2598d;
+            const int input = 176;
             var result = input.From<Celsius>().To<Gas>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToKelvin()
+        public int ConvertFromCelsiusToKelvin()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromCelsius().ToKelvin();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToKelvinGeneric()
+        public int ConvertFromCelsiusToKelvinGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Celsius>().To<Kelvin>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToRankine()
+        public int ConvertFromCelsiusToRankine()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromCelsius().ToRankine();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromCelsiusToRankineGeneric()
+        public int ConvertFromCelsiusToRankineGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Celsius>().To<Rankine>();
             return result;
         }
@@ -95,81 +95,81 @@
         #region Fahrenheit
 
         [Benchmark]
-        public double ConvertFromFahrenheitToCelsius()
+        public int ConvertFromFahrenheitToCelsius()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromFahrenheit().ToCelsius();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToCelsiusGeneric()
+        public int ConvertFromFahrenheitToCelsiusGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Fahrenheit>().To<Celsius>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToFahrenheit()
+        public int ConvertFromFahrenheitToFahrenheit()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromFahrenheit().ToFahrenheit();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToFahrenheitGeneric()
+        public int ConvertFromFahrenheitToFahrenheitGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Fahrenheit>().To<Fahrenheit>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToGas()
+        public int ConvertFromFahrenheitToGas()
         {
-            const double input = 329.2598d;
+            const int input = 329;
             var result = input.FromFahrenheit().ToGas();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToGasGeneric()
+        public int ConvertFromFahrenheitToGasGeneric()
         {
-            const double input = 329.2598d;
+            const int input = 329;
             var result = input.From<Fahrenheit>().To<Gas>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToKelvin()
+        public int ConvertFromFahrenheitToKelvin()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromFahrenheit().ToKelvin();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToKelvinGeneric()
+        public int ConvertFromFahrenheitToKelvinGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Fahrenheit>().To<Kelvin>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToRankine()
+        public int ConvertFromFahrenheitToRankine()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromFahrenheit().ToRankine();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromFahrenheitToRankineGeneric()
+        public int ConvertFromFahrenheitToRankineGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Fahrenheit>().To<Rankine>();
             return result;
         }
@@ -179,81 +179,81 @@
         #region Kelvin
 
         [Benchmark]
-        public double ConvertFromKelvinToCelsius()
+        public int ConvertFromKelvinToCelsius()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromKelvin().ToCelsius();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToCelsiusGeneric()
+        public int ConvertFromKelvinToCelsiusGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Kelvin>().To<Celsius>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToFahrenheit()
+        public int ConvertFromKelvinToFahrenheit()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromKelvin().ToFahrenheit();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToFahrenheitGeneric()
+        public int ConvertFromKelvinToFahrenheitGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Kelvin>().To<Fahrenheit>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToGas()
+        public int ConvertFromKelvinToGas()
         {
-            const double input = 473.2598d;
+            const int input = 473;
             var result = input.FromKelvin().ToGas();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToGasGeneric()
+        public int ConvertFromKelvinToGasGeneric()
         {
-            const double input = 473.2598d;
+            const int input = 473;
             var result = input.From<Kelvin>().To<Gas>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToKelvin()
+        public int ConvertFromKelvinToKelvin()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromKelvin().ToKelvin();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToKelvinGeneric()
+        public int ConvertFromKelvinToKelvinGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Kelvin>().To<Kelvin>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToRankine()
+        public int ConvertFromKelvinToRankine()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromKelvin().ToRankine();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromKelvinToRankineGeneric()
+        public int ConvertFromKelvinToRankineGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Kelvin>().To<Rankine>();
             return result;
         }
@@ -263,81 +263,81 @@
         #region Gas
 
         [Benchmark]
-        public double ConvertFromGasToCelsius()
+        public int ConvertFromGasToCelsius()
         {
-            const double input = 5.4756843d;
+            const int input = 5;
             var result = input.FromGas().ToCelsius();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToCelsiusGeneric()
+        public int ConvertFromGasToCelsiusGeneric()
         {
-            const double input = 5.4756843d;
+            const int input = 5;
             var result = input.From<Gas>().To<Celsius>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToFahrenheit()
+        public int ConvertFromGasToFahrenheit()
         {
-            const double input = 6.4756843d;
+            const int input = 6;
             var result = input.FromGas().ToFahrenheit();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToFahrenheitGeneric()
+        public int ConvertFromGasToFahrenheitGeneric()
         {
-            const double input = 6.4756843d;
+            const int input = 6;
             var result = input.From<Gas>().To<Fahrenheit>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToGas()
+        public int ConvertFromGasToGas()
         {
-            const double input = 6.2598d;
+            const int input = 6;
             var result = input.FromGas().ToGas();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToGasGeneric()
+        public int ConvertFromGasToGasGeneric()
         {
-            const double input = 6.2598d;
+            const int input = 6;
             var result = input.From<Gas>().To<Gas>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToKelvin()
+        public int ConvertFromGasToKelvin()
         {
-            const double input = 2d;
+            const int input = 2;
             var result = input.FromGas().ToKelvin();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToKelvinGeneric()
+        public int ConvertFromGasToKelvinGeneric()
         {
-            const double input = 2d;
+            const int input = 2;
             var result = input.From<Gas>().To<Kelvin>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToRankine()
+        public int ConvertFromGasToRankine()
         {
-            const double input = 7d;
+            const int input = 7;
             var result = input.FromGas().ToRankine();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromGasToRankineGeneric()
+        public int ConvertFromGasToRankineGeneric()
         {
-            const double input = 7d;
+            const int input = 7;
             var result = input.From<Gas>().To<Rankine>();
             return result;
         }
@@ -347,81 +347,81 @@
         #region Rankine
 
         [Benchmark]
-        public double ConvertFromRankineToCelsius()
+        public int ConvertFromRankineToCelsius()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromRankine().ToCelsius();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToCelsiusGeneric()
+        public int ConvertFromRankineToCelsiusGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Rankine>().To<Celsius>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToFahrenheit()
+        public int ConvertFromRankineToFahrenheit()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.FromRankine().ToFahrenheit();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToFahrenheitGeneric()
+        public int ConvertFromRankineToFahrenheitGeneric()
         {
-            const double input = 42.4756843d;
+            const int input = 42;
             var result = input.From<Rankine>().To<Fahrenheit>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToGas()
+        public int ConvertFromRankineToGas()
         {
-            const double input = 806.2598d;
+            const int input = 806;
             var result = input.FromRankine().ToGas();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToGasGeneric()
+        public int ConvertFromRankineToGasGeneric()
         {
-            const double input = 806.2598d;
+            const int input = 806;
             var result = input.From<Rankine>().To<Gas>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToKelvin()
+        public int ConvertFromRankineToKelvin()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromRankine().ToKelvin();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToKelvinGeneric()
+        public int ConvertFromRankineToKelvinGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Rankine>().To<Kelvin>();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToRankine()
+        public int ConvertFromRankineToRankine()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.FromRankine().ToRankine();
             return result;
         }
 
         [Benchmark]
-        public double ConvertFromRankineToRankineGeneric()
+        public int ConvertFromRankineToRankineGeneric()
         {
-            const double input = 200d;
+            const int input = 200;
             var result = input.From<Rankine>().To<Rankine>();
             return result;
         }
