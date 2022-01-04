@@ -24,10 +24,7 @@
         /// </returns>
         public static float ToCelsius(this CelsiusFloat input)
         {
-            float.TryParse(
-                CelsiusConverter.CelsiusToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(CelsiusConverter.CelsiusToCelsius(input.Temperature));
         }
 
         /// <summary>
@@ -39,15 +36,7 @@
         /// </returns>
         public static float ToCelsius(this FahrenheitFloat input)
         {
-            var result = input.Temperature;
-            if (float.TryParse(
-                FahrenheitConverter.FahrenheitToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp))
-            {
-                result = convertedTemp;
-            }
-
-            return result;
+            return FloatParser(FahrenheitConverter.FahrenheitToCelsius(input.Temperature));
         }
 
         /// <summary>
@@ -60,10 +49,7 @@
         /// </returns>
         public static float ToCelsius(this GasFloat input)
         {
-            float.TryParse(
-                GasConverter.GasToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(GasConverter.GasToCelsius(input.Temperature));
         }
 
         /// <summary>
@@ -75,10 +61,7 @@
         /// </returns>
         public static float ToCelsius(this KelvinFloat input)
         {
-            float.TryParse(
-                KelvinConverter.KelvinToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return (float)Math.Round(convertedTemp, 2);
+            return (float)Math.Round(FloatParser(KelvinConverter.KelvinToCelsius(input.Temperature)), 2);
         }
 
         /// <summary>
@@ -90,10 +73,7 @@
         /// </returns>
         public static float ToCelsius(this RankineFloat input)
         {
-            float.TryParse(
-                RankineConverter.RankineToCelsius(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return (float)Math.Round(convertedTemp, 2);
+            return (float)Math.Round(FloatParser(RankineConverter.RankineToCelsius(input.Temperature)), 2);
         }
 
         /// <summary>
@@ -106,13 +86,7 @@
         /// </returns>
         public static float ToFahrenheit(this CelsiusFloat input)
         {
-            float.TryParse(
-                CelsiusConverter.CelsiusToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-
-            if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
-
-            return convertedTemp;
+            return FloatParser(CelsiusConverter.CelsiusToFahrenheit(input.Temperature));
         }
 
         /// <summary>
@@ -124,10 +98,7 @@
         /// </returns>
         public static float ToFahrenheit(this FahrenheitFloat input)
         {
-            float.TryParse(
-                FahrenheitConverter.FahrenheitToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(FahrenheitConverter.FahrenheitToFahrenheit(input.Temperature));
         }
 
         /// <summary>
@@ -140,10 +111,7 @@
         /// </returns>
         public static float ToFahrenheit(this GasFloat input)
         {
-            float.TryParse(
-                GasConverter.GasToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(GasConverter.GasToFahrenheit(input.Temperature));
         }
 
         /// <summary>
@@ -156,13 +124,7 @@
         /// </returns>
         public static float ToFahrenheit(this KelvinFloat input)
         {
-            float.TryParse(
-                KelvinConverter.KelvinToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-
-            if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
-
-            return (float)Math.Round(convertedTemp, 2);
+            return (float)Math.Round(FloatParser(KelvinConverter.KelvinToFahrenheit(input.Temperature)), 2);
         }
 
         /// <summary>
@@ -174,10 +136,7 @@
         /// </returns>
         public static float ToFahrenheit(this RankineFloat input)
         {
-            float.TryParse(
-                RankineConverter.RankineToFahrenheit(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(RankineConverter.RankineToFahrenheit(input.Temperature));
         }
 
         /// <summary>
@@ -190,10 +149,7 @@
         /// </returns>
         public static float ToGas(this CelsiusFloat input)
         {
-            float.TryParse(
-                CelsiusConverter.CelsiusToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(CelsiusConverter.CelsiusToGas(input.Temperature));
         }
 
         /// <summary>
@@ -206,10 +162,7 @@
         /// </returns>
         public static float ToGas(this FahrenheitFloat input)
         {
-            float.TryParse(
-                FahrenheitConverter.FahrenheitToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(FahrenheitConverter.FahrenheitToGas(input.Temperature));
         }
 
         /// <summary>
@@ -222,10 +175,7 @@
         /// </returns>
         public static float ToGas(this GasFloat input)
         {
-            float.TryParse(
-                GasConverter.GasToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(GasConverter.GasToGas(input.Temperature));
         }
 
         /// <summary>
@@ -238,10 +188,7 @@
         /// </returns>
         public static float ToGas(this KelvinFloat input)
         {
-            float.TryParse(
-                KelvinConverter.KelvinToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(KelvinConverter.KelvinToGas(input.Temperature));
         }
 
         /// <summary>
@@ -254,10 +201,7 @@
         /// </returns>
         public static float ToGas(this RankineFloat input)
         {
-            float.TryParse(
-                RankineConverter.RankineToGas(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(RankineConverter.RankineToGas(input.Temperature));
         }
 
         /// <summary>
@@ -270,10 +214,7 @@
         /// </returns>
         public static float ToKelvin(this CelsiusFloat input)
         {
-            float.TryParse(
-                CelsiusConverter.CelsiusToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(CelsiusConverter.CelsiusToKelvin(input.Temperature));
         }
 
         /// <summary>
@@ -286,10 +227,7 @@
         /// </returns>
         public static float ToKelvin(this FahrenheitFloat input)
         {
-            float.TryParse(
-                FahrenheitConverter.FahrenheitToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(FahrenheitConverter.FahrenheitToKelvin(input.Temperature));
         }
 
         /// <summary>
@@ -302,10 +240,7 @@
         /// </returns>
         public static float ToKelvin(this GasFloat input)
         {
-            float.TryParse(
-                GasConverter.GasToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(GasConverter.GasToKelvin(input.Temperature));
         }
 
         /// <summary>
@@ -317,10 +252,7 @@
         /// </returns>
         public static float ToKelvin(this KelvinFloat input)
         {
-            float.TryParse(
-                KelvinConverter.KelvinToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(KelvinConverter.KelvinToKelvin(input.Temperature));
         }
 
         /// <summary>
@@ -335,10 +267,7 @@
         /// </returns>
         public static float ToKelvin(this RankineFloat input)
         {
-            float.TryParse(
-                RankineConverter.RankineToKelvin(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(RankineConverter.RankineToKelvin(input.Temperature));
         }
 
         /// <summary>
@@ -351,10 +280,7 @@
         /// </returns>
         public static float ToRankine(this CelsiusFloat input)
         {
-            float.TryParse(
-                CelsiusConverter.CelsiusToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(CelsiusConverter.CelsiusToRankine(input.Temperature));
         }
 
         /// <summary>
@@ -367,10 +293,7 @@
         /// </returns>
         public static float ToRankine(this FahrenheitFloat input)
         {
-            float.TryParse(
-                FahrenheitConverter.FahrenheitToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(FahrenheitConverter.FahrenheitToRankine(input.Temperature));
         }
 
         /// <summary>
@@ -383,10 +306,7 @@
         /// </returns>
         public static float ToRankine(this GasFloat input)
         {
-            float.TryParse(
-                GasConverter.GasToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(GasConverter.GasToRankine(input.Temperature));
         }
 
         /// <summary>
@@ -399,10 +319,7 @@
         /// </returns>
         public static float ToRankine(this KelvinFloat input)
         {
-            float.TryParse(
-                KelvinConverter.KelvinToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(KelvinConverter.KelvinToRankine(input.Temperature));
         }
 
         /// <summary>
@@ -414,10 +331,7 @@
         /// </returns>
         public static float ToRankine(this RankineFloat input)
         {
-            float.TryParse(
-                RankineConverter.RankineToRankine(input.Temperature).ToString(CultureInfo.InvariantCulture),
-                out var convertedTemp);
-            return convertedTemp;
+            return FloatParser(RankineConverter.RankineToRankine(input.Temperature));
         }
 
         /// <summary>
@@ -434,33 +348,42 @@
         {
             return typeof(TInput).Name switch
             {
-                nameof(Celsius) when input is CelsiusFloat castInput => float.Parse(CelsiusConverter.CelsiusToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Celsius) when input is FahrenheitFloat castInput => float.Parse(FahrenheitConverter.FahrenheitToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Celsius) when input is KelvinFloat castInput => float.Parse(KelvinConverter.KelvinToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Celsius) when input is GasFloat castInput => float.Parse(GasConverter.GasToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Celsius) when input is RankineFloat castInput => float.Parse(RankineConverter.RankineToCelsius(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Fahrenheit) when input is CelsiusFloat castInput => float.Parse(CelsiusConverter.CelsiusToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Fahrenheit) when input is FahrenheitFloat castInput => float.Parse(FahrenheitConverter.FahrenheitToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Fahrenheit) when input is KelvinFloat castInput => float.Parse(KelvinConverter.KelvinToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Fahrenheit) when input is GasFloat castInput => float.Parse(GasConverter.GasToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Fahrenheit) when input is RankineFloat castInput => float.Parse(RankineConverter.RankineToFahrenheit(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Kelvin) when input is CelsiusFloat castInput => float.Parse(CelsiusConverter.CelsiusToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Kelvin) when input is FahrenheitFloat castInput => float.Parse(FahrenheitConverter.FahrenheitToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Kelvin) when input is KelvinFloat castInput => float.Parse(KelvinConverter.KelvinToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Kelvin) when input is GasFloat castInput => float.Parse(GasConverter.GasToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Kelvin) when input is RankineFloat castInput => float.Parse(RankineConverter.RankineToKelvin(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Gas) when input is CelsiusFloat castInput => float.Parse(CelsiusConverter.CelsiusToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Gas) when input is FahrenheitFloat castInput => float.Parse(FahrenheitConverter.FahrenheitToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Gas) when input is KelvinFloat castInput => float.Parse(KelvinConverter.KelvinToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Gas) when input is GasFloat castInput => float.Parse(GasConverter.GasToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Gas) when input is RankineFloat castInput => float.Parse(RankineConverter.RankineToGas(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Rankine) when input is CelsiusFloat castInput => float.Parse(CelsiusConverter.CelsiusToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Rankine) when input is FahrenheitFloat castInput => float.Parse(FahrenheitConverter.FahrenheitToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Rankine) when input is KelvinFloat castInput => float.Parse(KelvinConverter.KelvinToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Rankine) when input is GasFloat castInput => float.Parse(GasConverter.GasToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
-                nameof(Rankine) when input is RankineFloat castInput => float.Parse(RankineConverter.RankineToRankine(castInput.Temperature).ToString(CultureInfo.InvariantCulture)),
+                nameof(Celsius) when input is CelsiusFloat castInput => FloatParser(CelsiusConverter.CelsiusToCelsius(castInput.Temperature)),
+                nameof(Celsius) when input is FahrenheitFloat castInput => FloatParser(FahrenheitConverter.FahrenheitToCelsius(castInput.Temperature)),
+                nameof(Celsius) when input is KelvinFloat castInput => FloatParser(KelvinConverter.KelvinToCelsius(castInput.Temperature)),
+                nameof(Celsius) when input is GasFloat castInput => FloatParser(GasConverter.GasToCelsius(castInput.Temperature)),
+                nameof(Celsius) when input is RankineFloat castInput => FloatParser(RankineConverter.RankineToCelsius(castInput.Temperature)),
+                nameof(Fahrenheit) when input is CelsiusFloat castInput => FloatParser(CelsiusConverter.CelsiusToFahrenheit(castInput.Temperature)),
+                nameof(Fahrenheit) when input is FahrenheitFloat castInput => FloatParser(FahrenheitConverter.FahrenheitToFahrenheit(castInput.Temperature)),
+                nameof(Fahrenheit) when input is KelvinFloat castInput => FloatParser(KelvinConverter.KelvinToFahrenheit(castInput.Temperature)),
+                nameof(Fahrenheit) when input is GasFloat castInput => FloatParser(GasConverter.GasToFahrenheit(castInput.Temperature)),
+                nameof(Fahrenheit) when input is RankineFloat castInput => FloatParser(RankineConverter.RankineToFahrenheit(castInput.Temperature)),
+                nameof(Kelvin) when input is CelsiusFloat castInput => FloatParser(CelsiusConverter.CelsiusToKelvin(castInput.Temperature)),
+                nameof(Kelvin) when input is FahrenheitFloat castInput => FloatParser(FahrenheitConverter.FahrenheitToKelvin(castInput.Temperature)),
+                nameof(Kelvin) when input is KelvinFloat castInput => FloatParser(KelvinConverter.KelvinToKelvin(castInput.Temperature)),
+                nameof(Kelvin) when input is GasFloat castInput => FloatParser(GasConverter.GasToKelvin(castInput.Temperature)),
+                nameof(Kelvin) when input is RankineFloat castInput => FloatParser(RankineConverter.RankineToKelvin(castInput.Temperature)),
+                nameof(Gas) when input is CelsiusFloat castInput => FloatParser(CelsiusConverter.CelsiusToGas(castInput.Temperature)),
+                nameof(Gas) when input is FahrenheitFloat castInput => FloatParser(FahrenheitConverter.FahrenheitToGas(castInput.Temperature)),
+                nameof(Gas) when input is KelvinFloat castInput => FloatParser(KelvinConverter.KelvinToGas(castInput.Temperature)),
+                nameof(Gas) when input is GasFloat castInput => FloatParser(GasConverter.GasToGas(castInput.Temperature)),
+                nameof(Gas) when input is RankineFloat castInput => FloatParser(RankineConverter.RankineToGas(castInput.Temperature)),
+                nameof(Rankine) when input is CelsiusFloat castInput => FloatParser(CelsiusConverter.CelsiusToRankine(castInput.Temperature)),
+                nameof(Rankine) when input is FahrenheitFloat castInput => FloatParser(FahrenheitConverter.FahrenheitToRankine(castInput.Temperature)),
+                nameof(Rankine) when input is KelvinFloat castInput => FloatParser(KelvinConverter.KelvinToRankine(castInput.Temperature)),
+                nameof(Rankine) when input is GasFloat castInput => FloatParser(GasConverter.GasToRankine(castInput.Temperature)),
+                nameof(Rankine) when input is RankineFloat castInput => FloatParser(RankineConverter.RankineToRankine(castInput.Temperature)),
                 _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
             };
+        }
+
+        private static float FloatParser(double temp)
+        {
+            float.TryParse(temp.ToString(CultureInfo.InvariantCulture), out var convertedTemp);
+
+            if (float.IsInfinity(convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
+
+            return convertedTemp;
         }
     }
 }

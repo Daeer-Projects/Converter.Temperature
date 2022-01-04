@@ -1,13 +1,13 @@
 ﻿namespace Converter.Temperature.Extensions.To
 {
-using System;
+    using System;
     using System.Globalization;
-using Converter.Temperature.BaseTypes;
-    using Converter.Temperature.TemperatureTypes;
-    using Converter.Temperature.Types.Celsius;
-    using Converter.Temperature.Types.Fahrenheit;
-    using Converter.Temperature.Types.Gas;
-    using Converter.Temperature.Types.Kelvin;
+    using BaseTypes;
+    using TemperatureTypes;
+    using Types.Celsius;
+    using Types.Fahrenheit;
+    using Types.Gas;
+    using Types.Kelvin;
     using Types.Rankine;
 
     /// <summary>
@@ -24,13 +24,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToCelsius(this CelsiusString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = CelsiusConverter.CelsiusToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, CelsiusConverter.CelsiusToCelsius);
         }
 
         /// <summary>
@@ -42,13 +36,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToCelsius(this FahrenheitString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = FahrenheitConverter.FahrenheitToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, FahrenheitConverter.FahrenheitToCelsius);
         }
 
         /// <summary>
@@ -61,13 +49,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToCelsius(this GasString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = GasConverter.GasToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, GasConverter.GasToCelsius);
         }
 
         /// <summary>
@@ -79,13 +61,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToCelsius(this KelvinString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = KelvinConverter.KelvinToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, KelvinConverter.KelvinToCelsius);
         }
 
         /// <summary>
@@ -97,13 +73,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToCelsius(this RankineString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = RankineConverter.RankineToCelsius(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, RankineConverter.RankineToCelsius);
         }
 
         /// <summary>
@@ -116,13 +86,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToFahrenheit(this CelsiusString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = CelsiusConverter.CelsiusToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, CelsiusConverter.CelsiusToFahrenheit);
         }
 
         /// <summary>
@@ -134,13 +98,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToFahrenheit(this FahrenheitString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = FahrenheitConverter.FahrenheitToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, FahrenheitConverter.FahrenheitToFahrenheit);
         }
 
         /// <summary>
@@ -153,13 +111,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToFahrenheit(this GasString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = GasConverter.GasToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, GasConverter.GasToFahrenheit);
         }
 
         /// <summary>
@@ -172,13 +124,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToFahrenheit(this KelvinString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = KelvinConverter.KelvinToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, KelvinConverter.KelvinToFahrenheit);
         }
 
         /// <summary>
@@ -191,13 +137,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToFahrenheit(this RankineString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = RankineConverter.RankineToFahrenheit(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, RankineConverter.RankineToFahrenheit);
         }
 
         /// <summary>
@@ -210,13 +150,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToGas(this CelsiusString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = CelsiusConverter.CelsiusToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, CelsiusConverter.CelsiusToGas);
         }
 
         /// <summary>
@@ -229,13 +163,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToGas(this FahrenheitString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = FahrenheitConverter.FahrenheitToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, FahrenheitConverter.FahrenheitToGas);
         }
 
         /// <summary>
@@ -248,13 +176,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToGas(this GasString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = GasConverter.GasToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, GasConverter.GasToGas);
         }
 
         /// <summary>
@@ -267,13 +189,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToGas(this KelvinString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = KelvinConverter.KelvinToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, KelvinConverter.KelvinToGas);
         }
 
         /// <summary>
@@ -286,13 +202,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToGas(this RankineString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = RankineConverter.RankineToGas(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, RankineConverter.RankineToGas);
         }
 
         /// <summary>
@@ -305,13 +215,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToKelvin(this CelsiusString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = CelsiusConverter.CelsiusToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, CelsiusConverter.CelsiusToKelvin);
         }
 
         /// <summary>
@@ -324,13 +228,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToKelvin(this FahrenheitString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = FahrenheitConverter.FahrenheitToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, FahrenheitConverter.FahrenheitToKelvin);
         }
 
         /// <summary>
@@ -343,13 +241,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToKelvin(this GasString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = GasConverter.GasToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, GasConverter.GasToKelvin);
         }
 
         /// <summary>
@@ -361,13 +253,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToKelvin(this KelvinString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = KelvinConverter.KelvinToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, KelvinConverter.KelvinToKelvin);
         }
 
         /// <summary>
@@ -379,13 +265,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToKelvin(this RankineString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = RankineConverter.RankineToKelvin(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, RankineConverter.RankineToKelvin);
         }
 
         /// <summary>
@@ -398,13 +278,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToRankine(this CelsiusString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = CelsiusConverter.CelsiusToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, CelsiusConverter.CelsiusToRankine);
         }
 
         /// <summary>
@@ -417,13 +291,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToRankine(this FahrenheitString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = FahrenheitConverter.FahrenheitToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, FahrenheitConverter.FahrenheitToRankine);
         }
 
         /// <summary>
@@ -436,13 +304,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToRankine(this GasString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = GasConverter.GasToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, GasConverter.GasToRankine);
         }
 
         /// <summary>
@@ -454,13 +316,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToRankine(this KelvinString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = KelvinConverter.KelvinToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, KelvinConverter.KelvinToRankine);
         }
 
         /// <summary>
@@ -472,13 +328,7 @@ using Converter.Temperature.BaseTypes;
         /// </returns>
         public static string ToRankine(this RankineString input)
         {
-            var convertedTemp = string.Empty;
-            if (double.TryParse(input.Temperature, out var inputAsDouble))
-            {
-                convertedTemp = RankineConverter.RankineToRankine(inputAsDouble).ToString(CultureInfo.InvariantCulture);
-            }
-
-            return convertedTemp;
+            return StringParser(input.Temperature, RankineConverter.RankineToRankine);
         }
 
         /// <summary>
@@ -495,33 +345,44 @@ using Converter.Temperature.BaseTypes;
         {
             return typeof(TInput).Name switch
             {
-                nameof(Celsius) when input is CelsiusString castInput => CelsiusConverter.CelsiusToCelsius(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Celsius) when input is FahrenheitString castInput => FahrenheitConverter.FahrenheitToCelsius(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Celsius) when input is KelvinString castInput => KelvinConverter.KelvinToCelsius(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Celsius) when input is GasString castInput => GasConverter.GasToCelsius(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Celsius) when input is RankineString castInput => RankineConverter.RankineToCelsius(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Fahrenheit) when input is CelsiusString castInput => CelsiusConverter.CelsiusToFahrenheit(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Fahrenheit) when input is FahrenheitString castInput => FahrenheitConverter.FahrenheitToFahrenheit(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Fahrenheit) when input is KelvinString castInput => KelvinConverter.KelvinToFahrenheit(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Fahrenheit) when input is GasString castInput => GasConverter.GasToFahrenheit(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Fahrenheit) when input is RankineString castInput => RankineConverter.RankineToFahrenheit(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Kelvin) when input is CelsiusString castInput => CelsiusConverter.CelsiusToKelvin(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Kelvin) when input is FahrenheitString castInput => FahrenheitConverter.FahrenheitToKelvin(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Kelvin) when input is KelvinString castInput => KelvinConverter.KelvinToKelvin(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Kelvin) when input is GasString castInput => GasConverter.GasToKelvin(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Kelvin) when input is RankineString castInput => RankineConverter.RankineToKelvin(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Gas) when input is CelsiusString castInput => CelsiusConverter.CelsiusToGas(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Gas) when input is FahrenheitString castInput => FahrenheitConverter.FahrenheitToGas(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Gas) when input is KelvinString castInput => KelvinConverter.KelvinToGas(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Gas) when input is GasString castInput => GasConverter.GasToGas(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Gas) when input is RankineString castInput => RankineConverter.RankineToGas(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Rankine) when input is CelsiusString castInput => CelsiusConverter.CelsiusToRankine(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Rankine) when input is FahrenheitString castInput => FahrenheitConverter.FahrenheitToRankine(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Rankine) when input is KelvinString castInput => KelvinConverter.KelvinToRankine(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Rankine) when input is GasString castInput => GasConverter.GasToRankine(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
-                nameof(Rankine) when input is RankineString castInput => RankineConverter.RankineToRankine(double.Parse(castInput.Temperature)).ToString(CultureInfo.InvariantCulture),
+                nameof(Celsius) when input is CelsiusString castInput => StringParser(castInput.Temperature, CelsiusConverter.CelsiusToCelsius),
+                nameof(Celsius) when input is FahrenheitString castInput => StringParser(castInput.Temperature, FahrenheitConverter.FahrenheitToCelsius),
+                nameof(Celsius) when input is KelvinString castInput => StringParser(castInput.Temperature, KelvinConverter.KelvinToCelsius),
+                nameof(Celsius) when input is GasString castInput => StringParser(castInput.Temperature, GasConverter.GasToCelsius),
+                nameof(Celsius) when input is RankineString castInput => StringParser(castInput.Temperature, RankineConverter.RankineToCelsius),
+                nameof(Fahrenheit) when input is CelsiusString castInput => StringParser(castInput.Temperature, CelsiusConverter.CelsiusToFahrenheit),
+                nameof(Fahrenheit) when input is FahrenheitString castInput => StringParser(castInput.Temperature, FahrenheitConverter.FahrenheitToFahrenheit),
+                nameof(Fahrenheit) when input is KelvinString castInput => StringParser(castInput.Temperature, KelvinConverter.KelvinToFahrenheit),
+                nameof(Fahrenheit) when input is GasString castInput => StringParser(castInput.Temperature, GasConverter.GasToFahrenheit),
+                nameof(Fahrenheit) when input is RankineString castInput => StringParser(castInput.Temperature, RankineConverter.RankineToFahrenheit),
+                nameof(Kelvin) when input is CelsiusString castInput => StringParser(castInput.Temperature, CelsiusConverter.CelsiusToKelvin),
+                nameof(Kelvin) when input is FahrenheitString castInput => StringParser(castInput.Temperature, FahrenheitConverter.FahrenheitToKelvin),
+                nameof(Kelvin) when input is KelvinString castInput => StringParser(castInput.Temperature, KelvinConverter.KelvinToKelvin),
+                nameof(Kelvin) when input is GasString castInput => StringParser(castInput.Temperature, GasConverter.GasToKelvin),
+                nameof(Kelvin) when input is RankineString castInput => StringParser(castInput.Temperature, RankineConverter.RankineToKelvin),
+                nameof(Gas) when input is CelsiusString castInput => StringParser(castInput.Temperature, CelsiusConverter.CelsiusToGas),
+                nameof(Gas) when input is FahrenheitString castInput => StringParser(castInput.Temperature, FahrenheitConverter.FahrenheitToGas),
+                nameof(Gas) when input is KelvinString castInput => StringParser(castInput.Temperature, KelvinConverter.KelvinToGas),
+                nameof(Gas) when input is GasString castInput => StringParser(castInput.Temperature, GasConverter.GasToGas),
+                nameof(Gas) when input is RankineString castInput => StringParser(castInput.Temperature, RankineConverter.RankineToGas),
+                nameof(Rankine) when input is CelsiusString castInput => StringParser(castInput.Temperature, CelsiusConverter.CelsiusToRankine),
+                nameof(Rankine) when input is FahrenheitString castInput => StringParser(castInput.Temperature, FahrenheitConverter.FahrenheitToRankine),
+                nameof(Rankine) when input is KelvinString castInput => StringParser(castInput.Temperature, KelvinConverter.KelvinToRankine),
+                nameof(Rankine) when input is GasString castInput => StringParser(castInput.Temperature, GasConverter.GasToRankine),
+                nameof(Rankine) when input is RankineString castInput => StringParser(castInput.Temperature, RankineConverter.RankineToRankine),
                 _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
             };
+        }
+
+        private static string StringParser(string temp, Func<double, double> methodToParse)
+        {
+            var convertedTemp = string.Empty;
+            if (double.TryParse(temp, out var inputAsDouble))
+            {
+                convertedTemp = methodToParse(inputAsDouble).ToString(CultureInfo.InvariantCulture);
+            }
+
+            return convertedTemp;
         }
     }
 }
