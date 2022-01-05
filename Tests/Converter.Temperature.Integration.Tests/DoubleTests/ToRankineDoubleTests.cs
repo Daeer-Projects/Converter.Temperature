@@ -16,7 +16,7 @@
         {
             // Arrange.
             const double expected = 851.6699999999998d;
-            var input = 200d;
+            const double input = 200d;
 
             // Act.
             var result = input.FromCelsius().ToRankine();
@@ -30,7 +30,7 @@
         {
             // Arrange.
             const double expected = 851.6699999999998d;
-            var input = 200d;
+            const double input = 200d;
 
             // Act.
             var result = input.From<Celsius>().To<Rankine>();
@@ -74,7 +74,7 @@
         {
             // Arrange.
             const double expected = 851.6700000000001d;
-            var input = 392d;
+            const double input = 392d;
 
             // Act.
             var result = input.FromFahrenheit().ToRankine();
@@ -88,7 +88,7 @@
         {
             // Arrange.
             const double expected = 851.6700000000001d;
-            var input = 392d;
+            const double input = 392d;
 
             // Act.
             var result = input.From<Fahrenheit>().To<Rankine>();
@@ -140,7 +140,7 @@
         {
             // Arrange.
             const double expected = 851.6699999999998d;
-            var input = 6d;
+            const double input = 6d;
 
             // Act.
             var result = input.FromGas().ToRankine();
@@ -154,7 +154,7 @@
         {
             // Arrange.
             const double expected = 851.6699999999998d;
-            var input = 6d;
+            const double input = 6d;
 
             // Act.
             var result = input.From<Gas>().To<Rankine>();

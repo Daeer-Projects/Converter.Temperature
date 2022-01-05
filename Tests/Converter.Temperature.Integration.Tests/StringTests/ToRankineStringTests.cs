@@ -16,7 +16,7 @@
         {
             // Arrange.
             const string expected = "851.6699999999998";
-            var input = "200";
+            const string input = "200";
 
             // Act.
             var result = input.FromCelsius().ToRankine();
@@ -47,7 +47,7 @@
         {
             // Arrange.
             const string expected = "851.6700000000001";
-            var input = "392";
+            const string input = "392";
 
             // Act.
             var result = input.FromFahrenheit().ToRankine();
@@ -84,7 +84,7 @@
         {
             // Arrange.
             const string expected = "851.6699999999998";
-            var input = "6";
+            const string input = "6";
 
             // Act.
             var result = input.FromGas().ToRankine();

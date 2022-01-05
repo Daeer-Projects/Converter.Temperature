@@ -16,7 +16,7 @@
         public void Test_from_celsius_returns_celsius_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.FromCelsius();
@@ -29,7 +29,7 @@
         public void Test_from_celsius_generic_returns_celsius_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.From<Celsius>();
@@ -42,7 +42,7 @@
         public void Test_from_fahrenheit_returns_fahrenheit_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.FromFahrenheit();
@@ -55,7 +55,7 @@
         public void Test_from_fahrenheit_generic_returns_fahrenheit_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.From<Fahrenheit>();
@@ -68,7 +68,7 @@
         public void Test_from_gas_returns_gas_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.FromGas();
@@ -81,7 +81,7 @@
         public void Test_from_gas_generic_returns_gas_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.From<Gas>();
@@ -94,7 +94,7 @@
         public void Test_from_kelvin_returns_kelvin_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.FromKelvin();
@@ -107,7 +107,7 @@
         public void Test_from_kelvin_generic_returns_kelvin_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.From<Kelvin>();
@@ -120,7 +120,7 @@
         public void Test_from_rankine_returns_rankine_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.FromRankine();
@@ -133,7 +133,7 @@
         public void Test_from_rankine_generic_returns_rankine_string_type()
         {
             // Arrange.
-            var input = "39";
+            const string input = "39";
 
             // Act.
             var result = input.From<Rankine>();

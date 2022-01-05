@@ -16,7 +16,7 @@
         {
             // Arrange.
             const double expected = 473.15d;
-            var input = 200d;
+            const double input = 200d;
 
             // Act.
             var result = input.FromCelsius().ToKelvin();
@@ -30,7 +30,7 @@
         {
             // Arrange.
             const double expected = 473.15d;
-            var input = 200d;
+            const double input = 200d;
 
             // Act.
             var result = input.From<Celsius>().To<Kelvin>();
@@ -74,7 +74,7 @@
         {
             // Arrange.
             const double expected = 473.15d;
-            var input = 392d;
+            const double input = 392d;
 
             // Act.
             var result = input.FromFahrenheit().ToKelvin();
@@ -88,7 +88,7 @@
         {
             // Arrange.
             const double expected = 473.15d;
-            var input = 392d;
+            const double input = 392d;
 
             // Act.
             var result = input.From<Fahrenheit>().To<Kelvin>();
@@ -142,7 +142,7 @@
         {
             // Arrange.
             const double expected = 473.15d;
-            var input = 6d;
+            const double input = 6d;
 
             // Act.
             var result = input.FromGas().ToKelvin();
@@ -156,7 +156,7 @@
         {
             // Arrange.
             const double expected = 473.15d;
-            var input = 6d;
+            const double input = 6d;
 
             // Act.
             var result = input.From<Gas>().To<Kelvin>();

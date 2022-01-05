@@ -45,7 +45,7 @@
         {
             // Arrange.
             const int expected = 473;
-            var input = 392;
+            const int input = 392;
 
             // Act.
             var result = input.FromFahrenheit().ToKelvin();
@@ -83,7 +83,7 @@
         {
             // Arrange.
             const int expected = 473;
-            var input = 6;
+            const int input = 6;
 
             // Act.
             var result = input.FromGas().ToKelvin();

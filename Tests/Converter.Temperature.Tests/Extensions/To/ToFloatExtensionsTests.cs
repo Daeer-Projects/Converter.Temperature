@@ -149,7 +149,7 @@
         public void Test_to_celsius_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const float expected = 0.9999939f;
+            const float expected = 1.0f;
             var input = new KelvinFloat(274.15f);
 
             // Act.
@@ -177,7 +177,7 @@
         public void Test_to_celsius_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 1.0000007f;
+            const float expected = 1f;
             var input = new RankineFloat(493.47f);
 
             // Act.
@@ -287,7 +287,7 @@
         public void Test_to_fahrenheit_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const float expected = 33.799988f;
+            const float expected = 33.8f;
             var input = new KelvinFloat(274.15f);
 
             // Act.
