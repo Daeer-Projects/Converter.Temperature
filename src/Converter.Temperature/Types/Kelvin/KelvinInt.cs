@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Kelvin
 {
-    public class KelvinInt
+    using BaseTypes;
+
+    public sealed class KelvinInt : IntBase
     {
         public KelvinInt(int temp)
         {

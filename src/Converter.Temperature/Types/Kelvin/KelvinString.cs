@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Kelvin
 {
-    public class KelvinString
+    using BaseTypes;
+
+    public sealed class KelvinString : StringBase
     {
         public KelvinString(string temp)
         {

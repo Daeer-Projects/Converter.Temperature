@@ -4,6 +4,7 @@
     using Extensions.From;
     using Extensions.To;
     using FluentAssertions;
+    using TemperatureTypes;
     using Xunit;
 
     public class ToRankineIntTests
@@ -15,10 +16,24 @@
         {
             // Arrange.
             const int expected = 852;
-            var input = 200;
+            const int input = 200;
 
             // Act.
             var result = input.FromCelsius().ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_int_extensions_generic_from_celsius_to_rankine_returns_correct_value()
+        {
+            // Arrange.
+            const int expected = 852;
+            const int input = 200;
+
+            // Act.
+            var result = input.From<Celsius>().To<Rankine>();
 
             // Assert.
             result.Should().Be(expected);
@@ -37,6 +52,19 @@
             result.Message.Should().Contain("Value out of range for type.");
         }
 
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(int input)
+        {
+            // Arrange.
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>().To<Rankine>());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
+
         #endregion From Celsius
 
         #region From Fahrenheit
@@ -46,10 +74,24 @@
         {
             // Arrange.
             const int expected = 852;
-            var input = 392;
+            const int input = 392;
 
             // Act.
             var result = input.FromFahrenheit().ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_int_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
+        {
+            // Arrange.
+            const int expected = 852;
+            const int input = 392;
+
+            // Act.
+            var result = input.From<Fahrenheit>().To<Rankine>();
 
             // Assert.
             result.Should().Be(expected);
@@ -74,6 +116,21 @@
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(-1000, -1800)]
+        [InlineData(0, 0)]
+        [InlineData(50, 90)]
+        [InlineData(1000, 1800)]
+        public void Test_int_extension_generic_from_kelvin_to_rankine_returns_correct_int_value(int value, int expected)
+        {
+            // Arrange.
+            // Act.
+            var result = value.From<Kelvin>().To<Rankine>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         #endregion From Kelvin
 
         #region From Gas
@@ -83,10 +140,24 @@
         {
             // Arrange.
             const int expected = 852;
-            var input = 6;
+            const int input = 6;
 
             // Act.
             var result = input.FromGas().ToRankine();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_int_extension_generic_from_gas_to_rankine_returns_correct_value()
+        {
+            // Arrange.
+            const int expected = 852;
+            const int input = 6;
+
+            // Act.
+            var result = input.From<Gas>().To<Rankine>();
 
             // Assert.
             result.Should().Be(expected);
@@ -107,6 +178,22 @@
             // Arrange.
             // Act.
             var result = value.FromRankine().ToRankine();
+
+            // Assert.
+            result.Should().Be(value);
+        }
+
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(-345)]
+        [InlineData(0)]
+        [InlineData(7564)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extension_generic_from_and_to_rankine_returns_correct_int_value(int value)
+        {
+            // Arrange.
+            // Act.
+            var result = value.From<Rankine>().To<Rankine>();
 
             // Assert.
             result.Should().Be(value);

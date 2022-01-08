@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Celsius
 {
-    public class CelsiusString
+    using BaseTypes;
+
+    public sealed class CelsiusString : StringBase
     {
         public CelsiusString(string temp)
         {

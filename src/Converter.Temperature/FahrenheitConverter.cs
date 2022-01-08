@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal static class Fahrenheit
+    internal static class FahrenheitConverter
     {
         /// <summary>
         /// The fahrenheit to celsius conversion.
@@ -46,7 +46,7 @@
         public static double FahrenheitToKelvin(double firstTemp)
         {
             var celsiusTemp = FahrenheitToCelsius(firstTemp);
-            var kelvinTemp = Celsius.CelsiusToKelvin(celsiusTemp);
+            var kelvinTemp = CelsiusConverter.CelsiusToKelvin(celsiusTemp);
             return kelvinTemp;
         }
 
@@ -61,7 +61,7 @@
         public static double FahrenheitToGas(double firstTemp)
         {
             var celsiusTemp = FahrenheitToCelsius(firstTemp);
-            var gasTemp = Celsius.CelsiusToGas(celsiusTemp);
+            var gasTemp = CelsiusConverter.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
 

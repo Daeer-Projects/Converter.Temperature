@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Gas
 {
-    public class GasDouble
+    using BaseTypes;
+
+    public sealed class GasDouble : DoubleBase
     {
         public GasDouble(double temp)
         {

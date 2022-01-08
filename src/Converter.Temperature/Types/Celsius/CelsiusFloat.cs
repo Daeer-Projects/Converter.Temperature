@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Celsius
 {
-    public class CelsiusFloat
+    using BaseTypes;
+
+    public sealed class CelsiusFloat : FloatBase
     {
         public CelsiusFloat(float temp)
         {

@@ -1,6 +1,8 @@
 ﻿namespace Converter.Temperature.Types.Gas
 {
-    public class GasInt
+    using BaseTypes;
+
+    public sealed class GasInt : IntBase
     {
         public GasInt(int temp)
         {
