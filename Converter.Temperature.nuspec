@@ -1,21 +1,43 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>$id$</id>
-    <version>$version$</version>
+    <id>$system.teamProject$</id>
+    <version>$Build.BuildNumber$</version>
     <authors>$author$</authors>
     <owners>$owners$</owners>
-    <licenseUrl>https://raw.githubusercontent.com/daeer73/TempConversionExtensions/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/daeer73/TempConversionExtensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
-    <tags>daeer73 TempConversionExtensions temperature temp convert conversion extensions</tags>
-    <releaseNotes>$releaseNotes$</releaseNotes>
+    <license type="expression">MIT</license>
+    <readme>PackageReadMe.md</readme>
+    <description>A system to convert temperatures</description>
+    <tags>Daeer Celsius Fahrenheit Kelvin Gas Rankine Converter Conversion Temperature</tags>
+    <summary></summary>
+    <releaseNotes>
+$buildversion$ -
+2.0.0.2 -
+-&gt; Fixed issue 10: Setup benchmark
+-&gt; Added generic version of methods
+1.1.0.3 -
+-&gt; Fixed issue 8: Added Rankine scale.
+-&gt; Changed version number to be simpler.
+1.0.3.1 -
+-&gt; Fixed issue 12: Added dotnet 6.0 support.
+1.0.2.1 -
+-&gt; Fixed issue 6: Added dotnet 5.0 support.
+1.0.1.9 -
+-&gt; Fixed issue 1: Moved hot spot.
+</releaseNotes>
     <dependencies>
       <group targetFramework=".NETCoreApp3.1"/>
+      <group targetFramework="net5.0" />
+      <group targetFramework="net6.0" />
     </dependencies>
   </metadata>
+  
   <files>
-    <file src="**\**\**\netcoreapp3.1\TemperatureConverter.dll" target="lib\netcoreapp3.1\TemperatureConverter.dll" />
+    <file src="PackageReadMe.md" target="" />
+    <file src="src\Converter.Temperature\bin\Release\netcoreapp3.1\Converter.Temperature.dll" target="lib\netcoreapp3.1\Converter.Temperature.dll" />
+    <file src="src\Converter.Temperature\bin\Release\net5.0\Converter.Temperature.dll" target="lib\net5.0\Converter.Temperature.dll" />
+    <file src="src\Converter.Temperature\bin\Release\net6.0\Converter.Temperature.dll" target="lib\net6.0\Converter.Temperature.dll" />
   </files>
 </package>
