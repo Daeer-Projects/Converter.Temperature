@@ -4,8 +4,6 @@
 > This project was created to extract out the main conversion code from the *Temperature Converter* applications in the other repositories.
 > I am using this as a way to show how my development skills have changed over the years, as I get to be a better developer.
 
-[![Build status](https://daeerprojects.visualstudio.com/Converter.Temperature/_apis/build/status/Converter.Temperature)](https://daeerprojects.visualstudio.com/Converter.Temperature/_build/latest?definitionId=8)
-
 ## Introduction
 
 These extension methods will convert different types of temperatures to other types.
