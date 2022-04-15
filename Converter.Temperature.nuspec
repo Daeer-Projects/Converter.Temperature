@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>$teamProject$</id>
-    <version>$BuildNumber$</version>
-    <authors>$author$</authors>
+    <version>$version$</version>
+    <authors>$authors$</authors>
     <owners>$owners$</owners>
     <projectUrl>https://github.com/daeer73/TempConversionExtensions</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
