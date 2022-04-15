@@ -12,21 +12,7 @@
     <description>A system to convert temperatures</description>
     <tags>Daeer Celsius Fahrenheit Kelvin Gas Rankine Converter Conversion Temperature</tags>
     <summary></summary>
-    <releaseNotes>
-$buildversion$ -
-2.0.0.2 -
--&gt; Fixed issue 10: Setup benchmark
--&gt; Added generic version of methods
-1.1.0.3 -
--&gt; Fixed issue 8: Added Rankine scale.
--&gt; Changed version number to be simpler.
-1.0.3.1 -
--&gt; Fixed issue 12: Added dotnet 6.0 support.
-1.0.2.1 -
--&gt; Fixed issue 6: Added dotnet 5.0 support.
-1.0.1.9 -
--&gt; Fixed issue 1: Moved hot spot.
-</releaseNotes>
+    <releaseNotes>https://github.com/daeer73/Converter.Temperature/wiki/Release-Notes</releaseNotes>
     <dependencies>
       <group targetFramework=".NETCoreApp3.1"/>
       <group targetFramework="net5.0" />
