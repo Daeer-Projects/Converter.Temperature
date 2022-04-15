@@ -2,44 +2,6 @@
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-
-    <PackageId>$system.teamProject$</PackageId>
-    <Version>$Build.BuildNumber$</Version>
-    <Authors>$author$</Authors>
-    <Company>$owners$</Company>
-    <ProjectUrl>https://github.com/daeer73/TempConversionExtensions</ProjectUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>A system to convert temperatures</Description>
-    <PackageProjectUrl>https://github.com/daeer73/TempConversionExtensions</PackageProjectUrl>
-    <PackageReadmeFile>PackageReadMe.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/daeer73/TempConversionExtensions</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageTags>Daeer;Celsius;Fahrenheit;Kelvin;Gas;Rankine;Converter;Conversion;Temperature;</PackageTags>
-    <PackageReleaseNotes>
-      $buildversion$ -
-      2.0.0.2 -
-      -&gt; Fixed issue 10: Setup benchmark
-      -&gt; Added generic version of methods
-      1.1.0.3 -
-      -&gt; Fixed issue 8: Added Rankine scale.
-      -&gt; Changed version number to be simpler.
-      1.0.3.1 -
-      -&gt; Fixed issue 12: Added dotnet 6.0 support.
-      1.0.2.1 -
-      -&gt; Fixed issue 6: Added dotnet 5.0 support.
-      1.0.1.9 -
-      -&gt; Fixed issue 1: Moved hot spot.
-    </PackageReleaseNotes>
-    <AssemblyVersion>$buildversion$</AssemblyVersion>
-    <FileVersion>$buildversion$</FileVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="..\..\PackageReadMe.md">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
 
 </Project>
