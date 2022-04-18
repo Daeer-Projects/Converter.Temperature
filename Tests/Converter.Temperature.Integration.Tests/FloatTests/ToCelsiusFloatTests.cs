@@ -76,6 +76,34 @@
         }
 
         [Fact]
+        public void Test_float_extension_from_fahrenheit_with_parameter_that_is_ignored_and_to_celsius_with_min_value_returns_correct_float_value()
+        {
+            // Arrange.
+            const float expected = -1.8904574813251603E+38f;
+            const float input = float.MinValue;
+
+            // Act.
+            var result = input.FromFahrenheit().ToCelsius(1);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
+        public void Test_float_extension_generic_from_fahrenheit_with_parameter_that_is_ignored_and_to_celsius_with_min_value_returns_correct_float_value()
+        {
+            // Arrange.
+            const float expected = -1.8904574813251603E+38f;
+            const float input = float.MinValue;
+
+            // Act.
+            var result = input.From<Fahrenheit>().To<Celsius>(1);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Fact]
         public void Test_float_extensions_from_fahrenheit_to_celsius_returns_correct_float_value()
         {
             // Arrange.
@@ -111,7 +139,7 @@
         public void Test_float_extensions_from_kelvin_to_celsius_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 1.0f;
+            const float expected = 0.9999939f;
             const float input = 274.15f;
 
             // Act.
@@ -125,7 +153,7 @@
         public void Test_float_extensions_generic_from_kelvin_to_celsius_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 1.0f;
+            const float expected = 0.9999939f;
             const float input = 274.15f;
 
             // Act.
@@ -265,9 +293,9 @@
 
         [Theory]
         [InlineData(0f, -273.15f)]
-        [InlineData(-100f, -328.71f)]
-        [InlineData(100f, -217.59f)]
-        [InlineData(1000f, 282.41f)]
+        [InlineData(-100f, -328.70557f)]
+        [InlineData(100f, -217.59445f)]
+        [InlineData(1000f, 282.40555f)]
         public void Test_float_extension_from_rankine_to_celsius_returns_correct_float_value(float input, float expected)
         {
             // Arrange.
@@ -280,14 +308,56 @@
 
         [Theory]
         [InlineData(0f, -273.15f)]
-        [InlineData(-100f, -328.71f)]
-        [InlineData(100f, -217.59f)]
-        [InlineData(1000f, 282.41f)]
+        [InlineData(-100f, -328.70557f)]
+        [InlineData(100f, -217.59445f)]
+        [InlineData(1000f, 282.40555f)]
         public void Test_float_extension_generic_from_rankine_to_celsius_returns_correct_float_value(float input, float expected)
         {
             // Arrange.
             // Act.
             var result = input.From<Rankine>().To<Celsius>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(0f, -273.15f, -1)]
+        [InlineData(-100f, -328.70557f, -1)]
+        [InlineData(-100f, -328.7f, 1)]
+        [InlineData(-100f, -328.7056f, 4)]
+        [InlineData(100f, -217.59445f, -1)]
+        [InlineData(100f, -217.6f, 1)]
+        [InlineData(100f, -217.594f, 3)]
+        [InlineData(1000f, 282.40555f, -1)]
+        [InlineData(1000f, 282.4f, 1)]
+        [InlineData(1000f, 282.41f, 2)]
+        public void Test_float_extension_from_rankine_with_parameter_to_celsius_returns_correct_float_value(float input, float expected, int fractionalCount)
+        {
+            // Arrange.
+            // Act.
+            var result = input.FromRankine().ToCelsius(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(0f, -273.15f, -1)]
+        [InlineData(-100f, -328.70557f, -1)]
+        [InlineData(-100f, -328.7f, 1)]
+        [InlineData(-100f, -328.7056f, 4)]
+        [InlineData(100f, -217.59445f, -1)]
+        [InlineData(100f, -217.6f, 1)]
+        [InlineData(100f, -217.594f, 3)]
+        [InlineData(1000f, 282.40555f, -1)]
+        [InlineData(1000f, 282.4f, 1)]
+        [InlineData(1000f, 282.41f, 2)]
+        public void Test_float_extension_generic_from_rankine_with_parameter_to_celsius_returns_correct_float_value(float input, float expected, int fractionalCount)
+        {
+            // Arrange.
+            // Act.
+            var result = input.From<Rankine>().To<Celsius>(fractionalCount);
 
             // Assert.
             result.Should().Be(expected);
