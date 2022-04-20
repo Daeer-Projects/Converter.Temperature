@@ -177,7 +177,7 @@
         [Theory]
         [InlineData(1.0f, 1)]
         [InlineData(0.999994f, 6)]
-        public void Test_to_celsius_generic_parameter_from_kelvin_returns_correct_value(float expected, int fractionalCount)
+        public void Test_to_celsius_generic_with_parameter_from_kelvin_returns_correct_value(float expected, int fractionalCount)
         {
             // Arrange.
             var input = new KelvinFloat(274.15f);

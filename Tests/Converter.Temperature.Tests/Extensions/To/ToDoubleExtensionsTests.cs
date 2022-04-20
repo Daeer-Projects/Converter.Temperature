@@ -223,6 +223,36 @@
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(1.0d, 1)]
+        [InlineData(1.00000000000001d, 14)]
+        public void Test_to_celsius_with_parameter_from_rankine_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineDouble(493.47d);
+
+            // Act.
+            var result = input.ToCelsius(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(1.0d, 1)]
+        [InlineData(1.00000000000001d, 14)]
+        public void Test_to_celsius_generic_with_parameter_from_rankine_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineDouble(493.47d);
+
+            // Act.
+            var result = input.To<Celsius>(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_to_fahrenheit_from_celsius_returns_correct_value()
         {
@@ -363,6 +393,36 @@
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(33.8d, 1)]
+        [InlineData(34d, 0)]
+        public void Test_to_fahrenheit_with_parameter_from_kelvin_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new KelvinDouble(274.15);
+
+            // Act.
+            var result = input.ToFahrenheit(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.8d, 1)]
+        [InlineData(34d, 0)]
+        public void Test_to_fahrenheit_generic_with_parameter_from_kelvin_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new KelvinDouble(274.15);
+
+            // Act.
+            var result = input.To<Fahrenheit>(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_to_fahrenheit_from_rankine_returns_correct_value()
         {
@@ -386,6 +446,38 @@
 
             // Act.
             var result = input.To<Fahrenheit>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.800999999999991d, -1)]
+        [InlineData(34d, 0)]
+        [InlineData(33.801d, 3)]
+        public void Test_to_fahrenheit_with_parameter_from_rankine_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineDouble(493.471d);
+
+            // Act.
+            var result = input.ToFahrenheit(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.800999999999991d, -1)]
+        [InlineData(34d, 0)]
+        [InlineData(33.801d, 3)]
+        public void Test_to_fahrenheit_generic_with_parameter_from_rankine_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineDouble(493.471d);
+
+            // Act.
+            var result = input.To<Fahrenheit>(fractionalCount);
 
             // Assert.
             result.Should().Be(expected);
@@ -730,6 +822,38 @@
 
             // Act.
             var result = input.To<Kelvin>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(473.15d, -1)]
+        [InlineData(473d, 0)]
+        [InlineData(473.2d, 1)]
+        public void Test_to_kelvin_with_parameter_from_gas_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new GasDouble(6);
+
+            // Act.
+            var result = input.ToKelvin(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(473.15d, -1)]
+        [InlineData(473d, 0)]
+        [InlineData(473.2d, 1)]
+        public void Test_to_kelvin_generic_with_parameter_from_gas_returns_correct_value(double expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new GasDouble(6);
+
+            // Act.
+            var result = input.To<Kelvin>(fractionalCount);
 
             // Assert.
             result.Should().Be(expected);
