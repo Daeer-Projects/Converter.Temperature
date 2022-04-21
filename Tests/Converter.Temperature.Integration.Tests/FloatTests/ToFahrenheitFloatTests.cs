@@ -109,7 +109,7 @@
         public void Test_float_extensions_from_kelvin_to_fahrenheit_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 33.8f;
+            const float expected = 33.799988f;
             const float input = 274.15f;
 
             // Act.
@@ -123,11 +123,43 @@
         public void Test_float_extensions_generic_from_kelvin_to_fahrenheit_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 33.8f;
+            const float expected = 33.799988f;
             const float input = 274.15f;
 
             // Act.
             var result = input.From<Kelvin>().To<Fahrenheit>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.799988f, -1)]
+        [InlineData(33.8f, 1)]
+        [InlineData(33.79999f, 5)]
+        public void Test_float_extensions_from_kelvin_with_parameter_to_fahrenheit_returns_correct_float_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            const float input = 274.15f;
+
+            // Act.
+            var result = input.FromKelvin().ToFahrenheit(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.799988f, -1)]
+        [InlineData(33.8f, 1)]
+        [InlineData(33.79999f, 5)]
+        public void Test_float_extensions_generic_from_kelvin_with_parameter_to_fahrenheit_returns_correct_float_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            const float input = 274.15f;
+
+            // Act.
+            var result = input.From<Kelvin>().To<Fahrenheit>(fractionalCount);
 
             // Assert.
             result.Should().Be(expected);

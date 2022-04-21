@@ -294,6 +294,38 @@
             result.Should().Be(expected.ToString(CultureInfo.InvariantCulture));
         }
 
+        [Theory]
+        [InlineData(0, -273.15d, -1)]
+        [InlineData(50, -245.3722222222222d, -1)]
+        [InlineData(100, -217.59444444444446d, -1)]
+        [InlineData(500, 4.627777777777769d, -1)]
+        [InlineData(1000, 282.40555555555557d, -1)]
+        public void Test_string_extension_with_parameter_from_rankine_and_to_celsius_returns_correct_string_value(double value, double expected, int fractionalCount)
+        {
+            // Arrange.
+            // Act.
+            var result = value.ToString(CultureInfo.InvariantCulture).FromRankine().ToCelsius(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected.ToString(CultureInfo.InvariantCulture));
+        }
+
+        [Theory]
+        [InlineData(0, -273.15d, -1)]
+        [InlineData(50, -245.3722222222222d, -1)]
+        [InlineData(100, -217.59444444444446d, -1)]
+        [InlineData(500, 4.627777777777769d, -1)]
+        [InlineData(1000, 282.40555555555557d, -1)]
+        public void Test_string_extension_generic_with_parameter_from_rankine_and_to_celsius_returns_correct_string_value(double value, double expected, int fractionalCount)
+        {
+            // Arrange.
+            // Act.
+            var result = value.ToString(CultureInfo.InvariantCulture).From<Rankine>().To<Celsius>(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected.ToString(CultureInfo.InvariantCulture));
+        }
+
         #endregion From Rankine
     }
 }

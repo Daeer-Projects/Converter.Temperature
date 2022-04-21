@@ -135,7 +135,7 @@
         public void Test_to_celsius_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const float expected = 1.0f;
+            const float expected = 0.9999939f;
             var input = new KelvinFloat(274.15f);
 
             // Act.
@@ -149,7 +149,7 @@
         public void Test_to_celsius_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const float expected = 1.0f;
+            const float expected = 0.9999939f;
             var input = new KelvinFloat(274.15f);
 
             // Act.
@@ -159,11 +159,41 @@
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(1.0f, 1)]
+        [InlineData(0.999994f, 6)]
+        public void Test_to_celsius_with_parameter_from_kelvin_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new KelvinFloat(274.15f);
+
+            // Act.
+            var result = input.ToCelsius(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(1.0f, 1)]
+        [InlineData(0.999994f, 6)]
+        public void Test_to_celsius_generic_with_parameter_from_kelvin_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new KelvinFloat(274.15f);
+
+            // Act.
+            var result = input.To<Celsius>(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_to_celsius_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 1f;
+            const float expected = 1.0000007f;
             var input = new RankineFloat(493.47f);
 
             // Act.
@@ -177,11 +207,41 @@
         public void Test_to_celsius_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 1f;
+            const float expected = 1.0000007f;
             var input = new RankineFloat(493.47f);
 
             // Act.
             var result = input.To<Celsius>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(1.0f, 1)]
+        [InlineData(1.000001f, 6)]
+        public void Test_to_celsius_with_parameter_from_rankine_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineFloat(493.47f);
+
+            // Act.
+            var result = input.ToCelsius(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(1.0f, 1)]
+        [InlineData(1.000001f, 6)]
+        public void Test_to_celsius_generic_with_parameter_from_rankine_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineFloat(493.47f);
+
+            // Act.
+            var result = input.To<Celsius>(fractionalCount);
 
             // Assert.
             result.Should().Be(expected);
@@ -241,6 +301,36 @@
             result.Should().Be(input.Temperature);
         }
 
+        [Theory]
+        [InlineData(50.5f, 1)]
+        [InlineData(50.46f, 2)]
+        public void Test_to_fahrenheit_with_round_parameter_from_fahrenheit_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new FahrenheitFloat(50.456f);
+
+            // Act.
+            var result = input.ToFahrenheit(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(50.5f, 1)]
+        [InlineData(50.46f, 2)]
+        public void Test_to_fahrenheit_generic_parameter_from_fahrenheit_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new FahrenheitFloat(50.456f);
+
+            // Act.
+            var result = input.To<Fahrenheit>(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         [Fact]
         public void Test_to_fahrenheit_from_gas_returns_correct_value()
         {
@@ -273,7 +363,7 @@
         public void Test_to_fahrenheit_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const float expected = 33.8f;
+            const float expected = 33.799988f;
             var input = new KelvinFloat(274.15f);
 
             // Act.
@@ -287,7 +377,7 @@
         public void Test_to_fahrenheit_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const float expected = 33.8f;
+            const float expected = 33.799988f;
             var input = new KelvinFloat(274.15f);
 
             // Act.
@@ -335,6 +425,36 @@
 
             // Act.
             var result = input.To<Fahrenheit>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.8f, 1)]
+        [InlineData(33.801f, 3)]
+        public void Test_to_fahrenheit_with_parameter_from_rankine_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineFloat(493.471f);
+
+            // Act.
+            var result = input.ToFahrenheit(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(33.8f, 1)]
+        [InlineData(33.801f, 3)]
+        public void Test_to_fahrenheit_generic_with_parameter_from_rankine_returns_correct_value(float expected, int fractionalCount)
+        {
+            // Arrange.
+            var input = new RankineFloat(493.471f);
+
+            // Act.
+            var result = input.To<Fahrenheit>(fractionalCount);
 
             // Assert.
             result.Should().Be(expected);

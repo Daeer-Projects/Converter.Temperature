@@ -293,6 +293,58 @@
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(0d, -273.15d, -1)]
+        [InlineData(50d, -245.3722222222222d, -1)]
+        [InlineData(100d, -217.59444444444446d, -1)]
+        [InlineData(500d, 4.627777777777769d, -1)]
+        [InlineData(1000d, 282.40555555555557d, -1)]
+        [InlineData(0d, -273d, 0)]
+        [InlineData(50d, -245d, 0)]
+        [InlineData(100d, -218d, 0)]
+        [InlineData(500d, 5d, 0)]
+        [InlineData(1000d, 282d, 0)]
+        [InlineData(0d, -273.2d, 1)]
+        [InlineData(50d, -245.37d, 2)]
+        [InlineData(100d, -217.6d, 1)]
+        [InlineData(500d, 4.62777777777777d, 14)]
+        [InlineData(1000d, 282.41d, 2)]
+        public void Test_double_extension_with_parameter_from_rankine_and_to_celsius_returns_correct_double_value(double value, double expected, int fractionalCount)
+        {
+            // Arrange.
+            // Act.
+            var result = value.FromRankine().ToCelsius(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(0d, -273.15d, -1)]
+        [InlineData(50d, -245.3722222222222d, -1)]
+        [InlineData(100d, -217.59444444444446d, -1)]
+        [InlineData(500d, 4.627777777777769d, -1)]
+        [InlineData(1000d, 282.40555555555557d, -1)]
+        [InlineData(0d, -273d, 0)]
+        [InlineData(50d, -245d, 0)]
+        [InlineData(100d, -218d, 0)]
+        [InlineData(500d, 5d, 0)]
+        [InlineData(1000d, 282d, 0)]
+        [InlineData(0d, -273.2d, 1)]
+        [InlineData(50d, -245.37d, 2)]
+        [InlineData(100d, -217.6d, 1)]
+        [InlineData(500d, 4.62777777777777d, 14)]
+        [InlineData(1000d, 282.41d, 2)]
+        public void Test_double_extension_generic_with_parameter_from_rankine_and_to_celsius_returns_correct_double_value(double value, double expected, int fractionalCount)
+        {
+            // Arrange.
+            // Act.
+            var result = value.From<Rankine>().To<Celsius>(fractionalCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
         #endregion From Rankine
     }
 }
