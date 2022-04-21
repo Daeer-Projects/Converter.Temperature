@@ -40,6 +40,38 @@
         }
 
         [Theory]
+        [InlineData(851.6699999999998d, -1)]
+        [InlineData(852d, 0)]
+        [InlineData(851.67d, 2)]
+        public void Test_double_extensions_with_parameter_from_celsius_to_rankine_returns_correct_value(double expected, int fractionCount)
+        {
+            // Arrange.
+            const double input = 200d;
+
+            // Act.
+            var result = input.FromCelsius().ToRankine(fractionCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(851.6699999999998d, -1)]
+        [InlineData(852d, 0)]
+        [InlineData(851.67d, 2)]
+        public void Test_double_extensions_generic_with_parameter_from_celsius_to_rankine_returns_correct_value(double expected, int fractionCount)
+        {
+            // Arrange.
+            const double input = 200d;
+
+            // Act.
+            var result = input.From<Celsius>().To<Rankine>(fractionCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
         [InlineData(double.MinValue)]
         [InlineData(double.MaxValue)]
         public void Test_double_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(double input)
@@ -92,6 +124,38 @@
 
             // Act.
             var result = input.From<Fahrenheit>().To<Rankine>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(851.6700000000001d, -1)]
+        [InlineData(852d, 0)]
+        [InlineData(851.67d, 2)]
+        public void Test_double_extensions_with_parameter_from_fahrenheit_to_rankine_returns_correct_value(double expected, int fractionCount)
+        {
+            // Arrange.
+            const double input = 392d;
+
+            // Act.
+            var result = input.FromFahrenheit().ToRankine(fractionCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(851.6700000000001d, -1)]
+        [InlineData(852d, 0)]
+        [InlineData(851.67d, 2)]
+        public void Test_double_extensions_generic_with_parameter_from_fahrenheit_to_rankine_returns_correct_value(double expected, int fractionCount)
+        {
+            // Arrange.
+            const double input = 392d;
+
+            // Act.
+            var result = input.From<Fahrenheit>().To<Rankine>(fractionCount);
 
             // Assert.
             result.Should().Be(expected);
@@ -158,6 +222,38 @@
 
             // Act.
             var result = input.From<Gas>().To<Rankine>();
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(851.6699999999998d, -1)]
+        [InlineData(852d, 0)]
+        [InlineData(851.67d, 2)]
+        public void Test_double_extension_with_parameter_from_gas_to_rankine_returns_correct_value(double expected, int fractionCount)
+        {
+            // Arrange.
+            const double input = 6d;
+
+            // Act.
+            var result = input.FromGas().ToRankine(fractionCount);
+
+            // Assert.
+            result.Should().Be(expected);
+        }
+
+        [Theory]
+        [InlineData(851.6699999999998d, -1)]
+        [InlineData(852d, 0)]
+        [InlineData(851.67d, 2)]
+        public void Test_double_extension_generic_with_parameter_from_gas_to_rankine_returns_correct_value(double expected, int fractionCount)
+        {
+            // Arrange.
+            const double input = 6d;
+
+            // Act.
+            var result = input.From<Gas>().To<Rankine>(fractionCount);
 
             // Assert.
             result.Should().Be(expected);

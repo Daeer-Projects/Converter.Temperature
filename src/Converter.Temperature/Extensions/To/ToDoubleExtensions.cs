@@ -24,7 +24,7 @@
         /// </returns>
         public static double ToCelsius(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(CelsiusConverter.CelsiusToCelsius(input.Temperature), fractionalCount);
+            return Rounder(CelsiusConverter.CelsiusToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -38,7 +38,7 @@
         /// </returns>
         public static double ToCelsius(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(FahrenheitConverter.FahrenheitToCelsius(input.Temperature), fractionalCount);
+            return Rounder(FahrenheitConverter.FahrenheitToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@
         /// </returns>
         public static double ToCelsius(this GasDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(GasConverter.GasToCelsius(input.Temperature), fractionalCount);
+            return Rounder(GasConverter.GasToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@
         /// </returns>
         public static double ToCelsius(this KelvinDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(KelvinConverter.KelvinToCelsius(input.Temperature), fractionalCount);
+            return Rounder(KelvinConverter.KelvinToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@
         /// </returns>
         public static double ToCelsius(this RankineDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(RankineConverter.RankineToCelsius(input.Temperature), fractionalCount);
+            return Rounder(RankineConverter.RankineToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@
         /// </returns>
         public static double ToFahrenheit(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(CelsiusConverter.CelsiusToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(CelsiusConverter.CelsiusToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -105,7 +105,7 @@
         /// </returns>
         public static double ToFahrenheit(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(FahrenheitConverter.FahrenheitToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(FahrenheitConverter.FahrenheitToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@
         /// </returns>
         public static double ToFahrenheit(this GasDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(GasConverter.GasToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(GasConverter.GasToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@
         /// </returns>
         public static double ToFahrenheit(this KelvinDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(KelvinConverter.KelvinToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(KelvinConverter.KelvinToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@
         /// </returns>
         public static double ToFahrenheit(this RankineDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(RankineConverter.RankineToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(RankineConverter.RankineToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -161,7 +161,7 @@
         /// </returns>
         public static double ToGas(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(CelsiusConverter.CelsiusToGas(input.Temperature), fractionalCount);
+            return Rounder(CelsiusConverter.CelsiusToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -175,7 +175,7 @@
         /// </returns>
         public static double ToGas(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(FahrenheitConverter.FahrenheitToGas(input.Temperature), fractionalCount);
+            return Rounder(FahrenheitConverter.FahrenheitToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -189,7 +189,7 @@
         /// </returns>
         public static double ToGas(this GasDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(GasConverter.GasToGas(input.Temperature), fractionalCount);
+            return Rounder(GasConverter.GasToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -203,7 +203,7 @@
         /// </returns>
         public static double ToGas(this KelvinDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(KelvinConverter.KelvinToGas(input.Temperature), fractionalCount);
+            return Rounder(KelvinConverter.KelvinToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -217,7 +217,7 @@
         /// </returns>
         public static double ToGas(this RankineDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(RankineConverter.RankineToGas(input.Temperature), fractionalCount);
+            return Rounder(RankineConverter.RankineToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -231,7 +231,7 @@
         /// </returns>
         public static double ToKelvin(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(CelsiusConverter.CelsiusToKelvin(input.Temperature), fractionalCount);
+            return Rounder(CelsiusConverter.CelsiusToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -245,7 +245,7 @@
         /// </returns>
         public static double ToKelvin(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(FahrenheitConverter.FahrenheitToKelvin(input.Temperature), fractionalCount);
+            return Rounder(FahrenheitConverter.FahrenheitToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -259,7 +259,7 @@
         /// </returns>
         public static double ToKelvin(this GasDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(GasConverter.GasToKelvin(input.Temperature), fractionalCount);
+            return Rounder(GasConverter.GasToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -272,7 +272,7 @@
         /// </returns>
         public static double ToKelvin(this KelvinDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(KelvinConverter.KelvinToKelvin(input.Temperature), fractionalCount);
+            return Rounder(KelvinConverter.KelvinToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -286,7 +286,7 @@
         /// </returns>
         public static double ToKelvin(this RankineDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(RankineConverter.RankineToKelvin(input.Temperature), fractionalCount);
+            return Rounder(RankineConverter.RankineToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -299,7 +299,7 @@
         /// </returns>
         public static double ToRankine(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(CelsiusConverter.CelsiusToRankine(input.Temperature), fractionalCount);
+            return Rounder(CelsiusConverter.CelsiusToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -312,7 +312,7 @@
         /// </returns>
         public static double ToRankine(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(FahrenheitConverter.FahrenheitToRankine(input.Temperature), fractionalCount);
+            return Rounder(FahrenheitConverter.FahrenheitToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -325,7 +325,7 @@
         /// </returns>
         public static double ToRankine(this GasDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(GasConverter.GasToRankine(input.Temperature), fractionalCount);
+            return Rounder(GasConverter.GasToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -338,7 +338,7 @@
         /// </returns>
         public static double ToRankine(this KelvinDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(KelvinConverter.KelvinToRankine(input.Temperature), fractionalCount);
+            return Rounder(KelvinConverter.KelvinToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -351,7 +351,7 @@
         /// </returns>
         public static double ToRankine(this RankineDouble input, int fractionalCount = -1)
         {
-            return DoubleRounder(RankineConverter.RankineToRankine(input.Temperature), fractionalCount);
+            return Rounder(RankineConverter.RankineToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -369,41 +369,38 @@
         {
             return typeof(TInput).Name switch
             {
-                nameof(Celsius) when input is CelsiusDouble castInput => DoubleRounder(CelsiusConverter.CelsiusToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Celsius) when input is FahrenheitDouble castInput => DoubleRounder(FahrenheitConverter.FahrenheitToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Celsius) when input is KelvinDouble castInput => DoubleRounder(KelvinConverter.KelvinToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Celsius) when input is GasDouble castInput => DoubleRounder(GasConverter.GasToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Celsius) when input is RankineDouble castInput => DoubleRounder(RankineConverter.RankineToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is CelsiusDouble castInput => DoubleRounder(CelsiusConverter.CelsiusToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is FahrenheitDouble castInput => DoubleRounder(FahrenheitConverter.FahrenheitToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is KelvinDouble castInput => DoubleRounder(KelvinConverter.KelvinToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is GasDouble castInput => DoubleRounder(GasConverter.GasToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is RankineDouble castInput => DoubleRounder(RankineConverter.RankineToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is CelsiusDouble castInput => DoubleRounder(CelsiusConverter.CelsiusToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is FahrenheitDouble castInput => DoubleRounder(FahrenheitConverter.FahrenheitToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is KelvinDouble castInput => DoubleRounder(KelvinConverter.KelvinToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is GasDouble castInput => DoubleRounder(GasConverter.GasToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is RankineDouble castInput => DoubleRounder(RankineConverter.RankineToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is CelsiusDouble castInput => DoubleRounder(CelsiusConverter.CelsiusToGas(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is FahrenheitDouble castInput => DoubleRounder(FahrenheitConverter.FahrenheitToGas(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is KelvinDouble castInput => DoubleRounder(KelvinConverter.KelvinToGas(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is GasDouble castInput => DoubleRounder(GasConverter.GasToGas(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is RankineDouble castInput => DoubleRounder(RankineConverter.RankineToGas(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is CelsiusDouble castInput => DoubleRounder(CelsiusConverter.CelsiusToRankine(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is FahrenheitDouble castInput => DoubleRounder(FahrenheitConverter.FahrenheitToRankine(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is KelvinDouble castInput => DoubleRounder(KelvinConverter.KelvinToRankine(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is GasDouble castInput => DoubleRounder(GasConverter.GasToRankine(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is RankineDouble castInput => DoubleRounder(RankineConverter.RankineToRankine(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is GasDouble castInput => Rounder(GasConverter.GasToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is GasDouble castInput => Rounder(GasConverter.GasToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is GasDouble castInput => Rounder(GasConverter.GasToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToGas(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToGas(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToGas(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is GasDouble castInput => Rounder(GasConverter.GasToGas(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToGas(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToRankine(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToRankine(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToRankine(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is GasDouble castInput => Rounder(GasConverter.GasToRankine(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToRankine(castInput.Temperature), fractionalCount),
                 _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
             };
         }
 
-        private static double DoubleRounder(double input, int fractionalCount = -1)
+        private static double Rounder(double input, int fractionalCount = -1)
         {
-            if (fractionalCount < 0)
-                return input;
-
-            return Math.Round(input, fractionalCount);
+            return fractionalCount < 0 ? input : Math.Round(input, fractionalCount);
         }
     }
 }
