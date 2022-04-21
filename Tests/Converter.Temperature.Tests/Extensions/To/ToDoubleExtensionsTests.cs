@@ -14,6 +14,19 @@
     public class ToDoubleExtensionsTests
     {
         [Fact]
+        public void Test_to_celsius_with_too_long_parameter_from_celsius_throws_exception()
+        {
+            // Arrange.
+            var input = new CelsiusDouble(42.5d);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToCelsius(16));
+
+            // Assert.
+            result.Message.Should().Contain("Rounding digits must be between 0 and 15, inclusive.");
+        }
+
+        [Fact]
         public void Test_to_celsius_from_celsius_returns_same_value()
         {
             // Arrange.
