@@ -27,11 +27,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from FahrenheitConverter.
+        /// Sets the conversion to be from Fahrenheit.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The FahrenheitConverter Int class for the 'To' extensions to use.
+        /// The Fahrenheit Int class for the 'To' extensions to use.
         /// </returns>
         public static FahrenheitInt FromFahrenheit(this int input)
         {
@@ -39,11 +39,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from GasConverter.
+        /// Sets the conversion to be from Gas.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The GasConverter Int class for the 'To' extensions to use.
+        /// The Gas Int class for the 'To' extensions to use.
         /// </returns>
         public static GasInt FromGas(this int input)
         {
@@ -51,11 +51,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from KelvinConverter.
+        /// Sets the conversion to be from Kelvin.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The KelvinConverter Int class for the 'To' extensions to use.
+        /// The Kelvin Int class for the 'To' extensions to use.
         /// </returns>
         public static KelvinInt FromKelvin(this int input)
         {
@@ -63,11 +63,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from RankineConverter.
+        /// Sets the conversion to be from Rankine.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The RankineConverter Int class for the 'To' extensions to use.
+        /// The Rankine Int class for the 'To' extensions to use.
         /// </returns>
         public static RankineInt FromRankine(this int input)
         {

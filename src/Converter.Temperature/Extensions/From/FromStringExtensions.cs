@@ -27,11 +27,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from FahrenheitConverter.
+        /// Sets the conversion to be from Fahrenheit.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The FahrenheitConverter String class for the 'To' extensions to use.
+        /// The Fahrenheit String class for the 'To' extensions to use.
         /// </returns>
         public static FahrenheitString FromFahrenheit(this string input)
         {
@@ -39,11 +39,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from GasConverter.
+        /// Sets the conversion to be from Gas.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The GasConverter String class for the 'To' extensions to use.
+        /// The Gas String class for the 'To' extensions to use.
         /// </returns>
         public static GasString FromGas(this string input)
         {
@@ -51,11 +51,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from KelvinConverter.
+        /// Sets the conversion to be from Kelvin.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The KelvinConverter String class for the 'To' extensions to use.
+        /// The Kelvin String class for the 'To' extensions to use.
         /// </returns>
         public static KelvinString FromKelvin(this string input)
         {
@@ -63,11 +63,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from RankineConverter.
+        /// Sets the conversion to be from Rankine.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The RankineConverter String class for the 'To' extensions to use.
+        /// The Rankine String class for the 'To' extensions to use.
         /// </returns>
         public static RankineString FromRankine(this string input)
         {

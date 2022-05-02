@@ -24,11 +24,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from CelsiusDoubleConversions.
+        /// Sets the conversion to be from Fahrenheit.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The CelsiusDoubleConversions Long class for the 'To' extensions to use.
+        /// The Fahrenheit Long class for the 'To' extensions to use.
         /// </returns>
         public static FahrenheitLong FromFahrenheit(this long input)
         {
@@ -36,11 +36,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from GasConverter.
+        /// Sets the conversion to be from Gas.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The GasConverter Long class for the 'To' extensions to use.
+        /// The Gas Long class for the 'To' extensions to use.
         /// </returns>
         public static GasLong FromGas(this long input)
         {
@@ -48,11 +48,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from KelvinConverter.
+        /// Sets the conversion to be from Kelvin.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The KelvinConverter Long class for the 'To' extensions to use.
+        /// The Kelvin Long class for the 'To' extensions to use.
         /// </returns>
         public static KelvinLong FromKelvin(this long input)
         {
@@ -60,11 +60,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from RankineConverter.
+        /// Sets the conversion to be from Rankine.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The RankineConverter Long class for the 'To' extensions to use.
+        /// The Rankine Long class for the 'To' extensions to use.
         /// </returns>
         public static RankineLong FromRankine(this long input)
         {

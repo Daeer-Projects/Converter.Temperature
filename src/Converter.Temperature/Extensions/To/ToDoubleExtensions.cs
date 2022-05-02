@@ -2,6 +2,11 @@
 {
     using System;
     using BaseTypes;
+    using Converters.Celsius;
+    using Converters.Fahrenheit;
+    using Converters.Gas;
+    using Converters.Kelvin;
+    using Converters.Rankine;
     using TemperatureTypes;
     using Types.Celsius;
     using Types.Fahrenheit;
@@ -25,11 +30,11 @@
         /// </returns>
         public static double ToCelsius(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return Rounder(CelsiusConverter.CelsiusToCelsius(input.Temperature), fractionalCount);
+            return Rounder(CelsiusDoubleConversions.CelsiusToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the FahrenheitConverter <paramref name="input"/> to Celsius
+        /// Converts the CelsiusDoubleConversions <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
@@ -40,7 +45,7 @@
         /// </returns>
         public static double ToCelsius(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return Rounder(FahrenheitConverter.FahrenheitToCelsius(input.Temperature), fractionalCount);
+            return Rounder(DoubleFahrenheitConversions.FahrenheitToCelsius(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -87,43 +92,43 @@
         }
 
         /// <summary>
-        /// Converts the Celsius <paramref name="input"/> to FahrenheitConverter
+        /// Converts the Celsius <paramref name="input"/> to CelsiusDoubleConversions
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
         /// <returns>
-        /// The FahrenheitConverter <see langword="double"/> result.
+        /// The CelsiusDoubleConversions <see langword="double"/> result.
         /// </returns>
         public static double ToFahrenheit(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return Rounder(CelsiusConverter.CelsiusToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(CelsiusDoubleConversions.CelsiusToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the FahrenheitConverter <paramref name="input"/> to FahrenheitConverter
+        /// Converts the CelsiusDoubleConversions <paramref name="input"/> to CelsiusDoubleConversions
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
         /// <returns>
-        /// The FahrenheitConverter <see langword="double"/> result.
+        /// The CelsiusDoubleConversions <see langword="double"/> result.
         /// </returns>
         public static double ToFahrenheit(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return Rounder(FahrenheitConverter.FahrenheitToFahrenheit(input.Temperature), fractionalCount);
+            return Rounder(DoubleFahrenheitConversions.FahrenheitToFahrenheit(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the GasConverter <paramref name="input"/> to FahrenheitConverter
+        /// Converts the GasConverter <paramref name="input"/> to CelsiusDoubleConversions
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
         /// <returns>
-        /// The FahrenheitConverter <see langword="double"/> result.
+        /// The CelsiusDoubleConversions <see langword="double"/> result.
         /// </returns>
         public static double ToFahrenheit(this GasDouble input, int fractionalCount = -1)
         {
@@ -131,14 +136,14 @@
         }
 
         /// <summary>
-        /// Converts the KelvinConverter <paramref name="input"/> to FahrenheitConverter
+        /// Converts the KelvinConverter <paramref name="input"/> to CelsiusDoubleConversions
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
         /// <returns>
-        /// The FahrenheitConverter <see langword="double"/> result.
+        /// The CelsiusDoubleConversions <see langword="double"/> result.
         /// </returns>
         public static double ToFahrenheit(this KelvinDouble input, int fractionalCount = -1)
         {
@@ -146,14 +151,14 @@
         }
 
         /// <summary>
-        /// Converts the RankineConverter <paramref name="input"/> to FahrenheitConverter
+        /// Converts the RankineConverter <paramref name="input"/> to CelsiusDoubleConversions
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
         /// <returns>
-        /// The FahrenheitConverter <see langword="double"/> result.
+        /// The CelsiusDoubleConversions <see langword="double"/> result.
         /// </returns>
         public static double ToFahrenheit(this RankineDouble input, int fractionalCount = -1)
         {
@@ -172,11 +177,11 @@
         /// </returns>
         public static double ToGas(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return Rounder(CelsiusConverter.CelsiusToGas(input.Temperature), fractionalCount);
+            return Rounder(CelsiusDoubleConversions.CelsiusToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the FahrenheitConverter <paramref name="input"/> to GasConverter
+        /// Converts the CelsiusDoubleConversions <paramref name="input"/> to GasConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
@@ -187,7 +192,7 @@
         /// </returns>
         public static double ToGas(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return Rounder(FahrenheitConverter.FahrenheitToGas(input.Temperature), fractionalCount);
+            return Rounder(DoubleFahrenheitConversions.FahrenheitToGas(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -247,11 +252,11 @@
         /// </returns>
         public static double ToKelvin(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return Rounder(CelsiusConverter.CelsiusToKelvin(input.Temperature), fractionalCount);
+            return Rounder(CelsiusDoubleConversions.CelsiusToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the FahrenheitConverter <paramref name="input"/> to KelvinConverter
+        /// Converts the CelsiusDoubleConversions <paramref name="input"/> to KelvinConverter
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
@@ -262,7 +267,7 @@
         /// </returns>
         public static double ToKelvin(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return Rounder(FahrenheitConverter.FahrenheitToKelvin(input.Temperature), fractionalCount);
+            return Rounder(DoubleFahrenheitConversions.FahrenheitToKelvin(input.Temperature), fractionalCount);
         }
 
         /// <summary>
@@ -320,11 +325,11 @@
         /// </returns>
         public static double ToRankine(this CelsiusDouble input, int fractionalCount = -1)
         {
-            return Rounder(CelsiusConverter.CelsiusToRankine(input.Temperature), fractionalCount);
+            return Rounder(CelsiusDoubleConversions.CelsiusToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the FahrenheitConverter <paramref name="input"/> to Ranking
+        /// Converts the CelsiusDoubleConversions <paramref name="input"/> to Ranking
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
@@ -334,11 +339,11 @@
         /// </returns>
         public static double ToRankine(this FahrenheitDouble input, int fractionalCount = -1)
         {
-            return Rounder(FahrenheitConverter.FahrenheitToRankine(input.Temperature), fractionalCount);
+            return Rounder(DoubleFahrenheitConversions.FahrenheitToRankine(input.Temperature), fractionalCount);
         }
 
         /// <summary>
-        /// Converts the FahrenheitConverter <paramref name="input"/> to Ranking
+        /// Converts the CelsiusDoubleConversions <paramref name="input"/> to Ranking
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
@@ -395,28 +400,28 @@
         {
             return typeof(TInput).Name switch
             {
-                nameof(Celsius) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Celsius) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is CelsiusDouble castInput => Rounder(CelsiusDoubleConversions.CelsiusToCelsius(castInput.Temperature), fractionalCount),
+                nameof(Celsius) when input is FahrenheitDouble castInput => Rounder(DoubleFahrenheitConversions.FahrenheitToCelsius(castInput.Temperature), fractionalCount),
                 nameof(Celsius) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToCelsius(castInput.Temperature), fractionalCount),
                 nameof(Celsius) when input is GasDouble castInput => Rounder(GasConverter.GasToCelsius(castInput.Temperature), fractionalCount),
                 nameof(Celsius) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToCelsius(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Fahrenheit) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is CelsiusDouble castInput => Rounder(CelsiusDoubleConversions.CelsiusToFahrenheit(castInput.Temperature), fractionalCount),
+                nameof(Fahrenheit) when input is FahrenheitDouble castInput => Rounder(DoubleFahrenheitConversions.FahrenheitToFahrenheit(castInput.Temperature), fractionalCount),
                 nameof(Fahrenheit) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToFahrenheit(castInput.Temperature), fractionalCount),
                 nameof(Fahrenheit) when input is GasDouble castInput => Rounder(GasConverter.GasToFahrenheit(castInput.Temperature), fractionalCount),
                 nameof(Fahrenheit) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToFahrenheit(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Kelvin) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is CelsiusDouble castInput => Rounder(CelsiusDoubleConversions.CelsiusToKelvin(castInput.Temperature), fractionalCount),
+                nameof(Kelvin) when input is FahrenheitDouble castInput => Rounder(DoubleFahrenheitConversions.FahrenheitToKelvin(castInput.Temperature), fractionalCount),
                 nameof(Kelvin) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToKelvin(castInput.Temperature), fractionalCount),
                 nameof(Kelvin) when input is GasDouble castInput => Rounder(GasConverter.GasToKelvin(castInput.Temperature), fractionalCount),
                 nameof(Kelvin) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToKelvin(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToGas(castInput.Temperature), fractionalCount),
-                nameof(Gas) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToGas(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is CelsiusDouble castInput => Rounder(CelsiusDoubleConversions.CelsiusToGas(castInput.Temperature), fractionalCount),
+                nameof(Gas) when input is FahrenheitDouble castInput => Rounder(DoubleFahrenheitConversions.FahrenheitToGas(castInput.Temperature), fractionalCount),
                 nameof(Gas) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToGas(castInput.Temperature), fractionalCount),
                 nameof(Gas) when input is GasDouble castInput => Rounder(GasConverter.GasToGas(castInput.Temperature), fractionalCount),
                 nameof(Gas) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToGas(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is CelsiusDouble castInput => Rounder(CelsiusConverter.CelsiusToRankine(castInput.Temperature), fractionalCount),
-                nameof(Rankine) when input is FahrenheitDouble castInput => Rounder(FahrenheitConverter.FahrenheitToRankine(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is CelsiusDouble castInput => Rounder(CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature), fractionalCount),
+                nameof(Rankine) when input is FahrenheitDouble castInput => Rounder(DoubleFahrenheitConversions.FahrenheitToRankine(castInput.Temperature), fractionalCount),
                 nameof(Rankine) when input is KelvinDouble castInput => Rounder(KelvinConverter.KelvinToRankine(castInput.Temperature), fractionalCount),
                 nameof(Rankine) when input is GasDouble castInput => Rounder(GasConverter.GasToRankine(castInput.Temperature), fractionalCount),
                 nameof(Rankine) when input is RankineDouble castInput => Rounder(RankineConverter.RankineToRankine(castInput.Temperature), fractionalCount),
