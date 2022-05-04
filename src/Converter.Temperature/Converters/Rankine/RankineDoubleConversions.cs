@@ -2,7 +2,7 @@
 {
     using Celsius;
 
-    internal static class RankineConverter
+    internal static class RankineDoubleConversions
     {
         /// <summary>
         /// The rankine to rankine conversion.

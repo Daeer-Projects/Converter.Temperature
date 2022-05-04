@@ -60,7 +60,7 @@
         /// </returns>
         public static float ToCelsius(this GasFloat input, int fractionalCount = -1)
 {
-            return Rounder(Parser(GasConverter.GasToCelsius(input.Temperature)), fractionalCount);
+            return Rounder(Parser(GasDoubleConversion.GasToCelsius(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@
         /// </returns>
         public static float ToCelsius(this KelvinFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(KelvinConverter.KelvinToCelsius(input.Temperature)), fractionalCount);
+            return Rounder(Parser(KelvinDoubleConversions.KelvinToCelsius(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -88,7 +88,7 @@
         /// </returns>
         public static float ToCelsius(this RankineFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(RankineConverter.RankineToCelsius(input.Temperature)), fractionalCount);
+            return Rounder(Parser(RankineDoubleConversions.RankineToCelsius(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -131,7 +131,7 @@
         /// </returns>
         public static float ToFahrenheit(this GasFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(GasConverter.GasToFahrenheit(input.Temperature)), fractionalCount);
+            return Rounder(Parser(GasDoubleConversion.GasToFahrenheit(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -146,7 +146,7 @@
         /// </returns>
         public static float ToFahrenheit(this KelvinFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(KelvinConverter.KelvinToFahrenheit(input.Temperature)), fractionalCount);
+            return Rounder(Parser(KelvinDoubleConversions.KelvinToFahrenheit(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@
         /// </returns>
         public static float ToFahrenheit(this RankineFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(RankineConverter.RankineToFahrenheit(input.Temperature)), fractionalCount);
+            return Rounder(Parser(RankineDoubleConversions.RankineToFahrenheit(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -205,7 +205,7 @@
         /// </returns>
         public static float ToGas(this GasFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(GasConverter.GasToGas(input.Temperature)), fractionalCount);
+            return Rounder(Parser(GasDoubleConversion.GasToGas(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -220,7 +220,7 @@
         /// </returns>
         public static float ToGas(this KelvinFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(KelvinConverter.KelvinToGas(input.Temperature)), fractionalCount);
+            return Rounder(Parser(KelvinDoubleConversions.KelvinToGas(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -235,7 +235,7 @@
         /// </returns>
         public static float ToGas(this RankineFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(RankineConverter.RankineToGas(input.Temperature)), fractionalCount);
+            return Rounder(Parser(RankineDoubleConversions.RankineToGas(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -280,7 +280,7 @@
         /// </returns>
         public static float ToKelvin(this GasFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(GasConverter.GasToKelvin(input.Temperature)), fractionalCount);
+            return Rounder(Parser(GasDoubleConversion.GasToKelvin(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -294,7 +294,7 @@
         /// </returns>
         public static float ToKelvin(this KelvinFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(KelvinConverter.KelvinToKelvin(input.Temperature)), fractionalCount);
+            return Rounder(Parser(KelvinDoubleConversions.KelvinToKelvin(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -309,7 +309,7 @@
         /// </returns>
         public static float ToKelvin(this RankineFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(RankineConverter.RankineToKelvin(input.Temperature)), fractionalCount);
+            return Rounder(Parser(RankineDoubleConversions.RankineToKelvin(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -354,7 +354,7 @@
         /// </returns>
         public static float ToRankine(this GasFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(GasConverter.GasToRankine(input.Temperature)), fractionalCount);
+            return Rounder(Parser(GasDoubleConversion.GasToRankine(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -369,7 +369,7 @@
         /// </returns>
         public static float ToRankine(this KelvinFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(KelvinConverter.KelvinToRankine(input.Temperature)), fractionalCount);
+            return Rounder(Parser(KelvinDoubleConversions.KelvinToRankine(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -383,7 +383,7 @@
         /// </returns>
         public static float ToRankine(this RankineFloat input, int fractionalCount = -1)
         {
-            return Rounder(Parser(RankineConverter.RankineToRankine(input.Temperature)), fractionalCount);
+            return Rounder(Parser(RankineDoubleConversions.RankineToRankine(input.Temperature)), fractionalCount);
         }
 
         /// <summary>
@@ -404,29 +404,29 @@
             {
                 nameof(Celsius) when input is CelsiusFloat castInput => Rounder(Parser(CelsiusDoubleConversions.CelsiusToCelsius(castInput.Temperature)), fractionalCount),
                 nameof(Celsius) when input is FahrenheitFloat castInput => Rounder(Parser(DoubleFahrenheitConversions.FahrenheitToCelsius(castInput.Temperature)), fractionalCount),
-                nameof(Celsius) when input is KelvinFloat castInput => Rounder(Parser(KelvinConverter.KelvinToCelsius(castInput.Temperature)), fractionalCount),
-                nameof(Celsius) when input is GasFloat castInput => Rounder(Parser(GasConverter.GasToCelsius(castInput.Temperature)), fractionalCount),
-                nameof(Celsius) when input is RankineFloat castInput => Rounder(Parser(RankineConverter.RankineToCelsius(castInput.Temperature)), fractionalCount),
+                nameof(Celsius) when input is KelvinFloat castInput => Rounder(Parser(KelvinDoubleConversions.KelvinToCelsius(castInput.Temperature)), fractionalCount),
+                nameof(Celsius) when input is GasFloat castInput => Rounder(Parser(GasDoubleConversion.GasToCelsius(castInput.Temperature)), fractionalCount),
+                nameof(Celsius) when input is RankineFloat castInput => Rounder(Parser(RankineDoubleConversions.RankineToCelsius(castInput.Temperature)), fractionalCount),
                 nameof(Fahrenheit) when input is CelsiusFloat castInput => Rounder(Parser(CelsiusDoubleConversions.CelsiusToFahrenheit(castInput.Temperature)), fractionalCount),
                 nameof(Fahrenheit) when input is FahrenheitFloat castInput => Rounder(Parser(DoubleFahrenheitConversions.FahrenheitToFahrenheit(castInput.Temperature)), fractionalCount),
-                nameof(Fahrenheit) when input is KelvinFloat castInput => Rounder(Parser(KelvinConverter.KelvinToFahrenheit(castInput.Temperature)), fractionalCount),
-                nameof(Fahrenheit) when input is GasFloat castInput => Rounder(Parser(GasConverter.GasToFahrenheit(castInput.Temperature)), fractionalCount),
-                nameof(Fahrenheit) when input is RankineFloat castInput => Rounder(Parser(RankineConverter.RankineToFahrenheit(castInput.Temperature)), fractionalCount),
+                nameof(Fahrenheit) when input is KelvinFloat castInput => Rounder(Parser(KelvinDoubleConversions.KelvinToFahrenheit(castInput.Temperature)), fractionalCount),
+                nameof(Fahrenheit) when input is GasFloat castInput => Rounder(Parser(GasDoubleConversion.GasToFahrenheit(castInput.Temperature)), fractionalCount),
+                nameof(Fahrenheit) when input is RankineFloat castInput => Rounder(Parser(RankineDoubleConversions.RankineToFahrenheit(castInput.Temperature)), fractionalCount),
                 nameof(Kelvin) when input is CelsiusFloat castInput => Rounder(Parser(CelsiusDoubleConversions.CelsiusToKelvin(castInput.Temperature)), fractionalCount),
                 nameof(Kelvin) when input is FahrenheitFloat castInput => Rounder(Parser(DoubleFahrenheitConversions.FahrenheitToKelvin(castInput.Temperature)), fractionalCount),
-                nameof(Kelvin) when input is KelvinFloat castInput => Rounder(Parser(KelvinConverter.KelvinToKelvin(castInput.Temperature)), fractionalCount),
-                nameof(Kelvin) when input is GasFloat castInput => Rounder(Parser(GasConverter.GasToKelvin(castInput.Temperature)), fractionalCount),
-                nameof(Kelvin) when input is RankineFloat castInput => Rounder(Parser(RankineConverter.RankineToKelvin(castInput.Temperature)), fractionalCount),
+                nameof(Kelvin) when input is KelvinFloat castInput => Rounder(Parser(KelvinDoubleConversions.KelvinToKelvin(castInput.Temperature)), fractionalCount),
+                nameof(Kelvin) when input is GasFloat castInput => Rounder(Parser(GasDoubleConversion.GasToKelvin(castInput.Temperature)), fractionalCount),
+                nameof(Kelvin) when input is RankineFloat castInput => Rounder(Parser(RankineDoubleConversions.RankineToKelvin(castInput.Temperature)), fractionalCount),
                 nameof(Gas) when input is CelsiusFloat castInput => Rounder(Parser(CelsiusDoubleConversions.CelsiusToGas(castInput.Temperature)), fractionalCount),
                 nameof(Gas) when input is FahrenheitFloat castInput => Rounder(Parser(DoubleFahrenheitConversions.FahrenheitToGas(castInput.Temperature)), fractionalCount),
-                nameof(Gas) when input is KelvinFloat castInput => Rounder(Parser(KelvinConverter.KelvinToGas(castInput.Temperature)), fractionalCount),
-                nameof(Gas) when input is GasFloat castInput => Rounder(Parser(GasConverter.GasToGas(castInput.Temperature)), fractionalCount),
-                nameof(Gas) when input is RankineFloat castInput => Rounder(Parser(RankineConverter.RankineToGas(castInput.Temperature)), fractionalCount),
+                nameof(Gas) when input is KelvinFloat castInput => Rounder(Parser(KelvinDoubleConversions.KelvinToGas(castInput.Temperature)), fractionalCount),
+                nameof(Gas) when input is GasFloat castInput => Rounder(Parser(GasDoubleConversion.GasToGas(castInput.Temperature)), fractionalCount),
+                nameof(Gas) when input is RankineFloat castInput => Rounder(Parser(RankineDoubleConversions.RankineToGas(castInput.Temperature)), fractionalCount),
                 nameof(Rankine) when input is CelsiusFloat castInput => Rounder(Parser(CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature)), fractionalCount),
                 nameof(Rankine) when input is FahrenheitFloat castInput => Rounder(Parser(DoubleFahrenheitConversions.FahrenheitToRankine(castInput.Temperature)), fractionalCount),
-                nameof(Rankine) when input is KelvinFloat castInput => Rounder(Parser(KelvinConverter.KelvinToRankine(castInput.Temperature)), fractionalCount),
-                nameof(Rankine) when input is GasFloat castInput => Rounder(Parser(GasConverter.GasToRankine(castInput.Temperature)), fractionalCount),
-                nameof(Rankine) when input is RankineFloat castInput => Rounder(Parser(RankineConverter.RankineToRankine(castInput.Temperature)), fractionalCount),
+                nameof(Rankine) when input is KelvinFloat castInput => Rounder(Parser(KelvinDoubleConversions.KelvinToRankine(castInput.Temperature)), fractionalCount),
+                nameof(Rankine) when input is GasFloat castInput => Rounder(Parser(GasDoubleConversion.GasToRankine(castInput.Temperature)), fractionalCount),
+                nameof(Rankine) when input is RankineFloat castInput => Rounder(Parser(RankineDoubleConversions.RankineToRankine(castInput.Temperature)), fractionalCount),
                 _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
             };
         }

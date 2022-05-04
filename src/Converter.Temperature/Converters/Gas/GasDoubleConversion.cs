@@ -3,7 +3,7 @@
     using System;
     using Celsius;
 
-    internal static class GasConverter
+    internal static class GasDoubleConversion
     {
         /// <summary>
         /// The gas to celsius conversion.

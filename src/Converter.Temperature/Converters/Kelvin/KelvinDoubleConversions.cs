@@ -2,7 +2,7 @@
 {
     using Celsius;
 
-    internal static class KelvinConverter
+    internal static class KelvinDoubleConversions
     {
         /// <summary>
         /// The kelvin to celsius conversion.
