@@ -40,10 +40,6 @@
         }
 
         [Theory]
-        [InlineData(80, 0)]
-        [InlineData(114, 0)]
-        [InlineData(115, 0)]
-        [InlineData(134, 0)]
         [InlineData(135, 1)]
         [InlineData(144, 1)]
         [InlineData(145, 2)]
@@ -75,10 +71,6 @@
         }
 
         [Theory]
-        [InlineData(80, 0)]
-        [InlineData(114, 0)]
-        [InlineData(115, 0)]
-        [InlineData(134, 0)]
         [InlineData(135, 1)]
         [InlineData(144, 1)]
         [InlineData(145, 2)]

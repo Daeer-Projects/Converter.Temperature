@@ -793,7 +793,7 @@
         public void Test_to_rankine_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             var input = new CelsiusFloat(200);
 
             // Act.
@@ -807,7 +807,7 @@
         public void Test_to_rankine_generic_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             var input = new CelsiusFloat(200);
 
             // Act.

@@ -14,7 +14,7 @@
         public void Test_float_extensions_from_celsius_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             const float input = 200f;
 
             // Act.
@@ -28,7 +28,7 @@
         public void Test_float_extensions_generic_from_celsius_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             const float input = 200f;
 
             // Act.

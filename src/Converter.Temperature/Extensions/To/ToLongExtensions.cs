@@ -39,7 +39,7 @@
         /// </returns>
         public static long ToCelsius(this FahrenheitLong input)
         {
-            return LongParser(DoubleFahrenheitConversions.FahrenheitToCelsius(input.Temperature));
+            return LongParser(FahrenheitDoubleConversions.FahrenheitToCelsius(input.Temperature));
         }
 
         /// <summary>
@@ -103,7 +103,7 @@
         /// </returns>
         public static long ToFahrenheit(this FahrenheitLong input)
         {
-            return LongParser(DoubleFahrenheitConversions.FahrenheitToFahrenheit(input.Temperature));
+            return LongParser(FahrenheitDoubleConversions.FahrenheitToFahrenheit(input.Temperature));
         }
 
         /// <summary>
@@ -168,7 +168,7 @@
         /// </returns>
         public static long ToGas(this FahrenheitLong input)
         {
-            return LongParser(DoubleFahrenheitConversions.FahrenheitToGas(input.Temperature));
+            return LongParser(FahrenheitDoubleConversions.FahrenheitToGas(input.Temperature));
         }
 
         /// <summary>
@@ -233,7 +233,7 @@
         /// </returns>
         public static long ToKelvin(this FahrenheitLong input)
         {
-            return LongParser(DoubleFahrenheitConversions.FahrenheitToKelvin(input.Temperature));
+            return LongParser(FahrenheitDoubleConversions.FahrenheitToKelvin(input.Temperature));
         }
 
         /// <summary>
@@ -296,7 +296,7 @@
         /// </returns>
         public static long ToRankine(this FahrenheitLong input)
         {
-            return LongParser(DoubleFahrenheitConversions.FahrenheitToRankine(input.Temperature));
+            return LongParser(FahrenheitDoubleConversions.FahrenheitToRankine(input.Temperature));
         }
 
         /// <summary>
@@ -351,27 +351,27 @@
             return typeof(TInput).Name switch
             {
                 nameof(Celsius) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToCelsius(castInput.Temperature),
-                nameof(Celsius) when input is FahrenheitLong castInput => LongParser(DoubleFahrenheitConversions.FahrenheitToCelsius(castInput.Temperature)),
+                nameof(Celsius) when input is FahrenheitLong castInput => LongParser(FahrenheitDoubleConversions.FahrenheitToCelsius(castInput.Temperature)),
                 nameof(Celsius) when input is KelvinLong castInput => LongParser(KelvinDoubleConversions.KelvinToCelsius(castInput.Temperature)),
                 nameof(Celsius) when input is GasLong castInput => LongParser(GasDoubleConversion.GasToCelsius(castInput.Temperature)),
                 nameof(Celsius) when input is RankineLong castInput => LongParser(RankineDoubleConversions.RankineToCelsius(castInput.Temperature)),
                 nameof(Fahrenheit) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToFahrenheit(castInput.Temperature),
-                nameof(Fahrenheit) when input is FahrenheitLong castInput => LongParser(DoubleFahrenheitConversions.FahrenheitToFahrenheit(castInput.Temperature)),
+                nameof(Fahrenheit) when input is FahrenheitLong castInput => LongParser(FahrenheitDoubleConversions.FahrenheitToFahrenheit(castInput.Temperature)),
                 nameof(Fahrenheit) when input is KelvinLong castInput => LongParser(KelvinDoubleConversions.KelvinToFahrenheit(castInput.Temperature)),
                 nameof(Fahrenheit) when input is GasLong castInput => LongParser(GasDoubleConversion.GasToFahrenheit(castInput.Temperature)),
                 nameof(Fahrenheit) when input is RankineLong castInput => LongParser(RankineDoubleConversions.RankineToFahrenheit(castInput.Temperature)),
                 nameof(Kelvin) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToKelvin(castInput.Temperature),
-                nameof(Kelvin) when input is FahrenheitLong castInput => LongParser(DoubleFahrenheitConversions.FahrenheitToKelvin(castInput.Temperature)),
+                nameof(Kelvin) when input is FahrenheitLong castInput => LongParser(FahrenheitDoubleConversions.FahrenheitToKelvin(castInput.Temperature)),
                 nameof(Kelvin) when input is KelvinLong castInput => LongParser(KelvinDoubleConversions.KelvinToKelvin(castInput.Temperature)),
                 nameof(Kelvin) when input is GasLong castInput => LongParser(GasDoubleConversion.GasToKelvin(castInput.Temperature)),
                 nameof(Kelvin) when input is RankineLong castInput => LongParser(RankineDoubleConversions.RankineToKelvin(castInput.Temperature)),
                 nameof(Gas) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToGas(castInput.Temperature),
-                nameof(Gas) when input is FahrenheitLong castInput => LongParser(DoubleFahrenheitConversions.FahrenheitToGas(castInput.Temperature)),
+                nameof(Gas) when input is FahrenheitLong castInput => LongParser(FahrenheitDoubleConversions.FahrenheitToGas(castInput.Temperature)),
                 nameof(Gas) when input is KelvinLong castInput => LongParser(KelvinDoubleConversions.KelvinToGas(castInput.Temperature)),
                 nameof(Gas) when input is GasLong castInput => LongParser(GasDoubleConversion.GasToGas(castInput.Temperature)),
                 nameof(Gas) when input is RankineLong castInput => LongParser(RankineDoubleConversions.RankineToGas(castInput.Temperature)),
                 nameof(Rankine) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToRankine(castInput.Temperature),
-                nameof(Rankine) when input is FahrenheitLong castInput => LongParser(DoubleFahrenheitConversions.FahrenheitToRankine(castInput.Temperature)),
+                nameof(Rankine) when input is FahrenheitLong castInput => LongParser(FahrenheitDoubleConversions.FahrenheitToRankine(castInput.Temperature)),
                 nameof(Rankine) when input is KelvinLong castInput => LongParser(KelvinDoubleConversions.KelvinToRankine(castInput.Temperature)),
                 nameof(Rankine) when input is GasLong castInput => LongParser(GasDoubleConversion.GasToRankine(castInput.Temperature)),
                 nameof(Rankine) when input is RankineLong castInput => LongParser(RankineDoubleConversions.RankineToRankine(castInput.Temperature)),
