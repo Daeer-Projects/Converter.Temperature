@@ -1,9 +1,9 @@
-﻿namespace Converter.Temperature.Converters.Fahrenheit
-{
-    using System;
-    using Celsius;
+﻿using Converter.Temperature.Converters.Celsius;
+using System;
 
-    internal static class FahrenheitDoubleConversions
+namespace Converter.Temperature.Converters.Fahrenheit
+{
+    internal static class FahrenheitIntConversions
     {
         /// <summary>
         /// The fahrenheit to celsius conversion.
@@ -13,15 +13,17 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double FahrenheitToCelsius(double firstTemp)
+        public static int FahrenheitToCelsius(int firstTemp)
         {
-            var celsiusTemp = (firstTemp - 32) * 5 / 9;
-            if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
+            var celsiusTemp = (firstTemp - 32d) * 5 / 9;
+            if (celsiusTemp < int.MinValue || celsiusTemp > int.MaxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
             }
 
-            return celsiusTemp;
+            int celsiusTempLong = (int)Math.Round(celsiusTemp, 0, MidpointRounding.AwayFromZero);
+
+            return celsiusTempLong;
         }
 
         /// <summary>
@@ -31,7 +33,7 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double FahrenheitToFahrenheit(double firstTemp)
+        public static int FahrenheitToFahrenheit(int firstTemp)
         {
             return firstTemp;
         }
@@ -44,10 +46,10 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double FahrenheitToKelvin(double firstTemp)
+        public static int FahrenheitToKelvin(int firstTemp)
         {
             var celsiusTemp = FahrenheitToCelsius(firstTemp);
-            var kelvinTemp = CelsiusDoubleConversions.CelsiusToKelvin(celsiusTemp);
+            var kelvinTemp = CelsiusIntConversions.CelsiusToKelvin(celsiusTemp);
             return kelvinTemp;
         }
 
@@ -59,10 +61,10 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double FahrenheitToGas(double firstTemp)
+        public static int FahrenheitToGas(int firstTemp)
         {
             var celsiusTemp = FahrenheitToCelsius(firstTemp);
-            var gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
+            var gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
 
@@ -74,9 +76,9 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double FahrenheitToRankine(double firstTemp)
+        public static int FahrenheitToRankine(int firstTemp)
         {
-            var rankineTemp = firstTemp + 459.67d;
+            var rankineTemp = firstTemp + 460;
             return rankineTemp;
         }
     }
