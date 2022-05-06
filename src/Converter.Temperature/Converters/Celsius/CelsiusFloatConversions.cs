@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal static class CelsiusLongConversions
+    internal static class CelsiusFloatConversions
     {
         /// <summary>
         /// The celsius to celsius conversion.
@@ -11,7 +11,7 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToCelsius(long firstTemp)
+        public static float CelsiusToCelsius(float firstTemp)
         {
             return firstTemp;
         }
@@ -24,17 +24,15 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToFahrenheit(long input)
+        public static float CelsiusToFahrenheit(float input)
         {
-            var fahrenheitTemp = (input * 1.8) + 32;
-            if (fahrenheitTemp < long.MinValue || fahrenheitTemp > long.MaxValue)
+            var fahrenheitTemp = (input * 1.8f) + 32;
+            if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long fahrenheitTempLong = (long)Math.Round(fahrenheitTemp, 0, MidpointRounding.AwayFromZero);
-
-            return fahrenheitTempLong;
+            return fahrenheitTemp;
         }
 
         /// <summary>
@@ -45,17 +43,17 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToKelvin(long input)
+        public static float CelsiusToKelvin(float input)
         {
-            var kelvinTemp = input + 273.15d;
-            if (kelvinTemp < long.MinValue || kelvinTemp > long.MaxValue)
+            var kelvinTemp = (input * 1.01f) + 273.15f;
+            if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long kelvinTempLong = (long)Math.Round(kelvinTemp, 0, MidpointRounding.AwayFromZero);
+            kelvinTemp = (input * 1f) + 273.15f;
 
-            return kelvinTempLong;
+            return kelvinTemp;
         }
 
         /// <summary>
@@ -66,15 +64,23 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToGas(long input)
+        public static float CelsiusToGas(float input)
         {
-            long gasTemp;
-            if (input < 135)
+            float gasTemp;
+            if (input < 80)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureTooLowForGasError);
             }
 
-            if (input < 145)
+            if (input < 115)
+            {
+                gasTemp = 0.25f;
+            }
+            else if (input < 135)
+            {
+                gasTemp = 0.5f;
+            }
+            else if (input < 145)
             {
                 gasTemp = 1;
             }
@@ -130,17 +136,15 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToRankine(long input)
+        public static float CelsiusToRankine(float input)
         {
-            var rankineTemp = (input + 273.15) * 9 / 5;
-            if (rankineTemp < long.MinValue || rankineTemp > long.MaxValue)
+            var rankineTemp = (input + 273.15f) * 9 / 5;
+            if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long rankineTempLong = (long)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
-
-            return rankineTempLong;
+            return rankineTemp;
         }
     }
 }

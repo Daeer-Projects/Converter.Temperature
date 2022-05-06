@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal static class CelsiusLongConversions
+    internal static class CelsiusIntConversions
     {
         /// <summary>
         /// The celsius to celsius conversion.
@@ -11,7 +11,7 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToCelsius(long firstTemp)
+        public static int CelsiusToCelsius(int firstTemp)
         {
             return firstTemp;
         }
@@ -24,17 +24,17 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToFahrenheit(long input)
+        public static int CelsiusToFahrenheit(int input)
         {
             var fahrenheitTemp = (input * 1.8) + 32;
-            if (fahrenheitTemp < long.MinValue || fahrenheitTemp > long.MaxValue)
+            if (fahrenheitTemp < int.MinValue || fahrenheitTemp > int.MaxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long fahrenheitTempLong = (long)Math.Round(fahrenheitTemp, 0, MidpointRounding.AwayFromZero);
+            int fahrenheitTempInt = (int)Math.Round(fahrenheitTemp, 0, MidpointRounding.AwayFromZero);
 
-            return fahrenheitTempLong;
+            return fahrenheitTempInt;
         }
 
         /// <summary>
@@ -45,17 +45,17 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToKelvin(long input)
+        public static int CelsiusToKelvin(int input)
         {
             var kelvinTemp = input + 273.15d;
-            if (kelvinTemp < long.MinValue || kelvinTemp > long.MaxValue)
+            if (kelvinTemp < int.MinValue || kelvinTemp > int.MaxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long kelvinTempLong = (long)Math.Round(kelvinTemp, 0, MidpointRounding.AwayFromZero);
+            int kelvinTempInt = (int)Math.Round(kelvinTemp, 0, MidpointRounding.AwayFromZero);
 
-            return kelvinTempLong;
+            return kelvinTempInt;
         }
 
         /// <summary>
@@ -66,9 +66,9 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToGas(long input)
+        public static int CelsiusToGas(int input)
         {
-            long gasTemp;
+            int gasTemp;
             if (input < 135)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureTooLowForGasError);
@@ -130,17 +130,17 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToRankine(long input)
+        public static int CelsiusToRankine(int input)
         {
-            var rankineTemp = (input + 273.15) * 9 / 5;
-            if (rankineTemp < long.MinValue || rankineTemp > long.MaxValue)
+            var rankineTemp = (input + 273.15d) * 9 / 5;
+            if (rankineTemp < int.MinValue || rankineTemp > int.MaxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long rankineTempLong = (long)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
+            int rankineTempInt = (int)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
 
-            return rankineTempLong;
+            return rankineTempInt;
         }
     }
 }
