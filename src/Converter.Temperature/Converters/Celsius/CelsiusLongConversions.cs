@@ -47,15 +47,14 @@
         /// </returns>
         public static long CelsiusToKelvin(long input)
         {
-            var kelvinTemp = input + 273.15d;
+            var kelvinTemp = input + 273L;
+            // ToDo: This is wrong. long and int wrap around.
             if (kelvinTemp < long.MinValue || kelvinTemp > long.MaxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long kelvinTempLong = (long)Math.Round(kelvinTemp, 0, MidpointRounding.AwayFromZero);
-
-            return kelvinTempLong;
+            return kelvinTemp;
         }
 
         /// <summary>

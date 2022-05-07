@@ -71,7 +71,7 @@
         public void Test_to_celsius_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 220L;
+            const long expected = 230L;
             var input = new GasLong(7L);
 
             // Act.
@@ -82,15 +82,15 @@
         }
 
         [Theory]
-        [InlineData(1L, 140L)]
-        [InlineData(2L, 150L)]
-        [InlineData(3L, 165L)]
-        [InlineData(4L, 180L)]
-        [InlineData(5L, 190L)]
-        [InlineData(6L, 200L)]
-        [InlineData(7L, 220L)]
-        [InlineData(8L, 230L)]
-        [InlineData(9L, 240L)]
+        [InlineData(1L, 150L)]
+        [InlineData(2L, 165L)]
+        [InlineData(3L, 180L)]
+        [InlineData(4L, 190L)]
+        [InlineData(5L, 202L)]
+        [InlineData(6L, 217L)]
+        [InlineData(7L, 230L)]
+        [InlineData(8L, 240L)]
+        [InlineData(9L, 250L)]
         public void Test_to_celsius_generic_from_gas_returns_correct_value(long input, long expected)
         {
             // Arrange.
@@ -247,7 +247,7 @@
         public void Test_to_fahrenheit_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 428L;
+            const long expected = 446L;
             var input = new GasLong(7L);
 
             // Act.
@@ -261,7 +261,7 @@
         public void Test_to_fahrenheit_generic_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 428L;
+            const long expected = 446L;
             var input = new GasLong(7L);
 
             // Act.
