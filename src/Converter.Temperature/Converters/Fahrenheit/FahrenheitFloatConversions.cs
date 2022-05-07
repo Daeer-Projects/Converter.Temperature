@@ -1,8 +1,8 @@
-﻿using Converter.Temperature.Converters.Celsius;
-using System;
-
-namespace Converter.Temperature.Converters.Fahrenheit
+﻿namespace Converter.Temperature.Converters.Fahrenheit
 {
+    using System;
+    using Celsius;
+
     internal static class FahrenheitFloatConversions
     {
         /// <summary>
