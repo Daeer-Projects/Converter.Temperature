@@ -49,8 +49,8 @@
 
         [Theory]
         [InlineData(50L, 10L)]
-        [InlineData(long.MinValue, -9223372036854775808L)]
-        [InlineData(long.MaxValue, 9223372036854775807L)]
+        [InlineData(long.MinValue, -5124095576030431232L)]
+        [InlineData(long.MaxValue, 5124095576030431232L)]
         public void Test_long_extensions_from_fahrenheit_to_celsius_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
@@ -63,8 +63,8 @@
 
         [Theory]
         [InlineData(50L, 10L)]
-        [InlineData(long.MinValue, -9223372036854775808L)]
-        [InlineData(long.MaxValue, 9223372036854775807L)]
+        [InlineData(long.MinValue, -5124095576030431232L)]
+        [InlineData(long.MaxValue, 5124095576030431232L)]
         public void Test_long_extensions_generic_from_fahrenheit_to_celsius_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
@@ -138,16 +138,16 @@
         #region From Gas
 
         [Theory]
-        [InlineData(1L, 140L)]
-        [InlineData(2L, 150L)]
-        [InlineData(3L, 165L)]
-        [InlineData(4L, 180L)]
-        [InlineData(5L, 190L)]
-        [InlineData(6L, 200L)]
-        [InlineData(7L, 220L)]
-        [InlineData(8L, 230L)]
-        [InlineData(9L, 240L)]
-        [InlineData(10L, 260L)]
+        [InlineData(1L, 150L)]
+        [InlineData(2L, 165L)]
+        [InlineData(3L, 180L)]
+        [InlineData(4L, 190L)]
+        [InlineData(5L, 202L)]
+        [InlineData(6L, 217L)]
+        [InlineData(7L, 230L)]
+        [InlineData(8L, 240L)]
+        [InlineData(9L, 250L)]
+        [InlineData(10L, 265L)]
         public void Test_long_extensions_from_gas_to_celsius_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
@@ -159,16 +159,16 @@
         }
 
         [Theory]
-        [InlineData(1L, 140L)]
-        [InlineData(2L, 150L)]
-        [InlineData(3L, 165L)]
-        [InlineData(4L, 180L)]
-        [InlineData(5L, 190L)]
-        [InlineData(6L, 200L)]
-        [InlineData(7L, 220L)]
-        [InlineData(8L, 230L)]
-        [InlineData(9L, 240L)]
-        [InlineData(10L, 260L)]
+        [InlineData(1L, 150L)]
+        [InlineData(2L, 165L)]
+        [InlineData(3L, 180L)]
+        [InlineData(4L, 190L)]
+        [InlineData(5L, 202L)]
+        [InlineData(6L, 217L)]
+        [InlineData(7L, 230L)]
+        [InlineData(8L, 240L)]
+        [InlineData(9L, 250L)]
+        [InlineData(10L, 265L)]
         public void Test_long_extensions_generic_from_gas_to_celsius_returns_correct_long_value(long input, long expected)
         {
             // Arrange.

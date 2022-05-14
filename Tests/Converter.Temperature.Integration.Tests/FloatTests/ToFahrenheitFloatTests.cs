@@ -134,13 +134,13 @@
         }
 
         [Theory]
-        [InlineData(33.799988f, -1)]
-        [InlineData(33.8f, 1)]
-        [InlineData(33.79999f, 5)]
+        [InlineData(34.193474f, -1)]
+        [InlineData(34.2f, 1)]
+        [InlineData(34.19347f, 5)]
         public void Test_float_extensions_from_kelvin_with_parameter_to_fahrenheit_returns_correct_float_value(float expected, int fractionalCount)
         {
             // Arrange.
-            const float input = 274.15f;
+            const float input = 274.36857625f;
 
             // Act.
             var result = input.FromKelvin().ToFahrenheit(fractionalCount);
@@ -150,13 +150,13 @@
         }
 
         [Theory]
-        [InlineData(33.799988f, -1)]
-        [InlineData(33.8f, 1)]
-        [InlineData(33.79999f, 5)]
+        [InlineData(34.193474f, -1)]
+        [InlineData(34.2f, 1)]
+        [InlineData(34.19347f, 5)]
         public void Test_float_extensions_generic_from_kelvin_with_parameter_to_fahrenheit_returns_correct_float_value(float expected, int fractionalCount)
         {
             // Arrange.
-            const float input = 274.15f;
+            const float input = 274.36857625f;
 
             // Act.
             var result = input.From<Kelvin>().To<Fahrenheit>(fractionalCount);
@@ -232,8 +232,8 @@
         [InlineData(0d, -459.67f)]
         [InlineData(50d, -409.67f)]
         [InlineData(100d, -359.67f)]
-        [InlineData(500d, 40.329999999999984f)]
-        [InlineData(1000d, 540.3299999999999f)]
+        [InlineData(500d, 40.329987f)]
+        [InlineData(1000d, 540.32996f)]
         public void Test_float_extension_from_rankine_and_to_fahrenheit_returns_correct_float_value(float value, float expected)
         {
             // Arrange.
@@ -249,8 +249,8 @@
         [InlineData(0d, -459.67f)]
         [InlineData(50d, -409.67f)]
         [InlineData(100d, -359.67f)]
-        [InlineData(500d, 40.329999999999984f)]
-        [InlineData(1000d, 540.3299999999999f)]
+        [InlineData(500d, 40.329987f)]
+        [InlineData(1000d, 540.32996f)]
         public void Test_float_extension_generic_from_rankine_and_to_fahrenheit_returns_correct_float_value(float value, float expected)
         {
             // Arrange.

@@ -138,16 +138,16 @@
         #region From Gas
 
         [Theory]
-        [InlineData(1, 140)]
-        [InlineData(2, 150)]
-        [InlineData(3, 165)]
-        [InlineData(4, 180)]
-        [InlineData(5, 190)]
-        [InlineData(6, 200)]
-        [InlineData(7, 220)]
-        [InlineData(8, 230)]
-        [InlineData(9, 240)]
-        [InlineData(10, 260)]
+        [InlineData(1, 150)]
+        [InlineData(2, 165)]
+        [InlineData(3, 180)]
+        [InlineData(4, 190)]
+        [InlineData(5, 202)]
+        [InlineData(6, 217)]
+        [InlineData(7, 230)]
+        [InlineData(8, 240)]
+        [InlineData(9, 250)]
+        [InlineData(10, 265)]
         public void Test_int_extensions_from_gas_to_celsius_returns_correct_int_value(int input, int expected)
         {
             // Arrange.
@@ -159,16 +159,16 @@
         }
 
         [Theory]
-        [InlineData(1, 140)]
-        [InlineData(2, 150)]
-        [InlineData(3, 165)]
-        [InlineData(4, 180)]
-        [InlineData(5, 190)]
-        [InlineData(6, 200)]
-        [InlineData(7, 220)]
-        [InlineData(8, 230)]
-        [InlineData(9, 240)]
-        [InlineData(10, 260)]
+        [InlineData(1, 150)]
+        [InlineData(2, 165)]
+        [InlineData(3, 180)]
+        [InlineData(4, 190)]
+        [InlineData(5, 202)]
+        [InlineData(6, 217)]
+        [InlineData(7, 230)]
+        [InlineData(8, 240)]
+        [InlineData(9, 250)]
+        [InlineData(10, 265)]
         public void Test_int_extensions_generic_from_gas_to_celsius_returns_correct_int_value(int input, int expected)
         {
             // Arrange.

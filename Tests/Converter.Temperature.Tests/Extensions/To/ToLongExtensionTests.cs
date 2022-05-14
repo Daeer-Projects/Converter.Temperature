@@ -559,7 +559,7 @@
         public void Test_to_kelvin_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 473L;
+            const long expected = 490L;
             var input = new GasLong(6L);
 
             // Act.
@@ -573,7 +573,7 @@
         public void Test_to_kelvin_generic_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 473L;
+            const long expected = 490L;
             var input = new GasLong(6L);
 
             // Act.
@@ -613,7 +613,7 @@
         public void Test_to_kelvin_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const long expected = 479L;
+            const long expected = 478L;
             var input = new RankineLong(862L);
 
             // Act.
@@ -627,7 +627,7 @@
         public void Test_to_kelvin_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const long expected = 479L;
+            const long expected = 478L;
             var input = new RankineLong(862L);
 
             // Act.
@@ -723,7 +723,7 @@
         public void Test_to_rankine_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 852L;
+            const long expected = 882L;
             var input = new GasLong(6L);
 
             // Act.
@@ -737,7 +737,7 @@
         public void Test_to_rankine_generic_from_gas_returns_correct_value()
         {
             // Arrange.
-            const long expected = 852L;
+            const long expected = 882L;
             var input = new GasLong(6L);
 
             // Act.

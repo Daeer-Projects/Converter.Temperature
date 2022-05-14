@@ -168,12 +168,12 @@
         #region From Rankine
 
         [Theory]
-        [InlineData(-1000, -556)]
+        [InlineData(-1000, -555)]
         [InlineData(0, 0)]
-        [InlineData(50, 28)]
-        [InlineData(100, 56d)]
-        [InlineData(500, 278)]
-        [InlineData(1000, 556)]
+        [InlineData(50, 27)]
+        [InlineData(100, 55)]
+        [InlineData(500, 277)]
+        [InlineData(1000, 555)]
         public void Test_int_extension_from_rankine_and_to_kelvin_returns_correct_int_value(int value, int expected)
         {
             // Arrange.
@@ -185,12 +185,12 @@
         }
 
         [Theory]
-        [InlineData(-1000, -556)]
+        [InlineData(-1000, -555)]
         [InlineData(0, 0)]
-        [InlineData(50, 28)]
-        [InlineData(100, 56d)]
-        [InlineData(500, 278)]
-        [InlineData(1000, 556)]
+        [InlineData(50, 27)]
+        [InlineData(100, 55)]
+        [InlineData(500, 277)]
+        [InlineData(1000, 555)]
         public void Test_int_extension_generic_from_rankine_and_to_kelvin_returns_correct_int_value(int value, int expected)
         {
             // Arrange.

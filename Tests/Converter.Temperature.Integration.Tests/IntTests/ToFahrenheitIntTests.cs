@@ -164,16 +164,16 @@
         #region From Gas
 
         [Theory]
-        [InlineData(1, 284)]
-        [InlineData(2, 302)]
-        [InlineData(3, 329)]
-        [InlineData(4, 356)]
-        [InlineData(5, 374)]
-        [InlineData(6, 392)]
-        [InlineData(7, 428)]
-        [InlineData(8, 446)]
-        [InlineData(9, 464)]
-        [InlineData(10, 500)]
+        [InlineData(1, 302)]
+        [InlineData(2, 329)]
+        [InlineData(3, 356)]
+        [InlineData(4, 374)]
+        [InlineData(5, 396)]
+        [InlineData(6, 423)]
+        [InlineData(7, 446)]
+        [InlineData(8, 464)]
+        [InlineData(9, 482)]
+        [InlineData(10, 509)]
         public void Test_int_extensions_from_gas_to_fahrenheit_returns_correct_int_value(int input, int expected)
         {
             // Arrange.
@@ -185,16 +185,16 @@
         }
 
         [Theory]
-        [InlineData(1, 284)]
-        [InlineData(2, 302)]
-        [InlineData(3, 329)]
-        [InlineData(4, 356)]
-        [InlineData(5, 374)]
-        [InlineData(6, 392)]
-        [InlineData(7, 428)]
-        [InlineData(8, 446)]
-        [InlineData(9, 464)]
-        [InlineData(10, 500)]
+        [InlineData(1, 302)]
+        [InlineData(2, 329)]
+        [InlineData(3, 356)]
+        [InlineData(4, 374)]
+        [InlineData(5, 396)]
+        [InlineData(6, 423)]
+        [InlineData(7, 446)]
+        [InlineData(8, 464)]
+        [InlineData(9, 482)]
+        [InlineData(10, 509)]
         public void Test_int_extensions_generic_from_gas_to_fahrenheit_returns_correct_int_value(int input, int expected)
         {
             // Arrange.
