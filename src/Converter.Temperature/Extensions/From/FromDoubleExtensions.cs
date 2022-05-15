@@ -27,11 +27,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from FahrenheitConverter.
+        /// Sets the conversion to be from Fahrenheit.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The FahrenheitConverter Double class for the 'To' extensions to use.
+        /// The Fahrenheit Double class for the 'To' extensions to use.
         /// </returns>
         public static FahrenheitDouble FromFahrenheit(this double input)
         {
@@ -39,11 +39,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from GasConverter.
+        /// Sets the conversion to be from Gas.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The GasConverter Double class for the 'To' extensions to use.
+        /// The Gas Double class for the 'To' extensions to use.
         /// </returns>
         public static GasDouble FromGas(this double input)
         {
@@ -51,11 +51,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from KelvinConverter.
+        /// Sets the conversion to be from Kelvin.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The KelvinConverter Double class for the 'To' extensions to use.
+        /// The Kelvin Double class for the 'To' extensions to use.
         /// </returns>
         public static KelvinDouble FromKelvin(this double input)
         {
@@ -63,11 +63,11 @@
         }
 
         /// <summary>
-        /// Sets the conversion to be from RankineConverter.
+        /// Sets the conversion to be from Rankine.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The RankineConverter Double class for the 'To' extension to use.
+        /// The Rankine Double class for the 'To' extension to use.
         /// </returns>
         public static RankineDouble FromRankine(this double input)
         {

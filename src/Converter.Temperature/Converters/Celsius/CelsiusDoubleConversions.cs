@@ -1,8 +1,8 @@
-﻿namespace Converter.Temperature
+﻿namespace Converter.Temperature.Converters.Celsius
 {
     using System;
 
-    internal static class CelsiusConverter
+    internal static class CelsiusDoubleConversions
     {
         /// <summary>
         /// The celsius to celsius conversion.

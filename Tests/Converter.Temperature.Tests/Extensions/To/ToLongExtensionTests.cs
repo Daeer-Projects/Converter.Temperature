@@ -11,13 +11,13 @@
     using Types.Rankine;
     using Xunit;
 
-    public class ToIntExtensionsTests
+    public class ToLongExtensionTests
     {
         [Fact]
         public void Test_to_celsius_from_celsius_returns_same_value()
         {
             // Arrange.
-            var input = new CelsiusInt(42);
+            var input = new CelsiusLong(42L);
 
             // Act.
             var result = input.ToCelsius();
@@ -30,7 +30,7 @@
         public void Test_to_celsius_generic_from_celsius_returns_same_value()
         {
             // Arrange.
-            var input = new CelsiusInt(42);
+            var input = new CelsiusLong(42L);
 
             // Act.
             var result = input.To<Celsius>();
@@ -43,8 +43,8 @@
         public void Test_to_celsius_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 10;
-            var input = new FahrenheitInt(50);
+            const long expected = 10L;
+            var input = new FahrenheitLong(50L);
 
             // Act.
             var result = input.ToCelsius();
@@ -57,8 +57,8 @@
         public void Test_to_celsius_generic_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 10;
-            var input = new FahrenheitInt(50);
+            const long expected = 10L;
+            var input = new FahrenheitLong(50L);
 
             // Act.
             var result = input.To<Celsius>();
@@ -71,8 +71,8 @@
         public void Test_to_celsius_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 230;
-            var input = new GasInt(7);
+            const long expected = 230L;
+            var input = new GasLong(7L);
 
             // Act.
             var result = input.ToCelsius();
@@ -82,19 +82,19 @@
         }
 
         [Theory]
-        [InlineData(1, 150)]
-        [InlineData(2, 165)]
-        [InlineData(3, 180)]
-        [InlineData(4, 190)]
-        [InlineData(5, 202)]
-        [InlineData(6, 217)]
-        [InlineData(7, 230)]
-        [InlineData(8, 240)]
-        [InlineData(9, 250)]
-        public void Test_to_celsius_generic_from_gas_returns_correct_value(int input, int expected)
+        [InlineData(1L, 150L)]
+        [InlineData(2L, 165L)]
+        [InlineData(3L, 180L)]
+        [InlineData(4L, 190L)]
+        [InlineData(5L, 202L)]
+        [InlineData(6L, 217L)]
+        [InlineData(7L, 230L)]
+        [InlineData(8L, 240L)]
+        [InlineData(9L, 250L)]
+        public void Test_to_celsius_generic_from_gas_returns_correct_value(long input, long expected)
         {
             // Arrange.
-            var inputGas = new GasInt(input);
+            var inputGas = new GasLong(input);
 
             // Act.
             var result = inputGas.To<Celsius>();
@@ -107,8 +107,8 @@
         public void Test_to_celsius_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 1;
-            var input = new KelvinInt(274);
+            const long expected = 1L;
+            var input = new KelvinLong(274L);
 
             // Act.
             var result = input.ToCelsius();
@@ -121,8 +121,8 @@
         public void Test_to_celsius_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 1;
-            var input = new KelvinInt(274);
+            const long expected = 1L;
+            var input = new KelvinLong(274L);
 
             // Act.
             var result = input.To<Celsius>();
@@ -135,8 +135,8 @@
         public void Test_to_celsius_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = -121;
-            var input = new RankineInt(274);
+            const long expected = -121L;
+            var input = new RankineLong(274L);
 
             // Act.
             var result = input.ToCelsius();
@@ -149,8 +149,8 @@
         public void Test_to_celsius_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = -121;
-            var input = new RankineInt(274);
+            const long expected = -121L;
+            var input = new RankineLong(274L);
 
             // Act.
             var result = input.To<Celsius>();
@@ -163,8 +163,8 @@
         public void Test_to_fahrenheit_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 54;
-            var input = new CelsiusInt(12);
+            const long expected = 54L;
+            var input = new CelsiusLong(12L);
 
             // Act.
             var result = input.ToFahrenheit();
@@ -177,8 +177,8 @@
         public void Test_to_fahrenheit_generic_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 54;
-            var input = new CelsiusInt(12);
+            const long expected = 54L;
+            var input = new CelsiusLong(12L);
 
             // Act.
             var result = input.To<Fahrenheit>();
@@ -188,12 +188,12 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(long input)
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(input);
+            var inputCelsius = new CelsiusLong(input);
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
@@ -203,12 +203,12 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(long input)
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(input);
+            var inputCelsius = new CelsiusLong(input);
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
@@ -221,7 +221,7 @@
         public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            var input = new FahrenheitInt(50);
+            var input = new FahrenheitLong(50L);
 
             // Act.
             var result = input.ToFahrenheit();
@@ -234,7 +234,7 @@
         public void Test_to_fahrenheit_generic_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            var input = new FahrenheitInt(50);
+            var input = new FahrenheitLong(50L);
 
             // Act.
             var result = input.To<Fahrenheit>();
@@ -247,8 +247,8 @@
         public void Test_to_fahrenheit_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 446;
-            var input = new GasInt(7);
+            const long expected = 446L;
+            var input = new GasLong(7L);
 
             // Act.
             var result = input.ToFahrenheit();
@@ -261,8 +261,8 @@
         public void Test_to_fahrenheit_generic_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 446;
-            var input = new GasInt(7);
+            const long expected = 446L;
+            var input = new GasLong(7L);
 
             // Act.
             var result = input.To<Fahrenheit>();
@@ -275,8 +275,8 @@
         public void Test_to_fahrenheit_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 34;
-            var input = new KelvinInt(274);
+            const long expected = 34L;
+            var input = new KelvinLong(274L);
 
             // Act.
             var result = input.ToFahrenheit();
@@ -289,8 +289,8 @@
         public void Test_to_fahrenheit_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 34;
-            var input = new KelvinInt(274);
+            const long expected = 34L;
+            var input = new KelvinLong(274L);
 
             // Act.
             var result = input.To<Fahrenheit>();
@@ -303,8 +303,8 @@
         public void Test_to_fahrenheit_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = -186;
-            var input = new RankineInt(274);
+            const long expected = -186L;
+            var input = new RankineLong(274L);
 
             // Act.
             var result = input.ToFahrenheit();
@@ -317,8 +317,8 @@
         public void Test_to_fahrenheit_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = -186;
-            var input = new RankineInt(274);
+            const long expected = -186L;
+            var input = new RankineLong(274L);
 
             // Act.
             var result = input.To<Fahrenheit>();
@@ -331,8 +331,8 @@
         public void Test_to_gas_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new CelsiusInt(200);
+            const long expected = 6L;
+            var input = new CelsiusLong(200L);
 
             // Act.
             var result = input.ToGas();
@@ -342,19 +342,19 @@
         }
 
         [Theory]
-        [InlineData(140, 1)]
-        [InlineData(150, 2)]
-        [InlineData(165, 3)]
-        [InlineData(180, 4)]
-        [InlineData(190, 5)]
-        [InlineData(200, 6)]
-        [InlineData(220, 7)]
-        [InlineData(230, 8)]
-        [InlineData(240, 9)]
-        public void Test_to_gas_generic_from_celsius_returns_correct_value(int input, int expected)
+        [InlineData(140L, 1L)]
+        [InlineData(150L, 2L)]
+        [InlineData(165L, 3L)]
+        [InlineData(180L, 4L)]
+        [InlineData(190L, 5L)]
+        [InlineData(200L, 6L)]
+        [InlineData(220L, 7L)]
+        [InlineData(230L, 8L)]
+        [InlineData(240L, 9L)]
+        public void Test_to_gas_generic_from_celsius_returns_correct_value(long input, long expected)
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(input);
+            var inputCelsius = new CelsiusLong(input);
 
             // Act.
             var result = inputCelsius.To<Gas>();
@@ -367,8 +367,8 @@
         public void Test_to_gas_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new FahrenheitInt(392);
+            const long expected = 6L;
+            var input = new FahrenheitLong(392L);
 
             // Act.
             var result = input.ToGas();
@@ -381,8 +381,8 @@
         public void Test_to_gas_generic_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new FahrenheitInt(392);
+            const long expected = 6L;
+            var input = new FahrenheitLong(392L);
 
             // Act.
             var result = input.To<Gas>();
@@ -395,7 +395,7 @@
         public void Test_to_gas_from_gas_returns_same_value()
         {
             // Arrange.
-            var input = new GasInt(7);
+            var input = new GasLong(7L);
 
             // Act.
             var result = input.ToGas();
@@ -408,7 +408,7 @@
         public void Test_to_gas_generic_from_gas_returns_same_value()
         {
             // Arrange.
-            var input = new GasInt(7);
+            var input = new GasLong(7L);
 
             // Act.
             var result = input.To<Gas>();
@@ -421,8 +421,8 @@
         public void Test_to_gas_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new KelvinInt(473);
+            const long expected = 6L;
+            var input = new KelvinLong(473L);
 
             // Act.
             var result = input.ToGas();
@@ -435,8 +435,8 @@
         public void Test_to_gas_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new KelvinInt(473);
+            const long expected = 6L;
+            var input = new KelvinLong(473L);
 
             // Act.
             var result = input.To<Gas>();
@@ -449,8 +449,8 @@
         public void Test_to_gas_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new RankineInt(862);
+            const long expected = 6L;
+            var input = new RankineLong(862L);
 
             // Act.
             var result = input.ToGas();
@@ -463,8 +463,8 @@
         public void Test_to_gas_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 6;
-            var input = new RankineInt(862);
+            const long expected = 6L;
+            var input = new RankineLong(862L);
 
             // Act.
             var result = input.To<Gas>();
@@ -477,8 +477,8 @@
         public void Test_to_kelvin_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 473;
-            var input = new CelsiusInt(200);
+            const long expected = 473L;
+            var input = new CelsiusLong(200L);
 
             // Act.
             var result = input.ToKelvin();
@@ -491,8 +491,8 @@
         public void Test_to_kelvin_generic_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 473;
-            var input = new CelsiusInt(200);
+            const long expected = 473L;
+            var input = new CelsiusLong(200L);
 
             // Act.
             var result = input.To<Kelvin>();
@@ -505,7 +505,7 @@
         public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception()
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(int.MaxValue);
+            var inputCelsius = new CelsiusLong(long.MaxValue);
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToKelvin());
@@ -518,7 +518,7 @@
         public void Test_to_kelvin_generic_from_celsius_with_invalid_parameter_throws_exception()
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(int.MaxValue);
+            var inputCelsius = new CelsiusLong(long.MaxValue);
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
@@ -531,8 +531,8 @@
         public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 473;
-            var input = new FahrenheitInt(392);
+            const long expected = 473L;
+            var input = new FahrenheitLong(392L);
 
             // Act.
             var result = input.ToKelvin();
@@ -545,8 +545,8 @@
         public void Test_to_kelvin_generic_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 473;
-            var input = new FahrenheitInt(392);
+            const long expected = 473L;
+            var input = new FahrenheitLong(392L);
 
             // Act.
             var result = input.To<Kelvin>();
@@ -559,8 +559,8 @@
         public void Test_to_kelvin_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 490;
-            var input = new GasInt(6);
+            const long expected = 490L;
+            var input = new GasLong(6L);
 
             // Act.
             var result = input.ToKelvin();
@@ -573,8 +573,8 @@
         public void Test_to_kelvin_generic_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 490;
-            var input = new GasInt(6);
+            const long expected = 490L;
+            var input = new GasLong(6L);
 
             // Act.
             var result = input.To<Kelvin>();
@@ -587,7 +587,7 @@
         public void Test_to_kelvin_from_kelvin_returns_same_value()
         {
             // Arrange.
-            var input = new KelvinInt(473);
+            var input = new KelvinLong(473L);
 
             // Act.
             var result = input.ToKelvin();
@@ -600,7 +600,7 @@
         public void Test_to_kelvin_generic_from_kelvin_returns_same_value()
         {
             // Arrange.
-            var input = new KelvinInt(473);
+            var input = new KelvinLong(473L);
 
             // Act.
             var result = input.To<Kelvin>();
@@ -613,8 +613,8 @@
         public void Test_to_kelvin_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 478;
-            var input = new RankineInt(862);
+            const long expected = 478L;
+            var input = new RankineLong(862L);
 
             // Act.
             var result = input.ToKelvin();
@@ -627,8 +627,8 @@
         public void Test_to_kelvin_generic_from_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 478;
-            var input = new RankineInt(862);
+            const long expected = 478L;
+            var input = new RankineLong(862L);
 
             // Act.
             var result = input.To<Kelvin>();
@@ -641,8 +641,8 @@
         public void Test_to_rankine_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
-            var input = new CelsiusInt(200);
+            const long expected = 852L;
+            var input = new CelsiusLong(200L);
 
             // Act.
             var result = input.ToRankine();
@@ -655,8 +655,8 @@
         public void Test_to_rankine_generic_from_celsius_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
-            var input = new CelsiusInt(200);
+            const long expected = 852L;
+            var input = new CelsiusLong(200L);
 
             // Act.
             var result = input.To<Rankine>();
@@ -669,7 +669,7 @@
         public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception()
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(int.MaxValue);
+            var inputCelsius = new CelsiusLong(long.MaxValue);
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToRankine());
@@ -682,7 +682,7 @@
         public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception()
         {
             // Arrange.
-            var inputCelsius = new CelsiusInt(int.MaxValue);
+            var inputCelsius = new CelsiusLong(long.MaxValue);
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
@@ -695,8 +695,8 @@
         public void Test_to_rankine_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 716;
-            var input = new FahrenheitInt(256);
+            const long expected = 716L;
+            var input = new FahrenheitLong(256L);
 
             // Act.
             var result = input.ToRankine();
@@ -709,8 +709,8 @@
         public void Test_to_rankine_generic_from_fahrenheit_returns_correct_value()
         {
             // Arrange.
-            const int expected = 716;
-            var input = new FahrenheitInt(256);
+            const long expected = 716L;
+            var input = new FahrenheitLong(256L);
 
             // Act.
             var result = input.To<Rankine>();
@@ -723,8 +723,8 @@
         public void Test_to_rankine_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 882;
-            var input = new GasInt(6);
+            const long expected = 882L;
+            var input = new GasLong(6L);
 
             // Act.
             var result = input.ToRankine();
@@ -737,8 +737,8 @@
         public void Test_to_rankine_generic_from_gas_returns_correct_value()
         {
             // Arrange.
-            const int expected = 882;
-            var input = new GasInt(6);
+            const long expected = 882L;
+            var input = new GasLong(6L);
 
             // Act.
             var result = input.To<Rankine>();
@@ -751,8 +751,8 @@
         public void Test_to_rankine_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 11860;
-            var input = new KelvinInt(6589);
+            const long expected = 11860L;
+            var input = new KelvinLong(6589L);
 
             // Act.
             var result = input.ToRankine();
@@ -765,8 +765,8 @@
         public void Test_to_rankine_generic_from_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 11860;
-            var input = new KelvinInt(6589);
+            const long expected = 11860L;
+            var input = new KelvinLong(6589L);
 
             // Act.
             var result = input.To<Rankine>();
@@ -779,7 +779,7 @@
         public void Test_to_rankine_from_rankine_returns_same_value()
         {
             // Arrange.
-            var input = new RankineInt(862);
+            var input = new RankineLong(862L);
 
             // Act.
             var result = input.ToRankine();
@@ -792,7 +792,7 @@
         public void Test_to_rankine_generic_from_rankine_returns_same_value()
         {
             // Arrange.
-            var input = new RankineInt(862);
+            var input = new RankineLong(862L);
 
             // Act.
             var result = input.To<Rankine>();

@@ -14,7 +14,7 @@
         public void Test_float_extensions_from_celsius_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             const float input = 200f;
 
             // Act.
@@ -28,7 +28,7 @@
         public void Test_float_extensions_generic_from_celsius_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             const float input = 200f;
 
             // Act.
@@ -46,8 +46,8 @@
         public void Test_float_extensions_from_fahrenheit_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6700000000001f;
-            const float input = 392f;
+            const float expected = 851.69653f;
+            const float input = 392.026531f;
 
             // Act.
             var result = input.FromFahrenheit().ToRankine();
@@ -60,8 +60,8 @@
         public void Test_float_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6700000000001f;
-            const float input = 392f;
+            const float expected = 851.69653f;
+            const float input = 392.026531f;
 
             // Act.
             var result = input.From<Fahrenheit>().To<Rankine>();
@@ -112,7 +112,7 @@
         public void Test_float_extension_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             const float input = 6f;
 
             // Act.
@@ -126,7 +126,7 @@
         public void Test_float_extension_generic_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const float expected = 851.6699999999998f;
+            const float expected = 851.67004f;
             const float input = 6f;
 
             // Act.

@@ -1,7 +1,6 @@
 ﻿namespace Converter.Temperature.Extensions.To
 {
     using System;
-    using System.Globalization;
     using BaseTypes;
     using Converters.Celsius;
     using Converters.Fahrenheit;
@@ -15,21 +14,18 @@
     using Types.Kelvin;
     using Types.Rankine;
 
-    /// <summary>
-    /// The to <see langword="int"/> extensions.
-    /// </summary>
-    public static class ToIntExtensions
+    public static class ToLongExtensions
     {
         /// <summary>
         /// Converts the Celsius <paramref name="input"/> to Celsius
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Celsius <see langword="int"/> result.
+        /// The Celsius <see langword="long"/> result.
         /// </returns>
-        public static int ToCelsius(this CelsiusInt input)
+        public static long ToCelsius(this CelsiusLong input)
         {
-            return CelsiusIntConversions.CelsiusToCelsius(input.Temperature);
+            return CelsiusLongConversions.CelsiusToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -38,11 +34,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Celsius <see langword="int"/> result.
+        /// The Celsius <see langword="long"/> result.
         /// </returns>
-        public static int ToCelsius(this FahrenheitInt input)
+        public static long ToCelsius(this FahrenheitLong input)
         {
-            return IntParser(FahrenheitIntConversions.FahrenheitToCelsius(input.Temperature));
+            return FahrenheitLongConversions.FahrenheitToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -51,11 +47,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Celsius <see langword="int"/> result.
+        /// The Celsius <see langword="long"/> result.
         /// </returns>
-        public static int ToCelsius(this GasInt input)
+        public static long ToCelsius(this GasLong input)
         {
-            return IntParser(GasIntConversions.GasToCelsius(input.Temperature));
+            return GasLongConversions.GasToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -64,11 +60,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Celsius <see langword="int"/> result.
+        /// The Celsius <see langword="long"/> result.
         /// </returns>
-        public static int ToCelsius(this KelvinInt input)
+        public static long ToCelsius(this KelvinLong input)
         {
-            return IntParser(KelvinIntConversions.KelvinToCelsius(input.Temperature));
+            return KelvinLongConversions.KelvinToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -77,11 +73,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Celsius <see langword="int"/> result.
+        /// The Celsius <see langword="long"/> result.
         /// </returns>
-        public static int ToCelsius(this RankineInt input)
+        public static long ToCelsius(this RankineLong input)
         {
-            return IntParser(RankineIntConversions.RankineToCelsius(input.Temperature));
+            return RankineLongConversions.RankineToCelsius(input.Temperature);
         }
 
         /// <summary>
@@ -90,11 +86,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The CelsiusDoubleConversions <see langword="long"/> result.
         /// </returns>
-        public static int ToFahrenheit(this CelsiusInt input)
+        public static long ToFahrenheit(this CelsiusLong input)
         {
-            return CelsiusIntConversions.CelsiusToFahrenheit(input.Temperature);
+            return CelsiusLongConversions.CelsiusToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -102,11 +98,11 @@
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The Fahrenheit <see langword="long"/> result.
         /// </returns>
-        public static int ToFahrenheit(this FahrenheitInt input)
+        public static long ToFahrenheit(this FahrenheitLong input)
         {
-            return IntParser(FahrenheitIntConversions.FahrenheitToFahrenheit(input.Temperature));
+            return FahrenheitLongConversions.FahrenheitToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -115,11 +111,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The Fahrenheit <see langword="long"/> result.
         /// </returns>
-        public static int ToFahrenheit(this GasInt input)
+        public static long ToFahrenheit(this GasLong input)
         {
-            return IntParser(GasIntConversions.GasToFahrenheit(input.Temperature));
+            return GasLongConversions.GasToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -128,11 +124,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The Fahrenheit <see langword="long"/> result.
         /// </returns>
-        public static int ToFahrenheit(this KelvinInt input)
+        public static long ToFahrenheit(this KelvinLong input)
         {
-            return IntParser(KelvinIntConversions.KelvinToFahrenheit(input.Temperature));
+            return KelvinLongConversions.KelvinToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -141,11 +137,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Fahrenheit <see langword="int"/> result.
+        /// The Fahrenheit <see langword="long"/> result.
         /// </returns>
-        public static int ToFahrenheit(this RankineInt input)
+        public static long ToFahrenheit(this RankineLong input)
         {
-            return IntParser(RankineIntConversions.RankineToFahrenheit(input.Temperature));
+            return RankineLongConversions.RankineToFahrenheit(input.Temperature);
         }
 
         /// <summary>
@@ -154,11 +150,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The Gas <see langword="long"/> result.
         /// </returns>
-        public static int ToGas(this CelsiusInt input)
+        public static long ToGas(this CelsiusLong input)
         {
-            return CelsiusIntConversions.CelsiusToGas(input.Temperature);
+            return CelsiusLongConversions.CelsiusToGas(input.Temperature);
         }
 
         /// <summary>
@@ -167,11 +163,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The Gas <see langword="long"/> result.
         /// </returns>
-        public static int ToGas(this FahrenheitInt input)
+        public static long ToGas(this FahrenheitLong input)
         {
-            return IntParser(FahrenheitIntConversions.FahrenheitToGas(input.Temperature));
+            return FahrenheitLongConversions.FahrenheitToGas(input.Temperature);
         }
 
         /// <summary>
@@ -180,11 +176,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The Gas <see langword="long"/> result.
         /// </returns>
-        public static int ToGas(this GasInt input)
+        public static long ToGas(this GasLong input)
         {
-            return IntParser(GasDoubleConversion.GasToGas(input.Temperature));
+            return GasLongConversions.GasToGas(input.Temperature);
         }
 
         /// <summary>
@@ -193,11 +189,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The Gas <see langword="long"/> result.
         /// </returns>
-        public static int ToGas(this KelvinInt input)
+        public static long ToGas(this KelvinLong input)
         {
-            return IntParser(KelvinIntConversions.KelvinToGas(input.Temperature));
+            return KelvinLongConversions.KelvinToGas(input.Temperature);
         }
 
         /// <summary>
@@ -206,11 +202,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Gas <see langword="int"/> result.
+        /// The Gas <see langword="long"/> result.
         /// </returns>
-        public static int ToGas(this RankineInt input)
+        public static long ToGas(this RankineLong input)
         {
-            return IntParser(RankineIntConversions.RankineToGas(input.Temperature));
+            return RankineLongConversions.RankineToGas(input.Temperature);
         }
 
         /// <summary>
@@ -219,11 +215,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The Kelvin <see langword="long"/> result.
         /// </returns>
-        public static int ToKelvin(this CelsiusInt input)
+        public static long ToKelvin(this CelsiusLong input)
         {
-            return CelsiusIntConversions.CelsiusToKelvin(input.Temperature);
+            return CelsiusLongConversions.CelsiusToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -232,11 +228,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The Kelvin <see langword="long"/> result.
         /// </returns>
-        public static int ToKelvin(this FahrenheitInt input)
+        public static long ToKelvin(this FahrenheitLong input)
         {
-            return IntParser(FahrenheitIntConversions.FahrenheitToKelvin(input.Temperature));
+            return FahrenheitLongConversions.FahrenheitToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -245,11 +241,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The Kelvin <see langword="long"/> result.
         /// </returns>
-        public static int ToKelvin(this GasInt input)
+        public static long ToKelvin(this GasLong input)
         {
-            return IntParser(GasIntConversions.GasToKelvin(input.Temperature));
+            return GasLongConversions.GasToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -257,11 +253,11 @@
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The Kelvin <see langword="long"/> result.
         /// </returns>
-        public static int ToKelvin(this KelvinInt input)
+        public static long ToKelvin(this KelvinLong input)
         {
-            return IntParser(KelvinIntConversions.KelvinToKelvin(input.Temperature));
+            return KelvinLongConversions.KelvinToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -269,11 +265,11 @@
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Kelvin <see langword="int"/> result.
+        /// The Kelvin <see langword="long"/> result.
         /// </returns>
-        public static int ToKelvin(this RankineInt input)
+        public static long ToKelvin(this RankineLong input)
         {
-            return IntParser(RankineIntConversions.RankineToKelvin(input.Temperature));
+            return RankineLongConversions.RankineToKelvin(input.Temperature);
         }
 
         /// <summary>
@@ -282,11 +278,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The Rankine <see langword="long"/> result.
         /// </returns>
-        public static int ToRankine(this CelsiusInt input)
+        public static long ToRankine(this CelsiusLong input)
         {
-            return CelsiusIntConversions.CelsiusToRankine(input.Temperature);
+            return CelsiusLongConversions.CelsiusToRankine(input.Temperature);
         }
 
         /// <summary>
@@ -295,11 +291,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The Rankine <see langword="long"/> result.
         /// </returns>
-        public static int ToRankine(this FahrenheitInt input)
+        public static long ToRankine(this FahrenheitLong input)
         {
-            return IntParser(FahrenheitIntConversions.FahrenheitToRankine(input.Temperature));
+            return FahrenheitLongConversions.FahrenheitToRankine(input.Temperature);
         }
 
         /// <summary>
@@ -308,11 +304,11 @@
         /// <param name="input"> The value to be converted. </param>
         /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The Rankine <see langword="long"/> result.
         /// </returns>
-        public static int ToRankine(this GasInt input)
+        public static long ToRankine(this GasLong input)
         {
-            return IntParser(GasIntConversions.GasToRankine(input.Temperature));
+            return GasLongConversions.GasToRankine(input.Temperature);
         }
 
         /// <summary>
@@ -320,11 +316,11 @@
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The Rankine <see langword="long"/> result.
         /// </returns>
-        public static int ToRankine(this KelvinInt input)
+        public static long ToRankine(this KelvinLong input)
         {
-            return IntParser(KelvinIntConversions.KelvinToRankine(input.Temperature));
+            return KelvinLongConversions.KelvinToRankine(input.Temperature);
         }
 
         /// <summary>
@@ -332,15 +328,15 @@
         /// </summary>
         /// <param name="input"> The value to be converted. </param>
         /// <returns>
-        /// The Rankine <see langword="int"/> result.
+        /// The Rankine <see langword="long"/> result.
         /// </returns>
-        public static int ToRankine(this RankineInt input)
+        public static long ToRankine(this RankineLong input)
         {
-            return IntParser(RankineIntConversions.RankineToRankine(input.Temperature));
+            return RankineLongConversions.RankineToRankine(input.Temperature);
         }
 
         /// <summary>
-        /// Converts the Int input to the correct int value.
+        /// Converts the Long input to the correct Long value.
         /// </summary>
         /// <typeparam name="TInput"> The temperature type to be converted to. </typeparam>
         /// <param name="input"> The value to be converted. </param>
@@ -348,45 +344,38 @@
         /// <returns>
         /// The result of the conversion.
         /// </returns>
-        public static int To<TInput>(this IntBase input)
+        public static long To<TInput>(this LongBase input)
             where TInput : TemperatureBase
         {
             return typeof(TInput).Name switch
             {
-                nameof(Celsius) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToCelsius(castInput.Temperature),
-                nameof(Celsius) when input is FahrenheitInt castInput => IntParser(FahrenheitIntConversions.FahrenheitToCelsius(castInput.Temperature)),
-                nameof(Celsius) when input is KelvinInt castInput => IntParser(KelvinIntConversions.KelvinToCelsius(castInput.Temperature)),
-                nameof(Celsius) when input is GasInt castInput =>  IntParser(GasIntConversions.GasToCelsius(castInput.Temperature)),
-                nameof(Celsius) when input is RankineInt castInput => IntParser(RankineIntConversions.RankineToCelsius(castInput.Temperature)),
-                nameof(Fahrenheit) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToFahrenheit(castInput.Temperature),
-                nameof(Fahrenheit) when input is FahrenheitInt castInput => IntParser(FahrenheitIntConversions.FahrenheitToFahrenheit(castInput.Temperature)),
-                nameof(Fahrenheit) when input is KelvinInt castInput => IntParser(KelvinIntConversions.KelvinToFahrenheit(castInput.Temperature)),
-                nameof(Fahrenheit) when input is GasInt castInput => IntParser(GasIntConversions.GasToFahrenheit(castInput.Temperature)),
-                nameof(Fahrenheit) when input is RankineInt castInput => IntParser(RankineIntConversions.RankineToFahrenheit(castInput.Temperature)),
-                nameof(Kelvin) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToKelvin(castInput.Temperature),
-                nameof(Kelvin) when input is FahrenheitInt castInput => IntParser(FahrenheitIntConversions.FahrenheitToKelvin(castInput.Temperature)),
-                nameof(Kelvin) when input is KelvinInt castInput => IntParser(KelvinIntConversions.KelvinToKelvin(castInput.Temperature)),
-                nameof(Kelvin) when input is GasInt castInput => IntParser(GasIntConversions.GasToKelvin(castInput.Temperature)),
-                nameof(Kelvin) when input is RankineInt castInput => IntParser(RankineIntConversions.RankineToKelvin(castInput.Temperature)),
-                nameof(Gas) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToGas(castInput.Temperature),
-                nameof(Gas) when input is FahrenheitInt castInput => IntParser(FahrenheitIntConversions.FahrenheitToGas(castInput.Temperature)),
-                nameof(Gas) when input is KelvinInt castInput => IntParser(KelvinIntConversions.KelvinToGas(castInput.Temperature)),
-                nameof(Gas) when input is GasInt castInput => IntParser(GasIntConversions.GasToGas(castInput.Temperature)),
-                nameof(Gas) when input is RankineInt castInput => IntParser(RankineIntConversions.RankineToGas(castInput.Temperature)),
-                nameof(Rankine) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRankine(castInput.Temperature),
-                nameof(Rankine) when input is FahrenheitInt castInput => IntParser(FahrenheitIntConversions.FahrenheitToRankine(castInput.Temperature)),
-                nameof(Rankine) when input is KelvinInt castInput => IntParser(KelvinIntConversions.KelvinToRankine(castInput.Temperature)),
-                nameof(Rankine) when input is GasInt castInput => IntParser(GasIntConversions.GasToRankine(castInput.Temperature)),
-                nameof(Rankine) when input is RankineInt castInput => IntParser(RankineIntConversions.RankineToRankine(castInput.Temperature)),
+                nameof(Celsius) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToCelsius(castInput.Temperature),
+                nameof(Celsius) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToCelsius(castInput.Temperature),
+                nameof(Celsius) when input is KelvinLong castInput => KelvinLongConversions.KelvinToCelsius(castInput.Temperature),
+                nameof(Celsius) when input is GasLong castInput => GasLongConversions.GasToCelsius(castInput.Temperature),
+                nameof(Celsius) when input is RankineLong castInput => RankineLongConversions.RankineToCelsius(castInput.Temperature),
+                nameof(Fahrenheit) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToFahrenheit(castInput.Temperature),
+                nameof(Fahrenheit) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToFahrenheit(castInput.Temperature),
+                nameof(Fahrenheit) when input is KelvinLong castInput => KelvinLongConversions.KelvinToFahrenheit(castInput.Temperature),
+                nameof(Fahrenheit) when input is GasLong castInput => GasLongConversions.GasToFahrenheit(castInput.Temperature),
+                nameof(Fahrenheit) when input is RankineLong castInput => RankineLongConversions.RankineToFahrenheit(castInput.Temperature),
+                nameof(Kelvin) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToKelvin(castInput.Temperature),
+                nameof(Kelvin) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToKelvin(castInput.Temperature),
+                nameof(Kelvin) when input is KelvinLong castInput => KelvinLongConversions.KelvinToKelvin(castInput.Temperature),
+                nameof(Kelvin) when input is GasLong castInput => GasLongConversions.GasToKelvin(castInput.Temperature),
+                nameof(Kelvin) when input is RankineLong castInput => RankineLongConversions.RankineToKelvin(castInput.Temperature),
+                nameof(Gas) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToGas(castInput.Temperature),
+                nameof(Gas) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToGas(castInput.Temperature),
+                nameof(Gas) when input is KelvinLong castInput => KelvinLongConversions.KelvinToGas(castInput.Temperature),
+                nameof(Gas) when input is GasLong castInput => GasLongConversions.GasToGas(castInput.Temperature),
+                nameof(Gas) when input is RankineLong castInput => RankineLongConversions.RankineToGas(castInput.Temperature),
+                nameof(Rankine) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToRankine(castInput.Temperature),
+                nameof(Rankine) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToRankine(castInput.Temperature),
+                nameof(Rankine) when input is KelvinLong castInput => KelvinLongConversions.KelvinToRankine(castInput.Temperature),
+                nameof(Rankine) when input is GasLong castInput => GasLongConversions.GasToRankine(castInput.Temperature),
+                nameof(Rankine) when input is RankineLong castInput => RankineLongConversions.RankineToRankine(castInput.Temperature),
                 _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
             };
-        }
-
-        private static int IntParser(double temp)
-        {
-            temp = Math.Round(temp);
-            if (!int.TryParse(temp.ToString(CultureInfo.InvariantCulture), out var convertedTemp)) throw new ArgumentOutOfRangeException(Constants.ValueOutOfRangeForType);
-            return convertedTemp;
         }
     }
 }

@@ -9,21 +9,18 @@
     using Types.Kelvin;
     using Types.Rankine;
 
-    /// <summary>
-    /// The from string extensions.
-    /// </summary>
-    public static class FromStringExtensions
+    public static class FromLongExtensions
     {
         /// <summary>
         /// Sets the conversion to be from Celsius.
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The Celsius String class for the 'To' extensions to use.
+        /// The Celsius Long class for the 'To' extensions to use.
         /// </returns>
-        public static CelsiusString FromCelsius(this string input)
+        public static CelsiusLong FromCelsius(this long input)
         {
-            return new CelsiusString(input);
+            return new CelsiusLong(input);
         }
 
         /// <summary>
@@ -31,11 +28,11 @@
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The Fahrenheit String class for the 'To' extensions to use.
+        /// The Fahrenheit Long class for the 'To' extensions to use.
         /// </returns>
-        public static FahrenheitString FromFahrenheit(this string input)
+        public static FahrenheitLong FromFahrenheit(this long input)
         {
-            return new FahrenheitString(input);
+            return new FahrenheitLong(input);
         }
 
         /// <summary>
@@ -43,11 +40,11 @@
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The Gas String class for the 'To' extensions to use.
+        /// The Gas Long class for the 'To' extensions to use.
         /// </returns>
-        public static GasString FromGas(this string input)
+        public static GasLong FromGas(this long input)
         {
-            return new GasString(input);
+            return new GasLong(input);
         }
 
         /// <summary>
@@ -55,11 +52,11 @@
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The Kelvin String class for the 'To' extensions to use.
+        /// The Kelvin Long class for the 'To' extensions to use.
         /// </returns>
-        public static KelvinString FromKelvin(this string input)
+        public static KelvinLong FromKelvin(this long input)
         {
-            return new KelvinString(input);
+            return new KelvinLong(input);
         }
 
         /// <summary>
@@ -67,11 +64,11 @@
         /// </summary>
         /// <param name="input"> The value that is to be converted. </param>
         /// <returns>
-        /// The Rankine String class for the 'To' extensions to use.
+        /// The Rankine Long class for the 'To' extensions to use.
         /// </returns>
-        public static RankineString FromRankine(this string input)
+        public static RankineLong FromRankine(this long input)
         {
-            return new RankineString(input);
+            return new RankineLong(input);
         }
 
         /// <summary>
@@ -81,18 +78,18 @@
         /// <param name="input"> The value that is to be converted. </param>
         /// <exception cref="ArgumentException"> The TInput type is not a valid type for this method. </exception>
         /// <returns>
-        /// The StringBase specific class for the 'To' extension to use.
+        /// The LongBase specific class for the 'To' extension to use.
         /// </returns>
-        public static StringBase From<TInput>(this string input)
+        public static LongBase From<TInput>(this long input)
             where TInput : TemperatureBase
         {
             return typeof(TInput).Name switch
             {
-                nameof(Celsius) => new CelsiusString(input),
-                nameof(Fahrenheit) => new FahrenheitString(input),
-                nameof(Kelvin) => new KelvinString(input),
-                nameof(Gas) => new GasString(input),
-                nameof(Rankine) => new RankineString(input),
+                nameof(Celsius) => new CelsiusLong(input),
+                nameof(Fahrenheit) => new FahrenheitLong(input),
+                nameof(Kelvin) => new KelvinLong(input),
+                nameof(Gas) => new GasLong(input),
+                nameof(Rankine) => new RankineLong(input),
                 _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
             };
         }

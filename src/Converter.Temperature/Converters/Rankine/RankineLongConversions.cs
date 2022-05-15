@@ -1,6 +1,8 @@
-﻿namespace Converter.Temperature
+﻿namespace Converter.Temperature.Converters.Rankine
 {
-    internal static class RankineConverter
+    using Celsius;
+
+    internal static class RankineLongConversions
     {
         /// <summary>
         /// The rankine to rankine conversion.
@@ -10,7 +12,7 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double RankineToRankine(double input)
+        public static long RankineToRankine(long input)
         {
             return input;
         }
@@ -23,9 +25,9 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double RankineToCelsius(double input)
+        public static long RankineToCelsius(long input)
         {
-            var rankineTemp = (input - 491.67) * 5 / 9;
+            var rankineTemp = (input - 492L) * 5 / 9;
             return rankineTemp;
         }
 
@@ -37,9 +39,9 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double RankineToFahrenheit(double input)
+        public static long RankineToFahrenheit(long input)
         {
-            var rankineTemp = input - 459.67;
+            var rankineTemp = input - 460L;
             return rankineTemp;
         }
 
@@ -51,7 +53,7 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double RankineToKelvin(double input)
+        public static long RankineToKelvin(long input)
         {
             var rankineTemp = input * 5 / 9;
             return rankineTemp;
@@ -65,10 +67,10 @@
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static double RankineToGas(double input)
+        public static long RankineToGas(long input)
         {
             var celsiusTemp = RankineToCelsius(input);
-            var gasTemp = CelsiusConverter.CelsiusToGas(celsiusTemp);
+            var gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
     }

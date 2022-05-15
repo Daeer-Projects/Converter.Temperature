@@ -1,4 +1,4 @@
-﻿namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.LongTests
 {
     using System;
     using Extensions.From;
@@ -7,16 +7,16 @@
     using TemperatureTypes;
     using Xunit;
 
-    public class ToGasIntTests
+    public class ToGasLongTests
     {
         #region From Celsius
 
         [Fact]
-        public void Test_int_extensions_from_celsius_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_from_celsius_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 6;
-            const int input = 200;
+            const long expected = 6L;
+            const long input = 200L;
 
             // Act.
             var result = input.FromCelsius().ToGas();
@@ -26,11 +26,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_celsius_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_generic_from_celsius_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 6;
-            const int input = 200;
+            const long expected = 6L;
+            const long input = 200L;
 
             // Act.
             var result = input.From<Celsius>().To<Gas>();
@@ -40,27 +40,27 @@
         }
 
         [Theory]
-        [InlineData(135, 1)]
-        [InlineData(144, 1)]
-        [InlineData(145, 2)]
-        [InlineData(154, 2)]
-        [InlineData(155, 3)]
-        [InlineData(174, 3)]
-        [InlineData(175, 4)]
-        [InlineData(184, 4)]
-        [InlineData(185, 5)]
-        [InlineData(194, 5)]
-        [InlineData(195, 6)]
-        [InlineData(209, 6)]
-        [InlineData(210, 7)]
-        [InlineData(224, 7)]
-        [InlineData(225, 8)]
-        [InlineData(234, 8)]
-        [InlineData(235, 9)]
-        [InlineData(244, 9)]
-        [InlineData(245, 10)]
-        [InlineData(269, 10)]
-        public void Test_int_extensions_from_celsius_to_gas_returns_correct_gas_value(int input, int expected)
+        [InlineData(135L, 1L)]
+        [InlineData(144L, 1L)]
+        [InlineData(145L, 2L)]
+        [InlineData(154L, 2L)]
+        [InlineData(155L, 3L)]
+        [InlineData(174L, 3L)]
+        [InlineData(175L, 4L)]
+        [InlineData(184L, 4L)]
+        [InlineData(185L, 5L)]
+        [InlineData(194L, 5L)]
+        [InlineData(195L, 6L)]
+        [InlineData(209L, 6L)]
+        [InlineData(210L, 7L)]
+        [InlineData(224L, 7L)]
+        [InlineData(225L, 8L)]
+        [InlineData(234L, 8L)]
+        [InlineData(235L, 9L)]
+        [InlineData(244L, 9L)]
+        [InlineData(245L, 10L)]
+        [InlineData(269L, 10L)]
+        public void Test_long_extensions_from_celsius_to_gas_returns_correct_gas_value(long input, long expected)
         {
             // Arrange.
             // Act.
@@ -71,27 +71,27 @@
         }
 
         [Theory]
-        [InlineData(135, 1)]
-        [InlineData(144, 1)]
-        [InlineData(145, 2)]
-        [InlineData(154, 2)]
-        [InlineData(155, 3)]
-        [InlineData(174, 3)]
-        [InlineData(175, 4)]
-        [InlineData(184, 4)]
-        [InlineData(185, 5)]
-        [InlineData(194, 5)]
-        [InlineData(195, 6)]
-        [InlineData(209, 6)]
-        [InlineData(210, 7)]
-        [InlineData(224, 7)]
-        [InlineData(225, 8)]
-        [InlineData(234, 8)]
-        [InlineData(235, 9)]
-        [InlineData(244, 9)]
-        [InlineData(245, 10)]
-        [InlineData(269, 10)]
-        public void Test_int_extensions_generic_from_celsius_to_gas_returns_correct_gas_value(int input, int expected)
+        [InlineData(135L, 1L)]
+        [InlineData(144L, 1L)]
+        [InlineData(145L, 2L)]
+        [InlineData(154L, 2L)]
+        [InlineData(155L, 3L)]
+        [InlineData(174L, 3L)]
+        [InlineData(175L, 4L)]
+        [InlineData(184L, 4L)]
+        [InlineData(185L, 5L)]
+        [InlineData(194L, 5L)]
+        [InlineData(195L, 6L)]
+        [InlineData(209L, 6L)]
+        [InlineData(210L, 7L)]
+        [InlineData(224L, 7L)]
+        [InlineData(225L, 8L)]
+        [InlineData(234L, 8L)]
+        [InlineData(235L, 9L)]
+        [InlineData(244L, 9L)]
+        [InlineData(245L, 10L)]
+        [InlineData(269L, 10L)]
+        public void Test_long_extensions_generic_from_celsius_to_gas_returns_correct_gas_value(long input, long expected)
         {
             // Arrange.
             // Act.
@@ -102,10 +102,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_from_celsius_to_gas_with_large_value_throws_exception()
+        public void Test_long_extensions_from_celsius_to_gas_with_large_value_throws_exception()
         {
             // Arrange.
-            const int input = 74536;
+            const long input = 74536L;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToGas());
@@ -115,10 +115,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_celsius_to_gas_with_large_value_throws_exception()
+        public void Test_long_extensions_generic_from_celsius_to_gas_with_large_value_throws_exception()
         {
             // Arrange.
-            const int input = 74536;
+            const long input = 74536L;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>().To<Gas>());
@@ -128,9 +128,9 @@
         }
 
         [Theory]
-        [InlineData(79, "Temp too low for gas mark!")]
-        [InlineData(270, "Temp too high for gas mark!")]
-        public void Test_int_extensions_from_celsius_to_gas_with_invalid_parameters_throws_exception(int input, string expectedError)
+        [InlineData(134L, "Temp too low for gas mark!")]
+        [InlineData(270L, "Temp too high for gas mark!")]
+        public void Test_long_extensions_from_celsius_to_gas_with_invalid_parameters_throws_exception(long input, string expectedError)
         {
             // Arrange.
             // Act.
@@ -141,9 +141,9 @@
         }
 
         [Theory]
-        [InlineData(79, "Temp too low for gas mark!")]
-        [InlineData(270, "Temp too high for gas mark!")]
-        public void Test_int_extensions_generic_from_celsius_to_gas_with_invalid_parameters_throws_exception(int input, string expectedError)
+        [InlineData(134L, "Temp too low for gas mark!")]
+        [InlineData(270L, "Temp too high for gas mark!")]
+        public void Test_long_extensions_generic_from_celsius_to_gas_with_invalid_parameters_throws_exception(long input, string expectedError)
         {
             // Arrange.
             // Act.
@@ -158,11 +158,11 @@
         #region From Fahrenheit
 
         [Fact]
-        public void Test_int_extensions_from_fahrenheit_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_from_fahrenheit_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 6;
-            const int input = 392;
+            const long expected = 6L;
+            const long input = 392L;
 
             // Act.
             var result = input.FromFahrenheit().ToGas();
@@ -172,11 +172,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_fahrenheit_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_generic_from_fahrenheit_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 6;
-            const int input = 392;
+            const long expected = 6L;
+            const long input = 392L;
 
             // Act.
             var result = input.From<Fahrenheit>().To<Gas>();
@@ -190,11 +190,11 @@
         #region From Kelvin
 
         [Fact]
-        public void Test_int_extensions_from_kelvin_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_from_kelvin_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 6;
-            const int input = 473;
+            const long expected = 6L;
+            const long input = 473L;
 
             // Act.
             var result = input.FromKelvin().ToGas();
@@ -204,11 +204,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_kelvin_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_generic_from_kelvin_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 6;
-            const int input = 473;
+            const long expected = 6L;
+            const long input = 473L;
 
             // Act.
             var result = input.From<Kelvin>().To<Gas>();
@@ -222,12 +222,12 @@
         #region From Gas
 
         [Theory]
-        [InlineData(1)]
-        [InlineData(3)]
-        [InlineData(5)]
-        [InlineData(8)]
-        [InlineData(10)]
-        public void Test_int_extension_from_and_to_gas_returns_correct_int_value(int value)
+        [InlineData(1L)]
+        [InlineData(3L)]
+        [InlineData(5L)]
+        [InlineData(8L)]
+        [InlineData(10L)]
+        public void Test_long_extension_from_and_to_gas_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -238,12 +238,12 @@
         }
 
         [Theory]
-        [InlineData(1)]
-        [InlineData(3)]
-        [InlineData(5)]
-        [InlineData(8)]
-        [InlineData(10)]
-        public void Test_int_extension_generic_from_and_to_gas_returns_correct_int_value(int value)
+        [InlineData(1L)]
+        [InlineData(3L)]
+        [InlineData(5L)]
+        [InlineData(8L)]
+        [InlineData(10L)]
+        public void Test_long_extension_generic_from_and_to_gas_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -254,9 +254,9 @@
         }
 
         [Theory]
-        [InlineData(0)]
-        [InlineData(11)]
-        public void Test_int_extension_from_and_to_gas_throws_exception(int value)
+        [InlineData(0L)]
+        [InlineData(11L)]
+        public void Test_long_extension_from_and_to_gas_throws_exception(long value)
         {
             // Arrange.
             // Act.
@@ -267,9 +267,9 @@
         }
 
         [Theory]
-        [InlineData(0)]
-        [InlineData(11)]
-        public void Test_int_extension_generic_from_and_to_gas_throws_exception(int value)
+        [InlineData(0L)]
+        [InlineData(11L)]
+        public void Test_long_extension_generic_from_and_to_gas_throws_exception(long value)
         {
             // Arrange.
             // Act.
@@ -284,11 +284,11 @@
         #region From Rankine
 
         [Fact]
-        public void Test_int_extensions_from_rankine_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_from_rankine_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 4;
-            const int input = 807;
+            const long expected = 4L;
+            const long input = 807L;
 
             // Act.
             var result = input.FromRankine().ToGas();
@@ -298,11 +298,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_rankine_to_gas_returns_correct_int_value()
+        public void Test_long_extensions_generic_from_rankine_to_gas_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 4;
-            const int input = 807;
+            const long expected = 4L;
+            const long input = 807L;
 
             // Act.
             var result = input.From<Rankine>().To<Gas>();
@@ -312,10 +312,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_from_rankine_to_gas_with_low_invalid_value_throws_exception()
+        public void Test_long_extensions_from_rankine_to_gas_with_low_invalid_value_throws_exception()
         {
             // Arrange.
-            const int input = 405;
+            const long input = 405L;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine().ToGas());
@@ -325,10 +325,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_rankine_to_gas_with_low_invalid_value_throws_exception()
+        public void Test_long_extensions_generic_from_rankine_to_gas_with_low_invalid_value_throws_exception()
         {
             // Arrange.
-            const int input = 405;
+            const long input = 405L;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rankine>().To<Gas>());
@@ -338,10 +338,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_from_rankine_to_gas_with_high_invalid_value_throws_exception()
+        public void Test_long_extensions_from_rankine_to_gas_with_high_invalid_value_throws_exception()
         {
             // Arrange.
-            const int input = 1001;
+            const long input = 1001L;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine().ToGas());
@@ -351,10 +351,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_rankine_to_gas_with_high_invalid_value_throws_exception()
+        public void Test_long_extensions_generic_from_rankine_to_gas_with_high_invalid_value_throws_exception()
         {
             // Arrange.
-            const int input = 1001;
+            const long input = 1001L;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rankine>().To<Gas>());

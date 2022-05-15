@@ -1,4 +1,4 @@
-﻿namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.LongTests
 {
     using System;
     using Extensions.From;
@@ -7,16 +7,16 @@
     using TemperatureTypes;
     using Xunit;
 
-    public class ToRankineIntTests
+    public class ToRankineLongTests
     {
         #region From Celsius
 
         [Fact]
-        public void Test_int_extensions_from_celsius_to_rankine_returns_correct_value()
+        public void Test_long_extensions_from_celsius_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
-            const int input = 200;
+            const long expected = 852L;
+            const long input = 200L;
 
             // Act.
             var result = input.FromCelsius().ToRankine();
@@ -26,11 +26,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_celsius_to_rankine_returns_correct_value()
+        public void Test_long_extensions_generic_from_celsius_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
-            const int input = 200;
+            const long expected = 852L;
+            const long input = 200L;
 
             // Act.
             var result = input.From<Celsius>().To<Rankine>();
@@ -40,9 +40,9 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(long input)
         {
             // Arrange.
             // Act.
@@ -53,9 +53,9 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(long input)
         {
             // Arrange.
             // Act.
@@ -70,11 +70,11 @@
         #region From Fahrenheit
 
         [Fact]
-        public void Test_int_extensions_from_fahrenheit_to_rankine_returns_correct_value()
+        public void Test_long_extensions_from_fahrenheit_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
-            const int input = 392;
+            const long expected = 852L;
+            const long input = 392L;
 
             // Act.
             var result = input.FromFahrenheit().ToRankine();
@@ -84,11 +84,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
+        public void Test_long_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
-            const int input = 392;
+            const long expected = 852L;
+            const long input = 392L;
 
             // Act.
             var result = input.From<Fahrenheit>().To<Rankine>();
@@ -102,11 +102,11 @@
         #region From Kelvin
 
         [Theory]
-        [InlineData(-1000, -1800)]
-        [InlineData(0, 0)]
-        [InlineData(50, 90)]
-        [InlineData(1000, 1800)]
-        public void Test_int_extension_from_kelvin_to_rankine_returns_correct_int_value(int value, int expected)
+        [InlineData(-1000L, -1800L)]
+        [InlineData(0L, 0L)]
+        [InlineData(50L, 90L)]
+        [InlineData(1000L, 1800L)]
+        public void Test_long_extension_from_kelvin_to_rankine_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.
@@ -117,11 +117,11 @@
         }
 
         [Theory]
-        [InlineData(-1000, -1800)]
-        [InlineData(0, 0)]
-        [InlineData(50, 90)]
-        [InlineData(1000, 1800)]
-        public void Test_int_extension_generic_from_kelvin_to_rankine_returns_correct_int_value(int value, int expected)
+        [InlineData(-1000L, -1800L)]
+        [InlineData(0L, 0L)]
+        [InlineData(50L, 90L)]
+        [InlineData(1000L, 1800L)]
+        public void Test_long_extension_generic_from_kelvin_to_rankine_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.
@@ -136,11 +136,11 @@
         #region From Gas
 
         [Fact]
-        public void Test_int_extension_from_gas_to_rankine_returns_correct_value()
+        public void Test_long_extension_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 882;
-            const int input = 6;
+            const long expected = 882L;
+            const long input = 6L;
 
             // Act.
             var result = input.FromGas().ToRankine();
@@ -150,11 +150,11 @@
         }
 
         [Fact]
-        public void Test_int_extension_generic_from_gas_to_rankine_returns_correct_value()
+        public void Test_long_extension_generic_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 882;
-            const int input = 6;
+            const long expected = 882L;
+            const long input = 6L;
 
             // Act.
             var result = input.From<Gas>().To<Rankine>();
@@ -168,12 +168,12 @@
         #region From Rankine
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(-345)]
-        [InlineData(0)]
-        [InlineData(7564)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_from_and_to_rankine_returns_correct_int_value(int value)
+        [InlineData(long.MinValue)]
+        [InlineData(-345L)]
+        [InlineData(0L)]
+        [InlineData(7564L)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_from_and_to_rankine_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -184,12 +184,12 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(-345)]
-        [InlineData(0)]
-        [InlineData(7564)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_generic_from_and_to_rankine_returns_correct_int_value(int value)
+        [InlineData(long.MinValue)]
+        [InlineData(-345L)]
+        [InlineData(0L)]
+        [InlineData(7564L)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_generic_from_and_to_rankine_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.

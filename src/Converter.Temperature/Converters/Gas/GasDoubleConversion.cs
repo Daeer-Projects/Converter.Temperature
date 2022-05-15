@@ -1,8 +1,9 @@
-﻿namespace Converter.Temperature
+﻿namespace Converter.Temperature.Converters.Gas
 {
     using System;
+    using Celsius;
 
-    internal static class GasConverter
+    internal static class GasDoubleConversion
     {
         /// <summary>
         /// The gas to celsius conversion.
@@ -79,7 +80,7 @@
         public static double GasToFahrenheit(double firstTemp)
         {
             var celsiusTemp = GasToCelsius(firstTemp);
-            var fahrenheitTemp = CelsiusConverter.CelsiusToFahrenheit(celsiusTemp);
+            var fahrenheitTemp = CelsiusDoubleConversions.CelsiusToFahrenheit(celsiusTemp);
             return fahrenheitTemp;
         }
 
@@ -94,7 +95,7 @@
         public static double GasToKelvin(double firstTemp)
         {
             var celsiusTemp = GasToCelsius(firstTemp);
-            var kelvinTemp = CelsiusConverter.CelsiusToKelvin(celsiusTemp);
+            var kelvinTemp = CelsiusDoubleConversions.CelsiusToKelvin(celsiusTemp);
             return kelvinTemp;
         }
 
@@ -127,7 +128,7 @@
         public static double GasToRankine(double firstTemp)
         {
             var celsiusTemp = GasToCelsius(firstTemp);
-            var rankineTemp = CelsiusConverter.CelsiusToRankine(celsiusTemp);
+            var rankineTemp = CelsiusDoubleConversions.CelsiusToRankine(celsiusTemp);
             return rankineTemp;
         }
     }

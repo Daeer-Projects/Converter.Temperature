@@ -1,4 +1,4 @@
-﻿namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.LongTests
 {
     using System;
     using Extensions.From;
@@ -7,14 +7,14 @@
     using TemperatureTypes;
     using Xunit;
 
-    public class ToFahrenheitIntTests
+    public class ToFahrenheitLongTests
     {
         #region From Celsius
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(long input)
         {
             // Arrange.
             // Act.
@@ -25,9 +25,9 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(long input)
         {
             // Arrange.
             // Act.
@@ -38,10 +38,10 @@
         }
 
         [Theory]
-        [InlineData(-152436784, -274386179)]
-        [InlineData(0, 32)]
-        [InlineData(26431662, 47577024)]
-        public void Test_int_extension_from_celsius_to_fahrenheit_returns_correct_int_value(int value, int expected)
+        [InlineData(-152436784L, -274386179L)]
+        [InlineData(0L, 32L)]
+        [InlineData(26431662L, 47577024L)]
+        public void Test_long_extension_from_celsius_to_fahrenheit_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.
@@ -52,10 +52,10 @@
         }
 
         [Theory]
-        [InlineData(-152436784, -274386179)]
-        [InlineData(0, 32)]
-        [InlineData(26431662, 47577024)]
-        public void Test_int_extension_generic_from_celsius_to_fahrenheit_returns_correct_int_value(int value, int expected)
+        [InlineData(-152436784L, -274386179L)]
+        [InlineData(0L, 32L)]
+        [InlineData(26431662L, 47577024L)]
+        public void Test_long_extension_generic_from_celsius_to_fahrenheit_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.
@@ -70,12 +70,12 @@
         #region From Fahrenheit
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(-345)]
-        [InlineData(0)]
-        [InlineData(7564)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extensions_from_and_to_fahrenheit_returns_correct_int_value(int value)
+        [InlineData(long.MinValue)]
+        [InlineData(-345L)]
+        [InlineData(0L)]
+        [InlineData(7564L)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extensions_from_and_to_fahrenheit_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -86,12 +86,12 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(-345)]
-        [InlineData(0)]
-        [InlineData(7564)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extensions_generic_from_and_to_fahrenheit_returns_correct_int_value(int value)
+        [InlineData(long.MinValue)]
+        [InlineData(-345L)]
+        [InlineData(0L)]
+        [InlineData(7564L)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extensions_generic_from_and_to_fahrenheit_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -106,11 +106,11 @@
         #region From Kelvin
 
         [Fact]
-        public void Test_int_extensions_from_kelvin_to_fahrenheit_returns_correct_int_value()
+        public void Test_long_extensions_from_kelvin_to_fahrenheit_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 34;
-            const int input = 274;
+            const long expected = 34L;
+            const long input = 274L;
 
             // Act.
             var result = input.FromKelvin().ToFahrenheit();
@@ -120,11 +120,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_kelvin_to_fahrenheit_returns_correct_int_value()
+        public void Test_long_extensions_generic_from_kelvin_to_fahrenheit_returns_correct_long_value()
         {
             // Arrange.
-            const int expected = 34;
-            const int input = 274;
+            const long expected = 34L;
+            const long input = 274L;
 
             // Act.
             var result = input.From<Kelvin>().To<Fahrenheit>();
@@ -134,9 +134,9 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_int_value(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_long_value(long input)
         {
             // Arrange.
             // Act.
@@ -147,9 +147,9 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_generic_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_int_value(int input)
+        [InlineData(long.MinValue)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_generic_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_long_value(long input)
         {
             // Arrange.
             // Act.
@@ -164,17 +164,17 @@
         #region From Gas
 
         [Theory]
-        [InlineData(1, 302)]
-        [InlineData(2, 329)]
-        [InlineData(3, 356)]
-        [InlineData(4, 374)]
-        [InlineData(5, 396)]
-        [InlineData(6, 423)]
-        [InlineData(7, 446)]
-        [InlineData(8, 464)]
-        [InlineData(9, 482)]
-        [InlineData(10, 509)]
-        public void Test_int_extensions_from_gas_to_fahrenheit_returns_correct_int_value(int input, int expected)
+        [InlineData(1L, 302L)]
+        [InlineData(2L, 329L)]
+        [InlineData(3L, 356L)]
+        [InlineData(4L, 374L)]
+        [InlineData(5L, 396L)]
+        [InlineData(6L, 423L)]
+        [InlineData(7L, 446L)]
+        [InlineData(8L, 464L)]
+        [InlineData(9L, 482L)]
+        [InlineData(10L, 509L)]
+        public void Test_long_extensions_from_gas_to_fahrenheit_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
             // Act.
@@ -185,17 +185,17 @@
         }
 
         [Theory]
-        [InlineData(1, 302)]
-        [InlineData(2, 329)]
-        [InlineData(3, 356)]
-        [InlineData(4, 374)]
-        [InlineData(5, 396)]
-        [InlineData(6, 423)]
-        [InlineData(7, 446)]
-        [InlineData(8, 464)]
-        [InlineData(9, 482)]
-        [InlineData(10, 509)]
-        public void Test_int_extensions_generic_from_gas_to_fahrenheit_returns_correct_int_value(int input, int expected)
+        [InlineData(1L, 302L)]
+        [InlineData(2L, 329L)]
+        [InlineData(3L, 356L)]
+        [InlineData(4L, 374L)]
+        [InlineData(5L, 396L)]
+        [InlineData(6L, 423L)]
+        [InlineData(7L, 446L)]
+        [InlineData(8L, 464L)]
+        [InlineData(9L, 482L)]
+        [InlineData(10L, 509L)]
+        public void Test_long_extensions_generic_from_gas_to_fahrenheit_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
             // Act.
@@ -206,9 +206,9 @@
         }
 
         [Theory]
-        [InlineData(0)]
-        [InlineData(11)]
-        public void Test_int_extensions_from_gas_to_fahrenheit_with_invalid_parameters_throws_argument_out_of_range_exception(int input)
+        [InlineData(0L)]
+        [InlineData(11L)]
+        public void Test_long_extensions_from_gas_to_fahrenheit_with_invalid_parameters_throws_argument_out_of_range_exception(long input)
         {
             // Arrange.
             // Act.
@@ -219,9 +219,9 @@
         }
 
         [Theory]
-        [InlineData(0)]
-        [InlineData(11)]
-        public void Test_int_extensions_generic_from_gas_to_fahrenheit_with_invalid_parameters_throws_argument_out_of_range_exception(int input)
+        [InlineData(0L)]
+        [InlineData(11L)]
+        public void Test_long_extensions_generic_from_gas_to_fahrenheit_with_invalid_parameters_throws_argument_out_of_range_exception(long input)
         {
             // Arrange.
             // Act.
@@ -236,13 +236,13 @@
         #region From Rankine
 
         [Theory]
-        [InlineData(-1000, -1460)]
-        [InlineData(0, -460)]
-        [InlineData(50, -410)]
-        [InlineData(100, -360)]
-        [InlineData(500, 40)]
-        [InlineData(1000, 540)]
-        public void Test_int_extension_from_rankine_and_to_fahrenheit_returns_correct_int_value(int value, int expected)
+        [InlineData(-1000L, -1460L)]
+        [InlineData(0L, -460L)]
+        [InlineData(50L, -410L)]
+        [InlineData(100L, -360L)]
+        [InlineData(500L, 40L)]
+        [InlineData(1000L, 540L)]
+        public void Test_long_extension_from_rankine_and_to_fahrenheit_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.
@@ -253,13 +253,13 @@
         }
 
         [Theory]
-        [InlineData(-1000, -1460)]
-        [InlineData(0, -460)]
-        [InlineData(50, -410)]
-        [InlineData(100, -360)]
-        [InlineData(500, 40)]
-        [InlineData(1000, 540)]
-        public void Test_int_extension_generic_from_rankine_and_to_fahrenheit_returns_correct_int_value(int value, int expected)
+        [InlineData(-1000L, -1460L)]
+        [InlineData(0L, -460L)]
+        [InlineData(50L, -410L)]
+        [InlineData(100L, -360L)]
+        [InlineData(500L, 40L)]
+        [InlineData(1000L, 540L)]
+        public void Test_long_extension_generic_from_rankine_and_to_fahrenheit_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.

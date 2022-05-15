@@ -1,4 +1,4 @@
-﻿namespace Converter.Temperature.Integration.Tests.IntTests
+﻿namespace Converter.Temperature.Integration.Tests.LongTests
 {
     using System;
     using Extensions.From;
@@ -7,16 +7,17 @@
     using TemperatureTypes;
     using Xunit;
 
-    public class ToKelvinIntTests
+    public class ToKelvinLongTests
     {
         #region From Celsius
 
-        [Theory]
-        [InlineData(200, 473)]
-        [InlineData(int.MinValue, -2147483375)]
-        public void Test_int_extensions_from_celsius_to_kelvin_returns_correct_value(int input, int expected)
+        [Fact]
+        public void Test_long_extensions_from_celsius_to_kelvin_returns_correct_value()
         {
             // Arrange.
+            const long expected = 473L;
+            const long input = 200L;
+
             // Act.
             var result = input.FromCelsius().ToKelvin();
 
@@ -24,12 +25,13 @@
             result.Should().Be(expected);
         }
 
-        [Theory]
-        [InlineData(200, 473)]
-        [InlineData(int.MinValue, -2147483375)]
-        public void Test_int_extensions_generic_from_celsius_to_kelvin_returns_correct_value(int input, int expected)
+        [Fact]
+        public void Test_long_extensions_generic_from_celsius_to_kelvin_returns_correct_value()
         {
             // Arrange.
+            const long expected = 473L;
+            const long input = 200L;
+
             // Act.
             var result = input.From<Celsius>().To<Kelvin>();
 
@@ -38,10 +40,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
+        public void Test_long_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
         {
             // Arrange.
-            const int input = int.MaxValue;
+            const long input = long.MaxValue;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToKelvin());
@@ -51,10 +53,10 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
+        public void Test_long_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
         {
             // Arrange.
-            const int input = int.MaxValue;
+            const long input = long.MaxValue;
 
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>().To<Kelvin>());
@@ -68,11 +70,11 @@
         #region From Fahrenheit
 
         [Fact]
-        public void Test_int_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
+        public void Test_long_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 473;
-            const int input = 392;
+            const long expected = 473L;
+            const long input = 392L;
 
             // Act.
             var result = input.FromFahrenheit().ToKelvin();
@@ -82,11 +84,11 @@
         }
 
         [Fact]
-        public void Test_int_extensions_generic_from_fahrenheit_to_kelvin_returns_correct_value()
+        public void Test_long_extensions_generic_from_fahrenheit_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 473;
-            const int input = 392;
+            const long expected = 473L;
+            const long input = 392L;
 
             // Act.
             var result = input.From<Fahrenheit>().To<Kelvin>();
@@ -100,12 +102,12 @@
         #region From Kelvin
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(-345)]
-        [InlineData(0.0)]
-        [InlineData(7564)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_from_and_to_kelvin_returns_correct_int_value(int value)
+        [InlineData(long.MinValue)]
+        [InlineData(-345L)]
+        [InlineData(0L)]
+        [InlineData(7564L)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_from_and_to_kelvin_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -116,12 +118,12 @@
         }
 
         [Theory]
-        [InlineData(int.MinValue)]
-        [InlineData(-345)]
-        [InlineData(0.0)]
-        [InlineData(7564)]
-        [InlineData(int.MaxValue)]
-        public void Test_int_extension_generic_from_and_to_kelvin_returns_correct_int_value(int value)
+        [InlineData(long.MinValue)]
+        [InlineData(-345L)]
+        [InlineData(0L)]
+        [InlineData(7564L)]
+        [InlineData(long.MaxValue)]
+        public void Test_long_extension_generic_from_and_to_kelvin_returns_correct_long_value(long value)
         {
             // Arrange.
             // Act.
@@ -136,11 +138,11 @@
         #region From Gas
 
         [Fact]
-        public void Test_int_extension_from_gas_to_kelvin_returns_correct_value()
+        public void Test_long_extension_from_gas_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 490;
-            const int input = 6;
+            const long expected = 490L;
+            const long input = 6L;
 
             // Act.
             var result = input.FromGas().ToKelvin();
@@ -150,11 +152,11 @@
         }
 
         [Fact]
-        public void Test_int_extension_generic_from_gas_to_kelvin_returns_correct_value()
+        public void Test_long_extension_generic_from_gas_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const int expected = 490;
-            const int input = 6;
+            const long expected = 490L;
+            const long input = 6L;
 
             // Act.
             var result = input.From<Gas>().To<Kelvin>();
@@ -168,13 +170,13 @@
         #region From Rankine
 
         [Theory]
-        [InlineData(-1000, -555)]
-        [InlineData(0, 0)]
-        [InlineData(50, 27)]
-        [InlineData(100, 55)]
-        [InlineData(500, 277)]
-        [InlineData(1000, 555)]
-        public void Test_int_extension_from_rankine_and_to_kelvin_returns_correct_int_value(int value, int expected)
+        [InlineData(-1000L, -555L)]
+        [InlineData(0L, 0L)]
+        [InlineData(50L, 27L)]
+        [InlineData(100L, 55L)]
+        [InlineData(500L, 277L)]
+        [InlineData(1000L, 555L)]
+        public void Test_long_extension_from_rankine_and_to_kelvin_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.
@@ -185,13 +187,13 @@
         }
 
         [Theory]
-        [InlineData(-1000, -555)]
-        [InlineData(0, 0)]
-        [InlineData(50, 27)]
-        [InlineData(100, 55)]
-        [InlineData(500, 277)]
-        [InlineData(1000, 555)]
-        public void Test_int_extension_generic_from_rankine_and_to_kelvin_returns_correct_int_value(int value, int expected)
+        [InlineData(-1000L, -555L)]
+        [InlineData(0L, 0L)]
+        [InlineData(50L, 27L)]
+        [InlineData(100L, 55L)]
+        [InlineData(500L, 277L)]
+        [InlineData(1000L, 555L)]
+        public void Test_long_extension_generic_from_rankine_and_to_kelvin_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
             // Act.

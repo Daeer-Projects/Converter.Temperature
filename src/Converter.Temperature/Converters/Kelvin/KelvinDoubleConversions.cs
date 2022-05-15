@@ -1,6 +1,8 @@
-﻿namespace Converter.Temperature
+﻿namespace Converter.Temperature.Converters.Kelvin
 {
-    internal static class KelvinConverter
+    using Celsius;
+
+    internal static class KelvinDoubleConversions
     {
         /// <summary>
         /// The kelvin to celsius conversion.
@@ -26,7 +28,7 @@
         public static double KelvinToFahrenheit(double firstTemp)
         {
             var celsiusTemp = KelvinToCelsius(firstTemp);
-            var fahrenheitTemp = CelsiusConverter.CelsiusToFahrenheit(celsiusTemp);
+            var fahrenheitTemp = CelsiusDoubleConversions.CelsiusToFahrenheit(celsiusTemp);
             return fahrenheitTemp;
         }
 
@@ -53,7 +55,7 @@
         public static double KelvinToGas(double firstTemp)
         {
             var celsiusTemp = KelvinToCelsius(firstTemp);
-            var gasTemp = CelsiusConverter.CelsiusToGas(celsiusTemp);
+            var gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
 
