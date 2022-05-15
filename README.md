@@ -21,6 +21,7 @@ These extension methods will convert different types of temperatures to other ty
 ### Data types
 
 * int
+* long
 * float
 * double
 * string
