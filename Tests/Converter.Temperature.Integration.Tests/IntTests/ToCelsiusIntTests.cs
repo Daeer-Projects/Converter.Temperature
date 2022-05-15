@@ -107,12 +107,12 @@
             result.Should().Be(expected);
         }
 
-        [Fact]
-        public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value()
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(int input)
         {
             // Arrange.
-            const int input = int.MinValue;
-
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin().ToCelsius());
 
@@ -120,12 +120,12 @@
             result.Message.Should().Contain("Value out of range for type.");
         }
 
-        [Fact]
-        public void Test_int_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value()
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(int input)
         {
             // Arrange.
-            const int input = int.MinValue;
-
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>().To<Celsius>());
 

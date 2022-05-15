@@ -109,8 +109,8 @@
         public void Test_float_extensions_from_kelvin_to_fahrenheit_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 33.799988f;
-            const float input = 274.15f;
+            const float expected = 33.80198f;
+            const float input = 274.15110239825f;
 
             // Act.
             var result = input.FromKelvin().ToFahrenheit();
@@ -123,8 +123,8 @@
         public void Test_float_extensions_generic_from_kelvin_to_fahrenheit_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 33.799988f;
-            const float input = 274.15f;
+            const float expected = 33.80198f;
+            const float input = 274.15110239825f;
 
             // Act.
             var result = input.From<Kelvin>().To<Fahrenheit>();

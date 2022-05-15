@@ -11,12 +11,13 @@
     {
         #region From Celsius
 
-        [Theory]
-        [InlineData(200L, 473L)]
-        [InlineData(long.MinValue, -9223372036854775808L)]
-        public void Test_long_extensions_from_celsius_to_kelvin_returns_correct_value(long input, long expected)
+        [Fact]
+        public void Test_long_extensions_from_celsius_to_kelvin_returns_correct_value()
         {
             // Arrange.
+            const long expected = 473L;
+            const long input = 200L;
+
             // Act.
             var result = input.FromCelsius().ToKelvin();
 
@@ -24,12 +25,13 @@
             result.Should().Be(expected);
         }
 
-        [Theory]
-        [InlineData(200L, 473L)]
-        [InlineData(long.MinValue, -9223372036854775808L)]
-        public void Test_long_extensions_generic_from_celsius_to_kelvin_returns_correct_value(long input, long expected)
+        [Fact]
+        public void Test_long_extensions_generic_from_celsius_to_kelvin_returns_correct_value()
         {
             // Arrange.
+            const long expected = 473L;
+            const long input = 200L;
+
             // Act.
             var result = input.From<Celsius>().To<Kelvin>();
 
@@ -139,7 +141,7 @@
         public void Test_long_extension_from_gas_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const long expected = 473L;
+            const long expected = 490L;
             const long input = 6L;
 
             // Act.
@@ -153,7 +155,7 @@
         public void Test_long_extension_generic_from_gas_to_kelvin_returns_correct_value()
         {
             // Arrange.
-            const long expected = 473L;
+            const long expected = 490L;
             const long input = 6L;
 
             // Act.
@@ -168,12 +170,12 @@
         #region From Rankine
 
         [Theory]
-        [InlineData(-1000L, -556L)]
+        [InlineData(-1000L, -555L)]
         [InlineData(0L, 0L)]
-        [InlineData(50L, 28L)]
-        [InlineData(100L, 56L)]
-        [InlineData(500L, 278L)]
-        [InlineData(1000L, 556L)]
+        [InlineData(50L, 27L)]
+        [InlineData(100L, 55L)]
+        [InlineData(500L, 277L)]
+        [InlineData(1000L, 555L)]
         public void Test_long_extension_from_rankine_and_to_kelvin_returns_correct_long_value(long value, long expected)
         {
             // Arrange.
@@ -185,12 +187,12 @@
         }
 
         [Theory]
-        [InlineData(-1000L, -556L)]
+        [InlineData(-1000L, -555L)]
         [InlineData(0L, 0L)]
-        [InlineData(50L, 28L)]
-        [InlineData(100L, 56L)]
-        [InlineData(500L, 278L)]
-        [InlineData(1000L, 556L)]
+        [InlineData(50L, 27L)]
+        [InlineData(100L, 55L)]
+        [InlineData(500L, 277L)]
+        [InlineData(1000L, 555L)]
         public void Test_long_extension_generic_from_rankine_and_to_kelvin_returns_correct_long_value(long value, long expected)
         {
             // Arrange.

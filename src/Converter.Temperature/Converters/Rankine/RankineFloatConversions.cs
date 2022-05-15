@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Converters.Rankine
 {
+using System;
     using Celsius;
 
     internal static class RankineFloatConversions
@@ -28,6 +29,11 @@
         public static float RankineToCelsius(float input)
         {
             var rankineTemp = (input - 491.67f) * 5 / 9;
+            if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
+            {
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+            }
+
             return rankineTemp;
         }
 

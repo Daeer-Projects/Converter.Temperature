@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Converters.Kelvin
 {
+using System;
     using Celsius;
 
     internal static class KelvinLongConversions
@@ -13,6 +14,13 @@
         /// </returns>
         public static long KelvinToCelsius(long firstTemp)
         {
+            const long maxValue = long.MaxValue - 273L;
+            const long minValue = long.MinValue + 273L;
+            if (firstTemp < minValue || firstTemp > maxValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+            }
+
             var celsiusTemp = firstTemp - 273L;
             return celsiusTemp;
         }

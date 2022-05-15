@@ -40,10 +40,6 @@
         }
 
         [Theory]
-        [InlineData(80L, 0L)]
-        [InlineData(114L, 0L)]
-        [InlineData(115L, 0L)]
-        [InlineData(134L, 0L)]
         [InlineData(135L, 1L)]
         [InlineData(144L, 1L)]
         [InlineData(145L, 2L)]
@@ -75,10 +71,6 @@
         }
 
         [Theory]
-        [InlineData(80L, 0L)]
-        [InlineData(114L, 0L)]
-        [InlineData(115L, 0L)]
-        [InlineData(134L, 0L)]
         [InlineData(135L, 1L)]
         [InlineData(144L, 1L)]
         [InlineData(145L, 2L)]
@@ -136,7 +128,7 @@
         }
 
         [Theory]
-        [InlineData(79L, "Temp too low for gas mark!")]
+        [InlineData(134L, "Temp too low for gas mark!")]
         [InlineData(270L, "Temp too high for gas mark!")]
         public void Test_long_extensions_from_celsius_to_gas_with_invalid_parameters_throws_exception(long input, string expectedError)
         {
@@ -149,7 +141,7 @@
         }
 
         [Theory]
-        [InlineData(79L, "Temp too low for gas mark!")]
+        [InlineData(134L, "Temp too low for gas mark!")]
         [InlineData(270L, "Temp too high for gas mark!")]
         public void Test_long_extensions_generic_from_celsius_to_gas_with_invalid_parameters_throws_exception(long input, string expectedError)
         {

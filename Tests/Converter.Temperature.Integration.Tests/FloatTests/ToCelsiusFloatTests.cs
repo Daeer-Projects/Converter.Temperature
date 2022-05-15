@@ -109,8 +109,8 @@
         public void Test_float_extensions_from_kelvin_to_celsius_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 0.9999939f;
-            const float input = 274.15f;
+            const float expected = 1.0189514f;
+            const float input = 274.168932972f;
 
             // Act.
             var result = input.FromKelvin().ToCelsius();
@@ -123,8 +123,8 @@
         public void Test_float_extensions_generic_from_kelvin_to_celsius_returns_correct_float_value()
         {
             // Arrange.
-            const float expected = 0.9999939f;
-            const float input = 274.15f;
+            const float expected = 1.0189514f;
+            const float input = 274.168932972f;
 
             // Act.
             var result = input.From<Kelvin>().To<Celsius>();
@@ -333,32 +333,30 @@
             result.Should().Be(expected);
         }
 
-        [Fact]
-        public void Test_float_extension_from_rankine_and_to_celsius_with_min_value_returns_correct_float_value()
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_from_rankine_to_celsius_with_invalid_parameter_throws_exception(float input)
         {
             // Arrange.
-            const float expected = -1.8904575E+38f;
-            const float input = float.MinValue;
-
             // Act.
-            var result = input.FromRankine().ToCelsius();
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine().ToCelsius());
 
             // Assert.
-            result.Should().Be(expected);
+            result.Message.Should().Contain("Value out of range for type.");
         }
 
-        [Fact]
-        public void Test_float_extension_generic_from_rankine_and_to_celsius_with_min_value_returns_correct_float_value()
+        [Theory]
+        [InlineData(float.MinValue)]
+        [InlineData(float.MaxValue)]
+        public void Test_float_extension_generic_from_rankine_to_celsius_with_invalid_parameter_throws_exception(float input)
         {
             // Arrange.
-            const float expected = -1.8904575E+38f;
-            const float input = float.MinValue;
-
             // Act.
-            var result = input.From<Rankine>().To<Celsius>();
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rankine>().To<Celsius>());
 
             // Assert.
-            result.Should().Be(expected);
+            result.Message.Should().Contain("Value out of range for type.");
         }
 
         #endregion From Rankine

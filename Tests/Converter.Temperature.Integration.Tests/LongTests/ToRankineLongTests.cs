@@ -139,7 +139,7 @@
         public void Test_long_extension_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const long expected = 852L;
+            const long expected = 882L;
             const long input = 6L;
 
             // Act.
@@ -153,7 +153,7 @@
         public void Test_long_extension_generic_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const long expected = 852L;
+            const long expected = 882L;
             const long input = 6L;
 
             // Act.

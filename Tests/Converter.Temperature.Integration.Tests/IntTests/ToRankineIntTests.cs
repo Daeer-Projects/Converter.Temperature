@@ -139,7 +139,7 @@
         public void Test_int_extension_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
+            const int expected = 882;
             const int input = 6;
 
             // Act.
@@ -153,7 +153,7 @@
         public void Test_int_extension_generic_from_gas_to_rankine_returns_correct_value()
         {
             // Arrange.
-            const int expected = 852;
+            const int expected = 882;
             const int input = 6;
 
             // Act.

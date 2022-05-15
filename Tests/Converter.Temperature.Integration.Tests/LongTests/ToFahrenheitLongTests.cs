@@ -164,16 +164,16 @@
         #region From Gas
 
         [Theory]
-        [InlineData(1L, 284L)]
-        [InlineData(2L, 302L)]
-        [InlineData(3L, 329L)]
-        [InlineData(4L, 356L)]
-        [InlineData(5L, 374L)]
-        [InlineData(6L, 392L)]
-        [InlineData(7L, 428L)]
-        [InlineData(8L, 446L)]
-        [InlineData(9L, 464L)]
-        [InlineData(10L, 500L)]
+        [InlineData(1L, 302L)]
+        [InlineData(2L, 329L)]
+        [InlineData(3L, 356L)]
+        [InlineData(4L, 374L)]
+        [InlineData(5L, 396L)]
+        [InlineData(6L, 423L)]
+        [InlineData(7L, 446L)]
+        [InlineData(8L, 464L)]
+        [InlineData(9L, 482L)]
+        [InlineData(10L, 509L)]
         public void Test_long_extensions_from_gas_to_fahrenheit_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
@@ -185,16 +185,16 @@
         }
 
         [Theory]
-        [InlineData(1L, 284L)]
-        [InlineData(2L, 302L)]
-        [InlineData(3L, 329L)]
-        [InlineData(4L, 356L)]
-        [InlineData(5L, 374L)]
-        [InlineData(6L, 392L)]
-        [InlineData(7L, 428L)]
-        [InlineData(8L, 446L)]
-        [InlineData(9L, 464L)]
-        [InlineData(10L, 500L)]
+        [InlineData(1L, 302L)]
+        [InlineData(2L, 329L)]
+        [InlineData(3L, 356L)]
+        [InlineData(4L, 374L)]
+        [InlineData(5L, 396L)]
+        [InlineData(6L, 423L)]
+        [InlineData(7L, 446L)]
+        [InlineData(8L, 464L)]
+        [InlineData(9L, 482L)]
+        [InlineData(10L, 509L)]
         public void Test_long_extensions_generic_from_gas_to_fahrenheit_returns_correct_long_value(long input, long expected)
         {
             // Arrange.
