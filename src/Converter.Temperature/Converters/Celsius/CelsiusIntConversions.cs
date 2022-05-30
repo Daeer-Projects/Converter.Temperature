@@ -47,13 +47,14 @@
         /// </returns>
         public static int CelsiusToKelvin(int input)
         {
-            var kelvinTemp = input + 273.15d;
-            if (kelvinTemp < int.MinValue || kelvinTemp > int.MaxValue)
+            const int maxValue = int.MaxValue - 273;
+            const int minValue = int.MinValue + 273;
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            int kelvinTempInt = (int)Math.Round(kelvinTemp, 0, MidpointRounding.AwayFromZero);
+            int kelvinTempInt = input + 273;
 
             return kelvinTempInt;
         }
@@ -132,13 +133,15 @@
         /// </returns>
         public static int CelsiusToRankine(int input)
         {
-            var rankineTemp = (input + 273.15d) * 9 / 5;
-            if (rankineTemp < int.MinValue || rankineTemp > int.MaxValue)
+            const int minValue = int.MinValue + 492;
+            const int maxValue = int.MaxValue - 492;
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            int rankineTempInt = (int)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
+            double result = (input + 273.15d) * 9 / 5;
+            int rankineTempInt = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
             return rankineTempInt;
         }

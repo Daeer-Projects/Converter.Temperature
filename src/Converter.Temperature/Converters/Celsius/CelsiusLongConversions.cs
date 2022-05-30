@@ -133,13 +133,15 @@
         /// </returns>
         public static long CelsiusToRankine(long input)
         {
-            var rankineTemp = (input + 273.15) * 9 / 5;
-            if (rankineTemp < long.MinValue || rankineTemp > long.MaxValue)
+            const long minValue = long.MinValue + 492;
+            const long maxValue = long.MaxValue - 492;
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long rankineTempLong = (long)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
+            double result = (input + 273.15d) * 9 / 5;
+            long rankineTempLong = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
             return rankineTempLong;
         }

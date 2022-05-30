@@ -12,6 +12,7 @@
             BenchmarkRunner.Run<DoubleBenchies>();
             BenchmarkRunner.Run<FloatBenchies>();
             BenchmarkRunner.Run<IntBenchies>();
+            BenchmarkRunner.Run<LongBenchies>();
             BenchmarkRunner.Run<StringBenchies>();
         }
     }

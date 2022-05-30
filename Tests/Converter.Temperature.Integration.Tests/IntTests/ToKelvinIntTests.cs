@@ -13,7 +13,6 @@
 
         [Theory]
         [InlineData(200, 473)]
-        [InlineData(int.MinValue, -2147483375)]
         public void Test_int_extensions_from_celsius_to_kelvin_returns_correct_value(int input, int expected)
         {
             // Arrange.
@@ -26,7 +25,6 @@
 
         [Theory]
         [InlineData(200, 473)]
-        [InlineData(int.MinValue, -2147483375)]
         public void Test_int_extensions_generic_from_celsius_to_kelvin_returns_correct_value(int input, int expected)
         {
             // Arrange.
@@ -37,12 +35,12 @@
             result.Should().Be(expected);
         }
 
-        [Fact]
-        public void Test_int_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(int input)
         {
             // Arrange.
-            const int input = int.MaxValue;
-
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius().ToKelvin());
 
@@ -50,12 +48,12 @@
             result.Message.Should().Contain("Value out of range for type.");
         }
 
-        [Fact]
-        public void Test_int_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
+        [Theory]
+        [InlineData(int.MinValue)]
+        [InlineData(int.MaxValue)]
+        public void Test_int_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(int input)
         {
             // Arrange.
-            const int input = int.MaxValue;
-
             // Act.
             var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>().To<Kelvin>());
 
