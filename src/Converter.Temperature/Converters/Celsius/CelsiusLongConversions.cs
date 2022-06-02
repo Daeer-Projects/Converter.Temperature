@@ -7,13 +7,13 @@
         /// <summary>
         /// The celsius to celsius conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToCelsius(long firstTemp)
+        public static long CelsiusToCelsius(long input)
         {
-            return firstTemp;
+            return input;
         }
 
         /// <summary>

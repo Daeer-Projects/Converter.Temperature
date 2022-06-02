@@ -1,7 +1,6 @@
 ﻿namespace Converter.Temperature.Extensions.To
 {
     using System;
-    using System.Globalization;
     using BaseTypes;
     using Converters.Celsius;
     using Converters.Fahrenheit;

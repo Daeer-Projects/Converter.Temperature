@@ -60,14 +60,14 @@
         /// <summary>
         /// The fahrenheit to gas conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static int FahrenheitToGas(int firstTemp)
+        public static int FahrenheitToGas(int input)
         {
-            var celsiusTemp = FahrenheitToCelsius(firstTemp);
+            var celsiusTemp = FahrenheitToCelsius(input);
             var gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
