@@ -1,7 +1,61 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netcoreapp3.1;net5.0;net6.0</TargetFrameworks>
+    <Title>Converter.Temperature</Title>
+    <Authors>David Clark</Authors>
+    <Owners>Daeer Projects</Owners>
+    <PackageTags>Daeer;DaeerProjects;Celsius;Fahrenheit;Kelvin;Gas;Rankine;Converter;Conversion;Temperature</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Description>
+      A library to convert different temperature types.
+
+      A collection of dotnet extension methods for the following types:
+
+      * int
+
+      * long
+
+      * float
+
+      * double
+
+      * string
+
+      Benchmark details can be found at the following link:
+
+      https://github.com/Daeer-Projects/Converter.Temperature/wiki/Benchmark-Results
+
+      If you like this library, please give the repo a start.
+
+    </Description>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Deterministic>true</Deterministic>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PackageProjectUrl>https://github.com/Daeer-Projects/Converter.Temperature/wiki</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Daeer-Projects/Converter.Temperature</RepositoryUrl>
+    <PackageReleaseNotes>
+      Please note that as of version 3.0.0, this library will no longer support dotnet core 3.1.
+
+      See the details at the following link.
+
+      https://github.com/Daeer-Projects/Converter.Temperature/wiki/Release-Notes
+    </PackageReleaseNotes>
+    <PackageIcon>Temp-icon.png</PackageIcon>
+    <PackageReadmeFile>PackageReadMe.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="PackageReadMe.md" Pack="true" PackagePath="" />
+    <None Include="Temp-icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
 
 </Project>

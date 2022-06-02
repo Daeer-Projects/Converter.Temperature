@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature.Integ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature.Tests", "Tests\Converter.Temperature.Tests\Converter.Temperature.Tests.csproj", "{E1F5ECB1-66F5-4048-8314-CED223E1BD5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter.Benchmark.Tests", "tests\Converter.Benchmark.Tests\Converter.Benchmark.Tests.csproj", "{0EE8B819-5C6C-4BE6-B178-BFB104132F73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Benchmark.Tests", "tests\Converter.Benchmark.Tests\Converter.Benchmark.Tests.csproj", "{0EE8B819-5C6C-4BE6-B178-BFB104132F73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
