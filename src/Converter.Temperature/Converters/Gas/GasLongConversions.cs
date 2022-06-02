@@ -36,14 +36,14 @@
         /// <summary>
         /// The gas to fahrenheit conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long GasToFahrenheit(long firstTemp)
+        public static long GasToFahrenheit(long input)
         {
-            var celsiusTemp = GasToCelsius(firstTemp);
+            var celsiusTemp = GasToCelsius(input);
             var fahrenheitTemp = CelsiusLongConversions.CelsiusToFahrenheit(celsiusTemp);
             return fahrenheitTemp;
         }
@@ -51,14 +51,14 @@
         /// <summary>
         /// The gas to kelvin conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long GasToKelvin(long firstTemp)
+        public static long GasToKelvin(long input)
         {
-            var celsiusTemp = GasToCelsius(firstTemp);
+            var celsiusTemp = GasToCelsius(input);
             var kelvinTemp = CelsiusLongConversions.CelsiusToKelvin(celsiusTemp);
             return kelvinTemp;
         }
@@ -84,14 +84,14 @@
         /// <summary>
         /// The gas to rankine conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long GasToRankine(long firstTemp)
+        public static long GasToRankine(long input)
         {
-            var celsiusTemp = GasToCelsius(firstTemp);
+            var celsiusTemp = GasToCelsius(input);
             var rankineTemp = CelsiusLongConversions.CelsiusToRankine(celsiusTemp);
             return rankineTemp;
         }

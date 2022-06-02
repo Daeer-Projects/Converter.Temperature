@@ -7,13 +7,13 @@
         /// <summary>
         /// The celsius to celsius conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static int CelsiusToCelsius(int firstTemp)
+        public static int CelsiusToCelsius(int input)
         {
-            return firstTemp;
+            return input;
         }
 
         /// <summary>
@@ -26,13 +26,16 @@
         /// </returns>
         public static int CelsiusToFahrenheit(int input)
         {
-            var fahrenheitTemp = (input * 1.8) + 32;
-            if (fahrenheitTemp < int.MinValue || fahrenheitTemp > int.MaxValue)
+            const double calculatedValue = (1 * 1.8) + 32;
+            int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+            int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            int fahrenheitTempInt = (int)Math.Round(fahrenheitTemp, 0, MidpointRounding.AwayFromZero);
+            double convertedTemp = (input * 1.8) + 32;
+            int fahrenheitTempInt = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
             return fahrenheitTempInt;
         }
@@ -47,13 +50,14 @@
         /// </returns>
         public static int CelsiusToKelvin(int input)
         {
-            var kelvinTemp = input + 273.15d;
-            if (kelvinTemp < int.MinValue || kelvinTemp > int.MaxValue)
+            const int maxValue = int.MaxValue - 273;
+            const int minValue = int.MinValue + 273;
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            int kelvinTempInt = (int)Math.Round(kelvinTemp, 0, MidpointRounding.AwayFromZero);
+            int kelvinTempInt = input + 273;
 
             return kelvinTempInt;
         }
@@ -132,13 +136,15 @@
         /// </returns>
         public static int CelsiusToRankine(int input)
         {
-            var rankineTemp = (input + 273.15d) * 9 / 5;
-            if (rankineTemp < int.MinValue || rankineTemp > int.MaxValue)
+            const int minValue = int.MinValue + 492;
+            const int maxValue = int.MaxValue - 492;
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            int rankineTempInt = (int)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
+            double result = (input + 273.15d) * 9 / 5;
+            int rankineTempInt = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
             return rankineTempInt;
         }

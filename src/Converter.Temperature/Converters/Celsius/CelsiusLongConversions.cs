@@ -7,13 +7,13 @@
         /// <summary>
         /// The celsius to celsius conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static long CelsiusToCelsius(long firstTemp)
+        public static long CelsiusToCelsius(long input)
         {
-            return firstTemp;
+            return input;
         }
 
         /// <summary>
@@ -26,13 +26,16 @@
         /// </returns>
         public static long CelsiusToFahrenheit(long input)
         {
-            var fahrenheitTemp = (input * 1.8) + 32;
-            if (fahrenheitTemp < long.MinValue || fahrenheitTemp > long.MaxValue)
+            const double calculatedValue = (1 * 1.8) + 32;
+            long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+            long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long fahrenheitTempLong = (long)Math.Round(fahrenheitTemp, 0, MidpointRounding.AwayFromZero);
+            double convertedTemp = (input * 1.8) + 32;
+            long fahrenheitTempLong = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
             return fahrenheitTempLong;
         }
@@ -133,13 +136,15 @@
         /// </returns>
         public static long CelsiusToRankine(long input)
         {
-            var rankineTemp = (input + 273.15) * 9 / 5;
-            if (rankineTemp < long.MinValue || rankineTemp > long.MaxValue)
+            const long minValue = long.MinValue + 492;
+            const long maxValue = long.MaxValue - 492;
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            long rankineTempLong = (long)Math.Round(rankineTemp, 0, MidpointRounding.AwayFromZero);
+            double result = (input + 273.15d) * 9 / 5;
+            long rankineTempLong = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
             return rankineTempLong;
         }

@@ -8,20 +8,16 @@
         /// <summary>
         /// The fahrenheit to celsius conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static int FahrenheitToCelsius(int firstTemp)
+        public static int FahrenheitToCelsius(int input)
         {
-            var celsiusTemp = (firstTemp - 32d) * 5 / 9;
-            if (celsiusTemp < int.MinValue || celsiusTemp > int.MaxValue)
-            {
-                throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
-            }
+            double calculatedValue = (input - 32d) * 5 / 9;
 
-            int celsiusTempLong = (int)Math.Round(celsiusTemp, 0, MidpointRounding.AwayFromZero);
+            int celsiusTempLong = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
 
             return celsiusTempLong;
         }
@@ -41,29 +37,37 @@
         /// <summary>
         /// The fahrenheit to kelvin conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static int FahrenheitToKelvin(int firstTemp)
+        public static int FahrenheitToKelvin(int input)
         {
-            var celsiusTemp = FahrenheitToCelsius(firstTemp);
-            var kelvinTemp = CelsiusIntConversions.CelsiusToKelvin(celsiusTemp);
+            double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
+            int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+            int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+            if (input < minValue || input > maxValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+            }
+
+            int kelvinTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+
             return kelvinTemp;
         }
 
         /// <summary>
         /// The fahrenheit to gas conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static int FahrenheitToGas(int firstTemp)
+        public static int FahrenheitToGas(int input)
         {
-            var celsiusTemp = FahrenheitToCelsius(firstTemp);
+            var celsiusTemp = FahrenheitToCelsius(input);
             var gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
             return gasTemp;
         }
@@ -71,14 +75,21 @@
         /// <summary>
         /// The fahrenheit to rankine conversion.
         /// </summary>
-        /// <param name="firstTemp"> The temperature to convert. </param>
+        /// <param name="input"> The temperature to convert. </param>
         /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
         /// <returns>
         /// The converted temperature.
         /// </returns>
-        public static int FahrenheitToRankine(int firstTemp)
+        public static int FahrenheitToRankine(int input)
         {
-            var rankineTemp = firstTemp + 460;
+            const int maxValue = int.MaxValue - 460;
+            const int minValue = int.MinValue + 460;
+            if (input < minValue || input > maxValue)
+            {
+                throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+            }
+
+            int rankineTemp = input + 460;
             return rankineTemp;
         }
     }
