@@ -26,13 +26,16 @@
         /// </returns>
         public static int CelsiusToFahrenheit(int input)
         {
-            var fahrenheitTemp = (input * 1.8) + 32;
-            if (fahrenheitTemp < int.MinValue || fahrenheitTemp > int.MaxValue)
+            const double calculatedValue = (1 * 1.8) + 32;
+            int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+            int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+            if (input < minValue || input > maxValue)
             {
                 throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
             }
 
-            int fahrenheitTempInt = (int)Math.Round(fahrenheitTemp, 0, MidpointRounding.AwayFromZero);
+            double convertedTemp = (input * 1.8) + 32;
+            int fahrenheitTempInt = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
             return fahrenheitTempInt;
         }

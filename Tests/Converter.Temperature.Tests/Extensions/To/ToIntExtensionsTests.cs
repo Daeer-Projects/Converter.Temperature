@@ -555,6 +555,36 @@
             result.Should().Be(expected);
         }
 
+        [Theory]
+        [InlineData(int.MaxValue)]
+        [InlineData(int.MinValue)]
+        public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
+        {
+            // Arrange.
+            var input = new FahrenheitInt(temp);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToKelvin());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
+
+        [Theory]
+        [InlineData(int.MaxValue)]
+        [InlineData(int.MinValue)]
+        public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
+        {
+            // Arrange.
+            var input = new FahrenheitInt(temp);
+
+            // Act.
+            var result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Kelvin>());
+
+            // Assert.
+            result.Message.Should().Contain("Value out of range for type.");
+        }
+
         [Fact]
         public void Test_to_kelvin_from_gas_returns_correct_value()
         {

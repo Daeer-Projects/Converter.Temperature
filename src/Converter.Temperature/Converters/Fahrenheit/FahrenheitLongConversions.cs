@@ -16,10 +16,6 @@
         public static long FahrenheitToCelsius(long firstTemp)
         {
             var celsiusTemp = (firstTemp - 32d) * 5 / 9;
-            if (celsiusTemp < long.MinValue || celsiusTemp > long.MaxValue)
-            {
-                throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
-            }
 
             long celsiusTempLong = (long)Math.Round(celsiusTemp, 0, MidpointRounding.AwayFromZero);
 
