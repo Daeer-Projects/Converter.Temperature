@@ -22,9 +22,9 @@ jobs:
   - task: PowerShell@2
     displayName: Install dotnet
     inputs:
-      arguments:
-        version: 7.0.0
       filePath: 'https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.ps1'
+      arguments:
+        - JsonFile 'global.json'
 
   - task: DotNetCoreCLI@2  
     displayName: Install NBGV tool
