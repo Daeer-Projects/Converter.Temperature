@@ -19,11 +19,12 @@ jobs:
   - checkout: self
     clean: true
 
-  - task: PowerShell@2
-    displayName: Install dotnet
+  - task: UseDotNet@2
+    displayName: 'Get Dotnet SDK'
+    timeoutInMinutes: 10
     inputs:
-      filePath: 'https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.ps1'
-      arguments: JSonFile 'global.json'
+      packageType: 'sdk'
+      useGlobalJson: true
 
   - task: DotNetCoreCLI@2  
     displayName: Install NBGV tool
