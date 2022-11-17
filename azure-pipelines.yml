@@ -19,6 +19,11 @@ jobs:
   - checkout: self
     clean: true
 
+  - task: PowerShell@2
+    displayName: Install dotnet
+    inputs:
+      arguments: 'https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.ps1'
+
   - task: DotNetCoreCLI@2  
     displayName: Install NBGV tool
     inputs:
