@@ -26,21 +26,11 @@ jobs:
       packageType: 'sdk'
       useGlobalJson: true
 
-  - task: DotNetCoreCLI@2  
-    displayName: Install NBGV tool
-    inputs:
-      command: custom
-      custom: tool
-      arguments: install --tool-path . nbgv
-
   - task: DotNetCoreCLI@2
     displayName: Restore
     inputs:
       command: restore
       projects: '**/*.csproj'
-
-  - script: nbgv cloud
-    displayName: Set Version
 
   - task: DotNetCoreCLI@2
     displayName: Build
