@@ -23,7 +23,7 @@ jobs:
     displayName: Install dotnet
     inputs:
       filePath: 'https://dotnet.microsoft.com/download/dotnet/scripts/v1/dotnet-install.ps1'
-      arguments: - JSonFile 'global.json'
+      arguments: JSonFile 'global.json'
 
   - task: DotNetCoreCLI@2  
     displayName: Install NBGV tool
