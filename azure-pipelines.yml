@@ -18,6 +18,14 @@ jobs:
   steps:
   - checkout: self
     clean: true
+    fetchDepth: 0
+
+  - task: UseDotNet@2
+    displayName: 'Get Dotnet SDK'
+    timeoutInMinutes: 10
+    inputs:
+      packageType: 'sdk'
+      useGlobalJson: true
 
   - task: DotNetCoreCLI@2
     displayName: Restore
