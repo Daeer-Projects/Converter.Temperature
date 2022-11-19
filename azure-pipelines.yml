@@ -8,6 +8,7 @@ resources:
   - repository: self
     type: git
     ref: refs/heads/main
+    fetchDepth: 0
 
 jobs:
 - job: Job_1
