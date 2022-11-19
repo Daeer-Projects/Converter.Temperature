@@ -18,7 +18,6 @@ jobs:
   steps:
   - checkout: self
     clean: true
-    fetchDepth: 0
 
   - task: UseDotNet@2
     displayName: 'Get Dotnet SDK'
