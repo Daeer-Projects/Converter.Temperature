@@ -12,15 +12,15 @@
 
       A collection of dotnet extension methods for the following types:
 
-      * int
+      * int  
 
-      * long
+      * long  
 
-      * float
+      * float  
 
-      * double
+      * double  
 
-      * string
+      * string  
 
       Benchmark details can be found at the following link:
 
@@ -36,8 +36,6 @@
     <PackageProjectUrl>https://github.com/Daeer-Projects/Converter.Temperature/wiki</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Daeer-Projects/Converter.Temperature</RepositoryUrl>
     <PackageReleaseNotes>
-      Please note that as of version 3.0.0, this library will no longer support dotnet core 3.1.
-
       See the details at the following link.
 
       https://github.com/Daeer-Projects/Converter.Temperature/wiki/Release-Notes
