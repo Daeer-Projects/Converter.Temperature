@@ -1,0 +1,64 @@
+trigger:
+  branches:
+    include:
+    - main
+
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/main
+
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: windows-latest
+
+  steps:
+  - checkout: self
+    clean: true
+    fetchDepth: 0
+
+  - task: UseDotNet@2
+    displayName: 'Get Dotnet 6 SDK'
+    timeoutInMinutes: 10
+    inputs:
+      packageType: 'sdk'
+      version: 6.0.306
+
+  - task: UseDotNet@2
+    displayName: 'Get Dotnet 7 SDK'
+    timeoutInMinutes: 10
+    inputs:
+      packageType: 'sdk'
+      version: 7.0.100
+
+  - task: DotNetCoreCLI@2
+    displayName: Restore
+    inputs:
+      command: restore
+      projects: '**/*.csproj'
+
+  - task: DotNetCoreCLI@2
+    displayName: Build
+
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+
+  - task: DotNetCoreCLI@2
+    displayName: Pack
+    inputs:
+      command: pack
+      searchPatternPack: '**/*.csproj;!**/*.Tests.csproj'
+      outputDir: $(Build.ArtifactStagingDirectory)\Package
+      versioningScheme: byBuildNumber
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
+    condition: succeededOrFailed()
+    inputs:
+      PathtoPublish: $(build.artifactstagingdirectory)
+      TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
