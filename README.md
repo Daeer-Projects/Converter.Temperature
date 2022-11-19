@@ -4,7 +4,7 @@
 > This project was created to extract out the main conversion code from the *Temperature Converter* applications in the other repositories.
 > I am using this as a way to show how my development skills have changed over the years, as I get to be a better developer.
 
-[![Build status](https://daeerprojects.visualstudio.com/Converter.Temperature/_apis/build/status/Converter.Temperature)](https://daeerprojects.visualstudio.com/Converter.Temperature/_build/latest?definitionId=8)
+[![Build Status](https://dev.azure.com/DaeerProjects/Converter.Temperature/_apis/build/status/Daeer-Projects.Converter.Temperature?branchName=main)](https://dev.azure.com/DaeerProjects/Converter.Temperature/_build/latest?definitionId=12&branchName=main)
 
 ## Introduction
 
