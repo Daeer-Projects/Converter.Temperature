@@ -1,4 +1,6 @@
-﻿namespace Converter.Benchmark.Tests;
+﻿// ReSharper disable ClassCanBeSealed.Global - Benchmark creates derived class.
+
+namespace Converter.Benchmark.Tests;
 
 using BenchmarkDotNet.Attributes;
 using Temperature.Extensions.From;
@@ -6,7 +8,7 @@ using Temperature.Extensions.To;
 using Temperature.TemperatureTypes;
 
 [MemoryDiagnoser]
-public sealed class DoubleBenchies
+public class DoubleBenchies
 {
     #region Celsius
 
