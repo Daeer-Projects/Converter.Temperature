@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Gas
+﻿namespace Converter.Temperature.Types.Gas;
+
+using BaseTypes;
+
+public sealed class GasDouble : DoubleBase
 {
-    using BaseTypes;
-
-    public sealed class GasDouble : DoubleBase
+    public GasDouble(double temp)
     {
-        public GasDouble(double temp)
-        {
-            Temperature = temp;
-        }
-
-        public double Temperature { get; }
+        Temperature = temp;
     }
+
+    public double Temperature { get; }
 }

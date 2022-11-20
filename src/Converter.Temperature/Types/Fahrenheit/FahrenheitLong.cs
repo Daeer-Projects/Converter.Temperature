@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Fahrenheit
+﻿namespace Converter.Temperature.Types.Fahrenheit;
+
+using BaseTypes;
+
+public sealed class FahrenheitLong : LongBase
 {
-    using BaseTypes;
-
-    public sealed class FahrenheitLong : LongBase
+    public FahrenheitLong(long temp)
     {
-        public FahrenheitLong(long temp)
-        {
-            Temperature = temp;
-        }
-
-        public long Temperature { get; }
+        Temperature = temp;
     }
+
+    public long Temperature { get; }
 }

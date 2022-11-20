@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Gas
+﻿namespace Converter.Temperature.Types.Gas;
+
+using BaseTypes;
+
+public sealed class GasLong : LongBase
 {
-    using BaseTypes;
-
-    public sealed class GasLong : LongBase
+    public GasLong(long temp)
     {
-        public GasLong(long temp)
-        {
-            Temperature = temp;
-        }
-
-        public long Temperature { get; }
+        Temperature = temp;
     }
+
+    public long Temperature { get; }
 }

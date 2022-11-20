@@ -1,19 +1,18 @@
-﻿namespace Converter.Benchmark.Tests
+﻿namespace Converter.Benchmark.Tests;
+
+using System;
+using BenchmarkDotNet.Running;
+
+internal class Program
 {
-    using System;
-    using BenchmarkDotNet.Running;
-
-    internal class Program
+    private static void Main()
     {
-        private static void Main()
-        {
-            Console.WriteLine("Running Benchmarks...");
+        Console.WriteLine("Running Benchmarks...");
 
-            BenchmarkRunner.Run<DoubleBenchies>();
-            BenchmarkRunner.Run<FloatBenchies>();
-            BenchmarkRunner.Run<IntBenchies>();
-            BenchmarkRunner.Run<LongBenchies>();
-            BenchmarkRunner.Run<StringBenchies>();
-        }
+        BenchmarkRunner.Run<DoubleBenchies>();
+        BenchmarkRunner.Run<FloatBenchies>();
+        BenchmarkRunner.Run<IntBenchies>();
+        BenchmarkRunner.Run<LongBenchies>();
+        BenchmarkRunner.Run<StringBenchies>();
     }
 }

@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Gas
+﻿namespace Converter.Temperature.Types.Gas;
+
+using BaseTypes;
+
+public sealed class GasString : StringBase
 {
-    using BaseTypes;
-
-    public sealed class GasString : StringBase
+    public GasString(string temp)
     {
-        public GasString(string temp)
-        {
-            Temperature = temp;
-        }
-
-        public string Temperature { get; }
+        Temperature = temp;
     }
+
+    public string Temperature { get; }
 }

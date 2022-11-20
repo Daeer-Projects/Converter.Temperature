@@ -1,145 +1,175 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From
+﻿namespace Converter.Temperature.Tests.Extensions.From;
+
+using BaseTypes;
+using FluentAssertions;
+using Temperature.Extensions.From;
+using TemperatureTypes;
+using Types.Celsius;
+using Types.Fahrenheit;
+using Types.Gas;
+using Types.Kelvin;
+using Types.Rankine;
+using Xunit;
+
+public class FromStringExtensionsTests
 {
-    using FluentAssertions;
-    using Temperature.Extensions.From;
-    using TemperatureTypes;
-    using Types.Celsius;
-    using Types.Fahrenheit;
-    using Types.Gas;
-    using Types.Kelvin;
-    using Types.Rankine;
-    using Xunit;
-
-    public class FromStringExtensionsTests
+    [Fact]
+    public void Test_from_celsius_returns_celsius_string_type()
     {
-        [Fact]
-        public void Test_from_celsius_returns_celsius_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.FromCelsius();
+        // Act.
+        CelsiusString result = input.FromCelsius();
 
-            // Assert.
-            result.Should().BeOfType<CelsiusString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<CelsiusString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_celsius_generic_returns_celsius_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_celsius_generic_returns_celsius_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.From<Celsius>();
+        // Act.
+        StringBase result = input.From<Celsius>();
 
-            // Assert.
-            result.Should().BeOfType<CelsiusString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<CelsiusString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_fahrenheit_returns_fahrenheit_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_fahrenheit_returns_fahrenheit_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.FromFahrenheit();
+        // Act.
+        FahrenheitString result = input.FromFahrenheit();
 
-            // Assert.
-            result.Should().BeOfType<FahrenheitString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<FahrenheitString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_fahrenheit_generic_returns_fahrenheit_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_fahrenheit_generic_returns_fahrenheit_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.From<Fahrenheit>();
+        // Act.
+        StringBase result = input.From<Fahrenheit>();
 
-            // Assert.
-            result.Should().BeOfType<FahrenheitString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<FahrenheitString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_gas_returns_gas_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_gas_returns_gas_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.FromGas();
+        // Act.
+        GasString result = input.FromGas();
 
-            // Assert.
-            result.Should().BeOfType<GasString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<GasString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_gas_generic_returns_gas_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_gas_generic_returns_gas_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.From<Gas>();
+        // Act.
+        StringBase result = input.From<Gas>();
 
-            // Assert.
-            result.Should().BeOfType<GasString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<GasString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_kelvin_returns_kelvin_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_kelvin_returns_kelvin_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.FromKelvin();
+        // Act.
+        KelvinString result = input.FromKelvin();
 
-            // Assert.
-            result.Should().BeOfType<KelvinString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<KelvinString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_kelvin_generic_returns_kelvin_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_kelvin_generic_returns_kelvin_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.From<Kelvin>();
+        // Act.
+        StringBase result = input.From<Kelvin>();
 
-            // Assert.
-            result.Should().BeOfType<KelvinString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<KelvinString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_rankine_returns_rankine_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_rankine_returns_rankine_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.FromRankine();
+        // Act.
+        RankineString result = input.FromRankine();
 
-            // Assert.
-            result.Should().BeOfType<RankineString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<RankineString>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_rankine_generic_returns_rankine_string_type()
-        {
-            // Arrange.
-            const string input = "39";
+    [Fact]
+    public void Test_from_rankine_generic_returns_rankine_string_type()
+    {
+        // Arrange.
+        const string input = "39";
 
-            // Act.
-            var result = input.From<Rankine>();
+        // Act.
+        StringBase result = input.From<Rankine>();
 
-            // Assert.
-            result.Should().BeOfType<RankineString>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<RankineString>()
+            .Which.Temperature.Should()
+            .Be(input);
     }
 }

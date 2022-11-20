@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Celsius
+﻿namespace Converter.Temperature.Types.Celsius;
+
+using BaseTypes;
+
+public sealed class CelsiusLong : LongBase
 {
-    using BaseTypes;
-
-    public sealed class CelsiusLong : LongBase
+    public CelsiusLong(long temp)
     {
-        public CelsiusLong(long temp)
-        {
-            Temperature = temp;
-        }
-
-        public long Temperature { get; }
+        Temperature = temp;
     }
+
+    public long Temperature { get; }
 }

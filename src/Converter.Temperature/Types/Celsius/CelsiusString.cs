@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Celsius
+﻿namespace Converter.Temperature.Types.Celsius;
+
+using BaseTypes;
+
+public sealed class CelsiusString : StringBase
 {
-    using BaseTypes;
-
-    public sealed class CelsiusString : StringBase
+    public CelsiusString(string temp)
     {
-        public CelsiusString(string temp)
-        {
-            Temperature = temp;
-        }
-
-        public string Temperature { get; }
+        Temperature = temp;
     }
+
+    public string Temperature { get; }
 }
