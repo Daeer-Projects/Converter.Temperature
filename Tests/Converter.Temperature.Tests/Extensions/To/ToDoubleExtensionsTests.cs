@@ -11,13 +11,13 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class ToDoubleExtensionsTests
+public sealed class ToDoubleExtensionsTests
 {
     [Fact]
     public void Test_to_celsius_with_too_long_parameter_from_celsius_throws_exception()
     {
         // Arrange.
-        CelsiusDouble input = new CelsiusDouble(42.5d);
+        CelsiusDouble input = new(42.5d);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToCelsius(16));
@@ -31,7 +31,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_celsius_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusDouble input = new CelsiusDouble(42.5d);
+        CelsiusDouble input = new(42.5d);
 
         // Act.
         double result = input.ToCelsius();
@@ -45,7 +45,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_celsius_generic_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusDouble input = new CelsiusDouble(42.3d);
+        CelsiusDouble input = new(42.3d);
 
         // Act.
         double result = input.To<Celsius>();
@@ -60,7 +60,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 10d;
-        FahrenheitDouble input = new FahrenheitDouble(50.0d);
+        FahrenheitDouble input = new(50.0d);
 
         // Act.
         double result = input.ToCelsius();
@@ -75,7 +75,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 10d;
-        FahrenheitDouble input = new FahrenheitDouble(50.0d);
+        FahrenheitDouble input = new(50.0d);
 
         // Act.
         double result = input.To<Celsius>();
@@ -113,7 +113,7 @@ public class ToDoubleExtensionsTests
         double expected)
     {
         // Arrange.
-        GasDouble inputGas = new GasDouble(input);
+        GasDouble inputGas = new(input);
 
         // Act.
         double result = inputGas.ToCelsius();
@@ -151,7 +151,7 @@ public class ToDoubleExtensionsTests
         double expected)
     {
         // Arrange.
-        GasDouble inputGas = new GasDouble(input);
+        GasDouble inputGas = new(input);
 
         // Act.
         double result = inputGas.To<Celsius>();
@@ -167,7 +167,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_celsius_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
     {
         // Arrange.
-        GasDouble inputGas = new GasDouble(input);
+        GasDouble inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToCelsius());
@@ -183,7 +183,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
     {
         // Arrange.
-        GasDouble inputGas = new GasDouble(input);
+        GasDouble inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Celsius>());
@@ -198,7 +198,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 1.0d;
-        KelvinDouble input = new KelvinDouble(274.15);
+        KelvinDouble input = new(274.15);
 
         // Act.
         double result = input.ToCelsius();
@@ -213,7 +213,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 1.0d;
-        KelvinDouble input = new KelvinDouble(274.15);
+        KelvinDouble input = new(274.15);
 
         // Act.
         double result = input.To<Celsius>();
@@ -228,7 +228,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 1.0000000000000062d;
-        RankineDouble input = new RankineDouble(493.47d);
+        RankineDouble input = new(493.47d);
 
         // Act.
         double result = input.ToCelsius();
@@ -243,7 +243,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 1.0000000000000062d;
-        RankineDouble input = new RankineDouble(493.47d);
+        RankineDouble input = new(493.47d);
 
         // Act.
         double result = input.To<Celsius>();
@@ -261,7 +261,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineDouble input = new RankineDouble(493.47d);
+        RankineDouble input = new(493.47d);
 
         // Act.
         double result = input.ToCelsius(fractionalCount);
@@ -279,7 +279,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineDouble input = new RankineDouble(493.47d);
+        RankineDouble input = new(493.47d);
 
         // Act.
         double result = input.To<Celsius>(fractionalCount);
@@ -294,7 +294,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 53.6d;
-        CelsiusDouble input = new CelsiusDouble(12);
+        CelsiusDouble input = new(12);
 
         // Act.
         double result = input.ToFahrenheit();
@@ -309,7 +309,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 53.6d;
-        CelsiusDouble input = new CelsiusDouble(12);
+        CelsiusDouble input = new(12);
 
         // Act.
         double result = input.To<Fahrenheit>();
@@ -325,7 +325,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
@@ -341,7 +341,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
@@ -355,7 +355,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_fahrenheit_from_fahrenheit_returns_same_value()
     {
         // Arrange.
-        FahrenheitDouble input = new FahrenheitDouble(50);
+        FahrenheitDouble input = new(50);
 
         // Act.
         double result = input.ToFahrenheit();
@@ -369,7 +369,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_fahrenheit_generic_from_fahrenheit_returns_same_value()
     {
         // Arrange.
-        FahrenheitDouble input = new FahrenheitDouble(50);
+        FahrenheitDouble input = new(50);
 
         // Act.
         double result = input.To<Fahrenheit>();
@@ -384,7 +384,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 428d;
-        GasDouble input = new GasDouble(7);
+        GasDouble input = new(7);
 
         // Act.
         double result = input.ToFahrenheit();
@@ -399,7 +399,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 428d;
-        GasDouble input = new GasDouble(7);
+        GasDouble input = new(7);
 
         // Act.
         double result = input.To<Fahrenheit>();
@@ -414,7 +414,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 33.8d;
-        KelvinDouble input = new KelvinDouble(274.15);
+        KelvinDouble input = new(274.15);
 
         // Act.
         double result = input.ToFahrenheit();
@@ -429,7 +429,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 33.8d;
-        KelvinDouble input = new KelvinDouble(274.15);
+        KelvinDouble input = new(274.15);
 
         // Act.
         double result = input.To<Fahrenheit>();
@@ -447,7 +447,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        KelvinDouble input = new KelvinDouble(274.15);
+        KelvinDouble input = new(274.15);
 
         // Act.
         double result = input.ToFahrenheit(fractionalCount);
@@ -465,7 +465,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        KelvinDouble input = new KelvinDouble(274.15);
+        KelvinDouble input = new(274.15);
 
         // Act.
         double result = input.To<Fahrenheit>(fractionalCount);
@@ -480,7 +480,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 33.800999999999991d;
-        RankineDouble input = new RankineDouble(493.471d);
+        RankineDouble input = new(493.471d);
 
         // Act.
         double result = input.ToFahrenheit();
@@ -495,7 +495,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 33.800999999999991d;
-        RankineDouble input = new RankineDouble(493.471d);
+        RankineDouble input = new(493.471d);
 
         // Act.
         double result = input.To<Fahrenheit>();
@@ -514,7 +514,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineDouble input = new RankineDouble(493.471d);
+        RankineDouble input = new(493.471d);
 
         // Act.
         double result = input.ToFahrenheit(fractionalCount);
@@ -533,7 +533,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineDouble input = new RankineDouble(493.471d);
+        RankineDouble input = new(493.471d);
 
         // Act.
         double result = input.To<Fahrenheit>(fractionalCount);
@@ -573,7 +573,7 @@ public class ToDoubleExtensionsTests
         double expected)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         double result = inputCelsius.ToGas();
@@ -613,7 +613,7 @@ public class ToDoubleExtensionsTests
         double expected)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         double result = inputCelsius.To<Gas>();
@@ -631,7 +631,7 @@ public class ToDoubleExtensionsTests
         string expectedErrorMessage)
     {
         // Arrange.
-        CelsiusDouble inputGas = new CelsiusDouble(input);
+        CelsiusDouble inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToGas());
@@ -649,7 +649,7 @@ public class ToDoubleExtensionsTests
         string expectedErrorMessage)
     {
         // Arrange.
-        CelsiusDouble inputGas = new CelsiusDouble(input);
+        CelsiusDouble inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
@@ -664,7 +664,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 6d;
-        FahrenheitDouble input = new FahrenheitDouble(392);
+        FahrenheitDouble input = new(392);
 
         // Act.
         double result = input.To<Gas>();
@@ -678,7 +678,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_gas_from_gas_returns_same_value()
     {
         // Arrange.
-        GasDouble input = new GasDouble(7);
+        GasDouble input = new(7);
 
         // Act.
         double result = input.ToGas();
@@ -692,7 +692,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_gas_generic_from_gas_returns_same_value()
     {
         // Arrange.
-        GasDouble input = new GasDouble(7);
+        GasDouble input = new(7);
 
         // Act.
         double result = input.To<Gas>();
@@ -708,7 +708,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_gas_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
     {
         // Arrange.
-        GasDouble inputGas = new GasDouble(input);
+        GasDouble inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.ToGas());
@@ -724,7 +724,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_gas_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
     {
         // Arrange.
-        GasDouble inputGas = new GasDouble(input);
+        GasDouble inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
@@ -739,7 +739,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 6d;
-        KelvinDouble input = new KelvinDouble(473.15);
+        KelvinDouble input = new(473.15);
 
         // Act.
         double result = input.ToGas();
@@ -754,7 +754,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 6d;
-        KelvinDouble input = new KelvinDouble(473.15);
+        KelvinDouble input = new(473.15);
 
         // Act.
         double result = input.To<Gas>();
@@ -769,7 +769,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 3d;
-        RankineDouble input = new RankineDouble(806.67);
+        RankineDouble input = new(806.67);
 
         // Act.
         double result = input.ToGas();
@@ -784,7 +784,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 3d;
-        RankineDouble input = new RankineDouble(806.67);
+        RankineDouble input = new(806.67);
 
         // Act.
         double result = input.To<Gas>();
@@ -799,7 +799,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.15d;
-        CelsiusDouble input = new CelsiusDouble(200);
+        CelsiusDouble input = new(200);
 
         // Act.
         double result = input.ToKelvin();
@@ -814,7 +814,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.15d;
-        CelsiusDouble input = new CelsiusDouble(200);
+        CelsiusDouble input = new(200);
 
         // Act.
         double result = input.To<Kelvin>();
@@ -830,7 +830,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToKelvin());
@@ -846,7 +846,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_kelvin_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
@@ -861,7 +861,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.15d;
-        FahrenheitDouble input = new FahrenheitDouble(392);
+        FahrenheitDouble input = new(392);
 
         // Act.
         double result = input.ToKelvin();
@@ -876,7 +876,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.15d;
-        FahrenheitDouble input = new FahrenheitDouble(392);
+        FahrenheitDouble input = new(392);
 
         // Act.
         double result = input.To<Kelvin>();
@@ -891,7 +891,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.15d;
-        GasDouble input = new GasDouble(6);
+        GasDouble input = new(6);
 
         // Act.
         double result = input.ToKelvin();
@@ -906,7 +906,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.15d;
-        GasDouble input = new GasDouble(6);
+        GasDouble input = new(6);
 
         // Act.
         double result = input.To<Kelvin>();
@@ -925,7 +925,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        GasDouble input = new GasDouble(6);
+        GasDouble input = new(6);
 
         // Act.
         double result = input.ToKelvin(fractionalCount);
@@ -944,7 +944,7 @@ public class ToDoubleExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        GasDouble input = new GasDouble(6);
+        GasDouble input = new(6);
 
         // Act.
         double result = input.To<Kelvin>(fractionalCount);
@@ -958,7 +958,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_kelvin_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinDouble input = new KelvinDouble(473.15);
+        KelvinDouble input = new(473.15);
 
         // Act.
         double result = input.ToKelvin();
@@ -972,7 +972,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_kelvin_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinDouble input = new KelvinDouble(473.15);
+        KelvinDouble input = new(473.15);
 
         // Act.
         double result = input.To<Kelvin>();
@@ -987,7 +987,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.1499999999999d;
-        RankineDouble input = new RankineDouble(851.67);
+        RankineDouble input = new(851.67);
 
         // Act.
         double result = input.ToKelvin();
@@ -1002,7 +1002,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 473.1499999999999d;
-        RankineDouble input = new RankineDouble(851.67);
+        RankineDouble input = new(851.67);
 
         // Act.
         double result = input.To<Kelvin>();
@@ -1017,7 +1017,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6699999999998d;
-        CelsiusDouble input = new CelsiusDouble(200);
+        CelsiusDouble input = new(200);
 
         // Act.
         double result = input.ToRankine();
@@ -1032,7 +1032,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6699999999998d;
-        CelsiusDouble input = new CelsiusDouble(200);
+        CelsiusDouble input = new(200);
 
         // Act.
         double result = input.To<Rankine>();
@@ -1048,7 +1048,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToRankine());
@@ -1064,7 +1064,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusDouble inputCelsius = new CelsiusDouble(input);
+        CelsiusDouble inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
@@ -1079,7 +1079,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6700000000001d;
-        FahrenheitDouble input = new FahrenheitDouble(392);
+        FahrenheitDouble input = new(392);
 
         // Act.
         double result = input.ToRankine();
@@ -1094,7 +1094,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6700000000001d;
-        FahrenheitDouble input = new FahrenheitDouble(392);
+        FahrenheitDouble input = new(392);
 
         // Act.
         double result = input.To<Rankine>();
@@ -1109,7 +1109,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6699999999998d;
-        GasDouble input = new GasDouble(6);
+        GasDouble input = new(6);
 
         // Act.
         double result = input.ToRankine();
@@ -1124,7 +1124,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6699999999998d;
-        GasDouble input = new GasDouble(6);
+        GasDouble input = new(6);
 
         // Act.
         double result = input.To<Rankine>();
@@ -1139,7 +1139,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6699999999998d;
-        KelvinDouble input = new KelvinDouble(473.15);
+        KelvinDouble input = new(473.15);
 
         // Act.
         double result = input.ToRankine();
@@ -1154,7 +1154,7 @@ public class ToDoubleExtensionsTests
     {
         // Arrange.
         const double expected = 851.6699999999998d;
-        KelvinDouble input = new KelvinDouble(473.15);
+        KelvinDouble input = new(473.15);
 
         // Act.
         double result = input.To<Rankine>();
@@ -1168,7 +1168,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_rankine_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineDouble input = new RankineDouble(851.67);
+        RankineDouble input = new(851.67);
 
         // Act.
         double result = input.ToRankine();
@@ -1182,7 +1182,7 @@ public class ToDoubleExtensionsTests
     public void Test_to_rankine_generic_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineDouble input = new RankineDouble(851.67);
+        RankineDouble input = new(851.67);
 
         // Act.
         double result = input.To<Rankine>();

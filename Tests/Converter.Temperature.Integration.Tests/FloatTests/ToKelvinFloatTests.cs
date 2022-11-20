@@ -6,7 +6,7 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
-public class ToKelvinFloatTests
+public sealed class ToKelvinFloatTests
 {
     #region From Celsius
 

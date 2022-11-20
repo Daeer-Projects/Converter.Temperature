@@ -8,7 +8,7 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
-public class ToKelvinStringTests
+public sealed class ToKelvinStringTests
 {
     #region From Celsius
 

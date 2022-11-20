@@ -12,13 +12,13 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class ToStringExtensionsTests
+public sealed class ToStringExtensionsTests
 {
     [Fact]
     public void Test_to_celsius_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusString input = new CelsiusString("42");
+        CelsiusString input = new("42");
 
         // Act.
         string result = input.ToCelsius();
@@ -32,7 +32,7 @@ public class ToStringExtensionsTests
     public void Test_to_celsius_generic_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusString input = new CelsiusString("42");
+        CelsiusString input = new("42");
 
         // Act.
         string result = input.To<Celsius>();
@@ -47,7 +47,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "10";
-        FahrenheitString input = new FahrenheitString("50");
+        FahrenheitString input = new("50");
 
         // Act.
         string result = input.ToCelsius();
@@ -62,7 +62,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "10";
-        FahrenheitString input = new FahrenheitString("50");
+        FahrenheitString input = new("50");
 
         // Act.
         string result = input.To<Celsius>();
@@ -77,7 +77,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "220";
-        GasString input = new GasString("7");
+        GasString input = new("7");
 
         // Act.
         string result = input.ToCelsius();
@@ -92,7 +92,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "220";
-        GasString input = new GasString("7");
+        GasString input = new("7");
 
         // Act.
         string result = input.To<Celsius>();
@@ -107,7 +107,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "1";
-        KelvinString input = new KelvinString("274.15");
+        KelvinString input = new("274.15");
 
         // Act.
         string result = input.ToCelsius();
@@ -122,7 +122,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "1";
-        KelvinString input = new KelvinString("274.15");
+        KelvinString input = new("274.15");
 
         // Act.
         string result = input.To<Celsius>();
@@ -137,7 +137,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "1.0000000000000062";
-        RankineString input = new RankineString("493.47");
+        RankineString input = new("493.47");
 
         // Act.
         string result = input.ToCelsius();
@@ -152,7 +152,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "1.0000000000000062";
-        RankineString input = new RankineString("493.47");
+        RankineString input = new("493.47");
 
         // Act.
         string result = input.To<Celsius>();
@@ -167,7 +167,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "53.6";
-        CelsiusString input = new CelsiusString("12");
+        CelsiusString input = new("12");
 
         // Act.
         string result = input.ToFahrenheit();
@@ -182,7 +182,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "53.6";
-        CelsiusString input = new CelsiusString("12");
+        CelsiusString input = new("12");
 
         // Act.
         string result = input.To<Fahrenheit>();
@@ -196,7 +196,7 @@ public class ToStringExtensionsTests
     public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitString input = new FahrenheitString("50");
+        FahrenheitString input = new("50");
 
         // Act.
         string result = input.ToFahrenheit();
@@ -210,7 +210,7 @@ public class ToStringExtensionsTests
     public void Test_to_fahrenheit_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitString input = new FahrenheitString("50");
+        FahrenheitString input = new("50");
 
         // Act.
         string result = input.To<Fahrenheit>();
@@ -225,7 +225,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "428";
-        GasString input = new GasString("7");
+        GasString input = new("7");
 
         // Act.
         string result = input.ToFahrenheit();
@@ -240,7 +240,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "428";
-        GasString input = new GasString("7");
+        GasString input = new("7");
 
         // Act.
         string result = input.To<Fahrenheit>();
@@ -255,7 +255,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "33.8";
-        KelvinString input = new KelvinString("274.15");
+        KelvinString input = new("274.15");
 
         // Act.
         string result = input.ToFahrenheit();
@@ -270,7 +270,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "33.8";
-        KelvinString input = new KelvinString("274.15");
+        KelvinString input = new("274.15");
 
         // Act.
         string result = input.To<Fahrenheit>();
@@ -285,7 +285,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "33.80099999999999";
-        RankineString input = new RankineString("493.471");
+        RankineString input = new("493.471");
 
         // Act.
         string result = input.ToFahrenheit();
@@ -300,7 +300,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "33.80099999999999";
-        RankineString input = new RankineString("493.471");
+        RankineString input = new("493.471");
 
         // Act.
         string result = input.To<Fahrenheit>();
@@ -315,7 +315,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "6";
-        CelsiusString input = new CelsiusString("200");
+        CelsiusString input = new("200");
 
         // Act.
         string result = input.ToGas();
@@ -330,7 +330,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "6";
-        CelsiusString input = new CelsiusString("200");
+        CelsiusString input = new("200");
 
         // Act.
         string result = input.To<Gas>();
@@ -344,7 +344,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_celsius_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        CelsiusString input = new CelsiusString("79");
+        CelsiusString input = new("79");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -358,7 +358,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_celsius_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        CelsiusString input = new CelsiusString("79");
+        CelsiusString input = new("79");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -372,7 +372,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_celsius_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        CelsiusString input = new CelsiusString("271");
+        CelsiusString input = new("271");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -386,7 +386,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_celsius_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        CelsiusString input = new CelsiusString("271");
+        CelsiusString input = new("271");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -401,7 +401,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "6";
-        FahrenheitString input = new FahrenheitString("392");
+        FahrenheitString input = new("392");
 
         // Act.
         string result = input.ToGas();
@@ -416,7 +416,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "6";
-        FahrenheitString input = new FahrenheitString("392");
+        FahrenheitString input = new("392");
 
         // Act.
         string result = input.To<Gas>();
@@ -430,7 +430,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_fahrenheit_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        FahrenheitString input = new FahrenheitString("174");
+        FahrenheitString input = new("174");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -444,7 +444,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_fahrenheit_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        FahrenheitString input = new FahrenheitString("174");
+        FahrenheitString input = new("174");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -458,7 +458,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_fahrenheit_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        FahrenheitString input = new FahrenheitString("520");
+        FahrenheitString input = new("520");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -472,7 +472,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_fahrenheit_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        FahrenheitString input = new FahrenheitString("520");
+        FahrenheitString input = new("520");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -486,7 +486,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_gas_returns_same_value()
     {
         // Arrange.
-        GasString input = new GasString("7");
+        GasString input = new("7");
 
         // Act.
         string result = input.ToGas();
@@ -500,7 +500,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_gas_returns_same_value()
     {
         // Arrange.
-        GasString input = new GasString("7");
+        GasString input = new("7");
 
         // Act.
         string result = input.To<Gas>();
@@ -515,7 +515,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "6";
-        KelvinString input = new KelvinString("478.15");
+        KelvinString input = new("478.15");
 
         // Act.
         string result = input.ToGas();
@@ -530,7 +530,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "6";
-        KelvinString input = new KelvinString("478.15");
+        KelvinString input = new("478.15");
 
         // Act.
         string result = input.To<Gas>();
@@ -544,7 +544,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_kelvin_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        KelvinString input = new KelvinString("174");
+        KelvinString input = new("174");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -558,7 +558,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_kelvin_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        KelvinString input = new KelvinString("174");
+        KelvinString input = new("174");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -572,7 +572,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_kelvin_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        KelvinString input = new KelvinString("544.15");
+        KelvinString input = new("544.15");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -586,7 +586,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_kelvin_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        KelvinString input = new KelvinString("544.15");
+        KelvinString input = new("544.15");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -601,7 +601,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "3";
-        RankineString input = new RankineString("806.67");
+        RankineString input = new("806.67");
 
         // Act.
         string result = input.ToGas();
@@ -616,7 +616,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "3";
-        RankineString input = new RankineString("806.67");
+        RankineString input = new("806.67");
 
         // Act.
         string result = input.To<Gas>();
@@ -630,7 +630,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_rankine_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        RankineString input = new RankineString("174");
+        RankineString input = new("174");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -644,7 +644,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_rankine_throws_out_of_range_exception_too_low()
     {
         // Arrange.
-        RankineString input = new RankineString("174");
+        RankineString input = new("174");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -658,7 +658,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_from_rankine_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        RankineString input = new RankineString("1524.25");
+        RankineString input = new("1524.25");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
@@ -672,7 +672,7 @@ public class ToStringExtensionsTests
     public void Test_to_gas_generic_from_rankine_throws_out_of_range_exception_too_high()
     {
         // Arrange.
-        RankineString input = new RankineString("1524.25");
+        RankineString input = new("1524.25");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
@@ -687,7 +687,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.15";
-        CelsiusString input = new CelsiusString("200");
+        CelsiusString input = new("200");
 
         // Act.
         string result = input.ToKelvin();
@@ -702,7 +702,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.15";
-        CelsiusString input = new CelsiusString("200");
+        CelsiusString input = new("200");
 
         // Act.
         string result = input.To<Kelvin>();
@@ -717,7 +717,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.15";
-        FahrenheitString input = new FahrenheitString("392");
+        FahrenheitString input = new("392");
 
         // Act.
         string result = input.ToKelvin();
@@ -732,7 +732,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.15";
-        FahrenheitString input = new FahrenheitString("392");
+        FahrenheitString input = new("392");
 
         // Act.
         string result = input.To<Kelvin>();
@@ -747,7 +747,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.15";
-        GasString input = new GasString("6");
+        GasString input = new("6");
 
         // Act.
         string result = input.ToKelvin();
@@ -762,7 +762,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.15";
-        GasString input = new GasString("6");
+        GasString input = new("6");
 
         // Act.
         string result = input.To<Kelvin>();
@@ -776,7 +776,7 @@ public class ToStringExtensionsTests
     public void Test_to_kelvin_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinString input = new KelvinString("473.15");
+        KelvinString input = new("473.15");
 
         // Act.
         string result = input.ToKelvin();
@@ -790,7 +790,7 @@ public class ToStringExtensionsTests
     public void Test_to_kelvin_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinString input = new KelvinString("473.15");
+        KelvinString input = new("473.15");
 
         // Act.
         string result = input.To<Kelvin>();
@@ -805,7 +805,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.1499999999999";
-        RankineString input = new RankineString("851.67");
+        RankineString input = new("851.67");
 
         // Act.
         string result = input.ToKelvin();
@@ -820,7 +820,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "473.1499999999999";
-        RankineString input = new RankineString("851.67");
+        RankineString input = new("851.67");
 
         // Act.
         string result = input.To<Kelvin>();
@@ -835,7 +835,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6699999999998";
-        CelsiusString input = new CelsiusString("200");
+        CelsiusString input = new("200");
 
         // Act.
         string result = input.ToRankine();
@@ -850,7 +850,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6699999999998";
-        CelsiusString input = new CelsiusString("200");
+        CelsiusString input = new("200");
 
         // Act.
         string result = input.To<Rankine>();
@@ -866,7 +866,7 @@ public class ToStringExtensionsTests
     public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusString inputCelsius = new CelsiusString(input.ToString(CultureInfo.InvariantCulture));
+        CelsiusString inputCelsius = new(input.ToString(CultureInfo.InvariantCulture));
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToRankine());
@@ -882,7 +882,7 @@ public class ToStringExtensionsTests
     public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
     {
         // Arrange.
-        CelsiusString inputCelsius = new CelsiusString(input.ToString(CultureInfo.InvariantCulture));
+        CelsiusString inputCelsius = new(input.ToString(CultureInfo.InvariantCulture));
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
@@ -897,7 +897,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6700000000001";
-        FahrenheitString input = new FahrenheitString("392");
+        FahrenheitString input = new("392");
 
         // Act.
         string result = input.ToRankine();
@@ -912,7 +912,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6700000000001";
-        FahrenheitString input = new FahrenheitString("392");
+        FahrenheitString input = new("392");
 
         // Act.
         string result = input.To<Rankine>();
@@ -927,7 +927,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6699999999998";
-        GasString input = new GasString("6");
+        GasString input = new("6");
 
         // Act.
         string result = input.ToRankine();
@@ -942,7 +942,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6699999999998";
-        GasString input = new GasString("6");
+        GasString input = new("6");
 
         // Act.
         string result = input.To<Rankine>();
@@ -957,7 +957,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6699999999998";
-        KelvinString input = new KelvinString("473.15");
+        KelvinString input = new("473.15");
 
         // Act.
         string result = input.ToRankine();
@@ -972,7 +972,7 @@ public class ToStringExtensionsTests
     {
         // Arrange.
         const string expected = "851.6699999999998";
-        KelvinString input = new KelvinString("473.15");
+        KelvinString input = new("473.15");
 
         // Act.
         string result = input.To<Rankine>();
@@ -986,7 +986,7 @@ public class ToStringExtensionsTests
     public void Test_to_rankine_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineString input = new RankineString("851.67");
+        RankineString input = new("851.67");
 
         // Act.
         string result = input.ToRankine();
@@ -1000,7 +1000,7 @@ public class ToStringExtensionsTests
     public void Test_to_rankine_generic_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineString input = new RankineString("851.67");
+        RankineString input = new("851.67");
 
         // Act.
         string result = input.To<Rankine>();

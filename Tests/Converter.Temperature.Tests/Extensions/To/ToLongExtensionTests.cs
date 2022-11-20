@@ -11,13 +11,13 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class ToLongExtensionTests
+public sealed class ToLongExtensionTests
 {
     [Fact]
     public void Test_to_celsius_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusLong input = new CelsiusLong(42L);
+        CelsiusLong input = new(42L);
 
         // Act.
         long result = input.ToCelsius();
@@ -31,7 +31,7 @@ public class ToLongExtensionTests
     public void Test_to_celsius_generic_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusLong input = new CelsiusLong(42L);
+        CelsiusLong input = new(42L);
 
         // Act.
         long result = input.To<Celsius>();
@@ -46,7 +46,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 10L;
-        FahrenheitLong input = new FahrenheitLong(50L);
+        FahrenheitLong input = new(50L);
 
         // Act.
         long result = input.ToCelsius();
@@ -61,7 +61,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 10L;
-        FahrenheitLong input = new FahrenheitLong(50L);
+        FahrenheitLong input = new(50L);
 
         // Act.
         long result = input.To<Celsius>();
@@ -76,7 +76,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 230L;
-        GasLong input = new GasLong(7L);
+        GasLong input = new(7L);
 
         // Act.
         long result = input.ToCelsius();
@@ -101,7 +101,7 @@ public class ToLongExtensionTests
         long expected)
     {
         // Arrange.
-        GasLong inputGas = new GasLong(input);
+        GasLong inputGas = new(input);
 
         // Act.
         long result = inputGas.To<Celsius>();
@@ -116,7 +116,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 1L;
-        KelvinLong input = new KelvinLong(274L);
+        KelvinLong input = new(274L);
 
         // Act.
         long result = input.ToCelsius();
@@ -131,7 +131,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 1L;
-        KelvinLong input = new KelvinLong(274L);
+        KelvinLong input = new(274L);
 
         // Act.
         long result = input.To<Celsius>();
@@ -146,7 +146,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = -121L;
-        RankineLong input = new RankineLong(274L);
+        RankineLong input = new(274L);
 
         // Act.
         long result = input.ToCelsius();
@@ -161,7 +161,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = -121L;
-        RankineLong input = new RankineLong(274L);
+        RankineLong input = new(274L);
 
         // Act.
         long result = input.To<Celsius>();
@@ -176,7 +176,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 54L;
-        CelsiusLong input = new CelsiusLong(12L);
+        CelsiusLong input = new(12L);
 
         // Act.
         long result = input.ToFahrenheit();
@@ -191,7 +191,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 54L;
-        CelsiusLong input = new CelsiusLong(12L);
+        CelsiusLong input = new(12L);
 
         // Act.
         long result = input.To<Fahrenheit>();
@@ -207,7 +207,7 @@ public class ToLongExtensionTests
     public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(long input)
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(input);
+        CelsiusLong inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
@@ -223,7 +223,7 @@ public class ToLongExtensionTests
     public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(long input)
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(input);
+        CelsiusLong inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
@@ -237,7 +237,7 @@ public class ToLongExtensionTests
     public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitLong input = new FahrenheitLong(50L);
+        FahrenheitLong input = new(50L);
 
         // Act.
         long result = input.ToFahrenheit();
@@ -251,7 +251,7 @@ public class ToLongExtensionTests
     public void Test_to_fahrenheit_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitLong input = new FahrenheitLong(50L);
+        FahrenheitLong input = new(50L);
 
         // Act.
         long result = input.To<Fahrenheit>();
@@ -266,7 +266,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 446L;
-        GasLong input = new GasLong(7L);
+        GasLong input = new(7L);
 
         // Act.
         long result = input.ToFahrenheit();
@@ -281,7 +281,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 446L;
-        GasLong input = new GasLong(7L);
+        GasLong input = new(7L);
 
         // Act.
         long result = input.To<Fahrenheit>();
@@ -296,7 +296,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 34L;
-        KelvinLong input = new KelvinLong(274L);
+        KelvinLong input = new(274L);
 
         // Act.
         long result = input.ToFahrenheit();
@@ -311,7 +311,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 34L;
-        KelvinLong input = new KelvinLong(274L);
+        KelvinLong input = new(274L);
 
         // Act.
         long result = input.To<Fahrenheit>();
@@ -326,7 +326,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = -186L;
-        RankineLong input = new RankineLong(274L);
+        RankineLong input = new(274L);
 
         // Act.
         long result = input.ToFahrenheit();
@@ -341,7 +341,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = -186L;
-        RankineLong input = new RankineLong(274L);
+        RankineLong input = new(274L);
 
         // Act.
         long result = input.To<Fahrenheit>();
@@ -356,7 +356,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        CelsiusLong input = new CelsiusLong(200L);
+        CelsiusLong input = new(200L);
 
         // Act.
         long result = input.ToGas();
@@ -381,7 +381,7 @@ public class ToLongExtensionTests
         long expected)
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(input);
+        CelsiusLong inputCelsius = new(input);
 
         // Act.
         long result = inputCelsius.To<Gas>();
@@ -396,7 +396,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        FahrenheitLong input = new FahrenheitLong(392L);
+        FahrenheitLong input = new(392L);
 
         // Act.
         long result = input.ToGas();
@@ -411,7 +411,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        FahrenheitLong input = new FahrenheitLong(392L);
+        FahrenheitLong input = new(392L);
 
         // Act.
         long result = input.To<Gas>();
@@ -425,7 +425,7 @@ public class ToLongExtensionTests
     public void Test_to_gas_from_gas_returns_same_value()
     {
         // Arrange.
-        GasLong input = new GasLong(7L);
+        GasLong input = new(7L);
 
         // Act.
         long result = input.ToGas();
@@ -439,7 +439,7 @@ public class ToLongExtensionTests
     public void Test_to_gas_generic_from_gas_returns_same_value()
     {
         // Arrange.
-        GasLong input = new GasLong(7L);
+        GasLong input = new(7L);
 
         // Act.
         long result = input.To<Gas>();
@@ -454,7 +454,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        KelvinLong input = new KelvinLong(473L);
+        KelvinLong input = new(473L);
 
         // Act.
         long result = input.ToGas();
@@ -469,7 +469,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        KelvinLong input = new KelvinLong(473L);
+        KelvinLong input = new(473L);
 
         // Act.
         long result = input.To<Gas>();
@@ -484,7 +484,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        RankineLong input = new RankineLong(862L);
+        RankineLong input = new(862L);
 
         // Act.
         long result = input.ToGas();
@@ -499,7 +499,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 6L;
-        RankineLong input = new RankineLong(862L);
+        RankineLong input = new(862L);
 
         // Act.
         long result = input.To<Gas>();
@@ -514,7 +514,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 473L;
-        CelsiusLong input = new CelsiusLong(200L);
+        CelsiusLong input = new(200L);
 
         // Act.
         long result = input.ToKelvin();
@@ -529,7 +529,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 473L;
-        CelsiusLong input = new CelsiusLong(200L);
+        CelsiusLong input = new(200L);
 
         // Act.
         long result = input.To<Kelvin>();
@@ -543,7 +543,7 @@ public class ToLongExtensionTests
     public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(long.MaxValue);
+        CelsiusLong inputCelsius = new(long.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToKelvin());
@@ -557,7 +557,7 @@ public class ToLongExtensionTests
     public void Test_to_kelvin_generic_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(long.MaxValue);
+        CelsiusLong inputCelsius = new(long.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
@@ -572,7 +572,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 473L;
-        FahrenheitLong input = new FahrenheitLong(392L);
+        FahrenheitLong input = new(392L);
 
         // Act.
         long result = input.ToKelvin();
@@ -587,7 +587,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 473L;
-        FahrenheitLong input = new FahrenheitLong(392L);
+        FahrenheitLong input = new(392L);
 
         // Act.
         long result = input.To<Kelvin>();
@@ -602,7 +602,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 490L;
-        GasLong input = new GasLong(6L);
+        GasLong input = new(6L);
 
         // Act.
         long result = input.ToKelvin();
@@ -617,7 +617,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 490L;
-        GasLong input = new GasLong(6L);
+        GasLong input = new(6L);
 
         // Act.
         long result = input.To<Kelvin>();
@@ -631,7 +631,7 @@ public class ToLongExtensionTests
     public void Test_to_kelvin_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinLong input = new KelvinLong(473L);
+        KelvinLong input = new(473L);
 
         // Act.
         long result = input.ToKelvin();
@@ -645,7 +645,7 @@ public class ToLongExtensionTests
     public void Test_to_kelvin_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinLong input = new KelvinLong(473L);
+        KelvinLong input = new(473L);
 
         // Act.
         long result = input.To<Kelvin>();
@@ -660,7 +660,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 478L;
-        RankineLong input = new RankineLong(862L);
+        RankineLong input = new(862L);
 
         // Act.
         long result = input.ToKelvin();
@@ -675,7 +675,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 478L;
-        RankineLong input = new RankineLong(862L);
+        RankineLong input = new(862L);
 
         // Act.
         long result = input.To<Kelvin>();
@@ -690,7 +690,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 852L;
-        CelsiusLong input = new CelsiusLong(200L);
+        CelsiusLong input = new(200L);
 
         // Act.
         long result = input.ToRankine();
@@ -705,7 +705,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 852L;
-        CelsiusLong input = new CelsiusLong(200L);
+        CelsiusLong input = new(200L);
 
         // Act.
         long result = input.To<Rankine>();
@@ -719,7 +719,7 @@ public class ToLongExtensionTests
     public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(long.MaxValue);
+        CelsiusLong inputCelsius = new(long.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToRankine());
@@ -733,7 +733,7 @@ public class ToLongExtensionTests
     public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusLong inputCelsius = new CelsiusLong(long.MaxValue);
+        CelsiusLong inputCelsius = new(long.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
@@ -748,7 +748,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 716L;
-        FahrenheitLong input = new FahrenheitLong(256L);
+        FahrenheitLong input = new(256L);
 
         // Act.
         long result = input.ToRankine();
@@ -763,7 +763,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 716L;
-        FahrenheitLong input = new FahrenheitLong(256L);
+        FahrenheitLong input = new(256L);
 
         // Act.
         long result = input.To<Rankine>();
@@ -778,7 +778,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 882L;
-        GasLong input = new GasLong(6L);
+        GasLong input = new(6L);
 
         // Act.
         long result = input.ToRankine();
@@ -793,7 +793,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 882L;
-        GasLong input = new GasLong(6L);
+        GasLong input = new(6L);
 
         // Act.
         long result = input.To<Rankine>();
@@ -808,7 +808,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 11860L;
-        KelvinLong input = new KelvinLong(6589L);
+        KelvinLong input = new(6589L);
 
         // Act.
         long result = input.ToRankine();
@@ -823,7 +823,7 @@ public class ToLongExtensionTests
     {
         // Arrange.
         const long expected = 11860L;
-        KelvinLong input = new KelvinLong(6589L);
+        KelvinLong input = new(6589L);
 
         // Act.
         long result = input.To<Rankine>();
@@ -837,7 +837,7 @@ public class ToLongExtensionTests
     public void Test_to_rankine_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineLong input = new RankineLong(862L);
+        RankineLong input = new(862L);
 
         // Act.
         long result = input.ToRankine();
@@ -851,7 +851,7 @@ public class ToLongExtensionTests
     public void Test_to_rankine_generic_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineLong input = new RankineLong(862L);
+        RankineLong input = new(862L);
 
         // Act.
         long result = input.To<Rankine>();

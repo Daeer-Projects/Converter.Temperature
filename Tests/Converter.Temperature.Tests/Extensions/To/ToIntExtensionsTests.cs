@@ -11,13 +11,13 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class ToIntExtensionsTests
+public sealed class ToIntExtensionsTests
 {
     [Fact]
     public void Test_to_celsius_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusInt input = new CelsiusInt(42);
+        CelsiusInt input = new(42);
 
         // Act.
         int result = input.ToCelsius();
@@ -31,7 +31,7 @@ public class ToIntExtensionsTests
     public void Test_to_celsius_generic_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusInt input = new CelsiusInt(42);
+        CelsiusInt input = new(42);
 
         // Act.
         int result = input.To<Celsius>();
@@ -46,7 +46,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 10;
-        FahrenheitInt input = new FahrenheitInt(50);
+        FahrenheitInt input = new(50);
 
         // Act.
         int result = input.ToCelsius();
@@ -61,7 +61,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 10;
-        FahrenheitInt input = new FahrenheitInt(50);
+        FahrenheitInt input = new(50);
 
         // Act.
         int result = input.To<Celsius>();
@@ -76,7 +76,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 230;
-        GasInt input = new GasInt(7);
+        GasInt input = new(7);
 
         // Act.
         int result = input.ToCelsius();
@@ -101,7 +101,7 @@ public class ToIntExtensionsTests
         int expected)
     {
         // Arrange.
-        GasInt inputGas = new GasInt(input);
+        GasInt inputGas = new(input);
 
         // Act.
         int result = inputGas.To<Celsius>();
@@ -116,7 +116,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 1;
-        KelvinInt input = new KelvinInt(274);
+        KelvinInt input = new(274);
 
         // Act.
         int result = input.ToCelsius();
@@ -131,7 +131,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 1;
-        KelvinInt input = new KelvinInt(274);
+        KelvinInt input = new(274);
 
         // Act.
         int result = input.To<Celsius>();
@@ -146,7 +146,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = -121;
-        RankineInt input = new RankineInt(274);
+        RankineInt input = new(274);
 
         // Act.
         int result = input.ToCelsius();
@@ -161,7 +161,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = -121;
-        RankineInt input = new RankineInt(274);
+        RankineInt input = new(274);
 
         // Act.
         int result = input.To<Celsius>();
@@ -176,7 +176,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 54;
-        CelsiusInt input = new CelsiusInt(12);
+        CelsiusInt input = new(12);
 
         // Act.
         int result = input.ToFahrenheit();
@@ -191,7 +191,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 54;
-        CelsiusInt input = new CelsiusInt(12);
+        CelsiusInt input = new(12);
 
         // Act.
         int result = input.To<Fahrenheit>();
@@ -207,7 +207,7 @@ public class ToIntExtensionsTests
     public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(int input)
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(input);
+        CelsiusInt inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
@@ -223,7 +223,7 @@ public class ToIntExtensionsTests
     public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(int input)
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(input);
+        CelsiusInt inputCelsius = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
@@ -237,7 +237,7 @@ public class ToIntExtensionsTests
     public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitInt input = new FahrenheitInt(50);
+        FahrenheitInt input = new(50);
 
         // Act.
         int result = input.ToFahrenheit();
@@ -251,7 +251,7 @@ public class ToIntExtensionsTests
     public void Test_to_fahrenheit_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitInt input = new FahrenheitInt(50);
+        FahrenheitInt input = new(50);
 
         // Act.
         int result = input.To<Fahrenheit>();
@@ -266,7 +266,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 446;
-        GasInt input = new GasInt(7);
+        GasInt input = new(7);
 
         // Act.
         int result = input.ToFahrenheit();
@@ -281,7 +281,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 446;
-        GasInt input = new GasInt(7);
+        GasInt input = new(7);
 
         // Act.
         int result = input.To<Fahrenheit>();
@@ -296,7 +296,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 34;
-        KelvinInt input = new KelvinInt(274);
+        KelvinInt input = new(274);
 
         // Act.
         int result = input.ToFahrenheit();
@@ -311,7 +311,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 34;
-        KelvinInt input = new KelvinInt(274);
+        KelvinInt input = new(274);
 
         // Act.
         int result = input.To<Fahrenheit>();
@@ -326,7 +326,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = -186;
-        RankineInt input = new RankineInt(274);
+        RankineInt input = new(274);
 
         // Act.
         int result = input.ToFahrenheit();
@@ -341,7 +341,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = -186;
-        RankineInt input = new RankineInt(274);
+        RankineInt input = new(274);
 
         // Act.
         int result = input.To<Fahrenheit>();
@@ -356,7 +356,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        CelsiusInt input = new CelsiusInt(200);
+        CelsiusInt input = new(200);
 
         // Act.
         int result = input.ToGas();
@@ -381,7 +381,7 @@ public class ToIntExtensionsTests
         int expected)
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(input);
+        CelsiusInt inputCelsius = new(input);
 
         // Act.
         int result = inputCelsius.To<Gas>();
@@ -396,7 +396,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        FahrenheitInt input = new FahrenheitInt(392);
+        FahrenheitInt input = new(392);
 
         // Act.
         int result = input.ToGas();
@@ -411,7 +411,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        FahrenheitInt input = new FahrenheitInt(392);
+        FahrenheitInt input = new(392);
 
         // Act.
         int result = input.To<Gas>();
@@ -425,7 +425,7 @@ public class ToIntExtensionsTests
     public void Test_to_gas_from_gas_returns_same_value()
     {
         // Arrange.
-        GasInt input = new GasInt(7);
+        GasInt input = new(7);
 
         // Act.
         int result = input.ToGas();
@@ -439,7 +439,7 @@ public class ToIntExtensionsTests
     public void Test_to_gas_generic_from_gas_returns_same_value()
     {
         // Arrange.
-        GasInt input = new GasInt(7);
+        GasInt input = new(7);
 
         // Act.
         int result = input.To<Gas>();
@@ -454,7 +454,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        KelvinInt input = new KelvinInt(473);
+        KelvinInt input = new(473);
 
         // Act.
         int result = input.ToGas();
@@ -469,7 +469,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        KelvinInt input = new KelvinInt(473);
+        KelvinInt input = new(473);
 
         // Act.
         int result = input.To<Gas>();
@@ -484,7 +484,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        RankineInt input = new RankineInt(862);
+        RankineInt input = new(862);
 
         // Act.
         int result = input.ToGas();
@@ -499,7 +499,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 6;
-        RankineInt input = new RankineInt(862);
+        RankineInt input = new(862);
 
         // Act.
         int result = input.To<Gas>();
@@ -514,7 +514,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 473;
-        CelsiusInt input = new CelsiusInt(200);
+        CelsiusInt input = new(200);
 
         // Act.
         int result = input.ToKelvin();
@@ -529,7 +529,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 473;
-        CelsiusInt input = new CelsiusInt(200);
+        CelsiusInt input = new(200);
 
         // Act.
         int result = input.To<Kelvin>();
@@ -543,7 +543,7 @@ public class ToIntExtensionsTests
     public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(int.MaxValue);
+        CelsiusInt inputCelsius = new(int.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToKelvin());
@@ -557,7 +557,7 @@ public class ToIntExtensionsTests
     public void Test_to_kelvin_generic_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(int.MaxValue);
+        CelsiusInt inputCelsius = new(int.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
@@ -572,7 +572,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 473;
-        FahrenheitInt input = new FahrenheitInt(392);
+        FahrenheitInt input = new(392);
 
         // Act.
         int result = input.ToKelvin();
@@ -587,7 +587,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 473;
-        FahrenheitInt input = new FahrenheitInt(392);
+        FahrenheitInt input = new(392);
 
         // Act.
         int result = input.To<Kelvin>();
@@ -603,7 +603,7 @@ public class ToIntExtensionsTests
     public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
     {
         // Arrange.
-        FahrenheitInt input = new FahrenheitInt(temp);
+        FahrenheitInt input = new(temp);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToKelvin());
@@ -619,7 +619,7 @@ public class ToIntExtensionsTests
     public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
     {
         // Arrange.
-        FahrenheitInt input = new FahrenheitInt(temp);
+        FahrenheitInt input = new(temp);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Kelvin>());
@@ -634,7 +634,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 490;
-        GasInt input = new GasInt(6);
+        GasInt input = new(6);
 
         // Act.
         int result = input.ToKelvin();
@@ -649,7 +649,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 490;
-        GasInt input = new GasInt(6);
+        GasInt input = new(6);
 
         // Act.
         int result = input.To<Kelvin>();
@@ -663,7 +663,7 @@ public class ToIntExtensionsTests
     public void Test_to_kelvin_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinInt input = new KelvinInt(473);
+        KelvinInt input = new(473);
 
         // Act.
         int result = input.ToKelvin();
@@ -677,7 +677,7 @@ public class ToIntExtensionsTests
     public void Test_to_kelvin_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinInt input = new KelvinInt(473);
+        KelvinInt input = new(473);
 
         // Act.
         int result = input.To<Kelvin>();
@@ -692,7 +692,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 478;
-        RankineInt input = new RankineInt(862);
+        RankineInt input = new(862);
 
         // Act.
         int result = input.ToKelvin();
@@ -707,7 +707,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 478;
-        RankineInt input = new RankineInt(862);
+        RankineInt input = new(862);
 
         // Act.
         int result = input.To<Kelvin>();
@@ -722,7 +722,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 852;
-        CelsiusInt input = new CelsiusInt(200);
+        CelsiusInt input = new(200);
 
         // Act.
         int result = input.ToRankine();
@@ -737,7 +737,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 852;
-        CelsiusInt input = new CelsiusInt(200);
+        CelsiusInt input = new(200);
 
         // Act.
         int result = input.To<Rankine>();
@@ -751,7 +751,7 @@ public class ToIntExtensionsTests
     public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(int.MaxValue);
+        CelsiusInt inputCelsius = new(int.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToRankine());
@@ -765,7 +765,7 @@ public class ToIntExtensionsTests
     public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception()
     {
         // Arrange.
-        CelsiusInt inputCelsius = new CelsiusInt(int.MaxValue);
+        CelsiusInt inputCelsius = new(int.MaxValue);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
@@ -780,7 +780,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 716;
-        FahrenheitInt input = new FahrenheitInt(256);
+        FahrenheitInt input = new(256);
 
         // Act.
         int result = input.ToRankine();
@@ -795,7 +795,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 716;
-        FahrenheitInt input = new FahrenheitInt(256);
+        FahrenheitInt input = new(256);
 
         // Act.
         int result = input.To<Rankine>();
@@ -810,7 +810,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 882;
-        GasInt input = new GasInt(6);
+        GasInt input = new(6);
 
         // Act.
         int result = input.ToRankine();
@@ -825,7 +825,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 882;
-        GasInt input = new GasInt(6);
+        GasInt input = new(6);
 
         // Act.
         int result = input.To<Rankine>();
@@ -840,7 +840,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 11860;
-        KelvinInt input = new KelvinInt(6589);
+        KelvinInt input = new(6589);
 
         // Act.
         int result = input.ToRankine();
@@ -855,7 +855,7 @@ public class ToIntExtensionsTests
     {
         // Arrange.
         const int expected = 11860;
-        KelvinInt input = new KelvinInt(6589);
+        KelvinInt input = new(6589);
 
         // Act.
         int result = input.To<Rankine>();
@@ -869,7 +869,7 @@ public class ToIntExtensionsTests
     public void Test_to_rankine_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineInt input = new RankineInt(862);
+        RankineInt input = new(862);
 
         // Act.
         int result = input.ToRankine();
@@ -883,7 +883,7 @@ public class ToIntExtensionsTests
     public void Test_to_rankine_generic_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineInt input = new RankineInt(862);
+        RankineInt input = new(862);
 
         // Act.
         int result = input.To<Rankine>();

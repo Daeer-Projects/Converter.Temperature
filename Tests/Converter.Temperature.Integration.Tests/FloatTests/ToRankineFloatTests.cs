@@ -6,7 +6,7 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
-public class ToRankineFloatTests
+public sealed class ToRankineFloatTests
 {
     #region From Celsius
 

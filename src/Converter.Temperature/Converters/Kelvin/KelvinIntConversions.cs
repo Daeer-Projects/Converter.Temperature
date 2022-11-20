@@ -16,7 +16,7 @@ internal static class KelvinIntConversions
     {
         const int maxValue = int.MaxValue - 273;
         const int minValue = int.MinValue + 273;
-        if (input < minValue || input > maxValue)
+        if (input is < minValue or > maxValue)
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 
         int celsiusTemp = input - 273;

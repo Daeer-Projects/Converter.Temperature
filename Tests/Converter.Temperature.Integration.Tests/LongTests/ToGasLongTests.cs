@@ -7,7 +7,7 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
-public class ToGasLongTests
+public sealed class ToGasLongTests
 {
     #region From Celsius
 

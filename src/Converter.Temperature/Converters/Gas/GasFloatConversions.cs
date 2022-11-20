@@ -15,31 +15,22 @@ internal static class GasFloatConversions
     /// </returns>
     public static float GasToCelsius(float input)
     {
-        float celTemp;
-        if (input < .25 || input > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
-
-        if (input < 1)
-            celTemp = 125;
-        else if (input < 1.5)
-            celTemp = 140;
-        else if (input < 2.5)
-            celTemp = 150;
-        else if (input < 3.5)
-            celTemp = 165;
-        else if (input < 4.5)
-            celTemp = 180;
-        else if (input < 5.5)
-            celTemp = 190;
-        else if (input < 6.5)
-            celTemp = 200;
-        else if (input < 7.5)
-            celTemp = 220;
-        else if (input < 8.5)
-            celTemp = 230;
-        else if (input < 9.5)
-            celTemp = 240;
-        else
-            celTemp = 260;
+        float celTemp = input switch
+        {
+            < .25f => throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError),
+            > 10f => throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError),
+            < 1f => 125,
+            < 1.5f => 140,
+            < 2.5f => 150,
+            < 3.5f => 165,
+            < 4.5f => 180,
+            < 5.5f => 190,
+            < 6.5f => 200,
+            < 7.5f => 220,
+            < 8.5f => 230,
+            < 9.5f => 240,
+            _ => 260
+        };
 
         return celTemp;
     }

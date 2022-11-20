@@ -7,7 +7,7 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
-public class ToFahrenheitDoubleTests
+public sealed class ToFahrenheitDoubleTests
 {
     #region From Celsius
 

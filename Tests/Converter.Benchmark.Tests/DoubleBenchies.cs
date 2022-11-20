@@ -6,7 +6,7 @@ using Temperature.Extensions.To;
 using Temperature.TemperatureTypes;
 
 [MemoryDiagnoser]
-public class DoubleBenchies
+public sealed class DoubleBenchies
 {
     #region Celsius
 

@@ -11,7 +11,7 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class FromDoubleExtensionsTests
+public sealed class FromDoubleExtensionsTests
 {
     [Fact]
     public void Test_from_celsius_returns_celsius_double_type()

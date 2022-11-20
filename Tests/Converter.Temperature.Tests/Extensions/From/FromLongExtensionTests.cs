@@ -11,7 +11,7 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class FromLongExtensionTests
+public sealed class FromLongExtensionTests
 {
     [Fact]
     public void Test_from_celsius_returns_celsius_long_type()

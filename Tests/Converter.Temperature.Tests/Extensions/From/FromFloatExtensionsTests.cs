@@ -11,7 +11,7 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class FromFloatExtensionsTests
+public sealed class FromFloatExtensionsTests
 {
     [Fact]
     public void Test_from_celsius_returns_celsius_float_type()

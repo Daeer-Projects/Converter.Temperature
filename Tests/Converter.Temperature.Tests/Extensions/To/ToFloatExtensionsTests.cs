@@ -11,13 +11,13 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class ToFloatExtensionsTests
+public sealed class ToFloatExtensionsTests
 {
     [Fact]
     public void Test_to_celsius_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusFloat input = new CelsiusFloat(42);
+        CelsiusFloat input = new(42);
 
         // Act.
         float result = input.ToCelsius();
@@ -31,7 +31,7 @@ public class ToFloatExtensionsTests
     public void Test_to_celsius_generic_from_celsius_returns_same_value()
     {
         // Arrange.
-        CelsiusFloat input = new CelsiusFloat(42.3f);
+        CelsiusFloat input = new(42.3f);
 
         // Act.
         float result = input.To<Celsius>();
@@ -46,7 +46,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 10f;
-        FahrenheitFloat input = new FahrenheitFloat(50);
+        FahrenheitFloat input = new(50);
 
         // Act.
         float result = input.ToCelsius();
@@ -61,7 +61,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 10f;
-        FahrenheitFloat input = new FahrenheitFloat(50.0f);
+        FahrenheitFloat input = new(50.0f);
 
         // Act.
         float result = input.To<Celsius>();
@@ -76,7 +76,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 220f;
-        GasFloat input = new GasFloat(7.0f);
+        GasFloat input = new(7.0f);
 
         // Act.
         float result = input.ToCelsius();
@@ -114,7 +114,7 @@ public class ToFloatExtensionsTests
         float expected)
     {
         // Arrange.
-        GasFloat inputGas = new GasFloat(input);
+        GasFloat inputGas = new(input);
 
         // Act.
         float result = inputGas.To<Celsius>();
@@ -130,7 +130,7 @@ public class ToFloatExtensionsTests
     public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(float input)
     {
         // Arrange.
-        GasFloat inputGas = new GasFloat(input);
+        GasFloat inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Celsius>());
@@ -145,7 +145,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 1f;
-        KelvinFloat input = new KelvinFloat(274.15f);
+        KelvinFloat input = new(274.15f);
 
         // Act.
         float result = input.ToCelsius();
@@ -160,7 +160,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 1f;
-        KelvinFloat input = new KelvinFloat(274.15f);
+        KelvinFloat input = new(274.15f);
 
         // Act.
         float result = input.To<Celsius>();
@@ -178,7 +178,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        KelvinFloat input = new KelvinFloat(275.8612978f);
+        KelvinFloat input = new(275.8612978f);
 
         // Act.
         float result = input.ToCelsius(fractionalCount);
@@ -196,7 +196,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        KelvinFloat input = new KelvinFloat(275.8612978f);
+        KelvinFloat input = new(275.8612978f);
 
         // Act.
         float result = input.To<Celsius>(fractionalCount);
@@ -211,7 +211,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 0.9999932f;
-        RankineFloat input = new RankineFloat(493.47f);
+        RankineFloat input = new(493.47f);
 
         // Act.
         float result = input.ToCelsius();
@@ -226,7 +226,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 0.9999932f;
-        RankineFloat input = new RankineFloat(493.47f);
+        RankineFloat input = new(493.47f);
 
         // Act.
         float result = input.To<Celsius>();
@@ -244,7 +244,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineFloat input = new RankineFloat(493.47f);
+        RankineFloat input = new(493.47f);
 
         // Act.
         float result = input.ToCelsius(fractionalCount);
@@ -262,7 +262,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineFloat input = new RankineFloat(493.47f);
+        RankineFloat input = new(493.47f);
 
         // Act.
         float result = input.To<Celsius>(fractionalCount);
@@ -277,7 +277,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 53.6f;
-        CelsiusFloat input = new CelsiusFloat(12);
+        CelsiusFloat input = new(12);
 
         // Act.
         float result = input.ToFahrenheit();
@@ -292,7 +292,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 53.6f;
-        CelsiusFloat input = new CelsiusFloat(12);
+        CelsiusFloat input = new(12);
 
         // Act.
         float result = input.To<Fahrenheit>();
@@ -306,7 +306,7 @@ public class ToFloatExtensionsTests
     public void Test_to_fahrenheit_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitFloat input = new FahrenheitFloat(50.456f);
+        FahrenheitFloat input = new(50.456f);
 
         // Act.
         float result = input.ToFahrenheit();
@@ -320,7 +320,7 @@ public class ToFloatExtensionsTests
     public void Test_to_fahrenheit_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        FahrenheitFloat input = new FahrenheitFloat(50.456f);
+        FahrenheitFloat input = new(50.456f);
 
         // Act.
         float result = input.To<Fahrenheit>();
@@ -338,7 +338,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        FahrenheitFloat input = new FahrenheitFloat(50.456f);
+        FahrenheitFloat input = new(50.456f);
 
         // Act.
         float result = input.ToFahrenheit(fractionalCount);
@@ -356,7 +356,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        FahrenheitFloat input = new FahrenheitFloat(50.456f);
+        FahrenheitFloat input = new(50.456f);
 
         // Act.
         float result = input.To<Fahrenheit>(fractionalCount);
@@ -371,7 +371,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 428f;
-        GasFloat input = new GasFloat(7);
+        GasFloat input = new(7);
 
         // Act.
         float result = input.ToFahrenheit();
@@ -386,7 +386,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 428f;
-        GasFloat input = new GasFloat(7);
+        GasFloat input = new(7);
 
         // Act.
         float result = input.To<Fahrenheit>();
@@ -401,7 +401,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 33.8f;
-        KelvinFloat input = new KelvinFloat(274.15f);
+        KelvinFloat input = new(274.15f);
 
         // Act.
         float result = input.ToFahrenheit();
@@ -416,7 +416,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 33.8f;
-        KelvinFloat input = new KelvinFloat(274.15f);
+        KelvinFloat input = new(274.15f);
 
         // Act.
         float result = input.To<Fahrenheit>();
@@ -432,7 +432,7 @@ public class ToFloatExtensionsTests
     public void Test_to_fahrenheit_from_kelvin_with_invalid_parameter_throws_exception(float input)
     {
         // Arrange.
-        KelvinFloat inputKelvin = new KelvinFloat(input);
+        KelvinFloat inputKelvin = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputKelvin.ToFahrenheit());
@@ -447,7 +447,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 33.800995f;
-        RankineFloat input = new RankineFloat(493.471f);
+        RankineFloat input = new(493.471f);
 
         // Act.
         float result = input.ToFahrenheit();
@@ -462,7 +462,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 33.800995f;
-        RankineFloat input = new RankineFloat(493.471f);
+        RankineFloat input = new(493.471f);
 
         // Act.
         float result = input.To<Fahrenheit>();
@@ -480,7 +480,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineFloat input = new RankineFloat(493.471f);
+        RankineFloat input = new(493.471f);
 
         // Act.
         float result = input.ToFahrenheit(fractionalCount);
@@ -498,7 +498,7 @@ public class ToFloatExtensionsTests
         int fractionalCount)
     {
         // Arrange.
-        RankineFloat input = new RankineFloat(493.471f);
+        RankineFloat input = new(493.471f);
 
         // Act.
         float result = input.To<Fahrenheit>(fractionalCount);
@@ -513,7 +513,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 6f;
-        CelsiusFloat input = new CelsiusFloat(200);
+        CelsiusFloat input = new(200);
 
         // Act.
         float result = input.ToGas();
@@ -553,7 +553,7 @@ public class ToFloatExtensionsTests
         float expected)
     {
         // Arrange.
-        CelsiusFloat inputCelsius = new CelsiusFloat(input);
+        CelsiusFloat inputCelsius = new(input);
 
         // Act.
         float result = inputCelsius.To<Gas>();
@@ -571,7 +571,7 @@ public class ToFloatExtensionsTests
         string expectedErrorMessage)
     {
         // Arrange.
-        CelsiusFloat inputGas = new CelsiusFloat(input);
+        CelsiusFloat inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
@@ -586,7 +586,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 6f;
-        FahrenheitFloat input = new FahrenheitFloat(392);
+        FahrenheitFloat input = new(392);
 
         // Act.
         float result = input.ToGas();
@@ -601,7 +601,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 6f;
-        FahrenheitFloat input = new FahrenheitFloat(392);
+        FahrenheitFloat input = new(392);
 
         // Act.
         float result = input.To<Gas>();
@@ -615,7 +615,7 @@ public class ToFloatExtensionsTests
     public void Test_to_gas_from_gas_returns_same_value()
     {
         // Arrange.
-        GasFloat input = new GasFloat(7);
+        GasFloat input = new(7);
 
         // Act.
         float result = input.ToGas();
@@ -629,7 +629,7 @@ public class ToFloatExtensionsTests
     public void Test_to_gas_generic_from_gas_returns_same_value()
     {
         // Arrange.
-        GasFloat input = new GasFloat(7);
+        GasFloat input = new(7);
 
         // Act.
         float result = input.To<Gas>();
@@ -645,7 +645,7 @@ public class ToFloatExtensionsTests
     public void Test_to_gas_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(float input)
     {
         // Arrange.
-        GasFloat inputGas = new GasFloat(input);
+        GasFloat inputGas = new(input);
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
@@ -660,7 +660,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 6f;
-        KelvinFloat input = new KelvinFloat(473.15f);
+        KelvinFloat input = new(473.15f);
 
         // Act.
         float result = input.ToGas();
@@ -675,7 +675,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 6f;
-        KelvinFloat input = new KelvinFloat(473.15f);
+        KelvinFloat input = new(473.15f);
 
         // Act.
         float result = input.To<Gas>();
@@ -690,7 +690,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 3f;
-        RankineFloat input = new RankineFloat(806.67f);
+        RankineFloat input = new(806.67f);
 
         // Act.
         float result = input.ToGas();
@@ -705,7 +705,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 3f;
-        RankineFloat input = new RankineFloat(806.67f);
+        RankineFloat input = new(806.67f);
 
         // Act.
         float result = input.To<Gas>();
@@ -720,7 +720,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15f;
-        CelsiusFloat input = new CelsiusFloat(200);
+        CelsiusFloat input = new(200);
 
         // Act.
         float result = input.ToKelvin();
@@ -735,7 +735,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15f;
-        CelsiusFloat input = new CelsiusFloat(200);
+        CelsiusFloat input = new(200);
 
         // Act.
         float result = input.To<Kelvin>();
@@ -750,7 +750,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15f;
-        FahrenheitFloat input = new FahrenheitFloat(392);
+        FahrenheitFloat input = new(392);
 
         // Act.
         float result = input.ToKelvin();
@@ -765,7 +765,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15f;
-        FahrenheitFloat input = new FahrenheitFloat(392);
+        FahrenheitFloat input = new(392);
 
         // Act.
         float result = input.To<Kelvin>();
@@ -780,7 +780,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15f;
-        GasFloat input = new GasFloat(6);
+        GasFloat input = new(6);
 
         // Act.
         float result = input.ToKelvin();
@@ -795,7 +795,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15f;
-        GasFloat input = new GasFloat(6);
+        GasFloat input = new(6);
 
         // Act.
         float result = input.To<Kelvin>();
@@ -809,7 +809,7 @@ public class ToFloatExtensionsTests
     public void Test_to_kelvin_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinFloat input = new KelvinFloat(473.15f);
+        KelvinFloat input = new(473.15f);
 
         // Act.
         float result = input.ToKelvin();
@@ -823,7 +823,7 @@ public class ToFloatExtensionsTests
     public void Test_to_kelvin_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        KelvinFloat input = new KelvinFloat(473.15f);
+        KelvinFloat input = new(473.15f);
 
         // Act.
         float result = input.To<Kelvin>();
@@ -838,7 +838,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15002f;
-        RankineFloat input = new RankineFloat(851.67f);
+        RankineFloat input = new(851.67f);
 
         // Act.
         float result = input.ToKelvin();
@@ -853,7 +853,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 473.15002f;
-        RankineFloat input = new RankineFloat(851.67f);
+        RankineFloat input = new(851.67f);
 
         // Act.
         float result = input.To<Kelvin>();
@@ -868,7 +868,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        CelsiusFloat input = new CelsiusFloat(200);
+        CelsiusFloat input = new(200);
 
         // Act.
         float result = input.ToRankine();
@@ -883,7 +883,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        CelsiusFloat input = new CelsiusFloat(200);
+        CelsiusFloat input = new(200);
 
         // Act.
         float result = input.To<Rankine>();
@@ -898,7 +898,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        FahrenheitFloat input = new FahrenheitFloat(392);
+        FahrenheitFloat input = new(392);
 
         // Act.
         float result = input.ToRankine();
@@ -913,7 +913,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        FahrenheitFloat input = new FahrenheitFloat(392);
+        FahrenheitFloat input = new(392);
 
         // Act.
         float result = input.To<Rankine>();
@@ -928,7 +928,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        GasFloat input = new GasFloat(6);
+        GasFloat input = new(6);
 
         // Act.
         float result = input.ToRankine();
@@ -943,7 +943,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        GasFloat input = new GasFloat(6);
+        GasFloat input = new(6);
 
         // Act.
         float result = input.To<Rankine>();
@@ -958,7 +958,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        KelvinFloat input = new KelvinFloat(473.15f);
+        KelvinFloat input = new(473.15f);
 
         // Act.
         float result = input.ToRankine();
@@ -973,7 +973,7 @@ public class ToFloatExtensionsTests
     {
         // Arrange.
         const float expected = 851.67004f;
-        KelvinFloat input = new KelvinFloat(473.15f);
+        KelvinFloat input = new(473.15f);
 
         // Act.
         float result = input.To<Rankine>();
@@ -987,7 +987,7 @@ public class ToFloatExtensionsTests
     public void Test_to_rankine_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineFloat input = new RankineFloat(851.67f);
+        RankineFloat input = new(851.67f);
 
         // Act.
         float result = input.ToRankine();
@@ -1001,7 +1001,7 @@ public class ToFloatExtensionsTests
     public void Test_to_rankine_generic_from_rankine_returns_same_value()
     {
         // Arrange.
-        RankineFloat input = new RankineFloat(851.67f);
+        RankineFloat input = new(851.67f);
 
         // Act.
         float result = input.To<Rankine>();

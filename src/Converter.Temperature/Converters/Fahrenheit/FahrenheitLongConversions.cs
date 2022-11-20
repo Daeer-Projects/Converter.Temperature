@@ -82,7 +82,7 @@ internal static class FahrenheitLongConversions
     {
         const long maxValue = long.MaxValue - 460;
         const long minValue = long.MinValue + 460;
-        if (input < minValue || input > maxValue)
+        if (input is < minValue or > maxValue)
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 
         long rankineTemp = input + 460;

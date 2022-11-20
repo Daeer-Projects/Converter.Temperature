@@ -11,7 +11,7 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public class FromStringExtensionsTests
+public sealed class FromStringExtensionsTests
 {
     [Fact]
     public void Test_from_celsius_returns_celsius_string_type()
