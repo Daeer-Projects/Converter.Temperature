@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Kelvin
+﻿namespace Converter.Temperature.Types.Kelvin;
+
+using BaseTypes;
+
+public sealed class KelvinString : StringBase
 {
-    using BaseTypes;
-
-    public sealed class KelvinString : StringBase
+    public KelvinString(string temp)
     {
-        public KelvinString(string temp)
-        {
-            Temperature = temp;
-        }
-
-        public string Temperature { get; }
+        Temperature = temp;
     }
+
+    public string Temperature { get; }
 }

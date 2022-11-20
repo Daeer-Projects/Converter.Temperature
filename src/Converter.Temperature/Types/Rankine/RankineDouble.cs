@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Rankine
+﻿namespace Converter.Temperature.Types.Rankine;
+
+using BaseTypes;
+
+public sealed class RankineDouble : DoubleBase
 {
-    using BaseTypes;
-
-    public sealed class RankineDouble : DoubleBase
+    public RankineDouble(double temp)
     {
-        public RankineDouble(double temp)
-        {
-            Temperature = temp;
-        }
-
-        public double Temperature { get; }
+        Temperature = temp;
     }
+
+    public double Temperature { get; }
 }

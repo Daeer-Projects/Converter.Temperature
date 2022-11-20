@@ -1,14 +1,13 @@
-﻿namespace Converter.Temperature.Types.Gas
+﻿namespace Converter.Temperature.Types.Gas;
+
+using BaseTypes;
+
+public sealed class GasInt : IntBase
 {
-    using BaseTypes;
-
-    public sealed class GasInt : IntBase
+    public GasInt(int temp)
     {
-        public GasInt(int temp)
-        {
-            Temperature = temp;
-        }
-
-        public int Temperature { get; }
+        Temperature = temp;
     }
+
+    public int Temperature { get; }
 }

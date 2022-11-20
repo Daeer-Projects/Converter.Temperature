@@ -42,6 +42,7 @@
     </PackageReleaseNotes>
     <PackageIcon>Temp-icon.png</PackageIcon>
     <PackageReadmeFile>PackageReadMe.md</PackageReadmeFile>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>

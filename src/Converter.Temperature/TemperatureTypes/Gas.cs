@@ -1,7 +1,5 @@
-﻿namespace Converter.Temperature.TemperatureTypes
-{
-    using BaseTypes;
+﻿namespace Converter.Temperature.TemperatureTypes;
 
-    public abstract class Gas : TemperatureBase
-    { }
-}
+using BaseTypes;
+
+public abstract class Gas : TemperatureBase { }

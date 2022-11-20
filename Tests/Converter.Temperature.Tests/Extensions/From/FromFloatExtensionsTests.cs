@@ -1,145 +1,175 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From
+﻿namespace Converter.Temperature.Tests.Extensions.From;
+
+using BaseTypes;
+using FluentAssertions;
+using Temperature.Extensions.From;
+using TemperatureTypes;
+using Types.Celsius;
+using Types.Fahrenheit;
+using Types.Gas;
+using Types.Kelvin;
+using Types.Rankine;
+using Xunit;
+
+public sealed class FromFloatExtensionsTests
 {
-    using FluentAssertions;
-    using Temperature.Extensions.From;
-    using TemperatureTypes;
-    using Types.Celsius;
-    using Types.Fahrenheit;
-    using Types.Gas;
-    using Types.Kelvin;
-    using Types.Rankine;
-    using Xunit;
-
-    public class FromFloatExtensionsTests
+    [Fact]
+    public void Test_from_celsius_returns_celsius_float_type()
     {
-        [Fact]
-        public void Test_from_celsius_returns_celsius_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.FromCelsius();
+        // Act.
+        CelsiusFloat result = input.FromCelsius();
 
-            // Assert.
-            result.Should().BeOfType<CelsiusFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<CelsiusFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_celsius_generic_returns_celsius_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_celsius_generic_returns_celsius_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.From<Celsius>();
+        // Act.
+        FloatBase result = input.From<Celsius>();
 
-            // Assert.
-            result.Should().BeOfType<CelsiusFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<CelsiusFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_fahrenheit_returns_fahrenheit_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_fahrenheit_returns_fahrenheit_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.FromFahrenheit();
+        // Act.
+        FahrenheitFloat result = input.FromFahrenheit();
 
-            // Assert.
-            result.Should().BeOfType<FahrenheitFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<FahrenheitFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_fahrenheit_generic_returns_fahrenheit_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_fahrenheit_generic_returns_fahrenheit_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.From<Fahrenheit>();
+        // Act.
+        FloatBase result = input.From<Fahrenheit>();
 
-            // Assert.
-            result.Should().BeOfType<FahrenheitFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<FahrenheitFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_gas_returns_gas_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_gas_returns_gas_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.FromGas();
+        // Act.
+        GasFloat result = input.FromGas();
 
-            // Assert.
-            result.Should().BeOfType<GasFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<GasFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_gas_generic_returns_gas_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_gas_generic_returns_gas_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.From<Gas>();
+        // Act.
+        FloatBase result = input.From<Gas>();
 
-            // Assert.
-            result.Should().BeOfType<GasFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<GasFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_kelvin_returns_kelvin_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_kelvin_returns_kelvin_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.FromKelvin();
+        // Act.
+        KelvinFloat result = input.FromKelvin();
 
-            // Assert.
-            result.Should().BeOfType<KelvinFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<KelvinFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_kelvin_generic_returns_kelvin_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_kelvin_generic_returns_kelvin_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.From<Kelvin>();
+        // Act.
+        FloatBase result = input.From<Kelvin>();
 
-            // Assert.
-            result.Should().BeOfType<KelvinFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<KelvinFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_rankine_returns_rankine_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_rankine_returns_rankine_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.FromRankine();
+        // Act.
+        RankineFloat result = input.FromRankine();
 
-            // Assert.
-            result.Should().BeOfType<RankineFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<RankineFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 
-        [Fact]
-        public void Test_from_rankine_generic_returns_rankine_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_rankine_generic_returns_rankine_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            var result = input.From<Rankine>();
+        // Act.
+        FloatBase result = input.From<Rankine>();
 
-            // Assert.
-            result.Should().BeOfType<RankineFloat>().Which.Temperature.Should().Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<RankineFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
     }
 }
