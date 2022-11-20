@@ -6,12 +6,12 @@ using Temperature.Extensions.To;
 using Temperature.TemperatureTypes;
 
 [MemoryDiagnoser]
-public class FloatBenchies
+public sealed class FloatBenchies
 {
     #region Celsius
 
     [Benchmark]
-    public static float ConvertFromCelsiusToCelsius()
+    public float ConvertFromCelsiusToCelsius()
     {
         const float input = 42.4756843f;
         float result = input.FromCelsius()
@@ -20,7 +20,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToCelsiusGeneric()
+    public float ConvertFromCelsiusToCelsiusGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Celsius>()
@@ -29,7 +29,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToFahrenheit()
+    public float ConvertFromCelsiusToFahrenheit()
     {
         const float input = 42.4756843f;
         float result = input.FromCelsius()
@@ -38,7 +38,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToFahrenheitGeneric()
+    public float ConvertFromCelsiusToFahrenheitGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Celsius>()
@@ -47,7 +47,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToGas()
+    public float ConvertFromCelsiusToGas()
     {
         const float input = 176.2598f;
         float result = input.FromCelsius()
@@ -56,7 +56,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToGasGeneric()
+    public float ConvertFromCelsiusToGasGeneric()
     {
         const float input = 176.2598f;
         float result = input.From<Celsius>()
@@ -65,7 +65,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToKelvin()
+    public float ConvertFromCelsiusToKelvin()
     {
         const float input = 200f;
         float result = input.FromCelsius()
@@ -74,7 +74,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToKelvinGeneric()
+    public float ConvertFromCelsiusToKelvinGeneric()
     {
         const float input = 200f;
         float result = input.From<Celsius>()
@@ -83,7 +83,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToRankine()
+    public float ConvertFromCelsiusToRankine()
     {
         const float input = 200f;
         float result = input.FromCelsius()
@@ -92,7 +92,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromCelsiusToRankineGeneric()
+    public float ConvertFromCelsiusToRankineGeneric()
     {
         const float input = 200f;
         float result = input.From<Celsius>()
@@ -105,7 +105,7 @@ public class FloatBenchies
     #region Fahrenheit
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToCelsius()
+    public float ConvertFromFahrenheitToCelsius()
     {
         const float input = 42.4756843f;
         float result = input.FromFahrenheit()
@@ -114,7 +114,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToCelsiusGeneric()
+    public float ConvertFromFahrenheitToCelsiusGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Fahrenheit>()
@@ -123,7 +123,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToFahrenheit()
+    public float ConvertFromFahrenheitToFahrenheit()
     {
         const float input = 42.4756843f;
         float result = input.FromFahrenheit()
@@ -132,7 +132,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToFahrenheitGeneric()
+    public float ConvertFromFahrenheitToFahrenheitGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Fahrenheit>()
@@ -141,7 +141,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToGas()
+    public float ConvertFromFahrenheitToGas()
     {
         const float input = 329.2598f;
         float result = input.FromFahrenheit()
@@ -150,7 +150,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToGasGeneric()
+    public float ConvertFromFahrenheitToGasGeneric()
     {
         const float input = 329.2598f;
         float result = input.From<Fahrenheit>()
@@ -159,7 +159,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToKelvin()
+    public float ConvertFromFahrenheitToKelvin()
     {
         const float input = 200f;
         float result = input.FromFahrenheit()
@@ -168,7 +168,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToKelvinGeneric()
+    public float ConvertFromFahrenheitToKelvinGeneric()
     {
         const float input = 200f;
         float result = input.From<Fahrenheit>()
@@ -177,7 +177,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToRankine()
+    public float ConvertFromFahrenheitToRankine()
     {
         const float input = 200f;
         float result = input.FromFahrenheit()
@@ -186,7 +186,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromFahrenheitToRankineGeneric()
+    public float ConvertFromFahrenheitToRankineGeneric()
     {
         const float input = 200f;
         float result = input.From<Fahrenheit>()
@@ -199,7 +199,7 @@ public class FloatBenchies
     #region Kelvin
 
     [Benchmark]
-    public static float ConvertFromKelvinToCelsius()
+    public float ConvertFromKelvinToCelsius()
     {
         const float input = 42.4756843f;
         float result = input.FromKelvin()
@@ -208,7 +208,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToCelsiusGeneric()
+    public float ConvertFromKelvinToCelsiusGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Kelvin>()
@@ -217,7 +217,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToFahrenheit()
+    public float ConvertFromKelvinToFahrenheit()
     {
         const float input = 42.4756843f;
         float result = input.FromKelvin()
@@ -226,7 +226,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToFahrenheitGeneric()
+    public float ConvertFromKelvinToFahrenheitGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Kelvin>()
@@ -235,7 +235,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToGas()
+    public float ConvertFromKelvinToGas()
     {
         const float input = 473.2598f;
         float result = input.FromKelvin()
@@ -244,7 +244,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToGasGeneric()
+    public float ConvertFromKelvinToGasGeneric()
     {
         const float input = 473.2598f;
         float result = input.From<Kelvin>()
@@ -253,7 +253,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToKelvin()
+    public float ConvertFromKelvinToKelvin()
     {
         const float input = 200f;
         float result = input.FromKelvin()
@@ -262,7 +262,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToKelvinGeneric()
+    public float ConvertFromKelvinToKelvinGeneric()
     {
         const float input = 200f;
         float result = input.From<Kelvin>()
@@ -271,7 +271,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToRankine()
+    public float ConvertFromKelvinToRankine()
     {
         const float input = 200f;
         float result = input.FromKelvin()
@@ -280,7 +280,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromKelvinToRankineGeneric()
+    public float ConvertFromKelvinToRankineGeneric()
     {
         const float input = 200f;
         float result = input.From<Kelvin>()
@@ -293,7 +293,7 @@ public class FloatBenchies
     #region Gas
 
     [Benchmark]
-    public static float ConvertFromGasToCelsius()
+    public float ConvertFromGasToCelsius()
     {
         const float input = 5.4756843f;
         float result = input.FromGas()
@@ -302,7 +302,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToCelsiusGeneric()
+    public float ConvertFromGasToCelsiusGeneric()
     {
         const float input = 5.4756843f;
         float result = input.From<Gas>()
@@ -311,7 +311,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToFahrenheit()
+    public float ConvertFromGasToFahrenheit()
     {
         const float input = 6.4756843f;
         float result = input.FromGas()
@@ -320,7 +320,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToFahrenheitGeneric()
+    public float ConvertFromGasToFahrenheitGeneric()
     {
         const float input = 6.4756843f;
         float result = input.From<Gas>()
@@ -329,7 +329,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToGas()
+    public float ConvertFromGasToGas()
     {
         const float input = 6.2598f;
         float result = input.FromGas()
@@ -338,7 +338,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToGasGeneric()
+    public float ConvertFromGasToGasGeneric()
     {
         const float input = 6.2598f;
         float result = input.From<Gas>()
@@ -347,7 +347,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToKelvin()
+    public float ConvertFromGasToKelvin()
     {
         const float input = 2f;
         float result = input.FromGas()
@@ -356,7 +356,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToKelvinGeneric()
+    public float ConvertFromGasToKelvinGeneric()
     {
         const float input = 2f;
         float result = input.From<Gas>()
@@ -365,7 +365,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToRankine()
+    public float ConvertFromGasToRankine()
     {
         const float input = 7f;
         float result = input.FromGas()
@@ -374,7 +374,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromGasToRankineGeneric()
+    public float ConvertFromGasToRankineGeneric()
     {
         const float input = 7f;
         float result = input.From<Gas>()
@@ -387,7 +387,7 @@ public class FloatBenchies
     #region Rankine
 
     [Benchmark]
-    public static float ConvertFromRankineToCelsius()
+    public float ConvertFromRankineToCelsius()
     {
         const float input = 42.4756843f;
         float result = input.FromRankine()
@@ -396,7 +396,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToCelsiusGeneric()
+    public float ConvertFromRankineToCelsiusGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Rankine>()
@@ -405,7 +405,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToFahrenheit()
+    public float ConvertFromRankineToFahrenheit()
     {
         const float input = 42.4756843f;
         float result = input.FromRankine()
@@ -414,7 +414,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToFahrenheitGeneric()
+    public float ConvertFromRankineToFahrenheitGeneric()
     {
         const float input = 42.4756843f;
         float result = input.From<Rankine>()
@@ -423,7 +423,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToGas()
+    public float ConvertFromRankineToGas()
     {
         const float input = 806.2598f;
         float result = input.FromRankine()
@@ -432,7 +432,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToGasGeneric()
+    public float ConvertFromRankineToGasGeneric()
     {
         const float input = 806.2598f;
         float result = input.From<Rankine>()
@@ -441,7 +441,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToKelvin()
+    public float ConvertFromRankineToKelvin()
     {
         const float input = 200f;
         float result = input.FromRankine()
@@ -450,7 +450,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToKelvinGeneric()
+    public float ConvertFromRankineToKelvinGeneric()
     {
         const float input = 200f;
         float result = input.From<Rankine>()
@@ -459,7 +459,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToRankine()
+    public float ConvertFromRankineToRankine()
     {
         const float input = 200f;
         float result = input.FromRankine()
@@ -468,7 +468,7 @@ public class FloatBenchies
     }
 
     [Benchmark]
-    public static float ConvertFromRankineToRankineGeneric()
+    public float ConvertFromRankineToRankineGeneric()
     {
         const float input = 200f;
         float result = input.From<Rankine>()

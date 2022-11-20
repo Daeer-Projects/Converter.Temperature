@@ -6,12 +6,12 @@ using Temperature.Extensions.To;
 using Temperature.TemperatureTypes;
 
 [MemoryDiagnoser]
-public class IntBenchies
+public sealed class IntBenchies
 {
     #region Celsius
 
     [Benchmark]
-    public static int ConvertFromCelsiusToCelsius()
+    public int ConvertFromCelsiusToCelsius()
     {
         const int input = 42;
         int result = input.FromCelsius()
@@ -20,7 +20,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToCelsiusGeneric()
+    public int ConvertFromCelsiusToCelsiusGeneric()
     {
         const int input = 42;
         int result = input.From<Celsius>()
@@ -29,7 +29,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToFahrenheit()
+    public int ConvertFromCelsiusToFahrenheit()
     {
         const int input = 42;
         int result = input.FromCelsius()
@@ -38,7 +38,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToFahrenheitGeneric()
+    public int ConvertFromCelsiusToFahrenheitGeneric()
     {
         const int input = 42;
         int result = input.From<Celsius>()
@@ -47,7 +47,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToGas()
+    public int ConvertFromCelsiusToGas()
     {
         const int input = 176;
         int result = input.FromCelsius()
@@ -56,7 +56,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToGasGeneric()
+    public int ConvertFromCelsiusToGasGeneric()
     {
         const int input = 176;
         int result = input.From<Celsius>()
@@ -65,7 +65,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToKelvin()
+    public int ConvertFromCelsiusToKelvin()
     {
         const int input = 200;
         int result = input.FromCelsius()
@@ -74,7 +74,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToKelvinGeneric()
+    public int ConvertFromCelsiusToKelvinGeneric()
     {
         const int input = 200;
         int result = input.From<Celsius>()
@@ -83,7 +83,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToRankine()
+    public int ConvertFromCelsiusToRankine()
     {
         const int input = 200;
         int result = input.FromCelsius()
@@ -92,7 +92,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromCelsiusToRankineGeneric()
+    public int ConvertFromCelsiusToRankineGeneric()
     {
         const int input = 200;
         int result = input.From<Celsius>()
@@ -105,7 +105,7 @@ public class IntBenchies
     #region Fahrenheit
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToCelsius()
+    public int ConvertFromFahrenheitToCelsius()
     {
         const int input = 42;
         int result = input.FromFahrenheit()
@@ -114,7 +114,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToCelsiusGeneric()
+    public int ConvertFromFahrenheitToCelsiusGeneric()
     {
         const int input = 42;
         int result = input.From<Fahrenheit>()
@@ -123,7 +123,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToFahrenheit()
+    public int ConvertFromFahrenheitToFahrenheit()
     {
         const int input = 42;
         int result = input.FromFahrenheit()
@@ -132,7 +132,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToFahrenheitGeneric()
+    public int ConvertFromFahrenheitToFahrenheitGeneric()
     {
         const int input = 42;
         int result = input.From<Fahrenheit>()
@@ -141,7 +141,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToGas()
+    public int ConvertFromFahrenheitToGas()
     {
         const int input = 329;
         int result = input.FromFahrenheit()
@@ -150,7 +150,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToGasGeneric()
+    public int ConvertFromFahrenheitToGasGeneric()
     {
         const int input = 329;
         int result = input.From<Fahrenheit>()
@@ -159,7 +159,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToKelvin()
+    public int ConvertFromFahrenheitToKelvin()
     {
         const int input = 200;
         int result = input.FromFahrenheit()
@@ -168,7 +168,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToKelvinGeneric()
+    public int ConvertFromFahrenheitToKelvinGeneric()
     {
         const int input = 200;
         int result = input.From<Fahrenheit>()
@@ -177,7 +177,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToRankine()
+    public int ConvertFromFahrenheitToRankine()
     {
         const int input = 200;
         int result = input.FromFahrenheit()
@@ -186,7 +186,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromFahrenheitToRankineGeneric()
+    public int ConvertFromFahrenheitToRankineGeneric()
     {
         const int input = 200;
         int result = input.From<Fahrenheit>()
@@ -199,7 +199,7 @@ public class IntBenchies
     #region Kelvin
 
     [Benchmark]
-    public static int ConvertFromKelvinToCelsius()
+    public int ConvertFromKelvinToCelsius()
     {
         const int input = 42;
         int result = input.FromKelvin()
@@ -208,7 +208,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToCelsiusGeneric()
+    public int ConvertFromKelvinToCelsiusGeneric()
     {
         const int input = 42;
         int result = input.From<Kelvin>()
@@ -217,7 +217,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToFahrenheit()
+    public int ConvertFromKelvinToFahrenheit()
     {
         const int input = 42;
         int result = input.FromKelvin()
@@ -226,7 +226,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToFahrenheitGeneric()
+    public int ConvertFromKelvinToFahrenheitGeneric()
     {
         const int input = 42;
         int result = input.From<Kelvin>()
@@ -235,7 +235,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToGas()
+    public int ConvertFromKelvinToGas()
     {
         const int input = 473;
         int result = input.FromKelvin()
@@ -244,7 +244,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToGasGeneric()
+    public int ConvertFromKelvinToGasGeneric()
     {
         const int input = 473;
         int result = input.From<Kelvin>()
@@ -253,7 +253,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToKelvin()
+    public int ConvertFromKelvinToKelvin()
     {
         const int input = 200;
         int result = input.FromKelvin()
@@ -262,7 +262,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToKelvinGeneric()
+    public int ConvertFromKelvinToKelvinGeneric()
     {
         const int input = 200;
         int result = input.From<Kelvin>()
@@ -271,7 +271,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToRankine()
+    public int ConvertFromKelvinToRankine()
     {
         const int input = 200;
         int result = input.FromKelvin()
@@ -280,7 +280,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromKelvinToRankineGeneric()
+    public int ConvertFromKelvinToRankineGeneric()
     {
         const int input = 200;
         int result = input.From<Kelvin>()
@@ -293,7 +293,7 @@ public class IntBenchies
     #region Gas
 
     [Benchmark]
-    public static int ConvertFromGasToCelsius()
+    public int ConvertFromGasToCelsius()
     {
         const int input = 5;
         int result = input.FromGas()
@@ -302,7 +302,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToCelsiusGeneric()
+    public int ConvertFromGasToCelsiusGeneric()
     {
         const int input = 5;
         int result = input.From<Gas>()
@@ -311,7 +311,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToFahrenheit()
+    public int ConvertFromGasToFahrenheit()
     {
         const int input = 6;
         int result = input.FromGas()
@@ -320,7 +320,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToFahrenheitGeneric()
+    public int ConvertFromGasToFahrenheitGeneric()
     {
         const int input = 6;
         int result = input.From<Gas>()
@@ -329,7 +329,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToGas()
+    public int ConvertFromGasToGas()
     {
         const int input = 6;
         int result = input.FromGas()
@@ -338,7 +338,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToGasGeneric()
+    public int ConvertFromGasToGasGeneric()
     {
         const int input = 6;
         int result = input.From<Gas>()
@@ -347,7 +347,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToKelvin()
+    public int ConvertFromGasToKelvin()
     {
         const int input = 2;
         int result = input.FromGas()
@@ -356,7 +356,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToKelvinGeneric()
+    public int ConvertFromGasToKelvinGeneric()
     {
         const int input = 2;
         int result = input.From<Gas>()
@@ -365,7 +365,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToRankine()
+    public int ConvertFromGasToRankine()
     {
         const int input = 7;
         int result = input.FromGas()
@@ -374,7 +374,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromGasToRankineGeneric()
+    public int ConvertFromGasToRankineGeneric()
     {
         const int input = 7;
         int result = input.From<Gas>()
@@ -387,7 +387,7 @@ public class IntBenchies
     #region Rankine
 
     [Benchmark]
-    public static int ConvertFromRankineToCelsius()
+    public int ConvertFromRankineToCelsius()
     {
         const int input = 42;
         int result = input.FromRankine()
@@ -396,7 +396,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToCelsiusGeneric()
+    public int ConvertFromRankineToCelsiusGeneric()
     {
         const int input = 42;
         int result = input.From<Rankine>()
@@ -405,7 +405,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToFahrenheit()
+    public int ConvertFromRankineToFahrenheit()
     {
         const int input = 42;
         int result = input.FromRankine()
@@ -414,7 +414,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToFahrenheitGeneric()
+    public int ConvertFromRankineToFahrenheitGeneric()
     {
         const int input = 42;
         int result = input.From<Rankine>()
@@ -423,7 +423,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToGas()
+    public int ConvertFromRankineToGas()
     {
         const int input = 806;
         int result = input.FromRankine()
@@ -432,7 +432,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToGasGeneric()
+    public int ConvertFromRankineToGasGeneric()
     {
         const int input = 806;
         int result = input.From<Rankine>()
@@ -441,7 +441,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToKelvin()
+    public int ConvertFromRankineToKelvin()
     {
         const int input = 200;
         int result = input.FromRankine()
@@ -450,7 +450,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToKelvinGeneric()
+    public int ConvertFromRankineToKelvinGeneric()
     {
         const int input = 200;
         int result = input.From<Rankine>()
@@ -459,7 +459,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToRankine()
+    public int ConvertFromRankineToRankine()
     {
         const int input = 200;
         int result = input.FromRankine()
@@ -468,7 +468,7 @@ public class IntBenchies
     }
 
     [Benchmark]
-    public static int ConvertFromRankineToRankineGeneric()
+    public int ConvertFromRankineToRankineGeneric()
     {
         const int input = 200;
         int result = input.From<Rankine>()

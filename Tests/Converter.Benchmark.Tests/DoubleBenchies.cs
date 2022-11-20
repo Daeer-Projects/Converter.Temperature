@@ -11,7 +11,7 @@ public sealed class DoubleBenchies
     #region Celsius
 
     [Benchmark]
-    public static double ConvertFromCelsiusToCelsius()
+    public double ConvertFromCelsiusToCelsius()
     {
         const double input = 42.4756843d;
         double result = input.FromCelsius()
@@ -20,7 +20,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromCelsiusToCelsiusGeneric()
+    public double ConvertFromCelsiusToCelsiusGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Celsius>()
@@ -29,7 +29,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromCelsiusToFahrenheit()
+    public double ConvertFromCelsiusToFahrenheit()
     {
         const double input = 42.4756843d;
         double result = input.FromCelsius()
@@ -38,7 +38,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromCelsiusToFahrenheitGeneric()
+    public double ConvertFromCelsiusToFahrenheitGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Celsius>()
@@ -105,7 +105,7 @@ public sealed class DoubleBenchies
     #region Fahrenheit
 
     [Benchmark]
-    public static double ConvertFromFahrenheitToCelsius()
+    public double ConvertFromFahrenheitToCelsius()
     {
         const double input = 42.4756843d;
         double result = input.FromFahrenheit()
@@ -114,7 +114,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromFahrenheitToCelsiusGeneric()
+    public double ConvertFromFahrenheitToCelsiusGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Fahrenheit>()
@@ -123,7 +123,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromFahrenheitToFahrenheit()
+    public double ConvertFromFahrenheitToFahrenheit()
     {
         const double input = 42.4756843d;
         double result = input.FromFahrenheit()
@@ -132,7 +132,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromFahrenheitToFahrenheitGeneric()
+    public double ConvertFromFahrenheitToFahrenheitGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Fahrenheit>()
@@ -199,7 +199,7 @@ public sealed class DoubleBenchies
     #region Kelvin
 
     [Benchmark]
-    public static double ConvertFromKelvinToCelsius()
+    public double ConvertFromKelvinToCelsius()
     {
         const double input = 42.4756843d;
         double result = input.FromKelvin()
@@ -208,7 +208,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromKelvinToCelsiusGeneric()
+    public double ConvertFromKelvinToCelsiusGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Kelvin>()
@@ -217,7 +217,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromKelvinToFahrenheit()
+    public double ConvertFromKelvinToFahrenheit()
     {
         const double input = 42.4756843d;
         double result = input.FromKelvin()
@@ -226,7 +226,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromKelvinToFahrenheitGeneric()
+    public double ConvertFromKelvinToFahrenheitGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Kelvin>()
@@ -387,7 +387,7 @@ public sealed class DoubleBenchies
     #region Rankine
 
     [Benchmark]
-    public static double ConvertFromRankineToCelsius()
+    public double ConvertFromRankineToCelsius()
     {
         const double input = 42.4756843d;
         double result = input.FromRankine()
@@ -396,7 +396,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromRankineToCelsiusGeneric()
+    public double ConvertFromRankineToCelsiusGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Rankine>()
@@ -405,7 +405,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromRankineToFahrenheit()
+    public double ConvertFromRankineToFahrenheit()
     {
         const double input = 42.4756843d;
         double result = input.FromRankine()
@@ -414,7 +414,7 @@ public sealed class DoubleBenchies
     }
 
     [Benchmark]
-    public static double ConvertFromRankineToFahrenheitGeneric()
+    public double ConvertFromRankineToFahrenheitGeneric()
     {
         const double input = 42.4756843d;
         double result = input.From<Rankine>()

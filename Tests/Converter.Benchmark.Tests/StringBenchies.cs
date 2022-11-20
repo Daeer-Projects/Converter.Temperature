@@ -6,12 +6,12 @@ using Temperature.Extensions.To;
 using Temperature.TemperatureTypes;
 
 [MemoryDiagnoser]
-public class StringBenchies
+public sealed class StringBenchies
 {
     #region Celsius
 
     [Benchmark]
-    public static string ConvertFromCelsiusToCelsius()
+    public string ConvertFromCelsiusToCelsius()
     {
         const string input = "42.4756843";
         string result = input.FromCelsius()
@@ -20,7 +20,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToCelsiusGeneric()
+    public string ConvertFromCelsiusToCelsiusGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Celsius>()
@@ -29,7 +29,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToFahrenheit()
+    public string ConvertFromCelsiusToFahrenheit()
     {
         const string input = "42.4756843";
         string result = input.FromCelsius()
@@ -38,7 +38,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToFahrenheitGeneric()
+    public string ConvertFromCelsiusToFahrenheitGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Celsius>()
@@ -47,7 +47,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToGas()
+    public string ConvertFromCelsiusToGas()
     {
         const string input = "176.2598";
         string result = input.FromCelsius()
@@ -56,7 +56,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToGasGeneric()
+    public string ConvertFromCelsiusToGasGeneric()
     {
         const string input = "176.2598";
         string result = input.From<Celsius>()
@@ -65,7 +65,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToKelvin()
+    public string ConvertFromCelsiusToKelvin()
     {
         const string input = "200";
         string result = input.FromCelsius()
@@ -74,7 +74,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToKelvinGeneric()
+    public string ConvertFromCelsiusToKelvinGeneric()
     {
         const string input = "200";
         string result = input.From<Celsius>()
@@ -83,7 +83,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToRankine()
+    public string ConvertFromCelsiusToRankine()
     {
         const string input = "200";
         string result = input.FromCelsius()
@@ -92,7 +92,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromCelsiusToRankineGeneric()
+    public string ConvertFromCelsiusToRankineGeneric()
     {
         const string input = "200";
         string result = input.From<Celsius>()
@@ -105,7 +105,7 @@ public class StringBenchies
     #region Fahrenheit
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToCelsius()
+    public string ConvertFromFahrenheitToCelsius()
     {
         const string input = "42.4756843";
         string result = input.FromFahrenheit()
@@ -114,7 +114,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToCelsiusGeneric()
+    public string ConvertFromFahrenheitToCelsiusGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Fahrenheit>()
@@ -123,7 +123,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToFahrenheit()
+    public string ConvertFromFahrenheitToFahrenheit()
     {
         const string input = "42.4756843";
         string result = input.FromFahrenheit()
@@ -132,7 +132,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToFahrenheitGeneric()
+    public string ConvertFromFahrenheitToFahrenheitGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Fahrenheit>()
@@ -141,7 +141,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToGas()
+    public string ConvertFromFahrenheitToGas()
     {
         const string input = "329.2598";
         string result = input.FromFahrenheit()
@@ -150,7 +150,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToGasGeneric()
+    public string ConvertFromFahrenheitToGasGeneric()
     {
         const string input = "329.2598";
         string result = input.From<Fahrenheit>()
@@ -159,7 +159,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToKelvin()
+    public string ConvertFromFahrenheitToKelvin()
     {
         const string input = "200";
         string result = input.FromFahrenheit()
@@ -168,7 +168,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToKelvinGeneric()
+    public string ConvertFromFahrenheitToKelvinGeneric()
     {
         const string input = "200";
         string result = input.From<Fahrenheit>()
@@ -177,7 +177,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToRankine()
+    public string ConvertFromFahrenheitToRankine()
     {
         const string input = "200";
         string result = input.FromFahrenheit()
@@ -186,7 +186,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromFahrenheitToRankineGeneric()
+    public string ConvertFromFahrenheitToRankineGeneric()
     {
         const string input = "200";
         string result = input.From<Fahrenheit>()
@@ -199,7 +199,7 @@ public class StringBenchies
     #region Kelvin
 
     [Benchmark]
-    public static string ConvertFromKelvinToCelsius()
+    public string ConvertFromKelvinToCelsius()
     {
         const string input = "42.4756843";
         string result = input.FromKelvin()
@@ -208,7 +208,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToCelsiusGeneric()
+    public string ConvertFromKelvinToCelsiusGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Kelvin>()
@@ -217,7 +217,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToFahrenheit()
+    public string ConvertFromKelvinToFahrenheit()
     {
         const string input = "42.4756843";
         string result = input.FromKelvin()
@@ -226,7 +226,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToFahrenheitGeneric()
+    public string ConvertFromKelvinToFahrenheitGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Kelvin>()
@@ -235,7 +235,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToGas()
+    public string ConvertFromKelvinToGas()
     {
         const string input = "473.2598";
         string result = input.FromKelvin()
@@ -244,7 +244,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToGasGeneric()
+    public string ConvertFromKelvinToGasGeneric()
     {
         const string input = "473.2598";
         string result = input.From<Kelvin>()
@@ -253,7 +253,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToKelvin()
+    public string ConvertFromKelvinToKelvin()
     {
         const string input = "200";
         string result = input.FromKelvin()
@@ -262,7 +262,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToKelvinGeneric()
+    public string ConvertFromKelvinToKelvinGeneric()
     {
         const string input = "200";
         string result = input.From<Kelvin>()
@@ -271,7 +271,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToRankine()
+    public string ConvertFromKelvinToRankine()
     {
         const string input = "200";
         string result = input.FromKelvin()
@@ -280,7 +280,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromKelvinToRankineGeneric()
+    public string ConvertFromKelvinToRankineGeneric()
     {
         const string input = "200";
         string result = input.From<Kelvin>()
@@ -293,7 +293,7 @@ public class StringBenchies
     #region Gas
 
     [Benchmark]
-    public static string ConvertFromGasToCelsius()
+    public string ConvertFromGasToCelsius()
     {
         const string input = "5.4756843";
         string result = input.FromGas()
@@ -302,7 +302,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToCelsiusGeneric()
+    public string ConvertFromGasToCelsiusGeneric()
     {
         const string input = "5.4756843";
         string result = input.From<Gas>()
@@ -311,7 +311,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToFahrenheit()
+    public string ConvertFromGasToFahrenheit()
     {
         const string input = "6.4756843";
         string result = input.FromGas()
@@ -320,7 +320,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToFahrenheitGeneric()
+    public string ConvertFromGasToFahrenheitGeneric()
     {
         const string input = "6.4756843";
         string result = input.From<Gas>()
@@ -329,7 +329,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToGas()
+    public string ConvertFromGasToGas()
     {
         const string input = "6.2598";
         string result = input.FromGas()
@@ -338,7 +338,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToGasGeneric()
+    public string ConvertFromGasToGasGeneric()
     {
         const string input = "6.2598";
         string result = input.From<Gas>()
@@ -347,7 +347,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToKelvin()
+    public string ConvertFromGasToKelvin()
     {
         const string input = "2";
         string result = input.FromGas()
@@ -356,7 +356,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToKelvinGeneric()
+    public string ConvertFromGasToKelvinGeneric()
     {
         const string input = "2";
         string result = input.From<Gas>()
@@ -365,7 +365,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToRankine()
+    public string ConvertFromGasToRankine()
     {
         const string input = "7";
         string result = input.FromGas()
@@ -374,7 +374,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromGasToRankineGeneric()
+    public string ConvertFromGasToRankineGeneric()
     {
         const string input = "7";
         string result = input.From<Gas>()
@@ -387,7 +387,7 @@ public class StringBenchies
     #region Rankine
 
     [Benchmark]
-    public static string ConvertFromRankineToCelsius()
+    public string ConvertFromRankineToCelsius()
     {
         const string input = "42.4756843";
         string result = input.FromRankine()
@@ -396,7 +396,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToCelsiusGeneric()
+    public string ConvertFromRankineToCelsiusGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Rankine>()
@@ -405,7 +405,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToFahrenheit()
+    public string ConvertFromRankineToFahrenheit()
     {
         const string input = "42.4756843";
         string result = input.FromRankine()
@@ -414,7 +414,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToFahrenheitGeneric()
+    public string ConvertFromRankineToFahrenheitGeneric()
     {
         const string input = "42.4756843";
         string result = input.From<Rankine>()
@@ -423,7 +423,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToGas()
+    public string ConvertFromRankineToGas()
     {
         const string input = "806.2598";
         string result = input.FromRankine()
@@ -432,7 +432,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToGasGeneric()
+    public string ConvertFromRankineToGasGeneric()
     {
         const string input = "806.2598";
         string result = input.From<Rankine>()
@@ -441,7 +441,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToKelvin()
+    public string ConvertFromRankineToKelvin()
     {
         const string input = "200";
         string result = input.FromRankine()
@@ -450,7 +450,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToKelvinGeneric()
+    public string ConvertFromRankineToKelvinGeneric()
     {
         const string input = "200";
         string result = input.From<Rankine>()
@@ -459,7 +459,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToRankine()
+    public string ConvertFromRankineToRankine()
     {
         const string input = "200";
         string result = input.FromRankine()
@@ -468,7 +468,7 @@ public class StringBenchies
     }
 
     [Benchmark]
-    public static string ConvertFromRankineToRankineGeneric()
+    public string ConvertFromRankineToRankineGeneric()
     {
         const string input = "200";
         string result = input.From<Rankine>()
