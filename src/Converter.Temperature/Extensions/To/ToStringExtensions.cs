@@ -564,7 +564,7 @@ public static class ToStringExtensions
         int fractionalCount)
     {
         string convertedTemp = string.Empty;
-        if (double.TryParse(temp, out double inputAsDouble))
+        if (double.TryParse(temp.AsSpan(), out double inputAsDouble))
             convertedTemp = Rounder(methodToParse(inputAsDouble), fractionalCount)
                 .ToString(CultureInfo.InvariantCulture);
 
