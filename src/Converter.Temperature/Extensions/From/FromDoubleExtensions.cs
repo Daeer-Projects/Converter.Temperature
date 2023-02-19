@@ -8,6 +8,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The from <see langword="double" /> extensions.
@@ -75,6 +76,18 @@ public static class FromDoubleExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Rømer.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Rømer Double class for the 'To' extension to use.
+    /// </returns>
+    public static RømerDouble FromRømer(this double input)
+    {
+        return new RømerDouble(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -93,6 +106,7 @@ public static class FromDoubleExtensions
             nameof(Kelvin) => new KelvinDouble(input),
             nameof(Gas) => new GasDouble(input),
             nameof(Rankine) => new RankineDouble(input),
+            nameof(Rømer) => new RømerDouble(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }
