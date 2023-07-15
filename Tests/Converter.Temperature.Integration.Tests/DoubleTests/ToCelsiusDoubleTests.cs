@@ -264,8 +264,9 @@ public sealed class ToCelsiusDoubleTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_double_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        double input)
+    public void
+        Test_double_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            double input)
     {
         // Arrange.
         // Act.
@@ -281,8 +282,9 @@ public sealed class ToCelsiusDoubleTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_double_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        double input)
+    public void
+        Test_double_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            double input)
     {
         // Arrange.
         // Act.

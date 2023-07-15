@@ -1,4 +1,6 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From;
+﻿using Converter.Temperature.Types.Rømer;
+
+namespace Converter.Temperature.Tests.Extensions.From;
 
 using BaseTypes;
 using FluentAssertions;
@@ -169,6 +171,38 @@ public sealed class FromDoubleExtensionsTests
         // Assert.
         result.Should()
             .BeOfType<RankineDouble>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
+
+    [Fact]
+    public void Test_from_rømer_returns_rømer_double_type()
+    {
+        // Arrange.
+        const double input = 39d;
+
+        // Act.
+        RømerDouble result = input.FromRømer();
+
+        // Assert.
+        result.Should()
+            .BeOfType<RømerDouble>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
+
+    [Fact]
+    public void Test_from_rømer_generic_returns_rømer_double_type()
+    {
+        // Arrange.
+        const double input = 39d;
+
+        // Act.
+        DoubleBase result = input.From<Rømer>();
+
+        // Assert.
+        result.Should()
+            .BeOfType<RømerDouble>()
             .Which.Temperature.Should()
             .Be(input);
     }

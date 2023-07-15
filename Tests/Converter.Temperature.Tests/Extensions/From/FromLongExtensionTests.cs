@@ -1,4 +1,6 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From;
+﻿using Converter.Temperature.Types.Rømer;
+
+namespace Converter.Temperature.Tests.Extensions.From;
 
 using BaseTypes;
 using FluentAssertions;
@@ -169,6 +171,38 @@ public sealed class FromLongExtensionTests
         // Assert.
         result.Should()
             .BeOfType<RankineLong>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
+
+    [Fact]
+    public void Test_from_rømer_returns_rømer_long_type()
+    {
+        // Arrange.
+        const long input = 39L;
+
+        // Act.
+        RømerLong result = input.FromRømer();
+
+        // Assert.
+        result.Should()
+            .BeOfType<RømerLong>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
+
+    [Fact]
+    public void Test_from_rømer_generic_returns_rømer_long_type()
+    {
+        // Arrange.
+        const long input = 39L;
+
+        // Act.
+        LongBase result = input.From<Rømer>();
+
+        // Assert.
+        result.Should()
+            .BeOfType<RømerLong>()
             .Which.Temperature.Should()
             .Be(input);
     }
