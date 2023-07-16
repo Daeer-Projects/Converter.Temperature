@@ -1,5 +1,8 @@
 ﻿namespace Converter.Temperature.Converters.Rømer;
 
+using System;
+using Celsius;
+
 internal static class RømerFloatConversions
 {
     /// <summary>
@@ -11,20 +14,21 @@ internal static class RømerFloatConversions
     /// </returns>
     public static float RømerToCelsius(float input)
     {
-        return 0.0f;
+        float celsiusTemp = input * 21f / 40f + 7.5f;
+        return celsiusTemp;
     }
 
     /// <summary>
     ///     The rømer to fahrenheit conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     public static float RømerToFahrenheit(float input)
     {
-        return 0.0f;
+        float fahrenheitTemp = (input - 32f) * 7f / 24f + 7.5f;
+        return fahrenheitTemp;
     }
 
     /// <summary>
@@ -37,7 +41,11 @@ internal static class RømerFloatConversions
     /// </returns>
     public static float RømerToKelvin(float input)
     {
-        return 0.0f;
+        float kelvinTemp = (input - 273.15f) * 21f / 40f + 7.5f;
+        if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return kelvinTemp;
     }
 
     /// <summary>
@@ -50,7 +58,9 @@ internal static class RømerFloatConversions
     /// </returns>
     public static float RømerToGas(float input)
     {
-        return 0.0f;
+        float celsiusTemp = RømerToCelsius(input);
+        float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
+        return gasTemp;
     }
 
     /// <summary>
@@ -63,7 +73,11 @@ internal static class RømerFloatConversions
     /// </returns>
     public static float RømerToRankine(float input)
     {
-        return 0.0f;
+        float rankineTemp = (input - 491.67f) * 7f / 24f + 7.5f;
+        if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return rankineTemp;
     }
 
     /// <summary>

@@ -16,10 +16,8 @@ internal static class FahrenheitIntConversions
     public static int FahrenheitToCelsius(int input)
     {
         double calculatedValue = (input - 32d) * 5 / 9;
-
-        int celsiusTempLong = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-
-        return celsiusTempLong;
+        int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        return celsiusTemp;
     }
 
     /// <summary>
