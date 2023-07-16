@@ -1,5 +1,8 @@
 ﻿namespace Converter.Temperature.Converters.Rømer;
 
+using System;
+using Celsius;
+
 internal static class RømerDoubleConversions
 {
     /// <summary>
@@ -11,20 +14,21 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToCelsius(double input)
     {
-        return 0.0d;
+        double celsiusTemp = input * 21d / 40d + 7.5d;
+        return celsiusTemp;
     }
 
     /// <summary>
     ///     The rømer to fahrenheit conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     public static double RømerToFahrenheit(double input)
     {
-        return 0.0d;
+        double fahrenheitTemp = (input - 32d) * 7d / 24d + 7.5d;
+        return fahrenheitTemp;
     }
 
     /// <summary>
@@ -37,7 +41,11 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToKelvin(double input)
     {
-        return 0.0d;
+        double kelvinTemp = (input - 273.15d) * 21d / 40d + 7.5d;
+        if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return kelvinTemp;
     }
 
     /// <summary>
@@ -50,7 +58,9 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToGas(double input)
     {
-        return 0.0d;
+        double celsiusTemp = RømerToCelsius(input);
+        double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
+        return gasTemp;
     }
 
     /// <summary>
@@ -63,7 +73,11 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToRankine(double input)
     {
-        return 0.0d;
+        double rankineTemp = (input - 491.67d) * 7d / 24d + 7.5d;
+        if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return rankineTemp;
     }
 
     /// <summary>

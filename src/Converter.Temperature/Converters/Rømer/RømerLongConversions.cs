@@ -1,5 +1,8 @@
 ﻿namespace Converter.Temperature.Converters.Rømer;
 
+using System;
+using Celsius;
+
 internal static class RømerLongConversions
 {
     /// <summary>
@@ -11,7 +14,9 @@ internal static class RømerLongConversions
     /// </returns>
     public static long RømerToCelsius(long input)
     {
-        return 0L;
+        double calculatedValue = input * 21d / 40d + 7.5d;
+        long celsiusTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        return celsiusTemp;
     }
 
     /// <summary>
@@ -24,7 +29,9 @@ internal static class RømerLongConversions
     /// </returns>
     public static long RømerToFahrenheit(long input)
     {
-        return 0L;
+        double calculatedValue = (input - 32d) * 7d / 24d + 7.5d;
+        long fahrenheitTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        return fahrenheitTemp;
     }
 
     /// <summary>
@@ -37,7 +44,15 @@ internal static class RømerLongConversions
     /// </returns>
     public static long RømerToKelvin(long input)
     {
-        return 0L;
+        double calculatedValue = (input - 273.15d) * 21d / 40d + 7.5d;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        long kelvinTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+
+        return kelvinTemp;
     }
 
     /// <summary>
@@ -50,7 +65,9 @@ internal static class RømerLongConversions
     /// </returns>
     public static long RømerToGas(long input)
     {
-        return 0L;
+        long celsiusTemp = RømerToCelsius(input);
+        long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
+        return gasTemp;
     }
 
     /// <summary>
@@ -63,7 +80,15 @@ internal static class RømerLongConversions
     /// </returns>
     public static long RømerToRankine(long input)
     {
-        return 0L;
+        double calculatedValue = (input - 491.67d) * 7d / 24d + 7.5d;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        long rankineTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+
+        return rankineTemp;
     }
 
     /// <summary>

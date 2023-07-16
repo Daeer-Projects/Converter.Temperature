@@ -17,9 +17,7 @@ internal static class FahrenheitLongConversions
         long firstTemp)
     {
         double celsiusTemp = (firstTemp - 32d) * 5 / 9;
-
         long celsiusTempLong = (long)Math.Round(celsiusTemp, 0, MidpointRounding.AwayFromZero);
-
         return celsiusTempLong;
     }
 
