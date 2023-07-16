@@ -7,12 +7,14 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="double" /> extensions.
@@ -102,6 +104,22 @@ public static class ToDoubleExtensions
     }
 
     /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Celsius
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Celsius <see langword="double" /> result.
+    /// </returns>
+    public static double ToCelsius(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return Rounder(RømerDoubleConversions.RømerToCelsius(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
     ///     Converts the Celsius <paramref name="input" /> to Fahrenheit
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
@@ -183,6 +201,22 @@ public static class ToDoubleExtensions
         int fractionalCount = -1)
     {
         return Rounder(RankineDoubleConversions.RankineToFahrenheit(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Fahrenheit
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Fahrenheit <see langword="double" /> result.
+    /// </returns>
+    public static double ToFahrenheit(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return Rounder(RømerDoubleConversions.RømerToFahrenheit(input.Temperature), fractionalCount);
     }
 
     /// <summary>
@@ -271,6 +305,22 @@ public static class ToDoubleExtensions
     }
 
     /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Gas
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Gas <see langword="double" /> result.
+    /// </returns>
+    public static double ToGas(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return Rounder(RømerDoubleConversions.RømerToGas(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
     ///     Converts the Celsius <paramref name="input" /> to Kelvin
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
@@ -355,6 +405,22 @@ public static class ToDoubleExtensions
     }
 
     /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Kelvin
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Kelvin <see langword="double" /> result.
+    /// </returns>
+    public static double ToKelvin(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return Rounder(RømerDoubleConversions.RømerToKelvin(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
     ///     Converts the Celsius <paramref name="input" /> to Ranking
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
@@ -432,6 +498,22 @@ public static class ToDoubleExtensions
         int fractionalCount = -1)
     {
         return Rounder(RankineDoubleConversions.RankineToRankine(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Rankine
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Rankine <see langword="double" /> result.
+    /// </returns>
+    public static double ToRankine(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return Rounder(RømerDoubleConversions.RømerToRankine(input.Temperature), fractionalCount);
     }
 
     /// <summary>
