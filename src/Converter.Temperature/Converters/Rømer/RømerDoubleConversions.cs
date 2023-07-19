@@ -14,7 +14,7 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToCelsius(double input)
     {
-        double celsiusTemp = input * 21d / 40d + 7.5d;
+        double celsiusTemp = (input - 7.5d) * 40d / 21d;
         return celsiusTemp;
     }
 
@@ -27,7 +27,7 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToFahrenheit(double input)
     {
-        double fahrenheitTemp = (input - 32d) * 7d / 24d + 7.5d;
+        double fahrenheitTemp = (input - 7.5d) * 24d / 7d + 32d;
         return fahrenheitTemp;
     }
 
@@ -41,7 +41,7 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToKelvin(double input)
     {
-        double kelvinTemp = (input - 273.15d) * 21d / 40d + 7.5d;
+        double kelvinTemp = (input - 7.5d) * 40d / 21d + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 
@@ -73,7 +73,7 @@ internal static class RømerDoubleConversions
     /// </returns>
     public static double RømerToRankine(double input)
     {
-        double rankineTemp = (input - 491.67d) * 7d / 24d + 7.5d;
+        double rankineTemp = (input - 7.5d) * 24d / 7d + 491.67d;
         if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 

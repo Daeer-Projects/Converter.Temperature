@@ -1,4 +1,6 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To;
+﻿using Converter.Temperature.Types.Rømer;
+
+namespace Converter.Temperature.Tests.Extensions.To;
 
 using System;
 using FluentAssertions;
@@ -180,7 +182,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
@@ -290,6 +293,36 @@ public sealed class ToDoubleExtensionsTests
     }
 
     [Fact]
+    public void Test_to_celsius_from_rømer_returns_correct_value()
+    {
+        // Arrange.
+        const double expected = 500d;
+        RømerDouble input = new(270d);
+
+        // Act.
+        double result = input.ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Fact]
+    public void Test_to_fahrenheit_from_rømer_returns_correct_value()
+    {
+        // Arrange.
+        const double expected = 932d;
+        RømerDouble input = new(270d);
+
+        // Act.
+        double result = input.ToFahrenheit();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Fact]
     public void Test_to_fahrenheit_from_celsius_returns_correct_value()
     {
         // Arrange.
@@ -328,7 +361,8 @@ public sealed class ToDoubleExtensionsTests
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -344,7 +378,8 @@ public sealed class ToDoubleExtensionsTests
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()
@@ -721,7 +756,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_gas_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_gas_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
@@ -849,7 +885,8 @@ public sealed class ToDoubleExtensionsTests
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
+        ArgumentOutOfRangeException
+            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
 
         // Assert.
         result.Message.Should()
@@ -1067,7 +1104,8 @@ public sealed class ToDoubleExtensionsTests
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
 
         // Assert.
         result.Message.Should()
