@@ -549,6 +549,9 @@ public static class ToDoubleExtensions
             nameof(Celsius) when input is RankineDouble castInput => Rounder(
                 RankineDoubleConversions.RankineToCelsius(castInput.Temperature),
                 fractionalCount),
+            nameof(Celsius) when input is RømerDouble castInput => Rounder(
+                RømerDoubleConversions.RømerToCelsius(castInput.Temperature),
+                fractionalCount),
             nameof(Fahrenheit) when input is CelsiusDouble castInput => Rounder(
                 CelsiusDoubleConversions.CelsiusToFahrenheit(castInput.Temperature),
                 fractionalCount),
@@ -563,6 +566,9 @@ public static class ToDoubleExtensions
                 fractionalCount),
             nameof(Fahrenheit) when input is RankineDouble castInput => Rounder(
                 RankineDoubleConversions.RankineToFahrenheit(castInput.Temperature),
+                fractionalCount),
+            nameof(Fahrenheit) when input is RømerDouble castInput => Rounder(
+                RømerDoubleConversions.RømerToFahrenheit(castInput.Temperature),
                 fractionalCount),
             nameof(Kelvin) when input is CelsiusDouble castInput => Rounder(
                 CelsiusDoubleConversions.CelsiusToKelvin(castInput.Temperature),
@@ -579,6 +585,9 @@ public static class ToDoubleExtensions
             nameof(Kelvin) when input is RankineDouble castInput => Rounder(
                 RankineDoubleConversions.RankineToKelvin(castInput.Temperature),
                 fractionalCount),
+            nameof(Kelvin) when input is RømerDouble castInput => Rounder(
+                RømerDoubleConversions.RømerToKelvin(castInput.Temperature),
+                fractionalCount),
             nameof(Gas) when input is CelsiusDouble castInput => Rounder(
                 CelsiusDoubleConversions.CelsiusToGas(castInput.Temperature),
                 fractionalCount),
@@ -593,6 +602,9 @@ public static class ToDoubleExtensions
                 fractionalCount),
             nameof(Gas) when input is RankineDouble castInput => Rounder(
                 RankineDoubleConversions.RankineToGas(castInput.Temperature),
+                fractionalCount),
+            nameof(Gas) when input is RømerDouble castInput => Rounder(
+                RømerDoubleConversions.RømerToGas(castInput.Temperature),
                 fractionalCount),
             nameof(Rankine) when input is CelsiusDouble castInput => Rounder(
                 CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature),
@@ -609,6 +621,27 @@ public static class ToDoubleExtensions
             nameof(Rankine) when input is RankineDouble castInput => Rounder(
                 RankineDoubleConversions.RankineToRankine(castInput.Temperature),
                 fractionalCount),
+            nameof(Rankine) when input is RømerDouble castInput => Rounder(
+                RømerDoubleConversions.RømerToRankine(castInput.Temperature),
+                fractionalCount),
+            //nameof(Rømer) when input is CelsiusDouble castInput => Rounder(
+            //    CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature),
+            //    fractionalCount),
+            //nameof(Rømer) when input is FahrenheitDouble castInput => Rounder(
+            //    FahrenheitDoubleConversions.FahrenheitToRankine(castInput.Temperature),
+            //    fractionalCount),
+            //nameof(Rømer) when input is KelvinDouble castInput => Rounder(
+            //    KelvinDoubleConversions.KelvinToRankine(castInput.Temperature),
+            //    fractionalCount),
+            //nameof(Rømer) when input is GasDouble castInput => Rounder(
+            //    GasDoubleConversion.GasToRankine(castInput.Temperature),
+            //    fractionalCount),
+            //nameof(Rømer) when input is RankineDouble castInput => Rounder(
+            //    RankineDoubleConversions.RankineToRankine(castInput.Temperature),
+            //    fractionalCount),
+            //nameof(Rømer) when input is RømerDouble castInput => Rounder(
+            //    RømerDoubleConversions.RømerToRankine(castInput.Temperature),
+            //    fractionalCount),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }
