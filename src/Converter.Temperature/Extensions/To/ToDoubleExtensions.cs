@@ -624,9 +624,9 @@ public static class ToDoubleExtensions
             nameof(Rankine) when input is RømerDouble castInput => Rounder(
                 RømerDoubleConversions.RømerToRankine(castInput.Temperature),
                 fractionalCount),
-            //nameof(Rømer) when input is CelsiusDouble castInput => Rounder(
-            //    CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature),
-            //    fractionalCount),
+            nameof(Rømer) when input is CelsiusDouble castInput => Rounder(
+                CelsiusDoubleConversions.CelsiusToRømer(castInput.Temperature),
+                fractionalCount),
             //nameof(Rømer) when input is FahrenheitDouble castInput => Rounder(
             //    FahrenheitDoubleConversions.FahrenheitToRankine(castInput.Temperature),
             //    fractionalCount),

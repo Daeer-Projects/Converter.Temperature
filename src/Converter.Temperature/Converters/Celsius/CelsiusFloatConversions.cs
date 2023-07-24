@@ -99,4 +99,21 @@ internal static class CelsiusFloatConversions
 
         return rankineTemp;
     }
+
+    /// <summary>
+    ///     The celsius to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    public static float CelsiusToRømer(float input)
+    {
+        float rømerTemp = input * 21f / 40f + 7.5f;
+        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return rømerTemp;
+    }
 }
