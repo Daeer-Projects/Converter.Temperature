@@ -118,4 +118,20 @@ internal static class CelsiusLongConversions
 
         return rankineTempLong;
     }
+
+    /// <summary>
+    ///     The celsius to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long CelsiusToRømer(
+    	long input)
+    {
+        double result = input * 21d / 40 + 7.5;
+        long rømerTempLong = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTempLong;
+    }
 }
