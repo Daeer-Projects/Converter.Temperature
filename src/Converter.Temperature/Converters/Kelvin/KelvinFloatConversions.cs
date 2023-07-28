@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Converters.Kelvin;
 
+using System;
 using Celsius;
 
 internal static class KelvinFloatConversions
@@ -11,7 +12,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToCelsius(float firstTemp)
+    internal static float KelvinToCelsius(float firstTemp)
     {
         float celsiusTemp = firstTemp - 273.15f;
         return celsiusTemp;
@@ -25,7 +26,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToFahrenheit(float firstTemp)
+    internal static float KelvinToFahrenheit(float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
         float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -39,7 +40,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToKelvin(float firstTemp)
+    internal static float KelvinToKelvin(float firstTemp)
     {
         return firstTemp;
     }
@@ -52,7 +53,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToGas(float firstTemp)
+    internal static float KelvinToGas(float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
@@ -67,9 +68,26 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToRankine(float firstTemp)
+    internal static float KelvinToRankine(float firstTemp)
     {
         float rankineTemp = firstTemp * 9 / 5;
         return rankineTemp;
+    }
+
+    /// <summary>
+    ///     The kelvin to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float KelvinToRømer(float input)
+    {
+        float rømerTemp = (input - 273.15f) * 21 / 40 + 7.5f;
+        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return rømerTemp;
     }
 }

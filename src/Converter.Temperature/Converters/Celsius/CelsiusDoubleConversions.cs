@@ -11,7 +11,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToCelsius(double firstTemp)
+    internal static double CelsiusToCelsius(double firstTemp)
     {
         return firstTemp;
     }
@@ -24,7 +24,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToFahrenheit(double input)
+    internal static double CelsiusToFahrenheit(double input)
     {
         double fahrenheitTemp = input * 1.8 + 32;
         if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
@@ -41,7 +41,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToKelvin(double input)
+    internal static double CelsiusToKelvin(double input)
     {
         double kelvinTemp = input * 1.01d + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
@@ -60,7 +60,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToGas(double input)
+    internal static double CelsiusToGas(double input)
     {
         double gasTemp = input switch
         {
@@ -91,7 +91,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToRankine(double input)
+    internal static double CelsiusToRankine(double input)
     {
         double rankineTemp = (input + 273.15) * 9 / 5;
         if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
@@ -108,7 +108,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToRømer(double input)
+    internal static double CelsiusToRømer(double input)
     {
         double rømerTemp = input * 21 / 40 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))

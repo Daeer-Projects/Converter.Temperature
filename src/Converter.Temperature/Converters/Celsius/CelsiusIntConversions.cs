@@ -11,7 +11,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToCelsius(int input)
+    internal static int CelsiusToCelsius(int input)
     {
         return input;
     }
@@ -24,7 +24,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToFahrenheit(int input)
+    internal static int CelsiusToFahrenheit(int input)
     {
         const double calculatedValue = 1 * 1.8 + 32;
         int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -46,7 +46,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToKelvin(int input)
+    internal static int CelsiusToKelvin(int input)
     {
         const int maxValue = int.MaxValue - 273;
         const int minValue = int.MinValue + 273;
@@ -66,7 +66,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToGas(int input)
+    internal static int CelsiusToGas(int input)
     {
         int gasTemp = input switch
         {
@@ -95,7 +95,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToRankine(int input)
+    internal static int CelsiusToRankine(int input)
     {
         const int minValue = int.MinValue + 492;
         const int maxValue = int.MaxValue - 492;
@@ -116,7 +116,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToRømer(int input)
+    internal static int CelsiusToRømer(int input)
     {
         double result = input * 21d / 40 + 7.5;
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);

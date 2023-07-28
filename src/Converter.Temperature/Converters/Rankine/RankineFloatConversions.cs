@@ -13,7 +13,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToRankine(float input)
+    internal static float RankineToRankine(float input)
     {
         return input;
     }
@@ -26,7 +26,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToCelsius(float input)
+    internal static float RankineToCelsius(float input)
     {
         float rankineTemp = (input - 491.67f) * 5 / 9;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
@@ -43,7 +43,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToFahrenheit(float input)
+    internal static float RankineToFahrenheit(float input)
     {
         float rankineTemp = input - 459.67f;
         return rankineTemp;
@@ -57,7 +57,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToKelvin(float input)
+    internal static float RankineToKelvin(float input)
     {
         float rankineTemp = input * 5 / 9;
         return rankineTemp;
@@ -71,10 +71,27 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToGas(float input)
+    internal static float RankineToGas(float input)
     {
         float celsiusTemp = RankineToCelsius(input);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
         return gasTemp;
+    }
+
+    /// <summary>
+    ///     The rankine to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float RankineToRømer(float input)
+    {
+        float rømerTemp = (input - 491.67f) * 7 / 24 + 7.5f;
+        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return rømerTemp;
     }
 }

@@ -13,7 +13,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToCelsius(long firstTemp)
+    internal static long FahrenheitToCelsius(long firstTemp)
     {
         double celsiusTemp = (firstTemp - 32d) * 5 / 9;
         long celsiusTempLong = (long)Math.Round(celsiusTemp, 0, MidpointRounding.AwayFromZero);
@@ -27,7 +27,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToFahrenheit(long firstTemp)
+    internal static long FahrenheitToFahrenheit(long firstTemp)
     {
         return firstTemp;
     }
@@ -40,7 +40,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToKelvin(long input)
+    internal static long FahrenheitToKelvin(long input)
     {
         double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
         long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -61,7 +61,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToGas(long input)
+    internal static long FahrenheitToGas(long input)
     {
         long celsiusTemp = FahrenheitToCelsius(input);
         long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
@@ -76,7 +76,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToRankine(long input)
+    internal static long FahrenheitToRankine(long input)
     {
         const long maxValue = long.MaxValue - 460;
         const long minValue = long.MinValue + 460;
@@ -85,5 +85,20 @@ internal static class FahrenheitLongConversions
 
         long rankineTemp = input + 460;
         return rankineTemp;
+    }
+
+    /// <summary>
+    ///     The fahrenheit to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long FahrenheitToRømer(long input)
+    {
+        double result = (input - 491.67f) * 7 / 24 + 7.5f;
+        long rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTemp;
     }
 }

@@ -11,7 +11,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToCelsius(long input)
+    internal static long CelsiusToCelsius(long input)
     {
         return input;
     }
@@ -24,7 +24,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToFahrenheit(long input)
+    internal static long CelsiusToFahrenheit(long input)
     {
         const double calculatedValue = 1 * 1.8 + 32;
         long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -46,7 +46,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToKelvin(long input)
+    internal static long CelsiusToKelvin(long input)
     {
         const long maxValue = long.MaxValue - 273L;
         const long minValue = long.MinValue + 273L;
@@ -66,7 +66,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToGas(long input)
+    internal static long CelsiusToGas(long input)
     {
         long gasTemp = input switch
         {
@@ -95,7 +95,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToRankine(long input)
+    internal static long CelsiusToRankine(long input)
     {
         const long minValue = long.MinValue + 492;
         const long maxValue = long.MaxValue - 492;
@@ -103,9 +103,9 @@ internal static class CelsiusLongConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 
         double result = (input + 273.15d) * 9 / 5;
-        long rankineTempLong = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        long rankineTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
-        return rankineTempLong;
+        return rankineTemp;
     }
 
     /// <summary>
@@ -116,10 +116,10 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToRømer(long input)
+    internal static long CelsiusToRømer(long input)
     {
         double result = input * 21d / 40 + 7.5;
-        long rømerTempLong = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return rømerTempLong;
+        long rømerTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTemp;
     }
 }

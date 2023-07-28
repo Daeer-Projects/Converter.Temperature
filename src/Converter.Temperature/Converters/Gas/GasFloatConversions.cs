@@ -13,7 +13,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToCelsius(float input)
+    internal static float GasToCelsius(float input)
     {
         float celTemp = input switch
         {
@@ -43,7 +43,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToFahrenheit(float firstTemp)
+    internal static float GasToFahrenheit(float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -58,7 +58,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToKelvin(float firstTemp)
+    internal static float GasToKelvin(float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float kelvinTemp = CelsiusFloatConversions.CelsiusToKelvin(celsiusTemp);
@@ -73,7 +73,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToGas(float input)
+    internal static float GasToGas(float input)
     {
         if (input < .25 || input > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
 
@@ -88,10 +88,25 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToRankine(float firstTemp)
+    internal static float GasToRankine(float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float rankineTemp = CelsiusFloatConversions.CelsiusToRankine(celsiusTemp);
         return rankineTemp;
+    }
+
+    /// <summary>
+    ///     The gas to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float GasToRømer(float input)
+    {
+        float celsiusTemp = GasToCelsius(input);
+        float rømerTemp = CelsiusFloatConversions.CelsiusToRømer(celsiusTemp);
+        return rømerTemp;
     }
 }

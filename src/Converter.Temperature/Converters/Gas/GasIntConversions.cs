@@ -13,7 +13,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToCelsius(int input)
+    internal static int GasToCelsius(int input)
     {
         int celTemp = input switch
         {
@@ -41,7 +41,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToFahrenheit(int input)
+    internal static int GasToFahrenheit(int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int fahrenheitTemp = CelsiusIntConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -56,7 +56,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToKelvin(int input)
+    internal static int GasToKelvin(int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int kelvinTemp = CelsiusIntConversions.CelsiusToKelvin(celsiusTemp);
@@ -71,7 +71,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToGas(int input)
+    internal static int GasToGas(int input)
     {
         if (input is < 1 or > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
 
@@ -86,10 +86,25 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToRankine(int input)
+    internal static int GasToRankine(int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int rankineTemp = CelsiusIntConversions.CelsiusToRankine(celsiusTemp);
         return rankineTemp;
+    }
+
+    /// <summary>
+    ///     The gas to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int GasToRømer(int input)
+    {
+        int celsiusTemp = GasToCelsius(input);
+        int rømerTemp = CelsiusIntConversions.CelsiusToRømer(celsiusTemp);
+        return rømerTemp;
     }
 }
