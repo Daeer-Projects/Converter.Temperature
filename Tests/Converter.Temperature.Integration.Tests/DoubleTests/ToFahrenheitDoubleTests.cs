@@ -3,6 +3,7 @@
 using System;
 using Extensions.From;
 using Extensions.To;
+using Extensions.To.Fahrenheit;
 using FluentAssertions;
 using TemperatureTypes;
 using Xunit;

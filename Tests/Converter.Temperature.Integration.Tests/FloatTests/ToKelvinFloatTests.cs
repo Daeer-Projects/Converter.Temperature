@@ -2,6 +2,7 @@
 
 using Extensions.From;
 using Extensions.To;
+using Extensions.To.Kelvin;
 using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
