@@ -16,9 +16,9 @@ using Types.Rankine;
 using Types.Rømer;
 
 /// <summary>
-///     The to <see langword="float" /> extensions.
+///     The to string extensions.
 /// </summary>
-public static class ToFloatExtensions
+public static class ToStringExtensions
 {
     /// <summary>
     ///     Converts the Celsius <paramref name="input" /> to Celsius
@@ -27,13 +27,13 @@ public static class ToFloatExtensions
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
-    ///     The Celsius <see langword="float" /> result.
+    ///     The Celsius string result.
     /// </returns>
-    public static float ToCelsius(
-        this CelsiusFloat input,
+    public static string ToCelsius(
+        this CelsiusString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(CelsiusFloatConversions.CelsiusToCelsius(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, CelsiusDoubleConversions.CelsiusToCelsius, fractionalCount);
     }
 
     /// <summary>
@@ -43,13 +43,13 @@ public static class ToFloatExtensions
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
-    ///     The Celsius <see langword="float" /> result.
+    ///     The Celsius string result.
     /// </returns>
-    public static float ToCelsius(
-        this FahrenheitFloat input,
+    public static string ToCelsius(
+        this FahrenheitString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitFloatConversions.FahrenheitToCelsius(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToCelsius, fractionalCount);
     }
 
     /// <summary>
@@ -57,16 +57,16 @@ public static class ToFloatExtensions
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
-    /// <exception cref="ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
-    ///     The Celsius <see langword="float" /> result.
+    ///     The Celsius string result.
     /// </returns>
-    public static float ToCelsius(
-        this GasFloat input,
+    public static string ToCelsius(
+        this GasString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(GasFloatConversions.GasToCelsius(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, GasDoubleConversion.GasToCelsius, fractionalCount);
     }
 
     /// <summary>
@@ -76,13 +76,13 @@ public static class ToFloatExtensions
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
-    ///     The Celsius <see langword="float" /> result.
+    ///     The Celsius string result.
     /// </returns>
-    public static float ToCelsius(
-        this KelvinFloat input,
+    public static string ToCelsius(
+        this KelvinString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(KelvinFloatConversions.KelvinToCelsius(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, KelvinDoubleConversions.KelvinToCelsius, fractionalCount);
     }
 
     /// <summary>
@@ -92,13 +92,13 @@ public static class ToFloatExtensions
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
-    ///     The Celsius <see langword="float" /> result.
+    ///     The Celsius string result.
     /// </returns>
-    public static float ToCelsius(
-        this RankineFloat input,
+    public static string ToCelsius(
+        this RankineString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(RankineFloatConversions.RankineToCelsius(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, RankineDoubleConversions.RankineToCelsius, fractionalCount);
     }
 
     /// <summary>
@@ -108,12 +108,12 @@ public static class ToFloatExtensions
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
-    ///     The Celsius <see langword="float" /> result.
+    ///     The Celsius string result.
     /// </returns>
-    public static float ToCelsius(
-        this RømerFloat input,
+    public static string ToCelsius(
+        this RømerString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(RømerFloatConversions.RømerToCelsius(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, RømerDoubleConversions.RømerToCelsius, fractionalCount);
     }
 }

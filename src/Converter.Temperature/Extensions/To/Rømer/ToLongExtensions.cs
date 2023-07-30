@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Extensions.To.Celsius;
+﻿namespace Converter.Temperature.Extensions.To.Rømer;
 
 using System;
-using Converter.Temperature.Converters.Rømer;
 using Converters.Celsius;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
@@ -15,84 +15,84 @@ using Types.Rankine;
 using Types.Rømer;
 
 /// <summary>
-///     The to <see langword="int" /> extensions.
+///     The to <see langword="long" /> extensions.
 /// </summary>
-public static class ToIntExtensions
+public static class ToLongExtensions
 {
     /// <summary>
-    ///     Converts the Celsius <paramref name="input" /> to Celsius
+    ///     Converts the Celsius <paramref name="input" /> to Rømer
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <returns>
-    ///     The Celsius <see langword="int" /> result.
+    ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static int ToCelsius(this CelsiusInt input)
+    public static long ToRømer(this CelsiusLong input)
     {
-        return CelsiusIntConversions.CelsiusToCelsius(input.Temperature);
+        return CelsiusLongConversions.CelsiusToRømer(input.Temperature);
     }
 
     /// <summary>
-    ///     Converts the Fahrenheit <paramref name="input" /> to Celsius
+    ///     Converts the Fahrenheit <paramref name="input" /> to Rømer
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
-    ///     The Celsius <see langword="int" /> result.
+    ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static int ToCelsius(this FahrenheitInt input)
+    public static long ToRømer(this FahrenheitLong input)
     {
-        return FahrenheitIntConversions.FahrenheitToCelsius(input.Temperature);
+        return FahrenheitLongConversions.FahrenheitToRømer(input.Temperature);
     }
 
     /// <summary>
-    ///     Converts the Gas <paramref name="input" /> to Celsius
+    ///     Converts the Gas <paramref name="input" /> to Rømer
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
-    ///     The Celsius <see langword="int" /> result.
+    ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static int ToCelsius(this GasInt input)
+    public static long ToRømer(this GasLong input)
     {
-        return GasIntConversions.GasToCelsius(input.Temperature);
+        return GasLongConversions.GasToRømer(input.Temperature);
     }
 
     /// <summary>
-    ///     Converts the Kelvin <paramref name="input" /> to Celsius
+    ///     Converts the Kelvin <paramref name="input" /> to Rømer
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
-    ///     The Celsius <see langword="int" /> result.
+    ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static int ToCelsius(this KelvinInt input)
+    public static long ToRømer(this KelvinLong input)
     {
-        return KelvinIntConversions.KelvinToCelsius(input.Temperature);
+        return KelvinLongConversions.KelvinToRømer(input.Temperature);
     }
 
     /// <summary>
-    ///     Converts the Rankine <paramref name="input" /> to Celsius
+    ///     Converts the Rankine <paramref name="input" /> to Rømer
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
-    ///     The Celsius <see langword="int" /> result.
+    ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static int ToCelsius(this RankineInt input)
+    public static long ToRømer(this RankineLong input)
     {
-        return RankineIntConversions.RankineToCelsius(input.Temperature);
+        return RankineLongConversions.RankineToRømer(input.Temperature);
     }
 
     /// <summary>
-    ///     Converts the Rømer <paramref name="input" /> to Celsius
+    ///     Converts the Rømer <paramref name="input" /> to Rømer
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
-    ///     The Celsius <see langword="int" /> result.
+    ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static int ToCelsius(this RømerInt input)
+    public static long ToRømer(this RømerLong input)
     {
-        return RømerIntConversions.RømerToCelsius(input.Temperature);
+        return RømerLongConversions.RømerToRømer(input.Temperature);
     }
 }
