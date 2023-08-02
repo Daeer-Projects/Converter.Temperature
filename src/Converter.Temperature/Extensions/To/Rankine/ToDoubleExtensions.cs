@@ -1,13 +1,13 @@
 ﻿namespace Converter.Temperature.Extensions.To.Rankine;
 
 using System;
-using Helpers;
 using Converters.Celsius;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
 using Converters.Rømer;
+using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
@@ -33,7 +33,8 @@ public static class ToDoubleExtensions
         this CelsiusDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(CelsiusDoubleConversions.CelsiusToRankine(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(CelsiusDoubleConversions.CelsiusToRankine(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>
@@ -49,7 +50,8 @@ public static class ToDoubleExtensions
         this FahrenheitDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToRankine(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToRankine(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>
@@ -97,7 +99,8 @@ public static class ToDoubleExtensions
         this RankineDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(RankineDoubleConversions.RankineToRankine(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(RankineDoubleConversions.RankineToRankine(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>

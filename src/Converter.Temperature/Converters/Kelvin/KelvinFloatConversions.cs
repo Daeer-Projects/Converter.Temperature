@@ -86,7 +86,9 @@ internal static class KelvinFloatConversions
     {
         float rømerTemp = (input - 273.15f) * 21 / 40 + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rømerTemp;
     }

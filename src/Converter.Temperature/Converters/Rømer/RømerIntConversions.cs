@@ -47,7 +47,9 @@ internal static class RømerIntConversions
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         int kelvinTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
 
@@ -83,7 +85,9 @@ internal static class RømerIntConversions
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         int rankineTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
 

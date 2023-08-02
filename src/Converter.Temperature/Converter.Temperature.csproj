@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
-    <Title>Converter.Temperature</Title>
-    <Authors>David Clark</Authors>
-    <Owners>Daeer Projects</Owners>
-    <PackageTags>Daeer;DaeerProjects;Celsius;Fahrenheit;Kelvin;Gas;Rankine;Converter;Conversion;Temperature</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>
-      A library to convert different temperature types.
+    <PropertyGroup>
+        <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+        <Title>Converter.Temperature</Title>
+        <Authors>David Clark</Authors>
+        <Owners>Daeer Projects</Owners>
+        <PackageTags>Daeer;DaeerProjects;Celsius;Fahrenheit;Kelvin;Gas;Rankine;Converter;Conversion;Temperature</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Description>
+            A library to convert different temperature types.
 
-      A collection of dotnet extension methods for the following types:
+            A collection of dotnet extension methods for the following types:
 
       * int  
 
@@ -22,40 +22,40 @@
 
       * string  
 
-      Benchmark details can be found at the following link:
+            Benchmark details can be found at the following link:
 
-      https://github.com/Daeer-Projects/Converter.Temperature/wiki/Benchmark-Results
+            https://github.com/Daeer-Projects/Converter.Temperature/wiki/Benchmark-Results
 
-      If you like this library, please give the repo a start.
+            If you like this library, please give the repo a start.
 
-    </Description>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <Deterministic>true</Deterministic>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <PackageProjectUrl>https://github.com/Daeer-Projects/Converter.Temperature/wiki</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Daeer-Projects/Converter.Temperature</RepositoryUrl>
-    <PackageReleaseNotes>
-      See the details at the following link.
+        </Description>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <Deterministic>true</Deterministic>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <PackageProjectUrl>https://github.com/Daeer-Projects/Converter.Temperature/wiki</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/Daeer-Projects/Converter.Temperature</RepositoryUrl>
+        <PackageReleaseNotes>
+            See the details at the following link.
 
-      https://github.com/Daeer-Projects/Converter.Temperature/wiki/Release-Notes
-    </PackageReleaseNotes>
-    <PackageIcon>Temp-icon.png</PackageIcon>
-    <PackageReadmeFile>PackageReadMe.md</PackageReadmeFile>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+            https://github.com/Daeer-Projects/Converter.Temperature/wiki/Release-Notes
+        </PackageReleaseNotes>
+        <PackageIcon>Temp-icon.png</PackageIcon>
+        <PackageReadmeFile>PackageReadMe.md</PackageReadmeFile>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="PackageReadMe.md" Pack="true" PackagePath="" />
-    <None Include="Temp-icon.png" Pack="true" PackagePath="" />
-  </ItemGroup>
+    <ItemGroup>
+        <None Include="PackageReadMe.md" Pack="true" PackagePath=""/>
+        <None Include="Temp-icon.png" Pack="true" PackagePath=""/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.355802" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.355802"/>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
 
 </Project>

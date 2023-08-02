@@ -17,7 +17,9 @@ internal static class FahrenheitDoubleConversions
     {
         double celsiusTemp = (firstTemp - 32) * 5 / 9;
         if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
 
         return celsiusTemp;
     }
@@ -90,7 +92,9 @@ internal static class FahrenheitDoubleConversions
     {
         double rømerTemp = (input - 491.67) * 7 / 24 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rømerTemp;
     }

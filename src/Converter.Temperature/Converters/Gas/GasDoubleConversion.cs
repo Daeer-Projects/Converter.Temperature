@@ -75,7 +75,10 @@ internal static class GasDoubleConversion
     /// </returns>
     internal static double GasToGas(double input)
     {
-        if (input is < .25 or > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        if (input is < .25 or > 10)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        }
 
         return input;
     }

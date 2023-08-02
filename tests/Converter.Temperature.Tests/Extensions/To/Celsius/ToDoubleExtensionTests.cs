@@ -50,7 +50,7 @@ public sealed class ToDoubleExtensionTests
         CelsiusDouble input = new(42.3d);
 
         // Act.
-        double result = input.To<TemperatureTypes.Celsius>();
+        double result = input.To<Celsius>();
 
         // Assert.
         result.Should()
