@@ -6,12 +6,14 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="float" /> extensions.
@@ -98,5 +100,21 @@ public static class ToFloatExtensions
         int fractionalCount = -1)
     {
         return ToExtensionHelpers.Rounder(RankineFloatConversions.RankineToFahrenheit(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Fahrenheit
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Fahrenheit <see langword="float" /> result.
+    /// </returns>
+    public static float ToFahrenheit(
+        this RømerFloat input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(RømerFloatConversions.RømerToFahrenheit(input.Temperature), fractionalCount);
     }
 }

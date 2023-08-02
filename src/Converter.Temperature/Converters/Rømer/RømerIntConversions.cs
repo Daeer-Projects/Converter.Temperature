@@ -14,7 +14,7 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToCelsius(int input)
     {
-        double calculatedValue = input * 21d / 40d + 7.5d;
+        double calculatedValue = (input - 7.5d) * 40d / 21d;
         int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
         return celsiusTemp;
     }
@@ -28,7 +28,7 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToFahrenheit(int input)
     {
-        double calculatedValue = (input - 32d) * 7d / 24d + 7.5d;
+        double calculatedValue = (input - 7.5d) * 24d / 7d + 32d;
         int fahrenheitTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
         return fahrenheitTemp;
     }
@@ -43,7 +43,7 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToKelvin(int input)
     {
-        double calculatedValue = (input - 273.15d) * 21d / 40d + 7.5d;
+        double calculatedValue = (input - 7.5d) * 40d / 21d + 273.15d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
@@ -79,7 +79,7 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToRankine(int input)
     {
-        double calculatedValue = (input - 491.67d) * 7d / 24d + 7.5d;
+        double calculatedValue = (input - 7.5d) * 24d / 7d + 491.67d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
