@@ -10,6 +10,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToFloatExtensionTests
@@ -241,6 +242,86 @@ public sealed class ToFloatExtensionTests
     {
         // Arrange.
         RankineFloat input = new(493.471f);
+
+        // Act.
+        float result = input.To<Fahrenheit>(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1698.1828571428573f, 493.47f)]
+    [InlineData(932f, 270f)]
+    [InlineData(734f, 212.25f)]
+    [InlineData(554f, 159.75f)]
+    [InlineData(6.285715f, 0f)]
+    [InlineData(-459.66998f, -135.90375f)]
+    public void Test_to_celsius_from_rømer_returns_correct_value(
+        float expected,
+        float originalTemp)
+    {
+        // Arrange.
+        RømerFloat input = new(originalTemp);
+
+        // Act.
+        float result = input.ToFahrenheit();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1698.1828571428573f, 493.47f)]
+    [InlineData(932f, 270f)]
+    [InlineData(734f, 212.25f)]
+    [InlineData(554f, 159.75f)]
+    [InlineData(6.285715f, 0f)]
+    [InlineData(-459.66998f, -135.90375f)]
+    public void Test_to_celsius_generic_from_rømer_returns_correct_value(
+        float expected,
+        float originalTemp)
+    {
+        // Arrange.
+        RømerFloat input = new(originalTemp);
+
+        // Act.
+        float result = input.To<Fahrenheit>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(6.3f, 1)]
+    [InlineData(6.285715f, 14)]
+    public void Test_to_celsius_with_parameter_from_rømer_returns_correct_value(
+        float expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerFloat input = new(0f);
+
+        // Act.
+        float result = input.ToFahrenheit(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(6.3f, 1)]
+    [InlineData(6.285715f, 14)]
+    public void Test_to_celsius_generic_with_parameter_from_rømer_returns_correct_value(
+        float expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerFloat input = new(0f);
 
         // Act.
         float result = input.To<Fahrenheit>(fractionalCount);

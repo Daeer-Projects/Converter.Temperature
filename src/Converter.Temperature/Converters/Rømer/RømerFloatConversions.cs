@@ -14,7 +14,7 @@ internal static class RømerFloatConversions
     /// </returns>
     internal static float RømerToCelsius(float input)
     {
-        float celsiusTemp = input * 21f / 40f + 7.5f;
+        float celsiusTemp = (input - 7.5f) * 40 / 21;
         return celsiusTemp;
     }
 
@@ -27,7 +27,7 @@ internal static class RømerFloatConversions
     /// </returns>
     internal static float RømerToFahrenheit(float input)
     {
-        float fahrenheitTemp = (input - 32f) * 7f / 24f + 7.5f;
+        float fahrenheitTemp = (input - 7.5f) * 24 / 7 + 32;
         return fahrenheitTemp;
     }
 
@@ -41,7 +41,7 @@ internal static class RømerFloatConversions
     /// </returns>
     internal static float RømerToKelvin(float input)
     {
-        float kelvinTemp = (input - 273.15f) * 21f / 40f + 7.5f;
+        float kelvinTemp = (input - 7.5f) * 40 / 21 + 273.15f;
         if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 
@@ -73,7 +73,7 @@ internal static class RømerFloatConversions
     /// </returns>
     internal static float RømerToRankine(float input)
     {
-        float rankineTemp = (input - 491.67f) * 7f / 24f + 7.5f;
+        float rankineTemp = (input - 7.5f) * 24 / 7 + 491.67f;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
 
