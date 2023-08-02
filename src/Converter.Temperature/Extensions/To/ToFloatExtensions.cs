@@ -7,6 +7,7 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
@@ -14,7 +15,6 @@ using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
 using Types.Rømer;
-using Converter.Temperature.Converters.Rømer;
 
 /// <summary>
 ///     The to <see langword="float" /> extensions.

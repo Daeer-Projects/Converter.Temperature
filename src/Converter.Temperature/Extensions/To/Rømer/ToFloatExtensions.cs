@@ -1,12 +1,12 @@
 ﻿namespace Converter.Temperature.Extensions.To.Rømer;
 
 using System;
-using Converter.Temperature.Converters.Rømer;
 using Converters.Celsius;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
@@ -49,7 +49,8 @@ public static class ToFloatExtensions
         this FahrenheitFloat input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitFloatConversions.FahrenheitToRømer(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(FahrenheitFloatConversions.FahrenheitToRømer(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>

@@ -43,7 +43,9 @@ internal static class RømerDoubleConversions
     {
         double kelvinTemp = (input - 7.5d) * 40d / 21d + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return kelvinTemp;
     }
@@ -75,7 +77,9 @@ internal static class RømerDoubleConversions
     {
         double rankineTemp = (input - 7.5d) * 24d / 7d + 491.67d;
         if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rankineTemp;
     }

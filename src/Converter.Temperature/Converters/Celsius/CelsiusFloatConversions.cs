@@ -124,7 +124,9 @@ internal static class CelsiusFloatConversions
     {
         float rømerTemp = input * 21f / 40f + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rømerTemp;
     }

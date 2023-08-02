@@ -124,7 +124,9 @@ internal static class CelsiusDoubleConversions
     {
         double rømerTemp = input * 21 / 40 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rømerTemp;
     }

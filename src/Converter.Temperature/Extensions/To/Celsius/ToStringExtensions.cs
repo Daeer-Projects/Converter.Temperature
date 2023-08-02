@@ -1,12 +1,12 @@
 ﻿namespace Converter.Temperature.Extensions.To.Celsius;
 
 using System;
-using Converter.Temperature.Converters.Rømer;
 using Converters.Celsius;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
@@ -49,7 +49,8 @@ public static class ToStringExtensions
         this FahrenheitString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToCelsius, fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToCelsius,
+            fractionalCount);
     }
 
     /// <summary>

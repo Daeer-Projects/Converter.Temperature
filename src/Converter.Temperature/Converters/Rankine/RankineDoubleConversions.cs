@@ -93,7 +93,9 @@ internal static class RankineDoubleConversions
     {
         double rømerTemp = (input - 491.67) * 7 / 24 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rømerTemp;
     }

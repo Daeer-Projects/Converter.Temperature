@@ -9,7 +9,6 @@ using Converters.Kelvin;
 using Converters.Rankine;
 using Converters.Rømer;
 using Helpers;
-using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;

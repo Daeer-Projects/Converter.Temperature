@@ -1,12 +1,12 @@
 ﻿namespace Converter.Temperature.Extensions.To.Fahrenheit;
 
 using System;
-using Converter.Temperature.Converters.Rømer;
 using Converters.Celsius;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
@@ -34,7 +34,8 @@ public static class ToStringExtensions
         this CelsiusString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, CelsiusDoubleConversions.CelsiusToFahrenheit, fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, CelsiusDoubleConversions.CelsiusToFahrenheit,
+            fractionalCount);
     }
 
     /// <summary>
@@ -50,7 +51,8 @@ public static class ToStringExtensions
         this FahrenheitString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToFahrenheit, fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToFahrenheit,
+            fractionalCount);
     }
 
     /// <summary>
@@ -84,7 +86,8 @@ public static class ToStringExtensions
         this KelvinString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, KelvinDoubleConversions.KelvinToFahrenheit, fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, KelvinDoubleConversions.KelvinToFahrenheit,
+            fractionalCount);
     }
 
     /// <summary>
@@ -101,7 +104,8 @@ public static class ToStringExtensions
         this RankineString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, RankineDoubleConversions.RankineToFahrenheit, fractionalCount);
+        return ToExtensionHelpers.Parser(input.Temperature, RankineDoubleConversions.RankineToFahrenheit,
+            fractionalCount);
     }
 
     /// <summary>
