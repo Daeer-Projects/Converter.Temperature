@@ -16,21 +16,6 @@ using Xunit;
 public sealed class ToDoubleExtensionTests
 {
     [Fact]
-    public void Test_to_fahrenheit_from_rømer_returns_correct_value()
-    {
-        // Arrange.
-        const double expected = 932d;
-        RømerDouble input = new(270d);
-
-        // Act.
-        double result = input.ToFahrenheit();
-
-        // Assert.
-        result.Should()
-            .Be(expected);
-    }
-
-    [Fact]
     public void Test_to_fahrenheit_from_celsius_returns_correct_value()
     {
         // Arrange.
@@ -293,7 +278,7 @@ public sealed class ToDoubleExtensionTests
     [InlineData(554d, 159.75d)]
     [InlineData(6.285714285714285d, 0d)]
     [InlineData(-459.67d, -135.90375d)]
-    public void Test_to_celsius_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_from_rømer_returns_correct_value(
         double expected,
         double originalTemp)
     {
@@ -315,7 +300,7 @@ public sealed class ToDoubleExtensionTests
     [InlineData(554d, 159.75d)]
     [InlineData(6.285714285714285d, 0d)]
     [InlineData(-459.67d, -135.90375d)]
-    public void Test_to_celsius_generic_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_generic_from_rømer_returns_correct_value(
         double expected,
         double originalTemp)
     {
@@ -333,7 +318,7 @@ public sealed class ToDoubleExtensionTests
     [Theory]
     [InlineData(6.3d, 1)]
     [InlineData(6.28571428571428d, 14)]
-    public void Test_to_celsius_with_parameter_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_with_parameter_from_rømer_returns_correct_value(
         double expected,
         int fractionalCount)
     {
@@ -351,7 +336,7 @@ public sealed class ToDoubleExtensionTests
     [Theory]
     [InlineData(6.3d, 1)]
     [InlineData(6.28571428571428d, 14)]
-    public void Test_to_celsius_generic_with_parameter_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_generic_with_parameter_from_rømer_returns_correct_value(
         double expected,
         int fractionalCount)
     {

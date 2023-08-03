@@ -6,11 +6,13 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="int" /> extensions.
@@ -80,5 +82,18 @@ public static class ToIntExtensions
     public static int ToGas(this RankineInt input)
     {
         return RankineIntConversions.RankineToGas(input.Temperature);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Gas
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The Gas <see langword="int" /> result.
+    /// </returns>
+    public static int ToGas(this RømerInt input)
+    {
+        return RømerIntConversions.RømerToGas(input.Temperature);
     }
 }

@@ -63,7 +63,8 @@ public sealed class ToKelvinDoubleTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(double input)
+    public void Test_double_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         // Act.

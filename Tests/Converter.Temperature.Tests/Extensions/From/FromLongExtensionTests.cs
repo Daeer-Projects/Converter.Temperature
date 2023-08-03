@@ -1,6 +1,4 @@
-﻿using Converter.Temperature.Types.Rømer;
-
-namespace Converter.Temperature.Tests.Extensions.From;
+﻿namespace Converter.Temperature.Tests.Extensions.From;
 
 using BaseTypes;
 using FluentAssertions;
@@ -11,6 +9,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class FromLongExtensionTests

@@ -265,8 +265,9 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_float_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        float input)
+    public void
+        Test_float_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            float input)
     {
         // Arrange.
         // Act.
@@ -282,8 +283,9 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_float_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        float input)
+    public void
+        Test_float_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            float input)
     {
         // Arrange.
         // Act.
@@ -409,7 +411,8 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_generic_from_rankine_to_celsius_with_invalid_parameter_throws_exception(float input)
+    public void Test_float_extension_generic_from_rankine_to_celsius_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         // Act.

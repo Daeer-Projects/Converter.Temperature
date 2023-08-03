@@ -231,8 +231,9 @@ public sealed class ToCelsiusLongTests
     [Theory]
     [InlineData(0L)]
     [InlineData(11L)]
-    public void Test_long_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        long input)
+    public void
+        Test_long_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            long input)
     {
         // Arrange.
         // Act.

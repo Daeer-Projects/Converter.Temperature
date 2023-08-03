@@ -105,7 +105,8 @@ public sealed class ToRankineStringTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_string_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(double input)
+    public void Test_string_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         // Act.

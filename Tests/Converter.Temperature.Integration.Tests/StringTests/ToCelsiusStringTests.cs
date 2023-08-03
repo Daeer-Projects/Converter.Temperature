@@ -270,8 +270,9 @@ public sealed class ToCelsiusStringTests
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]
-    public void Test_string_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        string input)
+    public void
+        Test_string_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            string input)
     {
         // Arrange.
         // Act.
@@ -287,8 +288,9 @@ public sealed class ToCelsiusStringTests
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]
-    public void Test_string_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        string input)
+    public void
+        Test_string_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            string input)
     {
         // Arrange.
         // Act.
