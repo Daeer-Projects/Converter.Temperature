@@ -8,14 +8,14 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     where TInputType : struct
     where TOutputType : TypeBase<TInputType>
 {
-    protected abstract TOutputType ConvertFrom(
-        TInputType value);
-    
     protected virtual TInputType HighValue { get; }
     protected virtual TInputType MidHighValue { get; }
     protected virtual TInputType MidValue { get; }
     protected virtual TInputType MidLowValue { get; }
     protected virtual TInputType LowValue { get; }
+
+    protected abstract TOutputType ConvertFrom(
+        TInputType value);
 
     [Fact]
     public void Test_from_with_high_value_returns_expected_type_and_temperature()
@@ -23,7 +23,6 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
         // Arrange.
         // Act.
         TOutputType result = ConvertFrom(HighValue);
-        
 
         // Assert.
         result.Should()

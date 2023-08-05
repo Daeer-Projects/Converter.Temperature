@@ -37,7 +37,7 @@ public sealed class FromLongExtensionTests
         const long input = 39L;
 
         // Act.
-        LongBase result = input.From<TemperatureTypes.Celsius>();
+        LongBase result = input.From<Celsius>();
 
         // Assert.
         result.Should()
@@ -69,7 +69,7 @@ public sealed class FromLongExtensionTests
         const long input = 39L;
 
         // Act.
-        LongBase result = input.From<TemperatureTypes.Fahrenheit>();
+        LongBase result = input.From<Fahrenheit>();
 
         // Assert.
         result.Should()

@@ -47,7 +47,8 @@ public sealed class ToRankineLongTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(long input)
+    public void Test_long_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        long input)
     {
         // Arrange.
         // Act.
@@ -63,7 +64,8 @@ public sealed class ToRankineLongTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(long input)
+    public void Test_long_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        long input)
     {
         // Arrange.
         // Act.
@@ -200,7 +202,8 @@ public sealed class ToRankineLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_from_and_to_rankine_returns_correct_long_value(long value)
+    public void Test_long_extension_from_and_to_rankine_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -218,7 +221,8 @@ public sealed class ToRankineLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_generic_from_and_to_rankine_returns_correct_long_value(long value)
+    public void Test_long_extension_generic_from_and_to_rankine_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.

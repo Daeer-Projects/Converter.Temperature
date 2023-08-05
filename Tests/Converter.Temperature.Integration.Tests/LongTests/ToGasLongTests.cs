@@ -264,7 +264,8 @@ public sealed class ToGasLongTests
     [InlineData(5L)]
     [InlineData(8L)]
     [InlineData(10L)]
-    public void Test_long_extension_from_and_to_gas_returns_correct_long_value(long value)
+    public void Test_long_extension_from_and_to_gas_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -282,7 +283,8 @@ public sealed class ToGasLongTests
     [InlineData(5L)]
     [InlineData(8L)]
     [InlineData(10L)]
-    public void Test_long_extension_generic_from_and_to_gas_returns_correct_long_value(long value)
+    public void Test_long_extension_generic_from_and_to_gas_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -297,7 +299,8 @@ public sealed class ToGasLongTests
     [Theory]
     [InlineData(0L)]
     [InlineData(11L)]
-    public void Test_long_extension_from_and_to_gas_throws_exception(long value)
+    public void Test_long_extension_from_and_to_gas_throws_exception(
+        long value)
     {
         // Arrange.
         // Act.
@@ -313,7 +316,8 @@ public sealed class ToGasLongTests
     [Theory]
     [InlineData(0L)]
     [InlineData(11L)]
-    public void Test_long_extension_generic_from_and_to_gas_throws_exception(long value)
+    public void Test_long_extension_generic_from_and_to_gas_throws_exception(
+        long value)
     {
         // Arrange.
         // Act.

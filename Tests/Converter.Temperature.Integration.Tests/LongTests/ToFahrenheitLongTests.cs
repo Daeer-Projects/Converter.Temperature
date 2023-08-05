@@ -93,7 +93,8 @@ public sealed class ToFahrenheitLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extensions_from_and_to_fahrenheit_returns_correct_long_value(long value)
+    public void Test_long_extensions_from_and_to_fahrenheit_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -111,7 +112,8 @@ public sealed class ToFahrenheitLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extensions_generic_from_and_to_fahrenheit_returns_correct_long_value(long value)
+    public void Test_long_extensions_generic_from_and_to_fahrenheit_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.

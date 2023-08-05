@@ -272,7 +272,8 @@ public sealed class ToGasStringTests
     [InlineData("5")]
     [InlineData("8")]
     [InlineData("10")]
-    public void Test_string_extension_from_and_to_gas_returns_correct_string_value(string value)
+    public void Test_string_extension_from_and_to_gas_returns_correct_string_value(
+        string value)
     {
         // Arrange.
         // Act.
@@ -290,7 +291,8 @@ public sealed class ToGasStringTests
     [InlineData("5")]
     [InlineData("8")]
     [InlineData("10")]
-    public void Test_string_extension_generic_from_and_to_gas_returns_correct_string_value(string value)
+    public void Test_string_extension_generic_from_and_to_gas_returns_correct_string_value(
+        string value)
     {
         // Arrange.
         // Act.
@@ -305,7 +307,8 @@ public sealed class ToGasStringTests
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]
-    public void Test_string_extension_from_and_to_gas_throws_exception(string value)
+    public void Test_string_extension_from_and_to_gas_throws_exception(
+        string value)
     {
         // Arrange.
         // Act.
@@ -321,7 +324,8 @@ public sealed class ToGasStringTests
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]
-    public void Test_string_extension_generic_from_and_to_gas_throws_exception(string value)
+    public void Test_string_extension_generic_from_and_to_gas_throws_exception(
+        string value)
     {
         // Arrange.
         // Act.

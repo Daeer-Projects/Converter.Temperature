@@ -272,7 +272,8 @@ public sealed class ToGasFloatTests
     [InlineData(5f)]
     [InlineData(8f)]
     [InlineData(10f)]
-    public void Test_float_extension_from_and_to_gas_returns_correct_float_value(float value)
+    public void Test_float_extension_from_and_to_gas_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -290,7 +291,8 @@ public sealed class ToGasFloatTests
     [InlineData(5f)]
     [InlineData(8f)]
     [InlineData(10f)]
-    public void Test_float_extension_generic_from_and_to_gas_returns_correct_float_value(float value)
+    public void Test_float_extension_generic_from_and_to_gas_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -305,7 +307,8 @@ public sealed class ToGasFloatTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_float_extension_from_and_to_gas_throws_exception(float value)
+    public void Test_float_extension_from_and_to_gas_throws_exception(
+        float value)
     {
         // Arrange.
         // Act.
@@ -321,7 +324,8 @@ public sealed class ToGasFloatTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_float_extension_generic_from_and_to_gas_throws_exception(float value)
+    public void Test_float_extension_generic_from_and_to_gas_throws_exception(
+        float value)
     {
         // Arrange.
         // Act.

@@ -5,7 +5,6 @@ using FluentAssertions;
 using Temperature.Extensions.From;
 using TemperatureTypes;
 using Types.Celsius;
-using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
@@ -14,32 +13,16 @@ using Xunit;
 
 public sealed class FromDoubleExtensionsTests : BaseFromExtensionTests<double, CelsiusDouble>
 {
-    protected override CelsiusDouble ConvertFrom(
-        double value)
-    {
-        return value.FromCelsius();
-    }
-
     protected override double HighValue => double.MaxValue;
     protected override double MidHighValue => 999.999d;
     protected override double MidValue => 0d;
     protected override double MidLowValue => -999.999d;
     protected override double LowValue => double.MinValue;
 
-    [Fact]
-    public void Test_from_fahrenheit_generic_returns_fahrenheit_double_type()
+    protected override CelsiusDouble ConvertFrom(
+        double value)
     {
-        // Arrange.
-        const double input = 39d;
-
-        // Act.
-        DoubleBase result = input.From<TemperatureTypes.Fahrenheit>();
-
-        // Assert.
-        result.Should()
-            .BeOfType<FahrenheitDouble>()
-            .Which.Temperature.Should()
-            .Be(input);
+        return value.FromCelsius();
     }
 
     [Fact]

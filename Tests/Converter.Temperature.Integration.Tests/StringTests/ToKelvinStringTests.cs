@@ -48,7 +48,8 @@ public sealed class ToKelvinStringTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_string_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(double input)
+    public void Test_string_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         // Act.
@@ -126,7 +127,8 @@ public sealed class ToKelvinStringTests
     [InlineData(0.0d)]
     [InlineData(7564.2334d)]
     [InlineData(double.MaxValue)]
-    public void Test_string_extension_from_and_to_kelvin_returns_correct_string_value(double value)
+    public void Test_string_extension_from_and_to_kelvin_returns_correct_string_value(
+        double value)
     {
         // Arrange.
         // Act.
@@ -145,7 +147,8 @@ public sealed class ToKelvinStringTests
     [InlineData(0.0d)]
     [InlineData(7564.2334d)]
     [InlineData(double.MaxValue)]
-    public void Test_string_extension_generic_from_and_to_kelvin_returns_correct_string_value(double value)
+    public void Test_string_extension_generic_from_and_to_kelvin_returns_correct_string_value(
+        double value)
     {
         // Arrange.
         // Act.

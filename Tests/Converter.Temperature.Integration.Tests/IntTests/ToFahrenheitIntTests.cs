@@ -93,7 +93,8 @@ public sealed class ToFahrenheitIntTests
     [InlineData(0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extensions_from_and_to_fahrenheit_returns_correct_int_value(int value)
+    public void Test_int_extensions_from_and_to_fahrenheit_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -111,7 +112,8 @@ public sealed class ToFahrenheitIntTests
     [InlineData(0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extensions_generic_from_and_to_fahrenheit_returns_correct_int_value(int value)
+    public void Test_int_extensions_generic_from_and_to_fahrenheit_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -162,7 +164,8 @@ public sealed class ToFahrenheitIntTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_int_value(int input)
+    public void Test_int_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_int_value(
+        int input)
     {
         // Arrange.
         // Act.

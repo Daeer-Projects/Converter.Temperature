@@ -264,7 +264,8 @@ public sealed class ToGasIntTests
     [InlineData(5)]
     [InlineData(8)]
     [InlineData(10)]
-    public void Test_int_extension_from_and_to_gas_returns_correct_int_value(int value)
+    public void Test_int_extension_from_and_to_gas_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -282,7 +283,8 @@ public sealed class ToGasIntTests
     [InlineData(5)]
     [InlineData(8)]
     [InlineData(10)]
-    public void Test_int_extension_generic_from_and_to_gas_returns_correct_int_value(int value)
+    public void Test_int_extension_generic_from_and_to_gas_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -297,7 +299,8 @@ public sealed class ToGasIntTests
     [Theory]
     [InlineData(0)]
     [InlineData(11)]
-    public void Test_int_extension_from_and_to_gas_throws_exception(int value)
+    public void Test_int_extension_from_and_to_gas_throws_exception(
+        int value)
     {
         // Arrange.
         // Act.
@@ -313,7 +316,8 @@ public sealed class ToGasIntTests
     [Theory]
     [InlineData(0)]
     [InlineData(11)]
-    public void Test_int_extension_generic_from_and_to_gas_throws_exception(int value)
+    public void Test_int_extension_generic_from_and_to_gas_throws_exception(
+        int value)
     {
         // Arrange.
         // Act.

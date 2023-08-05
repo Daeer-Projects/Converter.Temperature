@@ -18,7 +18,8 @@ public sealed class ToCelsiusFloatTests
     [InlineData(0.0f)]
     [InlineData(7564.2334f)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_from_and_to_celsius_returns_correct_float_value(float value)
+    public void Test_float_extension_from_and_to_celsius_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -36,7 +37,8 @@ public sealed class ToCelsiusFloatTests
     [InlineData(0.0f)]
     [InlineData(7564.2334f)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_generic_from_and_to_celsius_returns_correct_float_value(float value)
+    public void Test_float_extension_generic_from_and_to_celsius_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -55,7 +57,8 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_to_fahrenheit_from_kelvin_with_invalid_parameter_throws_exception(float input)
+    public void Test_to_fahrenheit_from_kelvin_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         // Act.
@@ -71,7 +74,8 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_to_fahrenheit_from_kelvin_generic_with_invalid_parameter_throws_exception(float input)
+    public void Test_to_fahrenheit_from_kelvin_generic_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         // Act.
@@ -395,7 +399,8 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_from_rankine_to_celsius_with_invalid_parameter_throws_exception(float input)
+    public void Test_float_extension_from_rankine_to_celsius_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         // Act.

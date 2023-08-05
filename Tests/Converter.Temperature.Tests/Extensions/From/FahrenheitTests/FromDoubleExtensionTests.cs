@@ -1,23 +1,23 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.Fahrenheit;
+﻿namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
 
-using FluentAssertions;
-using Temperature.Extensions.From;
+using Converter.Temperature.Extensions.From;
 using Types.Fahrenheit;
+using FluentAssertions;
 using Xunit;
 
 public sealed class FromDoubleExtensionTests : BaseFromExtensionTests<double, FahrenheitDouble>
 {
-    protected override FahrenheitDouble ConvertFrom(
-        double value)
-    {
-        return value.FromFahrenheit();
-    }
-
     protected override double HighValue => double.MaxValue;
     protected override double MidHighValue => 999.999d;
     protected override double MidValue => 0d;
     protected override double MidLowValue => -999.999d;
     protected override double LowValue => double.MinValue;
+
+    protected override FahrenheitDouble ConvertFrom(
+        double value)
+    {
+        return value.FromFahrenheit();
+    }
 
     [Fact]
     public void Test_from_fahrenheit_returns_fahrenheit_double_type()

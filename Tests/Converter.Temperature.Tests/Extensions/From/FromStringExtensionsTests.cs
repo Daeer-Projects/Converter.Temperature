@@ -37,7 +37,7 @@ public sealed class FromStringExtensionsTests
         const string input = "39";
 
         // Act.
-        StringBase result = input.From<TemperatureTypes.Celsius>();
+        StringBase result = input.From<Celsius>();
 
         // Assert.
         result.Should()
@@ -69,7 +69,7 @@ public sealed class FromStringExtensionsTests
         const string input = "39";
 
         // Act.
-        StringBase result = input.From<TemperatureTypes.Fahrenheit>();
+        StringBase result = input.From<Fahrenheit>();
 
         // Assert.
         result.Should()
