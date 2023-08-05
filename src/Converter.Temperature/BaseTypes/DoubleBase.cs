@@ -1,3 +1,3 @@
 ﻿namespace Converter.Temperature.BaseTypes;
 
-public abstract class DoubleBase { }
+public abstract class DoubleBase : TypeBase<double> { }

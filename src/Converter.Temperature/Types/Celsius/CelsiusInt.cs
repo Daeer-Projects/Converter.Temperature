@@ -9,5 +9,5 @@ public sealed class CelsiusInt : IntBase
         Temperature = temp;
     }
 
-    public int Temperature { get; }
+    public override int Temperature { get; }
 }

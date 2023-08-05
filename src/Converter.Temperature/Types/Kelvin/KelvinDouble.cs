@@ -9,5 +9,5 @@ public sealed class KelvinDouble : DoubleBase
         Temperature = temp;
     }
 
-    public double Temperature { get; }
+    public override double Temperature { get; }
 }

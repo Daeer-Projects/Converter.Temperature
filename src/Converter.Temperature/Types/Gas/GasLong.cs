@@ -9,5 +9,5 @@ public sealed class GasLong : LongBase
         Temperature = temp;
     }
 
-    public long Temperature { get; }
+    public override long Temperature { get; }
 }

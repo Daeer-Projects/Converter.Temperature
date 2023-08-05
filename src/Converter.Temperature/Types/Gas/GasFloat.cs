@@ -9,5 +9,5 @@ public sealed class GasFloat : FloatBase
         Temperature = temp;
     }
 
-    public float Temperature { get; }
+    public override float Temperature { get; }
 }

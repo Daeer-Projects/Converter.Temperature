@@ -9,5 +9,5 @@ public sealed class RømerString : StringBase
         Temperature = temp;
     }
 
-    public string Temperature { get; }
+    public override string Temperature { get; }
 }
