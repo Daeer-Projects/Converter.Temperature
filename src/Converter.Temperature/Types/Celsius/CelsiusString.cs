@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class CelsiusString : StringBase
 {
-    public CelsiusString(string temp)
+    public CelsiusString(
+        string temp)
     {
         Temperature = temp;
     }

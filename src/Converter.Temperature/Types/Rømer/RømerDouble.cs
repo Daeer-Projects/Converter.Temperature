@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RømerDouble : DoubleBase
 {
-    public RømerDouble(double temp)
+    public RømerDouble(
+        double temp)
     {
         Temperature = temp;
     }

@@ -12,7 +12,8 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RømerToCelsius(int input)
+    internal static int RømerToCelsius(
+        int input)
     {
         double calculatedValue = (input - 7.5d) * 40d / 21d;
         int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -26,7 +27,8 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RømerToFahrenheit(int input)
+    internal static int RømerToFahrenheit(
+        int input)
     {
         double calculatedValue = (input - 7.5d) * 24d / 7d + 32d;
         int fahrenheitTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -41,7 +43,8 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RømerToKelvin(int input)
+    internal static int RømerToKelvin(
+        int input)
     {
         double calculatedValue = (input - 7.5d) * 40d / 21d + 273.15d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -64,7 +67,8 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RømerToGas(int input)
+    internal static int RømerToGas(
+        int input)
     {
         int celsiusTemp = RømerToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -79,7 +83,8 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RømerToRankine(int input)
+    internal static int RømerToRankine(
+        int input)
     {
         double calculatedValue = (input - 7.5d) * 24d / 7d + 491.67d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -101,7 +106,8 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RømerToRømer(int input)
+    internal static int RømerToRømer(
+        int input)
     {
         return input;
     }

@@ -13,7 +13,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RankineToRankine(int input)
+    internal static int RankineToRankine(
+        int input)
     {
         return input;
     }
@@ -26,7 +27,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RankineToCelsius(int input)
+    internal static int RankineToCelsius(
+        int input)
     {
         int rankineTemp = (input - 492) * 5 / 9;
         return rankineTemp;
@@ -40,7 +42,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RankineToFahrenheit(int input)
+    internal static int RankineToFahrenheit(
+        int input)
     {
         int rankineTemp = input - 460;
         return rankineTemp;
@@ -54,7 +57,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RankineToKelvin(int input)
+    internal static int RankineToKelvin(
+        int input)
     {
         int rankineTemp = input * 5 / 9;
         return rankineTemp;
@@ -68,7 +72,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RankineToGas(int input)
+    internal static int RankineToGas(
+        int input)
     {
         int celsiusTemp = RankineToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -83,7 +88,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int RankineToRømer(int input)
+    internal static int RankineToRømer(
+        int input)
     {
         double result = (input - 491.67) * 7 / 24 + 7.5;
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);

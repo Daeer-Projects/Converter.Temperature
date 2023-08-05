@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class KelvinFloat : FloatBase
 {
-    public KelvinFloat(float temp)
+    public KelvinFloat(
+        float temp)
     {
         Temperature = temp;
     }

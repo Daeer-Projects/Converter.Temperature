@@ -13,7 +13,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long GasToCelsius(long input)
+    internal static long GasToCelsius(
+        long input)
     {
         long celTemp = input switch
         {
@@ -41,7 +42,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long GasToFahrenheit(long input)
+    internal static long GasToFahrenheit(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long fahrenheitTemp = CelsiusLongConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -56,7 +58,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long GasToKelvin(long input)
+    internal static long GasToKelvin(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long kelvinTemp = CelsiusLongConversions.CelsiusToKelvin(celsiusTemp);
@@ -71,7 +74,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long GasToGas(long input)
+    internal static long GasToGas(
+        long input)
     {
         if (input is < 1 or > 10)
         {
@@ -89,7 +93,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long GasToRankine(long input)
+    internal static long GasToRankine(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long rankineTemp = CelsiusLongConversions.CelsiusToRankine(celsiusTemp);
@@ -104,7 +109,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long GasToRømer(long input)
+    internal static long GasToRømer(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long rømerTemp = CelsiusLongConversions.CelsiusToRømer(celsiusTemp);

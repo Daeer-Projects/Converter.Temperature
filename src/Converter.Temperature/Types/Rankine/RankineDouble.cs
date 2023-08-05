@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RankineDouble : DoubleBase
 {
-    public RankineDouble(double temp)
+    public RankineDouble(
+        double temp)
     {
         Temperature = temp;
     }

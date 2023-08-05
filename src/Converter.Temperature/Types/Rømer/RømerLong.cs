@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RømerLong : LongBase
 {
-    public RømerLong(long temp)
+    public RømerLong(
+        long temp)
     {
         Temperature = temp;
     }

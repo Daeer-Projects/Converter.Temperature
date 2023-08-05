@@ -12,7 +12,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double KelvinToCelsius(double firstTemp)
+    internal static double KelvinToCelsius(
+        double firstTemp)
     {
         double celsiusTemp = firstTemp - 273.15;
         return celsiusTemp;
@@ -26,7 +27,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double KelvinToFahrenheit(double firstTemp)
+    internal static double KelvinToFahrenheit(
+        double firstTemp)
     {
         double celsiusTemp = KelvinToCelsius(firstTemp);
         double fahrenheitTemp = CelsiusDoubleConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -40,7 +42,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double KelvinToKelvin(double firstTemp)
+    internal static double KelvinToKelvin(
+        double firstTemp)
     {
         return firstTemp;
     }
@@ -53,7 +56,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double KelvinToGas(double firstTemp)
+    internal static double KelvinToGas(
+        double firstTemp)
     {
         double celsiusTemp = KelvinToCelsius(firstTemp);
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
@@ -68,7 +72,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double KelvinToRankine(double firstTemp)
+    internal static double KelvinToRankine(
+        double firstTemp)
     {
         double rankineTemp = firstTemp * 9 / 5;
         return rankineTemp;
@@ -82,7 +87,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double KelvinToRømer(double input)
+    internal static double KelvinToRømer(
+        double input)
     {
         double rømerTemp = (input - 273.15) * 21 / 40 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))

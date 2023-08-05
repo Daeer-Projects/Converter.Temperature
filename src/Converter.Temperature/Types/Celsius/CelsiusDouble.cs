@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class CelsiusDouble : DoubleBase
 {
-    public CelsiusDouble(double temp)
+    public CelsiusDouble(
+        double temp)
     {
         Temperature = temp;
     }

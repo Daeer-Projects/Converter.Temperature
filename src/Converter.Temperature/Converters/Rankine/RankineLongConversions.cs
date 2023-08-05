@@ -13,7 +13,8 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RankineToRankine(long input)
+    internal static long RankineToRankine(
+        long input)
     {
         return input;
     }
@@ -26,7 +27,8 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RankineToCelsius(long input)
+    internal static long RankineToCelsius(
+        long input)
     {
         long rankineTemp = (input - 492L) * 5 / 9;
         return rankineTemp;
@@ -40,7 +42,8 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RankineToFahrenheit(long input)
+    internal static long RankineToFahrenheit(
+        long input)
     {
         long rankineTemp = input - 460L;
         return rankineTemp;
@@ -54,7 +57,8 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RankineToKelvin(long input)
+    internal static long RankineToKelvin(
+        long input)
     {
         long rankineTemp = input * 5 / 9;
         return rankineTemp;
@@ -68,7 +72,8 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RankineToGas(long input)
+    internal static long RankineToGas(
+        long input)
     {
         long celsiusTemp = RankineToCelsius(input);
         long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
@@ -83,7 +88,8 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RankineToRømer(long input)
+    internal static long RankineToRømer(
+        long input)
     {
         double result = (input - 491.67) * 7 / 24 + 7.5;
         long rømerTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);

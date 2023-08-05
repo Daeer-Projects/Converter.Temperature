@@ -12,7 +12,8 @@ internal static class RømerLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RømerToCelsius(long input)
+    internal static long RømerToCelsius(
+        long input)
     {
         double calculatedValue = (input - 7.5d) * 40d / 21d;
         long celsiusTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -27,7 +28,8 @@ internal static class RømerLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RømerToFahrenheit(long input)
+    internal static long RømerToFahrenheit(
+        long input)
     {
         double calculatedValue = (input - 7.5d) * 24d / 7d + 32d;
         long fahrenheitTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -42,7 +44,8 @@ internal static class RømerLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RømerToKelvin(long input)
+    internal static long RømerToKelvin(
+        long input)
     {
         double calculatedValue = (input - 7.5d) * 40d / 21d + 273.15d;
         long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -65,7 +68,8 @@ internal static class RømerLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RømerToGas(long input)
+    internal static long RømerToGas(
+        long input)
     {
         long celsiusTemp = RømerToCelsius(input);
         long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
@@ -80,7 +84,8 @@ internal static class RømerLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RømerToRankine(long input)
+    internal static long RømerToRankine(
+        long input)
     {
         double calculatedValue = (input - 7.5d) * 24d / 7d + 491.67d;
         long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -102,7 +107,8 @@ internal static class RømerLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long RømerToRømer(long input)
+    internal static long RømerToRømer(
+        long input)
     {
         return input;
     }

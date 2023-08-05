@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RømerString : StringBase
 {
-    public RømerString(string temp)
+    public RømerString(
+        string temp)
     {
         Temperature = temp;
     }

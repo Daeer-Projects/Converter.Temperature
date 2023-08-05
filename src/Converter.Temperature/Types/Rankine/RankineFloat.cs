@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RankineFloat : FloatBase
 {
-    public RankineFloat(float temp)
+    public RankineFloat(
+        float temp)
     {
         Temperature = temp;
     }

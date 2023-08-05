@@ -27,7 +27,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="int" /> result.
     /// </returns>
-    public static int ToFahrenheit(this CelsiusInt input)
+    public static int ToFahrenheit(
+        this CelsiusInt input)
     {
         return CelsiusIntConversions.CelsiusToFahrenheit(input.Temperature);
     }
@@ -39,7 +40,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="int" /> result.
     /// </returns>
-    public static int ToFahrenheit(this FahrenheitInt input)
+    public static int ToFahrenheit(
+        this FahrenheitInt input)
     {
         return FahrenheitIntConversions.FahrenheitToFahrenheit(input.Temperature);
     }
@@ -52,7 +54,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="int" /> result.
     /// </returns>
-    public static int ToFahrenheit(this GasInt input)
+    public static int ToFahrenheit(
+        this GasInt input)
     {
         return GasIntConversions.GasToFahrenheit(input.Temperature);
     }
@@ -65,7 +68,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="int" /> result.
     /// </returns>
-    public static int ToFahrenheit(this KelvinInt input)
+    public static int ToFahrenheit(
+        this KelvinInt input)
     {
         return KelvinIntConversions.KelvinToFahrenheit(input.Temperature);
     }
@@ -78,7 +82,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="int" /> result.
     /// </returns>
-    public static int ToFahrenheit(this RankineInt input)
+    public static int ToFahrenheit(
+        this RankineInt input)
     {
         return RankineIntConversions.RankineToFahrenheit(input.Temperature);
     }
@@ -91,7 +96,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="int" /> result.
     /// </returns>
-    public static int ToFahrenheit(this RømerInt input)
+    public static int ToFahrenheit(
+        this RømerInt input)
     {
         return RømerIntConversions.RømerToFahrenheit(input.Temperature);
     }

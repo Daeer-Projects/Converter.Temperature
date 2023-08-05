@@ -12,7 +12,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int KelvinToCelsius(int input)
+    internal static int KelvinToCelsius(
+        int input)
     {
         const int maxValue = int.MaxValue - 273;
         const int minValue = int.MinValue + 273;
@@ -33,7 +34,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int KelvinToFahrenheit(int input)
+    internal static int KelvinToFahrenheit(
+        int input)
     {
         int celsiusTemp = KelvinToCelsius(input);
         int fahrenheitTemp = CelsiusIntConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -47,7 +49,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int KelvinToKelvin(int input)
+    internal static int KelvinToKelvin(
+        int input)
     {
         return input;
     }
@@ -60,7 +63,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int KelvinToGas(int input)
+    internal static int KelvinToGas(
+        int input)
     {
         int celsiusTemp = KelvinToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -75,7 +79,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int KelvinToRankine(int input)
+    internal static int KelvinToRankine(
+        int input)
     {
         int rankineTemp = input * 9 / 5;
         return rankineTemp;
@@ -89,7 +94,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int KelvinToRømer(int input)
+    internal static int KelvinToRømer(
+        int input)
     {
         double result = (input - 273.15) * 21 / 40 + 7.5;
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);

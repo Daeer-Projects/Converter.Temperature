@@ -13,7 +13,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float FahrenheitToCelsius(float firstTemp)
+    internal static float FahrenheitToCelsius(
+        float firstTemp)
     {
         float celsiusTemp = (firstTemp - 32) * 5 / 9;
         if (float.IsPositiveInfinity(celsiusTemp) || float.IsNegativeInfinity(celsiusTemp))
@@ -31,7 +32,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float FahrenheitToFahrenheit(float firstTemp)
+    internal static float FahrenheitToFahrenheit(
+        float firstTemp)
     {
         return firstTemp;
     }
@@ -44,7 +46,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float FahrenheitToKelvin(float firstTemp)
+    internal static float FahrenheitToKelvin(
+        float firstTemp)
     {
         float celsiusTemp = FahrenheitToCelsius(firstTemp);
         float kelvinTemp = CelsiusFloatConversions.CelsiusToKelvin(celsiusTemp);
@@ -59,7 +62,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float FahrenheitToGas(float firstTemp)
+    internal static float FahrenheitToGas(
+        float firstTemp)
     {
         float celsiusTemp = FahrenheitToCelsius(firstTemp);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
@@ -74,7 +78,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float FahrenheitToRankine(float firstTemp)
+    internal static float FahrenheitToRankine(
+        float firstTemp)
     {
         float rankineTemp = firstTemp + 459.67f;
         return rankineTemp;
@@ -88,7 +93,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float FahrenheitToRømer(float input)
+    internal static float FahrenheitToRømer(
+        float input)
     {
         float rømerTemp = (input - 491.67f) * 7 / 24 + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))

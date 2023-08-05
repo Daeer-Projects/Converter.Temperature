@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RømerFloat : FloatBase
 {
-    public RømerFloat(float temp)
+    public RømerFloat(
+        float temp)
     {
         Temperature = temp;
     }

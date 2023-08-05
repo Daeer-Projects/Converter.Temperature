@@ -25,7 +25,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Gas <see langword="long" /> result.
     /// </returns>
-    public static long ToGas(this CelsiusLong input)
+    public static long ToGas(
+        this CelsiusLong input)
     {
         return CelsiusLongConversions.CelsiusToGas(input.Temperature);
     }
@@ -38,7 +39,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Gas <see langword="long" /> result.
     /// </returns>
-    public static long ToGas(this FahrenheitLong input)
+    public static long ToGas(
+        this FahrenheitLong input)
     {
         return FahrenheitLongConversions.FahrenheitToGas(input.Temperature);
     }
@@ -51,7 +53,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Gas <see langword="long" /> result.
     /// </returns>
-    public static long ToGas(this GasLong input)
+    public static long ToGas(
+        this GasLong input)
     {
         return GasLongConversions.GasToGas(input.Temperature);
     }
@@ -64,7 +67,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Gas <see langword="long" /> result.
     /// </returns>
-    public static long ToGas(this KelvinLong input)
+    public static long ToGas(
+        this KelvinLong input)
     {
         return KelvinLongConversions.KelvinToGas(input.Temperature);
     }
@@ -77,7 +81,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Gas <see langword="long" /> result.
     /// </returns>
-    public static long ToGas(this RankineLong input)
+    public static long ToGas(
+        this RankineLong input)
     {
         return RankineLongConversions.RankineToGas(input.Temperature);
     }

@@ -19,7 +19,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Celsius Long class for the 'To' extensions to use.
     /// </returns>
-    public static CelsiusLong FromCelsius(this long input)
+    public static CelsiusLong FromCelsius(
+        this long input)
     {
         return new CelsiusLong(input);
     }
@@ -31,7 +32,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Fahrenheit Long class for the 'To' extensions to use.
     /// </returns>
-    public static FahrenheitLong FromFahrenheit(this long input)
+    public static FahrenheitLong FromFahrenheit(
+        this long input)
     {
         return new FahrenheitLong(input);
     }
@@ -43,7 +45,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Gas Long class for the 'To' extensions to use.
     /// </returns>
-    public static GasLong FromGas(this long input)
+    public static GasLong FromGas(
+        this long input)
     {
         return new GasLong(input);
     }
@@ -55,7 +58,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Kelvin Long class for the 'To' extensions to use.
     /// </returns>
-    public static KelvinLong FromKelvin(this long input)
+    public static KelvinLong FromKelvin(
+        this long input)
     {
         return new KelvinLong(input);
     }
@@ -67,7 +71,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Rankine Long class for the 'To' extensions to use.
     /// </returns>
-    public static RankineLong FromRankine(this long input)
+    public static RankineLong FromRankine(
+        this long input)
     {
         return new RankineLong(input);
     }
@@ -79,7 +84,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Rømer Long class for the 'To' extension to use.
     /// </returns>
-    public static RømerLong FromRømer(this long input)
+    public static RømerLong FromRømer(
+        this long input)
     {
         return new RømerLong(input);
     }
@@ -93,7 +99,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The LongBase specific class for the 'To' extension to use.
     /// </returns>
-    public static LongBase From<TInput>(this long input)
+    public static LongBase From<TInput>(
+        this long input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

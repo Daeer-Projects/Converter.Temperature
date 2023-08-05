@@ -25,7 +25,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rankine <see langword="int" /> result.
     /// </returns>
-    public static int ToRankine(this CelsiusInt input)
+    public static int ToRankine(
+        this CelsiusInt input)
     {
         return CelsiusIntConversions.CelsiusToRankine(input.Temperature);
     }
@@ -38,7 +39,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rankine <see langword="int" /> result.
     /// </returns>
-    public static int ToRankine(this FahrenheitInt input)
+    public static int ToRankine(
+        this FahrenheitInt input)
     {
         return FahrenheitIntConversions.FahrenheitToRankine(input.Temperature);
     }
@@ -51,7 +53,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rankine <see langword="int" /> result.
     /// </returns>
-    public static int ToRankine(this GasInt input)
+    public static int ToRankine(
+        this GasInt input)
     {
         return GasIntConversions.GasToRankine(input.Temperature);
     }
@@ -63,7 +66,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rankine <see langword="int" /> result.
     /// </returns>
-    public static int ToRankine(this KelvinInt input)
+    public static int ToRankine(
+        this KelvinInt input)
     {
         return KelvinIntConversions.KelvinToRankine(input.Temperature);
     }
@@ -75,7 +79,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rankine <see langword="int" /> result.
     /// </returns>
-    public static int ToRankine(this RankineInt input)
+    public static int ToRankine(
+        this RankineInt input)
     {
         return RankineIntConversions.RankineToRankine(input.Temperature);
     }

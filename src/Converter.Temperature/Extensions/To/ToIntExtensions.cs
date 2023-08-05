@@ -29,7 +29,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The result of the conversion.
     /// </returns>
-    public static int To<TInput>(this IntBase input)
+    public static int To<TInput>(
+        this IntBase input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class FahrenheitFloat : FloatBase
 {
-    public FahrenheitFloat(float temp)
+    public FahrenheitFloat(
+        float temp)
     {
         Temperature = temp;
     }

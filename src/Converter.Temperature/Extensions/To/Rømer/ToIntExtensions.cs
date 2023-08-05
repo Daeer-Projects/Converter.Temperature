@@ -26,7 +26,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rømer <see langword="int" /> result.
     /// </returns>
-    public static int ToRømer(this CelsiusInt input)
+    public static int ToRømer(
+        this CelsiusInt input)
     {
         return CelsiusIntConversions.CelsiusToRømer(input.Temperature);
     }
@@ -39,7 +40,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rømer <see langword="int" /> result.
     /// </returns>
-    public static int ToRømer(this FahrenheitInt input)
+    public static int ToRømer(
+        this FahrenheitInt input)
     {
         return FahrenheitIntConversions.FahrenheitToRømer(input.Temperature);
     }
@@ -52,7 +54,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rømer <see langword="int" /> result.
     /// </returns>
-    public static int ToRømer(this GasInt input)
+    public static int ToRømer(
+        this GasInt input)
     {
         return GasIntConversions.GasToRømer(input.Temperature);
     }
@@ -65,7 +68,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rømer <see langword="int" /> result.
     /// </returns>
-    public static int ToRømer(this KelvinInt input)
+    public static int ToRømer(
+        this KelvinInt input)
     {
         return KelvinIntConversions.KelvinToRømer(input.Temperature);
     }
@@ -78,7 +82,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rømer <see langword="int" /> result.
     /// </returns>
-    public static int ToRømer(this RankineInt input)
+    public static int ToRømer(
+        this RankineInt input)
     {
         return RankineIntConversions.RankineToRømer(input.Temperature);
     }
@@ -91,7 +96,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Rømer <see langword="int" /> result.
     /// </returns>
-    public static int ToRømer(this RømerInt input)
+    public static int ToRømer(
+        this RømerInt input)
     {
         return RømerIntConversions.RømerToRømer(input.Temperature);
     }

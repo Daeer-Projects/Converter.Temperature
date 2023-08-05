@@ -27,7 +27,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The CelsiusDoubleConversions <see langword="long" /> result.
     /// </returns>
-    public static long ToFahrenheit(this CelsiusLong input)
+    public static long ToFahrenheit(
+        this CelsiusLong input)
     {
         return CelsiusLongConversions.CelsiusToFahrenheit(input.Temperature);
     }
@@ -39,7 +40,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="long" /> result.
     /// </returns>
-    public static long ToFahrenheit(this FahrenheitLong input)
+    public static long ToFahrenheit(
+        this FahrenheitLong input)
     {
         return FahrenheitLongConversions.FahrenheitToFahrenheit(input.Temperature);
     }
@@ -52,7 +54,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="long" /> result.
     /// </returns>
-    public static long ToFahrenheit(this GasLong input)
+    public static long ToFahrenheit(
+        this GasLong input)
     {
         return GasLongConversions.GasToFahrenheit(input.Temperature);
     }
@@ -65,7 +68,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="long" /> result.
     /// </returns>
-    public static long ToFahrenheit(this KelvinLong input)
+    public static long ToFahrenheit(
+        this KelvinLong input)
     {
         return KelvinLongConversions.KelvinToFahrenheit(input.Temperature);
     }
@@ -78,7 +82,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="long" /> result.
     /// </returns>
-    public static long ToFahrenheit(this RankineLong input)
+    public static long ToFahrenheit(
+        this RankineLong input)
     {
         return RankineLongConversions.RankineToFahrenheit(input.Temperature);
     }
@@ -91,7 +96,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Fahrenheit <see langword="long" /> result.
     /// </returns>
-    public static long ToFahrenheit(this RømerLong input)
+    public static long ToFahrenheit(
+        this RømerLong input)
     {
         return RømerLongConversions.RømerToFahrenheit(input.Temperature);
     }

@@ -12,7 +12,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long KelvinToCelsius(long input)
+    internal static long KelvinToCelsius(
+        long input)
     {
         const long maxValue = long.MaxValue - 273L;
         const long minValue = long.MinValue + 273L;
@@ -33,7 +34,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long KelvinToFahrenheit(long input)
+    internal static long KelvinToFahrenheit(
+        long input)
     {
         long celsiusTemp = KelvinToCelsius(input);
         long fahrenheitTemp = CelsiusLongConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -47,7 +49,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long KelvinToKelvin(long input)
+    internal static long KelvinToKelvin(
+        long input)
     {
         return input;
     }
@@ -60,7 +63,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long KelvinToGas(long input)
+    internal static long KelvinToGas(
+        long input)
     {
         long celsiusTemp = KelvinToCelsius(input);
         long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
@@ -75,7 +79,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long KelvinToRankine(long input)
+    internal static long KelvinToRankine(
+        long input)
     {
         long rankineTemp = input * 9 / 5;
         return rankineTemp;
@@ -89,7 +94,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static long KelvinToRømer(long input)
+    internal static long KelvinToRømer(
+        long input)
     {
         double result = (input - 273.15) * 21 / 40 + 7.5;
         long rømerTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);

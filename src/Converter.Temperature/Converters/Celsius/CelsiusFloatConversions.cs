@@ -11,7 +11,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float CelsiusToCelsius(float firstTemp)
+    internal static float CelsiusToCelsius(
+        float firstTemp)
     {
         return firstTemp;
     }
@@ -24,7 +25,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float CelsiusToFahrenheit(float input)
+    internal static float CelsiusToFahrenheit(
+        float input)
     {
         float fahrenheitTemp = input * 1.8f + 32;
         if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
@@ -43,7 +45,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float CelsiusToKelvin(float input)
+    internal static float CelsiusToKelvin(
+        float input)
     {
         float kelvinTemp = input * 1.01f + 273.15f;
         if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
@@ -64,7 +67,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float CelsiusToGas(float input)
+    internal static float CelsiusToGas(
+        float input)
     {
         float gasTemp = input switch
         {
@@ -95,7 +99,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float CelsiusToRankine(float input)
+    internal static float CelsiusToRankine(
+        float input)
     {
         float rankineTemp = (input + 273.15f) * 9 / 5;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
@@ -114,7 +119,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float CelsiusToRømer(float input)
+    internal static float CelsiusToRømer(
+        float input)
     {
         float rømerTemp = input * 21f / 40f + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))

@@ -13,7 +13,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int GasToCelsius(int input)
+    internal static int GasToCelsius(
+        int input)
     {
         int celTemp = input switch
         {
@@ -41,7 +42,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int GasToFahrenheit(int input)
+    internal static int GasToFahrenheit(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int fahrenheitTemp = CelsiusIntConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -56,7 +58,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int GasToKelvin(int input)
+    internal static int GasToKelvin(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int kelvinTemp = CelsiusIntConversions.CelsiusToKelvin(celsiusTemp);
@@ -71,7 +74,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int GasToGas(int input)
+    internal static int GasToGas(
+        int input)
     {
         if (input is < 1 or > 10)
         {
@@ -89,7 +93,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int GasToRankine(int input)
+    internal static int GasToRankine(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int rankineTemp = CelsiusIntConversions.CelsiusToRankine(celsiusTemp);
@@ -104,7 +109,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int GasToRømer(int input)
+    internal static int GasToRømer(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int rømerTemp = CelsiusIntConversions.CelsiusToRømer(celsiusTemp);

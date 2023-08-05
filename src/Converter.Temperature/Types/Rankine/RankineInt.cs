@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RankineInt : IntBase
 {
-    public RankineInt(int temp)
+    public RankineInt(
+        int temp)
     {
         Temperature = temp;
     }

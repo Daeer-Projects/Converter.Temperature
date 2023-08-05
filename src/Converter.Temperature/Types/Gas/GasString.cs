@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class GasString : StringBase
 {
-    public GasString(string temp)
+    public GasString(
+        string temp)
     {
         Temperature = temp;
     }

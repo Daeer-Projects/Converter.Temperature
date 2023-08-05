@@ -29,7 +29,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The result of the conversion.
     /// </returns>
-    public static long To<TInput>(this LongBase input)
+    public static long To<TInput>(
+        this LongBase input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

@@ -25,7 +25,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Kelvin <see langword="int" /> result.
     /// </returns>
-    public static int ToKelvin(this CelsiusInt input)
+    public static int ToKelvin(
+        this CelsiusInt input)
     {
         return CelsiusIntConversions.CelsiusToKelvin(input.Temperature);
     }
@@ -38,7 +39,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Kelvin <see langword="int" /> result.
     /// </returns>
-    public static int ToKelvin(this FahrenheitInt input)
+    public static int ToKelvin(
+        this FahrenheitInt input)
     {
         return FahrenheitIntConversions.FahrenheitToKelvin(input.Temperature);
     }
@@ -51,7 +53,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Kelvin <see langword="int" /> result.
     /// </returns>
-    public static int ToKelvin(this GasInt input)
+    public static int ToKelvin(
+        this GasInt input)
     {
         return GasIntConversions.GasToKelvin(input.Temperature);
     }
@@ -63,7 +66,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Kelvin <see langword="int" /> result.
     /// </returns>
-    public static int ToKelvin(this KelvinInt input)
+    public static int ToKelvin(
+        this KelvinInt input)
     {
         return KelvinIntConversions.KelvinToKelvin(input.Temperature);
     }
@@ -75,7 +79,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Kelvin <see langword="int" /> result.
     /// </returns>
-    public static int ToKelvin(this RankineInt input)
+    public static int ToKelvin(
+        this RankineInt input)
     {
         return RankineIntConversions.RankineToKelvin(input.Temperature);
     }

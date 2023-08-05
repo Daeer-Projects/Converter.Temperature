@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RankineString : StringBase
 {
-    public RankineString(string temp)
+    public RankineString(
+        string temp)
     {
         Temperature = temp;
     }

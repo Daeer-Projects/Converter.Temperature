@@ -12,7 +12,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float KelvinToCelsius(float firstTemp)
+    internal static float KelvinToCelsius(
+        float firstTemp)
     {
         float celsiusTemp = firstTemp - 273.15f;
         return celsiusTemp;
@@ -26,7 +27,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float KelvinToFahrenheit(float firstTemp)
+    internal static float KelvinToFahrenheit(
+        float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
         float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -40,7 +42,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float KelvinToKelvin(float firstTemp)
+    internal static float KelvinToKelvin(
+        float firstTemp)
     {
         return firstTemp;
     }
@@ -53,7 +56,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float KelvinToGas(float firstTemp)
+    internal static float KelvinToGas(
+        float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
@@ -68,7 +72,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float KelvinToRankine(float firstTemp)
+    internal static float KelvinToRankine(
+        float firstTemp)
     {
         float rankineTemp = firstTemp * 9 / 5;
         return rankineTemp;
@@ -82,7 +87,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float KelvinToRømer(float input)
+    internal static float KelvinToRømer(
+        float input)
     {
         float rømerTemp = (input - 273.15f) * 21 / 40 + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))

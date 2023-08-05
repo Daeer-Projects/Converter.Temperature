@@ -48,7 +48,8 @@ public sealed class ToLongExtensionTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(long input)
+    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(
+        long input)
     {
         // Arrange.
         CelsiusLong inputCelsius = new(input);
@@ -64,7 +65,8 @@ public sealed class ToLongExtensionTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(long input)
+    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(
+        long input)
     {
         // Arrange.
         CelsiusLong inputCelsius = new(input);

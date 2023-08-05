@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class KelvinInt : IntBase
 {
-    public KelvinInt(int temp)
+    public KelvinInt(
+        int temp)
     {
         Temperature = temp;
     }

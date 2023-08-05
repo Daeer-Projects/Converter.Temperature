@@ -13,7 +13,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double FahrenheitToCelsius(double firstTemp)
+    internal static double FahrenheitToCelsius(
+        double firstTemp)
     {
         double celsiusTemp = (firstTemp - 32) * 5 / 9;
         if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
@@ -31,7 +32,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double FahrenheitToFahrenheit(double firstTemp)
+    internal static double FahrenheitToFahrenheit(
+        double firstTemp)
     {
         return firstTemp;
     }
@@ -44,7 +46,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double FahrenheitToKelvin(double firstTemp)
+    internal static double FahrenheitToKelvin(
+        double firstTemp)
     {
         double celsiusTemp = FahrenheitToCelsius(firstTemp);
         double kelvinTemp = CelsiusDoubleConversions.CelsiusToKelvin(celsiusTemp);
@@ -59,7 +62,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double FahrenheitToGas(double firstTemp)
+    internal static double FahrenheitToGas(
+        double firstTemp)
     {
         double celsiusTemp = FahrenheitToCelsius(firstTemp);
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
@@ -74,7 +78,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double FahrenheitToRankine(double firstTemp)
+    internal static double FahrenheitToRankine(
+        double firstTemp)
     {
         double rankineTemp = firstTemp + 459.67d;
         return rankineTemp;
@@ -88,7 +93,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static double FahrenheitToRømer(double input)
+    internal static double FahrenheitToRømer(
+        double input)
     {
         double rømerTemp = (input - 491.67) * 7 / 24 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))

@@ -13,7 +13,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float GasToCelsius(float input)
+    internal static float GasToCelsius(
+        float input)
     {
         float celTemp = input switch
         {
@@ -43,7 +44,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float GasToFahrenheit(float firstTemp)
+    internal static float GasToFahrenheit(
+        float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -58,7 +60,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float GasToKelvin(float firstTemp)
+    internal static float GasToKelvin(
+        float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float kelvinTemp = CelsiusFloatConversions.CelsiusToKelvin(celsiusTemp);
@@ -73,7 +76,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float GasToGas(float input)
+    internal static float GasToGas(
+        float input)
     {
         if (input < .25 || input > 10)
         {
@@ -91,7 +95,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float GasToRankine(float firstTemp)
+    internal static float GasToRankine(
+        float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float rankineTemp = CelsiusFloatConversions.CelsiusToRankine(celsiusTemp);
@@ -106,7 +111,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static float GasToRømer(float input)
+    internal static float GasToRømer(
+        float input)
     {
         float celsiusTemp = GasToCelsius(input);
         float rømerTemp = CelsiusFloatConversions.CelsiusToRømer(celsiusTemp);

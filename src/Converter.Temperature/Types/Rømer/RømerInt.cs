@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class RømerInt : IntBase
 {
-    public RømerInt(int temp)
+    public RømerInt(
+        int temp)
     {
         Temperature = temp;
     }

@@ -26,7 +26,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this CelsiusLong input)
+    public static long ToCelsius(
+        this CelsiusLong input)
     {
         return CelsiusLongConversions.CelsiusToCelsius(input.Temperature);
     }
@@ -39,7 +40,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this FahrenheitLong input)
+    public static long ToCelsius(
+        this FahrenheitLong input)
     {
         return FahrenheitLongConversions.FahrenheitToCelsius(input.Temperature);
     }
@@ -52,7 +54,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this GasLong input)
+    public static long ToCelsius(
+        this GasLong input)
     {
         return GasLongConversions.GasToCelsius(input.Temperature);
     }
@@ -65,7 +68,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this KelvinLong input)
+    public static long ToCelsius(
+        this KelvinLong input)
     {
         return KelvinLongConversions.KelvinToCelsius(input.Temperature);
     }
@@ -78,7 +82,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this RankineLong input)
+    public static long ToCelsius(
+        this RankineLong input)
     {
         return RankineLongConversions.RankineToCelsius(input.Temperature);
     }
@@ -91,7 +96,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this RømerLong input)
+    public static long ToCelsius(
+        this RømerLong input)
     {
         return RømerLongConversions.RømerToCelsius(input.Temperature);
     }

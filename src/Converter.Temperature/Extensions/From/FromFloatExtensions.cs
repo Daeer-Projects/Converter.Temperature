@@ -22,7 +22,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Celsius Float class for the 'To' extensions to use.
     /// </returns>
-    public static CelsiusFloat FromCelsius(this float input)
+    public static CelsiusFloat FromCelsius(
+        this float input)
     {
         return new CelsiusFloat(input);
     }
@@ -34,7 +35,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Fahrenheit Float class for the 'To' extensions to use.
     /// </returns>
-    public static FahrenheitFloat FromFahrenheit(this float input)
+    public static FahrenheitFloat FromFahrenheit(
+        this float input)
     {
         return new FahrenheitFloat(input);
     }
@@ -46,7 +48,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Gas Float class for the 'To' extensions to use.
     /// </returns>
-    public static GasFloat FromGas(this float input)
+    public static GasFloat FromGas(
+        this float input)
     {
         return new GasFloat(input);
     }
@@ -58,7 +61,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Kelvin Float class for the 'To' extensions to use.
     /// </returns>
-    public static KelvinFloat FromKelvin(this float input)
+    public static KelvinFloat FromKelvin(
+        this float input)
     {
         return new KelvinFloat(input);
     }
@@ -70,7 +74,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Rankine Float class for the 'To' extensions to use.
     /// </returns>
-    public static RankineFloat FromRankine(this float input)
+    public static RankineFloat FromRankine(
+        this float input)
     {
         return new RankineFloat(input);
     }
@@ -82,7 +87,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Rømer Float class for the 'To' extension to use.
     /// </returns>
-    public static RømerFloat FromRømer(this float input)
+    public static RømerFloat FromRømer(
+        this float input)
     {
         return new RømerFloat(input);
     }
@@ -96,7 +102,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The FloatBase specific class for the 'To' extension to use.
     /// </returns>
-    public static FloatBase From<TInput>(this float input)
+    public static FloatBase From<TInput>(
+        this float input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

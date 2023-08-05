@@ -26,7 +26,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static long ToRømer(this CelsiusLong input)
+    public static long ToRømer(
+        this CelsiusLong input)
     {
         return CelsiusLongConversions.CelsiusToRømer(input.Temperature);
     }
@@ -39,7 +40,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static long ToRømer(this FahrenheitLong input)
+    public static long ToRømer(
+        this FahrenheitLong input)
     {
         return FahrenheitLongConversions.FahrenheitToRømer(input.Temperature);
     }
@@ -52,7 +54,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static long ToRømer(this GasLong input)
+    public static long ToRømer(
+        this GasLong input)
     {
         return GasLongConversions.GasToRømer(input.Temperature);
     }
@@ -65,7 +68,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static long ToRømer(this KelvinLong input)
+    public static long ToRømer(
+        this KelvinLong input)
     {
         return KelvinLongConversions.KelvinToRømer(input.Temperature);
     }
@@ -78,7 +82,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static long ToRømer(this RankineLong input)
+    public static long ToRømer(
+        this RankineLong input)
     {
         return RankineLongConversions.RankineToRømer(input.Temperature);
     }
@@ -91,7 +96,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Rømer <see langword="long" /> result.
     /// </returns>
-    public static long ToRømer(this RømerLong input)
+    public static long ToRømer(
+        this RømerLong input)
     {
         return RømerLongConversions.RømerToRømer(input.Temperature);
     }

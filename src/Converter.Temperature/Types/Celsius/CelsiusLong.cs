@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class CelsiusLong : LongBase
 {
-    public CelsiusLong(long temp)
+    public CelsiusLong(
+        long temp)
     {
         Temperature = temp;
     }

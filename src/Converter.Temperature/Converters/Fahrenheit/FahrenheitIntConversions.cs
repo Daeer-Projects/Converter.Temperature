@@ -13,7 +13,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int FahrenheitToCelsius(int input)
+    internal static int FahrenheitToCelsius(
+        int input)
     {
         double calculatedValue = (input - 32d) * 5 / 9;
         int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -27,7 +28,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int FahrenheitToFahrenheit(int firstTemp)
+    internal static int FahrenheitToFahrenheit(
+        int firstTemp)
     {
         return firstTemp;
     }
@@ -40,7 +42,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int FahrenheitToKelvin(int input)
+    internal static int FahrenheitToKelvin(
+        int input)
     {
         double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -63,7 +66,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int FahrenheitToGas(int input)
+    internal static int FahrenheitToGas(
+        int input)
     {
         int celsiusTemp = FahrenheitToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -78,7 +82,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int FahrenheitToRankine(int input)
+    internal static int FahrenheitToRankine(
+        int input)
     {
         const int maxValue = int.MaxValue - 460;
         const int minValue = int.MinValue + 460;
@@ -99,7 +104,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int FahrenheitToRømer(int input)
+    internal static int FahrenheitToRømer(
+        int input)
     {
         float result = (input - 491.67f) * 7 / 24 + 7.5f;
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
