@@ -12,55 +12,19 @@ using Types.Rankine;
 using Types.Rømer;
 using Xunit;
 
-public sealed class FromDoubleExtensionsTests
+public sealed class FromDoubleExtensionsTests : BaseFromExtensionTests<double, CelsiusDouble>
 {
-    [Fact]
-    public void Test_from_celsius_returns_celsius_double_type()
+    protected override CelsiusDouble ConvertFrom(
+        double value)
     {
-        // Arrange.
-        const double input = 39d;
-
-        // Act.
-        CelsiusDouble result = input.FromCelsius();
-
-        // Assert.
-        result.Should()
-            .BeOfType<CelsiusDouble>()
-            .Which.Temperature.Should()
-            .Be(input);
+        return value.FromCelsius();
     }
 
-    [Fact]
-    public void Test_from_celsius_generic_returns_celsius_double_type()
-    {
-        // Arrange.
-        const double input = 39d;
-
-        // Act.
-        DoubleBase result = input.From<Celsius>();
-
-        // Assert.
-        result.Should()
-            .BeOfType<CelsiusDouble>()
-            .Which.Temperature.Should()
-            .Be(input);
-    }
-
-    [Fact]
-    public void Test_from_fahrenheit_returns_fahrenheit_double_type()
-    {
-        // Arrange.
-        const double input = 39d;
-
-        // Act.
-        FahrenheitDouble result = input.FromFahrenheit();
-
-        // Assert.
-        result.Should()
-            .BeOfType<FahrenheitDouble>()
-            .Which.Temperature.Should()
-            .Be(input);
-    }
+    protected override double HighValue => double.MaxValue;
+    protected override double MidHighValue => 999.999d;
+    protected override double MidValue => 0d;
+    protected override double MidLowValue => -999.999d;
+    protected override double LowValue => double.MinValue;
 
     [Fact]
     public void Test_from_fahrenheit_generic_returns_fahrenheit_double_type()
@@ -69,7 +33,7 @@ public sealed class FromDoubleExtensionsTests
         const double input = 39d;
 
         // Act.
-        DoubleBase result = input.From<Fahrenheit>();
+        DoubleBase result = input.From<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
