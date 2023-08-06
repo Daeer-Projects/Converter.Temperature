@@ -13,7 +13,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int FahrenheitToCelsius(int input)
+    public static int FahrenheitToCelsius(
+        int input)
     {
         double calculatedValue = (input - 32d) * 5 / 9;
 
@@ -29,7 +30,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int FahrenheitToFahrenheit(int firstTemp)
+    public static int FahrenheitToFahrenheit(
+        int firstTemp)
     {
         return firstTemp;
     }
@@ -42,7 +44,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int FahrenheitToKelvin(int input)
+    public static int FahrenheitToKelvin(
+        int input)
     {
         double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -65,7 +68,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int FahrenheitToGas(int input)
+    public static int FahrenheitToGas(
+        int input)
     {
         int celsiusTemp = FahrenheitToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -80,7 +84,8 @@ internal static class FahrenheitIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int FahrenheitToRankine(int input)
+    public static int FahrenheitToRankine(
+        int input)
     {
         const int maxValue = int.MaxValue - 460;
         const int minValue = int.MinValue + 460;

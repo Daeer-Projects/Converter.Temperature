@@ -13,7 +13,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToCelsius(double firstTemp)
+    public static double FahrenheitToCelsius(
+        double firstTemp)
     {
         double celsiusTemp = (firstTemp - 32) * 5 / 9;
         if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
@@ -31,7 +32,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToFahrenheit(double firstTemp)
+    public static double FahrenheitToFahrenheit(
+        double firstTemp)
     {
         return firstTemp;
     }
@@ -44,7 +46,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToKelvin(double firstTemp)
+    public static double FahrenheitToKelvin(
+        double firstTemp)
     {
         double celsiusTemp = FahrenheitToCelsius(firstTemp);
         double kelvinTemp = CelsiusDoubleConversions.CelsiusToKelvin(celsiusTemp);
@@ -59,7 +62,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToGas(double firstTemp)
+    public static double FahrenheitToGas(
+        double firstTemp)
     {
         double celsiusTemp = FahrenheitToCelsius(firstTemp);
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
@@ -74,7 +78,8 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToRankine(double firstTemp)
+    public static double FahrenheitToRankine(
+        double firstTemp)
     {
         double rankineTemp = firstTemp + 459.67d;
         return rankineTemp;

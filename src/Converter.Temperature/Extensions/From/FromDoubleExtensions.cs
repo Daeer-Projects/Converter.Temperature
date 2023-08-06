@@ -21,7 +21,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The Celsius Double class for the 'To' extensions to use.
     /// </returns>
-    public static CelsiusDouble FromCelsius(this double input)
+    public static CelsiusDouble FromCelsius(
+        this double input)
     {
         return new CelsiusDouble(input);
     }
@@ -33,7 +34,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The Fahrenheit Double class for the 'To' extensions to use.
     /// </returns>
-    public static FahrenheitDouble FromFahrenheit(this double input)
+    public static FahrenheitDouble FromFahrenheit(
+        this double input)
     {
         return new FahrenheitDouble(input);
     }
@@ -45,7 +47,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The Gas Double class for the 'To' extensions to use.
     /// </returns>
-    public static GasDouble FromGas(this double input)
+    public static GasDouble FromGas(
+        this double input)
     {
         return new GasDouble(input);
     }
@@ -57,7 +60,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The Kelvin Double class for the 'To' extensions to use.
     /// </returns>
-    public static KelvinDouble FromKelvin(this double input)
+    public static KelvinDouble FromKelvin(
+        this double input)
     {
         return new KelvinDouble(input);
     }
@@ -69,7 +73,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The Rankine Double class for the 'To' extension to use.
     /// </returns>
-    public static RankineDouble FromRankine(this double input)
+    public static RankineDouble FromRankine(
+        this double input)
     {
         return new RankineDouble(input);
     }
@@ -83,7 +88,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The DoubleBase specific class for the 'To' extension to use.
     /// </returns>
-    public static DoubleBase From<TInput>(this double input)
+    public static DoubleBase From<TInput>(
+        this double input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

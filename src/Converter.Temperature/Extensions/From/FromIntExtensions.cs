@@ -21,7 +21,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The Celsius Int class for the 'To' extensions to use.
     /// </returns>
-    public static CelsiusInt FromCelsius(this int input)
+    public static CelsiusInt FromCelsius(
+        this int input)
     {
         return new CelsiusInt(input);
     }
@@ -33,7 +34,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The Fahrenheit Int class for the 'To' extensions to use.
     /// </returns>
-    public static FahrenheitInt FromFahrenheit(this int input)
+    public static FahrenheitInt FromFahrenheit(
+        this int input)
     {
         return new FahrenheitInt(input);
     }
@@ -45,7 +47,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The Gas Int class for the 'To' extensions to use.
     /// </returns>
-    public static GasInt FromGas(this int input)
+    public static GasInt FromGas(
+        this int input)
     {
         return new GasInt(input);
     }
@@ -57,7 +60,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The Kelvin Int class for the 'To' extensions to use.
     /// </returns>
-    public static KelvinInt FromKelvin(this int input)
+    public static KelvinInt FromKelvin(
+        this int input)
     {
         return new KelvinInt(input);
     }
@@ -69,7 +73,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The Rankine Int class for the 'To' extensions to use.
     /// </returns>
-    public static RankineInt FromRankine(this int input)
+    public static RankineInt FromRankine(
+        this int input)
     {
         return new RankineInt(input);
     }
@@ -83,7 +88,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The IntBase specific class for the 'To' extension to use.
     /// </returns>
-    public static IntBase From<TInput>(this int input)
+    public static IntBase From<TInput>(
+        this int input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class FahrenheitInt : IntBase
 {
-    public FahrenheitInt(int temp)
+    public FahrenheitInt(
+        int temp)
     {
         Temperature = temp;
     }

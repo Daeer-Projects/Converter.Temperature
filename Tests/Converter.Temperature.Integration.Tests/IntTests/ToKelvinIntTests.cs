@@ -46,7 +46,8 @@ public sealed class ToKelvinIntTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(int input)
+    public void Test_int_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
+        int input)
     {
         // Arrange.
         // Act.
@@ -62,7 +63,8 @@ public sealed class ToKelvinIntTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(int input)
+    public void Test_int_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
+        int input)
     {
         // Arrange.
         // Act.
@@ -121,7 +123,8 @@ public sealed class ToKelvinIntTests
     [InlineData(0.0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_from_and_to_kelvin_returns_correct_int_value(int value)
+    public void Test_int_extension_from_and_to_kelvin_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -139,7 +142,8 @@ public sealed class ToKelvinIntTests
     [InlineData(0.0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_generic_from_and_to_kelvin_returns_correct_int_value(int value)
+    public void Test_int_extension_generic_from_and_to_kelvin_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.

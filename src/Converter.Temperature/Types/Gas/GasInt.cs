@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class GasInt : IntBase
 {
-    public GasInt(int temp)
+    public GasInt(
+        int temp)
     {
         Temperature = temp;
     }

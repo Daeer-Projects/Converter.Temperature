@@ -164,7 +164,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_celsius_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_celsius_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
@@ -180,7 +181,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
@@ -322,7 +324,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);
@@ -338,7 +341,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);
@@ -705,7 +709,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_gas_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_gas_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
@@ -721,7 +726,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_gas_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_gas_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
@@ -827,7 +833,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_kelvin_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);
@@ -843,7 +850,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_kelvin_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_kelvin_generic_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);
@@ -1045,7 +1053,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);
@@ -1061,7 +1070,8 @@ public sealed class ToDoubleExtensionsTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);

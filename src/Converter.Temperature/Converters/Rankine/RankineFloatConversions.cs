@@ -13,7 +13,8 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToRankine(float input)
+    public static float RankineToRankine(
+        float input)
     {
         return input;
     }
@@ -26,7 +27,8 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToCelsius(float input)
+    public static float RankineToCelsius(
+        float input)
     {
         float rankineTemp = (input - 491.67f) * 5 / 9;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
@@ -45,7 +47,8 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToFahrenheit(float input)
+    public static float RankineToFahrenheit(
+        float input)
     {
         float rankineTemp = input - 459.67f;
         return rankineTemp;
@@ -59,7 +62,8 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToKelvin(float input)
+    public static float RankineToKelvin(
+        float input)
     {
         float rankineTemp = input * 5 / 9;
         return rankineTemp;
@@ -73,7 +77,8 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToGas(float input)
+    public static float RankineToGas(
+        float input)
     {
         float celsiusTemp = RankineToCelsius(input);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);

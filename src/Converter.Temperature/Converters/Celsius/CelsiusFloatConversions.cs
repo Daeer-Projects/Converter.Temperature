@@ -11,7 +11,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToCelsius(float firstTemp)
+    public static float CelsiusToCelsius(
+        float firstTemp)
     {
         return firstTemp;
     }
@@ -24,7 +25,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToFahrenheit(float input)
+    public static float CelsiusToFahrenheit(
+        float input)
     {
         float fahrenheitTemp = input * 1.8f + 32;
         if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
@@ -43,7 +45,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToKelvin(float input)
+    public static float CelsiusToKelvin(
+        float input)
     {
         float kelvinTemp = input * 1.01f + 273.15f;
         if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
@@ -64,7 +67,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToGas(float input)
+    public static float CelsiusToGas(
+        float input)
     {
         float gasTemp = input switch
         {
@@ -95,7 +99,8 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToRankine(float input)
+    public static float CelsiusToRankine(
+        float input)
     {
         float rankineTemp = (input + 273.15f) * 9 / 5;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))

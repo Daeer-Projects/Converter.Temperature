@@ -11,7 +11,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToCelsius(float firstTemp)
+    public static float KelvinToCelsius(
+        float firstTemp)
     {
         float celsiusTemp = firstTemp - 273.15f;
         return celsiusTemp;
@@ -25,7 +26,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToFahrenheit(float firstTemp)
+    public static float KelvinToFahrenheit(
+        float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
         float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -39,7 +41,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToKelvin(float firstTemp)
+    public static float KelvinToKelvin(
+        float firstTemp)
     {
         return firstTemp;
     }
@@ -52,7 +55,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToGas(float firstTemp)
+    public static float KelvinToGas(
+        float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
@@ -67,7 +71,8 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToRankine(float firstTemp)
+    public static float KelvinToRankine(
+        float firstTemp)
     {
         float rankineTemp = firstTemp * 9 / 5;
         return rankineTemp;

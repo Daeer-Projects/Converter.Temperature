@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class FahrenheitLong : LongBase
 {
-    public FahrenheitLong(long temp)
+    public FahrenheitLong(
+        long temp)
     {
         Temperature = temp;
     }

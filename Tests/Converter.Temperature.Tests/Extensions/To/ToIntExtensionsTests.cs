@@ -204,7 +204,8 @@ public sealed class ToIntExtensionsTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(int input)
+    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(
+        int input)
     {
         // Arrange.
         CelsiusInt inputCelsius = new(input);
@@ -220,7 +221,8 @@ public sealed class ToIntExtensionsTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(int input)
+    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(
+        int input)
     {
         // Arrange.
         CelsiusInt inputCelsius = new(input);
@@ -600,7 +602,8 @@ public sealed class ToIntExtensionsTests
     [Theory]
     [InlineData(int.MaxValue)]
     [InlineData(int.MinValue)]
-    public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
+    public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(
+        int temp)
     {
         // Arrange.
         FahrenheitInt input = new(temp);
@@ -616,7 +619,8 @@ public sealed class ToIntExtensionsTests
     [Theory]
     [InlineData(int.MaxValue)]
     [InlineData(int.MinValue)]
-    public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
+    public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(
+        int temp)
     {
         // Arrange.
         FahrenheitInt input = new(temp);

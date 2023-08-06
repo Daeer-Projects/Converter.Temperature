@@ -12,7 +12,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RankineToRankine(int input)
+    public static int RankineToRankine(
+        int input)
     {
         return input;
     }
@@ -25,7 +26,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RankineToCelsius(int input)
+    public static int RankineToCelsius(
+        int input)
     {
         int rankineTemp = (input - 492) * 5 / 9;
         return rankineTemp;
@@ -39,7 +41,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RankineToFahrenheit(int input)
+    public static int RankineToFahrenheit(
+        int input)
     {
         int rankineTemp = input - 460;
         return rankineTemp;
@@ -53,7 +56,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RankineToKelvin(int input)
+    public static int RankineToKelvin(
+        int input)
     {
         int rankineTemp = input * 5 / 9;
         return rankineTemp;
@@ -67,7 +71,8 @@ internal static class RankineIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RankineToGas(int input)
+    public static int RankineToGas(
+        int input)
     {
         int celsiusTemp = RankineToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);

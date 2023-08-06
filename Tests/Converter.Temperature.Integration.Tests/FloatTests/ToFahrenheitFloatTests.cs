@@ -14,7 +14,8 @@ public sealed class ToFahrenheitFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(float input)
+    public void Test_float_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
+        float input)
     {
         // Arrange.
         // Act.
@@ -90,7 +91,8 @@ public sealed class ToFahrenheitFloatTests
     [InlineData(0.0f)]
     [InlineData(7564.2334f)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_from_and_to_fahrenheit_returns_correct_float_value(float value)
+    public void Test_float_extension_from_and_to_fahrenheit_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -108,7 +110,8 @@ public sealed class ToFahrenheitFloatTests
     [InlineData(0.0f)]
     [InlineData(7564.2334f)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_generic_from_and_to_fahrenheit_returns_correct_float_value(float value)
+    public void Test_float_extension_generic_from_and_to_fahrenheit_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -199,7 +202,8 @@ public sealed class ToFahrenheitFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(float input)
+    public void Test_float_extension_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         // Act.
@@ -215,7 +219,8 @@ public sealed class ToFahrenheitFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_generic_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(float input)
+    public void Test_float_extension_generic_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         // Act.

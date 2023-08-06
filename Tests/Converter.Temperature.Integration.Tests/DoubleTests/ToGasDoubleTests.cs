@@ -271,7 +271,8 @@ public sealed class ToGasDoubleTests
     [InlineData(5d)]
     [InlineData(8d)]
     [InlineData(10d)]
-    public void Test_double_extension_from_and_to_gas_returns_correct_double_value(double value)
+    public void Test_double_extension_from_and_to_gas_returns_correct_double_value(
+        double value)
     {
         // Arrange.
         // Act.
@@ -289,7 +290,8 @@ public sealed class ToGasDoubleTests
     [InlineData(5d)]
     [InlineData(8d)]
     [InlineData(10d)]
-    public void Test_double_extension_generic_from_and_to_gas_returns_correct_double_value(double value)
+    public void Test_double_extension_generic_from_and_to_gas_returns_correct_double_value(
+        double value)
     {
         // Arrange.
         // Act.
@@ -304,7 +306,8 @@ public sealed class ToGasDoubleTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_double_extension_from_and_to_gas_throws_exception(double value)
+    public void Test_double_extension_from_and_to_gas_throws_exception(
+        double value)
     {
         // Arrange.
         // Act.
@@ -320,7 +323,8 @@ public sealed class ToGasDoubleTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_double_extension_generic_from_and_to_gas_throws_exception(double value)
+    public void Test_double_extension_generic_from_and_to_gas_throws_exception(
+        double value)
     {
         // Arrange.
         // Act.

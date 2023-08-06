@@ -11,7 +11,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToCelsius(int input)
+    public static int CelsiusToCelsius(
+        int input)
     {
         return input;
     }
@@ -24,7 +25,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToFahrenheit(int input)
+    public static int CelsiusToFahrenheit(
+        int input)
     {
         const double calculatedValue = 1 * 1.8 + 32;
         int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -48,7 +50,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToKelvin(int input)
+    public static int CelsiusToKelvin(
+        int input)
     {
         const int maxValue = int.MaxValue - 273;
         const int minValue = int.MinValue + 273;
@@ -70,7 +73,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToGas(int input)
+    public static int CelsiusToGas(
+        int input)
     {
         int gasTemp = input switch
         {
@@ -99,7 +103,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToRankine(int input)
+    public static int CelsiusToRankine(
+        int input)
     {
         const int minValue = int.MinValue + 492;
         const int maxValue = int.MaxValue - 492;

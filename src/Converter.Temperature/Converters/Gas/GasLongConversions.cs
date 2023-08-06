@@ -13,7 +13,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToCelsius(long input)
+    public static long GasToCelsius(
+        long input)
     {
         long celTemp = input switch
         {
@@ -41,7 +42,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToFahrenheit(long input)
+    public static long GasToFahrenheit(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long fahrenheitTemp = CelsiusLongConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -56,7 +58,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToKelvin(long input)
+    public static long GasToKelvin(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long kelvinTemp = CelsiusLongConversions.CelsiusToKelvin(celsiusTemp);
@@ -71,7 +74,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToGas(long input)
+    public static long GasToGas(
+        long input)
     {
         if (input is < 1 or > 10)
         {
@@ -89,7 +93,8 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToRankine(long input)
+    public static long GasToRankine(
+        long input)
     {
         long celsiusTemp = GasToCelsius(input);
         long rankineTemp = CelsiusLongConversions.CelsiusToRankine(celsiusTemp);
