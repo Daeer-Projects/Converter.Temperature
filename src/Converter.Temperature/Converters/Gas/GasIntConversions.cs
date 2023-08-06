@@ -13,7 +13,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToCelsius(int input)
+    public static int GasToCelsius(
+        int input)
     {
         int celTemp = input switch
         {
@@ -41,7 +42,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToFahrenheit(int input)
+    public static int GasToFahrenheit(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int fahrenheitTemp = CelsiusIntConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -56,7 +58,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToKelvin(int input)
+    public static int GasToKelvin(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int kelvinTemp = CelsiusIntConversions.CelsiusToKelvin(celsiusTemp);
@@ -71,9 +74,13 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToGas(int input)
+    public static int GasToGas(
+        int input)
     {
-        if (input is < 1 or > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        if (input is < 1 or > 10)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        }
 
         return input;
     }
@@ -86,7 +93,8 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToRankine(int input)
+    public static int GasToRankine(
+        int input)
     {
         int celsiusTemp = GasToCelsius(input);
         int rankineTemp = CelsiusIntConversions.CelsiusToRankine(celsiusTemp);

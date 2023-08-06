@@ -12,12 +12,15 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToCelsius(int input)
+    public static int KelvinToCelsius(
+        int input)
     {
         const int maxValue = int.MaxValue - 273;
         const int minValue = int.MinValue + 273;
         if (input is < minValue or > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         int celsiusTemp = input - 273;
         return celsiusTemp;
@@ -31,7 +34,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToFahrenheit(int input)
+    public static int KelvinToFahrenheit(
+        int input)
     {
         int celsiusTemp = KelvinToCelsius(input);
         int fahrenheitTemp = CelsiusIntConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -45,7 +49,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToKelvin(int input)
+    public static int KelvinToKelvin(
+        int input)
     {
         return input;
     }
@@ -58,7 +63,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToGas(int input)
+    public static int KelvinToGas(
+        int input)
     {
         int celsiusTemp = KelvinToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -73,7 +79,8 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToRankine(int input)
+    public static int KelvinToRankine(
+        int input)
     {
         int rankineTemp = input * 9 / 5;
         return rankineTemp;

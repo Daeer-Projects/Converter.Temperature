@@ -121,7 +121,8 @@ public sealed class ToKelvinLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_from_and_to_kelvin_returns_correct_long_value(long value)
+    public void Test_long_extension_from_and_to_kelvin_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -139,7 +140,8 @@ public sealed class ToKelvinLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_generic_from_and_to_kelvin_returns_correct_long_value(long value)
+    public void Test_long_extension_generic_from_and_to_kelvin_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.

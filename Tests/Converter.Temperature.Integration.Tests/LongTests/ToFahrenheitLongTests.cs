@@ -14,7 +14,8 @@ public sealed class ToFahrenheitLongTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(long input)
+    public void Test_long_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
+        long input)
     {
         // Arrange.
         // Act.
@@ -90,7 +91,8 @@ public sealed class ToFahrenheitLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extensions_from_and_to_fahrenheit_returns_correct_long_value(long value)
+    public void Test_long_extensions_from_and_to_fahrenheit_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -108,7 +110,8 @@ public sealed class ToFahrenheitLongTests
     [InlineData(0L)]
     [InlineData(7564L)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extensions_generic_from_and_to_fahrenheit_returns_correct_long_value(long value)
+    public void Test_long_extensions_generic_from_and_to_fahrenheit_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
@@ -159,7 +162,8 @@ public sealed class ToFahrenheitLongTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_long_value(long input)
+    public void Test_long_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_long_value(
+        long input)
     {
         // Arrange.
         // Act.

@@ -11,7 +11,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToCelsius(int input)
+    public static int CelsiusToCelsius(
+        int input)
     {
         return input;
     }
@@ -24,13 +25,16 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToFahrenheit(int input)
+    public static int CelsiusToFahrenheit(
+        int input)
     {
         const double calculatedValue = 1 * 1.8 + 32;
         int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
         int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
         if (input < minValue || input > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         double convertedTemp = input * 1.8 + 32;
         int fahrenheitTempInt = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
@@ -46,12 +50,15 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToKelvin(int input)
+    public static int CelsiusToKelvin(
+        int input)
     {
         const int maxValue = int.MaxValue - 273;
         const int minValue = int.MinValue + 273;
         if (input is < minValue or > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         int kelvinTempInt = input + 273;
 
@@ -66,7 +73,8 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToGas(int input)
+    public static int CelsiusToGas(
+        int input)
     {
         int gasTemp = input switch
         {
@@ -95,12 +103,15 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToRankine(int input)
+    public static int CelsiusToRankine(
+        int input)
     {
         const int minValue = int.MinValue + 492;
         const int maxValue = int.MaxValue - 492;
         if (input is < minValue or > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         double result = (input + 273.15d) * 9 / 5;
         int rankineTempInt = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);

@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class GasFloat : FloatBase
 {
-    public GasFloat(float temp)
+    public GasFloat(
+        float temp)
     {
         Temperature = temp;
     }

@@ -88,7 +88,8 @@ public sealed class ToKelvinFloatTests
     [InlineData(0.0f)]
     [InlineData(7564.2334f)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_from_and_to_kelvin_returns_correct_float_value(float value)
+    public void Test_float_extension_from_and_to_kelvin_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.
@@ -106,7 +107,8 @@ public sealed class ToKelvinFloatTests
     [InlineData(0.0f)]
     [InlineData(7564.2334f)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_generic_from_and_to_kelvin_returns_correct_float_value(float value)
+    public void Test_float_extension_generic_from_and_to_kelvin_returns_correct_float_value(
+        float value)
     {
         // Arrange.
         // Act.

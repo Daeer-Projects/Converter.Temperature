@@ -13,7 +13,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToCelsius(float input)
+    public static float GasToCelsius(
+        float input)
     {
         float celTemp = input switch
         {
@@ -43,7 +44,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToFahrenheit(float firstTemp)
+    public static float GasToFahrenheit(
+        float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -58,7 +60,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToKelvin(float firstTemp)
+    public static float GasToKelvin(
+        float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float kelvinTemp = CelsiusFloatConversions.CelsiusToKelvin(celsiusTemp);
@@ -73,9 +76,13 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToGas(float input)
+    public static float GasToGas(
+        float input)
     {
-        if (input < .25 || input > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        if (input < .25 || input > 10)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        }
 
         return input;
     }
@@ -88,7 +95,8 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToRankine(float firstTemp)
+    public static float GasToRankine(
+        float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
         float rankineTemp = CelsiusFloatConversions.CelsiusToRankine(celsiusTemp);

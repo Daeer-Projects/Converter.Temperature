@@ -17,7 +17,8 @@ public sealed class ToCelsiusIntTests
     [InlineData(0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_from_and_to_celsius_returns_correct_int_value(int value)
+    public void Test_int_extension_from_and_to_celsius_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -35,7 +36,8 @@ public sealed class ToCelsiusIntTests
     [InlineData(0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_generic_from_and_to_celsius_returns_correct_int_value(int value)
+    public void Test_int_extension_generic_from_and_to_celsius_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -126,7 +128,8 @@ public sealed class ToCelsiusIntTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(int input)
+    public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(
+        int input)
     {
         // Arrange.
         // Act.
@@ -142,7 +145,8 @@ public sealed class ToCelsiusIntTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(int input)
+    public void Test_int_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(
+        int input)
     {
         // Arrange.
         // Act.
@@ -212,7 +216,8 @@ public sealed class ToCelsiusIntTests
     [Theory]
     [InlineData(0)]
     [InlineData(11)]
-    public void Test_int_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(int input)
+    public void Test_int_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+        int input)
     {
         // Arrange.
         // Act.
@@ -252,7 +257,8 @@ public sealed class ToCelsiusIntTests
     [InlineData(0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_from_and_to_rankine_returns_correct_int_value(int value)
+    public void Test_int_extension_from_and_to_rankine_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
@@ -270,7 +276,8 @@ public sealed class ToCelsiusIntTests
     [InlineData(0)]
     [InlineData(7564)]
     [InlineData(int.MaxValue)]
-    public void Test_int_extension_generic_from_and_to_rankine_returns_correct_int_value(int value)
+    public void Test_int_extension_generic_from_and_to_rankine_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.

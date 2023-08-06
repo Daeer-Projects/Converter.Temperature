@@ -21,7 +21,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The Celsius String class for the 'To' extensions to use.
     /// </returns>
-    public static CelsiusString FromCelsius(this string input)
+    public static CelsiusString FromCelsius(
+        this string input)
     {
         return new CelsiusString(input);
     }
@@ -33,7 +34,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The Fahrenheit String class for the 'To' extensions to use.
     /// </returns>
-    public static FahrenheitString FromFahrenheit(this string input)
+    public static FahrenheitString FromFahrenheit(
+        this string input)
     {
         return new FahrenheitString(input);
     }
@@ -45,7 +47,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The Gas String class for the 'To' extensions to use.
     /// </returns>
-    public static GasString FromGas(this string input)
+    public static GasString FromGas(
+        this string input)
     {
         return new GasString(input);
     }
@@ -57,7 +60,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The Kelvin String class for the 'To' extensions to use.
     /// </returns>
-    public static KelvinString FromKelvin(this string input)
+    public static KelvinString FromKelvin(
+        this string input)
     {
         return new KelvinString(input);
     }
@@ -69,7 +73,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The Rankine String class for the 'To' extensions to use.
     /// </returns>
-    public static RankineString FromRankine(this string input)
+    public static RankineString FromRankine(
+        this string input)
     {
         return new RankineString(input);
     }
@@ -83,7 +88,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The StringBase specific class for the 'To' extension to use.
     /// </returns>
-    public static StringBase From<TInput>(this string input)
+    public static StringBase From<TInput>(
+        this string input)
         where TInput : TemperatureBase
     {
         return typeof(TInput).Name switch

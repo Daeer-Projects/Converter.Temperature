@@ -4,7 +4,8 @@ using BaseTypes;
 
 public sealed class KelvinString : StringBase
 {
-    public KelvinString(string temp)
+    public KelvinString(
+        string temp)
     {
         Temperature = temp;
     }

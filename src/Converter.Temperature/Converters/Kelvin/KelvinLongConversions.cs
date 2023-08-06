@@ -12,12 +12,15 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToCelsius(long input)
+    public static long KelvinToCelsius(
+        long input)
     {
         const long maxValue = long.MaxValue - 273L;
         const long minValue = long.MinValue + 273L;
         if (input is < minValue or > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         long celsiusTemp = input - 273L;
         return celsiusTemp;
@@ -31,7 +34,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToFahrenheit(long input)
+    public static long KelvinToFahrenheit(
+        long input)
     {
         long celsiusTemp = KelvinToCelsius(input);
         long fahrenheitTemp = CelsiusLongConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -45,7 +49,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToKelvin(long input)
+    public static long KelvinToKelvin(
+        long input)
     {
         return input;
     }
@@ -58,7 +63,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToGas(long input)
+    public static long KelvinToGas(
+        long input)
     {
         long celsiusTemp = KelvinToCelsius(input);
         long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
@@ -73,7 +79,8 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToRankine(long input)
+    public static long KelvinToRankine(
+        long input)
     {
         long rankineTemp = input * 9 / 5;
         return rankineTemp;

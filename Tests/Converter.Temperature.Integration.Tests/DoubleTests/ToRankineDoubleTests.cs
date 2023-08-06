@@ -86,7 +86,8 @@ public sealed class ToRankineDoubleTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(double input)
+    public void Test_double_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         // Act.
@@ -102,7 +103,8 @@ public sealed class ToRankineDoubleTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(double input)
+    public void Test_double_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         // Act.
@@ -319,7 +321,8 @@ public sealed class ToRankineDoubleTests
     [InlineData(0.0d)]
     [InlineData(7564.2334d)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extension_from_and_to_rankine_returns_correct_double_value(double value)
+    public void Test_double_extension_from_and_to_rankine_returns_correct_double_value(
+        double value)
     {
         // Arrange.
         // Act.
@@ -337,7 +340,8 @@ public sealed class ToRankineDoubleTests
     [InlineData(0.0d)]
     [InlineData(7564.2334d)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extension_generic_from_and_to_rankine_returns_correct_double_value(double value)
+    public void Test_double_extension_generic_from_and_to_rankine_returns_correct_double_value(
+        double value)
     {
         // Arrange.
         // Act.

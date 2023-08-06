@@ -13,11 +13,14 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float FahrenheitToCelsius(float firstTemp)
+    public static float FahrenheitToCelsius(
+        float firstTemp)
     {
         float celsiusTemp = (firstTemp - 32) * 5 / 9;
         if (float.IsPositiveInfinity(celsiusTemp) || float.IsNegativeInfinity(celsiusTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
 
         return celsiusTemp;
     }
@@ -29,7 +32,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float FahrenheitToFahrenheit(float firstTemp)
+    public static float FahrenheitToFahrenheit(
+        float firstTemp)
     {
         return firstTemp;
     }
@@ -42,7 +46,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float FahrenheitToKelvin(float firstTemp)
+    public static float FahrenheitToKelvin(
+        float firstTemp)
     {
         float celsiusTemp = FahrenheitToCelsius(firstTemp);
         float kelvinTemp = CelsiusFloatConversions.CelsiusToKelvin(celsiusTemp);
@@ -57,7 +62,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float FahrenheitToGas(float firstTemp)
+    public static float FahrenheitToGas(
+        float firstTemp)
     {
         float celsiusTemp = FahrenheitToCelsius(firstTemp);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
@@ -72,7 +78,8 @@ internal static class FahrenheitFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float FahrenheitToRankine(float firstTemp)
+    public static float FahrenheitToRankine(
+        float firstTemp)
     {
         float rankineTemp = firstTemp + 459.67f;
         return rankineTemp;

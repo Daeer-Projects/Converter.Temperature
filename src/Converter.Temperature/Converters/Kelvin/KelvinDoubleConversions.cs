@@ -11,7 +11,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToCelsius(double firstTemp)
+    public static double KelvinToCelsius(
+        double firstTemp)
     {
         double celsiusTemp = firstTemp - 273.15;
         return celsiusTemp;
@@ -25,7 +26,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToFahrenheit(double firstTemp)
+    public static double KelvinToFahrenheit(
+        double firstTemp)
     {
         double celsiusTemp = KelvinToCelsius(firstTemp);
         double fahrenheitTemp = CelsiusDoubleConversions.CelsiusToFahrenheit(celsiusTemp);
@@ -39,7 +41,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToKelvin(double firstTemp)
+    public static double KelvinToKelvin(
+        double firstTemp)
     {
         return firstTemp;
     }
@@ -52,7 +55,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToGas(double firstTemp)
+    public static double KelvinToGas(
+        double firstTemp)
     {
         double celsiusTemp = KelvinToCelsius(firstTemp);
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
@@ -67,7 +71,8 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToRankine(double firstTemp)
+    public static double KelvinToRankine(
+        double firstTemp)
     {
         double rankineTemp = firstTemp * 9 / 5;
         return rankineTemp;

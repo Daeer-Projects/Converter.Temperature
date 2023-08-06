@@ -13,7 +13,8 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToCelsius(long firstTemp)
+    public static long FahrenheitToCelsius(
+        long firstTemp)
     {
         double celsiusTemp = (firstTemp - 32d) * 5 / 9;
 
@@ -29,7 +30,8 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToFahrenheit(long firstTemp)
+    public static long FahrenheitToFahrenheit(
+        long firstTemp)
     {
         return firstTemp;
     }
@@ -42,13 +44,16 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToKelvin(long input)
+    public static long FahrenheitToKelvin(
+        long input)
     {
         double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
         long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         long kelvinTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
 
@@ -63,7 +68,8 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToGas(long input)
+    public static long FahrenheitToGas(
+        long input)
     {
         long celsiusTemp = FahrenheitToCelsius(input);
         long gasTemp = CelsiusLongConversions.CelsiusToGas(celsiusTemp);
@@ -78,12 +84,15 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToRankine(long input)
+    public static long FahrenheitToRankine(
+        long input)
     {
         const long maxValue = long.MaxValue - 460;
         const long minValue = long.MinValue + 460;
         if (input is < minValue or > maxValue)
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         long rankineTemp = input + 460;
         return rankineTemp;

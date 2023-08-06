@@ -11,7 +11,8 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToCelsius(double firstTemp)
+    public static double CelsiusToCelsius(
+        double firstTemp)
     {
         return firstTemp;
     }
@@ -24,11 +25,14 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToFahrenheit(double input)
+    public static double CelsiusToFahrenheit(
+        double input)
     {
         double fahrenheitTemp = input * 1.8 + 32;
         if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return fahrenheitTemp;
     }
@@ -41,11 +45,14 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToKelvin(double input)
+    public static double CelsiusToKelvin(
+        double input)
     {
         double kelvinTemp = input * 1.01d + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         kelvinTemp = input * 1d + 273.15d;
 
@@ -60,7 +67,8 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToGas(double input)
+    public static double CelsiusToGas(
+        double input)
     {
         double gasTemp = input switch
         {
@@ -91,11 +99,14 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToRankine(double input)
+    public static double CelsiusToRankine(
+        double input)
     {
         double rankineTemp = (input + 273.15) * 9 / 5;
         if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rankineTemp;
     }
