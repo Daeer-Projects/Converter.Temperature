@@ -17,7 +17,9 @@ internal static class FahrenheitFloatConversions
     {
         float celsiusTemp = (firstTemp - 32) * 5 / 9;
         if (float.IsPositiveInfinity(celsiusTemp) || float.IsNegativeInfinity(celsiusTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
 
         return celsiusTemp;
     }

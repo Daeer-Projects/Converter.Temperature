@@ -30,7 +30,9 @@ internal static class RankineFloatConversions
     {
         float rankineTemp = (input - 491.67f) * 5 / 9;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rankineTemp;
     }

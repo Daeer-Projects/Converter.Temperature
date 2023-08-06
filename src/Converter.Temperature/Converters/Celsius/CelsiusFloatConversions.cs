@@ -28,7 +28,9 @@ internal static class CelsiusFloatConversions
     {
         float fahrenheitTemp = input * 1.8f + 32;
         if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return fahrenheitTemp;
     }
@@ -45,7 +47,9 @@ internal static class CelsiusFloatConversions
     {
         float kelvinTemp = input * 1.01f + 273.15f;
         if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         kelvinTemp = input * 1f + 273.15f;
 
@@ -95,7 +99,9 @@ internal static class CelsiusFloatConversions
     {
         float rankineTemp = (input + 273.15f) * 9 / 5;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rankineTemp;
     }

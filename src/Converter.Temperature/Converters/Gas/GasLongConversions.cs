@@ -73,7 +73,10 @@ internal static class GasLongConversions
     /// </returns>
     public static long GasToGas(long input)
     {
-        if (input is < 1 or > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        if (input is < 1 or > 10)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        }
 
         return input;
     }

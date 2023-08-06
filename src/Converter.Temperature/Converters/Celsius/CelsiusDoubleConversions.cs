@@ -28,7 +28,9 @@ internal static class CelsiusDoubleConversions
     {
         double fahrenheitTemp = input * 1.8 + 32;
         if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return fahrenheitTemp;
     }
@@ -45,7 +47,9 @@ internal static class CelsiusDoubleConversions
     {
         double kelvinTemp = input * 1.01d + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         kelvinTemp = input * 1d + 273.15d;
 
@@ -95,7 +99,9 @@ internal static class CelsiusDoubleConversions
     {
         double rankineTemp = (input + 273.15) * 9 / 5;
         if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
+        {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
         return rankineTemp;
     }

@@ -75,7 +75,10 @@ internal static class GasFloatConversions
     /// </returns>
     public static float GasToGas(float input)
     {
-        if (input < .25 || input > 10) throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        if (input < .25 || input > 10)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.TemperatureOutOfRangeError);
+        }
 
         return input;
     }
