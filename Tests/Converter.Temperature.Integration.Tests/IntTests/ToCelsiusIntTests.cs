@@ -3,6 +3,8 @@
 using System;
 using Extensions.From;
 using Extensions.To;
+using Extensions.To.Celsius;
+using Extensions.To.Rankine;
 using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
