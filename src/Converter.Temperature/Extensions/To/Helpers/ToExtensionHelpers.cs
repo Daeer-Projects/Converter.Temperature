@@ -16,7 +16,9 @@ internal static class ToExtensionHelpers
         int fractionalCount = -1)
     {
         if (fractionalCount < 0)
+        {
             return input;
+        }
 
         return (float)Math.Round(input, fractionalCount);
     }

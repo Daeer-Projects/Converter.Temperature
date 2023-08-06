@@ -25,7 +25,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Kelvin <see langword="long" /> result.
     /// </returns>
-    public static long ToKelvin(this CelsiusLong input)
+    public static long ToKelvin(
+        this CelsiusLong input)
     {
         return CelsiusLongConversions.CelsiusToKelvin(input.Temperature);
     }
@@ -38,7 +39,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Kelvin <see langword="long" /> result.
     /// </returns>
-    public static long ToKelvin(this FahrenheitLong input)
+    public static long ToKelvin(
+        this FahrenheitLong input)
     {
         return FahrenheitLongConversions.FahrenheitToKelvin(input.Temperature);
     }
@@ -51,7 +53,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Kelvin <see langword="long" /> result.
     /// </returns>
-    public static long ToKelvin(this GasLong input)
+    public static long ToKelvin(
+        this GasLong input)
     {
         return GasLongConversions.GasToKelvin(input.Temperature);
     }
@@ -63,7 +66,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Kelvin <see langword="long" /> result.
     /// </returns>
-    public static long ToKelvin(this KelvinLong input)
+    public static long ToKelvin(
+        this KelvinLong input)
     {
         return KelvinLongConversions.KelvinToKelvin(input.Temperature);
     }
@@ -75,7 +79,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Kelvin <see langword="long" /> result.
     /// </returns>
-    public static long ToKelvin(this RankineLong input)
+    public static long ToKelvin(
+        this RankineLong input)
     {
         return RankineLongConversions.RankineToKelvin(input.Temperature);
     }
