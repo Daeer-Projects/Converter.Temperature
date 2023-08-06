@@ -3,6 +3,11 @@
 using System;
 using FluentAssertions;
 using Temperature.Extensions.To;
+using Temperature.Extensions.To.Celsius;
+using Temperature.Extensions.To.Fahrenheit;
+using Temperature.Extensions.To.Gas;
+using Temperature.Extensions.To.Kelvin;
+using Temperature.Extensions.To.Rankine;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
