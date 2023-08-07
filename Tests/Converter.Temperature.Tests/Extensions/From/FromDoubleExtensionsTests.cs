@@ -13,17 +13,17 @@ using Xunit;
 
 public sealed class FromDoubleExtensionsTests : BaseFromExtensionTests<double, CelsiusDouble>
 {
-    protected override CelsiusDouble ConvertFrom(
-        double value)
-    {
-        return value.FromCelsius();
-    }
-
     protected override double HighValue => double.MaxValue;
     protected override double MidHighValue => 999.999d;
     protected override double MidValue => 0d;
     protected override double MidLowValue => -999.999d;
     protected override double LowValue => double.MinValue;
+
+    protected override CelsiusDouble ConvertFrom(
+        double value)
+    {
+        return value.FromCelsius();
+    }
 
     [Fact]
     public void Test_from_fahrenheit_generic_returns_fahrenheit_double_type()
@@ -32,7 +32,7 @@ public sealed class FromDoubleExtensionsTests : BaseFromExtensionTests<double, C
         const double input = 39d;
 
         // Act.
-        DoubleBase result = input.From<TemperatureTypes.Fahrenheit>();
+        DoubleBase result = input.From<Fahrenheit>();
 
         // Assert.
         result.Should()

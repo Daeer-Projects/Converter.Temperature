@@ -47,7 +47,8 @@ public sealed class ToDoubleExtensionTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_rankine_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);
@@ -63,7 +64,8 @@ public sealed class ToDoubleExtensionTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception(double input)
+    public void Test_to_rankine_generic_from_celsius_with_invalid_parameter_throws_exception(
+        double input)
     {
         // Arrange.
         CelsiusDouble inputCelsius = new(input);

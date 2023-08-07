@@ -171,7 +171,8 @@ public sealed class ToFloatExtensionTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_to_fahrenheit_from_kelvin_with_invalid_parameter_throws_exception(float input)
+    public void Test_to_fahrenheit_from_kelvin_with_invalid_parameter_throws_exception(
+        float input)
     {
         // Arrange.
         KelvinFloat inputKelvin = new(input);

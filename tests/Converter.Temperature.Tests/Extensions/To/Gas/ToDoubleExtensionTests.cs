@@ -176,7 +176,8 @@ public sealed class ToDoubleExtensionTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_gas_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_gas_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);

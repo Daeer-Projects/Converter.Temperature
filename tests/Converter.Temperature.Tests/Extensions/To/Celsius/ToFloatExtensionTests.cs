@@ -128,7 +128,8 @@ public sealed class ToFloatExtensionTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(float input)
+    public void Test_to_celsius_generic_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        float input)
     {
         // Arrange.
         GasFloat inputGas = new(input);

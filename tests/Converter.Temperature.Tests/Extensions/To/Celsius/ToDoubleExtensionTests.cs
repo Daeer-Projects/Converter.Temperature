@@ -49,7 +49,7 @@ public sealed class ToDoubleExtensionTests
         CelsiusDouble input = new(42.3d);
 
         // Act.
-        double result = input.To<TemperatureTypes.Celsius>();
+        double result = input.To<Celsius>();
 
         // Assert.
         result.Should()
@@ -165,7 +165,8 @@ public sealed class ToDoubleExtensionTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_to_celsius_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(double input)
+    public void Test_to_celsius_from_gas_with_invalid_parameters_throws_argument_out_of_range_exception(
+        double input)
     {
         // Arrange.
         GasDouble inputGas = new(input);
