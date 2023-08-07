@@ -8,11 +8,25 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     where TInputType : struct
     where TOutputType : TypeBase<TInputType>
 {
-    protected virtual TInputType HighValue { get; }
-    protected virtual TInputType MidHighValue { get; }
-    protected virtual TInputType MidValue { get; }
-    protected virtual TInputType MidLowValue { get; }
-    protected virtual TInputType LowValue { get; }
+    private readonly TInputType _highValue;
+    private readonly TInputType _lowValue;
+    private readonly TInputType _midHighValue;
+    private readonly TInputType _midLowValue;
+    private readonly TInputType _midValue;
+
+    protected BaseFromExtensionTests(
+        TInputType highValue,
+        TInputType midHighValue,
+        TInputType midValue,
+        TInputType midLowValue,
+        TInputType lowValue)
+    {
+        _highValue = highValue;
+        _midHighValue = midHighValue;
+        _midValue = midValue;
+        _midLowValue = midLowValue;
+        _lowValue = lowValue;
+    }
 
     protected abstract TOutputType ConvertFrom(
         TInputType value);
@@ -22,14 +36,14 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     {
         // Arrange.
         // Act.
-        TOutputType result = ConvertFrom(HighValue);
+        TOutputType result = ConvertFrom(_highValue);
 
 
         // Assert.
         result.Should()
             .BeOfType<TOutputType>()
             .Which.Temperature.Should()
-            .Be(HighValue);
+            .Be(_highValue);
     }
 
     [Fact]
@@ -37,13 +51,13 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     {
         // Arrange.
         // Act.
-        TOutputType result = ConvertFrom(MidHighValue);
+        TOutputType result = ConvertFrom(_midHighValue);
 
         // Assert.
         result.Should()
             .BeOfType<TOutputType>()
             .Which.Temperature.Should()
-            .Be(MidHighValue);
+            .Be(_midHighValue);
     }
 
     [Fact]
@@ -51,13 +65,13 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     {
         // Arrange.
         // Act.
-        TOutputType result = ConvertFrom(MidValue);
+        TOutputType result = ConvertFrom(_midValue);
 
         // Assert.
         result.Should()
             .BeOfType<TOutputType>()
             .Which.Temperature.Should()
-            .Be(MidValue);
+            .Be(_midValue);
     }
 
     [Fact]
@@ -65,13 +79,13 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     {
         // Arrange.
         // Act.
-        TOutputType result = ConvertFrom(MidLowValue);
+        TOutputType result = ConvertFrom(_midLowValue);
 
         // Assert.
         result.Should()
             .BeOfType<TOutputType>()
             .Which.Temperature.Should()
-            .Be(MidLowValue);
+            .Be(_midLowValue);
     }
 
     [Fact]
@@ -79,12 +93,12 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     {
         // Arrange.
         // Act.
-        TOutputType result = ConvertFrom(LowValue);
+        TOutputType result = ConvertFrom(_lowValue);
 
         // Assert.
         result.Should()
             .BeOfType<TOutputType>()
             .Which.Temperature.Should()
-            .Be(LowValue);
+            .Be(_lowValue);
     }
 }

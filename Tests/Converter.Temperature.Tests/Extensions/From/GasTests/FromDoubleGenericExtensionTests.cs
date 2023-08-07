@@ -9,11 +9,7 @@ using Xunit;
 
 public sealed class FromDoubleGenericExtensionTests : BaseFromExtensionTests<double, GasDouble>
 {
-    protected override double HighValue => double.MaxValue;
-    protected override double MidHighValue => 999.999d;
-    protected override double MidValue => 0d;
-    protected override double MidLowValue => -999.999d;
-    protected override double LowValue => double.MinValue;
+    public FromDoubleGenericExtensionTests() : base(double.MaxValue, 999.999d, 0d, -999.999d, double.MinValue) { }
 
     protected override GasDouble ConvertFrom(
         double value)
