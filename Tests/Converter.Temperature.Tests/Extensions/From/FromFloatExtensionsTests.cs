@@ -36,7 +36,7 @@ public sealed class FromFloatExtensionsTests
         const float input = 39f;
 
         // Act.
-        FloatBase result = input.From<Celsius>();
+        FloatBase result = input.From<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -68,7 +68,7 @@ public sealed class FromFloatExtensionsTests
         const float input = 39f;
 
         // Act.
-        FloatBase result = input.From<Fahrenheit>();
+        FloatBase result = input.From<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
