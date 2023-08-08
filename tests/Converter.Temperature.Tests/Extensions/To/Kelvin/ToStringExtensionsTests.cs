@@ -2,7 +2,6 @@
 
 using FluentAssertions;
 using Temperature.Extensions.To;
-using Temperature.Extensions.To.Kelvin;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;

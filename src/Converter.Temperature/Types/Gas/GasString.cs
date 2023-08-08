@@ -10,5 +10,5 @@ public sealed class GasString : StringBase
         Temperature = temp;
     }
 
-    public string Temperature { get; }
+    public override string Temperature { get; }
 }

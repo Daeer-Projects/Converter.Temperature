@@ -53,15 +53,15 @@ The next stage for version 2 is to add an additional usage like this:
 
 ### What to do for edge cases
 
-I'm working on what I want the library to do when an exception could be thrown.  This is when we have the edge cases of values that are too small or too large for the type being converted to.
+I'm working on what I want the library to do when an exception could be thrown. This is when we have the edge cases of values that are too small or too large for the type being converted to.
 
 E.g.:
 
-From a float type with a value close to the max value of a float, converted from Celsius to Fahrenheit.  Because a Fahrenheit value is greater than the celsius value, then we can't convert correctly.
+From a float type with a value close to the max value of a float, converted from Celsius to Fahrenheit. Because a Fahrenheit value is greater than the celsius value, then we can't convert correctly.
 
 Should this throw an exception or just return the original value?
 
-Well, returning the same value would seem like all is well, even though the converted value is wrong.  Thinking about this means that for me, it should throw an exception for the calling application to handle.
+Well, returning the same value would seem like all is well, even though the converted value is wrong. Thinking about this means that for me, it should throw an exception for the calling application to handle.
 
 If anyone has any better ideas, then I would be willing to change this behaviour.
 

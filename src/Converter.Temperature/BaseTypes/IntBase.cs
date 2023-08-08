@@ -1,3 +1,3 @@
 ﻿namespace Converter.Temperature.BaseTypes;
 
-public abstract class IntBase { }
+public abstract class IntBase : TypeBase<int> { }

@@ -105,7 +105,8 @@ public sealed class ToIntExtensionTests
     [Theory]
     [InlineData(int.MaxValue)]
     [InlineData(int.MinValue)]
-    public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
+    public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(
+        int temp)
     {
         // Arrange.
         FahrenheitInt input = new(temp);
@@ -121,7 +122,8 @@ public sealed class ToIntExtensionTests
     [Theory]
     [InlineData(int.MaxValue)]
     [InlineData(int.MinValue)]
-    public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(int temp)
+    public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(
+        int temp)
     {
         // Arrange.
         FahrenheitInt input = new(temp);

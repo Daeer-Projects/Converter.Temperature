@@ -47,7 +47,8 @@ public sealed class ToIntExtensionTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(int input)
+    public void Test_to_fahrenheit_from_celsius_with_invalid_parameter_throws_exception(
+        int input)
     {
         // Arrange.
         CelsiusInt inputCelsius = new(input);
@@ -63,7 +64,8 @@ public sealed class ToIntExtensionTests
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
-    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(int input)
+    public void Test_to_fahrenheit_generic_from_celsius_with_invalid_parameter_throws_exception(
+        int input)
     {
         // Arrange.
         CelsiusInt inputCelsius = new(input);

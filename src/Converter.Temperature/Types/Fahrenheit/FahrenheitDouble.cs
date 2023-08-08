@@ -10,5 +10,5 @@ public sealed class FahrenheitDouble : DoubleBase
         Temperature = temp;
     }
 
-    public double Temperature { get; }
+    public override double Temperature { get; }
 }

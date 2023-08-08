@@ -1,3 +1,3 @@
 ﻿namespace Converter.Temperature.BaseTypes;
 
-public abstract class LongBase { }
+public abstract class LongBase : TypeBase<long> { }
