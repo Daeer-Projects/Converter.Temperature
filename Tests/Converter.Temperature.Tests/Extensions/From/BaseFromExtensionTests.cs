@@ -5,7 +5,6 @@ using FluentAssertions;
 using Xunit;
 
 public abstract class BaseFromExtensionTests<TInputType, TOutputType>
-    where TInputType : struct
     where TOutputType : TypeBase<TInputType>
 {
     private readonly TInputType _highValue;
