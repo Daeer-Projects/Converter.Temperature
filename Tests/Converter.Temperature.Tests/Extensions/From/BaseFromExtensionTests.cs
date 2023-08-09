@@ -37,7 +37,6 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
         // Act.
         TOutputType result = ConvertFrom(_highValue);
 
-
         // Assert.
         result.Should()
             .BeOfType<TOutputType>()

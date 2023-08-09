@@ -12,8 +12,23 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToDoubleExtensionTests
+public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble, double>
 {
+    public ToDoubleExtensionTests() : base(double.MaxValue, 999.999d, 0d, -999.999d, double.MinValue) { }
+
+    protected override double To(
+        CelsiusDouble value,
+        int fractionalCount)
+    {
+        return value.ToCelsius(fractionalCount);
+    }
+
+    protected override CelsiusDouble Create(
+        double value)
+    {
+        return new CelsiusDouble(value);
+    }
+
     [Fact]
     public void Test_to_celsius_with_too_long_parameter_from_celsius_throws_exception()
     {
