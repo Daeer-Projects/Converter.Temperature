@@ -15,8 +15,9 @@ using Xunit;
 
 public sealed class ToIntExtensionTests : BaseToExtensionTests<CelsiusInt, int>
 {
-    private const string RoundingExceptionMessage = "Rounding digits must be between 0 and 15, inclusive.";
     public ToIntExtensionTests() : base(999, GetData()) { }
+    
+    private const string RoundingExceptionMessage = "Rounding digits must be between 0 and 15, inclusive.";
 
     private static List<int> GetData()
     {

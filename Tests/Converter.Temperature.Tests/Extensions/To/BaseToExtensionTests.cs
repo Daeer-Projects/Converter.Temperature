@@ -7,9 +7,6 @@ using Xunit;
 
 public abstract class BaseToExtensionTests<TInputTemp, TResultType>
 {
-    private readonly List<TResultType> _data;
-    private readonly TResultType _defaultValue;
-
     protected BaseToExtensionTests(
         TResultType defaultValue,
         List<TResultType> data)
@@ -17,6 +14,9 @@ public abstract class BaseToExtensionTests<TInputTemp, TResultType>
         _defaultValue = defaultValue;
         _data = data;
     }
+
+    private readonly List<TResultType> _data;
+    private readonly TResultType _defaultValue;
 
     protected abstract TResultType To(
         TInputTemp value,
