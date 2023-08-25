@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Celsius;
@@ -12,34 +13,38 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToFloatExtensionTests
+public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, float>
 {
-    [Fact]
-    public void Test_to_celsius_from_celsius_returns_same_value()
+    public ToFloatExtensionTests() : base(999.999f, GetData()) { }
+
+    private static List<float> GetData()
     {
-        // Arrange.
-        CelsiusFloat input = new(42);
-
-        // Act.
-        float result = input.ToCelsius();
-
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
+        return new List<float>
+        {
+            999.999f,
+            0f,
+            -999.999f
+        };
     }
 
-    [Fact]
-    public void Test_to_celsius_generic_from_celsius_returns_same_value()
+    protected override float To(
+        CelsiusFloat value,
+        int fractionalCount)
     {
-        // Arrange.
-        CelsiusFloat input = new(42.3f);
+        return value.To<Celsius>(fractionalCount);
+    }
 
-        // Act.
-        float result = input.To<Celsius>();
+    protected override float ToUsingGeneric(
+        CelsiusFloat value,
+        int fractionalCount)
+    {
+        return value.ToCelsius(fractionalCount);
+    }
 
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
+    protected override CelsiusFloat Create(
+        float value)
+    {
+        return new CelsiusFloat(value);
     }
 
     [Fact]

@@ -5,13 +5,13 @@ using BaseTypes;
 using FluentAssertions;
 using Temperature.Extensions.From;
 using TemperatureTypes;
-using Types.Celsius;
 using Types.Gas;
 using Xunit;
 
 public sealed class FromStringGenericExtensionTests : BaseFromExtensionTests<string, GasString>
 {
-    public FromStringGenericExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0", "-999.999", double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
+    public FromStringGenericExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0",
+        "-999.999", double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
 
     protected override GasString ConvertFrom(
         string value)

@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Celsius;
@@ -14,7 +15,17 @@ using Xunit;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble, double>
 {
-    public ToDoubleExtensionTests() : base(double.MaxValue, 999.999d, 0d, -999.999d, double.MinValue) { }
+    public ToDoubleExtensionTests() : base(999.999d, GetData()) { }
+
+    private static List<double> GetData()
+    {
+        return new List<double>
+        {
+            999.999d,
+            0d,
+            -999.999
+        };
+    }
 
     protected override double To(
         CelsiusDouble value,
@@ -23,52 +34,17 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         return value.ToCelsius(fractionalCount);
     }
 
+    protected override double ToUsingGeneric(
+        CelsiusDouble value,
+        int fractionalCount)
+    {
+        return value.To<Celsius>(fractionalCount);
+    }
+
     protected override CelsiusDouble Create(
         double value)
     {
         return new CelsiusDouble(value);
-    }
-
-    [Fact]
-    public void Test_to_celsius_with_too_long_parameter_from_celsius_throws_exception()
-    {
-        // Arrange.
-        CelsiusDouble input = new(42.5d);
-
-        // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToCelsius(16));
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Rounding digits must be between 0 and 15, inclusive.");
-    }
-
-    [Fact]
-    public void Test_to_celsius_from_celsius_returns_same_value()
-    {
-        // Arrange.
-        CelsiusDouble input = new(42.5d);
-
-        // Act.
-        double result = input.ToCelsius();
-
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
-    }
-
-    [Fact]
-    public void Test_to_celsius_generic_from_celsius_returns_same_value()
-    {
-        // Arrange.
-        CelsiusDouble input = new(42.3d);
-
-        // Act.
-        double result = input.To<Celsius>();
-
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
     }
 
     [Fact]

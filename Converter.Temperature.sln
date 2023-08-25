@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EDDEC793
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature", "src\Converter.Temperature\Converter.Temperature.csproj", "{7C4B1355-DA4E-426E-8BC0-12BC8D2598DA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature.Integration.Tests", "Tests\Converter.Temperature.Integration.Tests\Converter.Temperature.Integration.Tests.csproj", "{C4499E02-6ECF-413D-9037-70FAC6CD4014}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature.Integration.Tests", "tests\Converter.Temperature.Integration.Tests\Converter.Temperature.Integration.Tests.csproj", "{C4499E02-6ECF-413D-9037-70FAC6CD4014}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature.Tests", "Tests\Converter.Temperature.Tests\Converter.Temperature.Tests.csproj", "{E1F5ECB1-66F5-4048-8314-CED223E1BD5D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Temperature.Tests", "tests\Converter.Temperature.Tests\Converter.Temperature.Tests.csproj", "{E1F5ECB1-66F5-4048-8314-CED223E1BD5D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Converter.Benchmark.Tests", "tests\Converter.Benchmark.Tests\Converter.Benchmark.Tests.csproj", "{0EE8B819-5C6C-4BE6-B178-BFB104132F73}"
 EndProject

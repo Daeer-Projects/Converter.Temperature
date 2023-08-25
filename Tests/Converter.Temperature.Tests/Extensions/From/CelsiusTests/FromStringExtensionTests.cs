@@ -8,7 +8,8 @@ using Xunit;
 
 public sealed class FromStringExtensionTests : BaseFromExtensionTests<string, CelsiusString>
 {
-    public FromStringExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0", "-999.999", double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
+    public FromStringExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0", "-999.999",
+        double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
 
     protected override CelsiusString ConvertFrom(
         string value)
