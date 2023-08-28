@@ -15,6 +15,8 @@ public abstract class BaseToExtensionTests<TInputTemp, TResultType>
         _data = data;
     }
 
+    private const string RoundingExceptionMessage = "Rounding digits must be between 0 and 15, inclusive.";
+
     private readonly List<TResultType> _data;
     private readonly TResultType _defaultValue;
 
@@ -36,7 +38,14 @@ public abstract class BaseToExtensionTests<TInputTemp, TResultType>
         TInputTemp input = Create(_defaultValue);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => To(input, 16));
+        ArgumentOutOfRangeException result = typeof(TResultType).Name
+            switch
+            {
+                "double" => Assert.Throws<ArgumentOutOfRangeException>(() => To(input, 16)),
+                "float" => Assert.Throws<ArgumentOutOfRangeException>(() => To(input, 16)),
+                "string" => Assert.Throws<ArgumentOutOfRangeException>(() => To(input, 16)),
+                _ => new ArgumentOutOfRangeException(RoundingExceptionMessage)
+            };
 
         // Assert.
         result.Message.Should()

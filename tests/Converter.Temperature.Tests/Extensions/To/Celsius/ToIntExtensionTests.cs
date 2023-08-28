@@ -1,6 +1,5 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
-using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
@@ -16,8 +15,6 @@ using Xunit;
 public sealed class ToIntExtensionTests : BaseToExtensionTests<CelsiusInt, int>
 {
     public ToIntExtensionTests() : base(999, GetData()) { }
-    
-    private const string RoundingExceptionMessage = "Rounding digits must be between 0 and 15, inclusive.";
 
     private static List<int> GetData()
     {
@@ -33,12 +30,6 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<CelsiusInt, int>
         CelsiusInt value,
         int fractionalCount)
     {
-        if (fractionalCount == 16)
-#pragma warning disable CA2208
-        {
-            throw new ArgumentOutOfRangeException(RoundingExceptionMessage);
-        }
-#pragma warning restore CA2208
         return value.ToCelsius();
     }
 

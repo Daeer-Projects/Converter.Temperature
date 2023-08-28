@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Gas;
@@ -12,8 +13,40 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToFloatExtensionTests
+public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float>
 {
+    public ToFloatExtensionTests() : base(5f, GetData()) { }
+
+    private static List<float> GetData()
+    {
+        return new List<float>
+        {
+            0.25f,
+            5f,
+            10f
+        };
+    }
+
+    protected override float To(
+        GasFloat value,
+        int fractionalCount)
+    {
+        return value.ToGas(fractionalCount);
+    }
+
+    protected override float ToUsingGeneric(
+        GasFloat value,
+        int fractionalCount)
+    {
+        return value.To<Gas>(fractionalCount);
+    }
+
+    protected override GasFloat Create(
+        float value)
+    {
+        return new GasFloat(value);
+    }
+
     [Fact]
     public void Test_to_gas_from_celsius_returns_correct_value()
     {

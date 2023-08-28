@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Fahrenheit;
 
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using TemperatureTypes;
@@ -10,8 +11,40 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToStringExtensionsTests
+public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitString, string>
 {
+    public ToStringExtensionsTests() : base("9999.99", GetData()) { }
+
+    private static List<string> GetData()
+    {
+        return new List<string>
+        {
+            "999.999",
+            "0",
+            "-999.999"
+        };
+    }
+
+    protected override string To(
+        FahrenheitString value,
+        int fractionalCount)
+    {
+        return value.ToFahrenheit(fractionalCount);
+    }
+
+    protected override string ToUsingGeneric(
+        FahrenheitString value,
+        int fractionalCount)
+    {
+        return value.To<Fahrenheit>(fractionalCount);
+    }
+
+    protected override FahrenheitString Create(
+        string value)
+    {
+        return new FahrenheitString(value);
+    }
+
     [Fact]
     public void Test_to_fahrenheit_from_celsius_returns_same_value()
     {

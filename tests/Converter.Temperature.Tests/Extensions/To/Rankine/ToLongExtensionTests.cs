@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Rankine;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Rankine;
@@ -12,8 +13,40 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToLongExtensionTests
+public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, long>
 {
+    public ToLongExtensionTests() : base(99999999L, GetData()) { }
+
+    private static List<long> GetData()
+    {
+        return new List<long>
+        {
+            999L,
+            0L,
+            -999L
+        };
+    }
+
+    protected override long To(
+        RankineLong value,
+        int fractionalCount)
+    {
+        return value.ToRankine();
+    }
+
+    protected override long ToUsingGeneric(
+        RankineLong value,
+        int fractionalCount)
+    {
+        return value.To<Rankine>();
+    }
+
+    protected override RankineLong Create(
+        long value)
+    {
+        return new RankineLong(value);
+    }
+
     [Fact]
     public void Test_to_rankine_from_celsius_returns_correct_value()
     {
