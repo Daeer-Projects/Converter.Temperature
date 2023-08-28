@@ -2,7 +2,6 @@
 
 using FluentAssertions;
 using Temperature.Extensions.From;
-using Types.Celsius;
 using Types.Fahrenheit;
 using Xunit;
 

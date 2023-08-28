@@ -4,7 +4,6 @@ using BaseTypes;
 using FluentAssertions;
 using Temperature.Extensions.From;
 using TemperatureTypes;
-using Types.Celsius;
 using Types.Gas;
 using Xunit;
 

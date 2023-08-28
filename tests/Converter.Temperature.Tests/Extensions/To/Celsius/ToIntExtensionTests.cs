@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Celsius;
@@ -11,34 +12,38 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToIntExtensionTests
+public sealed class ToIntExtensionTests : BaseToExtensionTests<CelsiusInt, int>
 {
-    [Fact]
-    public void Test_to_celsius_from_celsius_returns_same_value()
+    public ToIntExtensionTests() : base(999, GetData()) { }
+
+    private static List<int> GetData()
     {
-        // Arrange.
-        CelsiusInt input = new(42);
-
-        // Act.
-        int result = input.ToCelsius();
-
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
+        return new List<int>
+        {
+            999,
+            0,
+            -999
+        };
     }
 
-    [Fact]
-    public void Test_to_celsius_generic_from_celsius_returns_same_value()
+    protected override int To(
+        CelsiusInt value,
+        int fractionalCount)
     {
-        // Arrange.
-        CelsiusInt input = new(42);
+        return value.ToCelsius();
+    }
 
-        // Act.
-        int result = input.To<Celsius>();
+    protected override int ToUsingGeneric(
+        CelsiusInt value,
+        int fractionalCount)
+    {
+        return value.To<Celsius>();
+    }
 
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
+    protected override CelsiusInt Create(
+        int value)
+    {
+        return new CelsiusInt(value);
     }
 
     [Fact]

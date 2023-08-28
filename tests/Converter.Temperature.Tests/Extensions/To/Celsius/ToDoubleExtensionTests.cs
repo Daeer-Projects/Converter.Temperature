@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Celsius;
@@ -12,48 +13,38 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToDoubleExtensionTests
+public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble, double>
 {
-    [Fact]
-    public void Test_to_celsius_with_too_long_parameter_from_celsius_throws_exception()
+    public ToDoubleExtensionTests() : base(999.999d, GetData()) { }
+
+    private static List<double> GetData()
     {
-        // Arrange.
-        CelsiusDouble input = new(42.5d);
-
-        // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToCelsius(16));
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Rounding digits must be between 0 and 15, inclusive.");
+        return new List<double>
+        {
+            999.999d,
+            0d,
+            -999.999
+        };
     }
 
-    [Fact]
-    public void Test_to_celsius_from_celsius_returns_same_value()
+    protected override double To(
+        CelsiusDouble value,
+        int fractionalCount)
     {
-        // Arrange.
-        CelsiusDouble input = new(42.5d);
-
-        // Act.
-        double result = input.ToCelsius();
-
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
+        return value.ToCelsius(fractionalCount);
     }
 
-    [Fact]
-    public void Test_to_celsius_generic_from_celsius_returns_same_value()
+    protected override double ToUsingGeneric(
+        CelsiusDouble value,
+        int fractionalCount)
     {
-        // Arrange.
-        CelsiusDouble input = new(42.3d);
+        return value.To<Celsius>(fractionalCount);
+    }
 
-        // Act.
-        double result = input.To<Celsius>();
-
-        // Assert.
-        result.Should()
-            .Be(input.Temperature);
+    protected override CelsiusDouble Create(
+        double value)
+    {
+        return new CelsiusDouble(value);
     }
 
     [Fact]

@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using TemperatureTypes;
@@ -11,8 +12,40 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToStringExtensionsTests
+public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, string>
 {
+    public ToStringExtensionsTests() : base("5", GetData()) { }
+
+    private static List<string> GetData()
+    {
+        return new List<string>
+        {
+            "0.25",
+            "5",
+            "10"
+        };
+    }
+
+    protected override string To(
+        GasString value,
+        int fractionalCount)
+    {
+        return value.ToGas(fractionalCount);
+    }
+
+    protected override string ToUsingGeneric(
+        GasString value,
+        int fractionalCount)
+    {
+        return value.To<Gas>(fractionalCount);
+    }
+
+    protected override GasString Create(
+        string value)
+    {
+        return new GasString(value);
+    }
+
     [Fact]
     public void Test_to_gas_from_celsius_returns_correct_value()
     {

@@ -3,13 +3,13 @@
 using System.Globalization;
 using FluentAssertions;
 using Temperature.Extensions.From;
-using Types.Celsius;
 using Types.Rankine;
 using Xunit;
 
 public sealed class FromStringExtensionTests : BaseFromExtensionTests<string, RankineString>
 {
-    public FromStringExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0", "-999.999", double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
+    public FromStringExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0", "-999.999",
+        double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
 
     protected override RankineString ConvertFrom(
         string value)

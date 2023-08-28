@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Kelvin;
@@ -12,8 +13,40 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToIntExtensionTests
+public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
 {
+    public ToIntExtensionTests() : base(9999, GetData()) { }
+
+    private static List<int> GetData()
+    {
+        return new List<int>
+        {
+            999,
+            0,
+            -999
+        };
+    }
+
+    protected override int To(
+        KelvinInt value,
+        int fractionalCount)
+    {
+        return value.ToKelvin();
+    }
+
+    protected override int ToUsingGeneric(
+        KelvinInt value,
+        int fractionalCount)
+    {
+        return value.To<Kelvin>();
+    }
+
+    protected override KelvinInt Create(
+        int value)
+    {
+        return new KelvinInt(value);
+    }
+
     [Fact]
     public void Test_to_kelvin_from_celsius_returns_correct_value()
     {

@@ -1,6 +1,7 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 using System;
+using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Gas;
@@ -12,8 +13,40 @@ using Types.Kelvin;
 using Types.Rankine;
 using Xunit;
 
-public sealed class ToDoubleExtensionTests
+public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, double>
 {
+    public ToDoubleExtensionTests() : base(5d, GetData()) { }
+
+    private static List<double> GetData()
+    {
+        return new List<double>
+        {
+            0.25d,
+            5d,
+            10d
+        };
+    }
+
+    protected override double To(
+        GasDouble value,
+        int fractionalCount)
+    {
+        return value.ToGas(fractionalCount);
+    }
+
+    protected override double ToUsingGeneric(
+        GasDouble value,
+        int fractionalCount)
+    {
+        return value.To<Gas>(fractionalCount);
+    }
+
+    protected override GasDouble Create(
+        double value)
+    {
+        return new GasDouble(value);
+    }
+
     [Theory]
     [InlineData(80, 0.25d)]
     [InlineData(114, 0.25d)]
