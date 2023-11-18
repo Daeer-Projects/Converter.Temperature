@@ -6,13 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.2" />
-    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.355802" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.10" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.421302" />
     <PackageReference Include="System.Text.RegularExpressions" Version="4.3.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Converter.Temperature\Converter.Temperature.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Nerdbank.GitVersioning" Version="3.6.133" />
   </ItemGroup>
 
 </Project>
