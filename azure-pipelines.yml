@@ -25,14 +25,21 @@ jobs:
     timeoutInMinutes: 10
     inputs:
       packageType: 'sdk'
-      version: 6.0.306
+      version: 6.0.417
 
   - task: UseDotNet@2
     displayName: 'Get Dotnet 7 SDK'
     timeoutInMinutes: 10
     inputs:
       packageType: 'sdk'
-      version: 7.0.100
+      version: 7.0.404
+
+  - task: UseDotNet@2
+    displayName: 'Get Dotnet 8 SDK'
+    timeoutInMinutes: 10
+    inputs:
+      packageType: 'sdk'
+      version: 8.0.100
 
   - task: DotNetCoreCLI@2
     displayName: Restore
