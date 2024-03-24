@@ -9,5 +9,5 @@ public sealed class RømerFloat : FloatBase
         Temperature = temp;
     }
 
-    public float Temperature { get; }
+    public override float Temperature { get; }
 }
