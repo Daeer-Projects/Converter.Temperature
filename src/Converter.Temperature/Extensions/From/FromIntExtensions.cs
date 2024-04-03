@@ -87,7 +87,8 @@ public static class FromIntExtensions
     /// <returns>
     ///     The Rømer Int class for the 'To' extension to use.
     /// </returns>
-    public static RømerInt FromRømer(this int input)
+    public static RømerInt FromRømer(
+        this int input)
     {
         return new RømerInt(input);
     }

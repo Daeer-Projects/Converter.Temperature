@@ -87,7 +87,8 @@ public static class FromFloatExtensions
     /// <returns>
     ///     The Rømer Float class for the 'To' extension to use.
     /// </returns>
-    public static RømerFloat FromRømer(this float input)
+    public static RømerFloat FromRømer(
+        this float input)
     {
         return new RømerFloat(input);
     }

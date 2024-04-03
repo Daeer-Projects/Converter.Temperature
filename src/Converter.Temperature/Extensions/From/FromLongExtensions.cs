@@ -84,7 +84,8 @@ public static class FromLongExtensions
     /// <returns>
     ///     The Rømer Long class for the 'To' extension to use.
     /// </returns>
-    public static RømerLong FromRømer(this long input)
+    public static RømerLong FromRømer(
+        this long input)
     {
         return new RømerLong(input);
     }

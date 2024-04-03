@@ -87,7 +87,8 @@ public static class FromStringExtensions
     /// <returns>
     ///     The Rømer String class for the 'To' extension to use.
     /// </returns>
-    public static RømerString FromRømer(this string input)
+    public static RømerString FromRømer(
+        this string input)
     {
         return new RømerString(input);
     }

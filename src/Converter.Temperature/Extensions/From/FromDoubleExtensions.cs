@@ -87,7 +87,8 @@ public static class FromDoubleExtensions
     /// <returns>
     ///     The Rømer Double class for the 'To' extension to use.
     /// </returns>
-    public static RømerDouble FromRømer(this double input)
+    public static RømerDouble FromRømer(
+        this double input)
     {
         return new RømerDouble(input);
     }
