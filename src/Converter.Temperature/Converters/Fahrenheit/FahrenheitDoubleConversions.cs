@@ -84,4 +84,24 @@ internal static class FahrenheitDoubleConversions
         double rankineTemp = firstTemp + 459.67d;
         return rankineTemp;
     }
+
+    /// <summary>
+    ///     The fahrenheit to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double FahrenheitToRømer(
+        double input)
+    {
+        double rømerTemp = (input - 491.67) * 7 / 24 + 7.5;
+        if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return rømerTemp;
+    }
 }

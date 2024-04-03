@@ -95,4 +95,20 @@ internal static class FahrenheitLongConversions
         long rankineTemp = input + 460;
         return rankineTemp;
     }
+
+    /// <summary>
+    ///     The fahrenheit to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long FahrenheitToRømer(
+        long input)
+    {
+        double result = (input - 491.67f) * 7 / 24 + 7.5f;
+        long rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTemp;
+    }
 }

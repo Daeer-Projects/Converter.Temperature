@@ -85,4 +85,20 @@ internal static class KelvinIntConversions
         int rankineTemp = input * 9 / 5;
         return rankineTemp;
     }
+
+    /// <summary>
+    ///     The kelvin to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int KelvinToRømer(
+        int input)
+    {
+        double result = (input - 273.15) * 21 / 40 + 7.5;
+        int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTemp;
+    }
 }

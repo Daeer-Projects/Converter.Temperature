@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Converters.Kelvin;
 
+using System;
 using Celsius;
 
 internal static class KelvinDoubleConversions
@@ -76,5 +77,23 @@ internal static class KelvinDoubleConversions
     {
         double rankineTemp = firstTemp * 9 / 5;
         return rankineTemp;
+    }
+
+    /// <summary>
+    ///     The kelvin to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double KelvinToRømer(
+        double input)
+    {
+        double rømerTemp = (input - 273.15) * 21 / 40 + 7.5;
+        if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+
+        return rømerTemp;
     }
 }
