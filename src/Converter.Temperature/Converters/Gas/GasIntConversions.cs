@@ -13,7 +13,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToCelsius(
+    internal static int GasToCelsius(
         int input)
     {
         int celTemp = input switch
@@ -42,7 +42,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToFahrenheit(
+    internal static int GasToFahrenheit(
         int input)
     {
         int celsiusTemp = GasToCelsius(input);
@@ -58,7 +58,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToKelvin(
+    internal static int GasToKelvin(
         int input)
     {
         int celsiusTemp = GasToCelsius(input);
@@ -74,7 +74,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToGas(
+    internal static int GasToGas(
         int input)
     {
         if (input is < 1 or > 10)
@@ -93,7 +93,7 @@ internal static class GasIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int GasToRankine(
+    internal static int GasToRankine(
         int input)
     {
         int celsiusTemp = GasToCelsius(input);

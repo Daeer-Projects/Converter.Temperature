@@ -13,7 +13,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToCelsius(
+    internal static float GasToCelsius(
         float input)
     {
         float celTemp = input switch
@@ -44,7 +44,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToFahrenheit(
+    internal static float GasToFahrenheit(
         float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
@@ -60,7 +60,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToKelvin(
+    internal static float GasToKelvin(
         float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
@@ -76,7 +76,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToGas(
+    internal static float GasToGas(
         float input)
     {
         if (input < .25 || input > 10)
@@ -95,7 +95,7 @@ internal static class GasFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float GasToRankine(
+    internal static float GasToRankine(
         float firstTemp)
     {
         float celsiusTemp = GasToCelsius(firstTemp);
