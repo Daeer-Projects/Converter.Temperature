@@ -12,7 +12,7 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RømerToCelsius(int input)
+    internal static int RømerToCelsius(int input)
     {
         double calculatedValue = input * 21d / 40d + 7.5d;
         int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -26,7 +26,7 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RømerToFahrenheit(int input)
+    internal static int RømerToFahrenheit(int input)
     {
         double calculatedValue = (input - 32d) * 7d / 24d + 7.5d;
         int fahrenheitTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
@@ -41,7 +41,7 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RømerToKelvin(int input)
+    internal static int RømerToKelvin(int input)
     {
         double calculatedValue = (input - 273.15d) * 21d / 40d + 7.5d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -62,7 +62,7 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RømerToGas(int input)
+    internal static int RømerToGas(int input)
     {
         int celsiusTemp = RømerToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
@@ -77,7 +77,7 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RømerToRankine(int input)
+    internal static int RømerToRankine(int input)
     {
         double calculatedValue = (input - 491.67d) * 7d / 24d + 7.5d;
         int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
@@ -97,7 +97,7 @@ internal static class RømerIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int RømerToRømer(int input)
+    internal static int RømerToRømer(int input)
     {
         return input;
     }

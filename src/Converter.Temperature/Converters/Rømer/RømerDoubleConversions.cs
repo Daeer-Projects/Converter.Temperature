@@ -12,7 +12,7 @@ internal static class RømerDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RømerToCelsius(double input)
+    internal static double RømerToCelsius(double input)
     {
         double celsiusTemp = (input - 7.5d) * 40d / 21d;
         return celsiusTemp;
@@ -25,7 +25,7 @@ internal static class RømerDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RømerToFahrenheit(double input)
+    internal static double RømerToFahrenheit(double input)
     {
         double fahrenheitTemp = (input - 7.5d) * 24d / 7d + 32d;
         return fahrenheitTemp;
@@ -39,7 +39,7 @@ internal static class RømerDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RømerToKelvin(double input)
+    internal static double RømerToKelvin(double input)
     {
         double kelvinTemp = (input - 7.5d) * 40d / 21d + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
@@ -56,7 +56,7 @@ internal static class RømerDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RømerToGas(double input)
+    internal static double RømerToGas(double input)
     {
         double celsiusTemp = RømerToCelsius(input);
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
@@ -71,7 +71,7 @@ internal static class RømerDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RømerToRankine(double input)
+    internal static double RømerToRankine(double input)
     {
         double rankineTemp = (input - 7.5d) * 24d / 7d + 491.67d;
         if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
@@ -87,7 +87,7 @@ internal static class RømerDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RømerToRømer(double input)
+    internal static double RømerToRømer(double input)
     {
         return input;
     }
