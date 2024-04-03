@@ -11,7 +11,7 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToCelsius(
+    internal static float CelsiusToCelsius(
         float firstTemp)
     {
         return firstTemp;
@@ -25,7 +25,7 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToFahrenheit(
+    internal static float CelsiusToFahrenheit(
         float input)
     {
         float fahrenheitTemp = input * 1.8f + 32;
@@ -45,7 +45,7 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToKelvin(
+    internal static float CelsiusToKelvin(
         float input)
     {
         float kelvinTemp = input * 1.01f + 273.15f;
@@ -67,7 +67,7 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToGas(
+    internal static float CelsiusToGas(
         float input)
     {
         float gasTemp = input switch
@@ -99,7 +99,7 @@ internal static class CelsiusFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float CelsiusToRankine(
+    internal static float CelsiusToRankine(
         float input)
     {
         float rankineTemp = (input + 273.15f) * 9 / 5;

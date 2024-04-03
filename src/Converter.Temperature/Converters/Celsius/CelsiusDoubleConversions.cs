@@ -11,7 +11,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToCelsius(
+    internal static double CelsiusToCelsius(
         double firstTemp)
     {
         return firstTemp;
@@ -25,7 +25,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToFahrenheit(
+    internal static double CelsiusToFahrenheit(
         double input)
     {
         double fahrenheitTemp = input * 1.8 + 32;
@@ -45,7 +45,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToKelvin(
+    internal static double CelsiusToKelvin(
         double input)
     {
         double kelvinTemp = input * 1.01d + 273.15d;
@@ -67,7 +67,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToGas(
+    internal static double CelsiusToGas(
         double input)
     {
         double gasTemp = input switch
@@ -99,7 +99,7 @@ internal static class CelsiusDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double CelsiusToRankine(
+    internal static double CelsiusToRankine(
         double input)
     {
         double rankineTemp = (input + 273.15) * 9 / 5;

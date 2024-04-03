@@ -11,7 +11,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToCelsius(
+    internal static long CelsiusToCelsius(
         long input)
     {
         return input;
@@ -25,7 +25,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToFahrenheit(
+    internal static long CelsiusToFahrenheit(
         long input)
     {
         const double calculatedValue = 1 * 1.8 + 32;
@@ -50,7 +50,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToKelvin(
+    internal static long CelsiusToKelvin(
         long input)
     {
         const long maxValue = long.MaxValue - 273L;
@@ -73,7 +73,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToGas(
+    internal static long CelsiusToGas(
         long input)
     {
         long gasTemp = input switch
@@ -103,7 +103,7 @@ internal static class CelsiusLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long CelsiusToRankine(
+    internal static long CelsiusToRankine(
         long input)
     {
         const long minValue = long.MinValue + 492;
