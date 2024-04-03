@@ -11,7 +11,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToCelsius(
+    internal static float KelvinToCelsius(
         float firstTemp)
     {
         float celsiusTemp = firstTemp - 273.15f;
@@ -26,7 +26,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToFahrenheit(
+    internal static float KelvinToFahrenheit(
         float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
@@ -41,7 +41,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToKelvin(
+    internal static float KelvinToKelvin(
         float firstTemp)
     {
         return firstTemp;
@@ -55,7 +55,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToGas(
+    internal static float KelvinToGas(
         float firstTemp)
     {
         float celsiusTemp = KelvinToCelsius(firstTemp);
@@ -71,7 +71,7 @@ internal static class KelvinFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float KelvinToRankine(
+    internal static float KelvinToRankine(
         float firstTemp)
     {
         float rankineTemp = firstTemp * 9 / 5;
