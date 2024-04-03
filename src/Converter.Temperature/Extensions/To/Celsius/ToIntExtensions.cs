@@ -96,7 +96,8 @@ public static class ToIntExtensions
     /// <returns>
     ///     The Celsius <see langword="int" /> result.
     /// </returns>
-    public static int ToCelsius(this RømerInt input)
+    public static int ToCelsius(
+        this RømerInt input)
     {
         return RømerIntConversions.RømerToCelsius(input.Temperature);
     }

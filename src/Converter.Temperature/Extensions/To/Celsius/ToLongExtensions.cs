@@ -96,7 +96,8 @@ public static class ToLongExtensions
     /// <returns>
     ///     The Celsius <see langword="long" /> result.
     /// </returns>
-    public static long ToCelsius(this RømerLong input)
+    public static long ToCelsius(
+        this RømerLong input)
     {
         return RømerLongConversions.RømerToCelsius(input.Temperature);
     }
