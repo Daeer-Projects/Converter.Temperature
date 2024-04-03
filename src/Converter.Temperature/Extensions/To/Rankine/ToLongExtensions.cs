@@ -6,11 +6,13 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="long" /> extensions.
@@ -83,5 +85,18 @@ public static class ToLongExtensions
         this RankineLong input)
     {
         return RankineLongConversions.RankineToRankine(input.Temperature);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Rankine
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <returns>
+    ///     The Rankine <see langword="long" /> result.
+    /// </returns>
+    public static long ToRankine(
+        this RømerLong input)
+    {
+        return RømerLongConversions.RømerToRankine(input.Temperature);
     }
 }
