@@ -13,7 +13,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToRankine(
+    internal static float RankineToRankine(
         float input)
     {
         return input;
@@ -27,7 +27,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToCelsius(
+    internal static float RankineToCelsius(
         float input)
     {
         float rankineTemp = (input - 491.67f) * 5 / 9;
@@ -47,7 +47,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToFahrenheit(
+    internal static float RankineToFahrenheit(
         float input)
     {
         float rankineTemp = input - 459.67f;
@@ -62,7 +62,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToKelvin(
+    internal static float RankineToKelvin(
         float input)
     {
         float rankineTemp = input * 5 / 9;
@@ -77,7 +77,7 @@ internal static class RankineFloatConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static float RankineToGas(
+    internal static float RankineToGas(
         float input)
     {
         float celsiusTemp = RankineToCelsius(input);

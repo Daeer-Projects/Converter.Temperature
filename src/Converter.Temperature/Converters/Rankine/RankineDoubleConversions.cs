@@ -12,7 +12,7 @@ internal static class RankineDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RankineToRankine(
+    internal static double RankineToRankine(
         double input)
     {
         return input;
@@ -26,7 +26,7 @@ internal static class RankineDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RankineToCelsius(
+    internal static double RankineToCelsius(
         double input)
     {
         double rankineTemp = (input - 491.67) * 5 / 9;
@@ -41,7 +41,7 @@ internal static class RankineDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RankineToFahrenheit(
+    internal static double RankineToFahrenheit(
         double input)
     {
         double rankineTemp = input - 459.67;
@@ -56,7 +56,7 @@ internal static class RankineDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RankineToKelvin(
+    internal static double RankineToKelvin(
         double input)
     {
         double rankineTemp = input * 5 / 9;
@@ -71,7 +71,7 @@ internal static class RankineDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double RankineToGas(
+    internal static double RankineToGas(
         double input)
     {
         double celsiusTemp = RankineToCelsius(input);
