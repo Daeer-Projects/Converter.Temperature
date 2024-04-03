@@ -13,7 +13,7 @@ internal static class GasDoubleConversion
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double GasToCelsius(
+    internal static double GasToCelsius(
         double input)
     {
         double celTemp = input switch
@@ -44,7 +44,7 @@ internal static class GasDoubleConversion
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double GasToFahrenheit(
+    internal static double GasToFahrenheit(
         double firstTemp)
     {
         double celsiusTemp = GasToCelsius(firstTemp);
@@ -60,7 +60,7 @@ internal static class GasDoubleConversion
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double GasToKelvin(
+    internal static double GasToKelvin(
         double firstTemp)
     {
         double celsiusTemp = GasToCelsius(firstTemp);
@@ -76,7 +76,7 @@ internal static class GasDoubleConversion
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double GasToGas(
+    internal static double GasToGas(
         double input)
     {
         if (input is < .25 or > 10)
@@ -95,7 +95,7 @@ internal static class GasDoubleConversion
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double GasToRankine(
+    internal static double GasToRankine(
         double firstTemp)
     {
         double celsiusTemp = GasToCelsius(firstTemp);

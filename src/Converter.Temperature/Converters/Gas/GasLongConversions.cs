@@ -13,7 +13,7 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToCelsius(
+    internal static long GasToCelsius(
         long input)
     {
         long celTemp = input switch
@@ -42,7 +42,7 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToFahrenheit(
+    internal static long GasToFahrenheit(
         long input)
     {
         long celsiusTemp = GasToCelsius(input);
@@ -58,7 +58,7 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToKelvin(
+    internal static long GasToKelvin(
         long input)
     {
         long celsiusTemp = GasToCelsius(input);
@@ -74,7 +74,7 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToGas(
+    internal static long GasToGas(
         long input)
     {
         if (input is < 1 or > 10)
@@ -93,7 +93,7 @@ internal static class GasLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long GasToRankine(
+    internal static long GasToRankine(
         long input)
     {
         long celsiusTemp = GasToCelsius(input);

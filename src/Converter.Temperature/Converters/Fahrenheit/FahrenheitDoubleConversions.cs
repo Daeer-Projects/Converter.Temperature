@@ -13,7 +13,7 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToCelsius(
+    internal static double FahrenheitToCelsius(
         double firstTemp)
     {
         double celsiusTemp = (firstTemp - 32) * 5 / 9;
@@ -32,7 +32,7 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToFahrenheit(
+    internal static double FahrenheitToFahrenheit(
         double firstTemp)
     {
         return firstTemp;
@@ -46,7 +46,7 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToKelvin(
+    internal static double FahrenheitToKelvin(
         double firstTemp)
     {
         double celsiusTemp = FahrenheitToCelsius(firstTemp);
@@ -62,7 +62,7 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToGas(
+    internal static double FahrenheitToGas(
         double firstTemp)
     {
         double celsiusTemp = FahrenheitToCelsius(firstTemp);
@@ -78,7 +78,7 @@ internal static class FahrenheitDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double FahrenheitToRankine(
+    internal static double FahrenheitToRankine(
         double firstTemp)
     {
         double rankineTemp = firstTemp + 459.67d;

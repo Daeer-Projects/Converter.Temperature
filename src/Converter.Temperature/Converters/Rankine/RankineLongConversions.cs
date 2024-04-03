@@ -12,7 +12,7 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long RankineToRankine(
+    internal static long RankineToRankine(
         long input)
     {
         return input;
@@ -26,7 +26,7 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long RankineToCelsius(
+    internal static long RankineToCelsius(
         long input)
     {
         long rankineTemp = (input - 492L) * 5 / 9;
@@ -41,7 +41,7 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long RankineToFahrenheit(
+    internal static long RankineToFahrenheit(
         long input)
     {
         long rankineTemp = input - 460L;
@@ -56,7 +56,7 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long RankineToKelvin(
+    internal static long RankineToKelvin(
         long input)
     {
         long rankineTemp = input * 5 / 9;
@@ -71,7 +71,7 @@ internal static class RankineLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long RankineToGas(
+    internal static long RankineToGas(
         long input)
     {
         long celsiusTemp = RankineToCelsius(input);

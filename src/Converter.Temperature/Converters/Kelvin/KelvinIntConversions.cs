@@ -12,7 +12,7 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToCelsius(
+    internal static int KelvinToCelsius(
         int input)
     {
         const int maxValue = int.MaxValue - 273;
@@ -34,7 +34,7 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToFahrenheit(
+    internal static int KelvinToFahrenheit(
         int input)
     {
         int celsiusTemp = KelvinToCelsius(input);
@@ -49,7 +49,7 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToKelvin(
+    internal static int KelvinToKelvin(
         int input)
     {
         return input;
@@ -63,7 +63,7 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToGas(
+    internal static int KelvinToGas(
         int input)
     {
         int celsiusTemp = KelvinToCelsius(input);
@@ -79,7 +79,7 @@ internal static class KelvinIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int KelvinToRankine(
+    internal static int KelvinToRankine(
         int input)
     {
         int rankineTemp = input * 9 / 5;

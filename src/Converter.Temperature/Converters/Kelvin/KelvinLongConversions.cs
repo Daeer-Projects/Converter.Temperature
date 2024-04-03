@@ -12,7 +12,7 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToCelsius(
+    internal static long KelvinToCelsius(
         long input)
     {
         const long maxValue = long.MaxValue - 273L;
@@ -34,7 +34,7 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToFahrenheit(
+    internal static long KelvinToFahrenheit(
         long input)
     {
         long celsiusTemp = KelvinToCelsius(input);
@@ -49,7 +49,7 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToKelvin(
+    internal static long KelvinToKelvin(
         long input)
     {
         return input;
@@ -63,7 +63,7 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToGas(
+    internal static long KelvinToGas(
         long input)
     {
         long celsiusTemp = KelvinToCelsius(input);
@@ -79,7 +79,7 @@ internal static class KelvinLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long KelvinToRankine(
+    internal static long KelvinToRankine(
         long input)
     {
         long rankineTemp = input * 9 / 5;

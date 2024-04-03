@@ -11,7 +11,7 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToCelsius(
+    internal static double KelvinToCelsius(
         double firstTemp)
     {
         double celsiusTemp = firstTemp - 273.15;
@@ -26,7 +26,7 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToFahrenheit(
+    internal static double KelvinToFahrenheit(
         double firstTemp)
     {
         double celsiusTemp = KelvinToCelsius(firstTemp);
@@ -41,7 +41,7 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToKelvin(
+    internal static double KelvinToKelvin(
         double firstTemp)
     {
         return firstTemp;
@@ -55,7 +55,7 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToGas(
+    internal static double KelvinToGas(
         double firstTemp)
     {
         double celsiusTemp = KelvinToCelsius(firstTemp);
@@ -71,7 +71,7 @@ internal static class KelvinDoubleConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static double KelvinToRankine(
+    internal static double KelvinToRankine(
         double firstTemp)
     {
         double rankineTemp = firstTemp * 9 / 5;

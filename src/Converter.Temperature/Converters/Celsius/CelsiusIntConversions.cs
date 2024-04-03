@@ -11,7 +11,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToCelsius(
+    internal static int CelsiusToCelsius(
         int input)
     {
         return input;
@@ -25,7 +25,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToFahrenheit(
+    internal static int CelsiusToFahrenheit(
         int input)
     {
         const double calculatedValue = 1 * 1.8 + 32;
@@ -50,7 +50,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToKelvin(
+    internal static int CelsiusToKelvin(
         int input)
     {
         const int maxValue = int.MaxValue - 273;
@@ -73,7 +73,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToGas(
+    internal static int CelsiusToGas(
         int input)
     {
         int gasTemp = input switch
@@ -103,7 +103,7 @@ internal static class CelsiusIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static int CelsiusToRankine(
+    internal static int CelsiusToRankine(
         int input)
     {
         const int minValue = int.MinValue + 492;
