@@ -9,6 +9,7 @@ using Converters.Kelvin;
 using Converters.Rankine;
 using Converters.Rømer;
 using Helpers;
+using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
@@ -129,10 +130,10 @@ public static class ToDoubleExtensions
             nameof(Rankine) when input is RømerDouble castInput => ToExtensionHelpers.Rounder(
                 RømerDoubleConversions.RømerToRankine(castInput.Temperature),
                 fractionalCount),
+            nameof(Rømer) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
+                CelsiusDoubleConversions.CelsiusToRømer(castInput.Temperature),
+                fractionalCount),
 
-            //nameof(Rømer) when input is CelsiusDouble castInput => Rounder(
-            //    CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature),
-            //    fractionalCount),
             //nameof(Rømer) when input is FahrenheitDouble castInput => Rounder(
             //    FahrenheitDoubleConversions.FahrenheitToRankine(castInput.Temperature),
             //    fractionalCount),
