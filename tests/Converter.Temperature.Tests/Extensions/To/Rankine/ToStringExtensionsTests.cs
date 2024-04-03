@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using FluentAssertions;
 using Temperature.Extensions.To;
+using Temperature.Extensions.To.Rankine;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;

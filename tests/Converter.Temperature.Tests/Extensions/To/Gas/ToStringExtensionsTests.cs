@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
+using Temperature.Extensions.To.Gas;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;

@@ -3,6 +3,7 @@
 using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
+using Temperature.Extensions.To.Celsius;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
