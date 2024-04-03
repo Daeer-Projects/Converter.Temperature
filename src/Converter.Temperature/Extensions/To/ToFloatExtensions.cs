@@ -144,6 +144,9 @@ public static class ToFloatExtensions
             nameof(Rømer) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToRømer(castInput.Temperature),
                 fractionalCount),
+            nameof(Rømer) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+                RømerFloatConversions.RømerToRømer(castInput.Temperature),
+                fractionalCount),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }
