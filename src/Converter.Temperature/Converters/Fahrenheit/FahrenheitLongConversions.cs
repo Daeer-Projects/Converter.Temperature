@@ -13,7 +13,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToCelsius(
+    internal static long FahrenheitToCelsius(
         long firstTemp)
     {
         double celsiusTemp = (firstTemp - 32d) * 5 / 9;
@@ -30,7 +30,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToFahrenheit(
+    internal static long FahrenheitToFahrenheit(
         long firstTemp)
     {
         return firstTemp;
@@ -44,7 +44,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToKelvin(
+    internal static long FahrenheitToKelvin(
         long input)
     {
         double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
@@ -68,7 +68,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToGas(
+    internal static long FahrenheitToGas(
         long input)
     {
         long celsiusTemp = FahrenheitToCelsius(input);
@@ -84,7 +84,7 @@ internal static class FahrenheitLongConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    public static long FahrenheitToRankine(
+    internal static long FahrenheitToRankine(
         long input)
     {
         const long maxValue = long.MaxValue - 460;
