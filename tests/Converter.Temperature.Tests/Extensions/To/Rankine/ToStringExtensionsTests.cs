@@ -12,6 +12,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString, string>
@@ -228,5 +229,51 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
         // Assert.
         result.Should()
             .Be(input.Temperature);
+    }
+
+    [Theory]
+    [InlineData("2157.8528571428574", "493.47")]
+    [InlineData("1391.67", "270")]
+    [InlineData("1193.67", "212.25")]
+    [InlineData("1013.6700000000001", "159.75")]
+    [InlineData("465.9557142857143", "0")]
+    [InlineData("0", "-135.90375")]
+    [InlineData("-10.4045142857143", "-138.9384")]
+    public void Test_to_rankine_from_rømer_returns_correct_value(
+        string expected,
+        string originalTemp)
+    {
+        // Arrange.
+        RømerString input = new(originalTemp);
+
+        // Act.
+        string result = input.ToRankine();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData("2157.8528571428574", "493.47")]
+    [InlineData("1391.67", "270")]
+    [InlineData("1193.67", "212.25")]
+    [InlineData("1013.6700000000001", "159.75")]
+    [InlineData("465.9557142857143", "0")]
+    [InlineData("0", "-135.90375")]
+    [InlineData("-10.4045142857143", "-138.9384")]
+    public void Test_to_rankine_generic_from_rømer_returns_correct_value(
+        string expected,
+        string originalTemp)
+    {
+        // Arrange.
+        RømerString input = new(originalTemp);
+
+        // Act.
+        string result = input.To<Rankine>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
     }
 }

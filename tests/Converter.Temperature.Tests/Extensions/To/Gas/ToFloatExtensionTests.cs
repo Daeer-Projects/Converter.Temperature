@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float>
@@ -246,6 +247,44 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         // Arrange.
         const float expected = 3f;
         RankineFloat input = new(806.67f);
+
+        // Act.
+        float result = input.To<Gas>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(10f, 148.367f)]
+    [InlineData(6f, 110.384f)]
+    [InlineData(0.25f, 50.99f)]
+    public void Test_to_gas_from_rømer_returns_correct_value(
+        float expected,
+        float originalTemp)
+    {
+        // Arrange.
+        RømerFloat input = new(originalTemp);
+
+        // Act.
+        float result = input.ToGas();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(10f, 148.367f)]
+    [InlineData(6f, 110.384f)]
+    [InlineData(0.25f, 50.99f)]
+    public void Test_to_gas_generic_from_rømer_returns_correct_value(
+        float expected,
+        float originalTemp)
+    {
+        // Arrange.
+        RømerFloat input = new(originalTemp);
 
         // Act.
         float result = input.To<Gas>();

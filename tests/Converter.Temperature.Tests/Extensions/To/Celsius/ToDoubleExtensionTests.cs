@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Celsius;
@@ -274,6 +275,86 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
     {
         // Arrange.
         RankineDouble input = new(493.47d);
+
+        // Act.
+        double result = input.To<Celsius>(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(925.657142857143d, 493.47d)]
+    [InlineData(500d, 270d)]
+    [InlineData(390d, 212.25d)]
+    [InlineData(290d, 159.75d)]
+    [InlineData(-14.285714285714286d, 0d)]
+    [InlineData(-273.15d, -135.90375d)]
+    public void Test_to_celsius_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(925.657142857143d, 493.47d)]
+    [InlineData(500d, 270d)]
+    [InlineData(390d, 212.25d)]
+    [InlineData(290d, 159.75d)]
+    [InlineData(-14.285714285714286d, 0d)]
+    [InlineData(-273.15d, -135.90375d)]
+    public void Test_to_celsius_generic_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.To<Celsius>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(925.7d, 1)]
+    [InlineData(925.65714285714282d, 14)]
+    public void Test_to_celsius_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(493.47d);
+
+        // Act.
+        double result = input.ToCelsius(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(925.7d, 1)]
+    [InlineData(925.65714285714282d, 14)]
+    public void Test_to_celsius_generic_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(493.47d);
 
         // Act.
         double result = input.To<Celsius>(fractionalCount);

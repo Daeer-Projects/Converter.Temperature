@@ -10,6 +10,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
@@ -195,6 +196,44 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         // Arrange.
         const long expected = 6L;
         RankineLong input = new(862L);
+
+        // Act.
+        long result = input.To<Gas>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(10L, 148L)]
+    [InlineData(6L, 110L)]
+    [InlineData(1L, 80L)]
+    public void Test_to_gas_from_rømer_returns_correct_value(
+        long expected,
+        long originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
+
+        // Act.
+        long result = input.ToGas();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(10L, 148L)]
+    [InlineData(6L, 110L)]
+    [InlineData(1L, 80L)]
+    public void Test_to_gas_generic_from_rømer_returns_correct_value(
+        long expected,
+        long originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
 
         // Act.
         long result = input.To<Gas>();

@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble, double>
@@ -228,5 +229,87 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
         // Assert.
         result.Should()
             .Be(input.Temperature);
+    }
+
+    [Theory]
+    [InlineData(2157.8528571428574d, 493.47d)]
+    [InlineData(1391.67d, 270d)]
+    [InlineData(1193.67d, 212.25d)]
+    [InlineData(1013.6700000000001d, 159.75d)]
+    [InlineData(465.9557142857143d, 0d)]
+    [InlineData(0d, -135.90375d)]
+    [InlineData(-10.4045142857143d, -138.9384d)]
+    public void Test_to_rankine_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.ToRankine();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(2157.8528571428574d, 493.47d)]
+    [InlineData(1391.67d, 270d)]
+    [InlineData(1193.67d, 212.25d)]
+    [InlineData(1013.6700000000001d, 159.75d)]
+    [InlineData(465.9557142857143d, 0d)]
+    [InlineData(0d, -135.90375d)]
+    [InlineData(-10.4045142857143d, -138.9384d)]
+    public void Test_to_rankine_generic_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.To<Rankine>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(2157.9d, 1)]
+    [InlineData(2157.852857142857d, 12)]
+    public void Test_to_rankine_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(493.47d);
+
+        // Act.
+        double result = input.ToRankine(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(2157.9d, 1)]
+    [InlineData(2157.852857142857d, 12)]
+    public void Test_to_rankine_generic_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(493.47d);
+
+        // Act.
+        double result = input.To<Rankine>(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
     }
 }

@@ -292,7 +292,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
     [InlineData(554f, 159.75f)]
     [InlineData(6.285715f, 0f)]
     [InlineData(-459.66998f, -135.90375f)]
-    public void Test_to_celsius_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_from_rømer_returns_correct_value(
         float expected,
         float originalTemp)
     {
@@ -314,7 +314,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
     [InlineData(554f, 159.75f)]
     [InlineData(6.285715f, 0f)]
     [InlineData(-459.66998f, -135.90375f)]
-    public void Test_to_celsius_generic_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_generic_from_rømer_returns_correct_value(
         float expected,
         float originalTemp)
     {
@@ -332,7 +332,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
     [Theory]
     [InlineData(6.3f, 1)]
     [InlineData(6.285715f, 14)]
-    public void Test_to_celsius_with_parameter_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_with_parameter_from_rømer_returns_correct_value(
         float expected,
         int fractionalCount)
     {
@@ -350,7 +350,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
     [Theory]
     [InlineData(6.3f, 1)]
     [InlineData(6.285715f, 14)]
-    public void Test_to_celsius_generic_with_parameter_from_rømer_returns_correct_value(
+    public void Test_to_fahrenheit_generic_with_parameter_from_rømer_returns_correct_value(
         float expected,
         int fractionalCount)
     {

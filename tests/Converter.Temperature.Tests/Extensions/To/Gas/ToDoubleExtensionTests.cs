@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, double>
@@ -291,6 +292,44 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         // Arrange.
         const double expected = 3d;
         RankineDouble input = new(806.67);
+
+        // Act.
+        double result = input.To<Gas>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(10d, 148.367d)]
+    [InlineData(6d, 110.384d)]
+    [InlineData(0.25d, 50.994)]
+    public void Test_to_gas_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.ToGas();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(10d, 148.367d)]
+    [InlineData(6d, 110.384d)]
+    [InlineData(0.25d, 50.994)]
+    public void Test_to_gas_generic_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
 
         // Act.
         double result = input.To<Gas>();
