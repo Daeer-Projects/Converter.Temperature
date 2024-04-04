@@ -107,7 +107,7 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToRømer(
         long input)
     {
-        double result = (input - 491.67f) * 7 / 24 + 7.5f;
+        double result = (input - 32f) * 7 / 24 + 7.5f;
         long rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return rømerTemp;
     }
