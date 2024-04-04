@@ -133,19 +133,19 @@ public static class ToDoubleExtensions
                 CelsiusDoubleConversions.CelsiusToRømer(castInput.Temperature),
                 fractionalCount),
             nameof(Rømer) when input is FahrenheitDouble castInput => ToExtensionHelpers.Rounder(
-                FahrenheitDoubleConversions.FahrenheitToRankine(castInput.Temperature),
+                FahrenheitDoubleConversions.FahrenheitToRømer(castInput.Temperature),
                 fractionalCount),
             nameof(Rømer) when input is KelvinDouble castInput => ToExtensionHelpers.Rounder(
-                KelvinDoubleConversions.KelvinToRankine(castInput.Temperature),
+                KelvinDoubleConversions.KelvinToRømer(castInput.Temperature),
                 fractionalCount),
             nameof(Rømer) when input is GasDouble castInput => ToExtensionHelpers.Rounder(
-                GasDoubleConversion.GasToRankine(castInput.Temperature),
+                GasDoubleConversion.GasToRømer(castInput.Temperature),
                 fractionalCount),
             nameof(Rømer) when input is RankineDouble castInput => ToExtensionHelpers.Rounder(
-                RankineDoubleConversions.RankineToRankine(castInput.Temperature),
+                RankineDoubleConversions.RankineToRømer(castInput.Temperature),
                 fractionalCount),
             nameof(Rømer) when input is RømerDouble castInput => ToExtensionHelpers.Rounder(
-                RømerDoubleConversions.RømerToRankine(castInput.Temperature),
+                RømerDoubleConversions.RømerToRømer(castInput.Temperature),
                 fractionalCount),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };

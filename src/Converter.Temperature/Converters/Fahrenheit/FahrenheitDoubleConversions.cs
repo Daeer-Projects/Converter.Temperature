@@ -96,7 +96,7 @@ internal static class FahrenheitDoubleConversions
     internal static double FahrenheitToRømer(
         double input)
     {
-        double rømerTemp = (input - 491.67) * 7 / 24 + 7.5;
+        double rømerTemp = (input - 32) * 7 / 24 + 7.5;
         if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
