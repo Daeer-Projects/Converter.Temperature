@@ -96,7 +96,7 @@ internal static class FahrenheitFloatConversions
     internal static float FahrenheitToRømer(
         float input)
     {
-        float rømerTemp = (input - 491.67f) * 7 / 24 + 7.5f;
+        float rømerTemp = (input - 32f) * 7 / 24 + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
