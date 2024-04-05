@@ -3,25 +3,25 @@
 using System;
 using Extensions.From;
 using Extensions.To;
-using Extensions.To.Kelvin;
+using Extensions.To.Rankine;
 using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
-public sealed class ToKelvinLongTests
+public sealed class ToRømerLongTests
 {
     #region From Celsius
 
     [Fact]
-    public void Test_long_extensions_from_celsius_to_kelvin_returns_correct_value()
+    public void Test_long_extensions_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 473L;
+        const long expected = 852L;
         const long input = 200L;
 
         // Act.
         long result = input.FromCelsius()
-            .ToKelvin();
+            .ToRankine();
 
         // Assert.
         result.Should()
@@ -29,47 +29,49 @@ public sealed class ToKelvinLongTests
     }
 
     [Fact]
-    public void Test_long_extensions_generic_from_celsius_to_kelvin_returns_correct_value()
+    public void Test_long_extensions_generic_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 473L;
+        const long expected = 852L;
         const long input = 200L;
 
         // Act.
         long result = input.From<Celsius>()
-            .To<Kelvin>();
+            .To<Rankine>();
 
         // Assert.
         result.Should()
             .Be(expected);
     }
 
-    [Fact]
-    public void Test_long_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
+    [Theory]
+    [InlineData(long.MinValue)]
+    [InlineData(long.MaxValue)]
+    public void Test_long_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        long input)
     {
         // Arrange.
-        const long input = long.MaxValue;
-
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
             () => input.FromCelsius()
-                .ToKelvin());
+                .ToRankine());
 
         // Assert.
         result.Message.Should()
             .Contain("Value out of range for type.");
     }
 
-    [Fact]
-    public void Test_long_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception()
+    [Theory]
+    [InlineData(long.MinValue)]
+    [InlineData(long.MaxValue)]
+    public void Test_long_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
+        long input)
     {
         // Arrange.
-        const long input = long.MaxValue;
-
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
             () => input.From<Celsius>()
-                .To<Kelvin>());
+                .To<Rankine>());
 
         // Assert.
         result.Message.Should()
@@ -81,15 +83,15 @@ public sealed class ToKelvinLongTests
     #region From Fahrenheit
 
     [Fact]
-    public void Test_long_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
+    public void Test_long_extensions_from_fahrenheit_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 473L;
+        const long expected = 852L;
         const long input = 392L;
 
         // Act.
         long result = input.FromFahrenheit()
-            .ToKelvin();
+            .ToRankine();
 
         // Assert.
         result.Should()
@@ -97,15 +99,15 @@ public sealed class ToKelvinLongTests
     }
 
     [Fact]
-    public void Test_long_extensions_generic_from_fahrenheit_to_kelvin_returns_correct_value()
+    public void Test_long_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 473L;
+        const long expected = 852L;
         const long input = 392L;
 
         // Act.
         long result = input.From<Fahrenheit>()
-            .To<Kelvin>();
+            .To<Rankine>();
 
         // Assert.
         result.Should()
@@ -117,41 +119,41 @@ public sealed class ToKelvinLongTests
     #region From Kelvin
 
     [Theory]
-    [InlineData(long.MinValue)]
-    [InlineData(-345L)]
-    [InlineData(0L)]
-    [InlineData(7564L)]
-    [InlineData(long.MaxValue)]
-    public void Test_long_extension_from_and_to_kelvin_returns_correct_long_value(
-        long value)
+    [InlineData(-1000L, -1800L)]
+    [InlineData(0L, 0L)]
+    [InlineData(50L, 90L)]
+    [InlineData(1000L, 1800L)]
+    public void Test_long_extension_from_kelvin_to_rankine_returns_correct_long_value(
+        long value,
+        long expected)
     {
         // Arrange.
         // Act.
         long result = value.FromKelvin()
-            .ToKelvin();
+            .ToRankine();
 
         // Assert.
         result.Should()
-            .Be(value);
+            .Be(expected);
     }
 
     [Theory]
-    [InlineData(long.MinValue)]
-    [InlineData(-345L)]
-    [InlineData(0L)]
-    [InlineData(7564L)]
-    [InlineData(long.MaxValue)]
-    public void Test_long_extension_generic_from_and_to_kelvin_returns_correct_long_value(
-        long value)
+    [InlineData(-1000L, -1800L)]
+    [InlineData(0L, 0L)]
+    [InlineData(50L, 90L)]
+    [InlineData(1000L, 1800L)]
+    public void Test_long_extension_generic_from_kelvin_to_rankine_returns_correct_long_value(
+        long value,
+        long expected)
     {
         // Arrange.
         // Act.
         long result = value.From<Kelvin>()
-            .To<Kelvin>();
+            .To<Rankine>();
 
         // Assert.
         result.Should()
-            .Be(value);
+            .Be(expected);
     }
 
     #endregion From Kelvin
@@ -159,15 +161,15 @@ public sealed class ToKelvinLongTests
     #region From Gas
 
     [Fact]
-    public void Test_long_extension_from_gas_to_kelvin_returns_correct_value()
+    public void Test_long_extension_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 490L;
+        const long expected = 882L;
         const long input = 6L;
 
         // Act.
         long result = input.FromGas()
-            .ToKelvin();
+            .ToRankine();
 
         // Assert.
         result.Should()
@@ -175,15 +177,15 @@ public sealed class ToKelvinLongTests
     }
 
     [Fact]
-    public void Test_long_extension_generic_from_gas_to_kelvin_returns_correct_value()
+    public void Test_long_extension_generic_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 490L;
+        const long expected = 882L;
         const long input = 6L;
 
         // Act.
         long result = input.From<Gas>()
-            .To<Kelvin>();
+            .To<Rankine>();
 
         // Assert.
         result.Should()
@@ -195,45 +197,41 @@ public sealed class ToKelvinLongTests
     #region From Rankine
 
     [Theory]
-    [InlineData(-1000L, -555L)]
-    [InlineData(0L, 0L)]
-    [InlineData(50L, 27L)]
-    [InlineData(100L, 55L)]
-    [InlineData(500L, 277L)]
-    [InlineData(1000L, 555L)]
-    public void Test_long_extension_from_rankine_and_to_kelvin_returns_correct_long_value(
-        long value,
-        long expected)
+    [InlineData(long.MinValue)]
+    [InlineData(-345L)]
+    [InlineData(0L)]
+    [InlineData(7564L)]
+    [InlineData(long.MaxValue)]
+    public void Test_long_extension_from_and_to_rankine_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
         long result = value.FromRankine()
-            .ToKelvin();
+            .ToRankine();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .Be(value);
     }
 
     [Theory]
-    [InlineData(-1000L, -555L)]
-    [InlineData(0L, 0L)]
-    [InlineData(50L, 27L)]
-    [InlineData(100L, 55L)]
-    [InlineData(500L, 277L)]
-    [InlineData(1000L, 555L)]
-    public void Test_long_extension_generic_from_rankine_and_to_kelvin_returns_correct_long_value(
-        long value,
-        long expected)
+    [InlineData(long.MinValue)]
+    [InlineData(-345L)]
+    [InlineData(0L)]
+    [InlineData(7564L)]
+    [InlineData(long.MaxValue)]
+    public void Test_long_extension_generic_from_and_to_rankine_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
         long result = value.From<Rankine>()
-            .To<Kelvin>();
+            .To<Rankine>();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .Be(value);
     }
 
     #endregion From Rankine
@@ -241,20 +239,20 @@ public sealed class ToKelvinLongTests
     #region From Rømer
 
     [Theory]
-    [InlineData(-1000L, -1646L)]
-    [InlineData(0L, 259L)]
-    [InlineData(50L, 354L)]
-    [InlineData(100L, 449L)]
-    [InlineData(500L, 1211L)]
-    [InlineData(1000L, 2164L)]
-    public void Test_long_extension_from_rømer_and_to_kelvin_returns_correct_long_value(
+    [InlineData(-1000L, -2963L)]
+    [InlineData(0L, 466L)]
+    [InlineData(50L, 637L)]
+    [InlineData(100L, 809L)]
+    [InlineData(500L, 2180L)]
+    [InlineData(1000L, 3895L)]
+    public void Test_long_extension_from_rømer_and_to_rankine_returns_correct_long_value(
         long value,
         long expected)
     {
         // Arrange.
         // Act.
         long result = value.FromRømer()
-            .ToKelvin();
+            .ToRankine();
 
         // Assert.
         result.Should()
@@ -262,20 +260,20 @@ public sealed class ToKelvinLongTests
     }
 
     [Theory]
-    [InlineData(-1000L, -1646L)]
-    [InlineData(0L, 259L)]
-    [InlineData(50L, 354L)]
-    [InlineData(100L, 449L)]
-    [InlineData(500L, 1211L)]
-    [InlineData(1000L, 2164L)]
-    public void Test_long_extension_generic_from_rømer_and_to_kelvin_returns_correct_long_value(
+    [InlineData(-1000L, -2963L)]
+    [InlineData(0L, 466L)]
+    [InlineData(50L, 637L)]
+    [InlineData(100L, 809L)]
+    [InlineData(500L, 2180L)]
+    [InlineData(1000L, 3895L)]
+    public void Test_long_extension_generic_from_rømer_and_to_rankine_returns_correct_long_value(
         long value,
         long expected)
     {
         // Arrange.
         // Act.
         long result = value.From<Rømer>()
-            .To<Kelvin>();
+            .To<Rankine>();
 
         // Assert.
         result.Should()
