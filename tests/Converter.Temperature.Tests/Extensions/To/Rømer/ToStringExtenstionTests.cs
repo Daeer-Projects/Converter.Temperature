@@ -1,6 +1,5 @@
 ﻿namespace Converter.Temperature.Tests.Extensions.To.Rømer;
 
-using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
