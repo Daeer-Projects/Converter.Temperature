@@ -10,6 +10,7 @@ using Temperature.Extensions.To.Fahrenheit;
 using Temperature.Extensions.To.Gas;
 using Temperature.Extensions.To.Kelvin;
 using Temperature.Extensions.To.Rankine;
+using Temperature.Extensions.To.Rømer;
 using Temperature.TemperatureTypes;
 
 [MemoryDiagnoser]
@@ -107,6 +108,24 @@ public class IntBenchies
         return result;
     }
 
+    [Benchmark]
+    public int ConvertFromCelsiusToRømer()
+    {
+        const int input = 200;
+        int result = input.FromCelsius()
+            .ToRømer();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromCelsiusToRømerGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Celsius>()
+            .To<Rømer>();
+        return result;
+    }
+
     #endregion Celsius
 
     #region Fahrenheit
@@ -198,6 +217,24 @@ public class IntBenchies
         const int input = 200;
         int result = input.From<Fahrenheit>()
             .To<Rankine>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromFahrenheitToRømer()
+    {
+        const int input = 200;
+        int result = input.FromFahrenheit()
+            .ToRømer();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromFahrenheitToRømerGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Fahrenheit>()
+            .To<Rømer>();
         return result;
     }
 
@@ -295,6 +332,24 @@ public class IntBenchies
         return result;
     }
 
+    [Benchmark]
+    public int ConvertFromKelvinToRømer()
+    {
+        const int input = 200;
+        int result = input.FromKelvin()
+            .ToRømer();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromKelvinToRømerGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Kelvin>()
+            .To<Rømer>();
+        return result;
+    }
+
     #endregion Kelvin
 
     #region Gas
@@ -386,6 +441,24 @@ public class IntBenchies
         const int input = 7;
         int result = input.From<Gas>()
             .To<Rankine>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromGasToRømer()
+    {
+        const int input = 7;
+        int result = input.FromGas()
+            .ToRømer();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromGasToRømerGeneric()
+    {
+        const int input = 7;
+        int result = input.From<Gas>()
+            .To<Rømer>();
         return result;
     }
 
@@ -483,5 +556,135 @@ public class IntBenchies
         return result;
     }
 
+    [Benchmark]
+    public int ConvertFromRankineToRømer()
+    {
+        const int input = 200;
+        int result = input.FromRankine()
+            .ToRømer();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRankineToRømerGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Rankine>()
+            .To<Rømer>();
+        return result;
+    }
+
     #endregion Rankine
+
+    #region Rømer
+
+    [Benchmark]
+    public int ConvertFromRømerToCelsius()
+    {
+        const int input = 42;
+        int result = input.FromRømer()
+            .ToCelsius();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToCelsiusGeneric()
+    {
+        const int input = 42;
+        int result = input.From<Rømer>()
+            .To<Celsius>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToFahrenheit()
+    {
+        const int input = 42;
+        int result = input.FromRømer()
+            .ToFahrenheit();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToFahrenheitGeneric()
+    {
+        const int input = 42;
+        int result = input.From<Rømer>()
+            .To<Fahrenheit>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToGas()
+    {
+        const int input = 806;
+        int result = input.FromRømer()
+            .ToGas();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToGasGeneric()
+    {
+        const int input = 806;
+        int result = input.From<Rømer>()
+            .To<Gas>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToKelvin()
+    {
+        const int input = 200;
+        int result = input.FromRømer()
+            .ToKelvin();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToKelvinGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Rømer>()
+            .To<Kelvin>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToRankine()
+    {
+        const int input = 200;
+        int result = input.FromRømer()
+            .ToRankine();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToRankineGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Rømer>()
+            .To<Rankine>();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToRømer()
+    {
+        const int input = 200;
+        int result = input.FromRømer()
+            .ToRømer();
+        return result;
+    }
+
+    [Benchmark]
+    public int ConvertFromRømerToRømerGeneric()
+    {
+        const int input = 200;
+        int result = input.From<Rømer>()
+            .To<Rømer>();
+        return result;
+    }
+
+    #endregion Rømer
 }
