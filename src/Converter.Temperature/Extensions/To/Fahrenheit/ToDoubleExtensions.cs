@@ -6,12 +6,14 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="double" /> extensions.
@@ -32,7 +34,8 @@ public static class ToDoubleExtensions
         this CelsiusDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(CelsiusDoubleConversions.CelsiusToFahrenheit(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(CelsiusDoubleConversions.CelsiusToFahrenheit(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>
@@ -48,7 +51,8 @@ public static class ToDoubleExtensions
         this FahrenheitDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToFahrenheit(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToFahrenheit(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>
@@ -82,7 +86,8 @@ public static class ToDoubleExtensions
         this KelvinDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(KelvinDoubleConversions.KelvinToFahrenheit(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(KelvinDoubleConversions.KelvinToFahrenheit(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>
@@ -99,6 +104,23 @@ public static class ToDoubleExtensions
         this RankineDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(RankineDoubleConversions.RankineToFahrenheit(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(RankineDoubleConversions.RankineToFahrenheit(input.Temperature),
+            fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Fahrenheit
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Fahrenheit <see langword="double" /> result.
+    /// </returns>
+    public static double ToFahrenheit(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(RømerDoubleConversions.RømerToFahrenheit(input.Temperature), fractionalCount);
     }
 }

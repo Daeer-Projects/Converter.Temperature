@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
@@ -221,5 +222,51 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         // Assert.
         result.Should()
             .Be(input.Temperature);
+    }
+
+    [Theory]
+    [InlineData(2156, 493)]
+    [InlineData(1392, 270)]
+    [InlineData(1193, 212)]
+    [InlineData(1011, 159)]
+    [InlineData(466, 0)]
+    [InlineData(3, -135)]
+    [InlineData(-7, -138)]
+    public void Test_to_rankine_from_rømer_returns_correct_value(
+        int expected,
+        int originalTemp)
+    {
+        // Arrange.
+        RømerInt input = new(originalTemp);
+
+        // Act.
+        int result = input.ToRankine();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(2156, 493)]
+    [InlineData(1392, 270)]
+    [InlineData(1193, 212)]
+    [InlineData(1011, 159)]
+    [InlineData(466, 0)]
+    [InlineData(3, -135)]
+    [InlineData(-7, -138)]
+    public void Test_to_rankine_generic_from_rømer_returns_correct_value(
+        int expected,
+        int originalTemp)
+    {
+        // Arrange.
+        RømerInt input = new(originalTemp);
+
+        // Act.
+        int result = input.To<Rankine>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
     }
 }

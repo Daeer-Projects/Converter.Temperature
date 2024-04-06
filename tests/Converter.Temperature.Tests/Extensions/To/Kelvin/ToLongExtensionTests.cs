@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long>
@@ -214,6 +215,50 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         // Arrange.
         const long expected = 478L;
         RankineLong input = new(862L);
+
+        // Act.
+        long result = input.To<Kelvin>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1198L, 493L)]
+    [InlineData(773L, 270L)]
+    [InlineData(663L, 212L)]
+    [InlineData(562L, 159L)]
+    [InlineData(259L, 0L)]
+    [InlineData(2L, -135L)]
+    public void Test_to_kelvin_from_rømer_returns_correct_value(
+        long expected,
+        long originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
+
+        // Act.
+        long result = input.ToKelvin();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1198L, 493L)]
+    [InlineData(773L, 270L)]
+    [InlineData(663L, 212L)]
+    [InlineData(562L, 159L)]
+    [InlineData(259L, 0L)]
+    [InlineData(2L, -135L)]
+    public void Test_to_kelvin_generic_from_rømer_returns_correct_value(
+        long expected,
+        long originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
 
         // Act.
         long result = input.To<Kelvin>();

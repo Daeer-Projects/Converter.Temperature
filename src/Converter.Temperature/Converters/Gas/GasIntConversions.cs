@@ -100,4 +100,20 @@ internal static class GasIntConversions
         int rankineTemp = CelsiusIntConversions.CelsiusToRankine(celsiusTemp);
         return rankineTemp;
     }
+
+    /// <summary>
+    ///     The gas to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int GasToRømer(
+        int input)
+    {
+        int celsiusTemp = GasToCelsius(input);
+        int rømerTemp = CelsiusIntConversions.CelsiusToRømer(celsiusTemp);
+        return rømerTemp;
+    }
 }

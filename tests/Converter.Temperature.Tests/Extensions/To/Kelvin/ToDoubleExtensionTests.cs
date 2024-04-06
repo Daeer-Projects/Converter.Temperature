@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<KelvinDouble, double>
@@ -262,6 +263,86 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<KelvinDouble, 
 
         // Act.
         double result = input.To<Kelvin>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1198.807142857143d, 493.47d)]
+    [InlineData(773.15d, 270d)]
+    [InlineData(663.15d, 212.25d)]
+    [InlineData(563.15d, 159.75d)]
+    [InlineData(258.8642857142857d, 0d)]
+    [InlineData(0d, -135.90375d)]
+    public void Test_to_kelvin_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.ToKelvin();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1198.807142857143d, 493.47d)]
+    [InlineData(773.15d, 270d)]
+    [InlineData(663.15d, 212.25d)]
+    [InlineData(563.15d, 159.75d)]
+    [InlineData(258.8642857142857d, 0d)]
+    [InlineData(0d, -135.90375d)]
+    public void Test_to_kelvin_generic_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.To<Kelvin>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1198.8d, 1)]
+    [InlineData(1198.80714285714d, 11)]
+    public void Test_to_kelvin_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(493.47d);
+
+        // Act.
+        double result = input.ToKelvin(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1198.8d, 1)]
+    [InlineData(1198.80714285714d, 11)]
+    public void Test_to_kelvin_generic_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(493.47d);
+
+        // Act.
+        double result = input.To<Kelvin>(fractionalCount);
 
         // Assert.
         result.Should()

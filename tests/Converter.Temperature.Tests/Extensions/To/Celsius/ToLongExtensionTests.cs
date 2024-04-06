@@ -10,6 +10,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, long>
@@ -167,6 +168,50 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         // Arrange.
         const long expected = -121L;
         RankineLong input = new(274L);
+
+        // Act.
+        long result = input.To<Celsius>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(925L, 493L)]
+    [InlineData(500L, 270L)]
+    [InlineData(390L, 212L)]
+    [InlineData(290L, 160L)]
+    [InlineData(-14L, 0L)]
+    [InlineData(-273L, -136L)]
+    public void Test_to_celsius_from_rømer_returns_correct_value(
+        long expected,
+        long originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
+
+        // Act.
+        long result = input.ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(925L, 493L)]
+    [InlineData(500L, 270L)]
+    [InlineData(390L, 212L)]
+    [InlineData(290L, 160L)]
+    [InlineData(-14L, 0L)]
+    [InlineData(-273L, -136L)]
+    public void Test_to_celsius_generic_from_rømer_returns_correct_value(
+        long expected,
+        long originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
 
         // Act.
         long result = input.To<Celsius>();

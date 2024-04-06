@@ -110,4 +110,24 @@ internal static class CelsiusDoubleConversions
 
         return rankineTemp;
     }
+
+    /// <summary>
+    ///     The celsius to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double CelsiusToRømer(
+        double input)
+    {
+        double rømerTemp = input * 21 / 40 + 7.5;
+        if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return rømerTemp;
+    }
 }

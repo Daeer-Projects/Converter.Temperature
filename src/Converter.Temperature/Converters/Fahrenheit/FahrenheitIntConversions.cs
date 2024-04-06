@@ -17,10 +17,8 @@ internal static class FahrenheitIntConversions
         int input)
     {
         double calculatedValue = (input - 32d) * 5 / 9;
-
-        int celsiusTempLong = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-
-        return celsiusTempLong;
+        int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        return celsiusTemp;
     }
 
     /// <summary>
@@ -96,5 +94,21 @@ internal static class FahrenheitIntConversions
 
         int rankineTemp = input + 460;
         return rankineTemp;
+    }
+
+    /// <summary>
+    ///     The fahrenheit to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int FahrenheitToRømer(
+        int input)
+    {
+        float result = (input - 32f) * 7 / 24 + 7.5f;
+        int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTemp;
     }
 }

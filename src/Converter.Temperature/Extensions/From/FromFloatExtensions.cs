@@ -8,6 +8,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The from <see langword="float" /> extensions.
@@ -80,6 +81,19 @@ public static class FromFloatExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Rømer.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Rømer Float class for the 'To' extension to use.
+    /// </returns>
+    public static RømerFloat FromRømer(
+        this float input)
+    {
+        return new RømerFloat(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -99,6 +113,7 @@ public static class FromFloatExtensions
             nameof(Kelvin) => new KelvinFloat(input),
             nameof(Gas) => new GasFloat(input),
             nameof(Rankine) => new RankineFloat(input),
+            nameof(Rømer) => new RømerFloat(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

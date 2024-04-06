@@ -4,12 +4,14 @@ using System;
 using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
+using Temperature.Extensions.To.Gas;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, string>
@@ -409,6 +411,100 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
     {
         // Arrange.
         RankineString input = new("1524.25");
+
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Temp too high for gas mark!");
+    }
+
+    [Theory]
+    [InlineData("10", "148.367")]
+    [InlineData("6", "110.384")]
+    [InlineData("0.25", "50.994")]
+    public void Test_to_gas_from_rømer_returns_correct_value(
+        string expected,
+        string originalTemp)
+    {
+        // Arrange.
+        RømerString input = new(originalTemp);
+
+        // Act.
+        string result = input.ToGas();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData("10", "148.367")]
+    [InlineData("6", "110.384")]
+    [InlineData("0.25", "50.994")]
+    public void Test_to_gas_generic_from_rømer_returns_correct_value(
+        string expected,
+        string originalTemp)
+    {
+        // Arrange.
+        RømerString input = new(originalTemp);
+
+        // Act.
+        string result = input.To<Gas>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Fact]
+    public void Test_to_gas_from_rømer_throws_out_of_range_exception_too_low()
+    {
+        // Arrange.
+        RømerString input = new("49");
+
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Temp too low for gas mark!");
+    }
+
+    [Fact]
+    public void Test_to_gas_generic_from_rømer_throws_out_of_range_exception_too_low()
+    {
+        // Arrange.
+        RømerString input = new("49");
+
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Temp too low for gas mark!");
+    }
+
+    [Fact]
+    public void Test_to_gas_from_rømer_throws_out_of_range_exception_too_high()
+    {
+        // Arrange.
+        RømerString input = new("149.5");
+
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToGas());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Temp too high for gas mark!");
+    }
+
+    [Fact]
+    public void Test_to_gas_generic_from_rømer_throws_out_of_range_exception_too_high()
+    {
+        // Arrange.
+        RømerString input = new("149.5");
 
         // Act.
         ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());

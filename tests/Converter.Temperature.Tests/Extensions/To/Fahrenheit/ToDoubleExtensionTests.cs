@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<FahrenheitDouble, double>
@@ -296,6 +297,86 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<FahrenheitDoub
     {
         // Arrange.
         RankineDouble input = new(493.471d);
+
+        // Act.
+        double result = input.To<Fahrenheit>(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1698.1828571428573d, 493.47d)]
+    [InlineData(932d, 270d)]
+    [InlineData(734d, 212.25d)]
+    [InlineData(554d, 159.75d)]
+    [InlineData(6.285714285714285d, 0d)]
+    [InlineData(-459.67d, -135.90375d)]
+    public void Test_to_fahrenheit_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.ToFahrenheit();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1698.1828571428573d, 493.47d)]
+    [InlineData(932d, 270d)]
+    [InlineData(734d, 212.25d)]
+    [InlineData(554d, 159.75d)]
+    [InlineData(6.285714285714285d, 0d)]
+    [InlineData(-459.67d, -135.90375d)]
+    public void Test_to_fahrenheit_generic_from_rømer_returns_correct_value(
+        double expected,
+        double originalTemp)
+    {
+        // Arrange.
+        RømerDouble input = new(originalTemp);
+
+        // Act.
+        double result = input.To<Fahrenheit>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(6.3d, 1)]
+    [InlineData(6.28571428571428d, 14)]
+    public void Test_to_fahrenheit_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(0d);
+
+        // Act.
+        double result = input.ToFahrenheit(fractionalCount);
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(6.3d, 1)]
+    [InlineData(6.28571428571428d, 14)]
+    public void Test_to_fahrenheit_generic_with_parameter_from_rømer_returns_correct_value(
+        double expected,
+        int fractionalCount)
+    {
+        // Arrange.
+        RømerDouble input = new(0d);
 
         // Act.
         double result = input.To<Fahrenheit>(fractionalCount);

@@ -1,5 +1,6 @@
 ﻿namespace Converter.Temperature.Converters.Rankine;
 
+using System;
 using Celsius;
 
 internal static class RankineIntConversions
@@ -77,5 +78,21 @@ internal static class RankineIntConversions
         int celsiusTemp = RankineToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(celsiusTemp);
         return gasTemp;
+    }
+
+    /// <summary>
+    ///     The rankine to rømer conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int RankineToRømer(
+        int input)
+    {
+        double result = (input - 491.67) * 7 / 24 + 7.5;
+        int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return rømerTemp;
     }
 }

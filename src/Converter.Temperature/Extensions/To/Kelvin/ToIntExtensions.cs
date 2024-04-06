@@ -6,11 +6,13 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="int" /> extensions.
@@ -83,5 +85,18 @@ public static class ToIntExtensions
         this RankineInt input)
     {
         return RankineIntConversions.RankineToKelvin(input.Temperature);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Kelvin
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <returns>
+    ///     The Kelvin <see langword="int" /> result.
+    /// </returns>
+    public static int ToKelvin(
+        this RømerInt input)
+    {
+        return RømerIntConversions.RømerToKelvin(input.Temperature);
     }
 }

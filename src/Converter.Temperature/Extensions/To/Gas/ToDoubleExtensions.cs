@@ -6,12 +6,14 @@ using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
 using Converters.Rankine;
+using Converters.Rømer;
 using Helpers;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 /// <summary>
 ///     The to <see langword="double" /> extensions.
@@ -49,7 +51,8 @@ public static class ToDoubleExtensions
         this FahrenheitDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToGas(input.Temperature), fractionalCount);
+        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToGas(input.Temperature),
+            fractionalCount);
     }
 
     /// <summary>
@@ -101,5 +104,21 @@ public static class ToDoubleExtensions
         int fractionalCount = -1)
     {
         return ToExtensionHelpers.Rounder(RankineDoubleConversions.RankineToGas(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Rømer <paramref name="input" /> to Gas
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Gas <see langword="double" /> result.
+    /// </returns>
+    public static double ToGas(
+        this RømerDouble input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(RømerDoubleConversions.RømerToGas(input.Temperature), fractionalCount);
     }
 }

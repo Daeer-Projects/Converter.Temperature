@@ -8,6 +8,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 
 public static class FromLongExtensions
 {
@@ -77,6 +78,19 @@ public static class FromLongExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Rømer.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Rømer Long class for the 'To' extension to use.
+    /// </returns>
+    public static RømerLong FromRømer(
+        this long input)
+    {
+        return new RømerLong(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -96,6 +110,7 @@ public static class FromLongExtensions
             nameof(Kelvin) => new KelvinLong(input),
             nameof(Gas) => new GasLong(input),
             nameof(Rankine) => new RankineLong(input),
+            nameof(Rømer) => new RømerLong(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

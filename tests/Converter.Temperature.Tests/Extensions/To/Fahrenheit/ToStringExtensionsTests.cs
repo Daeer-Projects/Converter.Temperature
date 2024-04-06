@@ -3,12 +3,14 @@
 using System.Collections.Generic;
 using FluentAssertions;
 using Temperature.Extensions.To;
+using Temperature.Extensions.To.Fahrenheit;
 using TemperatureTypes;
 using Types.Celsius;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitString, string>
@@ -184,6 +186,50 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         // Arrange.
         const string expected = "33.80099999999999";
         RankineString input = new("493.471");
+
+        // Act.
+        string result = input.To<Fahrenheit>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData("1698.1828571428573", "493.47")]
+    [InlineData("932", "270")]
+    [InlineData("734", "212.25")]
+    [InlineData("554", "159.75")]
+    [InlineData("6.285714285714285", "0")]
+    [InlineData("-459.67", "-135.90375")]
+    public void Test_to_fahrenheit_from_rømer_returns_correct_value(
+        string expected,
+        string originalTemp)
+    {
+        // Arrange.
+        RømerString input = new(originalTemp);
+
+        // Act.
+        string result = input.ToFahrenheit();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData("1698.1828571428573", "493.47")]
+    [InlineData("932", "270")]
+    [InlineData("734", "212.25")]
+    [InlineData("554", "159.75")]
+    [InlineData("6.285714285714285", "0")]
+    [InlineData("-459.67", "-135.90375")]
+    public void Test_to_fahrenheit_generic_from_rømer_returns_correct_value(
+        string expected,
+        string originalTemp)
+    {
+        // Arrange.
+        RømerString input = new(originalTemp);
 
         // Act.
         string result = input.To<Fahrenheit>();

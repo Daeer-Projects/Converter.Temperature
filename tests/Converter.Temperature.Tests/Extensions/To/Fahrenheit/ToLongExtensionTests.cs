@@ -11,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<FahrenheitLong, long>
@@ -220,6 +221,50 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<FahrenheitLong, 
         // Arrange.
         const long expected = -186L;
         RankineLong input = new(274L);
+
+        // Act.
+        long result = input.To<Fahrenheit>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1697L, 493L)]
+    [InlineData(932L, 270L)]
+    [InlineData(733L, 212L)]
+    [InlineData(555L, 160L)]
+    [InlineData(6L, 0L)]
+    [InlineData(-460L, -136L)]
+    public void Test_to_fahrenheit_from_rømer_returns_correct_value(
+        int expected,
+        int originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
+
+        // Act.
+        long result = input.ToFahrenheit();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1697L, 493L)]
+    [InlineData(932L, 270L)]
+    [InlineData(733L, 212L)]
+    [InlineData(555L, 160L)]
+    [InlineData(6L, 0L)]
+    [InlineData(-460L, -136L)]
+    public void Test_to_fahrenheit_generic_from_rømer_returns_correct_value(
+        int expected,
+        int originalTemp)
+    {
+        // Arrange.
+        RømerLong input = new(originalTemp);
 
         // Act.
         long result = input.To<Fahrenheit>();
