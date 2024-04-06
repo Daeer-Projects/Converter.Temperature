@@ -49,7 +49,8 @@ public static class ToFloatExtensions
         this FahrenheitFloat input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitFloatConversions.FahrenheitToCelsius(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            FahrenheitFloatConversions.FahrenheitToCelsius(input.Temperature),
             fractionalCount);
     }
 

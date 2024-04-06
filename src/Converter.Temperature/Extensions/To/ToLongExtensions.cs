@@ -44,8 +44,9 @@ public static class ToLongExtensions
             nameof(Celsius) when input is GasLong castInput => GasLongConversions.GasToCelsius(castInput.Temperature),
             nameof(Celsius) when input is RankineLong castInput => RankineLongConversions.RankineToCelsius(
                 castInput.Temperature),
-            nameof(Celsius) when input is RømerLong castInput => RømerLongConversions.RømerToCelsius(castInput
-                .Temperature),
+            nameof(Celsius) when input is RømerLong castInput => RømerLongConversions.RømerToCelsius(
+                castInput
+                    .Temperature),
             nameof(Fahrenheit) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToFahrenheit(
                 castInput.Temperature),
             nameof(Fahrenheit) when input is FahrenheitLong castInput => FahrenheitLongConversions
@@ -53,8 +54,9 @@ public static class ToLongExtensions
                     castInput.Temperature),
             nameof(Fahrenheit) when input is KelvinLong castInput => KelvinLongConversions.KelvinToFahrenheit(
                 castInput.Temperature),
-            nameof(Fahrenheit) when input is GasLong castInput => GasLongConversions.GasToFahrenheit(castInput
-                .Temperature),
+            nameof(Fahrenheit) when input is GasLong castInput => GasLongConversions.GasToFahrenheit(
+                castInput
+                    .Temperature),
             nameof(Fahrenheit) when input is RankineLong castInput => RankineLongConversions.RankineToFahrenheit(
                 castInput.Temperature),
             nameof(Fahrenheit) when input is RømerLong castInput => RømerLongConversions.RømerToFahrenheit(
@@ -88,14 +90,16 @@ public static class ToLongExtensions
             nameof(Rankine) when input is GasLong castInput => GasLongConversions.GasToRankine(castInput.Temperature),
             nameof(Rankine) when input is RankineLong castInput => RankineLongConversions.RankineToRankine(
                 castInput.Temperature),
-            nameof(Rankine) when input is RømerLong castInput => RømerLongConversions.RømerToRankine(castInput
-                .Temperature),
+            nameof(Rankine) when input is RømerLong castInput => RømerLongConversions.RømerToRankine(
+                castInput
+                    .Temperature),
             nameof(Rømer) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToRømer(
                 castInput.Temperature),
             nameof(Rømer) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToRømer(
                 castInput.Temperature),
-            nameof(Rømer) when input is KelvinLong castInput => KelvinLongConversions.KelvinToRømer(castInput
-                .Temperature),
+            nameof(Rømer) when input is KelvinLong castInput => KelvinLongConversions.KelvinToRømer(
+                castInput
+                    .Temperature),
             nameof(Rømer) when input is GasLong castInput => GasLongConversions.GasToRømer(castInput.Temperature),
             nameof(Rømer) when input is RankineLong castInput => RankineLongConversions.RankineToRømer(
                 castInput.Temperature),

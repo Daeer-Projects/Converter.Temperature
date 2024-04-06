@@ -2,7 +2,6 @@
 
 using System;
 using System.Collections.Generic;
-using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
 using Temperature.Extensions.To;
 using Temperature.Extensions.To.Celsius;
@@ -12,6 +11,7 @@ using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
 using Types.Rankine;
+using Types.Rømer;
 using Xunit;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble, double>

@@ -34,7 +34,8 @@ public static class ToFloatExtensions
         this CelsiusFloat input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(CelsiusFloatConversions.CelsiusToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            CelsiusFloatConversions.CelsiusToFahrenheit(input.Temperature),
             fractionalCount);
     }
 
@@ -50,7 +51,8 @@ public static class ToFloatExtensions
         this FahrenheitFloat input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitFloatConversions.FahrenheitToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            FahrenheitFloatConversions.FahrenheitToFahrenheit(input.Temperature),
             fractionalCount);
     }
 
@@ -85,7 +87,8 @@ public static class ToFloatExtensions
         this KelvinFloat input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(KelvinFloatConversions.KelvinToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            KelvinFloatConversions.KelvinToFahrenheit(input.Temperature),
             fractionalCount);
     }
 
@@ -102,7 +105,8 @@ public static class ToFloatExtensions
         this RankineFloat input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(RankineFloatConversions.RankineToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            RankineFloatConversions.RankineToFahrenheit(input.Temperature),
             fractionalCount);
     }
 

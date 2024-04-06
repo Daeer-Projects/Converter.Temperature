@@ -72,7 +72,8 @@ public abstract class BaseToExtensionTests<TInputTemp, TResultType>
         TResultType actual = To(input, -1);
 
         // Assert.
-        actual.Should().Be(inputAndExpectedValue);
+        actual.Should()
+            .Be(inputAndExpectedValue);
     }
 
     private void ActualTestForSameValueGeneric(
@@ -85,6 +86,7 @@ public abstract class BaseToExtensionTests<TInputTemp, TResultType>
         TResultType actual = ToUsingGeneric(input, -1);
 
         // Assert.
-        actual.Should().Be(inputAndExpectedValue);
+        actual.Should()
+            .Be(inputAndExpectedValue);
     }
 }

@@ -7,7 +7,12 @@ using Xunit;
 
 public sealed class FromIntExtensionTests : BaseFromExtensionTests<int, KelvinInt>
 {
-    public FromIntExtensionTests() : base(int.MaxValue, 999, 0, -999, int.MinValue) { }
+    public FromIntExtensionTests() : base(
+        int.MaxValue,
+        999,
+        0,
+        -999,
+        int.MinValue) { }
 
     protected override KelvinInt ConvertFrom(
         int value)

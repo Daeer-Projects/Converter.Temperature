@@ -7,7 +7,12 @@ using Xunit;
 
 public sealed class FromDoubleExtensionTests : BaseFromExtensionTests<double, KelvinDouble>
 {
-    public FromDoubleExtensionTests() : base(double.MaxValue, 999.999d, 0d, -999.999d, double.MinValue) { }
+    public FromDoubleExtensionTests() : base(
+        double.MaxValue,
+        999.999d,
+        0d,
+        -999.999d,
+        double.MinValue) { }
 
     protected override KelvinDouble ConvertFrom(
         double value)

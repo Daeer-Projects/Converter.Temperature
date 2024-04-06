@@ -34,7 +34,9 @@ public static class ToStringExtensions
         this CelsiusString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, CelsiusDoubleConversions.CelsiusToFahrenheit,
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            CelsiusDoubleConversions.CelsiusToFahrenheit,
             fractionalCount);
     }
 
@@ -51,7 +53,9 @@ public static class ToStringExtensions
         this FahrenheitString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToFahrenheit,
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            FahrenheitDoubleConversions.FahrenheitToFahrenheit,
             fractionalCount);
     }
 
@@ -86,7 +90,9 @@ public static class ToStringExtensions
         this KelvinString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, KelvinDoubleConversions.KelvinToFahrenheit,
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            KelvinDoubleConversions.KelvinToFahrenheit,
             fractionalCount);
     }
 
@@ -104,7 +110,9 @@ public static class ToStringExtensions
         this RankineString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, RankineDoubleConversions.RankineToFahrenheit,
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            RankineDoubleConversions.RankineToFahrenheit,
             fractionalCount);
     }
 
