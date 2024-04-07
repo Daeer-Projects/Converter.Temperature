@@ -5,7 +5,7 @@
     <Title>Converter.Temperature</Title>
     <Authors>David Clark</Authors>
     <Owners>Daeer Projects</Owners>
-    <PackageTags>Daeer;DaeerProjects;Celsius;Fahrenheit;Kelvin;Gas;Rankine;Converter;Conversion;Temperature</PackageTags>
+    <PackageTags>Daeer;DaeerProjects;Celsius;Fahrenheit;Kelvin;Gas;Rankine;Rømer;Converter;Conversion;Temperature</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>
       A library to convert different temperature types.
