@@ -120,7 +120,7 @@ internal static class CelsiusFloatConversions
     ///     The converted temperature.
     /// </returns>
     internal static float CelsiusToRømer(
-    	float input)
+        float input)
     {
         float rømerTemp = input * 21f / 40f + 7.5f;
         if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))

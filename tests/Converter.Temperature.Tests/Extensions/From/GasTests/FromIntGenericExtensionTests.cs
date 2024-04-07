@@ -9,7 +9,12 @@ using Xunit;
 
 public sealed class FromIntGenericExtensionTests : BaseFromExtensionTests<int, GasInt>
 {
-    public FromIntGenericExtensionTests() : base(int.MaxValue, 999, 0, -999, int.MinValue) { }
+    public FromIntGenericExtensionTests() : base(
+        int.MaxValue,
+        999,
+        0,
+        -999,
+        int.MinValue) { }
 
     protected override GasInt ConvertFrom(
         int value)

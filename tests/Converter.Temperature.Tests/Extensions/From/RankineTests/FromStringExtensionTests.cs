@@ -8,7 +8,11 @@ using Xunit;
 
 public sealed class FromStringExtensionTests : BaseFromExtensionTests<string, RankineString>
 {
-    public FromStringExtensionTests() : base(double.MaxValue.ToString(CultureInfo.InvariantCulture), "999.999", "0", "-999.999",
+    public FromStringExtensionTests() : base(
+        double.MaxValue.ToString(CultureInfo.InvariantCulture),
+        "999.999",
+        "0",
+        "-999.999",
         double.MinValue.ToString(CultureInfo.InvariantCulture)) { }
 
     protected override RankineString ConvertFrom(

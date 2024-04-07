@@ -9,7 +9,12 @@ using Xunit;
 
 public sealed class FromFloatGenericExtensionTests : BaseFromExtensionTests<float, GasFloat>
 {
-    public FromFloatGenericExtensionTests() : base(float.MaxValue, 999.999f, 0f, -999.999f, float.MinValue) { }
+    public FromFloatGenericExtensionTests() : base(
+        float.MaxValue,
+        999.999f,
+        0f,
+        -999.999f,
+        float.MinValue) { }
 
     protected override GasFloat ConvertFrom(
         float value)

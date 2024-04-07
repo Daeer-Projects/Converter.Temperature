@@ -51,7 +51,8 @@ public static class ToDoubleExtensions
         this FahrenheitDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToKelvin(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            FahrenheitDoubleConversions.FahrenheitToKelvin(input.Temperature),
             fractionalCount);
     }
 

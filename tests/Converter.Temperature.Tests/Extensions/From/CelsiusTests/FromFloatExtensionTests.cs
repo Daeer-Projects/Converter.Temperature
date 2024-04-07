@@ -7,7 +7,12 @@ using Xunit;
 
 public sealed class FromFloatExtensionTests : BaseFromExtensionTests<float, CelsiusFloat>
 {
-    public FromFloatExtensionTests() : base(float.MaxValue, 999.999f, 0f, -999.999f, float.MinValue) { }
+    public FromFloatExtensionTests() : base(
+        float.MaxValue,
+        999.999f,
+        0f,
+        -999.999f,
+        float.MinValue) { }
 
     protected override CelsiusFloat ConvertFrom(
         float value)

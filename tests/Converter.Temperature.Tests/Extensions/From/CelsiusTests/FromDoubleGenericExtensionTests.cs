@@ -9,7 +9,12 @@ using Xunit;
 
 public sealed class FromDoubleGenericExtensionTests : BaseFromExtensionTests<double, CelsiusDouble>
 {
-    public FromDoubleGenericExtensionTests() : base(double.MaxValue, 999.999d, 0d, -999.999d, double.MinValue) { }
+    public FromDoubleGenericExtensionTests() : base(
+        double.MaxValue,
+        999.999d,
+        0d,
+        -999.999d,
+        double.MinValue) { }
 
     protected override CelsiusDouble ConvertFrom(
         double value)

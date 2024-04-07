@@ -9,7 +9,12 @@ using Xunit;
 
 public sealed class FromLongGenericExtensionTests : BaseFromExtensionTests<long, FahrenheitLong>
 {
-    public FromLongGenericExtensionTests() : base(long.MaxValue, 999, 0, -999, long.MinValue) { }
+    public FromLongGenericExtensionTests() : base(
+        long.MaxValue,
+        999,
+        0,
+        -999,
+        long.MinValue) { }
 
     protected override FahrenheitLong ConvertFrom(
         long value)

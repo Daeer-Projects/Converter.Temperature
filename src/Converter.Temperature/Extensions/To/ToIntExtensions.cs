@@ -62,8 +62,9 @@ public static class ToIntExtensions
                 castInput.Temperature),
             nameof(Kelvin) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToKelvin(
                 castInput.Temperature),
-            nameof(Kelvin) when input is KelvinInt castInput => KelvinIntConversions.KelvinToKelvin(castInput
-                .Temperature),
+            nameof(Kelvin) when input is KelvinInt castInput => KelvinIntConversions.KelvinToKelvin(
+                castInput
+                    .Temperature),
             nameof(Kelvin) when input is GasInt castInput => GasIntConversions.GasToKelvin(castInput.Temperature),
             nameof(Kelvin) when input is RankineInt castInput => RankineIntConversions.RankineToKelvin(
                 castInput.Temperature),
@@ -86,15 +87,17 @@ public static class ToIntExtensions
                 castInput.Temperature),
             nameof(Rankine) when input is RømerInt castInput => RømerIntConversions.RømerToRankine(
                 castInput.Temperature),
-            nameof(Rømer) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRømer(castInput
-                .Temperature),
+            nameof(Rømer) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRømer(
+                castInput
+                    .Temperature),
             nameof(Rømer) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToRømer(
                 castInput.Temperature),
             nameof(Rømer) when input is KelvinInt castInput =>
                 KelvinIntConversions.KelvinToRømer(castInput.Temperature),
             nameof(Rømer) when input is GasInt castInput => GasIntConversions.GasToRømer(castInput.Temperature),
-            nameof(Rømer) when input is RankineInt castInput => RankineIntConversions.RankineToRømer(castInput
-                .Temperature),
+            nameof(Rømer) when input is RankineInt castInput => RankineIntConversions.RankineToRømer(
+                castInput
+                    .Temperature),
             nameof(Rømer) when input is RømerInt castInput => RømerIntConversions.RømerToRømer(castInput.Temperature),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };

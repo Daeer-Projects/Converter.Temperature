@@ -7,7 +7,12 @@ using Xunit;
 
 public sealed class FromIntExtensionTests : BaseFromExtensionTests<int, CelsiusInt>
 {
-    public FromIntExtensionTests() : base(int.MaxValue, 999, 0, -999, int.MinValue) { }
+    public FromIntExtensionTests() : base(
+        int.MaxValue,
+        999,
+        0,
+        -999,
+        int.MinValue) { }
 
     protected override CelsiusInt ConvertFrom(
         int value)

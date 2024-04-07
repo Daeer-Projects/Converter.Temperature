@@ -51,7 +51,9 @@ public static class ToStringExtensions
         this FahrenheitString input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Parser(input.Temperature, FahrenheitDoubleConversions.FahrenheitToGas,
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            FahrenheitDoubleConversions.FahrenheitToGas,
             fractionalCount);
     }
 

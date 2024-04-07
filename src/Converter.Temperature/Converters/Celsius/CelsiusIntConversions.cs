@@ -128,7 +128,7 @@ internal static class CelsiusIntConversions
     ///     The converted temperature.
     /// </returns>
     internal static int CelsiusToRømer(
-    	int input)
+        int input)
     {
         double result = input * 21d / 40 + 7.5;
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);

@@ -34,7 +34,8 @@ public static class ToDoubleExtensions
         this CelsiusDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(CelsiusDoubleConversions.CelsiusToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            CelsiusDoubleConversions.CelsiusToFahrenheit(input.Temperature),
             fractionalCount);
     }
 
@@ -51,7 +52,8 @@ public static class ToDoubleExtensions
         this FahrenheitDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(FahrenheitDoubleConversions.FahrenheitToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            FahrenheitDoubleConversions.FahrenheitToFahrenheit(input.Temperature),
             fractionalCount);
     }
 
@@ -86,7 +88,8 @@ public static class ToDoubleExtensions
         this KelvinDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(KelvinDoubleConversions.KelvinToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            KelvinDoubleConversions.KelvinToFahrenheit(input.Temperature),
             fractionalCount);
     }
 
@@ -104,7 +107,8 @@ public static class ToDoubleExtensions
         this RankineDouble input,
         int fractionalCount = -1)
     {
-        return ToExtensionHelpers.Rounder(RankineDoubleConversions.RankineToFahrenheit(input.Temperature),
+        return ToExtensionHelpers.Rounder(
+            RankineDoubleConversions.RankineToFahrenheit(input.Temperature),
             fractionalCount);
     }
 

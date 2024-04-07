@@ -128,7 +128,7 @@ internal static class CelsiusLongConversions
     ///     The converted temperature.
     /// </returns>
     internal static long CelsiusToRømer(
-    	long input)
+        long input)
     {
         double result = input * 21d / 40 + 7.5;
         long rømerTempLong = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
