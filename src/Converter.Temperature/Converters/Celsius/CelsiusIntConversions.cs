@@ -134,4 +134,52 @@ internal static class CelsiusIntConversions
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return rømerTemp;
     }
+
+    /// <summary>
+    ///     The celsius to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int CelsiusToDelisle(
+        int input)
+    {
+        double result = (100d - input) * 3 / 2;
+        int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The celsius to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int CelsiusToNewton(
+        int input)
+    {
+        double result = input * 33d / 100;
+        int newtonTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The celsius to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int CelsiusToRéaumur(
+        int input)
+    {
+        double result = input * 4d / 5;
+        int réaumurTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return réaumurTemp;
+    }
 }

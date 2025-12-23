@@ -28,7 +28,7 @@ internal static class CelsiusDoubleConversions
     internal static double CelsiusToFahrenheit(
         double input)
     {
-        double fahrenheitTemp = input * 1.8 + 32;
+        double fahrenheitTemp = input * 9 / 5 + 32;
         if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -54,7 +54,7 @@ internal static class CelsiusDoubleConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        kelvinTemp = input * 1d + 273.15d;
+        kelvinTemp = input + 273.15d;
 
         return kelvinTemp;
     }
@@ -129,5 +129,65 @@ internal static class CelsiusDoubleConversions
         }
 
         return rømerTemp;
+    }
+
+    /// <summary>
+    ///     The celsius to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double CelsiusToDelisle(
+        double input)
+    {
+        double delisleTemp = (100 - input) * 3 / 2;
+        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The celsius to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double CelsiusToNewton(
+        double input)
+    {
+        double newtonTemp = input * 33 / 100;
+        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The celsius to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double CelsiusToRéaumur(
+        double input)
+    {
+        double réaumurTemp = input * 4 / 5;
+        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return réaumurTemp;
     }
 }
