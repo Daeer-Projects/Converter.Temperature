@@ -17,8 +17,8 @@ jobs:
 
   steps:
   - checkout: self
-    clean: true
-    fetchDepth: 0
+    clean: "true"
+    fetchDepth: "0"
 
   - task: UseDotNet@2
     displayName: 'Get Dotnet 8 SDK'
@@ -33,6 +33,13 @@ jobs:
     inputs:
       packageType: 'sdk'
       version: 9.x
+      
+  - task: UseDotNet@2
+    displayName: 'Get Dotnet 10 SDK'
+    timeoutInMinutes: 10
+    inputs:
+      packageType: 'sdk'
+      version: 10.x
 
   - task: DotNetCoreCLI@2
     displayName: Restore

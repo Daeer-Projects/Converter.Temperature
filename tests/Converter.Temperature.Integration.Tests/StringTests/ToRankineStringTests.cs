@@ -93,10 +93,10 @@ public sealed class ToRankineStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.ToString(CultureInfo.InvariantCulture)
-                .FromCelsius()
-                .ToRankine());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+            .ToString(CultureInfo.InvariantCulture)
+            .FromCelsius()
+            .ToRankine());
 
         // Assert.
         result.Message.Should()
@@ -111,10 +111,10 @@ public sealed class ToRankineStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.ToString(CultureInfo.InvariantCulture)
-                .From<Celsius>()
-                .To<Rankine>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+            .ToString(CultureInfo.InvariantCulture)
+            .From<Celsius>()
+            .To<Rankine>());
 
         // Assert.
         result.Message.Should()

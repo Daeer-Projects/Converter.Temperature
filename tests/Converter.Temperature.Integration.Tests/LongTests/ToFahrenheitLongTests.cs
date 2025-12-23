@@ -20,9 +20,8 @@ public sealed class ToFahrenheitLongTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromCelsius()
-                .ToFahrenheit());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
+            .ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -32,14 +31,14 @@ public sealed class ToFahrenheitLongTests
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
-    public void Test_long_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
-        long input)
+    public void
+        Test_long_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
+            long input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Celsius>()
-                .To<Fahrenheit>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
+            .To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()
@@ -168,9 +167,8 @@ public sealed class ToFahrenheitLongTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromKelvin()
-                .ToFahrenheit());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
+            .ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -185,9 +183,8 @@ public sealed class ToFahrenheitLongTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Kelvin>()
-                .To<Fahrenheit>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
+            .To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()
@@ -251,14 +248,14 @@ public sealed class ToFahrenheitLongTests
     [Theory]
     [InlineData(0L)]
     [InlineData(11L)]
-    public void Test_long_extensions_from_gas_to_fahrenheit_with_invalid_parameters_throws_argument_out_of_range_exception(
-        long input)
+    public void
+        Test_long_extensions_from_gas_to_fahrenheit_with_invalid_parameters_throws_argument_out_of_range_exception(
+            long input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromGas()
-                .ToFahrenheit());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromGas()
+            .ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -274,9 +271,8 @@ public sealed class ToFahrenheitLongTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Gas>()
-                .To<Fahrenheit>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Gas>()
+            .To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()

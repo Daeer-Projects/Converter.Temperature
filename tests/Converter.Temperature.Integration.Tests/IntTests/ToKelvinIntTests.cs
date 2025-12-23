@@ -52,9 +52,8 @@ public sealed class ToKelvinIntTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromCelsius()
-                .ToKelvin());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
+            .ToKelvin());
 
         // Assert.
         result.Message.Should()
@@ -69,9 +68,8 @@ public sealed class ToKelvinIntTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Celsius>()
-                .To<Kelvin>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
+            .To<Kelvin>());
 
         // Assert.
         result.Message.Should()

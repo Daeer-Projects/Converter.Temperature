@@ -20,9 +20,8 @@ public sealed class ToFahrenheitFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromCelsius()
-                .ToFahrenheit());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
+            .ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -32,14 +31,14 @@ public sealed class ToFahrenheitFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
-        float input)
+    public void
+        Test_float_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
+            float input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Celsius>()
-                .To<Fahrenheit>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
+            .To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()
@@ -208,9 +207,8 @@ public sealed class ToFahrenheitFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromKelvin()
-                .ToFahrenheit());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
+            .ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -225,9 +223,8 @@ public sealed class ToFahrenheitFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Kelvin>()
-                .To<Fahrenheit>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
+            .To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()

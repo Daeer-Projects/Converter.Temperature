@@ -212,7 +212,8 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         KelvinFloat inputKelvin = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputKelvin.ToFahrenheit());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputKelvin.ToFahrenheit());
 
         // Assert.
         result.Message.Should()

@@ -99,7 +99,8 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         CelsiusLong inputCelsius = new(long.MaxValue);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
 
         // Assert.
         result.Message.Should()

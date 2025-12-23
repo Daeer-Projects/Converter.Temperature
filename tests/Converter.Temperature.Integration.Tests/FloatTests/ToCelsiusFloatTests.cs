@@ -62,9 +62,8 @@ public sealed class ToCelsiusFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromFahrenheit()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromFahrenheit()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -79,9 +78,8 @@ public sealed class ToCelsiusFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Fahrenheit>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Fahrenheit>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -269,14 +267,14 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_float_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        float input)
+    public void
+        Test_float_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            float input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromGas()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromGas()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -286,14 +284,14 @@ public sealed class ToCelsiusFloatTests
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]
-    public void Test_float_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        float input)
+    public void
+        Test_float_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            float input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Gas>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Gas>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -402,9 +400,8 @@ public sealed class ToCelsiusFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromRankine()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -419,9 +416,8 @@ public sealed class ToCelsiusFloatTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Rankine>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rankine>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()

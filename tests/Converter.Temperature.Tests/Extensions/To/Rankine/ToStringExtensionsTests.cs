@@ -106,7 +106,8 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
         CelsiusString inputCelsius = new(input.ToString(CultureInfo.InvariantCulture));
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
 
         // Assert.
         result.Message.Should()
