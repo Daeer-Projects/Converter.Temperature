@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Converter.Temperature/Converter.Temperature.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Converter.Benchmark.Tests/Converter.Benchmark.Tests.csproj" />
+    <Project Path="tests/Converter.Temperature.Integration.Tests/Converter.Temperature.Integration.Tests.csproj" />
+    <Project Path="tests/Converter.Temperature.Tests/Converter.Temperature.Tests.csproj" />
+  </Folder>
+</Solution>
