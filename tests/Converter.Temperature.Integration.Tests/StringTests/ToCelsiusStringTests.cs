@@ -64,9 +64,8 @@ public sealed class ToCelsiusStringTests
         string input = double.MinValue.ToString(CultureInfo.InvariantCulture);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromFahrenheit()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromFahrenheit()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -80,9 +79,8 @@ public sealed class ToCelsiusStringTests
         string input = double.MinValue.ToString(CultureInfo.InvariantCulture);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Fahrenheit>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Fahrenheit>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -272,14 +270,14 @@ public sealed class ToCelsiusStringTests
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]
-    public void Test_string_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        string input)
+    public void
+        Test_string_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            string input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromGas()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromGas()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -289,14 +287,14 @@ public sealed class ToCelsiusStringTests
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]
-    public void Test_string_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        string input)
+    public void
+        Test_string_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            string input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Gas>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Gas>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()

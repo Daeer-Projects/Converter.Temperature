@@ -99,7 +99,8 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         CelsiusLong inputCelsius = new(long.MaxValue);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
+        ArgumentOutOfRangeException
+            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
 
         // Assert.
         result.Message.Should()

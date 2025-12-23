@@ -88,7 +88,8 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<FahrenheitLong, 
         CelsiusLong inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToFahrenheit());
 
         // Assert.
         result.Message.Should()
@@ -105,7 +106,8 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<FahrenheitLong, 
         CelsiusLong inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Fahrenheit>());
 
         // Assert.
         result.Message.Should()

@@ -130,9 +130,8 @@ public sealed class ToGasStringTests
         const string input = "74536.9876";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromCelsius()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -146,9 +145,8 @@ public sealed class ToGasStringTests
         const string input = "74536.9876";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Celsius>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()
@@ -164,9 +162,8 @@ public sealed class ToGasStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromCelsius()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -182,9 +179,8 @@ public sealed class ToGasStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Celsius>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()
@@ -313,9 +309,8 @@ public sealed class ToGasStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => value.FromGas()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => value.FromGas()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -330,9 +325,8 @@ public sealed class ToGasStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => value.From<Gas>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => value.From<Gas>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()
@@ -382,9 +376,8 @@ public sealed class ToGasStringTests
         const string input = "405.2368";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromRankine()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -398,9 +391,8 @@ public sealed class ToGasStringTests
         const string input = "405.2368";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Rankine>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rankine>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()
@@ -414,9 +406,8 @@ public sealed class ToGasStringTests
         const string input = "1002.89786";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromRankine()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRankine()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -430,9 +421,8 @@ public sealed class ToGasStringTests
         const string input = "1002.89786";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Rankine>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rankine>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()
@@ -530,9 +520,8 @@ public sealed class ToGasStringTests
         const string input = "48.975";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromRømer()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRømer()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -546,9 +535,8 @@ public sealed class ToGasStringTests
         const string input = "48.975";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Rømer>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rømer>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()
@@ -562,9 +550,8 @@ public sealed class ToGasStringTests
         const string input = "149.25";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromRømer()
-                .ToGas());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRømer()
+            .ToGas());
 
         // Assert.
         result.Message.Should()
@@ -578,9 +565,8 @@ public sealed class ToGasStringTests
         const string input = "149.25";
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Rømer>()
-                .To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rømer>()
+            .To<Gas>());
 
         // Assert.
         result.Message.Should()

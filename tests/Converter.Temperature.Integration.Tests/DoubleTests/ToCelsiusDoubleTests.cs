@@ -61,9 +61,8 @@ public sealed class ToCelsiusDoubleTests
         const double input = double.MinValue;
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromFahrenheit()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromFahrenheit()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -77,9 +76,8 @@ public sealed class ToCelsiusDoubleTests
         const double input = double.MinValue;
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Fahrenheit>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Fahrenheit>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -267,14 +265,14 @@ public sealed class ToCelsiusDoubleTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_double_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        double input)
+    public void
+        Test_double_extensions_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            double input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromGas()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromGas()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -284,14 +282,14 @@ public sealed class ToCelsiusDoubleTests
     [Theory]
     [InlineData(0.24d)]
     [InlineData(10.1d)]
-    public void Test_double_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        double input)
+    public void
+        Test_double_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            double input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Gas>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Gas>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()

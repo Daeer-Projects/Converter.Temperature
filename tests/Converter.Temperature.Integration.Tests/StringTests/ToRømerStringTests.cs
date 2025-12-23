@@ -93,10 +93,10 @@ public sealed class ToRømerStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.ToString(CultureInfo.InvariantCulture)
-                .FromCelsius()
-                .ToRømer());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+            .ToString(CultureInfo.InvariantCulture)
+            .FromCelsius()
+            .ToRømer());
 
         // Assert.
         result.Message.Should()
@@ -111,10 +111,10 @@ public sealed class ToRømerStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.ToString(CultureInfo.InvariantCulture)
-                .From<Celsius>()
-                .To<Rømer>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+            .ToString(CultureInfo.InvariantCulture)
+            .From<Celsius>()
+            .To<Rømer>());
 
         // Assert.
         result.Message.Should()

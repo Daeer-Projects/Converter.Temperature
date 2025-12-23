@@ -135,9 +135,8 @@ public sealed class ToCelsiusIntTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromKelvin()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -152,9 +151,8 @@ public sealed class ToCelsiusIntTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Kelvin>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -223,9 +221,8 @@ public sealed class ToCelsiusIntTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.FromGas()
-                .ToCelsius());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromGas()
+            .ToCelsius());
 
         // Assert.
         result.Message.Should()
@@ -235,14 +232,14 @@ public sealed class ToCelsiusIntTests
     [Theory]
     [InlineData(0)]
     [InlineData(11)]
-    public void Test_int_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
-        int input)
+    public void
+        Test_int_extensions_generic_from_gas_to_celsius_with_invalid_parameters_throws_argument_out_of_range_exception(
+            int input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.From<Gas>()
-                .To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Gas>()
+            .To<Celsius>());
 
         // Assert.
         result.Message.Should()

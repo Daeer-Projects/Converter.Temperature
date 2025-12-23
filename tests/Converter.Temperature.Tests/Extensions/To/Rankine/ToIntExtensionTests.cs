@@ -99,7 +99,8 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         CelsiusInt inputCelsius = new(int.MaxValue);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+        ArgumentOutOfRangeException result =
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
 
         // Assert.
         result.Message.Should()

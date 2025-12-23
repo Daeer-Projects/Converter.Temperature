@@ -53,10 +53,10 @@ public sealed class ToKelvinStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.ToString(CultureInfo.InvariantCulture)
-                .FromCelsius()
-                .ToKelvin());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+            .ToString(CultureInfo.InvariantCulture)
+            .FromCelsius()
+            .ToKelvin());
 
         // Assert.
         result.Message.Should()
@@ -71,10 +71,10 @@ public sealed class ToKelvinStringTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(
-            () => input.ToString(CultureInfo.InvariantCulture)
-                .From<Celsius>()
-                .To<Kelvin>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+            .ToString(CultureInfo.InvariantCulture)
+            .From<Celsius>()
+            .To<Kelvin>());
 
         // Assert.
         result.Message.Should()
