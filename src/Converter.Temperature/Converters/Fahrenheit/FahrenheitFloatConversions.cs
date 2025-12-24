@@ -6,87 +6,91 @@ using Celsius;
 internal static class FahrenheitFloatConversions
 {
     /// <summary>
-    ///     The fahrenheit to celsius conversion.
+    ///     The Fahrenheit to Celsius conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static float FahrenheitToCelsius(
-        float firstTemp)
+        float input)
     {
-        float celsiusTemp = (firstTemp - 32) * 5 / 9;
+        float celsiusTemp = (input - 32) * 5 / 9;
         if (float.IsPositiveInfinity(celsiusTemp) || float.IsNegativeInfinity(celsiusTemp))
         {
-            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
         return celsiusTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to fahrenheit conversion.
+    ///     The Fahrenheit to Fahrenheit conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static float FahrenheitToFahrenheit(
-        float firstTemp)
+        float input)
     {
-        return firstTemp;
+        return input;
     }
 
     /// <summary>
-    ///     The fahrenheit to kelvin conversion.
+    ///     The Fahrenheit to Kelvin conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static float FahrenheitToKelvin(
-        float firstTemp)
+        float input)
     {
-        float celsiusTemp = FahrenheitToCelsius(firstTemp);
-        float kelvinTemp = CelsiusFloatConversions.CelsiusToKelvin(celsiusTemp);
+        float kelvinTemp = (input - 32) * 5 / 9 + 273.15f;
+        if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+        
         return kelvinTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to gas conversion.
+    ///     The Fahrenheit to gas conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static float FahrenheitToGas(
-        float firstTemp)
+        float input)
     {
-        float celsiusTemp = FahrenheitToCelsius(firstTemp);
+        float celsiusTemp = FahrenheitToCelsius(input);
         float gasTemp = CelsiusFloatConversions.CelsiusToGas(celsiusTemp);
         return gasTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to rankine conversion.
+    ///     The Fahrenheit to Rankine conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static float FahrenheitToRankine(
-        float firstTemp)
+        float input)
     {
-        float rankineTemp = firstTemp + 459.67f;
+        float rankineTemp = input + 459.67f;
         return rankineTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to rømer conversion.
+    ///     The Fahrenheit to Rømer conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -103,5 +107,65 @@ internal static class FahrenheitFloatConversions
         }
 
         return rømerTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float FahrenheitToDelisle(
+        float input)
+    {
+        float delisleTemp = (212f - input) * 5 / 6;
+        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float FahrenheitToNewton(
+        float input)
+    {
+        float newtonTemp = (input - 32) * 11 / 60;
+        if (float.IsPositiveInfinity(newtonTemp) || float.IsNegativeInfinity(newtonTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float FahrenheitToRéaumur(
+        float input)
+    {
+        float réaumurTemp = (input - 32) * 4 / 9;
+        if (float.IsPositiveInfinity(réaumurTemp) || float.IsNegativeInfinity(réaumurTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return réaumurTemp;
     }
 }
