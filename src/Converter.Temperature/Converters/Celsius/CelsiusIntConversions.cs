@@ -5,7 +5,7 @@ using System;
 internal static class CelsiusIntConversions
 {
     /// <summary>
-    ///     The celsius to celsius conversion.
+    ///     The Celsius to Celsius conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <returns>
@@ -18,7 +18,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to fahrenheit conversion.
+    ///     The Celsius to Fahrenheit conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -43,7 +43,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to kelvin conversion.
+    ///     The Celsius to Kelvin conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -66,7 +66,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to gas conversion.
+    ///     The Celsius to gas conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
@@ -96,7 +96,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to rankine conversion.
+    ///     The Celsius to Rankine conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -120,7 +120,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to rømer conversion.
+    ///     The Celsius to Rømer conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -136,7 +136,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to delisle conversion.
+    ///     The Celsius to Delisle conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -152,7 +152,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to newton conversion.
+    ///     The Celsius to Newton conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
@@ -168,7 +168,7 @@ internal static class CelsiusIntConversions
     }
 
     /// <summary>
-    ///     The celsius to réaumur conversion.
+    ///     The Celsius to Réaumur conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
     /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
