@@ -16,14 +16,6 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToCelsius(
         long input)
     {
-        const double calculatedValue = (1 - 32d) * 5 / 9;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
-        {
-            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-        }
-        
         double convertedTemp = (input - 32d) * 5 / 9;
         long celsiusTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 

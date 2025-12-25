@@ -16,14 +16,6 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToCelsius(
         int input)
     {
-        const double calculatedValue = (1 - 32d) * 5 / 9;
-        int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
-        {
-            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-        }
-        
         double convertedTemp = (input - 32d) * 5 / 9;
         int celsiusTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
@@ -62,7 +54,7 @@ internal static class FahrenheitIntConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
         
-        double convertedTemp = (input - 32d) * 7 / 24 + 7.5d;
+        double convertedTemp = (input - 32d) * 5 / 9 + 273.15d;
         int kelvinTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return kelvinTemp;
