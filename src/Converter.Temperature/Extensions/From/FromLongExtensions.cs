@@ -4,6 +4,7 @@ using System;
 using BaseTypes;
 using TemperatureTypes;
 using Types.Celsius;
+using Types.Delisle;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
@@ -91,6 +92,19 @@ public static class FromLongExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Delisle.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Delisle Long class for the 'To' extension to use.
+    /// </returns>
+    public static DelisleLong FromDelisle(
+        this long input)
+    {
+        return new DelisleLong(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -111,6 +125,7 @@ public static class FromLongExtensions
             nameof(Gas) => new GasLong(input),
             nameof(Rankine) => new RankineLong(input),
             nameof(Rømer) => new RømerLong(input),
+            nameof(Delisle) => new DelisleLong(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

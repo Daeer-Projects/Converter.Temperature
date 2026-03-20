@@ -2,9 +2,9 @@
 
 using BaseTypes;
 
-public sealed class CelsiusInt : IntBase
+public sealed class DelisleInt : IntBase
 {
-    public CelsiusInt(
+    public DelisleInt(
         int temp)
     {
         Temperature = temp;

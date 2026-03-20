@@ -2,9 +2,9 @@
 
 using BaseTypes;
 
-public sealed class CelsiusFloat : FloatBase
+public sealed class DelisleFloat : FloatBase
 {
-    public CelsiusFloat(
+    public DelisleFloat(
         float temp)
     {
         Temperature = temp;

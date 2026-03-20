@@ -3,6 +3,7 @@
 using System;
 using BaseTypes;
 using Converters.Celsius;
+using Converters.Delisle;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
@@ -10,6 +11,7 @@ using Converters.Rankine;
 using Converters.Rømer;
 using TemperatureTypes;
 using Types.Celsius;
+using Types.Delisle;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
@@ -47,6 +49,8 @@ public static class ToIntExtensions
                 castInput.Temperature),
             nameof(Celsius) when input is RømerInt castInput => RømerIntConversions.RømerToCelsius(
                 castInput.Temperature),
+            nameof(Celsius) when input is DelisleInt castInput => DelisleIntConversions.DelisleToCelsius(
+                castInput.Temperature),
             nameof(Fahrenheit) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToFahrenheit(
                 castInput.Temperature),
             nameof(Fahrenheit) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToFahrenheit(
@@ -59,6 +63,8 @@ public static class ToIntExtensions
                 castInput.Temperature),
             nameof(Fahrenheit) when input is RømerInt castInput => RømerIntConversions.RømerToFahrenheit(
                 castInput.Temperature),
+            nameof(Fahrenheit) when input is DelisleInt castInput => DelisleIntConversions.DelisleToFahrenheit(
+                castInput.Temperature),
             nameof(Kelvin) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToKelvin(
                 castInput.Temperature),
             nameof(Kelvin) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToKelvin(
@@ -70,6 +76,8 @@ public static class ToIntExtensions
             nameof(Kelvin) when input is RankineInt castInput => RankineIntConversions.RankineToKelvin(
                 castInput.Temperature),
             nameof(Kelvin) when input is RømerInt castInput => RømerIntConversions.RømerToKelvin(castInput.Temperature),
+            nameof(Kelvin) when input is DelisleInt castInput => DelisleIntConversions.DelisleToKelvin(
+                castInput.Temperature),
             nameof(Gas) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToGas(castInput.Temperature),
             nameof(Gas) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToGas(
                 castInput.Temperature),
@@ -77,6 +85,7 @@ public static class ToIntExtensions
             nameof(Gas) when input is GasInt castInput => GasIntConversions.GasToGas(castInput.Temperature),
             nameof(Gas) when input is RankineInt castInput => RankineIntConversions.RankineToGas(castInput.Temperature),
             nameof(Gas) when input is RømerInt castInput => RømerIntConversions.RømerToGas(castInput.Temperature),
+            nameof(Gas) when input is DelisleInt castInput => DelisleIntConversions.DelisleToGas(castInput.Temperature),
             nameof(Rankine) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRankine(
                 castInput.Temperature),
             nameof(Rankine) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToRankine(
@@ -87,6 +96,8 @@ public static class ToIntExtensions
             nameof(Rankine) when input is RankineInt castInput => RankineIntConversions.RankineToRankine(
                 castInput.Temperature),
             nameof(Rankine) when input is RømerInt castInput => RømerIntConversions.RømerToRankine(
+                castInput.Temperature),
+            nameof(Rankine) when input is DelisleInt castInput => DelisleIntConversions.DelisleToRankine(
                 castInput.Temperature),
             nameof(Rømer) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRømer(
                 castInput
@@ -100,6 +111,21 @@ public static class ToIntExtensions
                 castInput
                     .Temperature),
             nameof(Rømer) when input is RømerInt castInput => RømerIntConversions.RømerToRømer(castInput.Temperature),
+            nameof(Rømer) when input is DelisleInt castInput => DelisleIntConversions.DelisleToRømer(
+                castInput.Temperature),
+            nameof(Delisle) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is KelvinInt castInput => KelvinIntConversions.KelvinToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is GasInt castInput => GasIntConversions.GasToDelisle(castInput.Temperature),
+            nameof(Delisle) when input is RankineInt castInput => RankineIntConversions.RankineToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is RømerInt castInput => RømerIntConversions.RømerToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is DelisleInt castInput => DelisleIntConversions.DelisleToDelisle(
+                castInput.Temperature),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

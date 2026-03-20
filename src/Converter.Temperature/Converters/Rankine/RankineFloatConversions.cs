@@ -104,4 +104,24 @@ internal static class RankineFloatConversions
 
         return rømerTemp;
     }
+
+    /// <summary>
+    ///     The rankine to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float RankineToDelisle(
+        float input)
+    {
+        float delisleTemp = (671.67f - input) * 5f / 6f;
+        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
 }

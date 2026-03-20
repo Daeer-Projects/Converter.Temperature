@@ -2,9 +2,9 @@
 
 using BaseTypes;
 
-public sealed class CelsiusString : StringBase
+public sealed class DelisleString : StringBase
 {
-    public CelsiusString(
+    public DelisleString(
         string temp)
     {
         Temperature = temp;

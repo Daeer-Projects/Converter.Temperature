@@ -95,4 +95,23 @@ internal static class RømerDoubleConversions
     {
         return input;
     }
+
+    /// <summary>
+    ///     The rømer to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double RømerToDelisle(double input)
+    {
+        double delisleTemp = (100d - (input - 7.5d) * 40d / 21d) * 1.5d;
+        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
 }

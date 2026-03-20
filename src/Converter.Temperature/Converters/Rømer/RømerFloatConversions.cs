@@ -95,4 +95,23 @@ internal static class RømerFloatConversions
     {
         return input;
     }
+
+    /// <summary>
+    ///     The rømer to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float RømerToDelisle(float input)
+    {
+        float delisleTemp = (100f - (input - 7.5f) * 40f / 21f) * 1.5f;
+        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
 }

@@ -98,4 +98,24 @@ internal static class KelvinFloatConversions
 
         return rømerTemp;
     }
+
+    /// <summary>
+    ///     The kelvin to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static float KelvinToDelisle(
+        float input)
+    {
+        float delisleTemp = (373.15f - input) * 1.5f;
+        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
 }

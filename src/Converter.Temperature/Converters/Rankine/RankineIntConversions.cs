@@ -95,4 +95,20 @@ internal static class RankineIntConversions
         int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return rømerTemp;
     }
+
+    /// <summary>
+    ///     The rankine to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int RankineToDelisle(
+        int input)
+    {
+        double result = (671.67 - input) * 5 / 6;
+        int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return delisleTemp;
+    }
 }

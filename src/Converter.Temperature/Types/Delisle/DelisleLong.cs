@@ -2,9 +2,9 @@
 
 using BaseTypes;
 
-public sealed class CelsiusLong : LongBase
+public sealed class DelisleLong : LongBase
 {
-    public CelsiusLong(
+    public DelisleLong(
         long temp)
     {
         Temperature = temp;

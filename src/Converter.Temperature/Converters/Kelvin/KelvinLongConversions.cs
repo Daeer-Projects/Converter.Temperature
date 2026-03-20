@@ -101,4 +101,20 @@ internal static class KelvinLongConversions
         long rømerTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return rømerTemp;
     }
+
+    /// <summary>
+    ///     The kelvin to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long KelvinToDelisle(
+        long input)
+    {
+        double result = (373.15 - input) * 1.5;
+        long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return delisleTemp;
+    }
 }

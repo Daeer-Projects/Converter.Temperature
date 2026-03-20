@@ -146,7 +146,7 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToDelisle(
         long input)
     {
-        double result = (100d - input) * 3 / 2;
+        double result = (100d - input) * 1.5d;
         long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return delisleTemp;
     }

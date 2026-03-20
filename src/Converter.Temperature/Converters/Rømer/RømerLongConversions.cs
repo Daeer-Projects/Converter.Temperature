@@ -106,4 +106,19 @@ internal static class RømerLongConversions
     {
         return input;
     }
+
+    /// <summary>
+    ///     The rømer to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long RømerToDelisle(long input)
+    {
+        double result = (100d - (input - 7.5d) * 40d / 21d) * 1.5d;
+        long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return delisleTemp;
+    }
 }

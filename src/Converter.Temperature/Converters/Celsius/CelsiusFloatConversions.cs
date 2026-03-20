@@ -28,7 +28,7 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToFahrenheit(
         float input)
     {
-        float fahrenheitTemp = input * 9 / 5 + 32;
+        float fahrenheitTemp = input * 1.8f + 32f;
         if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -102,7 +102,7 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToRankine(
         float input)
     {
-        float rankineTemp = (input + 273.15f) * 9 / 5;
+        float rankineTemp = (input + 273.15f) * 1.8f;
         if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -142,7 +142,7 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToDelisle(
         float input)
     {
-        float delisleTemp = (100 - input) * 3 / 2;
+        float delisleTemp = (100f - input) * 1.5f;
         if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -162,7 +162,7 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToNewton(
         float input)
     {
-        float newtonTemp = input * 33 / 100;
+        float newtonTemp = input * 33f / 100f;
         if (float.IsPositiveInfinity(newtonTemp) || float.IsNegativeInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -182,7 +182,7 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToRéaumur(
         float input)
     {
-        float réaumurTemp = input * 4 / 5;
+        float réaumurTemp = input * 0.8f;
         if (float.IsPositiveInfinity(réaumurTemp) || float.IsNegativeInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
