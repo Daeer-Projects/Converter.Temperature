@@ -7,7 +7,9 @@ using Converters.Delisle;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
+using Converters.Newton;
 using Converters.Rankine;
+using Converters.Réaumur;
 using Converters.Rømer;
 using TemperatureTypes;
 using Types.Celsius;
@@ -15,7 +17,9 @@ using Types.Delisle;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
+using Types.Newton;
 using Types.Rankine;
+using Types.Réaumur;
 using Types.Rømer;
 
 /// <summary>
@@ -52,6 +56,8 @@ public static class ToLongExtensions
                     .Temperature),
             nameof(Celsius) when input is DelisleLong castInput => DelisleLongConversions.DelisleToCelsius(
                 castInput.Temperature),
+            nameof(Celsius) when input is NewtonLong castInput => NewtonLongConversions.NewtonToCelsius(
+                castInput.Temperature),
             nameof(Fahrenheit) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToFahrenheit(
                 castInput.Temperature),
             nameof(Fahrenheit) when input is FahrenheitLong castInput => FahrenheitLongConversions
@@ -68,6 +74,8 @@ public static class ToLongExtensions
                 castInput.Temperature),
             nameof(Fahrenheit) when input is DelisleLong castInput => DelisleLongConversions.DelisleToFahrenheit(
                 castInput.Temperature),
+            nameof(Fahrenheit) when input is NewtonLong castInput => NewtonLongConversions.NewtonToFahrenheit(
+                castInput.Temperature),
             nameof(Kelvin) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToKelvin(
                 castInput.Temperature),
             nameof(Kelvin) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToKelvin(
@@ -81,6 +89,8 @@ public static class ToLongExtensions
                 castInput.Temperature),
             nameof(Kelvin) when input is DelisleLong castInput => DelisleLongConversions.DelisleToKelvin(
                 castInput.Temperature),
+            nameof(Kelvin) when input is NewtonLong castInput => NewtonLongConversions.NewtonToKelvin(
+                castInput.Temperature),
             nameof(Gas) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToGas(
                 castInput.Temperature),
             nameof(Gas) when input is FahrenheitLong castInput =>
@@ -91,6 +101,7 @@ public static class ToLongExtensions
                 castInput.Temperature),
             nameof(Gas) when input is RømerLong castInput => RømerLongConversions.RømerToGas(castInput.Temperature),
             nameof(Gas) when input is DelisleLong castInput => DelisleLongConversions.DelisleToGas(castInput.Temperature),
+            nameof(Gas) when input is NewtonLong castInput => NewtonLongConversions.NewtonToGas(castInput.Temperature),
             nameof(Rankine) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToRankine(
                 castInput.Temperature),
             nameof(Rankine) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToRankine(
@@ -105,6 +116,8 @@ public static class ToLongExtensions
                     .Temperature),
             nameof(Rankine) when input is DelisleLong castInput => DelisleLongConversions.DelisleToRankine(
                 castInput.Temperature),
+            nameof(Rankine) when input is NewtonLong castInput => NewtonLongConversions.NewtonToRankine(
+                castInput.Temperature),
             nameof(Rømer) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToRømer(
                 castInput.Temperature),
             nameof(Rømer) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToRømer(
@@ -118,6 +131,8 @@ public static class ToLongExtensions
             nameof(Rømer) when input is RømerLong castInput => RømerLongConversions.RømerToRømer(castInput.Temperature),
             nameof(Rømer) when input is DelisleLong castInput => DelisleLongConversions.DelisleToRømer(
                 castInput.Temperature),
+            nameof(Rømer) when input is NewtonLong castInput => NewtonLongConversions.NewtonToRømer(
+                castInput.Temperature),
             nameof(Delisle) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToDelisle(
                 castInput.Temperature),
             nameof(Delisle) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToDelisle(
@@ -130,6 +145,40 @@ public static class ToLongExtensions
             nameof(Delisle) when input is RømerLong castInput => RømerLongConversions.RømerToDelisle(
                 castInput.Temperature),
             nameof(Delisle) when input is DelisleLong castInput => DelisleLongConversions.DelisleToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is NewtonLong castInput => NewtonLongConversions.NewtonToDelisle(
+                castInput.Temperature),
+            nameof(Newton) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is KelvinLong castInput => KelvinLongConversions.KelvinToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is GasLong castInput => GasLongConversions.GasToNewton(castInput.Temperature),
+            nameof(Newton) when input is RankineLong castInput => RankineLongConversions.RankineToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is RømerLong castInput => RømerLongConversions.RømerToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is DelisleLong castInput => DelisleLongConversions.DelisleToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is NewtonLong castInput => NewtonLongConversions.NewtonToNewton(
+                castInput.Temperature),
+            nameof(Réaumur) when input is CelsiusLong castInput => CelsiusLongConversions.CelsiusToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is FahrenheitLong castInput => FahrenheitLongConversions.FahrenheitToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is KelvinLong castInput => KelvinLongConversions.KelvinToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is GasLong castInput => GasLongConversions.GasToRéaumur(castInput.Temperature),
+            nameof(Réaumur) when input is RankineLong castInput => RankineLongConversions.RankineToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is RømerLong castInput => RømerLongConversions.RømerToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is DelisleLong castInput => DelisleLongConversions.DelisleToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is NewtonLong castInput => NewtonLongConversions.NewtonToRéaumur(
+                castInput.Temperature),
+            nameof(Réaumur) when input is RéaumurLong castInput => RéaumurLongConversions.RéaumurToRéaumur(
                 castInput.Temperature),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };

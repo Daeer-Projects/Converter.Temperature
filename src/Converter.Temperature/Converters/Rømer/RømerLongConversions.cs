@@ -121,4 +121,34 @@ internal static class RømerLongConversions
         long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return delisleTemp;
     }
+
+    /// <summary>
+    ///     The rømer to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long RømerToNewton(long input)
+    {
+        double result = (input - 7.5d) * 22d / 35d;
+        long newtonTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The rømer to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long RømerToRéaumur(long input)
+    {
+        double result = (input - 7.5d) * 32d / 21d;
+        long réaumurTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return réaumurTemp;
+    }
 }

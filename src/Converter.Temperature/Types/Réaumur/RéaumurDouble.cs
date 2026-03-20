@@ -2,9 +2,9 @@
 
 using BaseTypes;
 
-public sealed class CelsiusDouble : DoubleBase
+public sealed class RéaumurDouble : DoubleBase
 {
-    public CelsiusDouble(
+    public RéaumurDouble(
         double temp)
     {
         Temperature = temp;

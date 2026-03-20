@@ -1,10 +1,10 @@
-﻿namespace Converter.Temperature.Types.Réaumur;
+﻿namespace Converter.Temperature.Types.Newton;
 
 using BaseTypes;
 
-public sealed class CelsiusLong : LongBase
+public sealed class NewtonLong : LongBase
 {
-    public CelsiusLong(
+    public NewtonLong(
         long temp)
     {
         Temperature = temp;

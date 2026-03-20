@@ -2,9 +2,9 @@
 
 using BaseTypes;
 
-public sealed class CelsiusString : StringBase
+public sealed class RéaumurString : StringBase
 {
-    public CelsiusString(
+    public RéaumurString(
         string temp)
     {
         Temperature = temp;

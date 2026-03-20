@@ -7,6 +7,7 @@ using Converters.Delisle;
 using Converters.Fahrenheit;
 using Converters.Gas;
 using Converters.Kelvin;
+using Converters.Newton;
 using Converters.Rankine;
 using Converters.Rømer;
 using TemperatureTypes;
@@ -15,6 +16,7 @@ using Types.Delisle;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
+using Types.Newton;
 using Types.Rankine;
 using Types.Rømer;
 
@@ -51,6 +53,8 @@ public static class ToIntExtensions
                 castInput.Temperature),
             nameof(Celsius) when input is DelisleInt castInput => DelisleIntConversions.DelisleToCelsius(
                 castInput.Temperature),
+            nameof(Celsius) when input is NewtonInt castInput => NewtonIntConversions.NewtonToCelsius(
+                castInput.Temperature),
             nameof(Fahrenheit) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToFahrenheit(
                 castInput.Temperature),
             nameof(Fahrenheit) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToFahrenheit(
@@ -65,6 +69,8 @@ public static class ToIntExtensions
                 castInput.Temperature),
             nameof(Fahrenheit) when input is DelisleInt castInput => DelisleIntConversions.DelisleToFahrenheit(
                 castInput.Temperature),
+            nameof(Fahrenheit) when input is NewtonInt castInput => NewtonIntConversions.NewtonToFahrenheit(
+                castInput.Temperature),
             nameof(Kelvin) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToKelvin(
                 castInput.Temperature),
             nameof(Kelvin) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToKelvin(
@@ -78,6 +84,8 @@ public static class ToIntExtensions
             nameof(Kelvin) when input is RømerInt castInput => RømerIntConversions.RømerToKelvin(castInput.Temperature),
             nameof(Kelvin) when input is DelisleInt castInput => DelisleIntConversions.DelisleToKelvin(
                 castInput.Temperature),
+            nameof(Kelvin) when input is NewtonInt castInput => NewtonIntConversions.NewtonToKelvin(
+                castInput.Temperature),
             nameof(Gas) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToGas(castInput.Temperature),
             nameof(Gas) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToGas(
                 castInput.Temperature),
@@ -86,6 +94,7 @@ public static class ToIntExtensions
             nameof(Gas) when input is RankineInt castInput => RankineIntConversions.RankineToGas(castInput.Temperature),
             nameof(Gas) when input is RømerInt castInput => RømerIntConversions.RømerToGas(castInput.Temperature),
             nameof(Gas) when input is DelisleInt castInput => DelisleIntConversions.DelisleToGas(castInput.Temperature),
+            nameof(Gas) when input is NewtonInt castInput => NewtonIntConversions.NewtonToGas(castInput.Temperature),
             nameof(Rankine) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRankine(
                 castInput.Temperature),
             nameof(Rankine) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToRankine(
@@ -98,6 +107,8 @@ public static class ToIntExtensions
             nameof(Rankine) when input is RømerInt castInput => RømerIntConversions.RømerToRankine(
                 castInput.Temperature),
             nameof(Rankine) when input is DelisleInt castInput => DelisleIntConversions.DelisleToRankine(
+                castInput.Temperature),
+            nameof(Rankine) when input is NewtonInt castInput => NewtonIntConversions.NewtonToRankine(
                 castInput.Temperature),
             nameof(Rømer) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToRømer(
                 castInput
@@ -113,6 +124,8 @@ public static class ToIntExtensions
             nameof(Rømer) when input is RømerInt castInput => RømerIntConversions.RømerToRømer(castInput.Temperature),
             nameof(Rømer) when input is DelisleInt castInput => DelisleIntConversions.DelisleToRømer(
                 castInput.Temperature),
+            nameof(Rømer) when input is NewtonInt castInput => NewtonIntConversions.NewtonToRømer(
+                castInput.Temperature),
             nameof(Delisle) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToDelisle(
                 castInput.Temperature),
             nameof(Delisle) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToDelisle(
@@ -125,6 +138,23 @@ public static class ToIntExtensions
             nameof(Delisle) when input is RømerInt castInput => RømerIntConversions.RømerToDelisle(
                 castInput.Temperature),
             nameof(Delisle) when input is DelisleInt castInput => DelisleIntConversions.DelisleToDelisle(
+                castInput.Temperature),
+            nameof(Delisle) when input is NewtonInt castInput => NewtonIntConversions.NewtonToDelisle(
+                castInput.Temperature),
+            nameof(Newton) when input is CelsiusInt castInput => CelsiusIntConversions.CelsiusToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is FahrenheitInt castInput => FahrenheitIntConversions.FahrenheitToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is KelvinInt castInput => KelvinIntConversions.KelvinToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is GasInt castInput => GasIntConversions.GasToNewton(castInput.Temperature),
+            nameof(Newton) when input is RankineInt castInput => RankineIntConversions.RankineToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is RømerInt castInput => RømerIntConversions.RømerToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is DelisleInt castInput => DelisleIntConversions.DelisleToNewton(
+                castInput.Temperature),
+            nameof(Newton) when input is NewtonInt castInput => NewtonIntConversions.NewtonToNewton(
                 castInput.Temperature),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };

@@ -111,4 +111,36 @@ internal static class RankineIntConversions
         int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return delisleTemp;
     }
+
+    /// <summary>
+    ///     The rankine to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int RankineToNewton(
+        int input)
+    {
+        double result = (input - 491.67) * 11 / 60;
+        int newtonTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The rankine to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int RankineToRéaumur(
+        int input)
+    {
+        double result = (input - 491.67) * 4 / 9;
+        int réaumurTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return réaumurTemp;
+    }
 }

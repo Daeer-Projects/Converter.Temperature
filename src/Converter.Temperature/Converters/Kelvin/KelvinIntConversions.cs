@@ -117,4 +117,36 @@ internal static class KelvinIntConversions
         int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return delisleTemp;
     }
+
+    /// <summary>
+    ///     The kelvin to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int KelvinToNewton(
+        int input)
+    {
+        double result = (input - 273.15) * 33 / 100;
+        int newtonTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The kelvin to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static int KelvinToRéaumur(
+        int input)
+    {
+        double result = (input - 273.15) * 4 / 5;
+        int réaumurTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return réaumurTemp;
+    }
 }

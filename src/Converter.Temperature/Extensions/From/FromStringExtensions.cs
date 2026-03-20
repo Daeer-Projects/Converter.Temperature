@@ -8,7 +8,9 @@ using Types.Delisle;
 using Types.Fahrenheit;
 using Types.Gas;
 using Types.Kelvin;
+using Types.Newton;
 using Types.Rankine;
+using Types.Réaumur;
 using Types.Rømer;
 
 /// <summary>
@@ -108,6 +110,32 @@ public static class FromStringExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Newton.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Newton String class for the 'To' extension to use.
+    /// </returns>
+    public static NewtonString FromNewton(
+        this string input)
+    {
+        return new NewtonString(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Réaumur.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Réaumur String class for the 'To' extension to use.
+    /// </returns>
+    public static RéaumurString FromRéaumur(
+        this string input)
+    {
+        return new RéaumurString(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -129,6 +157,8 @@ public static class FromStringExtensions
             nameof(Rankine) => new RankineString(input),
             nameof(Rømer) => new RømerString(input),
             nameof(Delisle) => new DelisleString(input),
+            nameof(Newton) => new NewtonString(input),
+            nameof(Réaumur) => new RéaumurString(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

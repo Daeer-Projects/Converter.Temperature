@@ -1,10 +1,10 @@
-﻿namespace Converter.Temperature.Types.Réaumur;
+﻿namespace Converter.Temperature.Types.Newton;
 
 using BaseTypes;
 
-public sealed class CelsiusInt : IntBase
+public sealed class NewtonInt : IntBase
 {
-    public CelsiusInt(
+    public NewtonInt(
         int temp)
     {
         Temperature = temp;
