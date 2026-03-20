@@ -16,7 +16,7 @@ public sealed class ToRankineDoubleTests
     public void Test_double_extensions_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         const double input = 200d;
 
         // Act.
@@ -32,7 +32,7 @@ public sealed class ToRankineDoubleTests
     public void Test_double_extensions_generic_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         const double input = 200d;
 
         // Act.
@@ -45,7 +45,7 @@ public sealed class ToRankineDoubleTests
     }
 
     [Theory]
-    [InlineData(851.6699999999998d, -1)]
+    [InlineData(851.67d, -1)]
     [InlineData(852d, 0)]
     [InlineData(851.67d, 2)]
     public void Test_double_extensions_with_parameter_from_celsius_to_rankine_returns_correct_value(
@@ -65,7 +65,7 @@ public sealed class ToRankineDoubleTests
     }
 
     [Theory]
-    [InlineData(851.6699999999998d, -1)]
+    [InlineData(851.67d, -1)]
     [InlineData(852d, 0)]
     [InlineData(851.67d, 2)]
     public void Test_double_extensions_generic_with_parameter_from_celsius_to_rankine_returns_correct_value(
@@ -242,7 +242,7 @@ public sealed class ToRankineDoubleTests
     public void Test_double_extension_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         const double input = 6d;
 
         // Act.
@@ -258,7 +258,7 @@ public sealed class ToRankineDoubleTests
     public void Test_double_extension_generic_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         const double input = 6d;
 
         // Act.
@@ -271,7 +271,7 @@ public sealed class ToRankineDoubleTests
     }
 
     [Theory]
-    [InlineData(851.6699999999998d, -1)]
+    [InlineData(851.67d, -1)]
     [InlineData(852d, 0)]
     [InlineData(851.67d, 2)]
     public void Test_double_extension_with_parameter_from_gas_to_rankine_returns_correct_value(
@@ -291,7 +291,7 @@ public sealed class ToRankineDoubleTests
     }
 
     [Theory]
-    [InlineData(851.6699999999998d, -1)]
+    [InlineData(851.67d, -1)]
     [InlineData(852d, 0)]
     [InlineData(851.67d, 2)]
     public void Test_double_extension_generic_with_parameter_from_gas_to_rankine_returns_correct_value(

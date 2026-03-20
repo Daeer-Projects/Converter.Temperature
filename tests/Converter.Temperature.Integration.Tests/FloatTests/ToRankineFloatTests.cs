@@ -15,7 +15,7 @@ public sealed class ToRankineFloatTests
     public void Test_float_extensions_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 200f;
 
         // Act.
@@ -31,7 +31,7 @@ public sealed class ToRankineFloatTests
     public void Test_float_extensions_generic_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 200f;
 
         // Act.
@@ -129,7 +129,7 @@ public sealed class ToRankineFloatTests
     public void Test_float_extension_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 6f;
 
         // Act.
@@ -145,7 +145,7 @@ public sealed class ToRankineFloatTests
     public void Test_float_extension_generic_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 6f;
 
         // Act.

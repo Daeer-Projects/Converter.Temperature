@@ -53,7 +53,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         CelsiusString input = new("200");
 
         // Act.
@@ -68,7 +68,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         CelsiusString input = new("200");
 
         // Act.
@@ -148,7 +148,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_gas_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         GasString input = new("6");
 
         // Act.
@@ -163,7 +163,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_gas_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         GasString input = new("6");
 
         // Act.
@@ -178,7 +178,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         KelvinString input = new("473.15");
 
         // Act.
@@ -193,7 +193,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         KelvinString input = new("473.15");
 
         // Act.

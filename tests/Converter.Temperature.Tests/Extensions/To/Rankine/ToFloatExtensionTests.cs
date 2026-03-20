@@ -51,7 +51,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
     public void Test_to_rankine_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         CelsiusFloat input = new(200);
 
         // Act.
@@ -66,7 +66,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
     public void Test_to_rankine_generic_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         CelsiusFloat input = new(200);
 
         // Act.
@@ -111,7 +111,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
     public void Test_to_rankine_from_gas_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         GasFloat input = new(6);
 
         // Act.
@@ -126,7 +126,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
     public void Test_to_rankine_generic_from_gas_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         GasFloat input = new(6);
 
         // Act.

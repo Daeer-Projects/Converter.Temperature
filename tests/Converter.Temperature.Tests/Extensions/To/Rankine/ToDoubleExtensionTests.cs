@@ -52,7 +52,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         CelsiusDouble input = new(200);
 
         // Act.
@@ -67,7 +67,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         CelsiusDouble input = new(200);
 
         // Act.
@@ -147,7 +147,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_gas_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         GasDouble input = new(6);
 
         // Act.
@@ -162,7 +162,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_gas_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         GasDouble input = new(6);
 
         // Act.
@@ -177,7 +177,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         KelvinDouble input = new(473.15);
 
         // Act.
@@ -192,7 +192,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         KelvinDouble input = new(473.15);
 
         // Act.

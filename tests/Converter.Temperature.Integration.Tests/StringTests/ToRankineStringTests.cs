@@ -17,7 +17,7 @@ public sealed class ToRankineStringTests
     public void Test_string_extensions_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         const string input = "200";
 
         // Act.
@@ -33,7 +33,7 @@ public sealed class ToRankineStringTests
     public void Test_string_extensions_generic_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         const string input = "200";
 
         // Act.
@@ -46,7 +46,7 @@ public sealed class ToRankineStringTests
     }
 
     [Theory]
-    [InlineData("851.6699999999998", -1)]
+    [InlineData("851.67", -1)]
     [InlineData("852", 0)]
     [InlineData("851.67", 2)]
     public void Test_string_extensions_with_parameter_from_celsius_to_rankine_returns_correct_value(
@@ -66,7 +66,7 @@ public sealed class ToRankineStringTests
     }
 
     [Theory]
-    [InlineData("851.6699999999998", -1)]
+    [InlineData("851.67", -1)]
     [InlineData("852", 0)]
     [InlineData("851.67", 2)]
     public void Test_string_extensions_generic_with_parameter_from_celsius_to_rankine_returns_correct_value(
@@ -249,7 +249,7 @@ public sealed class ToRankineStringTests
     public void Test_string_extension_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         const string input = "6";
 
         // Act.
@@ -265,7 +265,7 @@ public sealed class ToRankineStringTests
     public void Test_string_extension_generic_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         const string input = "6";
 
         // Act.
