@@ -75,7 +75,7 @@ internal static class KelvinDoubleConversions
     internal static double KelvinToRankine(
         double firstTemp)
     {
-        double rankineTemp = firstTemp * 9 / 5;
+        double rankineTemp = firstTemp * 1.8;
         return rankineTemp;
     }
 
