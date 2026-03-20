@@ -46,226 +46,258 @@ public static class ToFloatExtensions
     {
         return typeof(TInput).Name switch
         {
-            nameof(Celsius) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Celsius) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Celsius) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToCelsius(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Fahrenheit) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Fahrenheit) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToFahrenheit(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Kelvin) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Kelvin) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToKelvin(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Gas) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Gas) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToGas(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rankine) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rankine) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToRankine(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Rømer) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Rømer) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToRømer(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Delisle) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Delisle) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToDelisle(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Newton) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToNewton(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Newton) when input is RéaumurFloat castInput => ToExtensionHelpers.Rounder(
+                RéaumurFloatConversions.RéaumurToNewton(castInput.Temperature),
+                fractionalCount),
+            nameof(TemperatureTypes.Réaumur) when input is CelsiusFloat castInput => ToExtensionHelpers.Rounder(
                 CelsiusFloatConversions.CelsiusToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is FahrenheitFloat castInput => ToExtensionHelpers.Rounder(
                 FahrenheitFloatConversions.FahrenheitToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is KelvinFloat castInput => ToExtensionHelpers.Rounder(
                 KelvinFloatConversions.KelvinToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is GasFloat castInput => ToExtensionHelpers.Rounder(
                 GasFloatConversions.GasToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is RankineFloat castInput => ToExtensionHelpers.Rounder(
                 RankineFloatConversions.RankineToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is RømerFloat castInput => ToExtensionHelpers.Rounder(
                 RømerFloatConversions.RømerToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is DelisleFloat castInput => ToExtensionHelpers.Rounder(
                 DelisleFloatConversions.DelisleToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is NewtonFloat castInput => ToExtensionHelpers.Rounder(
                 NewtonFloatConversions.NewtonToRéaumur(castInput.Temperature),
                 fractionalCount),
-            nameof(Réaumur) when input is RéaumurFloat castInput => ToExtensionHelpers.Rounder(
+            nameof(TemperatureTypes.Réaumur) when input is RéaumurFloat castInput => ToExtensionHelpers.Rounder(
                 RéaumurFloatConversions.RéaumurToRéaumur(castInput.Temperature),
                 fractionalCount),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
+    }
+
+    /// <summary>
+    ///     Converts the Float input to Réaumur.
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <returns>
+    ///     The result of the conversion.
+    /// </returns>
+    public static float ToRéaumur(
+        this FloatBase input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(
+            input switch
+            {
+                CelsiusFloat castInput => CelsiusFloatConversions.CelsiusToRéaumur(castInput.Temperature),
+                FahrenheitFloat castInput => FahrenheitFloatConversions.FahrenheitToRéaumur(castInput.Temperature),
+                KelvinFloat castInput => KelvinFloatConversions.KelvinToRéaumur(castInput.Temperature),
+                GasFloat castInput => GasFloatConversions.GasToRéaumur(castInput.Temperature),
+                RankineFloat castInput => RankineFloatConversions.RankineToRéaumur(castInput.Temperature),
+                RømerFloat castInput => RømerFloatConversions.RømerToRéaumur(castInput.Temperature),
+                DelisleFloat castInput => DelisleFloatConversions.DelisleToRéaumur(castInput.Temperature),
+                NewtonFloat castInput => NewtonFloatConversions.NewtonToRéaumur(castInput.Temperature),
+                RéaumurFloat castInput => RéaumurFloatConversions.RéaumurToRéaumur(castInput.Temperature),
+                _ => throw new ArgumentException($"Invalid type: {input.GetType().Name}")
+            },
+            fractionalCount);
     }
 }

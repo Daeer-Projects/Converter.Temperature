@@ -150,15 +150,15 @@ public static class FromDoubleExtensions
     {
         return typeof(TInput).Name switch
         {
-            nameof(Celsius) => new CelsiusDouble(input),
-            nameof(Fahrenheit) => new FahrenheitDouble(input),
-            nameof(Kelvin) => new KelvinDouble(input),
-            nameof(Gas) => new GasDouble(input),
-            nameof(Rankine) => new RankineDouble(input),
-            nameof(Rømer) => new RømerDouble(input),
-            nameof(Delisle) => new DelisleDouble(input),
-            nameof(Newton) => new NewtonDouble(input),
-            nameof(Réaumur) => new RéaumurDouble(input),
+            nameof(TemperatureTypes.Celsius) => new CelsiusDouble(input),
+            nameof(TemperatureTypes.Fahrenheit) => new FahrenheitDouble(input),
+            nameof(TemperatureTypes.Kelvin) => new KelvinDouble(input),
+            nameof(TemperatureTypes.Gas) => new GasDouble(input),
+            nameof(TemperatureTypes.Rankine) => new RankineDouble(input),
+            nameof(TemperatureTypes.Rømer) => new RømerDouble(input),
+            nameof(TemperatureTypes.Delisle) => new DelisleDouble(input),
+            nameof(TemperatureTypes.Newton) => new NewtonDouble(input),
+            nameof(TemperatureTypes.Réaumur) => new RéaumurDouble(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

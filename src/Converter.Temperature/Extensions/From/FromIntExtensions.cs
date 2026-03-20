@@ -150,15 +150,15 @@ public static class FromIntExtensions
     {
         return typeof(TInput).Name switch
         {
-            nameof(Celsius) => new CelsiusInt(input),
-            nameof(Fahrenheit) => new FahrenheitInt(input),
-            nameof(Kelvin) => new KelvinInt(input),
-            nameof(Gas) => new GasInt(input),
-            nameof(Rankine) => new RankineInt(input),
-            nameof(Rømer) => new RømerInt(input),
-            nameof(Delisle) => new DelisleInt(input),
-            nameof(Newton) => new NewtonInt(input),
-            nameof(Réaumur) => new RéaumurInt(input),
+            nameof(TemperatureTypes.Celsius) => new CelsiusInt(input),
+            nameof(TemperatureTypes.Fahrenheit) => new FahrenheitInt(input),
+            nameof(TemperatureTypes.Kelvin) => new KelvinInt(input),
+            nameof(TemperatureTypes.Gas) => new GasInt(input),
+            nameof(TemperatureTypes.Rankine) => new RankineInt(input),
+            nameof(TemperatureTypes.Rømer) => new RømerInt(input),
+            nameof(TemperatureTypes.Delisle) => new DelisleInt(input),
+            nameof(TemperatureTypes.Newton) => new NewtonInt(input),
+            nameof(TemperatureTypes.Réaumur) => new RéaumurInt(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

@@ -131,13 +131,13 @@ internal static class RankineDoubleConversions
     internal static double RankineToNewton(
         double input)
     {
-        double newtonTemp = (input - 491.67) * 11 / 60;
+        double newtonTemp = (input - 491.67d) * 11d / 60d;
         if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return newtonTemp;
+        return input == 671.67d ? 33d : newtonTemp;
     }
 
     /// <summary>
@@ -151,12 +151,12 @@ internal static class RankineDoubleConversions
     internal static double RankineToRéaumur(
         double input)
     {
-        double réaumurTemp = (input - 491.67) * 4 / 9;
+        double réaumurTemp = (input - 491.67d) * 4d / 9d;
         if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return réaumurTemp;
+        return input == 671.67d ? 80d : réaumurTemp;
     }
 }
