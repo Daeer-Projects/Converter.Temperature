@@ -137,7 +137,7 @@ internal static class RankineDoubleConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return input == 671.67d ? 33d : newtonTemp;
+        return newtonTemp;
     }
 
     /// <summary>
@@ -157,6 +157,6 @@ internal static class RankineDoubleConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return input == 671.67d ? 80d : réaumurTemp;
+        return réaumurTemp;
     }
 }

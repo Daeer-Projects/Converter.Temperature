@@ -1,7 +1,7 @@
 namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
 
 using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Types.Réaumur;
+using Types.Réaumur;
 using FluentAssertions;
 using Xunit;
 

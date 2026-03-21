@@ -150,15 +150,15 @@ public static class FromFloatExtensions
     {
         return typeof(TInput).Name switch
         {
-            nameof(TemperatureTypes.Celsius) => new CelsiusFloat(input),
-            nameof(TemperatureTypes.Fahrenheit) => new FahrenheitFloat(input),
-            nameof(TemperatureTypes.Kelvin) => new KelvinFloat(input),
-            nameof(TemperatureTypes.Gas) => new GasFloat(input),
-            nameof(TemperatureTypes.Rankine) => new RankineFloat(input),
-            nameof(TemperatureTypes.Rømer) => new RømerFloat(input),
-            nameof(TemperatureTypes.Delisle) => new DelisleFloat(input),
-            nameof(TemperatureTypes.Newton) => new NewtonFloat(input),
-            nameof(TemperatureTypes.Réaumur) => new RéaumurFloat(input),
+            nameof(Celsius) => new CelsiusFloat(input),
+            nameof(Fahrenheit) => new FahrenheitFloat(input),
+            nameof(Kelvin) => new KelvinFloat(input),
+            nameof(Gas) => new GasFloat(input),
+            nameof(Rankine) => new RankineFloat(input),
+            nameof(Rømer) => new RømerFloat(input),
+            nameof(Delisle) => new DelisleFloat(input),
+            nameof(Newton) => new NewtonFloat(input),
+            nameof(Réaumur) => new RéaumurFloat(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

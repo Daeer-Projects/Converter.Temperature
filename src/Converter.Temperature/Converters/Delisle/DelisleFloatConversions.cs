@@ -1,7 +1,7 @@
-using System;
-using Converter.Temperature.Converters.Celsius;
-
 namespace Converter.Temperature.Converters.Delisle;
+
+using System;
+using Celsius;
 
 internal static class DelisleFloatConversions
 {

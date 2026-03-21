@@ -1,8 +1,8 @@
 namespace Converter.Temperature.Integration.Tests.LongTests;
 
-using Converter.Temperature.Extensions.From;
-using Converter.Temperature.Extensions.To;
-using Converter.Temperature.TemperatureTypes;
+using Extensions.From;
+using Extensions.To;
+using TemperatureTypes;
 using FluentAssertions;
 using Xunit;
 

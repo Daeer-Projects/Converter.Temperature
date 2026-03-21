@@ -147,15 +147,15 @@ public static class FromLongExtensions
     {
         return typeof(TInput).Name switch
         {
-            nameof(TemperatureTypes.Celsius) => new CelsiusLong(input),
-            nameof(TemperatureTypes.Fahrenheit) => new FahrenheitLong(input),
-            nameof(TemperatureTypes.Kelvin) => new KelvinLong(input),
-            nameof(TemperatureTypes.Gas) => new GasLong(input),
-            nameof(TemperatureTypes.Rankine) => new RankineLong(input),
-            nameof(TemperatureTypes.Rømer) => new RømerLong(input),
-            nameof(TemperatureTypes.Delisle) => new DelisleLong(input),
-            nameof(TemperatureTypes.Newton) => new NewtonLong(input),
-            nameof(TemperatureTypes.Réaumur) => new RéaumurLong(input),
+            nameof(Celsius) => new CelsiusLong(input),
+            nameof(Fahrenheit) => new FahrenheitLong(input),
+            nameof(Kelvin) => new KelvinLong(input),
+            nameof(Gas) => new GasLong(input),
+            nameof(Rankine) => new RankineLong(input),
+            nameof(Rømer) => new RømerLong(input),
+            nameof(Delisle) => new DelisleLong(input),
+            nameof(Newton) => new NewtonLong(input),
+            nameof(Réaumur) => new RéaumurLong(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }
