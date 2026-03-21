@@ -49,7 +49,7 @@ internal static class FahrenheitFloatConversions
     internal static float FahrenheitToKelvin(
         float input)
     {
-        float kelvinTemp = (input - 32) * 5 / 9 + 273.15f;
+        float kelvinTemp = (input + 459.67f) * 5f / 9f;
         if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

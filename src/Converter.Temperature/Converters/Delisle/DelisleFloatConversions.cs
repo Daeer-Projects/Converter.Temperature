@@ -36,7 +36,7 @@ internal static class DelisleFloatConversions
     internal static float DelisleToFahrenheit(
         float input)
     {
-        float fahrenheitResult = 212f - input * 1.2f;
+        float fahrenheitResult = 212f - input * 6f / 5f;
         if (float.IsPositiveInfinity(fahrenheitResult) || float.IsNegativeInfinity(fahrenheitResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -92,7 +92,7 @@ internal static class DelisleFloatConversions
     internal static float DelisleToRankine(
         float input)
     {
-        float rankineResult = 671.67f - input * 0.8f;
+        float rankineResult = 671.67f - input * 6f / 5f;
         if (float.IsPositiveInfinity(rankineResult) || float.IsNegativeInfinity(rankineResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -166,7 +166,7 @@ internal static class DelisleFloatConversions
     internal static float DelisleToRéaumur(
         float input)
     {
-        float réaumurResult = (100f - input * 2f / 3f) * 0.8f;
+        float réaumurResult = (100f - input * 2f / 3f) * 4f / 5f;
         if (float.IsPositiveInfinity(réaumurResult) || float.IsNegativeInfinity(réaumurResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

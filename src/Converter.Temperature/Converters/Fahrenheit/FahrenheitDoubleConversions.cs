@@ -49,7 +49,7 @@ internal static class FahrenheitDoubleConversions
     internal static double FahrenheitToKelvin(
         double input)
     {
-        double kelvinTemp = (input - 32) * 5 / 9 + 273.15d;
+        double kelvinTemp = (input + 459.67d) * 5d / 9d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

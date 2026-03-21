@@ -48,13 +48,11 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToKelvin(
         float input)
     {
-        float kelvinTemp = input * 1.01f + 273.15f;
+        float kelvinTemp = input + 273.15f;
         if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-
-        kelvinTemp = input + 273.15f;
 
         return kelvinTemp;
     }

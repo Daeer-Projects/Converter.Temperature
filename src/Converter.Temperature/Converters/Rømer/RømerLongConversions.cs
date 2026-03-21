@@ -117,7 +117,7 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToDelisle(long input)
     {
-        double result = (100d - (input - 7.5d) * 40d / 21d) * 1.5d;
+        double result = (60d - input) * 20d / 7d;
         long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return delisleTemp;
     }

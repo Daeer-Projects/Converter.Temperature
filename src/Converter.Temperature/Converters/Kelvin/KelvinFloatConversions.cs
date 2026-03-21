@@ -30,8 +30,12 @@ internal static class KelvinFloatConversions
     internal static float KelvinToFahrenheit(
         float firstTemp)
     {
-        float celsiusTemp = KelvinToCelsius(firstTemp);
-        float fahrenheitTemp = CelsiusFloatConversions.CelsiusToFahrenheit(celsiusTemp);
+        float fahrenheitTemp = firstTemp * 9f / 5f - 459.67f;
+        if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
+
         return fahrenheitTemp;
     }
 

@@ -15,7 +15,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToCelsius(double input)
     {
-        return input * 1.25d;
+        return input * 5d / 4d;
     }
 
     /// <summary>
@@ -28,7 +28,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToFahrenheit(double input)
     {
-        return input * 2.25d + 32d;
+        return (input * 9d / 4d) + 32d;
     }
 
     /// <summary>
@@ -41,7 +41,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToKelvin(double input)
     {
-        return input * 1.25d + 273.15d;
+        return (input * 5d / 4d) + 273.15d;
     }
 
     /// <summary>
@@ -68,7 +68,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToRankine(double input)
     {
-        return input * 2.25d + 491.67d;
+        return (input * 9d / 4d) + 491.67d;
     }
 
     /// <summary>

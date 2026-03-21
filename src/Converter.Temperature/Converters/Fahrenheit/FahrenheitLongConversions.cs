@@ -46,7 +46,7 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToKelvin(
         long input)
     {
-        const double calculatedValue = (1 - 32d) * 5 / 9 + 273.15d;
+        double calculatedValue = (1 + 459.67d) * 5 / 9;
         long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
@@ -54,7 +54,7 @@ internal static class FahrenheitLongConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (input - 32d) * 5 / 9 + 273.15d;
+        double convertedTemp = (input + 459.67d) * 5 / 9;
         long kelvinTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return kelvinTemp;
@@ -87,14 +87,16 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToRankine(
         long input)
     {
-        const long maxValue = long.MaxValue - 460;
-        const long minValue = long.MinValue + 460;
-        if (input is < minValue or > maxValue)
+        double calculatedValue = 1 + 459.67d;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        long rankineTemp = input + 460;
+        double convertedTemp = input + 459.67d;
+        long rankineTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
         return rankineTemp;
     }
 

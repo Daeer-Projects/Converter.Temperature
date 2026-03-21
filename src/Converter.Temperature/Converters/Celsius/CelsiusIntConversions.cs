@@ -60,7 +60,8 @@ internal static class CelsiusIntConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        int kelvinTempInt = input + 273;
+        double result = input + 273.15d;
+        int kelvinTempInt = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
         return kelvinTempInt;
     }

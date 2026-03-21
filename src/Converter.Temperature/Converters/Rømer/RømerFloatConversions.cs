@@ -106,7 +106,7 @@ internal static class RømerFloatConversions
     /// </returns>
     internal static float RømerToDelisle(float input)
     {
-        float delisleTemp = (100f - (input - 7.5f) * 40f / 21f) * 1.5f;
+        float delisleTemp = (60f - input) * 20f / 7f;
         if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

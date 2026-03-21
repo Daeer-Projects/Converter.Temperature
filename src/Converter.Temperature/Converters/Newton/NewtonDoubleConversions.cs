@@ -132,7 +132,7 @@ internal static class NewtonDoubleConversions
     internal static double NewtonToDelisle(
         double input)
     {
-        double delisleResult = (100d - input * 100d / 33d) * 1.5d;
+        double delisleResult = (33d - input) * 50d / 11d;
         if (double.IsPositiveInfinity(delisleResult) || double.IsNegativeInfinity(delisleResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

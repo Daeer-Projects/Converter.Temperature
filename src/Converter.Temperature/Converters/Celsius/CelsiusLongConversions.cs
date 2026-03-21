@@ -60,7 +60,8 @@ internal static class CelsiusLongConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        long kelvinTemp = input + 273L;
+        double result = input + 273.15d;
+        long kelvinTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
 
         return kelvinTemp;
     }

@@ -7,19 +7,19 @@ internal static class RéaumurIntConversions
 {
     internal static int RéaumurToCelsius(int input)
     {
-        double convertedTemp = input * 1.25d;
+        double convertedTemp = input * 5d / 4d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
     internal static int RéaumurToFahrenheit(int input)
     {
-        double convertedTemp = input * 2.25d + 32d;
+        double convertedTemp = (input * 9d / 4d) + 32d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
     internal static int RéaumurToKelvin(int input)
     {
-        double convertedTemp = input * 1.25d + 273.15d;
+        double convertedTemp = (input * 5d / 4d) + 273.15d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
@@ -31,7 +31,7 @@ internal static class RéaumurIntConversions
 
     internal static int RéaumurToRankine(int input)
     {
-        double convertedTemp = input * 2.25d + 491.67d;
+        double convertedTemp = (input * 9d / 4d) + 491.67d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
@@ -43,7 +43,7 @@ internal static class RéaumurIntConversions
 
     internal static int RéaumurToDelisle(int input)
     {
-        double convertedTemp = (80d - input) * 1.875d;
+        double convertedTemp = (80d - input) * 15d / 8d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 

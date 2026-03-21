@@ -30,8 +30,12 @@ internal static class KelvinDoubleConversions
     internal static double KelvinToFahrenheit(
         double firstTemp)
     {
-        double celsiusTemp = KelvinToCelsius(firstTemp);
-        double fahrenheitTemp = CelsiusDoubleConversions.CelsiusToFahrenheit(celsiusTemp);
+        double fahrenheitTemp = firstTemp * 9d / 5d - 459.67d;
+        if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
+
         return fahrenheitTemp;
     }
 

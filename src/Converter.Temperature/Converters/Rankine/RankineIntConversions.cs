@@ -30,8 +30,9 @@ internal static class RankineIntConversions
     internal static int RankineToCelsius(
         int input)
     {
-        int rankineTemp = (input - 492) * 5 / 9;
-        return rankineTemp;
+        double result = (input - 491.67d) * 5 / 9;
+        int celsiusTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return celsiusTemp;
     }
 
     /// <summary>
@@ -45,8 +46,9 @@ internal static class RankineIntConversions
     internal static int RankineToFahrenheit(
         int input)
     {
-        int rankineTemp = input - 460;
-        return rankineTemp;
+        double result = input - 459.67d;
+        int fahrenheitTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return fahrenheitTemp;
     }
 
     /// <summary>
@@ -60,8 +62,9 @@ internal static class RankineIntConversions
     internal static int RankineToKelvin(
         int input)
     {
-        int rankineTemp = input * 5 / 9;
-        return rankineTemp;
+        double result = input * 5d / 9d;
+        int kelvinTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return kelvinTemp;
     }
 
     /// <summary>

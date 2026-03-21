@@ -48,13 +48,11 @@ internal static class CelsiusDoubleConversions
     internal static double CelsiusToKelvin(
         double input)
     {
-        double kelvinTemp = input * 1.01d + 273.15d;
+        double kelvinTemp = input + 273.15d;
         if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-
-        kelvinTemp = input + 273.15d;
 
         return kelvinTemp;
     }

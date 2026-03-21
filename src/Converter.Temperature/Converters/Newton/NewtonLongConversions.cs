@@ -157,15 +157,15 @@ internal static class NewtonLongConversions
     internal static long NewtonToDelisle(
         long input)
     {
-        const double calculatedValue = (100d - 1 * 100d / 33d) * 3d / 2d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        const double calculatedValue = (33d - 1) * 50d / 11d;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (100d - input * 100d / 33d) * 3d / 2d;
+        double convertedTemp = (33d - input) * 50d / 11d;
         long delisleResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return delisleResult;

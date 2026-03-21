@@ -132,7 +132,7 @@ internal static class NewtonFloatConversions
     internal static float NewtonToDelisle(
         float input)
     {
-        float delisleResult = (100f - input * 100f / 33f) * 1.5f;
+        float delisleResult = (33f - input) * 50f / 11f;
         if (float.IsPositiveInfinity(delisleResult) || float.IsNegativeInfinity(delisleResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

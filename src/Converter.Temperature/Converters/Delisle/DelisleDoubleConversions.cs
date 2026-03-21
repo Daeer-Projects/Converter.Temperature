@@ -36,7 +36,7 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToFahrenheit(
         double input)
     {
-        double fahrenheitResult = 212d - input * 1.2d;
+        double fahrenheitResult = 212d - input * 6d / 5d;
         if (double.IsPositiveInfinity(fahrenheitResult) || double.IsNegativeInfinity(fahrenheitResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -92,7 +92,7 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToRankine(
         double input)
     {
-        double rankineResult = 671.67d - input * 0.8d;
+        double rankineResult = 671.67d - input * 6d / 5d;
         if (double.IsPositiveInfinity(rankineResult) || double.IsNegativeInfinity(rankineResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
@@ -166,7 +166,7 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToRéaumur(
         double input)
     {
-        double réaumurResult = (100d - input * 2d / 3d) * 0.8d;
+        double réaumurResult = (100d - input * 2d / 3d) * 4d / 5d;
         if (double.IsPositiveInfinity(réaumurResult) || double.IsNegativeInfinity(réaumurResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

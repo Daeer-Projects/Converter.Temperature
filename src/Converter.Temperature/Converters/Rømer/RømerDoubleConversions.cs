@@ -106,7 +106,7 @@ internal static class RømerDoubleConversions
     /// </returns>
     internal static double RømerToDelisle(double input)
     {
-        double delisleTemp = (100d - (input - 7.5d) * 40d / 21d) * 1.5d;
+        double delisleTemp = (60d - input) * 20d / 7d;
         if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);

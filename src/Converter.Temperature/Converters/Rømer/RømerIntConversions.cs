@@ -116,7 +116,7 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToDelisle(int input)
     {
-        double result = (100 - (input - 7.5) * 40 / 21) * 1.5;
+        double result = (60d - input) * 20d / 7d;
         int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return delisleTemp;
     }

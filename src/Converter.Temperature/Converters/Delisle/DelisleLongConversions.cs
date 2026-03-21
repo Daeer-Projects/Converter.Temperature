@@ -107,15 +107,15 @@ internal static class DelisleLongConversions
     internal static long DelisleToRankine(
         long input)
     {
-        const double calculatedValue = 671.67d - 1 * 4d / 5d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        const double calculatedValue = 671.67d - 1 * 6d / 5d;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
         
-        double convertedTemp = 671.67 - input * 4d / 5d;
+        double convertedTemp = 671.67 - input * 6d / 5d;
         long rankineResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return rankineResult;

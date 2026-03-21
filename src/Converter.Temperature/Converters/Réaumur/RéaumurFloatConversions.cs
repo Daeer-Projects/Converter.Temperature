@@ -7,17 +7,17 @@ internal static class RéaumurFloatConversions
 {
     internal static float RéaumurToCelsius(float input)
     {
-        return input * 1.25f;
+        return input * 5f / 4f;
     }
 
     internal static float RéaumurToFahrenheit(float input)
     {
-        return input * 2.25f + 32f;
+        return (input * 9f / 4f) + 32f;
     }
 
     internal static float RéaumurToKelvin(float input)
     {
-        return input * 1.25f + 273.15f;
+        return (input * 5f / 4f) + 273.15f;
     }
 
     internal static float RéaumurToGas(float input)
@@ -28,7 +28,7 @@ internal static class RéaumurFloatConversions
 
     internal static float RéaumurToRankine(float input)
     {
-        return input * 2.25f + 491.67f;
+        return (input * 9f / 4f) + 491.67f;
     }
 
     internal static float RéaumurToRømer(float input)
@@ -38,7 +38,7 @@ internal static class RéaumurFloatConversions
 
     internal static float RéaumurToDelisle(float input)
     {
-        return (80f - input) * 1.875f;
+        return (80f - input) * 15f / 8f;
     }
 
     internal static float RéaumurToNewton(float input)
