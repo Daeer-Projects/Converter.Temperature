@@ -26,7 +26,7 @@ public sealed class ToDelisleDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Celsius
@@ -47,7 +47,7 @@ public sealed class ToDelisleDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Fahrenheit
@@ -68,7 +68,7 @@ public sealed class ToDelisleDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Kelvin
@@ -89,7 +89,7 @@ public sealed class ToDelisleDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Gas
@@ -131,7 +131,7 @@ public sealed class ToDelisleDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Rømer

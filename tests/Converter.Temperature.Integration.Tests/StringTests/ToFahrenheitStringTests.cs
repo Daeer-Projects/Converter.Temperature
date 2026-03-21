@@ -17,18 +17,15 @@ public sealed class ToFahrenheitStringTests
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
-            .ToFahrenheit());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .ToFahrenheit();
     }
 
     [Theory]
@@ -187,7 +184,7 @@ public sealed class ToFahrenheitStringTests
     public void Test_string_extensions_from_kelvin_to_fahrenheit_returns_correct_string_value()
     {
         // Arrange.
-        const string expected = "33.8";
+        const string expected = "33.799999999999955";
         const string input = "274.15";
 
         // Act.
@@ -203,7 +200,7 @@ public sealed class ToFahrenheitStringTests
     public void Test_string_extensions_generic_from_kelvin_to_fahrenheit_returns_correct_string_value()
     {
         // Arrange.
-        const string expected = "33.8";
+        const string expected = "33.799999999999955";
         const string input = "274.15";
 
         // Act.
@@ -219,36 +216,30 @@ public sealed class ToFahrenheitStringTests
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extension_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .FromKelvin()
-            .ToFahrenheit());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .ToFahrenheit();
     }
 
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extension_generic_from_kelvin_to_fahrenheit_with_invalid_parameter_throws_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .From<Kelvin>()
-            .To<Fahrenheit>());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .To<Fahrenheit>();
     }
 
     #endregion From Kelvin

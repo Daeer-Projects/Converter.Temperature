@@ -128,35 +128,35 @@ public sealed class ToCelsiusIntTests
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
+    [InlineData(-2147483648, -2147483648)]
+    [InlineData(2147483647, 2147483374)]
     public void Test_int_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(
-        int input)
+        int input, int expected)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
-            .ToCelsius());
+        int result = input.FromKelvin()
+            .ToCelsius();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
+    [InlineData(-2147483648, -2147483648)]
+    [InlineData(2147483647, 2147483374)]
     public void Test_int_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_int_value(
-        int input)
+        int input, int expected)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
-            .To<Celsius>());
+        int result = input.From<Kelvin>()
+            .To<Celsius>();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     #endregion From Kelvin

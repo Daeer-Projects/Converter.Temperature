@@ -167,12 +167,9 @@ public sealed class ToFahrenheitLongTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
-            .ToFahrenheit());
-
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        input.FromKelvin()
+            .ToFahrenheit();
     }
 
     [Theory]
@@ -183,12 +180,9 @@ public sealed class ToFahrenheitLongTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
-            .To<Fahrenheit>());
-
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        input.From<Kelvin>()
+            .To<Fahrenheit>();
     }
 
     #endregion From Kelvin

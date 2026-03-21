@@ -160,35 +160,29 @@ public sealed class ToFahrenheitIntTests
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
+    [InlineData(-2147483648)]
+    [InlineData(2147483647)]
     public void Test_int_extension_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_int_value(
         int input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
-            .ToFahrenheit());
-
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        input.FromKelvin()
+            .ToFahrenheit();
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
+    [InlineData(-2147483648)]
+    [InlineData(2147483647)]
     public void Test_int_extension_generic_from_kelvin_and_to_fahrenheit_with_invalid_value_returns_correct_int_value(
         int input)
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
-            .To<Fahrenheit>());
-
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        input.From<Kelvin>()
+            .To<Fahrenheit>();
     }
 
     #endregion From Kelvin

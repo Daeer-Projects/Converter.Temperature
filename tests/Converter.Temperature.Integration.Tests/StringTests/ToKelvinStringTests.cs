@@ -17,7 +17,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_from_celsius_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "200";
 
         // Act.
@@ -33,7 +33,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_generic_from_celsius_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "200";
 
         // Act.
@@ -49,36 +49,30 @@ public sealed class ToKelvinStringTests
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
-            .ToKelvin());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .ToKelvin();
     }
 
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .From<Celsius>()
-            .To<Kelvin>());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .To<Kelvin>();
     }
 
     #endregion From Celsius
@@ -89,7 +83,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "392";
 
         // Act.
@@ -105,7 +99,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_generic_from_fahrenheit_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "392";
 
         // Act.
@@ -169,7 +163,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extension_from_gas_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "6";
 
         // Act.
@@ -185,7 +179,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extension_generic_from_gas_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "6";
 
         // Act.

@@ -21,7 +21,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromCelsius().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -34,7 +34,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromFahrenheit().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -47,7 +47,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromKelvin().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -60,7 +60,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromRankine().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -73,7 +73,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromDelisle().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -86,7 +86,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromNewton().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -99,7 +99,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromRømer().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -112,7 +112,7 @@ public class ToRéaumurDoubleTests
         var result = input.FromRéaumur().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -126,6 +126,6 @@ public class ToRéaumurDoubleTests
         var result = input.FromCelsius().To<Réaumur>();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 }

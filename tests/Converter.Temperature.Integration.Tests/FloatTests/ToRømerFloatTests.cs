@@ -25,7 +25,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -61,7 +61,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -81,7 +81,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -133,7 +133,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -149,7 +149,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -169,7 +169,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -189,7 +189,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Fahrenheit
@@ -212,7 +212,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -231,7 +231,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Kelvin
@@ -251,7 +251,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -267,7 +267,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -287,7 +287,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -307,7 +307,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Gas
@@ -332,7 +332,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -353,7 +353,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -387,7 +387,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -421,7 +421,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Rankine

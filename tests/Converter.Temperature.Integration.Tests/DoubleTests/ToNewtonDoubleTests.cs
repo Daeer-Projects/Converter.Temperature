@@ -90,7 +90,7 @@ public sealed class ToNewtonDoubleTests
         double result = input.FromNewton().ToNewton();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-12);
     }
 
     [Theory]

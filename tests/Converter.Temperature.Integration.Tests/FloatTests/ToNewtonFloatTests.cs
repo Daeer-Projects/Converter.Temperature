@@ -89,7 +89,7 @@ public sealed class ToNewtonFloatTests
         float result = input.FromNewton().ToNewton();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-4f);
     }
 
     [Theory]

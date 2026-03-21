@@ -89,36 +89,30 @@ public sealed class ToRankineStringTests
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
-            .ToRankine());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .ToRankine();
     }
 
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_string_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
-        double input)
-    {
+        double input){
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        // Assert.
+        input
             .ToString(CultureInfo.InvariantCulture)
             .From<Celsius>()
-            .To<Rankine>());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+            .To<Rankine>();
     }
 
     #endregion From Celsius

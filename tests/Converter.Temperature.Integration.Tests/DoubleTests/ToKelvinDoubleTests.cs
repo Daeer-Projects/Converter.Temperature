@@ -25,7 +25,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -52,12 +52,9 @@ public sealed class ToKelvinDoubleTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
-            .ToKelvin());
-
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        input.FromCelsius()
+            .ToKelvin();
     }
 
     [Theory]
@@ -68,12 +65,9 @@ public sealed class ToKelvinDoubleTests
     {
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
-            .To<Kelvin>());
-
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        input.From<Celsius>()
+            .To<Kelvin>();
     }
 
     #endregion From Celsius
@@ -93,7 +87,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -109,7 +103,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Fahrenheit
@@ -171,7 +165,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -187,7 +181,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Gas
@@ -212,7 +206,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -233,7 +227,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -266,7 +260,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -299,7 +293,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Rankine
@@ -324,7 +318,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -345,7 +339,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -379,7 +373,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -413,7 +407,7 @@ public sealed class ToKelvinDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Rømer

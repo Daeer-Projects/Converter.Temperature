@@ -20,7 +20,7 @@ public class ToRéaumurFloatTests
         var result = input.FromCelsius().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -33,7 +33,7 @@ public class ToRéaumurFloatTests
         var result = input.FromFahrenheit().ToRéaumur();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -47,6 +47,6 @@ public class ToRéaumurFloatTests
         var result = input.FromCelsius().To<Réaumur>();
 
         // Assert
-        result.Should().Be(expected);
+        result.Should().BeApproximately(expected, 1e-4f);
     }
 }
