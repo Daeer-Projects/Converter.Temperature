@@ -78,6 +78,10 @@ public static class ToStringExtensions
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToCelsius,
                 fractionalCount),
+            nameof(TemperatureTypes.Celsius) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToCelsius,
+                fractionalCount),
             nameof(TemperatureTypes.Fahrenheit) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 CelsiusDoubleConversions.CelsiusToFahrenheit,
@@ -109,6 +113,10 @@ public static class ToStringExtensions
             nameof(TemperatureTypes.Fahrenheit) when input is NewtonString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToFahrenheit,
+                fractionalCount),
+            nameof(TemperatureTypes.Fahrenheit) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToFahrenheit,
                 fractionalCount),
             nameof(TemperatureTypes.Kelvin) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
@@ -142,6 +150,10 @@ public static class ToStringExtensions
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToKelvin,
                 fractionalCount),
+            nameof(TemperatureTypes.Kelvin) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToKelvin,
+                fractionalCount),
             nameof(TemperatureTypes.Gas) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 CelsiusDoubleConversions.CelsiusToGas,
@@ -173,6 +185,10 @@ public static class ToStringExtensions
             nameof(TemperatureTypes.Gas) when input is NewtonString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToGas,
+                fractionalCount),
+            nameof(TemperatureTypes.Gas) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToGas,
                 fractionalCount),
             nameof(TemperatureTypes.Rankine) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
@@ -206,6 +222,10 @@ public static class ToStringExtensions
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToRankine,
                 fractionalCount),
+            nameof(TemperatureTypes.Rankine) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToRankine,
+                fractionalCount),
             nameof(TemperatureTypes.Rømer) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 CelsiusDoubleConversions.CelsiusToRømer,
@@ -238,6 +258,10 @@ public static class ToStringExtensions
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToRømer,
                 fractionalCount),
+            nameof(TemperatureTypes.Rømer) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToRømer,
+                fractionalCount),
             nameof(TemperatureTypes.Delisle) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 CelsiusDoubleConversions.CelsiusToDelisle,
@@ -269,6 +293,10 @@ public static class ToStringExtensions
             nameof(TemperatureTypes.Delisle) when input is NewtonString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
                 NewtonDoubleConversions.NewtonToDelisle,
+                fractionalCount),
+            nameof(TemperatureTypes.Delisle) when input is RéaumurString castInput => ToExtensionHelpers.Parser(
+                castInput.Temperature,
+                RéaumurDoubleConversions.RéaumurToDelisle,
                 fractionalCount),
             nameof(TemperatureTypes.Newton) when input is CelsiusString castInput => ToExtensionHelpers.Parser(
                 castInput.Temperature,
@@ -344,47 +372,5 @@ public static class ToStringExtensions
                 fractionalCount),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
-    }
-
-    /// <summary>
-    ///     Converts the String input to Réaumur.
-    /// </summary>
-    /// <param name="input"> The value to be converted. </param>
-    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
-    /// <returns>
-    ///     The result of the conversion.
-    /// </returns>
-    public static string ToRéaumur(
-        this StringBase input,
-        int fractionalCount = -1)
-    {
-        return ToExtensionHelpers.Parser(
-            input switch
-            {
-                CelsiusString castInput => castInput.Temperature,
-                FahrenheitString castInput => castInput.Temperature,
-                KelvinString castInput => castInput.Temperature,
-                GasString castInput => castInput.Temperature,
-                RankineString castInput => castInput.Temperature,
-                RømerString castInput => castInput.Temperature,
-                DelisleString castInput => castInput.Temperature,
-                NewtonString castInput => castInput.Temperature,
-                RéaumurString castInput => castInput.Temperature,
-                _ => throw new ArgumentException($"Invalid type: {input.GetType().Name}")
-            },
-            input switch
-            {
-                CelsiusString => CelsiusDoubleConversions.CelsiusToRéaumur,
-                FahrenheitString => FahrenheitDoubleConversions.FahrenheitToRéaumur,
-                KelvinString => KelvinDoubleConversions.KelvinToRéaumur,
-                GasString => GasDoubleConversion.GasToRéaumur,
-                RankineString => RankineDoubleConversions.RankineToRéaumur,
-                RømerString => RømerDoubleConversions.RømerToRéaumur,
-                DelisleString => DelisleDoubleConversions.DelisleToRéaumur,
-                NewtonString => NewtonDoubleConversions.NewtonToRéaumur,
-                RéaumurString => RéaumurDoubleConversions.RéaumurToRéaumur,
-                _ => throw new ArgumentException($"Invalid type: {input.GetType().Name}")
-            },
-            fractionalCount);
     }
 }

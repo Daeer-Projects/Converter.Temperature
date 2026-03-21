@@ -70,6 +70,9 @@ public static class ToDoubleExtensions
             nameof(TemperatureTypes.Celsius) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToCelsius(castInput.Temperature),
                 fractionalCount),
+            nameof(TemperatureTypes.Celsius) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToCelsius(castInput.Temperature),
+                fractionalCount),
             nameof(TemperatureTypes.Fahrenheit) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToFahrenheit(castInput.Temperature),
                 fractionalCount),
@@ -93,6 +96,9 @@ public static class ToDoubleExtensions
                 fractionalCount),
             nameof(TemperatureTypes.Fahrenheit) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToFahrenheit(castInput.Temperature),
+                fractionalCount),
+            nameof(TemperatureTypes.Fahrenheit) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToFahrenheit(castInput.Temperature),
                 fractionalCount),
             nameof(TemperatureTypes.Kelvin) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToKelvin(castInput.Temperature),
@@ -118,6 +124,9 @@ public static class ToDoubleExtensions
             nameof(TemperatureTypes.Kelvin) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToKelvin(castInput.Temperature),
                 fractionalCount),
+            nameof(TemperatureTypes.Kelvin) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToKelvin(castInput.Temperature),
+                fractionalCount),
             nameof(TemperatureTypes.Gas) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToGas(castInput.Temperature),
                 fractionalCount),
@@ -141,6 +150,9 @@ public static class ToDoubleExtensions
                 fractionalCount),
             nameof(TemperatureTypes.Gas) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToGas(castInput.Temperature),
+                fractionalCount),
+            nameof(TemperatureTypes.Gas) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToGas(castInput.Temperature),
                 fractionalCount),
             nameof(TemperatureTypes.Rankine) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToRankine(castInput.Temperature),
@@ -166,6 +178,9 @@ public static class ToDoubleExtensions
             nameof(TemperatureTypes.Rankine) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToRankine(castInput.Temperature),
                 fractionalCount),
+            nameof(TemperatureTypes.Rankine) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToRankine(castInput.Temperature),
+                fractionalCount),
             nameof(TemperatureTypes.Rømer) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToRømer(castInput.Temperature),
                 fractionalCount),
@@ -190,6 +205,9 @@ public static class ToDoubleExtensions
             nameof(TemperatureTypes.Rømer) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToRømer(castInput.Temperature),
                 fractionalCount),
+            nameof(TemperatureTypes.Rømer) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToRømer(castInput.Temperature),
+                fractionalCount),
             nameof(TemperatureTypes.Delisle) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToDelisle(castInput.Temperature),
                 fractionalCount),
@@ -213,6 +231,9 @@ public static class ToDoubleExtensions
                 fractionalCount),
             nameof(TemperatureTypes.Delisle) when input is NewtonDouble castInput => ToExtensionHelpers.Rounder(
                 NewtonDoubleConversions.NewtonToDelisle(castInput.Temperature),
+                fractionalCount),
+            nameof(TemperatureTypes.Delisle) when input is RéaumurDouble castInput => ToExtensionHelpers.Rounder(
+                RéaumurDoubleConversions.RéaumurToDelisle(castInput.Temperature),
                 fractionalCount),
             nameof(TemperatureTypes.Newton) when input is CelsiusDouble castInput => ToExtensionHelpers.Rounder(
                 CelsiusDoubleConversions.CelsiusToNewton(castInput.Temperature),
@@ -270,34 +291,5 @@ public static class ToDoubleExtensions
                 fractionalCount),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
-    }
-
-    /// <summary>
-    ///     Converts the Double input to Réaumur.
-    /// </summary>
-    /// <param name="input"> The value to be converted. </param>
-    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
-    /// <returns>
-    ///     The result of the conversion.
-    /// </returns>
-    public static double ToRéaumur(
-        this DoubleBase input,
-        int fractionalCount = -1)
-    {
-        return ToExtensionHelpers.Rounder(
-            input switch
-            {
-                CelsiusDouble castInput => CelsiusDoubleConversions.CelsiusToRéaumur(castInput.Temperature),
-                FahrenheitDouble castInput => FahrenheitDoubleConversions.FahrenheitToRéaumur(castInput.Temperature),
-                KelvinDouble castInput => KelvinDoubleConversions.KelvinToRéaumur(castInput.Temperature),
-                GasDouble castInput => GasDoubleConversion.GasToRéaumur(castInput.Temperature),
-                RankineDouble castInput => RankineDoubleConversions.RankineToRéaumur(castInput.Temperature),
-                RømerDouble castInput => RømerDoubleConversions.RømerToRéaumur(castInput.Temperature),
-                DelisleDouble castInput => DelisleDoubleConversions.DelisleToRéaumur(castInput.Temperature),
-                NewtonDouble castInput => NewtonDoubleConversions.NewtonToRéaumur(castInput.Temperature),
-                RéaumurDouble castInput => RéaumurDoubleConversions.RéaumurToRéaumur(castInput.Temperature),
-                _ => throw new ArgumentException($"Invalid type: {input.GetType().Name}")
-            },
-            fractionalCount);
     }
 }
