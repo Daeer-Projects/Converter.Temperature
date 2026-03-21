@@ -1,3 +1,5 @@
+using Converter.Temperature.Extensions.To.Réaumur;
+
 namespace Converter.Temperature.Integration.Tests.StringTests;
 
 using Extensions.From;
