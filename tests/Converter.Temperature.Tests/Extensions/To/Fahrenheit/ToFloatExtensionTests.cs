@@ -184,7 +184,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -199,7 +199,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]

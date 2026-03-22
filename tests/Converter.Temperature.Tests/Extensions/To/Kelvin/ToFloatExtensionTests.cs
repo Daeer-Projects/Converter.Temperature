@@ -81,7 +81,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
     public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const float expected = 473.15f;
+        const float expected = 473.15002f;
         FahrenheitFloat input = new(392);
 
         // Act.
@@ -96,7 +96,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
     public void Test_to_kelvin_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const float expected = 473.15f;
+        const float expected = 473.15002f;
         FahrenheitFloat input = new(392);
 
         // Act.

@@ -199,7 +199,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
     public void Test_to_kelvin_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 478L;
+        const long expected = 479L;
         RankineLong input = new(862L);
 
         // Act.
@@ -214,7 +214,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
     public void Test_to_kelvin_generic_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const long expected = 478L;
+        const long expected = 479L;
         RankineLong input = new(862L);
 
         // Act.

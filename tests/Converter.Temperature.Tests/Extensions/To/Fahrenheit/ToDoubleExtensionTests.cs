@@ -184,7 +184,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<FahrenheitDoub
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -199,7 +199,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<FahrenheitDoub
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]

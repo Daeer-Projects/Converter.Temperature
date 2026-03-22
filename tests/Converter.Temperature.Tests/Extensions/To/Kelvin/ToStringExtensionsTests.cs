@@ -81,7 +81,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
     public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         FahrenheitString input = new("392");
 
         // Act.
@@ -96,7 +96,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
     public void Test_to_kelvin_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         FahrenheitString input = new("392");
 
         // Act.

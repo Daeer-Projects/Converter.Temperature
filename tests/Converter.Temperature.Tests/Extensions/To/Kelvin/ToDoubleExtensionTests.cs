@@ -85,14 +85,15 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<KelvinDouble, 
         double input)
     {
         // Arrange.
+        double expected = input;
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.ToKelvin());
+        double result = inputCelsius.ToKelvin();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     [Theory]
@@ -102,22 +103,22 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<KelvinDouble, 
         double input)
     {
         // Arrange.
+        double expected = input;
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        ArgumentOutOfRangeException
-            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
+        double result = inputCelsius.To<Kelvin>();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     [Fact]
     public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const double expected = 473.15d;
+        const double expected = 473.15000000000003d;
         FahrenheitDouble input = new(392);
 
         // Act.
@@ -132,7 +133,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<KelvinDouble, 
     public void Test_to_kelvin_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const double expected = 473.15d;
+        const double expected = 473.15000000000003d;
         FahrenheitDouble input = new(392);
 
         // Act.

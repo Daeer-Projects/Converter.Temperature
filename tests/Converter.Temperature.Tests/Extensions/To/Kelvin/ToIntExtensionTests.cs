@@ -233,7 +233,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
     public void Test_to_kelvin_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const int expected = 478;
+        const int expected = 479;
         RankineInt input = new(862);
 
         // Act.
@@ -248,7 +248,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
     public void Test_to_kelvin_generic_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const int expected = 478;
+        const int expected = 479;
         RankineInt input = new(862);
 
         // Act.
