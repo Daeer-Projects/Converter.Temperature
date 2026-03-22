@@ -1,6 +1,6 @@
-namespace Converter.Temperature.Types.Delisle;
+using Converter.Temperature.BaseTypes;
 
-using BaseTypes;
+namespace Converter.Temperature.Types.Delisle;
 
 /// <summary>
 ///     The Delisle float type.
@@ -10,7 +10,7 @@ public sealed class DelisleFloat : FloatBase
     /// <summary>
     ///     Initializes a new instance of the <see cref="DelisleFloat" /> class.
     /// </summary>
-    /// <param name="temp"> The temperature to initialize with. </param>
+    /// <param name="temp"> The temperature value. </param>
     public DelisleFloat(
         float temp)
     {
@@ -18,7 +18,7 @@ public sealed class DelisleFloat : FloatBase
     }
 
     /// <summary>
-    ///     Gets the temperature.
+    ///     Gets the temperature value.
     /// </summary>
     public override float Temperature { get; }
 }

@@ -1,6 +1,6 @@
-namespace Converter.Temperature.Types.Delisle;
+using Converter.Temperature.BaseTypes;
 
-using BaseTypes;
+namespace Converter.Temperature.Types.Delisle;
 
 /// <summary>
 ///     The Delisle int type.
@@ -10,7 +10,7 @@ public sealed class DelisleInt : IntBase
     /// <summary>
     ///     Initializes a new instance of the <see cref="DelisleInt" /> class.
     /// </summary>
-    /// <param name="temp"> The temperature to initialize with. </param>
+    /// <param name="temp"> The temperature value. </param>
     public DelisleInt(
         int temp)
     {
@@ -18,7 +18,7 @@ public sealed class DelisleInt : IntBase
     }
 
     /// <summary>
-    ///     Gets the temperature.
+    ///     Gets the temperature value.
     /// </summary>
     public override int Temperature { get; }
 }
