@@ -7,6 +7,9 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
+/// <summary>
+///     The to delisle float tests.
+/// </summary>
 public sealed class ToDelisleFloatTests
 {
     #region From Celsius
@@ -36,7 +39,7 @@ public sealed class ToDelisleFloatTests
     [Theory]
     [InlineData(32f, 150f)]
     [InlineData(212f, 0f)]
-    public void Test_float_extensions_from_fahrenheit_to_delisle_returns_correct_float_value(
+    public void Test_float_extension_from_fahrenheit_to_delisle_returns_correct_float_value(
         float input,
         float expected)
     {
@@ -57,7 +60,7 @@ public sealed class ToDelisleFloatTests
     [Theory]
     [InlineData(273.15f, 150f)]
     [InlineData(373.15f, 0f)]
-    public void Test_float_extensions_from_kelvin_to_delisle_returns_correct_float_value(
+    public void Test_float_extension_from_kelvin_to_delisle_returns_correct_float_value(
         float input,
         float expected)
     {
@@ -78,7 +81,7 @@ public sealed class ToDelisleFloatTests
     [Theory]
     [InlineData(1f, -60f)]
     [InlineData(6f, -150f)]
-    public void Test_float_extensions_from_gas_to_delisle_returns_correct_float_value(
+    public void Test_float_extension_from_gas_to_delisle_returns_correct_float_value(
         float input,
         float expected)
     {
@@ -99,7 +102,7 @@ public sealed class ToDelisleFloatTests
     [Theory]
     [InlineData(491.67f, 150f)]
     [InlineData(671.67f, 0f)]
-    public void Test_float_extensions_from_rankine_to_delisle_returns_correct_float_value(
+    public void Test_float_extension_from_rankine_to_delisle_returns_correct_float_value(
         float input,
         float expected)
     {
@@ -120,7 +123,7 @@ public sealed class ToDelisleFloatTests
     [Theory]
     [InlineData(7.5f, 150f)]
     [InlineData(60f, 0f)]
-    public void Test_float_extensions_from_rømer_to_delisle_returns_correct_float_value(
+    public void Test_float_extension_from_rømer_to_delisle_returns_correct_float_value(
         float input,
         float expected)
     {

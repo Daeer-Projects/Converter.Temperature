@@ -7,6 +7,9 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
+/// <summary>
+///     The to delisle int tests.
+/// </summary>
 public sealed class ToDelisleIntTests
 {
     #region From Celsius
@@ -53,7 +56,7 @@ public sealed class ToDelisleIntTests
     [Theory]
     [InlineData(32, 150)]
     [InlineData(212, 0)]
-    public void Test_int_extensions_from_fahrenheit_to_delisle_returns_correct_int_value(
+    public void Test_int_extension_from_fahrenheit_to_delisle_returns_correct_int_value(
         int input,
         int expected)
     {
@@ -74,7 +77,7 @@ public sealed class ToDelisleIntTests
     [Theory]
     [InlineData(273, 150)]
     [InlineData(373, 0)]
-    public void Test_int_extensions_from_kelvin_to_delisle_returns_correct_int_value(
+    public void Test_int_extension_from_kelvin_to_delisle_returns_correct_int_value(
         int input,
         int expected)
     {
@@ -96,7 +99,7 @@ public sealed class ToDelisleIntTests
     [InlineData(1, -75)]
     [InlineData(6, -176)]
     [InlineData(10, -248)]
-    public void Test_int_extensions_from_gas_to_delisle_returns_correct_int_value(
+    public void Test_int_extension_from_gas_to_delisle_returns_correct_int_value(
         int input,
         int expected)
     {
@@ -117,7 +120,7 @@ public sealed class ToDelisleIntTests
     [Theory]
     [InlineData(492, 150)]
     [InlineData(672, 0)]
-    public void Test_int_extensions_from_rankine_to_delisle_returns_correct_int_value(
+    public void Test_int_extension_from_rankine_to_delisle_returns_correct_int_value(
         int input,
         int expected)
     {
@@ -138,7 +141,7 @@ public sealed class ToDelisleIntTests
     [Theory]
     [InlineData(8, 150)]
     [InlineData(60, 0)]
-    public void Test_int_extensions_from_rømer_to_delisle_returns_correct_int_value(
+    public void Test_int_extension_from_rømer_to_delisle_returns_correct_int_value(
         int input,
         int expected)
     {

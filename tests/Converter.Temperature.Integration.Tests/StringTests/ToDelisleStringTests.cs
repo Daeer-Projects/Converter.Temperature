@@ -7,6 +7,9 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
+/// <summary>
+///     The to delisle string tests.
+/// </summary>
 public sealed class ToDelisleStringTests
 {
     #region From Celsius
@@ -36,7 +39,7 @@ public sealed class ToDelisleStringTests
     [Theory]
     [InlineData("32", "150")]
     [InlineData("212", "0")]
-    public void Test_string_extensions_from_fahrenheit_to_delisle_returns_correct_string_value(
+    public void Test_string_extension_from_fahrenheit_to_delisle_returns_correct_string_value(
         string input,
         string expected)
     {
@@ -57,7 +60,7 @@ public sealed class ToDelisleStringTests
     [Theory]
     [InlineData("273.15", "150")]
     [InlineData("373.15", "0")]
-    public void Test_string_extensions_from_kelvin_to_delisle_returns_correct_string_value(
+    public void Test_string_extension_from_kelvin_to_delisle_returns_correct_string_value(
         string input,
         string expected)
     {
@@ -78,7 +81,7 @@ public sealed class ToDelisleStringTests
     [Theory]
     [InlineData("1", "-60")]
     [InlineData("6", "-150")]
-    public void Test_string_extensions_from_gas_to_delisle_returns_correct_string_value(
+    public void Test_string_extension_from_gas_to_delisle_returns_correct_string_value(
         string input,
         string expected)
     {
@@ -99,7 +102,7 @@ public sealed class ToDelisleStringTests
     [Theory]
     [InlineData("491.67", "150")]
     [InlineData("671.67", "0")]
-    public void Test_string_extensions_from_rankine_to_delisle_returns_correct_string_value(
+    public void Test_string_extension_from_rankine_to_delisle_returns_correct_string_value(
         string input,
         string expected)
     {
@@ -122,7 +125,7 @@ public sealed class ToDelisleStringTests
     [Theory]
     [InlineData("7.5", "150")]
     [InlineData("60", "0")]
-    public void Test_string_extensions_from_rømer_to_delisle_returns_correct_string_value(
+    public void Test_string_extension_from_rømer_to_delisle_returns_correct_string_value(
         string input,
         string expected)
     {

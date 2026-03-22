@@ -7,6 +7,9 @@ using FluentAssertions;
 using TemperatureTypes;
 using Xunit;
 
+/// <summary>
+///     The to delisle long tests.
+/// </summary>
 public sealed class ToDelisleLongTests
 {
     #region From Celsius
@@ -36,7 +39,7 @@ public sealed class ToDelisleLongTests
     [Theory]
     [InlineData(32L, 150L)]
     [InlineData(212L, 0L)]
-    public void Test_long_extensions_from_fahrenheit_to_delisle_returns_correct_long_value(
+    public void Test_long_extension_from_fahrenheit_to_delisle_returns_correct_long_value(
         long input,
         long expected)
     {
@@ -57,7 +60,7 @@ public sealed class ToDelisleLongTests
     [Theory]
     [InlineData(273L, 150L)]
     [InlineData(373L, 0L)]
-    public void Test_long_extensions_from_kelvin_to_delisle_returns_correct_long_value(
+    public void Test_long_extension_from_kelvin_to_delisle_returns_correct_long_value(
         long input,
         long expected)
     {
@@ -78,7 +81,7 @@ public sealed class ToDelisleLongTests
     [Theory]
     [InlineData(1L, -75L)]
     [InlineData(6L, -176L)]
-    public void Test_long_extensions_from_gas_to_delisle_returns_correct_long_value(
+    public void Test_long_extension_from_gas_to_delisle_returns_correct_long_value(
         long input,
         long expected)
     {
@@ -99,7 +102,7 @@ public sealed class ToDelisleLongTests
     [Theory]
     [InlineData(492L, 150L)]
     [InlineData(672L, 0L)]
-    public void Test_long_extensions_from_rankine_to_delisle_returns_correct_long_value(
+    public void Test_long_extension_from_rankine_to_delisle_returns_correct_long_value(
         long input,
         long expected)
     {
@@ -120,7 +123,7 @@ public sealed class ToDelisleLongTests
     [Theory]
     [InlineData(8L, 150L)]
     [InlineData(60L, 0L)]
-    public void Test_long_extensions_from_rømer_to_delisle_returns_correct_long_value(
+    public void Test_long_extension_from_rømer_to_delisle_returns_correct_long_value(
         long input,
         long expected)
     {
