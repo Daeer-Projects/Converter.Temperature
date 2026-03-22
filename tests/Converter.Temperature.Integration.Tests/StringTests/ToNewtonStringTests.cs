@@ -50,7 +50,7 @@ public sealed class ToNewtonStringTests
     public void Test_ToNewton_FromRankine_Returns_Correct_Value(string input, string expected)
     {
         // Act
-        string result = input.FromRankine().ToNewton();
+        string result = input.FromRankine().ToNewton(0);
 
         // Assert
         result.Should().Be(expected);

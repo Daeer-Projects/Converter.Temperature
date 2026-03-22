@@ -21,11 +21,15 @@ public sealed class ToFahrenheitStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        Action action = () => input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
             .ToFahrenheit();
+
+        // Assert.
+        action.Should()
+            .Throw<ArgumentOutOfRangeException>()
+            .WithMessage("*Value out of range for type.*");
     }
 
     [Theory]
@@ -220,11 +224,15 @@ public sealed class ToFahrenheitStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        Action action = () => input
             .ToString(CultureInfo.InvariantCulture)
             .FromKelvin()
             .ToFahrenheit();
+
+        // Assert.
+        action.Should()
+            .Throw<ArgumentOutOfRangeException>()
+            .WithMessage("*Value out of range for type.*");
     }
 
     [Theory]
@@ -235,11 +243,15 @@ public sealed class ToFahrenheitStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        Action action = () => input
             .ToString(CultureInfo.InvariantCulture)
             .From<Kelvin>()
             .To<Fahrenheit>();
+
+        // Assert.
+        action.Should()
+            .Throw<ArgumentOutOfRangeException>()
+            .WithMessage("*Value out of range for type.*");
     }
 
     #endregion From Kelvin

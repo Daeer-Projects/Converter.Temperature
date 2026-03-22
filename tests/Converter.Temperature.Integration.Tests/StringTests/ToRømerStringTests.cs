@@ -93,11 +93,15 @@ public sealed class ToRømerStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        Action action = () => input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
             .ToRømer();
+
+        // Assert.
+        action.Should()
+            .Throw<ArgumentOutOfRangeException>()
+            .WithMessage("*Value out of range for type.*");
     }
 
     [Theory]
@@ -108,11 +112,15 @@ public sealed class ToRømerStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        Action action = () => input
             .ToString(CultureInfo.InvariantCulture)
             .From<Celsius>()
             .To<Rømer>();
+
+        // Assert.
+        action.Should()
+            .Throw<ArgumentOutOfRangeException>()
+            .WithMessage("*Value out of range for type.*");
     }
 
     #endregion From Celsius

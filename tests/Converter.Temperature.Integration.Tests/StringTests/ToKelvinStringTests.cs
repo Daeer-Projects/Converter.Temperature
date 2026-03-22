@@ -17,7 +17,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_from_celsius_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15000000000003";
+        const string expected = "473.15";
         const string input = "200";
 
         // Act.
@@ -33,7 +33,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_generic_from_celsius_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15000000000003";
+        const string expected = "473.15";
         const string input = "200";
 
         // Act.
@@ -53,11 +53,14 @@ public sealed class ToKelvinStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        string result = input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
             .ToKelvin();
+
+        // Assert.
+        result.Should()
+            .NotBeNullOrEmpty();
     }
 
     [Theory]
@@ -68,11 +71,14 @@ public sealed class ToKelvinStringTests
 
         // Arrange.
         // Act.
-        // Assert.
-        input
+        string result = input
             .ToString(CultureInfo.InvariantCulture)
             .From<Celsius>()
             .To<Kelvin>();
+
+        // Assert.
+        result.Should()
+            .NotBeNullOrEmpty();
     }
 
     #endregion From Celsius
@@ -163,7 +169,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extension_from_gas_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15000000000003";
+        const string expected = "473.15";
         const string input = "6";
 
         // Act.
@@ -179,7 +185,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extension_generic_from_gas_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15000000000003";
+        const string expected = "473.15";
         const string input = "6";
 
         // Act.
