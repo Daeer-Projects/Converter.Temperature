@@ -123,7 +123,7 @@ public sealed class ToRéaumurIntTests
     #region From Rømer
 
     [Theory]
-    [InlineData(7, 0)]
+    [InlineData(7, -1)]
     [InlineData(60, 80)]
     public void Test_int_extension_from_rømer_to_réaumur_returns_correct_int_value(int input, int expected)
     {
