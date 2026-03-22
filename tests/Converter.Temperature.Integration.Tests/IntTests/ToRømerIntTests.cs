@@ -1,27 +1,30 @@
-﻿namespace Converter.Temperature.Integration.Tests.IntTests;
-
 using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Rankine;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
 
+namespace Converter.Temperature.Integration.Tests.IntTests;
+
+/// <summary>
+/// The to rømer int tests.
+/// </summary>
 public sealed class ToRømerIntTests
 {
     #region From Celsius
 
     [Fact]
-    public void Test_int_extensions_from_celsius_to_rankine_returns_correct_value()
+    public void Test_int_extension_from_celsius_to_rømer_returns_correct_int_value()
     {
         // Arrange.
-        const int expected = 852;
+        const int expected = 113;
         const int input = 200;
 
         // Act.
         int result = input.FromCelsius()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -29,51 +32,19 @@ public sealed class ToRømerIntTests
     }
 
     [Fact]
-    public void Test_int_extensions_generic_from_celsius_to_rankine_returns_correct_value()
+    public void Test_int_extension_generic_from_celsius_to_rømer_returns_correct_int_value()
     {
         // Arrange.
-        const int expected = 852;
+        const int expected = 113;
         const int input = 200;
 
         // Act.
         int result = input.From<Celsius>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
             .Be(expected);
-    }
-
-    [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
-    public void Test_int_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
-        int input)
-    {
-        // Arrange.
-        // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
-            .ToRankine());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
-    }
-
-    [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
-    public void Test_int_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
-        int input)
-    {
-        // Arrange.
-        // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
-            .To<Rankine>());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
     }
 
     #endregion From Celsius
@@ -81,15 +52,15 @@ public sealed class ToRømerIntTests
     #region From Fahrenheit
 
     [Fact]
-    public void Test_int_extensions_from_fahrenheit_to_rankine_returns_correct_value()
+    public void Test_int_extension_from_fahrenheit_to_rømer_returns_correct_int_value()
     {
         // Arrange.
-        const int expected = 852;
+        const int expected = 113;
         const int input = 392;
 
         // Act.
         int result = input.FromFahrenheit()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -97,15 +68,15 @@ public sealed class ToRømerIntTests
     }
 
     [Fact]
-    public void Test_int_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
+    public void Test_int_extension_generic_from_fahrenheit_to_rømer_returns_correct_int_value()
     {
         // Arrange.
-        const int expected = 852;
+        const int expected = 113;
         const int input = 392;
 
         // Act.
         int result = input.From<Fahrenheit>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
@@ -117,18 +88,18 @@ public sealed class ToRømerIntTests
     #region From Kelvin
 
     [Theory]
-    [InlineData(-1000, -1800)]
-    [InlineData(0, 0)]
-    [InlineData(50, 90)]
-    [InlineData(1000, 1800)]
-    public void Test_int_extension_from_kelvin_to_rankine_returns_correct_int_value(
+    [InlineData(-1000, -661)]
+    [InlineData(0, -136)]
+    [InlineData(50, -110)]
+    [InlineData(1000, 389)]
+    public void Test_int_extension_from_kelvin_to_rømer_returns_correct_int_value(
         int value,
         int expected)
     {
         // Arrange.
         // Act.
         int result = value.FromKelvin()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -136,18 +107,18 @@ public sealed class ToRømerIntTests
     }
 
     [Theory]
-    [InlineData(-1000, -1800)]
-    [InlineData(0, 0)]
-    [InlineData(50, 90)]
-    [InlineData(1000, 1800)]
-    public void Test_int_extension_generic_from_kelvin_to_rankine_returns_correct_int_value(
+    [InlineData(-1000, -661)]
+    [InlineData(0, -136)]
+    [InlineData(50, -110)]
+    [InlineData(1000, 389)]
+    public void Test_int_extension_generic_from_kelvin_to_rømer_returns_correct_int_value(
         int value,
         int expected)
     {
         // Arrange.
         // Act.
         int result = value.From<Kelvin>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
@@ -159,15 +130,15 @@ public sealed class ToRømerIntTests
     #region From Gas
 
     [Fact]
-    public void Test_int_extension_from_gas_to_rankine_returns_correct_value()
+    public void Test_int_extension_from_gas_to_rømer_returns_correct_int_value()
     {
         // Arrange.
-        const int expected = 882;
+        const int expected = 121;
         const int input = 6;
 
         // Act.
         int result = input.FromGas()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -175,15 +146,15 @@ public sealed class ToRømerIntTests
     }
 
     [Fact]
-    public void Test_int_extension_generic_from_gas_to_rankine_returns_correct_value()
+    public void Test_int_extension_generic_from_gas_to_rømer_returns_correct_int_value()
     {
         // Arrange.
-        const int expected = 882;
+        const int expected = 121;
         const int input = 6;
 
         // Act.
         int result = input.From<Gas>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
@@ -195,41 +166,45 @@ public sealed class ToRømerIntTests
     #region From Rankine
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(-345)]
-    [InlineData(0)]
-    [InlineData(7564)]
-    [InlineData(int.MaxValue)]
-    public void Test_int_extension_from_and_to_rankine_returns_correct_int_value(
-        int value)
+    [InlineData(-1000, -428)]
+    [InlineData(0, -136)]
+    [InlineData(50, -121)]
+    [InlineData(100, -107)]
+    [InlineData(500, 10)]
+    [InlineData(1000, 156)]
+    public void Test_int_extension_from_rankine_to_rømer_returns_correct_int_value(
+        int value,
+        int expected)
     {
         // Arrange.
         // Act.
         int result = value.FromRankine()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
-            .Be(value);
+            .Be(expected);
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(-345)]
-    [InlineData(0)]
-    [InlineData(7564)]
-    [InlineData(int.MaxValue)]
-    public void Test_int_extension_generic_from_and_to_rankine_returns_correct_int_value(
-        int value)
+    [InlineData(-1000, -428)]
+    [InlineData(0, -136)]
+    [InlineData(50, -121)]
+    [InlineData(100, -107)]
+    [InlineData(500, 10)]
+    [InlineData(1000, 156)]
+    public void Test_int_extension_generic_from_rankine_to_rømer_returns_correct_int_value(
+        int value,
+        int expected)
     {
         // Arrange.
         // Act.
         int result = value.From<Rankine>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
-            .Be(value);
+            .Be(expected);
     }
 
     #endregion From Rankine
@@ -237,45 +212,41 @@ public sealed class ToRømerIntTests
     #region From Rømer
 
     [Theory]
-    [InlineData(-1000, -2963)]
-    [InlineData(0, 466)]
-    [InlineData(50, 637)]
-    [InlineData(100, 809)]
-    [InlineData(500, 2180)]
-    [InlineData(1000, 3895)]
-    public void Test_int_extension_from_rømer_and_to_rankine_returns_correct_int_value(
-        int value,
-        int expected)
+    [InlineData(int.MinValue)]
+    [InlineData(-345)]
+    [InlineData(0)]
+    [InlineData(7564)]
+    [InlineData(int.MaxValue)]
+    public void Test_int_extension_from_and_to_rømer_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
         int result = value.FromRømer()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .Be(value);
     }
 
     [Theory]
-    [InlineData(-1000, -2963)]
-    [InlineData(0, 466)]
-    [InlineData(50, 637)]
-    [InlineData(100, 809)]
-    [InlineData(500, 2180)]
-    [InlineData(1000, 3895)]
-    public void Test_int_extension_generic_from_rømer_and_to_rankine_returns_correct_int_value(
-        int value,
-        int expected)
+    [InlineData(int.MinValue)]
+    [InlineData(-345)]
+    [InlineData(0)]
+    [InlineData(7564)]
+    [InlineData(int.MaxValue)]
+    public void Test_int_extension_generic_from_and_to_rømer_returns_correct_int_value(
+        int value)
     {
         // Arrange.
         // Act.
         int result = value.From<Rømer>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .Be(value);
     }
 
     #endregion From Rømer

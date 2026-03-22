@@ -1,52 +1,69 @@
+using System;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Réaumur;
-
-namespace Converter.Temperature.Integration.Tests.StringTests;
-
-using Extensions.From;
-using Extensions.To;
-using TemperatureTypes;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
 using Xunit;
 
-public class ToRéaumurStringTests
+namespace Converter.Temperature.Integration.Tests.StringTests;
+
+/// <summary>
+/// The to réaumur string tests.
+/// </summary>
+public sealed class ToRéaumurStringTests
 {
+    #region From Celsius
+
     [Theory]
     [InlineData("0", "0")]
     [InlineData("100", "80")]
-    public void Test_ToRéaumur_FromCelsius_Returns_Correct_Value(string input, string expected)
+    public void Test_string_extension_from_celsius_to_réaumur_returns_correct_string_value(string input, string expected)
     {
-        // Arrange
-        // Act
-        var result = input.FromCelsius().ToRéaumur();
+        // Arrange.
+        // Act.
+        string result = input.FromCelsius()
+            .ToRéaumur();
 
-        // Assert
-        result.Should().Be(expected);
+        // Assert.
+        result.Should()
+            .Be(expected);
     }
+
+    [Fact]
+    public void Test_string_extension_generic_from_celsius_to_réaumur_returns_correct_string_value()
+    {
+        // Arrange.
+        const string input = "100";
+        const string expected = "80";
+
+        // Act.
+        string result = input.FromCelsius()
+            .To<Réaumur>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    #endregion From Celsius
+
+    #region From Fahrenheit
 
     [Theory]
     [InlineData("32", "0")]
     [InlineData("212", "80")]
-    public void Test_ToRéaumur_FromFahrenheit_Returns_Correct_Value(string input, string expected)
+    public void Test_string_extension_from_fahrenheit_to_réaumur_returns_correct_string_value(string input, string expected)
     {
-        // Arrange
-        // Act
-        var result = input.FromFahrenheit().ToRéaumur();
+        // Arrange.
+        // Act.
+        string result = input.FromFahrenheit()
+            .ToRéaumur();
 
-        // Assert
-        result.Should().Be(expected);
+        // Assert.
+        result.Should()
+            .Be(expected);
     }
 
-    [Fact]
-    public void Test_ToRéaumur_Generic_Returns_Correct_Value()
-    {
-        // Arrange
-        const string input = "100";
-        const string expected = "80";
-
-        // Act
-        var result = input.FromCelsius().To<Réaumur>();
-
-        // Assert
-        result.Should().Be(expected);
-    }
+    #endregion From Fahrenheit
 }
