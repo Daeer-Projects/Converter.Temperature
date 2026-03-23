@@ -1,12 +1,11 @@
-namespace Converter.Temperature.Tests.Extensions.From.DelisleTests;
-
-using System;
-using BaseTypes;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Delisle;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using TemperatureTypes;
-using Types.Delisle;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.DelisleTests;
 
 public sealed class FromIntGenericExtensionTests : BaseFromExtensionTests<int, DelisleInt>
 {

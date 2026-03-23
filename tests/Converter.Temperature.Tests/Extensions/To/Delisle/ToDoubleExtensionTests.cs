@@ -1,19 +1,17 @@
-namespace Converter.Temperature.Tests.Extensions.To.Delisle;
-
-using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Delisle;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Delisle;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Delisle;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Delisle;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<DelisleDouble, double>
 {
@@ -40,7 +38,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<DelisleDouble,
         DelisleDouble value,
         int fractionalCount)
     {
-        return value.To<Delisle>(fractionalCount);
+        return value.To<TemperatureTypes.Delisle>(fractionalCount);
     }
 
     protected override DelisleDouble Create(
@@ -72,7 +70,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<DelisleDouble,
         CelsiusDouble input = new(0d);
 
         // Act.
-        double result = input.To<Delisle>();
+        double result = input.To<TemperatureTypes.Delisle>();
 
         // Assert.
         result.Should()
@@ -102,7 +100,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<DelisleDouble,
         FahrenheitDouble input = new(32d);
 
         // Act.
-        double result = input.To<Delisle>();
+        double result = input.To<TemperatureTypes.Delisle>();
 
         // Assert.
         result.Should()

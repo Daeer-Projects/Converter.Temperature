@@ -1,6 +1,6 @@
-﻿namespace Converter.Temperature.Types.Newton;
+using Converter.Temperature.BaseTypes;
 
-using BaseTypes;
+namespace Converter.Temperature.Types.Newton;
 
 /// <summary>
 ///     The Newton double type.
@@ -10,7 +10,7 @@ public sealed class NewtonDouble : DoubleBase
     /// <summary>
     ///     Initializes a new instance of the <see cref="NewtonDouble" /> class.
     /// </summary>
-    /// <param name="temp"> The temperature to initialize with. </param>
+    /// <param name="temp"> The temperature value. </param>
     public NewtonDouble(
         double temp)
     {
@@ -18,7 +18,7 @@ public sealed class NewtonDouble : DoubleBase
     }
 
     /// <summary>
-    ///     Gets the temperature.
+    ///     Gets the temperature value.
     /// </summary>
     public override double Temperature { get; }
 }

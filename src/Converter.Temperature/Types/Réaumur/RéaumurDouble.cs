@@ -1,6 +1,6 @@
-﻿namespace Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.BaseTypes;
 
-using BaseTypes;
+namespace Converter.Temperature.Types.Réaumur;
 
 /// <summary>
 ///     The Réaumur double type.
@@ -10,7 +10,7 @@ public sealed class RéaumurDouble : DoubleBase
     /// <summary>
     ///     Initializes a new instance of the <see cref="RéaumurDouble" /> class.
     /// </summary>
-    /// <param name="temp"> The temperature to initialize with. </param>
+    /// <param name="temp"> The temperature value. </param>
     public RéaumurDouble(
         double temp)
     {
@@ -18,7 +18,7 @@ public sealed class RéaumurDouble : DoubleBase
     }
 
     /// <summary>
-    ///     Gets the temperature.
+    ///     Gets the temperature value.
     /// </summary>
     public override double Temperature { get; }
 }

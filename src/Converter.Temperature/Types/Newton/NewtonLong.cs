@@ -1,6 +1,6 @@
-﻿namespace Converter.Temperature.Types.Newton;
+using Converter.Temperature.BaseTypes;
 
-using BaseTypes;
+namespace Converter.Temperature.Types.Newton;
 
 /// <summary>
 ///     The Newton long type.
@@ -10,7 +10,7 @@ public sealed class NewtonLong : LongBase
     /// <summary>
     ///     Initializes a new instance of the <see cref="NewtonLong" /> class.
     /// </summary>
-    /// <param name="temp"> The temperature to initialize with. </param>
+    /// <param name="temp"> The temperature value. </param>
     public NewtonLong(
         long temp)
     {
@@ -18,7 +18,7 @@ public sealed class NewtonLong : LongBase
     }
 
     /// <summary>
-    ///     Gets the temperature.
+    ///     Gets the temperature value.
     /// </summary>
     public override long Temperature { get; }
 }

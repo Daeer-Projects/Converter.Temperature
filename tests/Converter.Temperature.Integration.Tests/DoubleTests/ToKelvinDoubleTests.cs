@@ -1,6 +1,5 @@
 ﻿namespace Converter.Temperature.Integration.Tests.DoubleTests;
 
-using System;
 using Extensions.From;
 using Extensions.To;
 using Extensions.To.Kelvin;

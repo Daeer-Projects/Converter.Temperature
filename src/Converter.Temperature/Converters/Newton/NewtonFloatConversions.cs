@@ -1,7 +1,7 @@
-namespace Converter.Temperature.Converters.Newton;
-
 using System;
-using Celsius;
+using Converter.Temperature.Converters.Celsius;
+
+namespace Converter.Temperature.Converters.Newton;
 
 internal static class NewtonFloatConversions
 {

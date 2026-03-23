@@ -1,4 +1,3 @@
-using System;
 using Converter.Temperature.Converters.Celsius;
 
 namespace Converter.Temperature.Converters.Réaumur;

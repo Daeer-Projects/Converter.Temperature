@@ -1,9 +1,9 @@
-namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
-
 using Converter.Temperature.Extensions.From;
-using Types.Réaumur;
+using Converter.Temperature.Types.Réaumur;
 using FluentAssertions;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
 
 public class FromDoubleTests
 {

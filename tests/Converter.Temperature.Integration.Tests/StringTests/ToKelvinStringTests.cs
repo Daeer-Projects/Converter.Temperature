@@ -1,6 +1,5 @@
 ﻿namespace Converter.Temperature.Integration.Tests.StringTests;
 
-using System;
 using System.Globalization;
 using Extensions.From;
 using Extensions.To;

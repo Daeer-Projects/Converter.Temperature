@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Réaumur;

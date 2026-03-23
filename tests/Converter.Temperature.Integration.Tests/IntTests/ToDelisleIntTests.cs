@@ -1,11 +1,11 @@
-namespace Converter.Temperature.Integration.Tests.IntTests;
-
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Delisle;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Delisle;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.IntTests;
 
 /// <summary>
 ///     The to delisle int tests.

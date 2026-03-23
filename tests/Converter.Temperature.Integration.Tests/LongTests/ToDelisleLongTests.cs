@@ -1,11 +1,9 @@
-namespace Converter.Temperature.Integration.Tests.LongTests;
-
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Delisle;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To.Delisle;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.LongTests;
 
 /// <summary>
 ///     The to delisle long tests.

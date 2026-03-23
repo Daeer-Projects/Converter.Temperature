@@ -1,11 +1,9 @@
-namespace Converter.Temperature.Integration.Tests.DoubleTests;
-
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Delisle;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To.Delisle;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.DoubleTests;
 
 /// <summary>
 ///     The to delisle double tests.
@@ -160,4 +158,3 @@ public sealed class ToDelisleDoubleTests
 
     #endregion From Delisle
 }
-

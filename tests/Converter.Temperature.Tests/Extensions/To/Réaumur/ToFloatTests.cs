@@ -1,9 +1,9 @@
-namespace Converter.Temperature.Tests.Extensions.To.Réaumur;
-
 using Converter.Temperature.Extensions.To.Réaumur;
 using Converter.Temperature.Types.Réaumur;
 using FluentAssertions;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Réaumur;
 
 public class ToFloatTests
 {

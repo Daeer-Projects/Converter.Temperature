@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;

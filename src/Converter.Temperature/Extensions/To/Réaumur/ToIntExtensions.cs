@@ -1,24 +1,24 @@
-namespace Converter.Temperature.Extensions.To.Réaumur;
-
 using System;
-using Converters.Celsius;
-using Converters.Delisle;
-using Converters.Fahrenheit;
-using Converters.Gas;
-using Converters.Kelvin;
-using Converters.Newton;
-using Converters.Rankine;
-using Converters.Réaumur;
-using Converters.Rømer;
-using Types.Celsius;
-using Types.Delisle;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Newton;
-using Types.Rankine;
-using Types.Réaumur;
-using Types.Rømer;
+using Converter.Temperature.Converters.Celsius;
+using Converter.Temperature.Converters.Delisle;
+using Converter.Temperature.Converters.Fahrenheit;
+using Converter.Temperature.Converters.Gas;
+using Converter.Temperature.Converters.Kelvin;
+using Converter.Temperature.Converters.Newton;
+using Converter.Temperature.Converters.Rankine;
+using Converter.Temperature.Converters.Réaumur;
+using Converter.Temperature.Converters.Rømer;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
+
+namespace Converter.Temperature.Extensions.To.Réaumur;
 
 /// <summary>
 ///     The to <see langword="int" /> extensions.
