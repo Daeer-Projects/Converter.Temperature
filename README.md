@@ -98,8 +98,8 @@ To start with, I had a few ideas on how to do the extension methods but decided 
 Originally, the extensions looked like this:
 
 ``` csharp
-    var tempToConvert = 34; // an int.
-    var convertedTemp = tempToConvert.CelsiusToFahrenheit();
+    int tempToConvert = 34;
+    int convertedTemp = tempToConvert.CelsiusToFahrenheit();
 ```
 
 Then I thought that this looked a bit naf so, I went with setting up the *from* first, then the *to*.  This follows the *fluent* pattern.
@@ -107,15 +107,15 @@ Then I thought that this looked a bit naf so, I went with setting up the *from* 
 Now it is used like this:
 
 ``` csharp
-    var tempToConvert = 34; // an int.
-    var convertedTemp = tempToConvert.FromCelsius().ToFahrenheit();
+    int tempToConvert = 34;
+    int convertedTemp = tempToConvert.FromCelsius().ToFahrenheit();
 ```
 
 For version 2 I added an additional usage like this:
 
 ```csharp
-    var tempToConvert = 34; // an int.
-    var convertedTemp = tempToConvert.From<Celsius>().To<Fahrenheit>();
+    int tempToConvert = 34;
+    int convertedTemp = tempToConvert.From<Celsius>().To<Fahrenheit>();
 ```
 
 Before you decide which one is best for you, don't forget to check the benchmark results [here](https://github.com/Daeer-Projects/Converter.Temperature/wiki/Benchmark-Results).
