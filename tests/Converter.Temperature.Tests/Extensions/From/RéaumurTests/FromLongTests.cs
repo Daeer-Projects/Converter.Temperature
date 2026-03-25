@@ -14,7 +14,7 @@ public class FromLongTests
         const long input = 33L;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurLong result = input.FromRéaumur();
 
         // Assert
         result.Should().BeOfType<RéaumurLong>();
@@ -27,7 +27,7 @@ public class FromLongTests
         const long input = 33L;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurLong result = input.FromRéaumur();
 
         // Assert
         result.Temperature.Should().Be(input);

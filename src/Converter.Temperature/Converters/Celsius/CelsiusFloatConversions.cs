@@ -1,6 +1,6 @@
-﻿namespace Converter.Temperature.Converters.Celsius;
+﻿using System;
 
-using System;
+namespace Converter.Temperature.Converters.Celsius;
 
 internal static class CelsiusFloatConversions
 {

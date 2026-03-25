@@ -12,10 +12,10 @@ public class ToDoubleTests
     {
         // Arrange
         const double expected = 3.3;
-        var input = new RéaumurDouble(expected);
+        RéaumurDouble input = new(expected);
 
         // Act
-        var result = input.ToRéaumur();
+        double result = input.ToRéaumur();
 
         // Assert
         result.Should().Be(expected);
@@ -26,10 +26,10 @@ public class ToDoubleTests
     {
         // Arrange
         const double expected = 3.33;
-        var input = new RéaumurDouble(3.333);
+        RéaumurDouble input = new(3.333);
 
         // Act
-        var result = input.ToRéaumur(2);
+        double result = input.ToRéaumur(2);
 
         // Assert
         result.Should().Be(expected);

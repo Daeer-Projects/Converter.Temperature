@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Gas;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, double>
 {
@@ -39,7 +38,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         GasDouble value,
         int fractionalCount)
     {
-        return value.To<Gas>(fractionalCount);
+        return value.To<TemperatureTypes.Gas>(fractionalCount);
     }
 
     protected override GasDouble Create(
@@ -121,7 +120,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         CelsiusDouble inputCelsius = new(input);
 
         // Act.
-        double result = inputCelsius.To<Gas>();
+        double result = inputCelsius.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -157,7 +156,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         CelsiusDouble inputGas = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -172,7 +171,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         FahrenheitDouble input = new(392);
 
         // Act.
-        double result = input.To<Gas>();
+        double result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -200,7 +199,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         GasDouble input = new(7);
 
         // Act.
-        double result = input.To<Gas>();
+        double result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -234,7 +233,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         GasDouble inputGas = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -264,7 +263,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         KelvinDouble input = new(473.15);
 
         // Act.
-        double result = input.To<Gas>();
+        double result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -294,7 +293,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         RankineDouble input = new(806.67);
 
         // Act.
-        double result = input.To<Gas>();
+        double result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -332,7 +331,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
         RømerDouble input = new(originalTemp);
 
         // Act.
-        double result = input.To<Gas>();
+        double result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()

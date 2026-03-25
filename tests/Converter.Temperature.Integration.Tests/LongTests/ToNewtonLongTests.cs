@@ -6,7 +6,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.LongTests;
 
 /// <summary>
-/// The to newton long tests.
+///     The to newton long tests.
 /// </summary>
 public sealed class ToNewtonLongTests
 {

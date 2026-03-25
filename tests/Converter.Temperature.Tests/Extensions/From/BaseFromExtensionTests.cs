@@ -1,12 +1,18 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From;
-
-using BaseTypes;
+﻿using Converter.Temperature.BaseTypes;
 using FluentAssertions;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From;
 
 public abstract class BaseFromExtensionTests<TInputType, TOutputType>
     where TOutputType : TypeBase<TInputType>
 {
+    private readonly TInputType _highValue;
+    private readonly TInputType _lowValue;
+    private readonly TInputType _midHighValue;
+    private readonly TInputType _midLowValue;
+    private readonly TInputType _midValue;
+
     protected BaseFromExtensionTests(
         TInputType highValue,
         TInputType midHighValue,
@@ -20,12 +26,6 @@ public abstract class BaseFromExtensionTests<TInputType, TOutputType>
         _midLowValue = midLowValue;
         _lowValue = lowValue;
     }
-
-    private readonly TInputType _highValue;
-    private readonly TInputType _lowValue;
-    private readonly TInputType _midHighValue;
-    private readonly TInputType _midLowValue;
-    private readonly TInputType _midValue;
 
     protected abstract TOutputType ConvertFrom(
         TInputType value);

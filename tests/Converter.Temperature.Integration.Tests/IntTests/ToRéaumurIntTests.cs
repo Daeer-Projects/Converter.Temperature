@@ -8,7 +8,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.IntTests;
 
 /// <summary>
-/// The to réaumur int tests.
+///     The to réaumur int tests.
 /// </summary>
 public sealed class ToRéaumurIntTests
 {

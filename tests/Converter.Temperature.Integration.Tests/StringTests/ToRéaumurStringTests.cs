@@ -8,10 +8,29 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.StringTests;
 
 /// <summary>
-/// The to réaumur string tests.
+///     The to réaumur string tests.
 /// </summary>
 public sealed class ToRéaumurStringTests
 {
+    #region From Fahrenheit
+
+    [Theory]
+    [InlineData("32", "0")]
+    [InlineData("212", "80")]
+    public void Test_string_extension_from_fahrenheit_to_réaumur_returns_correct_string_value(string input, string expected)
+    {
+        // Arrange.
+        // Act.
+        string result = input.FromFahrenheit()
+            .ToRéaumur();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    #endregion From Fahrenheit
+
     #region From Celsius
 
     [Theory]
@@ -46,23 +65,4 @@ public sealed class ToRéaumurStringTests
     }
 
     #endregion From Celsius
-
-    #region From Fahrenheit
-
-    [Theory]
-    [InlineData("32", "0")]
-    [InlineData("212", "80")]
-    public void Test_string_extension_from_fahrenheit_to_réaumur_returns_correct_string_value(string input, string expected)
-    {
-        // Arrange.
-        // Act.
-        string result = input.FromFahrenheit()
-            .ToRéaumur();
-
-        // Assert.
-        result.Should()
-            .Be(expected);
-    }
-
-    #endregion From Fahrenheit
 }

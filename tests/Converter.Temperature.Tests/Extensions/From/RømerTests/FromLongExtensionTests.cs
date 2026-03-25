@@ -1,9 +1,9 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.RømerTests;
-
+﻿using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.RømerTests;
 
 public sealed class FromLongExtensionTests : BaseFromExtensionTests<long, RømerLong>
 {

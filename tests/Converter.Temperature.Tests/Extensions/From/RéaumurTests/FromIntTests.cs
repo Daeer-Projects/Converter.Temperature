@@ -14,7 +14,7 @@ public class FromIntTests
         const int input = 33;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurInt result = input.FromRéaumur();
 
         // Assert
         result.Should().BeOfType<RéaumurInt>();
@@ -27,7 +27,7 @@ public class FromIntTests
         const int input = 33;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurInt result = input.FromRéaumur();
 
         // Assert
         result.Temperature.Should().Be(input);

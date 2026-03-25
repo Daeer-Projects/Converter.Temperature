@@ -14,7 +14,7 @@ public class FromDoubleTests
         const double input = 3.3;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurDouble result = input.FromRéaumur();
 
         // Assert
         result.Should().BeOfType<RéaumurDouble>();
@@ -27,7 +27,7 @@ public class FromDoubleTests
         const double input = 3.3;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurDouble result = input.FromRéaumur();
 
         // Assert
         result.Temperature.Should().Be(input);

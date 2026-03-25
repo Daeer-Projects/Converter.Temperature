@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rømer;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rømer;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rømer;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, float>
 {
@@ -39,7 +38,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         RømerFloat value,
         int fractionalCount)
     {
-        return value.To<Rømer>(fractionalCount);
+        return value.To<TemperatureTypes.Rømer>(fractionalCount);
     }
 
     protected override RømerFloat Create(
@@ -71,7 +70,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         CelsiusFloat input = new(200);
 
         // Act.
-        float result = input.To<Rømer>();
+        float result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -106,7 +105,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
 
         // Act.
         ArgumentOutOfRangeException result =
-            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rømer>());
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Rømer>());
 
         // Assert.
         result.Message.Should()
@@ -136,7 +135,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         FahrenheitFloat input = new(392);
 
         // Act.
-        float result = input.To<Rømer>();
+        float result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -166,7 +165,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         GasFloat input = new(6);
 
         // Act.
-        float result = input.To<Rømer>();
+        float result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -196,7 +195,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         KelvinFloat input = new(473.15f);
 
         // Act.
-        float result = input.To<Rømer>();
+        float result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -226,7 +225,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         RankineFloat input = new(851.67f);
 
         // Act.
-        float result = input.To<Rømer>();
+        float result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -254,7 +253,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RømerFloat, fl
         RømerFloat input = new(851.67f);
 
         // Act.
-        float result = input.To<Rømer>();
+        float result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()

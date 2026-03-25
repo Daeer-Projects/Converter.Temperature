@@ -12,10 +12,10 @@ public class ToLongTests
     {
         // Arrange
         const long expected = 33L;
-        var input = new RéaumurLong(expected);
+        RéaumurLong input = new(expected);
 
         // Act
-        var result = input.ToRéaumur();
+        long result = input.ToRéaumur();
 
         // Assert
         result.Should().Be(expected);

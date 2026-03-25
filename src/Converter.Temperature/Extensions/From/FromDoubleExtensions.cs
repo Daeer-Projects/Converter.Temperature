@@ -1,17 +1,17 @@
-﻿namespace Converter.Temperature.Extensions.From;
+﻿using System;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
 
-using System;
-using BaseTypes;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Delisle;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Newton;
-using Types.Rankine;
-using Types.Réaumur;
-using Types.Rømer;
+namespace Converter.Temperature.Extensions.From;
 
 /// <summary>
 ///     The from <see langword="double" /> extensions.

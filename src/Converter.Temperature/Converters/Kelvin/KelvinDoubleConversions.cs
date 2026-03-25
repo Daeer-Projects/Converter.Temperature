@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Kelvin;
+﻿using System;
+using Converter.Temperature.Converters.Celsius;
 
-using System;
-using Celsius;
+namespace Converter.Temperature.Converters.Kelvin;
 
 internal static class KelvinDoubleConversions
 {

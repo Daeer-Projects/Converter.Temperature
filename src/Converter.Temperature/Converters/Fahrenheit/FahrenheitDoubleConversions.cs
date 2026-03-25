@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Fahrenheit;
+﻿using System;
+using Converter.Temperature.Converters.Celsius;
 
-using System;
-using Celsius;
+namespace Converter.Temperature.Converters.Fahrenheit;
 
 internal static class FahrenheitDoubleConversions
 {
@@ -54,7 +54,7 @@ internal static class FahrenheitDoubleConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         return kelvinTemp;
     }
 

@@ -12,10 +12,10 @@ public class ToStringTests
     {
         // Arrange
         const string expected = "3.3";
-        var input = new RéaumurString(expected);
+        RéaumurString input = new(expected);
 
         // Act
-        var result = input.ToRéaumur();
+        string result = input.ToRéaumur();
 
         // Assert
         result.Should().Be(expected);
@@ -26,10 +26,10 @@ public class ToStringTests
     {
         // Arrange
         const string expected = "3.33";
-        var input = new RéaumurString("3.333");
+        RéaumurString input = new("3.333");
 
         // Act
-        var result = input.ToRéaumur(2);
+        string result = input.ToRéaumur(2);
 
         // Assert
         result.Should().Be(expected);

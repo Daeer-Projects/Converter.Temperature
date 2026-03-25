@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Celsius;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, long>
 {
@@ -38,7 +37,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         CelsiusLong value,
         int fractionalCount)
     {
-        return value.To<Celsius>();
+        return value.To<TemperatureTypes.Celsius>();
     }
 
     protected override CelsiusLong Create(
@@ -70,7 +69,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         FahrenheitLong input = new(50L);
 
         // Act.
-        long result = input.To<Celsius>();
+        long result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -110,7 +109,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         GasLong inputGas = new(input);
 
         // Act.
-        long result = inputGas.To<Celsius>();
+        long result = inputGas.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -140,7 +139,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         KelvinLong input = new(274L);
 
         // Act.
-        long result = input.To<Celsius>();
+        long result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -170,7 +169,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         RankineLong input = new(274L);
 
         // Act.
-        long result = input.To<Celsius>();
+        long result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -214,7 +213,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
         RømerLong input = new(originalTemp);
 
         // Act.
-        long result = input.To<Celsius>();
+        long result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()

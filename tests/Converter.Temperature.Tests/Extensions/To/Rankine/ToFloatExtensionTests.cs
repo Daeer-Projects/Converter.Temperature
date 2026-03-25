@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rankine;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rankine;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rankine;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, float>
 {
@@ -38,7 +37,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         RankineFloat value,
         int fractionalCount)
     {
-        return value.To<Rankine>(fractionalCount);
+        return value.To<TemperatureTypes.Rankine>(fractionalCount);
     }
 
     protected override RankineFloat Create(
@@ -70,7 +69,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         CelsiusFloat input = new(200);
 
         // Act.
-        float result = input.To<Rankine>();
+        float result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -100,7 +99,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         FahrenheitFloat input = new(392);
 
         // Act.
-        float result = input.To<Rankine>();
+        float result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -130,7 +129,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         GasFloat input = new(6);
 
         // Act.
-        float result = input.To<Rankine>();
+        float result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -160,7 +159,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         KelvinFloat input = new(473.15f);
 
         // Act.
-        float result = input.To<Rankine>();
+        float result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -188,7 +187,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         RankineFloat input = new(851.67f);
 
         // Act.
-        float result = input.To<Rankine>();
+        float result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -234,7 +233,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         RømerFloat input = new(originalTemp);
 
         // Act.
-        float result = input.To<Rankine>();
+        float result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -270,7 +269,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<RankineFloat, f
         RømerFloat input = new(493.47f);
 
         // Act.
-        float result = input.To<Rankine>(fractionalCount);
+        float result = input.To<TemperatureTypes.Rankine>(fractionalCount);
 
         // Assert.
         result.Should()

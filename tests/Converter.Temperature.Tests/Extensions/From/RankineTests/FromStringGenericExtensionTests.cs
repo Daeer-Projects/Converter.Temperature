@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.RankineTests;
-
-using System.Globalization;
-using BaseTypes;
+﻿using System.Globalization;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Rankine;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using TemperatureTypes;
-using Types.Rankine;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.RankineTests;
 
 public sealed class FromStringGenericExtensionTests : BaseFromExtensionTests<string, RankineString>
 {

@@ -1,10 +1,10 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.GasTests;
-
-using System.Globalization;
+﻿using System.Globalization;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Types.Gas;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using Types.Gas;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.GasTests;
 
 public sealed class FromStringExtensionTests : BaseFromExtensionTests<string, GasString>
 {

@@ -14,7 +14,7 @@ public class FromStringTests
         const string input = "33";
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurString result = input.FromRéaumur();
 
         // Assert
         result.Should().BeOfType<RéaumurString>();
@@ -27,7 +27,7 @@ public class FromStringTests
         const string input = "33";
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurString result = input.FromRéaumur();
 
         // Assert
         result.Temperature.Should().Be(input);

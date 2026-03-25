@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rankine;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rankine;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rankine;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, long>
 {
@@ -39,7 +38,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         RankineLong value,
         int fractionalCount)
     {
-        return value.To<Rankine>();
+        return value.To<TemperatureTypes.Rankine>();
     }
 
     protected override RankineLong Create(
@@ -71,7 +70,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         CelsiusLong input = new(200L);
 
         // Act.
-        long result = input.To<Rankine>();
+        long result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -100,7 +99,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
 
         // Act.
         ArgumentOutOfRangeException result =
-            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Rankine>());
 
         // Assert.
         result.Message.Should()
@@ -130,7 +129,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         FahrenheitLong input = new(256L);
 
         // Act.
-        long result = input.To<Rankine>();
+        long result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -160,7 +159,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         GasLong input = new(6L);
 
         // Act.
-        long result = input.To<Rankine>();
+        long result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -190,7 +189,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         KelvinLong input = new(6589L);
 
         // Act.
-        long result = input.To<Rankine>();
+        long result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -218,7 +217,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         RankineLong input = new(862L);
 
         // Act.
-        long result = input.To<Rankine>();
+        long result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -264,7 +263,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RankineLong, lon
         RømerLong input = new(originalTemp);
 
         // Act.
-        long result = input.To<Rankine>();
+        long result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()

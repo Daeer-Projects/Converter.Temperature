@@ -1,11 +1,11 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.RømerTests;
-
-using BaseTypes;
+﻿using Converter.Temperature.BaseTypes;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using TemperatureTypes;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.RømerTests;
 
 public sealed class FromIntGenericExtensionTests : BaseFromExtensionTests<int, RømerInt>
 {

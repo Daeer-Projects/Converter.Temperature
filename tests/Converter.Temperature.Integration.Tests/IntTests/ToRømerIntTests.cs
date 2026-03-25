@@ -8,7 +8,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.IntTests;
 
 /// <summary>
-/// The to rømer int tests.
+///     The to rømer int tests.
 /// </summary>
 public sealed class ToRømerIntTests
 {

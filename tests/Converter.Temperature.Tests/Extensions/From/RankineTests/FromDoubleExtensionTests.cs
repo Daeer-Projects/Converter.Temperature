@@ -1,9 +1,9 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.RankineTests;
-
+﻿using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Types.Rankine;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using Types.Rankine;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.RankineTests;
 
 public sealed class FromDoubleExtensionTests : BaseFromExtensionTests<double, RankineDouble>
 {

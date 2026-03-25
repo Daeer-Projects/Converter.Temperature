@@ -8,7 +8,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.LongTests;
 
 /// <summary>
-/// The to rømer long tests.
+///     The to rømer long tests.
 /// </summary>
 public sealed class ToRømerLongTests
 {

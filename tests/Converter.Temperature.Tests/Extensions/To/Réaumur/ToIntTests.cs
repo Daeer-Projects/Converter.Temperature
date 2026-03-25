@@ -12,10 +12,10 @@ public class ToIntTests
     {
         // Arrange
         const int expected = 33;
-        var input = new RéaumurInt(expected);
+        RéaumurInt input = new(expected);
 
         // Act
-        var result = input.ToRéaumur();
+        int result = input.ToRéaumur();
 
         // Assert
         result.Should().Be(expected);

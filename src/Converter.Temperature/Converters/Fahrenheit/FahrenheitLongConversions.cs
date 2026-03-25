@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Fahrenheit;
+﻿using System;
+using Converter.Temperature.Converters.Celsius;
 
-using System;
-using Celsius;
+namespace Converter.Temperature.Converters.Fahrenheit;
 
 internal static class FahrenheitLongConversions
 {
@@ -143,7 +143,7 @@ internal static class FahrenheitLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (212d - input) * 5 / 6;
         long delisleTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
@@ -168,7 +168,7 @@ internal static class FahrenheitLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (input - 32d) * 11 / 60;
         long newtonTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
@@ -193,7 +193,7 @@ internal static class FahrenheitLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (input - 32d) * 4 / 9;
         long réaumurTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 

@@ -8,7 +8,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.FloatTests;
 
 /// <summary>
-/// The to réaumur float tests.
+///     The to réaumur float tests.
 /// </summary>
 public sealed class ToRéaumurFloatTests
 {

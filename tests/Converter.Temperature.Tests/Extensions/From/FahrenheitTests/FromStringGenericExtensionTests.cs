@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
-
-using System.Globalization;
-using BaseTypes;
+﻿using System.Globalization;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Fahrenheit;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using TemperatureTypes;
-using Types.Fahrenheit;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
 
 public sealed class FromStringGenericExtensionTests : BaseFromExtensionTests<string, FahrenheitString>
 {

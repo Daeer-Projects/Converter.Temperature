@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Rømer;
+﻿using System;
+using Converter.Temperature.Converters.Celsius;
 
-using System;
-using Celsius;
+namespace Converter.Temperature.Converters.Rømer;
 
 internal static class RømerDoubleConversions
 {

@@ -6,7 +6,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.StringTests;
 
 /// <summary>
-/// The to newton string tests.
+///     The to newton string tests.
 /// </summary>
 public sealed class ToNewtonStringTests
 {

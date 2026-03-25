@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Rankine;
+﻿using System;
+using Converter.Temperature.Converters.Celsius;
 
-using System;
-using Celsius;
+namespace Converter.Temperature.Converters.Rankine;
 
 internal static class RankineIntConversions
 {

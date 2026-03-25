@@ -28,7 +28,7 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToFahrenheit(float input)
     {
-        return (input * 9f / 4f) + 32f;
+        return input * 9f / 4f + 32f;
     }
 
     /// <summary>
@@ -40,7 +40,7 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToKelvin(float input)
     {
-        return (input * 5f / 4f) + 273.15f;
+        return input * 5f / 4f + 273.15f;
     }
 
     /// <summary>
@@ -65,7 +65,7 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToRankine(float input)
     {
-        return (input * 9f / 4f) + 491.67f;
+        return input * 9f / 4f + 491.67f;
     }
 
     /// <summary>

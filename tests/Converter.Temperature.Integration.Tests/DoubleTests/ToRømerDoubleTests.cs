@@ -9,7 +9,7 @@ using Xunit;
 namespace Converter.Temperature.Integration.Tests.DoubleTests;
 
 /// <summary>
-/// The to rømer double tests.
+///     The to rømer double tests.
 /// </summary>
 public sealed class ToRømerDoubleTests
 {

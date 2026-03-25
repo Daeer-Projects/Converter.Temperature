@@ -30,7 +30,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToFahrenheit(double input)
     {
-        return (input * 9d / 4d) + 32d;
+        return input * 9d / 4d + 32d;
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToKelvin(double input)
     {
-        return (input * 5d / 4d) + 273.15d;
+        return input * 5d / 4d + 273.15d;
     }
 
     /// <summary>
@@ -70,7 +70,7 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToRankine(double input)
     {
-        return (input * 9d / 4d) + 491.67d;
+        return input * 9d / 4d + 491.67d;
     }
 
     /// <summary>

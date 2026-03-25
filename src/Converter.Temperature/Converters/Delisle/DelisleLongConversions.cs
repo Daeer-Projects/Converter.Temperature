@@ -23,13 +23,13 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = 100d - input * 2d / 3d;
         long celsiusResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-        
+
         return celsiusResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Fahrenheit conversion.
     /// </summary>
@@ -48,13 +48,13 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = 212d - input * 6d / 5d;
         long fahrenheitResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return fahrenheitResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Kelvin conversion.
     /// </summary>
@@ -73,13 +73,13 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = 373.15 - input * 2d / 3d;
         long kelvinResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-        
+
         return kelvinResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Gas conversion.
     /// </summary>
@@ -95,7 +95,7 @@ internal static class DelisleLongConversions
         long gasTemp = CelsiusLongConversions.CelsiusToGas(gasResult);
         return gasTemp;
     }
-    
+
     /// <summary>
     ///     The Delisle to Rankine conversion.
     /// </summary>
@@ -114,13 +114,13 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = 671.67 - input * 6d / 5d;
         long rankineResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return rankineResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Rømer conversion.
     /// </summary>
@@ -139,13 +139,13 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (100 - input * 2d / 3d) * 21 / 40 + 7.5;
         long rømerResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return rømerResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Delisle conversion.
     /// </summary>
@@ -159,7 +159,7 @@ internal static class DelisleLongConversions
     {
         return input;
     }
-    
+
     /// <summary>
     ///     The Delisle to Newton conversion.
     /// </summary>
@@ -178,13 +178,13 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (100 - input * 2d / 3d) * 33 / 100;
         long newtonResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return newtonResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Réaumur conversion.
     /// </summary>
@@ -203,7 +203,7 @@ internal static class DelisleLongConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (100 - input * 2d / 3d) * 4 / 5;
         long réaumurResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 

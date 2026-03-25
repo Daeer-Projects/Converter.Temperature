@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Celsius;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, float>
 {
@@ -32,7 +31,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         CelsiusFloat value,
         int fractionalCount)
     {
-        return value.To<Celsius>(fractionalCount);
+        return value.To<TemperatureTypes.Celsius>(fractionalCount);
     }
 
     protected override float ToUsingGeneric(
@@ -71,7 +70,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         FahrenheitFloat input = new(50.0f);
 
         // Act.
-        float result = input.To<Celsius>();
+        float result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -124,7 +123,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         GasFloat inputGas = new(input);
 
         // Act.
-        float result = inputGas.To<Celsius>();
+        float result = inputGas.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -141,7 +140,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         GasFloat inputGas = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<TemperatureTypes.Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -171,7 +170,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         KelvinFloat input = new(274.15f);
 
         // Act.
-        float result = input.To<Celsius>();
+        float result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -207,7 +206,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         KelvinFloat input = new(275.8612978f);
 
         // Act.
-        float result = input.To<Celsius>(fractionalCount);
+        float result = input.To<TemperatureTypes.Celsius>(fractionalCount);
 
         // Assert.
         result.Should()
@@ -237,7 +236,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         RankineFloat input = new(493.47f);
 
         // Act.
-        float result = input.To<Celsius>();
+        float result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -273,7 +272,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         RankineFloat input = new(493.47f);
 
         // Act.
-        float result = input.To<Celsius>(fractionalCount);
+        float result = input.To<TemperatureTypes.Celsius>(fractionalCount);
 
         // Assert.
         result.Should()
@@ -317,7 +316,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         RømerFloat input = new(originalTemp);
 
         // Act.
-        float result = input.To<Celsius>();
+        float result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -353,7 +352,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<CelsiusFloat, f
         RømerFloat input = new(493.47f);
 
         // Act.
-        float result = input.To<Celsius>(fractionalCount);
+        float result = input.To<TemperatureTypes.Celsius>(fractionalCount);
 
         // Assert.
         result.Should()

@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Celsius;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString, string>
 {
@@ -38,7 +37,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString
         CelsiusString value,
         int fractionalCount)
     {
-        return value.To<Celsius>(fractionalCount);
+        return value.To<TemperatureTypes.Celsius>(fractionalCount);
     }
 
     protected override CelsiusString Create(
@@ -70,7 +69,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString
         FahrenheitString input = new("50");
 
         // Act.
-        string result = input.To<Celsius>();
+        string result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -100,7 +99,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString
         GasString input = new("7");
 
         // Act.
-        string result = input.To<Celsius>();
+        string result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -130,7 +129,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString
         KelvinString input = new("274.15");
 
         // Act.
-        string result = input.To<Celsius>();
+        string result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -160,7 +159,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString
         RankineString input = new("493.47");
 
         // Act.
-        string result = input.To<Celsius>();
+        string result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -204,7 +203,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<CelsiusString
         RømerString input = new(originalTemp);
 
         // Act.
-        string result = input.To<Celsius>();
+        string result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()

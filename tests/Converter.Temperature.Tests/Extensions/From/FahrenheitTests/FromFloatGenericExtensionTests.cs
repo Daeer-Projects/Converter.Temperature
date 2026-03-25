@@ -1,11 +1,11 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
-
-using BaseTypes;
+﻿using Converter.Temperature.BaseTypes;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Fahrenheit;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using TemperatureTypes;
-using Types.Fahrenheit;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
 
 public sealed class FromFloatGenericExtensionTests : BaseFromExtensionTests<float, FahrenheitFloat>
 {

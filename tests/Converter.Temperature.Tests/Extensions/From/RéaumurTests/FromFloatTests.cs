@@ -14,7 +14,7 @@ public class FromFloatTests
         const float input = 3.3f;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurFloat result = input.FromRéaumur();
 
         // Assert
         result.Should().BeOfType<RéaumurFloat>();
@@ -27,7 +27,7 @@ public class FromFloatTests
         const float input = 3.3f;
 
         // Act
-        var result = input.FromRéaumur();
+        RéaumurFloat result = input.FromRéaumur();
 
         // Assert
         result.Temperature.Should().Be(input);

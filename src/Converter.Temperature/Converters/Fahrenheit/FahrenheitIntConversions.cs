@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Fahrenheit;
+﻿using System;
+using Converter.Temperature.Converters.Celsius;
 
-using System;
-using Celsius;
+namespace Converter.Temperature.Converters.Fahrenheit;
 
 internal static class FahrenheitIntConversions
 {
@@ -53,7 +53,7 @@ internal static class FahrenheitIntConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (input + 459.67d) * 5 / 9;
         int kelvinTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
@@ -118,10 +118,10 @@ internal static class FahrenheitIntConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (input - 32d) * 7 / 24 + 7.5d;
         int rømerTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-        
+
         return rømerTemp;
     }
 
@@ -143,7 +143,7 @@ internal static class FahrenheitIntConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (212d - input) * 5 / 6;
         int delisleTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
@@ -168,7 +168,7 @@ internal static class FahrenheitIntConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (input - 32d) * 11 / 60;
         int newtonTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
@@ -193,7 +193,7 @@ internal static class FahrenheitIntConversions
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
-        
+
         double convertedTemp = (input - 32d) * 4 / 9;
         int réaumurTemp = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 

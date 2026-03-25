@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Kelvin;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long>
 {
@@ -39,7 +38,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         KelvinLong value,
         int fractionalCount)
     {
-        return value.To<Kelvin>();
+        return value.To<TemperatureTypes.Kelvin>();
     }
 
     protected override KelvinLong Create(
@@ -71,7 +70,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         CelsiusLong input = new(200L);
 
         // Act.
-        long result = input.To<Kelvin>();
+        long result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -100,7 +99,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
 
         // Act.
         ArgumentOutOfRangeException
-            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
+            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Kelvin>());
 
         // Assert.
         result.Message.Should()
@@ -130,7 +129,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         FahrenheitLong input = new(392L);
 
         // Act.
-        long result = input.To<Kelvin>();
+        long result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -160,7 +159,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         GasLong input = new(6L);
 
         // Act.
-        long result = input.To<Kelvin>();
+        long result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -188,7 +187,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         KelvinLong input = new(473L);
 
         // Act.
-        long result = input.To<Kelvin>();
+        long result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -218,7 +217,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         RankineLong input = new(862L);
 
         // Act.
-        long result = input.To<Kelvin>();
+        long result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -262,7 +261,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
         RømerLong input = new(originalTemp);
 
         // Act.
-        long result = input.To<Kelvin>();
+        long result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()

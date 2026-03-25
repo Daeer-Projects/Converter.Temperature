@@ -12,7 +12,6 @@ using Converter.Temperature.TemperatureTypes;
 namespace Converter.Benchmark.Tests;
 
 ﻿// ReSharper disable ClassCanBeSealed.Global - Benchmark creates derived class.
-
 [MemoryDiagnoser]
 public class DoubleBenchies
 {

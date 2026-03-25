@@ -24,7 +24,7 @@ internal static class DelisleDoubleConversions
 
         return celsiusResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Fahrenheit conversion.
     /// </summary>
@@ -44,7 +44,7 @@ internal static class DelisleDoubleConversions
 
         return fahrenheitResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Kelvin conversion.
     /// </summary>
@@ -64,7 +64,7 @@ internal static class DelisleDoubleConversions
 
         return kelvinResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Gas conversion.
     /// </summary>
@@ -80,7 +80,7 @@ internal static class DelisleDoubleConversions
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(gasResult);
         return gasTemp;
     }
-    
+
     /// <summary>
     ///     The Delisle to Rankine conversion.
     /// </summary>
@@ -100,7 +100,7 @@ internal static class DelisleDoubleConversions
 
         return rankineResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Rømer conversion.
     /// </summary>
@@ -120,7 +120,7 @@ internal static class DelisleDoubleConversions
 
         return rømerResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Delisle conversion.
     /// </summary>
@@ -134,7 +134,7 @@ internal static class DelisleDoubleConversions
     {
         return input;
     }
-    
+
     /// <summary>
     ///     The Delisle to Newton conversion.
     /// </summary>
@@ -154,7 +154,7 @@ internal static class DelisleDoubleConversions
 
         return newtonResult;
     }
-    
+
     /// <summary>
     ///     The Delisle to Réaumur conversion.
     /// </summary>

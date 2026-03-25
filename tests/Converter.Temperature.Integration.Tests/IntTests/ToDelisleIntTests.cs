@@ -12,45 +12,6 @@ namespace Converter.Temperature.Integration.Tests.IntTests;
 /// </summary>
 public sealed class ToDelisleIntTests
 {
-    #region From Celsius
-
-    [Theory]
-    [InlineData(0, 150)]
-    [InlineData(100, 0)]
-    [InlineData(-100, 300)]
-    public void Test_int_extension_from_celsius_to_delisle_returns_correct_int_value(
-        int input,
-        int expected)
-    {
-        // Arrange.
-        // Act.
-        int result = input.FromCelsius()
-            .ToDelisle();
-
-        // Assert.
-        result.Should()
-            .Be(expected);
-    }
-
-    [Theory]
-    [InlineData(0, 150)]
-    [InlineData(100, 0)]
-    public void Test_int_extension_generic_from_celsius_to_delisle_returns_correct_int_value(
-        int input,
-        int expected)
-    {
-        // Arrange.
-        // Act.
-        int result = input.From<Celsius>()
-            .To<Delisle>();
-
-        // Assert.
-        result.Should()
-            .Be(expected);
-    }
-
-    #endregion From Celsius
-
     #region From Fahrenheit
 
     [Theory]
@@ -177,4 +138,43 @@ public sealed class ToDelisleIntTests
     }
 
     #endregion From Delisle
+
+    #region From Celsius
+
+    [Theory]
+    [InlineData(0, 150)]
+    [InlineData(100, 0)]
+    [InlineData(-100, 300)]
+    public void Test_int_extension_from_celsius_to_delisle_returns_correct_int_value(
+        int input,
+        int expected)
+    {
+        // Arrange.
+        // Act.
+        int result = input.FromCelsius()
+            .ToDelisle();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(0, 150)]
+    [InlineData(100, 0)]
+    public void Test_int_extension_generic_from_celsius_to_delisle_returns_correct_int_value(
+        int input,
+        int expected)
+    {
+        // Arrange.
+        // Act.
+        int result = input.From<Celsius>()
+            .To<Delisle>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    #endregion From Celsius
 }

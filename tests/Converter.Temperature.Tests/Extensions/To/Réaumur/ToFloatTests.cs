@@ -12,10 +12,10 @@ public class ToFloatTests
     {
         // Arrange
         const float expected = 3.3f;
-        var input = new RéaumurFloat(expected);
+        RéaumurFloat input = new(expected);
 
         // Act
-        var result = input.ToRéaumur();
+        float result = input.ToRéaumur();
 
         // Assert
         result.Should().Be(expected);
@@ -26,10 +26,10 @@ public class ToFloatTests
     {
         // Arrange
         const float expected = 3.33f;
-        var input = new RéaumurFloat(3.333f);
+        RéaumurFloat input = new(3.333f);
 
         // Act
-        var result = input.ToRéaumur(2);
+        float result = input.ToRéaumur(2);
 
         // Assert
         result.Should().Be(expected);

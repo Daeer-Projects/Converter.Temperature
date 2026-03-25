@@ -30,7 +30,7 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToFahrenheit(int input)
     {
-        double convertedTemp = (input * 9d / 4d) + 32d;
+        double convertedTemp = input * 9d / 4d + 32d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
@@ -43,7 +43,7 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToKelvin(int input)
     {
-        double convertedTemp = (input * 5d / 4d) + 273.15d;
+        double convertedTemp = input * 5d / 4d + 273.15d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
@@ -69,7 +69,7 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToRankine(int input)
     {
-        double convertedTemp = (input * 9d / 4d) + 491.67d;
+        double convertedTemp = input * 9d / 4d + 491.67d;
         return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
     }
 
