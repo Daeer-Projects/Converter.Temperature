@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.To.Réaumur;
 
-public class ToDoubleTests
+public sealed class ToDoubleTests
 {
     [Fact]
     public void Test_ToRéaumur_With_No_Fractional_Count_Returns_Correct_Value()
@@ -35,3 +35,4 @@ public class ToDoubleTests
         result.Should().Be(expected);
     }
 }
+

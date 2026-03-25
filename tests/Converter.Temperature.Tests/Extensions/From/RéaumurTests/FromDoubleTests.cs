@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
 
-public class FromDoubleTests
+public sealed class FromDoubleTests
 {
     [Fact]
     public void Test_From_Newton_Double_Returns_RéaumurDouble_Type()
@@ -33,3 +33,4 @@ public class FromDoubleTests
         result.Temperature.Should().Be(input);
     }
 }
+

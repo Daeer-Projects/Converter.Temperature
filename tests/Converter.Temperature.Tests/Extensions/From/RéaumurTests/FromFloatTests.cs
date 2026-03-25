@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
 
-public class FromFloatTests
+public sealed class FromFloatTests
 {
     [Fact]
     public void Test_From_Newton_Float_Returns_RéaumurFloat_Type()
@@ -33,3 +33,4 @@ public class FromFloatTests
         result.Temperature.Should().Be(input);
     }
 }
+

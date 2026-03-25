@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
 
-public class FromStringTests
+public sealed class FromStringTests
 {
     [Fact]
     public void Test_From_Newton_String_Returns_RéaumurString_Type()
@@ -33,3 +33,4 @@ public class FromStringTests
         result.Temperature.Should().Be(input);
     }
 }
+

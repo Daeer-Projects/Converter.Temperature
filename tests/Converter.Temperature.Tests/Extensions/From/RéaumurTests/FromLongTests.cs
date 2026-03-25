@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.From.RéaumurTests;
 
-public class FromLongTests
+public sealed class FromLongTests
 {
     [Fact]
     public void Test_From_Newton_Long_Returns_RéaumurLong_Type()
@@ -33,3 +33,4 @@ public class FromLongTests
         result.Temperature.Should().Be(input);
     }
 }
+

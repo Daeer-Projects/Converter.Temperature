@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.To.Réaumur;
 
-public class ToLongTests
+public sealed class ToLongTests
 {
     [Fact]
     public void Test_ToRéaumur_Returns_Correct_Value()
@@ -21,3 +21,4 @@ public class ToLongTests
         result.Should().Be(expected);
     }
 }
+
