@@ -18,6 +18,9 @@ These extension methods will convert different types of temperatures to other ty
 * Gas
 * Rankine
 * Rømer
+* Delise
+* Newton
+* Réaumur
 
 ### Data types
 
