@@ -10,26 +10,26 @@ public sealed class FromLongExtensionTests
     [Fact]
     public void Test_FromNewton_Returns_NewtonLong_Type()
     {
-        // Arrange
+        // Arrange.
         const long input = 10L;
 
-        // Act
+        // Act.
         NewtonLong result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<NewtonLong>();
     }
 
     [Fact]
     public void Test_FromNewton_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const long input = 10L;
 
-        // Act
+        // Act.
         NewtonLong result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

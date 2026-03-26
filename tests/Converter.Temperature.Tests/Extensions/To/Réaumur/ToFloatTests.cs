@@ -10,28 +10,28 @@ public sealed class ToFloatTests
     [Fact]
     public void Test_ToRéaumur_With_No_Fractional_Count_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const float expected = 3.3f;
         RéaumurFloat input = new(expected);
 
-        // Act
+        // Act.
         float result = input.ToRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 
     [Fact]
     public void Test_ToRéaumur_With_Fractional_Count_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const float expected = 3.33f;
         RéaumurFloat input = new(3.333f);
 
-        // Act
+        // Act.
         float result = input.ToRéaumur(2);
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 }

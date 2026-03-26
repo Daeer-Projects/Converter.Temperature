@@ -10,28 +10,28 @@ public sealed class ToDoubleTests
     [Fact]
     public void Test_ToRéaumur_With_No_Fractional_Count_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const double expected = 3.3;
         RéaumurDouble input = new(expected);
 
-        // Act
+        // Act.
         double result = input.ToRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 
     [Fact]
     public void Test_ToRéaumur_With_Fractional_Count_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const double expected = 3.33;
         RéaumurDouble input = new(3.333);
 
-        // Act
+        // Act.
         double result = input.ToRéaumur(2);
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 }

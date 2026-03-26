@@ -10,26 +10,26 @@ public sealed class FromLongTests
     [Fact]
     public void Test_From_Newton_Long_Returns_RéaumurLong_Type()
     {
-        // Arrange
+        // Arrange.
         const long input = 33L;
 
-        // Act
+        // Act.
         RéaumurLong result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<RéaumurLong>();
     }
 
     [Fact]
     public void Test_From_Newton_Long_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const long input = 33L;
 
-        // Act
+        // Act.
         RéaumurLong result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

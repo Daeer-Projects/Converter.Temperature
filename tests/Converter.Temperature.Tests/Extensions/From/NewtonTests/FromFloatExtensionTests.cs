@@ -10,26 +10,26 @@ public sealed class FromFloatExtensionTests
     [Fact]
     public void Test_FromNewton_Returns_NewtonFloat_Type()
     {
-        // Arrange
+        // Arrange.
         const float input = 10.0f;
 
-        // Act
+        // Act.
         NewtonFloat result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<NewtonFloat>();
     }
 
     [Fact]
     public void Test_FromNewton_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const float input = 10.0f;
 
-        // Act
+        // Act.
         NewtonFloat result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

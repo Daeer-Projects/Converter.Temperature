@@ -10,26 +10,26 @@ public sealed class FromIntTests
     [Fact]
     public void Test_From_Newton_Int_Returns_RéaumurInt_Type()
     {
-        // Arrange
+        // Arrange.
         const int input = 33;
 
-        // Act
+        // Act.
         RéaumurInt result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<RéaumurInt>();
     }
 
     [Fact]
     public void Test_From_Newton_Int_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const int input = 33;
 
-        // Act
+        // Act.
         RéaumurInt result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

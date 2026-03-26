@@ -10,28 +10,28 @@ public sealed class ToStringTests
     [Fact]
     public void Test_ToRéaumur_With_No_Fractional_Count_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const string expected = "3.3";
         RéaumurString input = new(expected);
 
-        // Act
+        // Act.
         string result = input.ToRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 
     [Fact]
     public void Test_ToRéaumur_With_Fractional_Count_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const string expected = "3.33";
         RéaumurString input = new("3.333");
 
-        // Act
+        // Act.
         string result = input.ToRéaumur(2);
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 }

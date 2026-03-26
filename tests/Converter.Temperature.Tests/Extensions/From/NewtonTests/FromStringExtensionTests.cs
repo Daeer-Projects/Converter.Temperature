@@ -10,26 +10,26 @@ public sealed class FromStringExtensionTests
     [Fact]
     public void Test_FromNewton_Returns_NewtonString_Type()
     {
-        // Arrange
+        // Arrange.
         const string input = "10";
 
-        // Act
+        // Act.
         NewtonString result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<NewtonString>();
     }
 
     [Fact]
     public void Test_FromNewton_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const string input = "10";
 
-        // Act
+        // Act.
         NewtonString result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

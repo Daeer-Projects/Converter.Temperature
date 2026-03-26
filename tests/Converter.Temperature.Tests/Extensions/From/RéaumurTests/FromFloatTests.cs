@@ -10,26 +10,26 @@ public sealed class FromFloatTests
     [Fact]
     public void Test_From_Newton_Float_Returns_RéaumurFloat_Type()
     {
-        // Arrange
+        // Arrange.
         const float input = 3.3f;
 
-        // Act
+        // Act.
         RéaumurFloat result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<RéaumurFloat>();
     }
 
     [Fact]
     public void Test_From_Newton_Float_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const float input = 3.3f;
 
-        // Act
+        // Act.
         RéaumurFloat result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

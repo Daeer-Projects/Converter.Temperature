@@ -10,26 +10,26 @@ public sealed class FromDoubleExtensionTests
     [Fact]
     public void Test_FromNewton_Returns_NewtonDouble_Type()
     {
-        // Arrange
+        // Arrange.
         const double input = 10.0;
 
-        // Act
+        // Act.
         NewtonDouble result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<NewtonDouble>();
     }
 
     [Fact]
     public void Test_FromNewton_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const double input = 10.0;
 
-        // Act
+        // Act.
         NewtonDouble result = input.FromNewton();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

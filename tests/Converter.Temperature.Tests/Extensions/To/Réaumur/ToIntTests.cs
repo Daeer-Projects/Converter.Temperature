@@ -10,14 +10,14 @@ public sealed class ToIntTests
     [Fact]
     public void Test_ToRéaumur_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const int expected = 33;
         RéaumurInt input = new(expected);
 
-        // Act
+        // Act.
         int result = input.ToRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 }

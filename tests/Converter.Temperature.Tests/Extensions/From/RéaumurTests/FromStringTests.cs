@@ -10,26 +10,26 @@ public sealed class FromStringTests
     [Fact]
     public void Test_From_Newton_String_Returns_RéaumurString_Type()
     {
-        // Arrange
+        // Arrange.
         const string input = "33";
 
-        // Act
+        // Act.
         RéaumurString result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().BeOfType<RéaumurString>();
     }
 
     [Fact]
     public void Test_From_Newton_String_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const string input = "33";
 
-        // Act
+        // Act.
         RéaumurString result = input.FromRéaumur();
 
-        // Assert
+        // Assert.
         result.Temperature.Should().Be(input);
     }
 }

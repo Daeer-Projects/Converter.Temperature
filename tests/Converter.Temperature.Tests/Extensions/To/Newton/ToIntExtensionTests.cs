@@ -10,14 +10,14 @@ public sealed class ToIntExtensionTests
     [Fact]
     public void Test_ToNewton_FromCelsius_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const int input = 100;
         const int expected = 33;
 
-        // Act
+        // Act.
         int result = input.FromCelsius().ToNewton();
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 }

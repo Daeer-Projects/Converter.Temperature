@@ -55,11 +55,18 @@ public abstract class BaseToExtensionTests<TInputTemp, TResultType>
     [Fact]
     public void Test_to_with_same_type_returns_same_value()
     {
-        foreach (TResultType testValue in _data)
+        // Arrange.
+        IEnumerable<TResultType> testValues = _data;
+
+        // Act.
+        foreach (TResultType testValue in testValues)
         {
             ActualTestForSameValue(testValue);
             ActualTestForSameValueGeneric(testValue);
         }
+
+        // Assert.
+        // Assertions are performed in helper methods.
     }
 
     private void ActualTestForSameValue(

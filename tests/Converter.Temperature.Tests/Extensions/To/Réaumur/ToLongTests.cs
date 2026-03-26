@@ -10,14 +10,14 @@ public sealed class ToLongTests
     [Fact]
     public void Test_ToRéaumur_Returns_Correct_Value()
     {
-        // Arrange
+        // Arrange.
         const long expected = 33L;
         RéaumurLong input = new(expected);
 
-        // Act
+        // Act.
         long result = input.ToRéaumur();
 
-        // Assert
+        // Assert.
         result.Should().Be(expected);
     }
 }
