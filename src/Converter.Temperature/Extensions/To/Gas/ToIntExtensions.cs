@@ -1,15 +1,21 @@
 ﻿using System;
 using Converter.Temperature.Converters.Celsius;
+using Converter.Temperature.Converters.Delisle;
 using Converter.Temperature.Converters.Fahrenheit;
 using Converter.Temperature.Converters.Gas;
 using Converter.Temperature.Converters.Kelvin;
+using Converter.Temperature.Converters.Newton;
 using Converter.Temperature.Converters.Rankine;
+using Converter.Temperature.Converters.Réaumur;
 using Converter.Temperature.Converters.Rømer;
 using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
 using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
 using Converter.Temperature.Types.Rømer;
 
 namespace Converter.Temperature.Extensions.To.Gas;
@@ -101,5 +107,47 @@ public static class ToIntExtensions
         this RømerInt input)
     {
         return RømerIntConversions.RømerToGas(input.Temperature);
+    }
+
+    /// <summary>
+    ///     Converts the Newton <paramref name="input" /> to Gas
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The Gas <see langword="int" /> result.
+    /// </returns>
+    public static int ToGas(
+        this NewtonInt input)
+    {
+        return NewtonIntConversions.NewtonToGas(input.Temperature);
+    }
+
+    /// <summary>
+    ///     Converts the Delisle <paramref name="input" /> to Gas
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The Gas <see langword="int" /> result.
+    /// </returns>
+    public static int ToGas(
+        this DelisleInt input)
+    {
+        return DelisleIntConversions.DelisleToGas(input.Temperature);
+    }
+
+    /// <summary>
+    ///     Converts the Réaumur <paramref name="input" /> to Gas
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The Gas <see langword="int" /> result.
+    /// </returns>
+    public static int ToGas(
+        this RéaumurInt input)
+    {
+        return RéaumurIntConversions.RéaumurToGas(input.Temperature);
     }
 }
