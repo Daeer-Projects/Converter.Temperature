@@ -1,18 +1,17 @@
-﻿// ReSharper disable ClassCanBeSealed.Global - Benchmark creates derived class.
+﻿using BenchmarkDotNet.Attributes;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.Extensions.To.Fahrenheit;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.TemperatureTypes;
 
 namespace Converter.Benchmark.Tests;
 
-using BenchmarkDotNet.Attributes;
-using Temperature.Extensions.From;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Celsius;
-using Temperature.Extensions.To.Fahrenheit;
-using Temperature.Extensions.To.Gas;
-using Temperature.Extensions.To.Kelvin;
-using Temperature.Extensions.To.Rankine;
-using Temperature.Extensions.To.Rømer;
-using Temperature.TemperatureTypes;
-
+// ReSharper disable ClassCanBeSealed.Global - Benchmark creates derived class.
 [MemoryDiagnoser]
 public class IntBenchies
 {

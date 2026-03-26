@@ -1,19 +1,25 @@
-﻿namespace Converter.Temperature.Extensions.To.Celsius;
-
 using System;
-using Converters.Celsius;
-using Converters.Fahrenheit;
-using Converters.Gas;
-using Converters.Kelvin;
-using Converters.Rankine;
-using Converters.Rømer;
-using Helpers;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
+using Converter.Temperature.Converters.Celsius;
+using Converter.Temperature.Converters.Delisle;
+using Converter.Temperature.Converters.Fahrenheit;
+using Converter.Temperature.Converters.Gas;
+using Converter.Temperature.Converters.Kelvin;
+using Converter.Temperature.Converters.Newton;
+using Converter.Temperature.Converters.Rankine;
+using Converter.Temperature.Converters.Réaumur;
+using Converter.Temperature.Converters.Rømer;
+using Converter.Temperature.Extensions.To.Helpers;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
+
+namespace Converter.Temperature.Extensions.To.Celsius;
 
 /// <summary>
 ///     The to <see langword="float" /> extensions.
@@ -59,7 +65,7 @@ public static class ToFloatExtensions
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
-    /// <exception cref="ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
     ///     The Celsius <see langword="float" /> result.
@@ -117,5 +123,53 @@ public static class ToFloatExtensions
         int fractionalCount = -1)
     {
         return ToExtensionHelpers.Rounder(RømerFloatConversions.RømerToCelsius(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Newton <paramref name="input" /> to Celsius
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Celsius <see langword="float" /> result.
+    /// </returns>
+    public static float ToCelsius(
+        this NewtonFloat input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(NewtonFloatConversions.NewtonToCelsius(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Delisle <paramref name="input" /> to Celsius
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Celsius <see langword="float" /> result.
+    /// </returns>
+    public static float ToCelsius(
+        this DelisleFloat input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(DelisleFloatConversions.DelisleToCelsius(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Réaumur <paramref name="input" /> to Celsius
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Celsius <see langword="float" /> result.
+    /// </returns>
+    public static float ToCelsius(
+        this RéaumurFloat input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(RéaumurFloatConversions.RéaumurToCelsius(input.Temperature), fractionalCount);
     }
 }

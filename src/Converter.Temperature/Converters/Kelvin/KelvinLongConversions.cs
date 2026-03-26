@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Kelvin;
-
 using System;
-using Celsius;
+using Converter.Temperature.Converters.Celsius;
+
+namespace Converter.Temperature.Converters.Kelvin;
 
 internal static class KelvinLongConversions
 {
@@ -15,14 +15,8 @@ internal static class KelvinLongConversions
     internal static long KelvinToCelsius(
         long input)
     {
-        const long maxValue = long.MaxValue - 273L;
-        const long minValue = long.MinValue + 273L;
-        if (input is < minValue or > maxValue)
-        {
-            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
-        }
-
-        long celsiusTemp = input - 273L;
+        double result = input - 273.15d;
+        long celsiusTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return celsiusTemp;
     }
 
@@ -30,15 +24,15 @@ internal static class KelvinLongConversions
     ///     The kelvin to fahrenheit conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static long KelvinToFahrenheit(
         long input)
     {
-        long celsiusTemp = KelvinToCelsius(input);
-        long fahrenheitTemp = CelsiusLongConversions.CelsiusToFahrenheit(celsiusTemp);
+        double result = input * 9d / 5d - 459.67d;
+        long fahrenheitTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return fahrenheitTemp;
     }
 
@@ -59,7 +53,7 @@ internal static class KelvinLongConversions
     ///     The kelvin to gas conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -75,7 +69,7 @@ internal static class KelvinLongConversions
     ///     The kelvin to rankine conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -90,7 +84,7 @@ internal static class KelvinLongConversions
     ///     The kelvin to rømer conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -100,5 +94,53 @@ internal static class KelvinLongConversions
         double result = (input - 273.15) * 21 / 40 + 7.5;
         long rømerTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
         return rømerTemp;
+    }
+
+    /// <summary>
+    ///     The kelvin to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long KelvinToDelisle(
+        long input)
+    {
+        double result = (373.15 - input) * 1.5;
+        long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The kelvin to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long KelvinToNewton(
+        long input)
+    {
+        double result = (input - 273.15) * 33 / 100;
+        long newtonTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The kelvin to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long KelvinToRéaumur(
+        long input)
+    {
+        double result = (input - 273.15) * 4 / 5;
+        long réaumurTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        return réaumurTemp;
     }
 }

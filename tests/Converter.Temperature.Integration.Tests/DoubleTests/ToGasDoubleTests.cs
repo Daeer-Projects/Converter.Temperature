@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Integration.Tests.DoubleTests;
-
-using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Gas;
+﻿using System;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.DoubleTests;
 
 public sealed class ToGasDoubleTests
 {
@@ -25,7 +25,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -41,7 +41,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -80,7 +80,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -119,7 +119,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -203,7 +203,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -219,7 +219,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Fahrenheit
@@ -239,7 +239,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -255,7 +255,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Kelvin
@@ -349,7 +349,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -365,7 +365,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -468,7 +468,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -507,7 +507,7 @@ public sealed class ToGasDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]

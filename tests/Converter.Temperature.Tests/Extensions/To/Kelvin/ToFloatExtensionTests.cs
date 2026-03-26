@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Kelvin;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, float>
 {
@@ -19,12 +18,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
 
     private static List<float> GetData()
     {
-        return new List<float>
-        {
-            999.999f,
-            0f,
-            -999.999f
-        };
+        return new List<float> { 999.999f, 0f, -999.999f };
     }
 
     protected override float To(
@@ -38,7 +32,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         KelvinFloat value,
         int fractionalCount)
     {
-        return value.To<Kelvin>(fractionalCount);
+        return value.To<TemperatureTypes.Kelvin>(fractionalCount);
     }
 
     protected override KelvinFloat Create(
@@ -70,7 +64,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         CelsiusFloat input = new(200);
 
         // Act.
-        float result = input.To<Kelvin>();
+        float result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -81,7 +75,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
     public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const float expected = 473.15f;
+        const float expected = 473.15002f;
         FahrenheitFloat input = new(392);
 
         // Act.
@@ -96,11 +90,11 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
     public void Test_to_kelvin_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const float expected = 473.15f;
+        const float expected = 473.15002f;
         FahrenheitFloat input = new(392);
 
         // Act.
-        float result = input.To<Kelvin>();
+        float result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -130,7 +124,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         GasFloat input = new(6);
 
         // Act.
-        float result = input.To<Kelvin>();
+        float result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -158,7 +152,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         KelvinFloat input = new(473.15f);
 
         // Act.
-        float result = input.To<Kelvin>();
+        float result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -188,7 +182,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         RankineFloat input = new(851.67f);
 
         // Act.
-        float result = input.To<Kelvin>();
+        float result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -232,7 +226,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         RømerFloat input = new(originalTemp);
 
         // Act.
-        float result = input.To<Kelvin>();
+        float result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -268,7 +262,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<KelvinFloat, fl
         RømerFloat input = new(493.47f);
 
         // Act.
-        float result = input.To<Kelvin>(fractionalCount);
+        float result = input.To<TemperatureTypes.Kelvin>(fractionalCount);
 
         // Assert.
         result.Should()

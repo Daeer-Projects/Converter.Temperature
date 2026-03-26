@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Gas;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, string>
 {
@@ -20,12 +19,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "0.25",
-            "5",
-            "10"
-        };
+        return new List<string> { "0.25", "5", "10" };
     }
 
     protected override string To(
@@ -39,7 +33,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         GasString value,
         int fractionalCount)
     {
-        return value.To<Gas>(fractionalCount);
+        return value.To<TemperatureTypes.Gas>(fractionalCount);
     }
 
     protected override GasString Create(
@@ -71,7 +65,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         CelsiusString input = new("200");
 
         // Act.
-        string result = input.To<Gas>();
+        string result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -99,7 +93,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         CelsiusString input = new("79");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -127,7 +121,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         CelsiusString input = new("271");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -157,7 +151,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         FahrenheitString input = new("392");
 
         // Act.
-        string result = input.To<Gas>();
+        string result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -185,7 +179,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         FahrenheitString input = new("174");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -213,7 +207,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         FahrenheitString input = new("520");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -241,7 +235,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         GasString input = new("7");
 
         // Act.
-        string result = input.To<Gas>();
+        string result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -271,7 +265,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         KelvinString input = new("478.15");
 
         // Act.
-        string result = input.To<Gas>();
+        string result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -299,7 +293,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         KelvinString input = new("174");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -327,7 +321,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         KelvinString input = new("544.15");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -357,7 +351,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         RankineString input = new("806.67");
 
         // Act.
-        string result = input.To<Gas>();
+        string result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -385,7 +379,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         RankineString input = new("174");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -413,7 +407,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         RankineString input = new("1524.25");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -451,7 +445,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         RømerString input = new(originalTemp);
 
         // Act.
-        string result = input.To<Gas>();
+        string result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -479,7 +473,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         RømerString input = new("49");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -507,7 +501,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
         RømerString input = new("149.5");
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()

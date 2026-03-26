@@ -1,13 +1,13 @@
-﻿namespace Converter.Temperature.Integration.Tests.StringTests;
-
-using System;
+﻿using System;
 using System.Globalization;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Celsius;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.StringTests;
 
 public sealed class ToCelsiusStringTests
 {
@@ -502,4 +502,124 @@ public sealed class ToCelsiusStringTests
     }
 
     #endregion From Rømer
+
+    #region From Newton
+
+    [Theory]
+    [InlineData(0d, 0d)]
+    [InlineData(33d, 100d)]
+    public void Test_string_extension_from_newton_and_to_celsius_returns_correct_string_value(
+        double value,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        string result = value.ToString(CultureInfo.InvariantCulture)
+            .FromNewton()
+            .ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected.ToString(CultureInfo.InvariantCulture));
+    }
+
+    [Theory]
+    [InlineData(0d, 0d)]
+    [InlineData(33d, 100d)]
+    public void Test_string_extension_generic_from_newton_and_to_celsius_returns_correct_string_value(
+        double value,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        string result = value.ToString(CultureInfo.InvariantCulture)
+            .From<Newton>()
+            .To<Celsius>();
+
+        // Assert.
+        result.Should()
+            .Be(expected.ToString(CultureInfo.InvariantCulture));
+    }
+
+    #endregion From Newton
+
+    #region From Delisle
+
+    [Theory]
+    [InlineData(0d, 100d)]
+    [InlineData(150d, 0d)]
+    public void Test_string_extension_from_delisle_and_to_celsius_returns_correct_string_value(
+        double value,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        string result = value.ToString(CultureInfo.InvariantCulture)
+            .FromDelisle()
+            .ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected.ToString(CultureInfo.InvariantCulture));
+    }
+
+    [Theory]
+    [InlineData(0d, 100d)]
+    [InlineData(150d, 0d)]
+    public void Test_string_extension_generic_from_delisle_and_to_celsius_returns_correct_string_value(
+        double value,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        string result = value.ToString(CultureInfo.InvariantCulture)
+            .From<Delisle>()
+            .To<Celsius>();
+
+        // Assert.
+        result.Should()
+            .Be(expected.ToString(CultureInfo.InvariantCulture));
+    }
+
+    #endregion From Delisle
+
+    #region From Réaumur
+
+    [Theory]
+    [InlineData(0d, 0d)]
+    [InlineData(80d, 100d)]
+    public void Test_string_extension_from_réaumur_and_to_celsius_returns_correct_string_value(
+        double value,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        string result = value.ToString(CultureInfo.InvariantCulture)
+            .FromRéaumur()
+            .ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected.ToString(CultureInfo.InvariantCulture));
+    }
+
+    [Theory]
+    [InlineData(0d, 0d)]
+    [InlineData(80d, 100d)]
+    public void Test_string_extension_generic_from_réaumur_and_to_celsius_returns_correct_string_value(
+        double value,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        string result = value.ToString(CultureInfo.InvariantCulture)
+            .From<Réaumur>()
+            .To<Celsius>();
+
+        // Assert.
+        result.Should()
+            .Be(expected.ToString(CultureInfo.InvariantCulture));
+    }
+
+    #endregion From Réaumur
 }

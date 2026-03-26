@@ -1,13 +1,13 @@
-﻿namespace Converter.Temperature.Integration.Tests.LongTests;
-
-using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Celsius;
-using Extensions.To.Rankine;
+﻿using System;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.LongTests;
 
 public sealed class ToCelsiusLongTests
 {
@@ -131,30 +131,32 @@ public sealed class ToCelsiusLongTests
     public void Test_long_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_long_value()
     {
         // Arrange.
+        const long expected = long.MinValue;
         const long input = long.MinValue;
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
-            .ToCelsius());
+        long result = input.FromKelvin()
+            .ToCelsius();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     [Fact]
     public void Test_long_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_long_value()
     {
         // Arrange.
+        const long expected = long.MinValue;
         const long input = long.MinValue;
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
-            .To<Celsius>());
+        long result = input.From<Kelvin>()
+            .To<Celsius>();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     #endregion From Kelvin

@@ -1,14 +1,17 @@
-﻿namespace Converter.Temperature.Extensions.From;
+﻿using System;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
 
-using System;
-using BaseTypes;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
+namespace Converter.Temperature.Extensions.From;
 
 public static class FromLongExtensions
 {
@@ -91,6 +94,45 @@ public static class FromLongExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Delisle.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Delisle Long class for the 'To' extension to use.
+    /// </returns>
+    public static DelisleLong FromDelisle(
+        this long input)
+    {
+        return new DelisleLong(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Newton.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Newton Long class for the 'To' extension to use.
+    /// </returns>
+    public static NewtonLong FromNewton(
+        this long input)
+    {
+        return new NewtonLong(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Réaumur.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Réaumur Long class for the 'To' extension to use.
+    /// </returns>
+    public static RéaumurLong FromRéaumur(
+        this long input)
+    {
+        return new RéaumurLong(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -111,6 +153,9 @@ public static class FromLongExtensions
             nameof(Gas) => new GasLong(input),
             nameof(Rankine) => new RankineLong(input),
             nameof(Rømer) => new RømerLong(input),
+            nameof(Delisle) => new DelisleLong(input),
+            nameof(Newton) => new NewtonLong(input),
+            nameof(Réaumur) => new RéaumurLong(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

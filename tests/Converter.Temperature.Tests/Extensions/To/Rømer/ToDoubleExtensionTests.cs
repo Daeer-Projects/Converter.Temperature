@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rømer;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rømer;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rømer;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, double>
 {
@@ -20,12 +19,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
 
     private static List<double> GetData()
     {
-        return new List<double>
-        {
-            999.999d,
-            0d,
-            -999.999
-        };
+        return new List<double> { 999.999d, 0d, -999.999 };
     }
 
     protected override double To(
@@ -39,7 +33,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         RømerDouble value,
         int fractionalCount)
     {
-        return value.To<Rømer>(fractionalCount);
+        return value.To<TemperatureTypes.Rømer>(fractionalCount);
     }
 
     protected override RømerDouble Create(
@@ -71,7 +65,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         CelsiusDouble input = new(200);
 
         // Act.
-        double result = input.To<Rømer>();
+        double result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -106,7 +100,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
 
         // Act.
         ArgumentOutOfRangeException result =
-            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rømer>());
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Rømer>());
 
         // Assert.
         result.Message.Should()
@@ -136,7 +130,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         FahrenheitDouble input = new(392);
 
         // Act.
-        double result = input.To<Rømer>();
+        double result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -166,7 +160,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         GasDouble input = new(6);
 
         // Act.
-        double result = input.To<Rømer>();
+        double result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -196,7 +190,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         KelvinDouble input = new(473.15);
 
         // Act.
-        double result = input.To<Rømer>();
+        double result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -226,7 +220,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         RankineDouble input = new(851.67);
 
         // Act.
-        double result = input.To<Rømer>();
+        double result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -254,7 +248,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RømerDouble, 
         RømerDouble input = new(851.67);
 
         // Act.
-        double result = input.To<Rømer>();
+        double result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()

@@ -1,95 +1,99 @@
-﻿namespace Converter.Temperature.Converters.Fahrenheit;
-
 using System;
-using Celsius;
+using Converter.Temperature.Converters.Celsius;
+
+namespace Converter.Temperature.Converters.Fahrenheit;
 
 internal static class FahrenheitDoubleConversions
 {
     /// <summary>
-    ///     The fahrenheit to celsius conversion.
+    ///     The Fahrenheit to Celsius conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static double FahrenheitToCelsius(
-        double firstTemp)
+        double input)
     {
-        double celsiusTemp = (firstTemp - 32) * 5 / 9;
+        double celsiusTemp = (input - 32) * 5 / 9;
         if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
         {
-            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
         return celsiusTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to fahrenheit conversion.
+    ///     The Fahrenheit to Fahrenheit conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static double FahrenheitToFahrenheit(
-        double firstTemp)
+        double input)
     {
-        return firstTemp;
+        return input;
     }
 
     /// <summary>
-    ///     The fahrenheit to kelvin conversion.
+    ///     The Fahrenheit to Kelvin conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static double FahrenheitToKelvin(
-        double firstTemp)
+        double input)
     {
-        double celsiusTemp = FahrenheitToCelsius(firstTemp);
-        double kelvinTemp = CelsiusDoubleConversions.CelsiusToKelvin(celsiusTemp);
+        double kelvinTemp = (input + 459.67d) * 5d / 9d;
+        if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return kelvinTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to gas conversion.
+    ///     The Fahrenheit to gas conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static double FahrenheitToGas(
-        double firstTemp)
+        double input)
     {
-        double celsiusTemp = FahrenheitToCelsius(firstTemp);
+        double celsiusTemp = FahrenheitToCelsius(input);
         double gasTemp = CelsiusDoubleConversions.CelsiusToGas(celsiusTemp);
         return gasTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to rankine conversion.
+    ///     The Fahrenheit to Rankine conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static double FahrenheitToRankine(
-        double firstTemp)
+        double input)
     {
-        double rankineTemp = firstTemp + 459.67d;
+        double rankineTemp = input + 459.67d;
         return rankineTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to rømer conversion.
+    ///     The Fahrenheit to Rømer conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -103,5 +107,65 @@ internal static class FahrenheitDoubleConversions
         }
 
         return rømerTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double FahrenheitToDelisle(
+        double input)
+    {
+        double delisleTemp = (212d - input) * 5 / 6;
+        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double FahrenheitToNewton(
+        double input)
+    {
+        double newtonTemp = (input - 32) * 11 / 60;
+        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double FahrenheitToRéaumur(
+        double input)
+    {
+        double réaumurTemp = (input - 32) * 4 / 9;
+        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return réaumurTemp;
     }
 }

@@ -1,10 +1,10 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.KelvinTests;
-
-using System.Globalization;
+﻿using System.Globalization;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Types.Kelvin;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using Types.Kelvin;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.KelvinTests;
 
 public sealed class FromStringExtensionTests : BaseFromExtensionTests<string, KelvinString>
 {

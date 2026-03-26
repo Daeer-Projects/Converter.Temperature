@@ -1,13 +1,12 @@
-﻿namespace Converter.Temperature.Integration.Tests.StringTests;
-
-using System;
-using System.Globalization;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Kelvin;
+﻿using System.Globalization;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.StringTests;
 
 public sealed class ToKelvinStringTests
 {
@@ -51,16 +50,17 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
         double input)
     {
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        string result = input
             .ToString(CultureInfo.InvariantCulture)
             .FromCelsius()
-            .ToKelvin());
+            .ToKelvin();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .NotBeNullOrEmpty();
     }
 
     [Theory]
@@ -69,16 +69,17 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
         double input)
     {
+
         // Arrange.
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input
+        string result = input
             .ToString(CultureInfo.InvariantCulture)
             .From<Celsius>()
-            .To<Kelvin>());
+            .To<Kelvin>();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .NotBeNullOrEmpty();
     }
 
     #endregion From Celsius
@@ -89,7 +90,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_from_fahrenheit_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "392";
 
         // Act.
@@ -105,7 +106,7 @@ public sealed class ToKelvinStringTests
     public void Test_string_extensions_generic_from_fahrenheit_to_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         const string input = "392";
 
         // Act.

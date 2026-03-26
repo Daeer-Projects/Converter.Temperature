@@ -1,27 +1,29 @@
-﻿namespace Converter.Temperature.Integration.Tests.LongTests;
-
-using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Rankine;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
 
+namespace Converter.Temperature.Integration.Tests.LongTests;
+
+/// <summary>
+///     The to rømer long tests.
+/// </summary>
 public sealed class ToRømerLongTests
 {
     #region From Celsius
 
     [Fact]
-    public void Test_long_extensions_from_celsius_to_rankine_returns_correct_value()
+    public void Test_long_extension_from_celsius_to_rømer_returns_correct_long_value()
     {
         // Arrange.
-        const long expected = 852L;
+        const long expected = 113L;
         const long input = 200L;
 
         // Act.
         long result = input.FromCelsius()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -29,51 +31,19 @@ public sealed class ToRømerLongTests
     }
 
     [Fact]
-    public void Test_long_extensions_generic_from_celsius_to_rankine_returns_correct_value()
+    public void Test_long_extension_generic_from_celsius_to_rømer_returns_correct_long_value()
     {
         // Arrange.
-        const long expected = 852L;
+        const long expected = 113L;
         const long input = 200L;
 
         // Act.
         long result = input.From<Celsius>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
             .Be(expected);
-    }
-
-    [Theory]
-    [InlineData(long.MinValue)]
-    [InlineData(long.MaxValue)]
-    public void Test_long_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
-        long input)
-    {
-        // Arrange.
-        // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromCelsius()
-            .ToRankine());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
-    }
-
-    [Theory]
-    [InlineData(long.MinValue)]
-    [InlineData(long.MaxValue)]
-    public void Test_long_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
-        long input)
-    {
-        // Arrange.
-        // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Celsius>()
-            .To<Rankine>());
-
-        // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
     }
 
     #endregion From Celsius
@@ -81,15 +51,15 @@ public sealed class ToRømerLongTests
     #region From Fahrenheit
 
     [Fact]
-    public void Test_long_extensions_from_fahrenheit_to_rankine_returns_correct_value()
+    public void Test_long_extension_from_fahrenheit_to_rømer_returns_correct_long_value()
     {
         // Arrange.
-        const long expected = 852L;
+        const long expected = 113L;
         const long input = 392L;
 
         // Act.
         long result = input.FromFahrenheit()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -97,15 +67,15 @@ public sealed class ToRømerLongTests
     }
 
     [Fact]
-    public void Test_long_extensions_generic_from_fahrenheit_to_rankine_returns_correct_value()
+    public void Test_long_extension_generic_from_fahrenheit_to_rømer_returns_correct_long_value()
     {
         // Arrange.
-        const long expected = 852L;
+        const long expected = 113L;
         const long input = 392L;
 
         // Act.
         long result = input.From<Fahrenheit>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
@@ -117,18 +87,18 @@ public sealed class ToRømerLongTests
     #region From Kelvin
 
     [Theory]
-    [InlineData(-1000L, -1800L)]
-    [InlineData(0L, 0L)]
-    [InlineData(50L, 90L)]
-    [InlineData(1000L, 1800L)]
-    public void Test_long_extension_from_kelvin_to_rankine_returns_correct_long_value(
+    [InlineData(-1000L, -661L)]
+    [InlineData(0L, -136L)]
+    [InlineData(50L, -110L)]
+    [InlineData(1000L, 389L)]
+    public void Test_long_extension_from_kelvin_to_rømer_returns_correct_long_value(
         long value,
         long expected)
     {
         // Arrange.
         // Act.
         long result = value.FromKelvin()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -136,18 +106,18 @@ public sealed class ToRømerLongTests
     }
 
     [Theory]
-    [InlineData(-1000L, -1800L)]
-    [InlineData(0L, 0L)]
-    [InlineData(50L, 90L)]
-    [InlineData(1000L, 1800L)]
-    public void Test_long_extension_generic_from_kelvin_to_rankine_returns_correct_long_value(
+    [InlineData(-1000L, -661L)]
+    [InlineData(0L, -136L)]
+    [InlineData(50L, -110L)]
+    [InlineData(1000L, 389L)]
+    public void Test_long_extension_generic_from_kelvin_to_rømer_returns_correct_long_value(
         long value,
         long expected)
     {
         // Arrange.
         // Act.
         long result = value.From<Kelvin>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
@@ -159,15 +129,15 @@ public sealed class ToRømerLongTests
     #region From Gas
 
     [Fact]
-    public void Test_long_extension_from_gas_to_rankine_returns_correct_value()
+    public void Test_long_extension_from_gas_to_rømer_returns_correct_long_value()
     {
         // Arrange.
-        const long expected = 882L;
+        const long expected = 121L;
         const long input = 6L;
 
         // Act.
         long result = input.FromGas()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
@@ -175,15 +145,15 @@ public sealed class ToRømerLongTests
     }
 
     [Fact]
-    public void Test_long_extension_generic_from_gas_to_rankine_returns_correct_value()
+    public void Test_long_extension_generic_from_gas_to_rømer_returns_correct_long_value()
     {
         // Arrange.
-        const long expected = 882L;
+        const long expected = 121L;
         const long input = 6L;
 
         // Act.
         long result = input.From<Gas>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
@@ -195,41 +165,45 @@ public sealed class ToRømerLongTests
     #region From Rankine
 
     [Theory]
-    [InlineData(long.MinValue)]
-    [InlineData(-345L)]
-    [InlineData(0L)]
-    [InlineData(7564L)]
-    [InlineData(long.MaxValue)]
-    public void Test_long_extension_from_and_to_rankine_returns_correct_long_value(
-        long value)
+    [InlineData(-1000L, -428L)]
+    [InlineData(0L, -136L)]
+    [InlineData(50L, -121L)]
+    [InlineData(100L, -107L)]
+    [InlineData(500L, 10L)]
+    [InlineData(1000L, 156L)]
+    public void Test_long_extension_from_rankine_to_rømer_returns_correct_long_value(
+        long value,
+        long expected)
     {
         // Arrange.
         // Act.
         long result = value.FromRankine()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
-            .Be(value);
+            .Be(expected);
     }
 
     [Theory]
-    [InlineData(long.MinValue)]
-    [InlineData(-345L)]
-    [InlineData(0L)]
-    [InlineData(7564L)]
-    [InlineData(long.MaxValue)]
-    public void Test_long_extension_generic_from_and_to_rankine_returns_correct_long_value(
-        long value)
+    [InlineData(-1000L, -428L)]
+    [InlineData(0L, -136L)]
+    [InlineData(50L, -121L)]
+    [InlineData(100L, -107L)]
+    [InlineData(500L, 10L)]
+    [InlineData(1000L, 156L)]
+    public void Test_long_extension_generic_from_rankine_to_rømer_returns_correct_long_value(
+        long value,
+        long expected)
     {
         // Arrange.
         // Act.
         long result = value.From<Rankine>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
-            .Be(value);
+            .Be(expected);
     }
 
     #endregion From Rankine
@@ -237,45 +211,41 @@ public sealed class ToRømerLongTests
     #region From Rømer
 
     [Theory]
-    [InlineData(-1000L, -2963L)]
-    [InlineData(0L, 466L)]
-    [InlineData(50L, 637L)]
-    [InlineData(100L, 809L)]
-    [InlineData(500L, 2180L)]
-    [InlineData(1000L, 3895L)]
-    public void Test_long_extension_from_rømer_and_to_rankine_returns_correct_long_value(
-        long value,
-        long expected)
+    [InlineData(long.MinValue)]
+    [InlineData(-345L)]
+    [InlineData(0L)]
+    [InlineData(7564L)]
+    [InlineData(long.MaxValue)]
+    public void Test_long_extension_from_and_to_rømer_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
         long result = value.FromRømer()
-            .ToRankine();
+            .ToRømer();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .Be(value);
     }
 
     [Theory]
-    [InlineData(-1000L, -2963L)]
-    [InlineData(0L, 466L)]
-    [InlineData(50L, 637L)]
-    [InlineData(100L, 809L)]
-    [InlineData(500L, 2180L)]
-    [InlineData(1000L, 3895L)]
-    public void Test_long_extension_generic_from_rømer_and_to_rankine_returns_correct_long_value(
-        long value,
-        long expected)
+    [InlineData(long.MinValue)]
+    [InlineData(-345L)]
+    [InlineData(0L)]
+    [InlineData(7564L)]
+    [InlineData(long.MaxValue)]
+    public void Test_long_extension_generic_from_and_to_rømer_returns_correct_long_value(
+        long value)
     {
         // Arrange.
         // Act.
         long result = value.From<Rømer>()
-            .To<Rankine>();
+            .To<Rømer>();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .Be(value);
     }
 
     #endregion From Rømer

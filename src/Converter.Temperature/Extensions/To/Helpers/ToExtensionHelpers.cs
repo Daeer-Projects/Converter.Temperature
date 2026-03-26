@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Extensions.To.Helpers;
-
-using System;
+﻿using System;
 using System.Globalization;
+
+namespace Converter.Temperature.Extensions.To.Helpers;
 
 internal static class ToExtensionHelpers
 {

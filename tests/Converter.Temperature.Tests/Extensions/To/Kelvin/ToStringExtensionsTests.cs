@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Kelvin;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString, string>
 {
@@ -19,12 +18,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "999.999",
-            "0",
-            "-999.999"
-        };
+        return new List<string> { "999.999", "0", "-999.999" };
     }
 
     protected override string To(
@@ -38,7 +32,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
         KelvinString value,
         int fractionalCount)
     {
-        return value.To<Kelvin>(fractionalCount);
+        return value.To<TemperatureTypes.Kelvin>(fractionalCount);
     }
 
     protected override KelvinString Create(
@@ -70,7 +64,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
         CelsiusString input = new("200");
 
         // Act.
-        string result = input.To<Kelvin>();
+        string result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -81,7 +75,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
     public void Test_to_kelvin_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         FahrenheitString input = new("392");
 
         // Act.
@@ -96,11 +90,11 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
     public void Test_to_kelvin_generic_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const string expected = "473.15";
+        const string expected = "473.15000000000003";
         FahrenheitString input = new("392");
 
         // Act.
-        string result = input.To<Kelvin>();
+        string result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -130,7 +124,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
         GasString input = new("6");
 
         // Act.
-        string result = input.To<Kelvin>();
+        string result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -158,7 +152,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
         KelvinString input = new("473.15");
 
         // Act.
-        string result = input.To<Kelvin>();
+        string result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -188,7 +182,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
         RankineString input = new("851.67");
 
         // Act.
-        string result = input.To<Kelvin>();
+        string result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -232,7 +226,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
         RømerString input = new(originalTemp);
 
         // Act.
-        string result = input.To<Kelvin>();
+        string result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()

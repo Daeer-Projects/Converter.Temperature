@@ -1,19 +1,22 @@
-﻿namespace Converter.Temperature.Integration.Tests.FloatTests;
-
 using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Rømer;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
 
+namespace Converter.Temperature.Integration.Tests.FloatTests;
+
+/// <summary>
+///     The to rømer float tests.
+/// </summary>
 public sealed class ToRømerFloatTests
 {
     #region From Celsius
 
     [Fact]
-    public void Test_float_extensions_from_celsius_to_rømer_returns_correct_value()
+    public void Test_float_extension_from_celsius_to_rømer_returns_correct_float_value()
     {
         // Arrange.
         const float expected = 112.5f;
@@ -25,11 +28,11 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
-    public void Test_float_extensions_generic_from_celsius_to_rømer_returns_correct_value()
+    public void Test_float_extension_generic_from_celsius_to_rømer_returns_correct_float_value()
     {
         // Arrange.
         const float expected = 112.5f;
@@ -41,14 +44,14 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(114.075d, -1)]
     [InlineData(114d, 0)]
     [InlineData(114.07d, 2)]
-    public void Test_float_extensions_with_parameter_from_celsius_to_rømer_returns_correct_value(
+    public void Test_float_extension_with_parameter_from_celsius_to_rømer_returns_correct_float_value(
         float expected,
         int fractionCount)
     {
@@ -61,14 +64,14 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(114.075d, -1)]
     [InlineData(114d, 0)]
     [InlineData(114.07d, 2)]
-    public void Test_float_extensions_generic_with_parameter_from_celsius_to_rømer_returns_correct_value(
+    public void Test_float_extension_generic_with_parameter_from_celsius_to_rømer_returns_correct_float_value(
         float expected,
         int fractionCount)
     {
@@ -81,13 +84,13 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extensions_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
+    public void Test_float_extension_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
         float input)
     {
         // Arrange.
@@ -103,7 +106,7 @@ public sealed class ToRømerFloatTests
     [Theory]
     [InlineData(float.MinValue)]
     [InlineData(float.MaxValue)]
-    public void Test_float_extensions_generic_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
+    public void Test_float_extension_generic_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
         float input)
     {
         // Arrange.
@@ -121,7 +124,7 @@ public sealed class ToRømerFloatTests
     #region From Fahrenheit
 
     [Fact]
-    public void Test_float_extensions_from_fahrenheit_to_rømer_returns_correct_value()
+    public void Test_float_extension_from_fahrenheit_to_rømer_returns_correct_float_value()
     {
         // Arrange.
         const float expected = 112.5f;
@@ -133,11 +136,11 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
-    public void Test_float_extensions_generic_from_fahrenheit_to_rømer_returns_correct_value()
+    public void Test_float_extension_generic_from_fahrenheit_to_rømer_returns_correct_float_value()
     {
         // Arrange.
         const float expected = 112.5f;
@@ -149,14 +152,14 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(112.77416666666666d, -1)]
     [InlineData(113d, 0)]
     [InlineData(112.77d, 2)]
-    public void Test_float_extensions_with_parameter_from_fahrenheit_to_rømer_returns_correct_value(
+    public void Test_float_extension_with_parameter_from_fahrenheit_to_rømer_returns_correct_float_value(
         float expected,
         int fractionCount)
     {
@@ -169,14 +172,14 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(112.77416666666666d, -1)]
     [InlineData(113d, 0)]
     [InlineData(112.77d, 2)]
-    public void Test_float_extensions_generic_with_parameter_from_fahrenheit_to_rømer_returns_correct_value(
+    public void Test_float_extension_generic_with_parameter_from_fahrenheit_to_rømer_returns_correct_float_value(
         float expected,
         int fractionCount)
     {
@@ -189,7 +192,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Fahrenheit
@@ -212,7 +215,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -231,7 +234,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Kelvin
@@ -239,7 +242,7 @@ public sealed class ToRømerFloatTests
     #region From Gas
 
     [Fact]
-    public void Test_float_extension_from_gas_to_rømer_returns_correct_value()
+    public void Test_float_extension_from_gas_to_rømer_returns_correct_float_value()
     {
         // Arrange.
         const float expected = 112.5f;
@@ -251,11 +254,11 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
-    public void Test_float_extension_generic_from_gas_to_rømer_returns_correct_value()
+    public void Test_float_extension_generic_from_gas_to_rømer_returns_correct_float_value()
     {
         // Arrange.
         const float expected = 112.5f;
@@ -267,14 +270,14 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(112.5d, -1)]
     [InlineData(112d, 0)]
     [InlineData(112.5d, 2)]
-    public void Test_float_extension_with_parameter_from_gas_to_rømer_returns_correct_value(
+    public void Test_float_extension_with_parameter_from_gas_to_rømer_returns_correct_float_value(
         float expected,
         int fractionCount)
     {
@@ -287,14 +290,14 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
     [InlineData(112.5d, -1)]
     [InlineData(112d, 0)]
     [InlineData(112.5d, 2)]
-    public void Test_float_extension_generic_with_parameter_from_gas_to_rømer_returns_correct_value(
+    public void Test_float_extension_generic_with_parameter_from_gas_to_rømer_returns_correct_float_value(
         float expected,
         int fractionCount)
     {
@@ -307,7 +310,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Gas
@@ -321,7 +324,7 @@ public sealed class ToRømerFloatTests
     [InlineData(100f, -106.73709f)]
     [InlineData(500f, 9.92958f)]
     [InlineData(1000f, 155.76291f)]
-    public void Test_float_extension_from_rankine_and_to_rømer_returns_correct_float_value(
+    public void Test_float_extension_from_rankine_to_rømer_returns_correct_float_value(
         float value,
         float expected)
     {
@@ -332,7 +335,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -342,7 +345,7 @@ public sealed class ToRømerFloatTests
     [InlineData(100f, -106.73709f)]
     [InlineData(500f, 9.92958f)]
     [InlineData(1000f, 155.76291f)]
-    public void Test_float_extension_generic_from_rankine_and_to_rømer_returns_correct_float_value(
+    public void Test_float_extension_generic_from_rankine_to_rømer_returns_correct_float_value(
         float value,
         float expected)
     {
@@ -353,7 +356,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -375,7 +378,7 @@ public sealed class ToRømerFloatTests
     [InlineData(100f, -106.7f, 1)]
     [InlineData(500f, 9.92958f, 7)]
     [InlineData(1000f, 155.76291f, 14)]
-    public void Test_float_extension_with_parameter_from_rankine_and_to_rømer_returns_correct_float_value(
+    public void Test_float_extension_with_parameter_from_rankine_to_rømer_returns_correct_float_value(
         float value,
         float expected,
         int fractionalCount)
@@ -387,7 +390,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -409,7 +412,7 @@ public sealed class ToRømerFloatTests
     [InlineData(100f, -106.7f, 1)]
     [InlineData(500f, 9.92958f, 7)]
     [InlineData(1000f, 155.76291f, 14)]
-    public void Test_float_extension_generic_with_parameter_from_rankine_and_to_rømer_returns_correct_float_value(
+    public void Test_float_extension_generic_with_parameter_from_rankine_to_rømer_returns_correct_float_value(
         float value,
         float expected,
         int fractionalCount)
@@ -421,7 +424,7 @@ public sealed class ToRømerFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Rankine

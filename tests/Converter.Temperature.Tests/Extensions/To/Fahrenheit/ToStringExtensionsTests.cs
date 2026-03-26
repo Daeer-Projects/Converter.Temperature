@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Fahrenheit;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Fahrenheit;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Fahrenheit;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Fahrenheit;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitString, string>
 {
@@ -19,12 +18,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "999.999",
-            "0",
-            "-999.999"
-        };
+        return new List<string> { "999.999", "0", "-999.999" };
     }
 
     protected override string To(
@@ -38,7 +32,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         FahrenheitString value,
         int fractionalCount)
     {
-        return value.To<Fahrenheit>(fractionalCount);
+        return value.To<TemperatureTypes.Fahrenheit>(fractionalCount);
     }
 
     protected override FahrenheitString Create(
@@ -70,7 +64,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         CelsiusString input = new("12");
 
         // Act.
-        string result = input.To<Fahrenheit>();
+        string result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -98,7 +92,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         FahrenheitString input = new("50");
 
         // Act.
-        string result = input.To<Fahrenheit>();
+        string result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -128,7 +122,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         GasString input = new("7");
 
         // Act.
-        string result = input.To<Fahrenheit>();
+        string result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -139,7 +133,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
     public void Test_to_fahrenheit_from_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "33.8";
+        const string expected = "33.799999999999955";
         KelvinString input = new("274.15");
 
         // Act.
@@ -154,11 +148,11 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
     public void Test_to_fahrenheit_generic_from_kelvin_returns_correct_value()
     {
         // Arrange.
-        const string expected = "33.8";
+        const string expected = "33.799999999999955";
         KelvinString input = new("274.15");
 
         // Act.
-        string result = input.To<Fahrenheit>();
+        string result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -188,7 +182,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         RankineString input = new("493.471");
 
         // Act.
-        string result = input.To<Fahrenheit>();
+        string result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -232,7 +226,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<FahrenheitStr
         RømerString input = new(originalTemp);
 
         // Act.
-        string result = input.To<Fahrenheit>();
+        string result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()

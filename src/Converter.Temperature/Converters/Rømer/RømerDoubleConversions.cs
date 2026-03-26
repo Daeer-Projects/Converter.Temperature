@@ -1,7 +1,7 @@
-﻿namespace Converter.Temperature.Converters.Rømer;
-
 using System;
-using Celsius;
+using Converter.Temperature.Converters.Celsius;
+
+namespace Converter.Temperature.Converters.Rømer;
 
 internal static class RømerDoubleConversions
 {
@@ -35,7 +35,7 @@ internal static class RømerDoubleConversions
     ///     The rømer to kelvin conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -54,7 +54,7 @@ internal static class RømerDoubleConversions
     ///     The rømer to gas conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -69,7 +69,7 @@ internal static class RømerDoubleConversions
     ///     The rømer to rankine conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -94,5 +94,62 @@ internal static class RømerDoubleConversions
     internal static double RømerToRømer(double input)
     {
         return input;
+    }
+
+    /// <summary>
+    ///     The rømer to delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double RømerToDelisle(double input)
+    {
+        double delisleTemp = (60d - input) * 20d / 7d;
+        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The rømer to newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double RømerToNewton(double input)
+    {
+        double newtonTemp = (input - 7.5d) * 22d / 35d;
+        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The rømer to réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static double RømerToRéaumur(double input)
+    {
+        double réaumurTemp = (input - 7.5d) * 32d / 21d;
+        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return réaumurTemp;
     }
 }

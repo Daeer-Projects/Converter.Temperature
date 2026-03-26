@@ -1,14 +1,17 @@
-﻿namespace Converter.Temperature.Extensions.From;
+﻿using System;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
 
-using System;
-using BaseTypes;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
+namespace Converter.Temperature.Extensions.From;
 
 /// <summary>
 ///     The from <see langword="double" /> extensions.
@@ -94,6 +97,45 @@ public static class FromDoubleExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Delisle.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Delisle Double class for the 'To' extension to use.
+    /// </returns>
+    public static DelisleDouble FromDelisle(
+        this double input)
+    {
+        return new DelisleDouble(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Newton.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Newton Double class for the 'To' extension to use.
+    /// </returns>
+    public static NewtonDouble FromNewton(
+        this double input)
+    {
+        return new NewtonDouble(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Réaumur.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Réaumur Double class for the 'To' extension to use.
+    /// </returns>
+    public static RéaumurDouble FromRéaumur(
+        this double input)
+    {
+        return new RéaumurDouble(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -114,6 +156,9 @@ public static class FromDoubleExtensions
             nameof(Gas) => new GasDouble(input),
             nameof(Rankine) => new RankineDouble(input),
             nameof(Rømer) => new RømerDouble(input),
+            nameof(Delisle) => new DelisleDouble(input),
+            nameof(Newton) => new NewtonDouble(input),
+            nameof(Réaumur) => new RéaumurDouble(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

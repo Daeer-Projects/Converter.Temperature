@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Gas;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
 {
@@ -19,12 +18,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
 
     private static List<int> GetData()
     {
-        return new List<int>
-        {
-            1,
-            5,
-            10
-        };
+        return new List<int> { 1, 5, 10 };
     }
 
     protected override int To(
@@ -38,7 +32,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         GasInt value,
         int fractionalCount)
     {
-        return value.To<Gas>();
+        return value.To<TemperatureTypes.Gas>();
     }
 
     protected override GasInt Create(
@@ -80,7 +74,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         CelsiusInt inputCelsius = new(input);
 
         // Act.
-        int result = inputCelsius.To<Gas>();
+        int result = inputCelsius.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -110,7 +104,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         FahrenheitInt input = new(392);
 
         // Act.
-        int result = input.To<Gas>();
+        int result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -138,7 +132,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         GasInt input = new(7);
 
         // Act.
-        int result = input.To<Gas>();
+        int result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -168,7 +162,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         KelvinInt input = new(473);
 
         // Act.
-        int result = input.To<Gas>();
+        int result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -198,7 +192,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         RankineInt input = new(862);
 
         // Act.
-        int result = input.To<Gas>();
+        int result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -236,7 +230,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
         RømerInt input = new(originalTemp);
 
         // Act.
-        int result = input.To<Gas>();
+        int result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()

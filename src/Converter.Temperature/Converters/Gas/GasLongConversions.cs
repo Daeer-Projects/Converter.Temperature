@@ -1,15 +1,15 @@
-﻿namespace Converter.Temperature.Converters.Gas;
-
 using System;
-using Celsius;
+using Converter.Temperature.Converters.Celsius;
+
+namespace Converter.Temperature.Converters.Gas;
 
 internal static class GasLongConversions
 {
     /// <summary>
-    ///     The gas to celsius conversion.
+    ///     The gas to Celsius conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -35,10 +35,10 @@ internal static class GasLongConversions
     }
 
     /// <summary>
-    ///     The gas to fahrenheit conversion.
+    ///     The gas to Fahrenheit conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -51,10 +51,10 @@ internal static class GasLongConversions
     }
 
     /// <summary>
-    ///     The gas to kelvin conversion.
+    ///     The gas to Kelvin conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -70,7 +70,7 @@ internal static class GasLongConversions
     ///     The gas to gas conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -86,10 +86,10 @@ internal static class GasLongConversions
     }
 
     /// <summary>
-    ///     The gas to rankine conversion.
+    ///     The gas to Rankine conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -102,10 +102,10 @@ internal static class GasLongConversions
     }
 
     /// <summary>
-    ///     The gas to rømer conversion.
+    ///     The gas to Rømer conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -115,5 +115,53 @@ internal static class GasLongConversions
         long celsiusTemp = GasToCelsius(input);
         long rømerTemp = CelsiusLongConversions.CelsiusToRømer(celsiusTemp);
         return rømerTemp;
+    }
+
+    /// <summary>
+    ///     The gas to Delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long GasToDelisle(
+        long input)
+    {
+        long celsiusTemp = GasToCelsius(input);
+        long delisleTemp = CelsiusLongConversions.CelsiusToDelisle(celsiusTemp);
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The gas to Newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long GasToNewton(
+        long input)
+    {
+        long celsiusTemp = GasToCelsius(input);
+        long newtonTemp = CelsiusLongConversions.CelsiusToNewton(celsiusTemp);
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The gas to Réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long GasToRéaumur(
+        long input)
+    {
+        long celsiusTemp = GasToCelsius(input);
+        long réaumurTemp = CelsiusLongConversions.CelsiusToRéaumur(celsiusTemp);
+        return réaumurTemp;
     }
 }

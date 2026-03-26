@@ -1,7 +1,7 @@
-﻿namespace Converter.Benchmark.Tests;
-
-using System;
+﻿using System;
 using BenchmarkDotNet.Running;
+
+namespace Converter.Benchmark.Tests;
 
 internal static class Program
 {

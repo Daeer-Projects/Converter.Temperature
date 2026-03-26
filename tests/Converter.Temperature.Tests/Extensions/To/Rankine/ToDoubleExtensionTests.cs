@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rankine;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rankine;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rankine;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble, double>
 {
@@ -20,12 +19,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
 
     private static List<double> GetData()
     {
-        return new List<double>
-        {
-            999.999d,
-            0d,
-            -999.999
-        };
+        return new List<double> { 999.999d, 0d, -999.999 };
     }
 
     protected override double To(
@@ -39,7 +33,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
         RankineDouble value,
         int fractionalCount)
     {
-        return value.To<Rankine>(fractionalCount);
+        return value.To<TemperatureTypes.Rankine>(fractionalCount);
     }
 
     protected override RankineDouble Create(
@@ -52,7 +46,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         CelsiusDouble input = new(200);
 
         // Act.
@@ -67,11 +61,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         CelsiusDouble input = new(200);
 
         // Act.
-        double result = input.To<Rankine>();
+        double result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -106,7 +100,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
 
         // Act.
         ArgumentOutOfRangeException result =
-            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Rankine>());
 
         // Assert.
         result.Message.Should()
@@ -136,7 +130,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
         FahrenheitDouble input = new(392);
 
         // Act.
-        double result = input.To<Rankine>();
+        double result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -147,7 +141,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_gas_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         GasDouble input = new(6);
 
         // Act.
@@ -162,11 +156,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_gas_returns_correct_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         GasDouble input = new(6);
 
         // Act.
-        double result = input.To<Rankine>();
+        double result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -177,7 +171,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         KelvinDouble input = new(473.15);
 
         // Act.
@@ -192,11 +186,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const double expected = 851.6699999999998d;
+        const double expected = 851.67d;
         KelvinDouble input = new(473.15);
 
         // Act.
-        double result = input.To<Rankine>();
+        double result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -224,7 +218,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
         RankineDouble input = new(851.67);
 
         // Act.
-        double result = input.To<Rankine>();
+        double result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -270,7 +264,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
         RømerDouble input = new(originalTemp);
 
         // Act.
-        double result = input.To<Rankine>();
+        double result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -306,7 +300,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
         RømerDouble input = new(493.47d);
 
         // Act.
-        double result = input.To<Rankine>(fractionalCount);
+        double result = input.To<TemperatureTypes.Rankine>(fractionalCount);
 
         // Assert.
         result.Should()

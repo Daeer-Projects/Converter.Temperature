@@ -1,19 +1,22 @@
-﻿namespace Converter.Temperature.Integration.Tests.DoubleTests;
-
 using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Rømer;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
 
+namespace Converter.Temperature.Integration.Tests.DoubleTests;
+
+/// <summary>
+///     The to rømer double tests.
+/// </summary>
 public sealed class ToRømerDoubleTests
 {
     #region From Celsius
 
     [Fact]
-    public void Test_double_extensions_from_celsius_to_rømer_returns_correct_value()
+    public void Test_double_extension_from_celsius_to_rømer_returns_correct_double_value()
     {
         // Arrange.
         const double expected = 112.5d;
@@ -25,11 +28,11 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
-    public void Test_double_extensions_generic_from_celsius_to_rømer_returns_correct_value()
+    public void Test_double_extension_generic_from_celsius_to_rømer_returns_correct_double_value()
     {
         // Arrange.
         const double expected = 112.5d;
@@ -41,14 +44,14 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(114.075d, -1)]
     [InlineData(114d, 0)]
     [InlineData(114.08d, 2)]
-    public void Test_double_extensions_with_parameter_from_celsius_to_rømer_returns_correct_value(
+    public void Test_double_extension_with_parameter_from_celsius_to_rømer_returns_correct_double_value(
         double expected,
         int fractionCount)
     {
@@ -61,14 +64,14 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(114.075d, -1)]
     [InlineData(114d, 0)]
     [InlineData(114.08d, 2)]
-    public void Test_double_extensions_generic_with_parameter_from_celsius_to_rømer_returns_correct_value(
+    public void Test_double_extension_generic_with_parameter_from_celsius_to_rømer_returns_correct_double_value(
         double expected,
         int fractionCount)
     {
@@ -81,13 +84,13 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extensions_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
+    public void Test_double_extension_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
         double input)
     {
         // Arrange.
@@ -103,7 +106,7 @@ public sealed class ToRømerDoubleTests
     [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
-    public void Test_double_extensions_generic_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
+    public void Test_double_extension_generic_from_celsius_to_rømer_with_invalid_parameter_throws_exception(
         double input)
     {
         // Arrange.
@@ -121,7 +124,7 @@ public sealed class ToRømerDoubleTests
     #region From Fahrenheit
 
     [Fact]
-    public void Test_double_extensions_from_fahrenheit_to_rømer_returns_correct_value()
+    public void Test_double_extension_from_fahrenheit_to_rømer_returns_correct_double_value()
     {
         // Arrange.
         const double expected = 112.5d;
@@ -133,11 +136,11 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
-    public void Test_double_extensions_generic_from_fahrenheit_to_rømer_returns_correct_value()
+    public void Test_double_extension_generic_from_fahrenheit_to_rømer_returns_correct_double_value()
     {
         // Arrange.
         const double expected = 112.5d;
@@ -149,14 +152,14 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(112.77416666666666d, -1)]
     [InlineData(113d, 0)]
     [InlineData(112.77d, 2)]
-    public void Test_double_extensions_with_parameter_from_fahrenheit_to_rømer_returns_correct_value(
+    public void Test_double_extension_with_parameter_from_fahrenheit_to_rømer_returns_correct_double_value(
         double expected,
         int fractionCount)
     {
@@ -169,14 +172,14 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(112.77416666666666d, -1)]
     [InlineData(113d, 0)]
     [InlineData(112.77d, 2)]
-    public void Test_double_extensions_generic_with_parameter_from_fahrenheit_to_rømer_returns_correct_value(
+    public void Test_double_extension_generic_with_parameter_from_fahrenheit_to_rømer_returns_correct_double_value(
         double expected,
         int fractionCount)
     {
@@ -189,7 +192,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Fahrenheit
@@ -212,7 +215,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -231,7 +234,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Kelvin
@@ -239,7 +242,7 @@ public sealed class ToRømerDoubleTests
     #region From Gas
 
     [Fact]
-    public void Test_double_extension_from_gas_to_rømer_returns_correct_value()
+    public void Test_double_extension_from_gas_to_rømer_returns_correct_double_value()
     {
         // Arrange.
         const double expected = 112.5d;
@@ -251,11 +254,11 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
-    public void Test_double_extension_generic_from_gas_to_rømer_returns_correct_value()
+    public void Test_double_extension_generic_from_gas_to_rømer_returns_correct_double_value()
     {
         // Arrange.
         const double expected = 112.5d;
@@ -267,14 +270,14 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(112.5d, -1)]
     [InlineData(112d, 0)]
     [InlineData(112.5d, 2)]
-    public void Test_double_extension_with_parameter_from_gas_to_rømer_returns_correct_value(
+    public void Test_double_extension_with_parameter_from_gas_to_rømer_returns_correct_double_value(
         double expected,
         int fractionCount)
     {
@@ -287,14 +290,14 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
     [InlineData(112.5d, -1)]
     [InlineData(112d, 0)]
     [InlineData(112.5d, 2)]
-    public void Test_double_extension_generic_with_parameter_from_gas_to_rømer_returns_correct_value(
+    public void Test_double_extension_generic_with_parameter_from_gas_to_rømer_returns_correct_double_value(
         double expected,
         int fractionCount)
     {
@@ -307,7 +310,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Gas
@@ -321,7 +324,7 @@ public sealed class ToRømerDoubleTests
     [InlineData(100d, -106.73708333333333d)]
     [InlineData(500d, 9.929583333333328d)]
     [InlineData(1000d, 155.76291666666665d)]
-    public void Test_double_extension_from_rankine_and_to_rømer_returns_correct_double_value(
+    public void Test_double_extension_from_rankine_to_rømer_returns_correct_double_value(
         double value,
         double expected)
     {
@@ -332,7 +335,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -342,7 +345,7 @@ public sealed class ToRømerDoubleTests
     [InlineData(100d, -106.73708333333333d)]
     [InlineData(500d, 9.929583333333328d)]
     [InlineData(1000d, 155.76291666666665d)]
-    public void Test_double_extension_generic_from_rankine_and_to_rømer_returns_correct_double_value(
+    public void Test_double_extension_generic_from_rankine_to_rømer_returns_correct_double_value(
         double value,
         double expected)
     {
@@ -353,7 +356,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -375,7 +378,7 @@ public sealed class ToRømerDoubleTests
     [InlineData(100d, -106.7d, 1)]
     [InlineData(500d, 9.9295833d, 7)]
     [InlineData(1000d, 155.76291666666665d, 14)]
-    public void Test_double_extension_with_parameter_from_rankine_and_to_rømer_returns_correct_double_value(
+    public void Test_double_extension_with_parameter_from_rankine_to_rømer_returns_correct_double_value(
         double value,
         double expected,
         int fractionalCount)
@@ -387,7 +390,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -409,7 +412,7 @@ public sealed class ToRømerDoubleTests
     [InlineData(100d, -106.7d, 1)]
     [InlineData(500d, 9.9295833d, 7)]
     [InlineData(1000d, 155.76291666666665d, 14)]
-    public void Test_double_extension_generic_with_parameter_from_rankine_and_to_rømer_returns_correct_double_value(
+    public void Test_double_extension_generic_with_parameter_from_rankine_to_rømer_returns_correct_double_value(
         double value,
         double expected,
         int fractionalCount)
@@ -421,7 +424,7 @@ public sealed class ToRømerDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Rankine

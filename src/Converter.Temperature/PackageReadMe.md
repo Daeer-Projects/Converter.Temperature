@@ -18,6 +18,9 @@ These extension methods will convert different types of temperatures to other ty
 * Gas
 * Rankine
 * Rømer
+* Delise
+* Newton
+* Réaumur
 
 ### Data types
 
@@ -34,8 +37,8 @@ I had a few ideas on how to do the extension methods but decided on using a flue
 Originally, the extensions looked like this:
 
 ``` csharp
-    var tempToConvert = 34; // an int.
-    var convertedTemp = tempToConvert.CelsiusToFahrenheit();
+    int tempToConvert = 34;
+    int convertedTemp = tempToConvert.CelsiusToFahrenheit();
 ```
 
 Then I thought that this looked a bit naf so, I went with setting up the *from* first, then the *to*. This follows the
@@ -44,15 +47,15 @@ Then I thought that this looked a bit naf so, I went with setting up the *from* 
 Now it is used like this:
 
 ``` csharp
-    var tempToConvert = 34; // an int.
-    var convertedTemp = tempToConvert.FromCelsius().ToFahrenheit();
+    int tempToConvert = 34;
+    int convertedTemp = tempToConvert.FromCelsius().ToFahrenheit();
 ```
 
 The next stage for version 2 is to add an additional usage like this:
 
 ```csharp
-    var tempToConvert = 34; // an int.
-    var convertedTemp = tempToConvert.From<Celsius>().To<Fahrenheit>();
+    int tempToConvert = 34;
+    int convertedTemp = tempToConvert.From<Celsius>().To<Fahrenheit>();
 ```
 
 ### What to do for edge cases

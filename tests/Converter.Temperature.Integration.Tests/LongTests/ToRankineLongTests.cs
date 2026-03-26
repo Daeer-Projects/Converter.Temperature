@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Integration.Tests.LongTests;
-
-using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Rankine;
+﻿using System;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.LongTests;
 
 public sealed class ToRankineLongTests
 {

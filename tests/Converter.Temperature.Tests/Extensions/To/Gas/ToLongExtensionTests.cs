@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Gas;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
 {
@@ -19,12 +18,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
 
     private static List<long> GetData()
     {
-        return new List<long>
-        {
-            1L,
-            5L,
-            10L
-        };
+        return new List<long> { 1L, 5L, 10L };
     }
 
     protected override long To(
@@ -38,7 +32,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         GasLong value,
         int fractionalCount)
     {
-        return value.To<Gas>();
+        return value.To<TemperatureTypes.Gas>();
     }
 
     protected override GasLong Create(
@@ -80,7 +74,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         CelsiusLong inputCelsius = new(input);
 
         // Act.
-        long result = inputCelsius.To<Gas>();
+        long result = inputCelsius.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -110,7 +104,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         FahrenheitLong input = new(392L);
 
         // Act.
-        long result = input.To<Gas>();
+        long result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -138,7 +132,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         GasLong input = new(7L);
 
         // Act.
-        long result = input.To<Gas>();
+        long result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -168,7 +162,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         KelvinLong input = new(473L);
 
         // Act.
-        long result = input.To<Gas>();
+        long result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -198,7 +192,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         RankineLong input = new(862L);
 
         // Act.
-        long result = input.To<Gas>();
+        long result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -236,7 +230,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
         RømerLong input = new(originalTemp);
 
         // Act.
-        long result = input.To<Gas>();
+        long result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()

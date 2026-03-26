@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Fahrenheit;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Fahrenheit;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Fahrenheit;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Fahrenheit;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat, float>
 {
@@ -20,12 +19,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
 
     private static List<float> GetData()
     {
-        return new List<float>
-        {
-            999.999f,
-            0f,
-            -999.999f
-        };
+        return new List<float> { 999.999f, 0f, -999.999f };
     }
 
     protected override float To(
@@ -39,7 +33,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         FahrenheitFloat value,
         int fractionalCount)
     {
-        return value.To<Fahrenheit>(fractionalCount);
+        return value.To<TemperatureTypes.Fahrenheit>(fractionalCount);
     }
 
     protected override FahrenheitFloat Create(
@@ -71,7 +65,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         CelsiusFloat input = new(12);
 
         // Act.
-        float result = input.To<Fahrenheit>();
+        float result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -99,7 +93,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         FahrenheitFloat input = new(50.456f);
 
         // Act.
-        float result = input.To<Fahrenheit>();
+        float result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -135,7 +129,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         FahrenheitFloat input = new(50.456f);
 
         // Act.
-        float result = input.To<Fahrenheit>(fractionalCount);
+        float result = input.To<TemperatureTypes.Fahrenheit>(fractionalCount);
 
         // Assert.
         result.Should()
@@ -165,7 +159,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         GasFloat input = new(7);
 
         // Act.
-        float result = input.To<Fahrenheit>();
+        float result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -184,7 +178,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -195,11 +189,11 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         KelvinFloat input = new(274.15f);
 
         // Act.
-        float result = input.To<Fahrenheit>();
+        float result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -243,7 +237,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         RankineFloat input = new(493.471f);
 
         // Act.
-        float result = input.To<Fahrenheit>();
+        float result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -279,7 +273,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         RankineFloat input = new(493.471f);
 
         // Act.
-        float result = input.To<Fahrenheit>(fractionalCount);
+        float result = input.To<TemperatureTypes.Fahrenheit>(fractionalCount);
 
         // Assert.
         result.Should()
@@ -323,7 +317,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         RømerFloat input = new(originalTemp);
 
         // Act.
-        float result = input.To<Fahrenheit>();
+        float result = input.To<TemperatureTypes.Fahrenheit>();
 
         // Assert.
         result.Should()
@@ -359,7 +353,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<FahrenheitFloat
         RømerFloat input = new(0f);
 
         // Act.
-        float result = input.To<Fahrenheit>(fractionalCount);
+        float result = input.To<TemperatureTypes.Fahrenheit>(fractionalCount);
 
         // Assert.
         result.Should()

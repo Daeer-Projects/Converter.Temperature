@@ -1,19 +1,18 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rankine;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rankine;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rankine;
 
 public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString, string>
 {
@@ -21,12 +20,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "999.999",
-            "0",
-            "-999.999"
-        };
+        return new List<string> { "999.999", "0", "-999.999" };
     }
 
     protected override string To(
@@ -40,7 +34,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
         RankineString value,
         int fractionalCount)
     {
-        return value.To<Rankine>(fractionalCount);
+        return value.To<TemperatureTypes.Rankine>(fractionalCount);
     }
 
     protected override RankineString Create(
@@ -53,7 +47,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         CelsiusString input = new("200");
 
         // Act.
@@ -68,11 +62,11 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         CelsiusString input = new("200");
 
         // Act.
-        string result = input.To<Rankine>();
+        string result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -107,7 +101,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
 
         // Act.
         ArgumentOutOfRangeException result =
-            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Rankine>());
 
         // Assert.
         result.Message.Should()
@@ -137,7 +131,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
         FahrenheitString input = new("392");
 
         // Act.
-        string result = input.To<Rankine>();
+        string result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -148,7 +142,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_gas_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         GasString input = new("6");
 
         // Act.
@@ -163,11 +157,11 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_gas_returns_correct_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         GasString input = new("6");
 
         // Act.
-        string result = input.To<Rankine>();
+        string result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -178,7 +172,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         KelvinString input = new("473.15");
 
         // Act.
@@ -193,11 +187,11 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const string expected = "851.6699999999998";
+        const string expected = "851.67";
         KelvinString input = new("473.15");
 
         // Act.
-        string result = input.To<Rankine>();
+        string result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -225,7 +219,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
         RankineString input = new("851.67");
 
         // Act.
-        string result = input.To<Rankine>();
+        string result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -271,7 +265,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
         RømerString input = new(originalTemp);
 
         // Act.
-        string result = input.To<Rankine>();
+        string result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()

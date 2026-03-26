@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rømer;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rømer;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rømer;
 
 public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long>
 {
@@ -19,12 +18,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
 
     private static List<long> GetData()
     {
-        return new List<long>
-        {
-            999,
-            0,
-            -999
-        };
+        return new List<long> { 999, 0, -999 };
     }
 
     protected override long To(
@@ -38,7 +32,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         RømerLong value,
         int fractionalCount)
     {
-        return value.To<Rømer>();
+        return value.To<TemperatureTypes.Rømer>();
     }
 
     protected override RømerLong Create(long value)
@@ -69,7 +63,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         CelsiusLong input = new(200L);
 
         // Act.
-        long result = input.To<Rømer>();
+        long result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -99,7 +93,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         FahrenheitLong input = new(392L);
 
         // Act.
-        long result = input.To<Rømer>();
+        long result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -129,7 +123,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         GasLong input = new(6L);
 
         // Act.
-        long result = input.To<Rømer>();
+        long result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -159,7 +153,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         KelvinLong input = new(473L);
 
         // Act.
-        long result = input.To<Rømer>();
+        long result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -189,7 +183,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         RankineLong input = new(851L);
 
         // Act.
-        long result = input.To<Rømer>();
+        long result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -217,7 +211,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
         RømerLong input = new(851L);
 
         // Act.
-        long result = input.To<Rømer>();
+        long result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()

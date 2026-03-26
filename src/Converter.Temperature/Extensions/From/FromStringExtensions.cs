@@ -1,14 +1,17 @@
-﻿namespace Converter.Temperature.Extensions.From;
+﻿using System;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
 
-using System;
-using BaseTypes;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
+namespace Converter.Temperature.Extensions.From;
 
 /// <summary>
 ///     The from string extensions.
@@ -94,6 +97,45 @@ public static class FromStringExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Delisle.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Delisle String class for the 'To' extension to use.
+    /// </returns>
+    public static DelisleString FromDelisle(
+        this string input)
+    {
+        return new DelisleString(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Newton.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Newton String class for the 'To' extension to use.
+    /// </returns>
+    public static NewtonString FromNewton(
+        this string input)
+    {
+        return new NewtonString(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Réaumur.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Réaumur String class for the 'To' extension to use.
+    /// </returns>
+    public static RéaumurString FromRéaumur(
+        this string input)
+    {
+        return new RéaumurString(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -114,6 +156,9 @@ public static class FromStringExtensions
             nameof(Gas) => new GasString(input),
             nameof(Rankine) => new RankineString(input),
             nameof(Rømer) => new RømerString(input),
+            nameof(Delisle) => new DelisleString(input),
+            nameof(Newton) => new NewtonString(input),
+            nameof(Réaumur) => new RéaumurString(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

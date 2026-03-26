@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rankine;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rankine;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rankine;
 
 public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
 {
@@ -20,12 +19,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
 
     private static List<int> GetData()
     {
-        return new List<int>
-        {
-            999,
-            0,
-            -999
-        };
+        return new List<int> { 999, 0, -999 };
     }
 
     protected override int To(
@@ -39,7 +33,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         RankineInt value,
         int fractionalCount)
     {
-        return value.To<Rankine>();
+        return value.To<TemperatureTypes.Rankine>();
     }
 
     protected override RankineInt Create(
@@ -71,7 +65,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         CelsiusInt input = new(200);
 
         // Act.
-        int result = input.To<Rankine>();
+        int result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -100,7 +94,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
 
         // Act.
         ArgumentOutOfRangeException result =
-            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Rankine>());
+            Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Rankine>());
 
         // Assert.
         result.Message.Should()
@@ -130,7 +124,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         FahrenheitInt input = new(256);
 
         // Act.
-        int result = input.To<Rankine>();
+        int result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -160,7 +154,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         GasInt input = new(6);
 
         // Act.
-        int result = input.To<Rankine>();
+        int result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -190,7 +184,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         KelvinInt input = new(6589);
 
         // Act.
-        int result = input.To<Rankine>();
+        int result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -218,7 +212,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         RankineInt input = new(862);
 
         // Act.
-        int result = input.To<Rankine>();
+        int result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()
@@ -264,7 +258,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
         RømerInt input = new(originalTemp);
 
         // Act.
-        int result = input.To<Rankine>();
+        int result = input.To<TemperatureTypes.Rankine>();
 
         // Assert.
         result.Should()

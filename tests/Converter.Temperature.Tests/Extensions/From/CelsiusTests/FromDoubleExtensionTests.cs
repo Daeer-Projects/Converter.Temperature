@@ -1,9 +1,9 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.CelsiusTests;
-
+﻿using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Types.Celsius;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using Types.Celsius;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.CelsiusTests;
 
 public sealed class FromDoubleExtensionTests : BaseFromExtensionTests<double, CelsiusDouble>
 {

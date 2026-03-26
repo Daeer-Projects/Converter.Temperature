@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Kelvin;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Kelvin;
 
 public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
 {
@@ -20,12 +19,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
 
     private static List<int> GetData()
     {
-        return new List<int>
-        {
-            999,
-            0,
-            -999
-        };
+        return new List<int> { 999, 0, -999 };
     }
 
     protected override int To(
@@ -39,7 +33,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         KelvinInt value,
         int fractionalCount)
     {
-        return value.To<Kelvin>();
+        return value.To<TemperatureTypes.Kelvin>();
     }
 
     protected override KelvinInt Create(
@@ -71,7 +65,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         CelsiusInt input = new(200);
 
         // Act.
-        int result = input.To<Kelvin>();
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -100,7 +94,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
 
         // Act.
         ArgumentOutOfRangeException
-            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<Kelvin>());
+            result = Assert.Throws<ArgumentOutOfRangeException>(() => inputCelsius.To<TemperatureTypes.Kelvin>());
 
         // Assert.
         result.Message.Should()
@@ -130,7 +124,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         FahrenheitInt input = new(392);
 
         // Act.
-        int result = input.To<Kelvin>();
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -164,7 +158,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         FahrenheitInt input = new(temp);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<Kelvin>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Kelvin>());
 
         // Assert.
         result.Message.Should()
@@ -194,7 +188,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         GasInt input = new(6);
 
         // Act.
-        int result = input.To<Kelvin>();
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -222,7 +216,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         KelvinInt input = new(473);
 
         // Act.
-        int result = input.To<Kelvin>();
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -233,7 +227,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
     public void Test_to_kelvin_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const int expected = 478;
+        const int expected = 479;
         RankineInt input = new(862);
 
         // Act.
@@ -248,11 +242,11 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
     public void Test_to_kelvin_generic_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const int expected = 478;
+        const int expected = 479;
         RankineInt input = new(862);
 
         // Act.
-        int result = input.To<Kelvin>();
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()
@@ -296,7 +290,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
         RømerInt input = new(originalTemp);
 
         // Act.
-        int result = input.To<Kelvin>();
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
         result.Should()

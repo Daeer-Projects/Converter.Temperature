@@ -1,14 +1,17 @@
-﻿namespace Converter.Temperature.Extensions.From;
+﻿using System;
+using Converter.Temperature.BaseTypes;
+using Converter.Temperature.TemperatureTypes;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
+using Converter.Temperature.Types.Rømer;
 
-using System;
-using BaseTypes;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
+namespace Converter.Temperature.Extensions.From;
 
 /// <summary>
 ///     The from <see langword="float" /> extensions.
@@ -94,6 +97,45 @@ public static class FromFloatExtensions
     }
 
     /// <summary>
+    ///     Sets the conversion to be from Delisle.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Delisle Float class for the 'To' extension to use.
+    /// </returns>
+    public static DelisleFloat FromDelisle(
+        this float input)
+    {
+        return new DelisleFloat(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Newton.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Newton Float class for the 'To' extension to use.
+    /// </returns>
+    public static NewtonFloat FromNewton(
+        this float input)
+    {
+        return new NewtonFloat(input);
+    }
+
+    /// <summary>
+    ///     Sets the conversion to be from Réaumur.
+    /// </summary>
+    /// <param name="input"> The value that is to be converted. </param>
+    /// <returns>
+    ///     The Réaumur Float class for the 'To' extension to use.
+    /// </returns>
+    public static RéaumurFloat FromRéaumur(
+        this float input)
+    {
+        return new RéaumurFloat(input);
+    }
+
+    /// <summary>
     ///     Sets the conversion to be from the TInput type.
     /// </summary>
     /// <typeparam name="TInput"> The temperature type to be converted from. </typeparam>
@@ -114,6 +156,9 @@ public static class FromFloatExtensions
             nameof(Gas) => new GasFloat(input),
             nameof(Rankine) => new RankineFloat(input),
             nameof(Rømer) => new RømerFloat(input),
+            nameof(Delisle) => new DelisleFloat(input),
+            nameof(Newton) => new NewtonFloat(input),
+            nameof(Réaumur) => new RéaumurFloat(input),
             _ => throw new ArgumentException($"Invalid type: {typeof(TInput).Name}")
         };
     }

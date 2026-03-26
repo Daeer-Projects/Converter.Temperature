@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Gas;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Gas;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Gas;
 
 public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float>
 {
@@ -20,12 +19,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
 
     private static List<float> GetData()
     {
-        return new List<float>
-        {
-            0.25f,
-            5f,
-            10f
-        };
+        return new List<float> { 0.25f, 5f, 10f };
     }
 
     protected override float To(
@@ -39,7 +33,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         GasFloat value,
         int fractionalCount)
     {
-        return value.To<Gas>(fractionalCount);
+        return value.To<TemperatureTypes.Gas>(fractionalCount);
     }
 
     protected override GasFloat Create(
@@ -96,7 +90,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         CelsiusFloat inputCelsius = new(input);
 
         // Act.
-        float result = inputCelsius.To<Gas>();
+        float result = inputCelsius.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -114,7 +108,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         CelsiusFloat inputGas = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -144,7 +138,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         FahrenheitFloat input = new(392);
 
         // Act.
-        float result = input.To<Gas>();
+        float result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -172,7 +166,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         GasFloat input = new(7);
 
         // Act.
-        float result = input.To<Gas>();
+        float result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -189,7 +183,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         GasFloat inputGas = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Gas>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<TemperatureTypes.Gas>());
 
         // Assert.
         result.Message.Should()
@@ -219,7 +213,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         KelvinFloat input = new(473.15f);
 
         // Act.
-        float result = input.To<Gas>();
+        float result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -249,7 +243,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         RankineFloat input = new(806.67f);
 
         // Act.
-        float result = input.To<Gas>();
+        float result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()
@@ -287,7 +281,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
         RømerFloat input = new(originalTemp);
 
         // Act.
-        float result = input.To<Gas>();
+        float result = input.To<TemperatureTypes.Gas>();
 
         // Assert.
         result.Should()

@@ -1,18 +1,17 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Celsius;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Celsius;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Celsius;
 
 public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble, double>
 {
@@ -20,12 +19,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
 
     private static List<double> GetData()
     {
-        return new List<double>
-        {
-            999.999d,
-            0d,
-            -999.999
-        };
+        return new List<double> { 999.999d, 0d, -999.999 };
     }
 
     protected override double To(
@@ -39,7 +33,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         CelsiusDouble value,
         int fractionalCount)
     {
-        return value.To<Celsius>(fractionalCount);
+        return value.To<TemperatureTypes.Celsius>(fractionalCount);
     }
 
     protected override CelsiusDouble Create(
@@ -71,7 +65,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         FahrenheitDouble input = new(50.0d);
 
         // Act.
-        double result = input.To<Celsius>();
+        double result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -147,7 +141,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         GasDouble inputGas = new(input);
 
         // Act.
-        double result = inputGas.To<Celsius>();
+        double result = inputGas.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -181,7 +175,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         GasDouble inputGas = new(input);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<Celsius>());
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => inputGas.To<TemperatureTypes.Celsius>());
 
         // Assert.
         result.Message.Should()
@@ -211,7 +205,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         KelvinDouble input = new(274.15);
 
         // Act.
-        double result = input.To<Celsius>();
+        double result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -241,7 +235,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         RankineDouble input = new(493.47d);
 
         // Act.
-        double result = input.To<Celsius>();
+        double result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -277,7 +271,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         RankineDouble input = new(493.47d);
 
         // Act.
-        double result = input.To<Celsius>(fractionalCount);
+        double result = input.To<TemperatureTypes.Celsius>(fractionalCount);
 
         // Assert.
         result.Should()
@@ -321,7 +315,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         RømerDouble input = new(originalTemp);
 
         // Act.
-        double result = input.To<Celsius>();
+        double result = input.To<TemperatureTypes.Celsius>();
 
         // Assert.
         result.Should()
@@ -357,7 +351,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<CelsiusDouble,
         RømerDouble input = new(493.47d);
 
         // Act.
-        double result = input.To<Celsius>(fractionalCount);
+        double result = input.To<TemperatureTypes.Celsius>(fractionalCount);
 
         // Assert.
         result.Should()

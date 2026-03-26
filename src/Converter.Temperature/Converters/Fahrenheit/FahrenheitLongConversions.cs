@@ -1,51 +1,52 @@
-﻿namespace Converter.Temperature.Converters.Fahrenheit;
-
 using System;
-using Celsius;
+using Converter.Temperature.Converters.Celsius;
+
+namespace Converter.Temperature.Converters.Fahrenheit;
 
 internal static class FahrenheitLongConversions
 {
     /// <summary>
-    ///     The fahrenheit to celsius conversion.
+    ///     The Fahrenheit to Celsius conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static long FahrenheitToCelsius(
-        long firstTemp)
+        long input)
     {
-        double celsiusTemp = (firstTemp - 32d) * 5 / 9;
-        long celsiusTempLong = (long)Math.Round(celsiusTemp, 0, MidpointRounding.AwayFromZero);
-        return celsiusTempLong;
+        double convertedTemp = (input - 32d) * 5 / 9;
+        long celsiusTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+
+        return celsiusTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to fahrenheit conversion.
+    ///     The Fahrenheit to Fahrenheit conversion.
     /// </summary>
-    /// <param name="firstTemp"> The temperature to convert. </param>
+    /// <param name="input"> The temperature to convert. </param>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static long FahrenheitToFahrenheit(
-        long firstTemp)
+        long input)
     {
-        return firstTemp;
+        return input;
     }
 
     /// <summary>
-    ///     The fahrenheit to kelvin conversion.
+    ///     The Fahrenheit to Kelvin conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static long FahrenheitToKelvin(
         long input)
     {
-        double calculatedValue = (input - 32d) * 5 / 9 + 273.15d;
+        double calculatedValue = (1 + 459.67d) * 5 / 9;
         long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
         if (input < minValue || input > maxValue)
@@ -53,16 +54,17 @@ internal static class FahrenheitLongConversions
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        long kelvinTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
+        double convertedTemp = (input + 459.67d) * 5 / 9;
+        long kelvinTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
 
         return kelvinTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to gas conversion.
+    ///     The Fahrenheit to gas conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
@@ -75,40 +77,126 @@ internal static class FahrenheitLongConversions
     }
 
     /// <summary>
-    ///     The fahrenheit to rankine conversion.
+    ///     The Fahrenheit to Rankine conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static long FahrenheitToRankine(
         long input)
     {
-        const long maxValue = long.MaxValue - 460;
-        const long minValue = long.MinValue + 460;
-        if (input is < minValue or > maxValue)
+        double calculatedValue = 1 + 459.67d;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        long rankineTemp = input + 460;
+        double convertedTemp = input + 459.67d;
+        long rankineTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
         return rankineTemp;
     }
 
     /// <summary>
-    ///     The fahrenheit to rømer conversion.
+    ///     The Fahrenheit to Rømer conversion.
     /// </summary>
     /// <param name="input"> The temperature to convert. </param>
-    /// <exception cref="T:System.ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
     /// <returns>
     ///     The converted temperature.
     /// </returns>
     internal static long FahrenheitToRømer(
         long input)
     {
-        double result = (input - 32f) * 7 / 24 + 7.5f;
-        long rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
+        const double calculatedValue = (1 - 32d) * 7 / 24 + 7.5;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        double convertedTemp = (input - 32d) * 7 / 24 + 7.5;
+        long rømerTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+
         return rømerTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Delisle conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long FahrenheitToDelisle(
+        long input)
+    {
+        const double calculatedValue = (212d - 1) * 5 / 6;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        double convertedTemp = (212d - input) * 5 / 6;
+        long delisleTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+
+        return delisleTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Newton conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long FahrenheitToNewton(
+        long input)
+    {
+        const double calculatedValue = (1 - 32d) * 11 / 60;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        double convertedTemp = (input - 32d) * 11 / 60;
+        long newtonTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+
+        return newtonTemp;
+    }
+
+    /// <summary>
+    ///     The Fahrenheit to Réaumur conversion.
+    /// </summary>
+    /// <param name="input"> The temperature to convert. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The converted temperature.
+    /// </returns>
+    internal static long FahrenheitToRéaumur(
+        long input)
+    {
+        const double calculatedValue = (1 - 32d) * 4 / 9;
+        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
+        if (input < minValue || input > maxValue)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        double convertedTemp = (input - 32d) * 4 / 9;
+        long réaumurTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+
+        return réaumurTemp;
     }
 }

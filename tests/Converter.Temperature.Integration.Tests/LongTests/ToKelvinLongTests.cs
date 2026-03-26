@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Integration.Tests.LongTests;
-
-using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Kelvin;
+﻿using System;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Kelvin;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.LongTests;
 
 public sealed class ToKelvinLongTests
 {
@@ -193,12 +193,12 @@ public sealed class ToKelvinLongTests
     #region From Rankine
 
     [Theory]
-    [InlineData(-1000L, -555L)]
+    [InlineData(-1000L, -556L)]
     [InlineData(0L, 0L)]
-    [InlineData(50L, 27L)]
-    [InlineData(100L, 55L)]
-    [InlineData(500L, 277L)]
-    [InlineData(1000L, 555L)]
+    [InlineData(50L, 28L)]
+    [InlineData(100L, 56L)]
+    [InlineData(500L, 278L)]
+    [InlineData(1000L, 556L)]
     public void Test_long_extension_from_rankine_and_to_kelvin_returns_correct_long_value(
         long value,
         long expected)
@@ -214,12 +214,12 @@ public sealed class ToKelvinLongTests
     }
 
     [Theory]
-    [InlineData(-1000L, -555L)]
+    [InlineData(-1000L, -556L)]
     [InlineData(0L, 0L)]
-    [InlineData(50L, 27L)]
-    [InlineData(100L, 55L)]
-    [InlineData(500L, 277L)]
-    [InlineData(1000L, 555L)]
+    [InlineData(50L, 28L)]
+    [InlineData(100L, 56L)]
+    [InlineData(500L, 278L)]
+    [InlineData(1000L, 556L)]
     public void Test_long_extension_generic_from_rankine_and_to_kelvin_returns_correct_long_value(
         long value,
         long expected)

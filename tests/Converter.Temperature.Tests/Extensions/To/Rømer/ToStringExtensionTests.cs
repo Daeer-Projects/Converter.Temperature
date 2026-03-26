@@ -1,17 +1,16 @@
-﻿namespace Converter.Temperature.Tests.Extensions.To.Rømer;
-
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rømer;
+using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Fahrenheit;
+using Converter.Temperature.Types.Gas;
+using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Rømer;
 using FluentAssertions;
-using Temperature.Extensions.To;
-using Temperature.Extensions.To.Rømer;
-using TemperatureTypes;
-using Types.Celsius;
-using Types.Fahrenheit;
-using Types.Gas;
-using Types.Kelvin;
-using Types.Rankine;
-using Types.Rømer;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.To.Rømer;
 
 public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString, string>
 {
@@ -19,12 +18,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "999.999",
-            "0",
-            "-999.999"
-        };
+        return new List<string> { "999.999", "0", "-999.999" };
     }
 
     protected override string To(
@@ -38,7 +32,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         RømerString value,
         int fractionalCount)
     {
-        return value.To<Rømer>(fractionalCount);
+        return value.To<TemperatureTypes.Rømer>(fractionalCount);
     }
 
     protected override RømerString Create(string value)
@@ -69,7 +63,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         CelsiusString input = new("200");
 
         // Act.
-        string result = input.To<Rømer>();
+        string result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -99,7 +93,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         FahrenheitString input = new("392");
 
         // Act.
-        string result = input.To<Rømer>();
+        string result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -129,7 +123,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         GasString input = new("6");
 
         // Act.
-        string result = input.To<Rømer>();
+        string result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -159,7 +153,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         KelvinString input = new("473.15");
 
         // Act.
-        string result = input.To<Rømer>();
+        string result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -189,7 +183,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         RankineString input = new("851.67");
 
         // Act.
-        string result = input.To<Rømer>();
+        string result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()
@@ -217,7 +211,7 @@ public sealed class ToStringExtenstionTests : BaseToExtensionTests<RømerString,
         RømerString input = new("851.67");
 
         // Act.
-        string result = input.To<Rømer>();
+        string result = input.To<TemperatureTypes.Rømer>();
 
         // Assert.
         result.Should()

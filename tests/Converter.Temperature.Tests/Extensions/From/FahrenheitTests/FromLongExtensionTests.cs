@@ -1,9 +1,9 @@
-﻿namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
-
+﻿using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Types.Fahrenheit;
 using FluentAssertions;
-using Temperature.Extensions.From;
-using Types.Fahrenheit;
 using Xunit;
+
+namespace Converter.Temperature.Tests.Extensions.From.FahrenheitTests;
 
 public sealed class FromLongExtensionTests : BaseFromExtensionTests<long, FahrenheitLong>
 {

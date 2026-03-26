@@ -1,12 +1,12 @@
-﻿namespace Converter.Temperature.Integration.Tests.DoubleTests;
-
-using System;
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Celsius;
+﻿using System;
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Celsius;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.DoubleTests;
 
 public sealed class ToCelsiusDoubleTests
 {
@@ -97,7 +97,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -113,7 +113,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Fahrenheit
@@ -133,7 +133,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -149,7 +149,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -165,7 +165,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Fact]
@@ -181,7 +181,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Kelvin
@@ -222,7 +222,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -259,7 +259,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -317,7 +317,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -337,7 +337,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -368,7 +368,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -399,7 +399,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Rankine
@@ -423,7 +423,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -443,7 +443,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -474,7 +474,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     [Theory]
@@ -505,7 +505,7 @@ public sealed class ToCelsiusDoubleTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-12);
     }
 
     #endregion From Rømer

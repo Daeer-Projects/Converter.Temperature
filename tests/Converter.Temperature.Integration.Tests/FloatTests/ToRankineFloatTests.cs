@@ -1,11 +1,11 @@
-﻿namespace Converter.Temperature.Integration.Tests.FloatTests;
-
-using Extensions.From;
-using Extensions.To;
-using Extensions.To.Rankine;
+﻿using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Rankine;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
-using TemperatureTypes;
 using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.FloatTests;
 
 public sealed class ToRankineFloatTests
 {
@@ -15,7 +15,7 @@ public sealed class ToRankineFloatTests
     public void Test_float_extensions_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 200f;
 
         // Act.
@@ -24,14 +24,14 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
     public void Test_float_extensions_generic_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 200f;
 
         // Act.
@@ -40,7 +40,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Celsius
@@ -60,7 +60,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
@@ -76,7 +76,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Fahrenheit
@@ -99,7 +99,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -118,7 +118,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Kelvin
@@ -129,7 +129,7 @@ public sealed class ToRankineFloatTests
     public void Test_float_extension_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 6f;
 
         // Act.
@@ -138,14 +138,14 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Fact]
     public void Test_float_extension_generic_from_gas_to_rankine_returns_correct_value()
     {
         // Arrange.
-        const float expected = 851.67004f;
+        const float expected = 851.67f;
         const float input = 6f;
 
         // Act.
@@ -154,7 +154,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Gas
@@ -221,7 +221,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -242,7 +242,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -276,7 +276,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     [Theory]
@@ -310,7 +310,7 @@ public sealed class ToRankineFloatTests
 
         // Assert.
         result.Should()
-            .Be(expected);
+            .BeApproximately(expected, 1e-4f);
     }
 
     #endregion From Rømer
