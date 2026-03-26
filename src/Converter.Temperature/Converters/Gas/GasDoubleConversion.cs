@@ -167,4 +167,3 @@ internal static class GasDoubleConversion
         return réaumurTemp;
     }
 }
-

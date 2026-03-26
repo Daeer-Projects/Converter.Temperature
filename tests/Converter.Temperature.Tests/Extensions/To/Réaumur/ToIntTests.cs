@@ -21,5 +21,3 @@ public sealed class ToIntTests
         result.Should().Be(expected);
     }
 }
-
-

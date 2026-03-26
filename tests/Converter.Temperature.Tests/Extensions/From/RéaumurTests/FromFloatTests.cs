@@ -33,4 +33,3 @@ public sealed class FromFloatTests
         result.Temperature.Should().Be(input);
     }
 }
-

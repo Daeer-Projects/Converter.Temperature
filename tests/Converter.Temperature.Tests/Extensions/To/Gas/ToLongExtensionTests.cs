@@ -18,12 +18,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<GasLong, long>
 
     private static List<long> GetData()
     {
-        return new List<long>
-        {
-            1L,
-            5L,
-            10L
-        };
+        return new List<long> { 1L, 5L, 10L };
     }
 
     protected override long To(

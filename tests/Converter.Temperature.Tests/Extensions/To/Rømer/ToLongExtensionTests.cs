@@ -18,12 +18,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<RømerLong, long
 
     private static List<long> GetData()
     {
-        return new List<long>
-        {
-            999,
-            0,
-            -999
-        };
+        return new List<long> { 999, 0, -999 };
     }
 
     protected override long To(

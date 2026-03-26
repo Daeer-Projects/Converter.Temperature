@@ -18,12 +18,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<KelvinString,
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "999.999",
-            "0",
-            "-999.999"
-        };
+        return new List<string> { "999.999", "0", "-999.999" };
     }
 
     protected override string To(

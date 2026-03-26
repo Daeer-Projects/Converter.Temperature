@@ -210,4 +210,3 @@ internal static class DelisleIntConversions
         return réaumurResult;
     }
 }
-

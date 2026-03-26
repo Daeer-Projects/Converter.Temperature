@@ -19,12 +19,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<GasDouble, dou
 
     private static List<double> GetData()
     {
-        return new List<double>
-        {
-            0.25d,
-            5d,
-            10d
-        };
+        return new List<double> { 0.25d, 5d, 10d };
     }
 
     protected override double To(

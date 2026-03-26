@@ -21,4 +21,3 @@ public sealed class ToIntExtensionTests
         result.Should().Be(expected);
     }
 }
-

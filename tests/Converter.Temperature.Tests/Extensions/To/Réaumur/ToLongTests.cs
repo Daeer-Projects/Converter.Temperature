@@ -21,5 +21,3 @@ public sealed class ToLongTests
         result.Should().Be(expected);
     }
 }
-
-

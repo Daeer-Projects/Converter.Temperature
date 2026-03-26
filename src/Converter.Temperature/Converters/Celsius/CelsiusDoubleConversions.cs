@@ -189,4 +189,3 @@ internal static class CelsiusDoubleConversions
         return réaumurTemp;
     }
 }
-

@@ -200,4 +200,3 @@ internal static class FahrenheitLongConversions
         return réaumurTemp;
     }
 }
-

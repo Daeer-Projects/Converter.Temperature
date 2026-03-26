@@ -35,5 +35,3 @@ public sealed class ToDoubleTests
         result.Should().Be(expected);
     }
 }
-
-

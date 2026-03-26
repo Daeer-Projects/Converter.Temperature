@@ -147,4 +147,3 @@ internal static class RankineIntConversions
         return réaumurTemp;
     }
 }
-

@@ -160,4 +160,3 @@ internal static class RankineDoubleConversions
         return réaumurTemp;
     }
 }
-

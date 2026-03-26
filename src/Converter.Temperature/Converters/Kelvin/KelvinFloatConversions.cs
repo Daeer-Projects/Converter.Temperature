@@ -163,4 +163,3 @@ internal static class KelvinFloatConversions
         return réaumurTemp;
     }
 }
-

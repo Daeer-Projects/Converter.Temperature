@@ -153,4 +153,3 @@ internal static class RømerDoubleConversions
         return réaumurTemp;
     }
 }
-

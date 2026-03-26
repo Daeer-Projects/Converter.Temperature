@@ -35,5 +35,3 @@ public sealed class ToFloatTests
         result.Should().Be(expected);
     }
 }
-
-

@@ -119,4 +119,3 @@ public static class ToFloatExtensions
         return ToExtensionHelpers.Rounder(RømerFloatConversions.RømerToRømer(input.Temperature), fractionalCount);
     }
 }
-

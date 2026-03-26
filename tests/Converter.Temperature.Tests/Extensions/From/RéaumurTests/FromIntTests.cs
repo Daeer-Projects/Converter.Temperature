@@ -33,4 +33,3 @@ public sealed class FromIntTests
         result.Temperature.Should().Be(input);
     }
 }
-

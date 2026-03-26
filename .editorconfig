@@ -61,6 +61,7 @@ csharp_style_expression_bodied_local_functions = false:none
 
 # Using directives
 dotnet_diagnostic.IDE0005.severity = suggestion
+dotnet_diagnostic.IDE0055.severity = error
 
 # Naming conventions
 dotnet_naming_rule.interface_should_be_begun_with_i.severity = suggestion

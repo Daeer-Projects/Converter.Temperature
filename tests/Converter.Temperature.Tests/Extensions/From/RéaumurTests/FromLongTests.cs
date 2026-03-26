@@ -33,4 +33,3 @@ public sealed class FromLongTests
         result.Temperature.Should().Be(input);
     }
 }
-

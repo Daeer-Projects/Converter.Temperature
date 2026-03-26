@@ -35,5 +35,3 @@ public sealed class ToStringTests
         result.Should().Be(expected);
     }
 }
-
-

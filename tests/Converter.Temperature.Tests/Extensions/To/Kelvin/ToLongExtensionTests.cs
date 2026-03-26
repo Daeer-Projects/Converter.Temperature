@@ -19,12 +19,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<KelvinLong, long
 
     private static List<long> GetData()
     {
-        return new List<long>
-        {
-            999L,
-            0L,
-            -999L
-        };
+        return new List<long> { 999L, 0L, -999L };
     }
 
     protected override long To(

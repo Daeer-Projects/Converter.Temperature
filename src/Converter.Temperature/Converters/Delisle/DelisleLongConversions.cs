@@ -210,4 +210,3 @@ internal static class DelisleLongConversions
         return réaumurResult;
     }
 }
-

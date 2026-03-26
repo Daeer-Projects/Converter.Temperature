@@ -165,4 +165,3 @@ internal static class GasLongConversions
         return réaumurTemp;
     }
 }
-

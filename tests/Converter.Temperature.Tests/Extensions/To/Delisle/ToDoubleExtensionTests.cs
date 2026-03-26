@@ -19,12 +19,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<DelisleDouble,
 
     private static List<double> GetData()
     {
-        return new List<double>
-        {
-            999.999d,
-            0d,
-            -999.999d
-        };
+        return new List<double> { 999.999d, 0d, -999.999d };
     }
 
     protected override double To(

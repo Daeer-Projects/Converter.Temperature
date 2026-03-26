@@ -19,12 +19,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<GasString, st
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            "0.25",
-            "5",
-            "10"
-        };
+        return new List<string> { "0.25", "5", "10" };
     }
 
     protected override string To(

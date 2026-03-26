@@ -19,12 +19,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
 
     private static List<int> GetData()
     {
-        return new List<int>
-        {
-            999,
-            0,
-            -999
-        };
+        return new List<int> { 999, 0, -999 };
     }
 
     protected override int To(

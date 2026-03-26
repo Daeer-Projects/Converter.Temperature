@@ -165,4 +165,3 @@ internal static class GasIntConversions
         return réaumurTemp;
     }
 }
-

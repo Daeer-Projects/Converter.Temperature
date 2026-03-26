@@ -21,4 +21,3 @@ public sealed class ToDoubleExtensionTests
         result.Should().Be(expected);
     }
 }
-

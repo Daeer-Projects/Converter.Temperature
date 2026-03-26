@@ -175,4 +175,3 @@ internal static class DelisleDoubleConversions
         return réaumurResult;
     }
 }
-

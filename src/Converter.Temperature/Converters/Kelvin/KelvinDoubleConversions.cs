@@ -163,4 +163,3 @@ internal static class KelvinDoubleConversions
         return réaumurTemp;
     }
 }
-

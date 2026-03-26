@@ -19,12 +19,7 @@ public sealed class ToStringExtensionTests : BaseToExtensionTests<DelisleString,
 
     private static List<string> GetData()
     {
-        return new List<string>
-        {
-            999.999d.ToString("R"),
-            0d.ToString("R"),
-            (-999.999d).ToString("R")
-        };
+        return new List<string> { 999.999d.ToString("R"), 0d.ToString("R"), (-999.999d).ToString("R") };
     }
 
     protected override string To(

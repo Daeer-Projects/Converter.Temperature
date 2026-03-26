@@ -169,4 +169,3 @@ internal static class FahrenheitDoubleConversions
         return réaumurTemp;
     }
 }
-

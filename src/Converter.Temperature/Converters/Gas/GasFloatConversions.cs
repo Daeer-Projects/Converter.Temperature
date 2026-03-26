@@ -167,4 +167,3 @@ internal static class GasFloatConversions
         return réaumurTemp;
     }
 }
-

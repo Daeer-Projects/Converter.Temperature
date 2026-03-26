@@ -151,4 +151,3 @@ internal static class RømerIntConversions
         return réaumurTemp;
     }
 }
-

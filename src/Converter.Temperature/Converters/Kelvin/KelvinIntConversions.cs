@@ -144,4 +144,3 @@ internal static class KelvinIntConversions
         return réaumurTemp;
     }
 }
-

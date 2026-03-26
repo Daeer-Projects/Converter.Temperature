@@ -209,4 +209,3 @@ internal static class NewtonIntConversions
         return réaumurResult;
     }
 }
-

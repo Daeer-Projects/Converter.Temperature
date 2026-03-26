@@ -19,12 +19,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<DelisleFloat, f
 
     private static List<float> GetData()
     {
-        return new List<float>
-        {
-            999.999f,
-            0f,
-            -999.999f
-        };
+        return new List<float> { 999.999f, 0f, -999.999f };
     }
 
     protected override float To(

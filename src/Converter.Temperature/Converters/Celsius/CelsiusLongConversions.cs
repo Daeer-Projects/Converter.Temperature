@@ -184,4 +184,3 @@ internal static class CelsiusLongConversions
         return réaumurTemp;
     }
 }
-
