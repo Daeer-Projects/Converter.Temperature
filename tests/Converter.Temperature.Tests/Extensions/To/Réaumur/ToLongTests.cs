@@ -8,7 +8,7 @@ namespace Converter.Temperature.Tests.Extensions.To.Réaumur;
 public sealed class ToLongTests
 {
     [Fact]
-    public void Test_ToRéaumur_Returns_Correct_Value()
+    public void Test_to_réaumur_returns_correct_value()
     {
         // Arrange.
         const long expected = 33L;
@@ -21,4 +21,5 @@ public sealed class ToLongTests
         result.Should().Be(expected);
     }
 }
+
 

@@ -8,7 +8,7 @@ namespace Converter.Temperature.Tests.Extensions.To.Newton;
 public sealed class ToDoubleExtensionTests
 {
     [Fact]
-    public void Test_ToNewton_FromCelsius_Returns_Correct_Value()
+    public void Test_to_newton_from_celsius_returns_correct_value()
     {
         // Arrange.
         const double input = 100.0;
@@ -21,3 +21,4 @@ public sealed class ToDoubleExtensionTests
         result.Should().Be(expected);
     }
 }
+

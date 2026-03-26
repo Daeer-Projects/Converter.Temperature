@@ -8,7 +8,7 @@ namespace Converter.Temperature.Tests.Extensions.To.Réaumur;
 public sealed class ToFloatTests
 {
     [Fact]
-    public void Test_ToRéaumur_With_No_Fractional_Count_Returns_Correct_Value()
+    public void Test_to_réaumur_with_no_fractional_count_returns_correct_value()
     {
         // Arrange.
         const float expected = 3.3f;
@@ -22,7 +22,7 @@ public sealed class ToFloatTests
     }
 
     [Fact]
-    public void Test_ToRéaumur_With_Fractional_Count_Returns_Correct_Value()
+    public void Test_to_réaumur_with_fractional_count_returns_correct_value()
     {
         // Arrange.
         const float expected = 3.33f;
@@ -35,4 +35,5 @@ public sealed class ToFloatTests
         result.Should().Be(expected);
     }
 }
+
 
