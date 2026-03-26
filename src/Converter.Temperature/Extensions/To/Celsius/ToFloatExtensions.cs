@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Converter.Temperature.Converters.Celsius;
 using Converter.Temperature.Converters.Fahrenheit;
 using Converter.Temperature.Converters.Gas;
@@ -59,7 +59,7 @@ public static class ToFloatExtensions
     /// </summary>
     /// <param name="input"> The value to be converted. </param>
     /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
-    /// <exception cref="ArgumentOutOfRangeException">Temp too low or too high for gas mark!</exception>
+    /// <exception cref="ArgumentOutOfRangeException"> Temp too low or too high for gas mark! </exception>
     /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
     /// <returns>
     ///     The Celsius <see langword="float" /> result.
@@ -119,3 +119,4 @@ public static class ToFloatExtensions
         return ToExtensionHelpers.Rounder(RømerFloatConversions.RømerToCelsius(input.Temperature), fractionalCount);
     }
 }
+
