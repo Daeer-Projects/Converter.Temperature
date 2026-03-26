@@ -4,7 +4,9 @@ using Converter.Temperature.Converters.Delisle;
 using Converter.Temperature.Converters.Fahrenheit;
 using Converter.Temperature.Converters.Gas;
 using Converter.Temperature.Converters.Kelvin;
+using Converter.Temperature.Converters.Newton;
 using Converter.Temperature.Converters.Rankine;
+using Converter.Temperature.Converters.Réaumur;
 using Converter.Temperature.Converters.Rømer;
 using Converter.Temperature.Extensions.To.Helpers;
 using Converter.Temperature.Types.Celsius;
@@ -12,7 +14,9 @@ using Converter.Temperature.Types.Delisle;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
 using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
 using Converter.Temperature.Types.Rømer;
 
 namespace Converter.Temperature.Extensions.To.Delisle;
@@ -133,6 +137,44 @@ public static class ToStringExtensions
         return ToExtensionHelpers.Parser(
             input.Temperature,
             RømerDoubleConversions.RømerToDelisle,
+            fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Newton <paramref name="input" /> to Delisle
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The Delisle <see langword="string" /> result.
+    /// </returns>
+    public static string ToDelisle(
+        this NewtonString input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            NewtonDoubleConversions.NewtonToDelisle,
+            fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Réaumur <paramref name="input" /> to Delisle
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <returns>
+    ///     The Delisle <see langword="string" /> result.
+    /// </returns>
+    public static string ToDelisle(
+        this RéaumurString input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Parser(
+            input.Temperature,
+            RéaumurDoubleConversions.RéaumurToDelisle,
             fractionalCount);
     }
 
