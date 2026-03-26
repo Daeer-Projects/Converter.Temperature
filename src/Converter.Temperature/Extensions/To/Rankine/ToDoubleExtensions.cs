@@ -1,16 +1,22 @@
 ﻿using System;
 using Converter.Temperature.Converters.Celsius;
+using Converter.Temperature.Converters.Delisle;
 using Converter.Temperature.Converters.Fahrenheit;
 using Converter.Temperature.Converters.Gas;
 using Converter.Temperature.Converters.Kelvin;
+using Converter.Temperature.Converters.Newton;
 using Converter.Temperature.Converters.Rankine;
+using Converter.Temperature.Converters.Réaumur;
 using Converter.Temperature.Converters.Rømer;
 using Converter.Temperature.Extensions.To.Helpers;
 using Converter.Temperature.Types.Celsius;
+using Converter.Temperature.Types.Delisle;
 using Converter.Temperature.Types.Fahrenheit;
 using Converter.Temperature.Types.Gas;
 using Converter.Temperature.Types.Kelvin;
+using Converter.Temperature.Types.Newton;
 using Converter.Temperature.Types.Rankine;
+using Converter.Temperature.Types.Réaumur;
 using Converter.Temperature.Types.Rømer;
 
 namespace Converter.Temperature.Extensions.To.Rankine;
@@ -120,5 +126,62 @@ public static class ToDoubleExtensions
         int fractionalCount = -1)
     {
         return ToExtensionHelpers.Rounder(RømerDoubleConversions.RømerToRankine(input.Temperature), fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Newton <paramref name="input" /> to Rankine
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Rankine <see langword="double" /> result.
+    /// </returns>
+    public static double ToRankine(
+        this NewtonDouble input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(
+            NewtonDoubleConversions.NewtonToRankine(input.Temperature),
+            fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Delisle <paramref name="input" /> to Rankine
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Rankine <see langword="double" /> result.
+    /// </returns>
+    public static double ToRankine(
+        this DelisleDouble input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(
+            DelisleDoubleConversions.DelisleToRankine(input.Temperature),
+            fractionalCount);
+    }
+
+    /// <summary>
+    ///     Converts the Réaumur <paramref name="input" /> to Rankine
+    /// </summary>
+    /// <param name="input"> The value to be converted. </param>
+    /// <param name="fractionalCount"> The count of fractional after the decimal point. </param>
+    /// <exception cref="ArgumentOutOfRangeException"> If calculated value is beyond the limits of the type. </exception>
+    /// <exception cref="ArgumentOutOfRangeException"> If fractional count is greater than 15. </exception>
+    /// <returns>
+    ///     The Rankine <see langword="double" /> result.
+    /// </returns>
+    public static double ToRankine(
+        this RéaumurDouble input,
+        int fractionalCount = -1)
+    {
+        return ToExtensionHelpers.Rounder(
+            RéaumurDoubleConversions.RéaumurToRankine(input.Temperature),
+            fractionalCount);
     }
 }
