@@ -19,7 +19,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<FahrenheitDoub
 
     private static List<double> GetData()
     {
-        return new List<double> { 999.999d, 0d, -999.999 };
+        return [999.999d, 0d, -999.999];
     }
 
     protected override double To(

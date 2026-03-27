@@ -19,7 +19,7 @@ public sealed class ToFloatExtensionTests : BaseToExtensionTests<GasFloat, float
 
     private static List<float> GetData()
     {
-        return new List<float> { 0.25f, 5f, 10f };
+        return [0.25f, 5f, 10f];
     }
 
     protected override float To(

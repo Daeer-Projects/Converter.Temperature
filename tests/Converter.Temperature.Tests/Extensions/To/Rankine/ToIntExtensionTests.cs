@@ -19,7 +19,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<RankineInt, int>
 
     private static List<int> GetData()
     {
-        return new List<int> { 999, 0, -999 };
+        return [999, 0, -999];
     }
 
     protected override int To(
