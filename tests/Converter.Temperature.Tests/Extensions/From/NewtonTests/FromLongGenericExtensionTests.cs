@@ -1,13 +1,15 @@
+using Converter.Temperature.BaseTypes;
 using Converter.Temperature.Extensions.From;
+using Converter.Temperature.TemperatureTypes;
 using Converter.Temperature.Types.Newton;
 using FluentAssertions;
 using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.From.NewtonTests;
 
-public sealed class FromLongExtensionTests : BaseFromExtensionTests<long, NewtonLong>
+public class FromLongGenericExtensionTests : BaseFromExtensionTests<long, NewtonLong>
 {
-    public FromLongExtensionTests() : base(
+    public FromLongGenericExtensionTests() : base(
         long.MaxValue,
         999,
         0,
@@ -17,35 +19,22 @@ public sealed class FromLongExtensionTests : BaseFromExtensionTests<long, Newton
     protected override NewtonLong ConvertFrom(
         long value)
     {
-        return value.FromNewton();
+        return value.From<Newton>() as NewtonLong;
     }
 
     [Fact]
-    public void Test_from_newton_returns_newton_long_type()
+    public void Test_from_newton_generic_returns_newton_long_type()
     {
         // Arrange.
         const long input = 39L;
 
         // Act.
-        NewtonLong result = input.FromNewton();
+        LongBase result = input.From<Newton>();
 
         // Assert.
         result.Should()
             .BeOfType<NewtonLong>()
             .Which.Temperature.Should()
             .Be(input);
-    }
-
-    [Fact]
-    public void Test_from_newton_returns_correct_value()
-    {
-        // Arrange.
-        const long input = 10L;
-
-        // Act.
-        NewtonLong result = input.FromNewton();
-
-        // Assert.
-        result.Temperature.Should().Be(input);
     }
 }
