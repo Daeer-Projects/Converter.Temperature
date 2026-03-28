@@ -1,0 +1,43 @@
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Gas;
+using Converter.Temperature.TemperatureTypes;
+using FluentAssertions;
+using Xunit;
+
+namespace Converter.Temperature.Integration.Tests.DoubleTests.ToGasTests;
+
+public class FromFahrenheit
+{
+    [Fact]
+    public void Test_double_extensions_from_fahrenheit_to_gas_returns_correct_double_value()
+    {
+        // Arrange.
+        const double expected = 6d;
+        const double input = 392d;
+
+        // Act.
+        double result = input.FromFahrenheit()
+            .ToGas();
+
+        // Assert.
+        result.Should()
+            .BeApproximately(expected, 1e-12);
+    }
+
+    [Fact]
+    public void Test_double_extensions_generic_from_fahrenheit_to_gas_returns_correct_double_value()
+    {
+        // Arrange.
+        const double expected = 6d;
+        const double input = 392d;
+
+        // Act.
+        double result = input.From<Fahrenheit>()
+            .To<Gas>();
+
+        // Assert.
+        result.Should()
+            .BeApproximately(expected, 1e-12);
+    }
+}

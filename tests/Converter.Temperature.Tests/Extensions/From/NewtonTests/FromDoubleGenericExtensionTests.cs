@@ -1,7 +1,6 @@
 using Converter.Temperature.BaseTypes;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.TemperatureTypes;
-using Converter.Temperature.Types.Celsius;
 using Converter.Temperature.Types.Newton;
 using FluentAssertions;
 using Xunit;
