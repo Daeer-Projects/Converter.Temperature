@@ -15,44 +15,44 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.To.Newton;
 
-public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, double>
+public sealed class ToFloatExtensionTests : BaseToExtensionTests<NewtonFloat, float>
 {
-    public ToDoubleExtensionTests() : base(999.999d, GetData()) { }
+    public ToFloatExtensionTests() : base(999.999f, GetData()) { }
 
-    private static List<double> GetData()
+    private static List<float> GetData()
     {
-        return [999.999d, 0d, -999.999d];
+        return [999.999f, 0f, -999.999f];
     }
 
-    protected override double To(
-        NewtonDouble value,
+    protected override float To(
+        NewtonFloat value,
         int fractionalCount)
     {
         return value.ToNewton(fractionalCount);
     }
 
-    protected override double ToUsingGeneric(
-        NewtonDouble value,
+    protected override float ToUsingGeneric(
+        NewtonFloat value,
         int fractionalCount)
     {
         return value.To<TemperatureTypes.Newton>(fractionalCount);
     }
 
-    protected override NewtonDouble Create(
-        double value)
+    protected override NewtonFloat Create(
+        float value)
     {
-        return new NewtonDouble(value);
+        return new NewtonFloat(value);
     }
 
     [Fact]
     public void Test_to_newton_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        CelsiusDouble input = new(100d);
+        const float expected = 33f;
+        CelsiusFloat input = new(100f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
@@ -63,11 +63,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_generic_from_celsius_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        CelsiusDouble input = new(100d);
+        const float expected = 33f;
+        CelsiusFloat input = new(100f);
 
         // Act.
-        double result = input.To<TemperatureTypes.Newton>();
+        float result = input.To<TemperatureTypes.Newton>();
 
         // Assert.
         result.Should()
@@ -78,11 +78,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_from_delisle_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        DelisleDouble input = new(0d);
+        const float expected = 33f;
+        DelisleFloat input = new(0f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
@@ -93,11 +93,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_from_fahrenheit_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        FahrenheitDouble input = new(212d);
+        const float expected = 33f;
+        FahrenheitFloat input = new(212f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
@@ -108,11 +108,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_from_gas_returns_correct_value()
     {
         // Arrange.
-        const double expected = 66d;
-        GasDouble input = new(6d);
+        const float expected = 66f;
+        GasFloat input = new(6f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
@@ -123,11 +123,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_from_kelvin_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        KelvinDouble input = new(373.15d);
+        const float expected = 33f;
+        KelvinFloat input = new(373.15f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
@@ -138,26 +138,26 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_from_rankine_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        RankineDouble input = new(671.67d);
+        const float expected = 33f;
+        RankineFloat input = new(671.67f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
-            .BeApproximately(expected, 0.00000000001d);
+            .BeApproximately(expected, 0.00001f);
     }
 
     [Fact]
     public void Test_to_newton_from_réaumur_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        RéaumurDouble input = new(80d);
+        const float expected = 33f;
+        RéaumurFloat input = new(80f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
@@ -168,11 +168,11 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<NewtonDouble, 
     public void Test_to_newton_from_rømer_returns_correct_value()
     {
         // Arrange.
-        const double expected = 33d;
-        RømerDouble input = new(60d);
+        const float expected = 33f;
+        RømerFloat input = new(60f);
 
         // Act.
-        double result = input.ToNewton();
+        float result = input.ToNewton();
 
         // Assert.
         result.Should()
