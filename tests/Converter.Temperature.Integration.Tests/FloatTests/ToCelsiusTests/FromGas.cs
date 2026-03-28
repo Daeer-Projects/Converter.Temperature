@@ -10,7 +10,7 @@ namespace Converter.Temperature.Integration.Tests.FloatTests.ToCelsiusTests;
 
 public class FromGas
 {
-        [Theory]
+    [Theory]
     [InlineData(0.25f, 125f)]
     [InlineData(0.9f, 125f)]
     [InlineData(1f, 140f)]

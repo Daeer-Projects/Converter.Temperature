@@ -37,5 +37,4 @@ public sealed class FromDoubleGenericExtensionTests : BaseFromExtensionTests<dou
             .Which.Temperature.Should()
             .Be(input);
     }
-
 }

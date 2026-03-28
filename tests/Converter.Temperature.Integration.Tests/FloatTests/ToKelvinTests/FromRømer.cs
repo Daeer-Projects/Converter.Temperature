@@ -9,7 +9,7 @@ namespace Converter.Temperature.Integration.Tests.FloatTests.ToKelvinTests;
 
 public class FromRømer
 {
-        [Theory]
+    [Theory]
     [InlineData(-1000f, -1645.8976190476192f)]
     [InlineData(0f, 258.8642857142857f)]
     [InlineData(50f, 354.10236f)]

@@ -10,7 +10,7 @@ namespace Converter.Temperature.Integration.Tests.FloatTests.ToRømerTests;
 
 public class FromCelsius
 {
-        [Fact]
+    [Fact]
     public void Test_float_extension_from_celsius_to_rømer_returns_correct_float_value()
     {
         // Arrange.

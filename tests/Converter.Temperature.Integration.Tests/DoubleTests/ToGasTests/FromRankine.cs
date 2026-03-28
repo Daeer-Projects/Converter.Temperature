@@ -10,7 +10,7 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToGasTests;
 
 public class FromRankine
 {
-        [Fact]
+    [Fact]
     public void Test_double_extensions_from_rankine_to_gas_returns_correct_double_value()
     {
         // Arrange.

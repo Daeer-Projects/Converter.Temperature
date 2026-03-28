@@ -10,7 +10,7 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToGasTests;
 
 public class FromCelsius
 {
-        [Fact]
+    [Fact]
     public void Test_double_extensions_from_celsius_to_gas_returns_correct_double_value()
     {
         // Arrange.

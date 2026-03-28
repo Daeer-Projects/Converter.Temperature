@@ -40,5 +40,4 @@ public class FromCelsius
         result.Should()
             .BeApproximately(expected, 1e-4f);
     }
-
 }

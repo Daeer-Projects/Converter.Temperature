@@ -9,32 +9,32 @@ namespace Converter.Temperature.Tests.Extensions.From.NewtonTests;
 
 public class FromFloatGenericExtensionTests : BaseFromExtensionTests<float, NewtonFloat>
 {
-        public FromFloatGenericExtensionTests() : base(
-            float.MaxValue,
-            999.999f,
-            0f,
-            -999.999f,
-            float.MinValue) { }
+    public FromFloatGenericExtensionTests() : base(
+        float.MaxValue,
+        999.999f,
+        0f,
+        -999.999f,
+        float.MinValue) { }
 
-        protected override NewtonFloat ConvertFrom(
-            float value)
-        {
-            return value.From<Newton>() as NewtonFloat;
-        }
+    protected override NewtonFloat ConvertFrom(
+        float value)
+    {
+        return value.From<Newton>() as NewtonFloat;
+    }
 
-        [Fact]
-        public void Test_from_newton_generic_returns_newton_float_type()
-        {
-            // Arrange.
-            const float input = 39f;
+    [Fact]
+    public void Test_from_newton_generic_returns_newton_float_type()
+    {
+        // Arrange.
+        const float input = 39f;
 
-            // Act.
-            FloatBase result = input.From<Newton>();
+        // Act.
+        FloatBase result = input.From<Newton>();
 
-            // Assert.
-            result.Should()
-                .BeOfType<NewtonFloat>()
-                .Which.Temperature.Should()
-                .Be(input);
-        }
+        // Assert.
+        result.Should()
+            .BeOfType<NewtonFloat>()
+            .Which.Temperature.Should()
+            .Be(input);
+    }
 }

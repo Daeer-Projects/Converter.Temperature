@@ -9,7 +9,7 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToRankineTests;
 
 public class FromRømer
 {
-        [Theory]
+    [Theory]
     [InlineData(-1000d, -2962.615714285714d)]
     [InlineData(0d, 465.9557142857143d)]
     [InlineData(50d, 637.3842857142857d)]

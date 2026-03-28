@@ -9,7 +9,7 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToFahrenheitTests;
 
 public class FromRankine
 {
-        [Theory]
+    [Theory]
     [InlineData(-1000d, -1459.67d)]
     [InlineData(0d, -459.67d)]
     [InlineData(50d, -409.67d)]
