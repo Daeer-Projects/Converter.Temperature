@@ -10,7 +10,7 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToFahrenheitTests;
 
 public class FromCelsius
 {
-        [Theory]
+    [Theory]
     [InlineData(double.MinValue)]
     [InlineData(double.MaxValue)]
     public void Test_double_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(

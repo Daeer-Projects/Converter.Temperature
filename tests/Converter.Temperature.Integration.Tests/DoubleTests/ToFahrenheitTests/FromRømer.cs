@@ -9,7 +9,7 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToFahrenheitTests;
 
 public class FromRømer
 {
-        [Theory]
+    [Theory]
     [InlineData(-1000d, -3422.285714285714d)]
     [InlineData(0d, 6.285714285714285d)]
     [InlineData(50d, 177.71428571428572d)]
