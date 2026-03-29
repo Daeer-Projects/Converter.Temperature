@@ -18,7 +18,7 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<GasInt, int>
 
     private static List<int> GetData()
     {
-        return new List<int> { 1, 5, 10 };
+        return [1, 5, 10];
     }
 
     protected override int To(

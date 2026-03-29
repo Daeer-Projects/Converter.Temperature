@@ -5,23 +5,39 @@ using Xunit;
 
 namespace Converter.Temperature.Tests.Extensions.From.NewtonTests;
 
-public sealed class FromIntExtensionTests
+public sealed class FromIntExtensionTests : BaseFromExtensionTests<int, NewtonInt>
 {
+    public FromIntExtensionTests() : base(
+        int.MaxValue,
+        999,
+        0,
+        -999,
+        int.MinValue) { }
+
+    protected override NewtonInt ConvertFrom(
+        int value)
+    {
+        return value.FromNewton();
+    }
+
     [Fact]
-    public void Test_FromNewton_Returns_NewtonInt_Type()
+    public void Test_from_newton_returns_newton_int_type()
     {
         // Arrange.
-        const int input = 10;
+        const int input = 39;
 
         // Act.
         NewtonInt result = input.FromNewton();
 
         // Assert.
-        result.Should().BeOfType<NewtonInt>();
+        result.Should()
+            .BeOfType<NewtonInt>()
+            .Which.Temperature.Should()
+            .Be(input);
     }
 
     [Fact]
-    public void Test_FromNewton_Returns_Correct_Value()
+    public void Test_from_newton_returns_correct_value()
     {
         // Arrange.
         const int input = 10;

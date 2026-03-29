@@ -18,7 +18,7 @@ public sealed class ToLongExtensionTests : BaseToExtensionTests<CelsiusLong, lon
 
     private static List<long> GetData()
     {
-        return new List<long> { 999L, 0L, -999L };
+        return [999L, 0L, -999L];
     }
 
     protected override long To(
