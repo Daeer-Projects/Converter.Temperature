@@ -5,34 +5,10 @@ using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
 using Xunit;
 
-namespace Converter.Temperature.Integration.Tests.LongTests;
+namespace Converter.Temperature.Integration.Tests.LongTests.ToRéaumurTests;
 
-/// <summary>
-///     The to réaumur long tests.
-/// </summary>
-public sealed class ToRéaumurLongTests
+public class FromCelsius
 {
-    #region From Fahrenheit
-
-    [Theory]
-    [InlineData(32L, 0L)]
-    [InlineData(212L, 80L)]
-    public void Test_long_extension_from_fahrenheit_to_réaumur_returns_correct_long_value(long input, long expected)
-    {
-        // Arrange.
-        // Act.
-        long result = input.FromFahrenheit()
-            .ToRéaumur();
-
-        // Assert.
-        result.Should()
-            .Be(expected);
-    }
-
-    #endregion From Fahrenheit
-
-    #region From Celsius
-
     [Theory]
     [InlineData(0L, 0L)]
     [InlineData(100L, 80L)]
@@ -63,6 +39,4 @@ public sealed class ToRéaumurLongTests
         result.Should()
             .Be(expected);
     }
-
-    #endregion From Celsius
 }
