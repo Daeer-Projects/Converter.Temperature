@@ -1,6 +1,47 @@
+using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
+using Converter.Temperature.Extensions.To.Réaumur;
+using Converter.Temperature.TemperatureTypes;
+using FluentAssertions;
+using Xunit;
+
 namespace Converter.Temperature.Integration.Tests.StringTests.ToRéaumurTests;
 
 public class FromRømer
 {
-    // ToDo: Add tests.
+    [Theory]
+    [InlineData("-45", "-80")]
+    [InlineData("7.5", "0")]
+    [InlineData("60", "80")]
+    public void Test_string_extensions_from_rømer_to_réaumur_returns_correct_string_value(
+        string input,
+        string expected)
+    {
+        // Arrange.
+        // Act.
+        string result = input.FromRømer()
+            .ToRéaumur();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData("-45", "-80")]
+    [InlineData("7.5", "0")]
+    [InlineData("60", "80")]
+    public void Test_string_extensions_generic_from_rømer_to_réaumur_returns_correct_string_value(
+        string input,
+        string expected)
+    {
+        // Arrange.
+        // Act.
+        string result = input.From<Rømer>()
+            .To<Réaumur>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
 }
