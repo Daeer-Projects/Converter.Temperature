@@ -28,18 +28,13 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToFahrenheit(
         int input)
     {
-        const double calculatedValue = 1 * 1.8 + 32;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = input * 1.8d + 32d;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 1.8 + 32;
-        int fahrenheitTempInt = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return fahrenheitTempInt;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -53,17 +48,13 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToKelvin(
         int input)
     {
-        const int maxValue = int.MaxValue - 273;
-        const int minValue = int.MinValue + 273;
-        if (input is < minValue or > maxValue)
+        double result = input + 273.15d;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double result = input + 273.15d;
-        int kelvinTempInt = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinTempInt;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -107,17 +98,13 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToRankine(
         int input)
     {
-        const int minValue = int.MinValue + 492;
-        const int maxValue = int.MaxValue - 492;
-        if (input is < minValue or > maxValue)
+        double result = (input + 273.15d) * 1.8d;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double result = (input + 273.15d) * 9 / 5;
-        int rankineTempInt = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-
-        return rankineTempInt;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -131,9 +118,13 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToRømer(
         int input)
     {
-        double result = input * 21d / 40 + 7.5;
-        int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return rømerTemp;
+        double result = input * 21d / 40d + 7.5d;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -148,8 +139,12 @@ internal static class CelsiusIntConversions
         int input)
     {
         double result = (100d - input) * 1.5d;
-        int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return delisleTemp;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -163,9 +158,13 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToNewton(
         int input)
     {
-        double result = input * 33d / 100;
-        int newtonTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return newtonTemp;
+        double result = input * 33d / 100d;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -179,8 +178,12 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToRéaumur(
         int input)
     {
-        double result = input * 4d / 5;
-        int réaumurTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return réaumurTemp;
+        double result = input * 0.8d;
+        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }

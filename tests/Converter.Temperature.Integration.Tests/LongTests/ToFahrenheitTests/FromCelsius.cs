@@ -13,6 +13,8 @@ public class FromCelsius
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
+    [InlineData(5124095576030431001L)]
+    [InlineData(-5124095576030431011L)]
     public void Test_long_extension_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
         long input)
     {
@@ -29,6 +31,8 @@ public class FromCelsius
     [Theory]
     [InlineData(long.MinValue)]
     [InlineData(long.MaxValue)]
+    [InlineData(5124095576030431001L)]
+    [InlineData(-5124095576030431011L)]
     public void
         Test_long_extension_generic_from_celsius_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
             long input)
@@ -47,6 +51,8 @@ public class FromCelsius
     [InlineData(-152436784L, -274386179L)]
     [InlineData(0L, 32L)]
     [InlineData(26431662L, 47577024L)]
+    [InlineData(5124095576030431000L, 9223372036854775832L)]
+    [InlineData(-5124095576030431010L, -9223372036854775786L)]
     public void Test_long_extension_from_celsius_to_fahrenheit_returns_correct_long_value(
         long value,
         long expected)
@@ -65,6 +71,8 @@ public class FromCelsius
     [InlineData(-152436784L, -274386179L)]
     [InlineData(0L, 32L)]
     [InlineData(26431662L, 47577024L)]
+    [InlineData(5124095576030431000L, 9223372036854775832L)]
+    [InlineData(-5124095576030431010L, -9223372036854775786L)]
     public void Test_long_extension_generic_from_celsius_to_fahrenheit_returns_correct_long_value(
         long value,
         long expected)

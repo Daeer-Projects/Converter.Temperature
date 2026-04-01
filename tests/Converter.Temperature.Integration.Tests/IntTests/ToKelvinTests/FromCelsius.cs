@@ -12,6 +12,8 @@ public class FromCelsius
 {
     [Theory]
     [InlineData(200, 473)]
+    [InlineData(2147483374, 2147483647)]
+    [InlineData(-2147483648, -2147483375)]
     public void Test_int_extensions_from_celsius_to_kelvin_returns_correct_value(
         int input,
         int expected)
@@ -28,6 +30,8 @@ public class FromCelsius
 
     [Theory]
     [InlineData(200, 473)]
+    [InlineData(2147483374, 2147483647)]
+    [InlineData(-2147483648, -2147483375)]
     public void Test_int_extensions_generic_from_celsius_to_kelvin_returns_correct_value(
         int input,
         int expected)
@@ -43,8 +47,7 @@ public class FromCelsius
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
+    [InlineData(2147483375)]
     public void Test_int_extensions_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
         int input)
     {
@@ -59,8 +62,7 @@ public class FromCelsius
     }
 
     [Theory]
-    [InlineData(int.MinValue)]
-    [InlineData(int.MaxValue)]
+    [InlineData(2147483375)]
     public void Test_int_extensions_generic_from_celsius_to_kelvin_with_invalid_parameter_throws_exception(
         int input)
     {
