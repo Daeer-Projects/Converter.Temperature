@@ -28,8 +28,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToFahrenheit(
         long input)
     {
-        double result = input * 1.8d + 32d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = (decimal)input * 1.8m + 32m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -48,8 +48,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToKelvin(
         long input)
     {
-        double result = input + 273.15d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = (decimal)input + 273.15m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -98,8 +98,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToRankine(
         long input)
     {
-        double result = (input + 273.15d) * 1.8d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = ((decimal)input + 273.15m) * 1.8m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -118,8 +118,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToRømer(
         long input)
     {
-        double result = input * 21d / 40d + 7.5d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = (decimal)input * 21m / 40m + 7.5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -138,8 +138,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToDelisle(
         long input)
     {
-        double result = (100d - input) * 1.5d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = (100m - (decimal)input) * 1.5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -158,8 +158,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToNewton(
         long input)
     {
-        double result = input * 33d / 100d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = (decimal)input * 33m / 100m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -178,8 +178,8 @@ internal static class CelsiusLongConversions
     internal static long CelsiusToRéaumur(
         long input)
     {
-        double result = input * 0.8d;
-        if (result < long.MinValue - 0.5d || result > long.MaxValue + 0.5d)
+        decimal result = (decimal)input * 0.8m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

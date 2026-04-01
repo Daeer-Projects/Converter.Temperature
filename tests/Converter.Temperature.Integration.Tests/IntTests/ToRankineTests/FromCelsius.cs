@@ -12,8 +12,8 @@ public class FromCelsius
 {
     [Theory]
     [InlineData(200, 852)]
-    [InlineData(1193046197, 2147483647)]
-    [InlineData(-1193046743, -2147483647)]
+    [InlineData(1193046197, 2147483646)]
+    [InlineData(-1193046743, -2147483646)]
     public void Test_int_extensions_from_celsius_to_rankine_returns_correct_value(
         int input,
         int expected)
@@ -31,8 +31,8 @@ public class FromCelsius
 
     [Theory]
     [InlineData(200, 852)]
-    [InlineData(1193046197, 2147483647)]
-    [InlineData(-1193046743, -2147483647)]
+    [InlineData(1193046197, 2147483646)]
+    [InlineData(-1193046743, -2147483646)]
     public void Test_int_extensions_generic_from_celsius_to_rankine_returns_correct_value(
         int input,
         int expected)
@@ -52,7 +52,7 @@ public class FromCelsius
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
     [InlineData(1193046198)]
-    [InlineData(-1193046744)]
+    [InlineData(-1193046745)]
     public void Test_int_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
         int input)
     {
@@ -70,7 +70,7 @@ public class FromCelsius
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
     [InlineData(1193046198)]
-    [InlineData(-1193046744)]
+    [InlineData(-1193046745)]
     public void Test_int_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
         int input)
     {
