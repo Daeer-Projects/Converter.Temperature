@@ -16,13 +16,13 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToCelsius(
         double input)
     {
-        double celsiusResult = 100d - input * 2d / 3d;
-        if (double.IsPositiveInfinity(celsiusResult) || double.IsNegativeInfinity(celsiusResult))
+        double result = 100d - input * 2d / 3d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return celsiusResult;
+        return result;
     }
 
     /// <summary>
@@ -36,13 +36,13 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToFahrenheit(
         double input)
     {
-        double fahrenheitResult = 212d - input * 6d / 5d;
-        if (double.IsPositiveInfinity(fahrenheitResult) || double.IsNegativeInfinity(fahrenheitResult))
+        double result = 212d - input * 6d / 5d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return fahrenheitResult;
+        return result;
     }
 
     /// <summary>
@@ -56,13 +56,13 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToKelvin(
         double input)
     {
-        double kelvinResult = 373.15d - input * 2d / 3d;
-        if (double.IsPositiveInfinity(kelvinResult) || double.IsNegativeInfinity(kelvinResult))
+        double result = 373.15d - input * 2d / 3d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return kelvinResult;
+        return result;
     }
 
     /// <summary>
@@ -92,13 +92,13 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToRankine(
         double input)
     {
-        double rankineResult = 671.67d - input * 6d / 5d;
-        if (double.IsPositiveInfinity(rankineResult) || double.IsNegativeInfinity(rankineResult))
+        double result = 671.67d - input * 6d / 5d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return rankineResult;
+        return result;
     }
 
     /// <summary>
@@ -112,13 +112,13 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToRømer(
         double input)
     {
-        double rømerResult = (100d - input * 2d / 3d) * 21d / 40d + 7.5d;
-        if (double.IsPositiveInfinity(rømerResult) || double.IsNegativeInfinity(rømerResult))
+        double result = (100d - input * 2d / 3d) * 21d / 40d + 7.5d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return rømerResult;
+        return result;
     }
 
     /// <summary>
@@ -146,13 +146,13 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToNewton(
         double input)
     {
-        double newtonResult = (100d - input * 2d / 3d) * 33d / 100d;
-        if (double.IsPositiveInfinity(newtonResult) || double.IsNegativeInfinity(newtonResult))
+        double result = (100d - input * 2d / 3d) * 33d / 100d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return newtonResult;
+        return result;
     }
 
     /// <summary>
@@ -166,12 +166,12 @@ internal static class DelisleDoubleConversions
     internal static double DelisleToRéaumur(
         double input)
     {
-        double réaumurResult = (100d - input * 2d / 3d) * 4d / 5d;
-        if (double.IsPositiveInfinity(réaumurResult) || double.IsNegativeInfinity(réaumurResult))
+        double result = (100d - input * 2d / 3d) * 4d / 5d;
+        if (double.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return réaumurResult;
+        return result;
     }
 }

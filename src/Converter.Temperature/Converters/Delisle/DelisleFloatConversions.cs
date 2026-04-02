@@ -16,13 +16,13 @@ internal static class DelisleFloatConversions
     internal static float DelisleToCelsius(
         float input)
     {
-        float celsiusResult = 100f - input * 2f / 3f;
-        if (float.IsPositiveInfinity(celsiusResult) || float.IsNegativeInfinity(celsiusResult))
+        float result = 100f - input * 2f / 3f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return celsiusResult;
+        return result;
     }
 
     /// <summary>
@@ -36,13 +36,13 @@ internal static class DelisleFloatConversions
     internal static float DelisleToFahrenheit(
         float input)
     {
-        float fahrenheitResult = 212f - input * 6f / 5f;
-        if (float.IsPositiveInfinity(fahrenheitResult) || float.IsNegativeInfinity(fahrenheitResult))
+        float result = 212f - input * 6f / 5f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return fahrenheitResult;
+        return result;
     }
 
     /// <summary>
@@ -56,13 +56,13 @@ internal static class DelisleFloatConversions
     internal static float DelisleToKelvin(
         float input)
     {
-        float kelvinResult = 373.15f - input * 2f / 3f;
-        if (float.IsPositiveInfinity(kelvinResult) || float.IsNegativeInfinity(kelvinResult))
+        float result = 373.15f - input * 2f / 3f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return kelvinResult;
+        return result;
     }
 
     /// <summary>
@@ -92,13 +92,13 @@ internal static class DelisleFloatConversions
     internal static float DelisleToRankine(
         float input)
     {
-        float rankineResult = 671.67f - input * 6f / 5f;
-        if (float.IsPositiveInfinity(rankineResult) || float.IsNegativeInfinity(rankineResult))
+        float result = 671.67f - input * 6f / 5f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return rankineResult;
+        return result;
     }
 
     /// <summary>
@@ -112,13 +112,13 @@ internal static class DelisleFloatConversions
     internal static float DelisleToRømer(
         float input)
     {
-        float rømerResult = (100f - input * 2f / 3f) * 21f / 40f + 7.5f;
-        if (float.IsPositiveInfinity(rømerResult) || float.IsNegativeInfinity(rømerResult))
+        float result = (100f - input * 2f / 3f) * 21f / 40f + 7.5f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return rømerResult;
+        return result;
     }
 
     /// <summary>
@@ -146,13 +146,13 @@ internal static class DelisleFloatConversions
     internal static float DelisleToNewton(
         float input)
     {
-        float newtonResult = (100f - input * 2f / 3f) * 33f / 100f;
-        if (float.IsPositiveInfinity(newtonResult) || float.IsNegativeInfinity(newtonResult))
+        float result = (100f - input * 2f / 3f) * 33f / 100f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return newtonResult;
+        return result;
     }
 
     /// <summary>
@@ -166,12 +166,12 @@ internal static class DelisleFloatConversions
     internal static float DelisleToRéaumur(
         float input)
     {
-        float réaumurResult = (100f - input * 2f / 3f) * 4f / 5f;
-        if (float.IsPositiveInfinity(réaumurResult) || float.IsNegativeInfinity(réaumurResult))
+        float result = (100f - input * 2f / 3f) * 4f / 5f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return réaumurResult;
+        return result;
     }
 }

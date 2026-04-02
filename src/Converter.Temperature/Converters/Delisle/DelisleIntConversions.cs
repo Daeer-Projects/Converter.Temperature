@@ -16,18 +16,13 @@ internal static class DelisleIntConversions
     internal static int DelisleToCelsius(
         int input)
     {
-        const double calculatedValue = 100d - 1 * 2d / 3d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = 100d - input * 2d / 3d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = 100d - input * 2d / 3d;
-        int celsiusResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return celsiusResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -41,18 +36,13 @@ internal static class DelisleIntConversions
     internal static int DelisleToFahrenheit(
         int input)
     {
-        const double calculatedValue = 212d - 1 * 6d / 5d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = 212d - input * 6d / 5d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = 212d - input * 6d / 5d;
-        int fahrenheitResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return fahrenheitResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -66,18 +56,13 @@ internal static class DelisleIntConversions
     internal static int DelisleToKelvin(
         int input)
     {
-        const double calculatedValue = 373.15d - 1 * 2d / 3d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = 373.15d - input * 2d / 3d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = 373.15 - input * 2d / 3d;
-        int kelvinResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -107,18 +92,13 @@ internal static class DelisleIntConversions
     internal static int DelisleToRankine(
         int input)
     {
-        const double calculatedValue = 671.67d - 1 * 6d / 5d;
-        int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        double result = 671.67d - input * 6d / 5d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = 671.67 - input * 6d / 5d;
-        int rankineResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rankineResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -132,18 +112,13 @@ internal static class DelisleIntConversions
     internal static int DelisleToRømer(
         int input)
     {
-        const double calculatedValue = (100 - 1 * 2d / 3d) * 21 / 40 + 7.5;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = (100d - input * 2d / 3d) * 21d / 40d + 7.5d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (100 - input * 2d / 3d) * 21 / 40 + 7.5;
-        int rømerResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rømerResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -171,18 +146,13 @@ internal static class DelisleIntConversions
     internal static int DelisleToNewton(
         int input)
     {
-        const double calculatedValue = (100 - 1 * 2d / 3d) * 33 / 100;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = (100d - input * 2d / 3d) * 33d / 100d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (100 - input * 2d / 3d) * 33 / 100;
-        int newtonResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return newtonResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -196,17 +166,12 @@ internal static class DelisleIntConversions
     internal static int DelisleToRéaumur(
         int input)
     {
-        const double calculatedValue = (100 - 1 * 2d / 3d) * 4 / 5;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        double result = (100d - input * 2d / 3d) * 4d / 5d;
+        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (100 - input * 2d / 3d) * 4 / 5;
-        int réaumurResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return réaumurResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }
