@@ -17,7 +17,7 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double celsiusTemp = (input - 32) * 5 / 9;
-        if (double.IsPositiveInfinity(celsiusTemp) || double.IsNegativeInfinity(celsiusTemp))
+        if (double.IsInfinity(celsiusTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -50,7 +50,7 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double kelvinTemp = (input + 459.67d) * 5d / 9d;
-        if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+        if (double.IsInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -86,6 +86,11 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double rankineTemp = input + 459.67d;
+        if (double.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -101,7 +106,7 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double rømerTemp = (input - 32) * 7 / 24 + 7.5;
-        if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        if (double.IsInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -121,7 +126,7 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double delisleTemp = (212d - input) * 5 / 6;
-        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        if (double.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -141,7 +146,7 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double newtonTemp = (input - 32) * 11 / 60;
-        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        if (double.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -161,7 +166,7 @@ internal static class FahrenheitDoubleConversions
         double input)
     {
         double réaumurTemp = (input - 32) * 4 / 9;
-        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        if (double.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

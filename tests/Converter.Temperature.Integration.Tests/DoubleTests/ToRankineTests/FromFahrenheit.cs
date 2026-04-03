@@ -9,6 +9,37 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToRankineTests;
 
 public class FromFahrenheit
 {
+    [Theory]
+    [InlineData(double.MinValue)]
+    public void Test_double_extension_from_fahrenheit_and_to_rankine_returns_correct_double_value(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        double result = input.FromFahrenheit()
+            .ToRankine();
+
+        // Assert.
+        result.Should()
+            .Be(input + 459.67d);
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    public void
+        Test_double_extension_generic_from_fahrenheit_and_to_rankine_returns_correct_double_value(
+            double input)
+    {
+        // Arrange.
+        // Act.
+        double result = input.From<Fahrenheit>()
+            .To<Rankine>();
+
+        // Assert.
+        result.Should()
+            .Be(input + 459.67d);
+    }
+
     [Fact]
     public void Test_double_extensions_from_fahrenheit_to_rankine_returns_correct_value()
     {

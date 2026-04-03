@@ -16,10 +16,13 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToCelsius(
         long input)
     {
-        double convertedTemp = (input - 32d) * 5 / 9;
-        long celsiusTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = (input - 32m) * 5m / 9m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
 
-        return celsiusTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -46,18 +49,13 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToKelvin(
         long input)
     {
-        double calculatedValue = (1 + 459.67d) * 5 / 9;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input + 459.67m) * 5m / 9m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (input + 459.67d) * 5 / 9;
-        long kelvinTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -87,17 +85,13 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToRankine(
         long input)
     {
-        double calculatedValue = 1 + 459.67d;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = input + 459.67m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input + 459.67d;
-        long rankineTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-        return rankineTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -111,18 +105,13 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToRømer(
         long input)
     {
-        const double calculatedValue = (1 - 32d) * 7 / 24 + 7.5;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 32m) * 7m / 24m + 7.5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (input - 32d) * 7 / 24 + 7.5;
-        long rømerTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rømerTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -136,18 +125,13 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToDelisle(
         long input)
     {
-        const double calculatedValue = (212d - 1) * 5 / 6;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (212m - input) * 5m / 6m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (212d - input) * 5 / 6;
-        long delisleTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return delisleTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -161,18 +145,13 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToNewton(
         long input)
     {
-        const double calculatedValue = (1 - 32d) * 11 / 60;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 32m) * 11m / 60m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (input - 32d) * 11 / 60;
-        long newtonTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return newtonTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -186,17 +165,12 @@ internal static class FahrenheitLongConversions
     internal static long FahrenheitToRéaumur(
         long input)
     {
-        const double calculatedValue = (1 - 32d) * 4 / 9;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 32m) * 4m / 9m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (input - 32d) * 4 / 9;
-        long réaumurTemp = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return réaumurTemp;
+        return (long)decimal.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }
