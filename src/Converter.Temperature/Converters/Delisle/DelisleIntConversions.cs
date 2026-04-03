@@ -13,11 +13,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToCelsius(
-        int input)
+    internal static int DelisleToCelsius(int input)
     {
-        double result = 100d - input * 2d / 3d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = 100m - input * 2m / 3m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -33,11 +32,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToFahrenheit(
-        int input)
+    internal static int DelisleToFahrenheit(int input)
     {
-        double result = 212d - input * 6d / 5d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = 212m - input * 6m / 5m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -53,11 +51,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToKelvin(
-        int input)
+    internal static int DelisleToKelvin(int input)
     {
-        double result = 373.15d - input * 2d / 3d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = 373.15m - input * 2m / 3m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -73,8 +70,7 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToGas(
-        int input)
+    internal static int DelisleToGas(int input)
     {
         int gasResult = DelisleToCelsius(input);
         int gasTemp = CelsiusIntConversions.CelsiusToGas(gasResult);
@@ -89,11 +85,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToRankine(
-        int input)
+    internal static int DelisleToRankine(int input)
     {
-        double result = 671.67d - input * 6d / 5d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = 671.67m - input * 6m / 5m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -109,11 +104,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToRømer(
-        int input)
+    internal static int DelisleToRømer(int input)
     {
-        double result = (100d - input * 2d / 3d) * 21d / 40d + 7.5d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = (100m - input * 2m / 3m) * 21m / 40m + 7.5m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -129,8 +123,7 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToDelisle(
-        int input)
+    internal static int DelisleToDelisle(int input)
     {
         return input;
     }
@@ -143,11 +136,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToNewton(
-        int input)
+    internal static int DelisleToNewton(int input)
     {
-        double result = (100d - input * 2d / 3d) * 33d / 100d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = (100m - input * 2m / 3m) * 33m / 100m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -163,11 +155,10 @@ internal static class DelisleIntConversions
     /// <returns>
     ///     The converted temperature.
     /// </returns>
-    internal static int DelisleToRéaumur(
-        int input)
+    internal static int DelisleToRéaumur(int input)
     {
-        double result = (100d - input * 2d / 3d) * 4d / 5d;
-        if (result < (double)int.MinValue - 0.5d || result > (double)int.MaxValue + 0.5d)
+        decimal result = (100m - input * 2m / 3m) * 4m / 5m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
