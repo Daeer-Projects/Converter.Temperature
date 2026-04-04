@@ -16,8 +16,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToCelsius(
         long input)
     {
-        double result = 100d - input * 2d / 3d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = 100m - input * 2m / 3m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -36,8 +36,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToFahrenheit(
         long input)
     {
-        double result = 212d - input * 6d / 5d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = 212m - input * 6m / 5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -56,8 +56,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToKelvin(
         long input)
     {
-        double result = 373.15d - input * 2d / 3d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = 373.15m - input * 2m / 3m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -92,8 +92,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToRankine(
         long input)
     {
-        double result = 671.67d - input * 6d / 5d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = 671.67m - input * 6m / 5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -112,8 +112,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToRømer(
         long input)
     {
-        double result = (100d - input * 2d / 3d) * 21d / 40d + 7.5d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = (100m - input * 2m / 3m) * 21m / 40m + 7.5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -146,8 +146,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToNewton(
         long input)
     {
-        double result = (100d - input * 2d / 3d) * 33d / 100d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = (100m - input * 2m / 3m) * 33m / 100m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -166,8 +166,8 @@ internal static class DelisleLongConversions
     internal static long DelisleToRéaumur(
         long input)
     {
-        double result = (100d - input * 2d / 3d) * 4d / 5d;
-        if (result < (double)long.MinValue - 0.5d || result > (double)long.MaxValue + 0.5d)
+        decimal result = (100m - input * 2m / 3m) * 4m / 5m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
