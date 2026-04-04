@@ -16,8 +16,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToCelsius(
         int input)
     {
-        double result = (input - 32d) * 5d / 9d;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = (input - 32m) * 5m / 9m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -49,8 +49,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToKelvin(
         int input)
     {
-        double result = (input + 459.67) * 5d / 9d;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = (input + 459.67m) * 5m / 9m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -85,8 +85,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToRankine(
         int input)
     {
-        double result = input + 459.67;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = input + 459.67m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -105,8 +105,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToRømer(
         int input)
     {
-        double result = (input - 32.0) * 7d / 24d + 7.5;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = (input - 32m) * 7m / 24m + 7.5m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -125,8 +125,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToDelisle(
         int input)
     {
-        double result = (212.0 - input) * 5d / 6d;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = (212m - input) * 5m / 6m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -145,8 +145,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToNewton(
         int input)
     {
-        double result = (input - 32.0) * 11d / 60d;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = (input - 32m) * 11m / 60m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -165,8 +165,8 @@ internal static class FahrenheitIntConversions
     internal static int FahrenheitToRéaumur(
         int input)
     {
-        double result = (input - 32.0) * 4d / 9d;
-        if (result < int.MinValue - 0.5d || result > int.MaxValue + 0.5d)
+        decimal result = (input - 32m) * 4m / 9m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
