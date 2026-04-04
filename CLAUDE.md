@@ -86,3 +86,7 @@ When a converted value exceeds the target type's range (e.g., converting a large
 ## CI/CD
 
 Azure Pipelines (`azure-pipelines.yml`) on push to `main`: restore → build → test → pack → publish. Targets .NET 8, 9, and 10.
+
+## Coding Standards
+
+@see [CodingStandards.md](CodingStandards.md)
