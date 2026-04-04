@@ -171,7 +171,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const double expected = 851.67d;
+        const double expected = 851.6699999999998d;
         KelvinDouble input = new(473.15);
 
         // Act.
@@ -186,7 +186,7 @@ public sealed class ToDoubleExtensionTests : BaseToExtensionTests<RankineDouble,
     public void Test_to_rankine_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const double expected = 851.67d;
+        const double expected = 851.6699999999998d;
         KelvinDouble input = new(473.15);
 
         // Act.

@@ -16,6 +16,11 @@ internal static class KelvinFloatConversions
         float firstTemp)
     {
         float celsiusTemp = firstTemp - 273.15f;
+        if (float.IsInfinity(celsiusTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
+
         return celsiusTemp;
     }
 
@@ -31,7 +36,7 @@ internal static class KelvinFloatConversions
         float firstTemp)
     {
         float fahrenheitTemp = firstTemp * 9f / 5f - 459.67f;
-        if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
+        if (float.IsInfinity(fahrenheitTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
         }
@@ -80,6 +85,11 @@ internal static class KelvinFloatConversions
         float firstTemp)
     {
         float rankineTemp = firstTemp * 9 / 5;
+        if (float.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -95,7 +105,7 @@ internal static class KelvinFloatConversions
         float input)
     {
         float rømerTemp = (input - 273.15f) * 21 / 40 + 7.5f;
-        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+        if (float.IsInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -114,8 +124,8 @@ internal static class KelvinFloatConversions
     internal static float KelvinToDelisle(
         float input)
     {
-        float delisleTemp = (373.15f - input) * 1.5f;
-        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        float delisleTemp = (373.15f - input) * 3f / 2f;
+        if (float.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -135,7 +145,7 @@ internal static class KelvinFloatConversions
         float input)
     {
         float newtonTemp = (input - 273.15f) * 33 / 100;
-        if (float.IsPositiveInfinity(newtonTemp) || float.IsNegativeInfinity(newtonTemp))
+        if (float.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -154,8 +164,8 @@ internal static class KelvinFloatConversions
     internal static float KelvinToRéaumur(
         float input)
     {
-        float réaumurTemp = (input - 273.15f) * 4 / 5;
-        if (float.IsPositiveInfinity(réaumurTemp) || float.IsNegativeInfinity(réaumurTemp))
+        float réaumurTemp = (input - 273.15f) * 4f / 5f;
+        if (float.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
