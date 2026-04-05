@@ -31,6 +31,11 @@ internal static class RankineDoubleConversions
         double input)
     {
         double rankineTemp = (input - 491.67) * 5 / 9;
+        if (double.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -46,6 +51,11 @@ internal static class RankineDoubleConversions
         double input)
     {
         double rankineTemp = input - 459.67;
+        if (double.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -61,6 +71,11 @@ internal static class RankineDoubleConversions
         double input)
     {
         double rankineTemp = input * 5 / 9;
+        if (double.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -92,7 +107,7 @@ internal static class RankineDoubleConversions
         double input)
     {
         double rømerTemp = (input - 491.67) * 7 / 24 + 7.5;
-        if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        if (double.IsInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -112,7 +127,7 @@ internal static class RankineDoubleConversions
         double input)
     {
         double delisleTemp = (671.67d - input) * 5d / 6d;
-        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        if (double.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -132,7 +147,7 @@ internal static class RankineDoubleConversions
         double input)
     {
         double newtonTemp = (input - 491.67d) * 11d / 60d;
-        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        if (double.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -152,7 +167,7 @@ internal static class RankineDoubleConversions
         double input)
     {
         double réaumurTemp = (input - 491.67d) * 4d / 9d;
-        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        if (double.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

@@ -31,7 +31,7 @@ internal static class RankineFloatConversions
         float input)
     {
         float rankineTemp = (input - 491.67f) * 5 / 9;
-        if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
+        if (float.IsInfinity(rankineTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -51,6 +51,11 @@ internal static class RankineFloatConversions
         float input)
     {
         float rankineTemp = input - 459.67f;
+        if (float.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -66,6 +71,11 @@ internal static class RankineFloatConversions
         float input)
     {
         float rankineTemp = input * 5 / 9;
+        if (float.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -97,7 +107,7 @@ internal static class RankineFloatConversions
         float input)
     {
         float rømerTemp = (input - 491.67f) * 7 / 24 + 7.5f;
-        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+        if (float.IsInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -117,7 +127,7 @@ internal static class RankineFloatConversions
         float input)
     {
         float delisleTemp = (671.67f - input) * 5f / 6f;
-        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        if (float.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -137,7 +147,7 @@ internal static class RankineFloatConversions
         float input)
     {
         float newtonTemp = (input - 491.67f) * 11 / 60;
-        if (float.IsPositiveInfinity(newtonTemp) || float.IsNegativeInfinity(newtonTemp))
+        if (float.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -157,7 +167,7 @@ internal static class RankineFloatConversions
         float input)
     {
         float réaumurTemp = (input - 491.67f) * 4 / 9;
-        if (float.IsPositiveInfinity(réaumurTemp) || float.IsNegativeInfinity(réaumurTemp))
+        if (float.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
