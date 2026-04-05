@@ -17,8 +17,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToCelsius(int input)
     {
-        double convertedTemp = input * 5d / 4d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = input * 5m / 4m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -30,8 +35,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToFahrenheit(int input)
     {
-        double convertedTemp = input * 9d / 4d + 32d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = input * 9m / 4m + 32m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -43,8 +53,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToKelvin(int input)
     {
-        double convertedTemp = input * 5d / 4d + 273.15d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = input * 5m / 4m + 273.15m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -69,8 +84,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToRankine(int input)
     {
-        double convertedTemp = input * 9d / 4d + 491.67d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = input * 9m / 4m + 491.67m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -82,8 +102,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToRømer(int input)
     {
-        double convertedTemp = input * 21d / 32d + 7.5d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = input * 21m / 32m + 7.5m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -95,8 +120,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToDelisle(int input)
     {
-        double convertedTemp = (80d - input) * 15d / 8d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = (80m - input) * 15m / 8m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -108,8 +138,13 @@ internal static class RéaumurIntConversions
     /// </returns>
     internal static int RéaumurToNewton(int input)
     {
-        double convertedTemp = input * 33d / 80d;
-        return (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
+        decimal result = input * 33m / 80m;
+        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>

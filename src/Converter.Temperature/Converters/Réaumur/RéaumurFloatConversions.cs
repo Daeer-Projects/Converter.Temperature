@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Converters.Celsius;
 
 namespace Converter.Temperature.Converters.Réaumur;
@@ -16,7 +17,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToCelsius(float input)
     {
-        return input * 5f / 4f;
+        float celsiusTemp = input * 5f / 4f;
+        if (float.IsInfinity(celsiusTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return celsiusTemp;
     }
 
     /// <summary>
@@ -28,7 +35,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToFahrenheit(float input)
     {
-        return input * 9f / 4f + 32f;
+        float fahrenheitTemp = input * 9f / 4f + 32f;
+        if (float.IsInfinity(fahrenheitTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return fahrenheitTemp;
     }
 
     /// <summary>
@@ -40,7 +53,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToKelvin(float input)
     {
-        return input * 5f / 4f + 273.15f;
+        float kelvinTemp = input * 5f / 4f + 273.15f;
+        if (float.IsInfinity(kelvinTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return kelvinTemp;
     }
 
     /// <summary>
@@ -65,7 +84,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToRankine(float input)
     {
-        return input * 9f / 4f + 491.67f;
+        float rankineTemp = input * 9f / 4f + 491.67f;
+        if (float.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return rankineTemp;
     }
 
     /// <summary>
@@ -77,7 +102,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToRømer(float input)
     {
-        return input * 21f / 32f + 7.5f;
+        float rømerTemp = input * 21f / 32f + 7.5f;
+        if (float.IsInfinity(rømerTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return rømerTemp;
     }
 
     /// <summary>
@@ -89,7 +120,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToDelisle(float input)
     {
-        return (80f - input) * 15f / 8f;
+        float delisleTemp = (80f - input) * 15f / 8f;
+        if (float.IsInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
     }
 
     /// <summary>
@@ -101,7 +138,13 @@ internal static class RéaumurFloatConversions
     /// </returns>
     internal static float RéaumurToNewton(float input)
     {
-        return input * 33f / 80f;
+        float newtonTemp = input * 33f / 80f;
+        if (float.IsInfinity(newtonTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return newtonTemp;
     }
 
     /// <summary>

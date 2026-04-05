@@ -1,5 +1,8 @@
+using System;
 using Converter.Temperature.Extensions.From;
+using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Newton;
+using Converter.Temperature.TemperatureTypes;
 using FluentAssertions;
 using Xunit;
 
@@ -22,5 +25,54 @@ public class FromRéaumur
         // Assert.
         result.Should()
             .BeApproximately(expected, 0.01);
+    }
+
+    [Theory]
+    [InlineData(80.0, 33.0)]
+    [InlineData(0.0, 0.0)]
+    public void Test_double_extension_generic_from_réaumur_to_newton_returns_correct_double_value(
+        double input,
+        double expected)
+    {
+        // Arrange.
+        // Act.
+        double result = input.From<Réaumur>()
+            .To<Newton>();
+
+        // Assert.
+        result.Should()
+            .BeApproximately(expected, 0.01);
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_from_réaumur_to_newton_with_invalid_parameter_throws_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRéaumur()
+            .ToNewton());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_generic_from_réaumur_to_newton_with_invalid_parameter_throws_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Réaumur>()
+            .To<Newton>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
     }
 }

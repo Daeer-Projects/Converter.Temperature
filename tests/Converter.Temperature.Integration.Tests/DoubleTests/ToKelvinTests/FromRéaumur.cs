@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Kelvin;
@@ -43,5 +44,37 @@ public class FromRéaumur
         // Assert.
         result.Should()
             .BeApproximately(expected, 1e-12);
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_from_réaumur_to_kelvin_with_invalid_parameter_throws_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRéaumur()
+            .ToKelvin());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_generic_from_réaumur_to_kelvin_with_invalid_parameter_throws_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Réaumur>()
+            .To<Kelvin>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
     }
 }
