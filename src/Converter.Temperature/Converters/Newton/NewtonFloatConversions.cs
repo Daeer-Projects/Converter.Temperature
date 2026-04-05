@@ -17,7 +17,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float celsiusResult = input * 100f / 33f;
-        if (float.IsPositiveInfinity(celsiusResult) || float.IsNegativeInfinity(celsiusResult))
+        if (float.IsInfinity(celsiusResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -37,7 +37,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float fahrenheitResult = input * 60f / 11f + 32f;
-        if (float.IsPositiveInfinity(fahrenheitResult) || float.IsNegativeInfinity(fahrenheitResult))
+        if (float.IsInfinity(fahrenheitResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -57,7 +57,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float kelvinResult = input * 100f / 33f + 273.15f;
-        if (float.IsPositiveInfinity(kelvinResult) || float.IsNegativeInfinity(kelvinResult))
+        if (float.IsInfinity(kelvinResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -93,7 +93,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float rankineResult = input * 60f / 11f + 491.67f;
-        if (float.IsPositiveInfinity(rankineResult) || float.IsNegativeInfinity(rankineResult))
+        if (float.IsInfinity(rankineResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -113,7 +113,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float rømerResult = input * 35f / 22f + 7.5f;
-        if (float.IsPositiveInfinity(rømerResult) || float.IsNegativeInfinity(rømerResult))
+        if (float.IsInfinity(rømerResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -133,7 +133,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float delisleResult = (33f - input) * 50f / 11f;
-        if (float.IsPositiveInfinity(delisleResult) || float.IsNegativeInfinity(delisleResult))
+        if (float.IsInfinity(delisleResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -166,7 +166,7 @@ internal static class NewtonFloatConversions
         float input)
     {
         float réaumurResult = input * 80f / 33f;
-        if (float.IsPositiveInfinity(réaumurResult) || float.IsNegativeInfinity(réaumurResult))
+        if (float.IsInfinity(réaumurResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -174,3 +174,4 @@ internal static class NewtonFloatConversions
         return réaumurResult;
     }
 }
+

@@ -17,7 +17,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double celsiusResult = input * 100d / 33d;
-        if (double.IsPositiveInfinity(celsiusResult) || double.IsNegativeInfinity(celsiusResult))
+        if (double.IsInfinity(celsiusResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -37,7 +37,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double fahrenheitResult = input * 60d / 11d + 32d;
-        if (double.IsPositiveInfinity(fahrenheitResult) || double.IsNegativeInfinity(fahrenheitResult))
+        if (double.IsInfinity(fahrenheitResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -57,7 +57,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double kelvinResult = input * 100d / 33d + 273.15d;
-        if (double.IsPositiveInfinity(kelvinResult) || double.IsNegativeInfinity(kelvinResult))
+        if (double.IsInfinity(kelvinResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -93,7 +93,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double rankineResult = input * 60d / 11d + 491.67d;
-        if (double.IsPositiveInfinity(rankineResult) || double.IsNegativeInfinity(rankineResult))
+        if (double.IsInfinity(rankineResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -113,7 +113,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double rømerResult = input * 35d / 22d + 7.5d;
-        if (double.IsPositiveInfinity(rømerResult) || double.IsNegativeInfinity(rømerResult))
+        if (double.IsInfinity(rømerResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -133,7 +133,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double delisleResult = (33d - input) * 50d / 11d;
-        if (double.IsPositiveInfinity(delisleResult) || double.IsNegativeInfinity(delisleResult))
+        if (double.IsInfinity(delisleResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -166,7 +166,7 @@ internal static class NewtonDoubleConversions
         double input)
     {
         double réaumurResult = input * 80d / 33d;
-        if (double.IsPositiveInfinity(réaumurResult) || double.IsNegativeInfinity(réaumurResult))
+        if (double.IsInfinity(réaumurResult))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -174,3 +174,4 @@ internal static class NewtonDoubleConversions
         return réaumurResult;
     }
 }
+
