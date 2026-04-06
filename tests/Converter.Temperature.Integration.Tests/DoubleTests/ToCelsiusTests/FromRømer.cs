@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Celsius;
@@ -9,6 +10,38 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToCelsiusTests;
 
 public class FromRømer
 {
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_from_rømer_and_to_celsius_with_invalid_values_throws_out_of_range_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRømer()
+            .ToCelsius());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_generic_from_rømer_and_to_celsius_with_invalid_values_throws_out_of_range_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rømer>()
+            .To<Celsius>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
     [Theory]
     [InlineData(0d, -14.285714285714286d)]
     [InlineData(50d, 80.95238095238095d)]

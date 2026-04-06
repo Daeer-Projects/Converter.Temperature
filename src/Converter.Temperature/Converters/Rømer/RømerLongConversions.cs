@@ -14,9 +14,13 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToCelsius(long input)
     {
-        double calculatedValue = (input - 7.5d) * 40d / 21d;
-        long celsiusTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        return celsiusTemp;
+        decimal result = (input - 7.5m) * 40m / 21m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -29,9 +33,13 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToFahrenheit(long input)
     {
-        double calculatedValue = (input - 7.5d) * 24d / 7d + 32d;
-        long fahrenheitTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        return fahrenheitTemp;
+        decimal result = (input - 7.5m) * 24m / 7m + 32m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -44,17 +52,13 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToKelvin(long input)
     {
-        double calculatedValue = (input - 7.5d) * 40d / 21d + 273.15d;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 7.5m) * 40m / 21m + 273.15m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        long kelvinTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinTemp;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -82,17 +86,13 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToRankine(long input)
     {
-        double calculatedValue = (input - 7.5d) * 24d / 7d + 491.67d;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 7.5m) * 24m / 7m + 491.67m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        long rankineTemp = (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-
-        return rankineTemp;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -117,9 +117,13 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToDelisle(long input)
     {
-        double result = (60d - input) * 20d / 7d;
-        long delisleTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return delisleTemp;
+        decimal result = (60m - input) * 20m / 7m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -132,9 +136,13 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToNewton(long input)
     {
-        double result = (input - 7.5d) * 22d / 35d;
-        long newtonTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return newtonTemp;
+        decimal result = (input - 7.5m) * 22m / 35m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -147,8 +155,12 @@ internal static class RømerLongConversions
     /// </returns>
     internal static long RømerToRéaumur(long input)
     {
-        double result = (input - 7.5d) * 32d / 21d;
-        long réaumurTemp = (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return réaumurTemp;
+        decimal result = (input - 7.5m) * 32m / 21m;
+        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }
