@@ -15,7 +15,7 @@ internal static class RømerLongConversions
     internal static long RømerToCelsius(long input)
     {
         decimal result = (input - 7.5m) * 40m / 21m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -34,7 +34,7 @@ internal static class RømerLongConversions
     internal static long RømerToFahrenheit(long input)
     {
         decimal result = (input - 7.5m) * 24m / 7m + 32m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -53,7 +53,7 @@ internal static class RømerLongConversions
     internal static long RømerToKelvin(long input)
     {
         decimal result = (input - 7.5m) * 40m / 21m + 273.15m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -87,7 +87,7 @@ internal static class RømerLongConversions
     internal static long RømerToRankine(long input)
     {
         decimal result = (input - 7.5m) * 24m / 7m + 491.67m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -118,7 +118,7 @@ internal static class RømerLongConversions
     internal static long RømerToDelisle(long input)
     {
         decimal result = (60m - input) * 20m / 7m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -137,7 +137,7 @@ internal static class RømerLongConversions
     internal static long RømerToNewton(long input)
     {
         decimal result = (input - 7.5m) * 22m / 35m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -156,7 +156,7 @@ internal static class RømerLongConversions
     internal static long RømerToRéaumur(long input)
     {
         decimal result = (input - 7.5m) * 32m / 21m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

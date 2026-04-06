@@ -16,7 +16,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = input - 273.15m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -36,7 +36,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = input * 9m / 5m - 459.67m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -85,7 +85,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = input * 9m / 5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -105,7 +105,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = (input - 273.15m) * 21m / 40m + 7.5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -125,7 +125,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = (373.15m - input) * 3m / 2m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -145,7 +145,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = (input - 273.15m) * 33m / 100m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -165,7 +165,7 @@ internal static class KelvinLongConversions
         long input)
     {
         decimal result = (input - 273.15m) * 4m / 5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

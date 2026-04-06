@@ -17,7 +17,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = input * 100m / 33m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -37,7 +37,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = input * 60m / 11m + 32m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -57,7 +57,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = input * 100m / 33m + 273.15m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -93,7 +93,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = input * 60m / 11m + 491.67m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -113,7 +113,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = input * 35m / 22m + 7.5m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -133,7 +133,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = (33m - input) * 50m / 11m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -166,7 +166,7 @@ internal static class NewtonIntConversions
         int input)
     {
         decimal result = input * 80m / 33m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

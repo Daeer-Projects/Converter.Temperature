@@ -44,5 +44,4 @@ public class FromRømer
         // Assert.
         result.Should().Be(expected);
     }
-
 }

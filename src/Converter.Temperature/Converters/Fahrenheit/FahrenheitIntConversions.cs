@@ -17,7 +17,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = (input - 32m) * 5m / 9m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -50,7 +50,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = (input + 459.67m) * 5m / 9m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -86,7 +86,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = input + 459.67m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -106,7 +106,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = (input - 32m) * 7m / 24m + 7.5m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -126,7 +126,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = (212m - input) * 5m / 6m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -146,7 +146,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = (input - 32m) * 11m / 60m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -166,7 +166,7 @@ internal static class FahrenheitIntConversions
         int input)
     {
         decimal result = (input - 32m) * 4m / 9m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

@@ -45,6 +45,7 @@ public class FromDelisle
         result.Should()
             .BeApproximately(expected, 1e-12);
     }
+
     [Fact]
     public void Test_delisle_to_celsius_overflow_throws_exception()
     {

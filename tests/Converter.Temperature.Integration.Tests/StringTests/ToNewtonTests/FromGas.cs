@@ -46,7 +46,6 @@ public class FromGas
             .Be(expected);
     }
 
-
     [Theory]
     [InlineData("0.24")]
     [InlineData("10.1")]

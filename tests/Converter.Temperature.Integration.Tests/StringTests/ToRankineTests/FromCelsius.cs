@@ -11,7 +11,7 @@ namespace Converter.Temperature.Integration.Tests.StringTests.ToRankineTests;
 
 public class FromCelsius
 {
-        [Fact]
+    [Fact]
     public void Test_string_extensions_from_celsius_to_rankine_returns_correct_value()
     {
         // Arrange.

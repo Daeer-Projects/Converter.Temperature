@@ -28,8 +28,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToFahrenheit(
         int input)
     {
-        decimal result = (decimal)input * 1.8m + 32m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = input * 1.8m + 32m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -48,8 +48,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToKelvin(
         int input)
     {
-        decimal result = (decimal)input + 273.15m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = input + 273.15m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -98,8 +98,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToRankine(
         int input)
     {
-        decimal result = ((decimal)input + 273.15m) * 1.8m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = (input + 273.15m) * 1.8m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -118,8 +118,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToRømer(
         int input)
     {
-        decimal result = (decimal)input * 21m / 40m + 7.5m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = input * 21m / 40m + 7.5m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -138,8 +138,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToDelisle(
         int input)
     {
-        decimal result = (100m - (decimal)input) * 1.5m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = (100m - input) * 1.5m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -158,8 +158,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToNewton(
         int input)
     {
-        decimal result = (decimal)input * 33m / 100m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = input * 33m / 100m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -178,8 +178,8 @@ internal static class CelsiusIntConversions
     internal static int CelsiusToRéaumur(
         int input)
     {
-        decimal result = (decimal)input * 0.8m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        decimal result = input * 0.8m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

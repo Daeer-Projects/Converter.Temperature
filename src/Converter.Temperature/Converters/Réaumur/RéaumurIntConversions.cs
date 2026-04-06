@@ -18,7 +18,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToCelsius(int input)
     {
         decimal result = input * 5m / 4m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -36,7 +36,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToFahrenheit(int input)
     {
         decimal result = input * 9m / 4m + 32m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -54,7 +54,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToKelvin(int input)
     {
         decimal result = input * 5m / 4m + 273.15m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -85,7 +85,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToRankine(int input)
     {
         decimal result = input * 9m / 4m + 491.67m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -103,7 +103,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToRømer(int input)
     {
         decimal result = input * 21m / 32m + 7.5m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -121,7 +121,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToDelisle(int input)
     {
         decimal result = (80m - input) * 15m / 8m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -139,7 +139,7 @@ internal static class RéaumurIntConversions
     internal static int RéaumurToNewton(int input)
     {
         decimal result = input * 33m / 80m;
-        if (result < int.MinValue - 0.5m || result > int.MaxValue + 0.5m)
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

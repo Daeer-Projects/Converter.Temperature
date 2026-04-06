@@ -174,4 +174,3 @@ internal static class NewtonDoubleConversions
         return réaumurResult;
     }
 }
-

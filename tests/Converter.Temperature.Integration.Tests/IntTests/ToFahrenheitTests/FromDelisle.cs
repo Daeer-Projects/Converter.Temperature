@@ -45,6 +45,7 @@ public class FromDelisle
         result.Should()
             .Be(expected);
     }
+
     [Fact]
     public void Test_delisle_to_fahrenheit_overflow_throws_exception()
     {

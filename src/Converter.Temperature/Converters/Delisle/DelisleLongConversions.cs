@@ -17,7 +17,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = 100m - input * 2m / 3m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -37,7 +37,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = 212m - input * 6m / 5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -57,7 +57,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = 373.15m - input * 2m / 3m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -93,7 +93,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = 671.67m - input * 6m / 5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -113,7 +113,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = (100m - input * 2m / 3m) * 21m / 40m + 7.5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -147,7 +147,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = (100m - input * 2m / 3m) * 33m / 100m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -167,7 +167,7 @@ internal static class DelisleLongConversions
         long input)
     {
         decimal result = (100m - input * 2m / 3m) * 4m / 5m;
-        if (result < long.MinValue - 0.5m || result > long.MaxValue + 0.5m)
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
