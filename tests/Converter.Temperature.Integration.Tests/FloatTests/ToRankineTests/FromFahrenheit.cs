@@ -9,6 +9,37 @@ namespace Converter.Temperature.Integration.Tests.FloatTests.ToRankineTests;
 
 public class FromFahrenheit
 {
+    [Theory]
+    [InlineData(float.MinValue)]
+    public void Test_float_extension_from_fahrenheit_and_to_rankine_returns_correct_float_value(
+        float input)
+    {
+        // Arrange.
+        // Act.
+        float result = input.FromFahrenheit()
+            .ToRankine();
+
+        // Assert.
+        result.Should()
+            .Be(input + 459.67f);
+    }
+
+    [Theory]
+    [InlineData(float.MinValue)]
+    public void
+        Test_float_extension_generic_from_fahrenheit_and_to_rankine_returns_correct_float_value(
+            float input)
+    {
+        // Arrange.
+        // Act.
+        float result = input.From<Fahrenheit>()
+            .To<Rankine>();
+
+        // Assert.
+        result.Should()
+            .Be(input + 459.67f);
+    }
+
     [Fact]
     public void Test_float_extensions_from_fahrenheit_to_rankine_returns_correct_value()
     {

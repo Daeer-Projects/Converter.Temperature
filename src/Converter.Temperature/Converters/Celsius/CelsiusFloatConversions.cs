@@ -28,13 +28,13 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToFahrenheit(
         float input)
     {
-        float fahrenheitTemp = input * 1.8f + 32f;
-        if (float.IsPositiveInfinity(fahrenheitTemp) || float.IsNegativeInfinity(fahrenheitTemp))
+        float result = input * 1.8f + 32f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return fahrenheitTemp;
+        return result;
     }
 
     /// <summary>
@@ -48,13 +48,13 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToKelvin(
         float input)
     {
-        float kelvinTemp = input + 273.15f;
-        if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
+        float result = input + 273.15f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return kelvinTemp;
+        return result;
     }
 
     /// <summary>
@@ -100,13 +100,13 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToRankine(
         float input)
     {
-        float rankineTemp = (input + 273.15f) * 1.8f;
-        if (float.IsPositiveInfinity(rankineTemp) || float.IsNegativeInfinity(rankineTemp))
+        float result = (input + 273.15f) * 1.8f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return rankineTemp;
+        return result;
     }
 
     /// <summary>
@@ -120,13 +120,13 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToRømer(
         float input)
     {
-        float rømerTemp = input * 21f / 40f + 7.5f;
-        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+        float result = input * 21f / 40f + 7.5f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return rømerTemp;
+        return result;
     }
 
     /// <summary>
@@ -140,13 +140,13 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToDelisle(
         float input)
     {
-        float delisleTemp = (100f - input) * 1.5f;
-        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        float result = (100f - input) * 1.5f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return delisleTemp;
+        return result;
     }
 
     /// <summary>
@@ -160,13 +160,13 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToNewton(
         float input)
     {
-        float newtonTemp = input * 33f / 100f;
-        if (float.IsPositiveInfinity(newtonTemp) || float.IsNegativeInfinity(newtonTemp))
+        float result = input * 33f / 100f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return newtonTemp;
+        return result;
     }
 
     /// <summary>
@@ -180,12 +180,12 @@ internal static class CelsiusFloatConversions
     internal static float CelsiusToRéaumur(
         float input)
     {
-        float réaumurTemp = input * 0.8f;
-        if (float.IsPositiveInfinity(réaumurTemp) || float.IsNegativeInfinity(réaumurTemp))
+        float result = input * 0.8f;
+        if (float.IsInfinity(result))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        return réaumurTemp;
+        return result;
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Fahrenheit;
@@ -9,6 +10,39 @@ namespace Converter.Temperature.Integration.Tests.DoubleTests.ToFahrenheitTests;
 
 public class FromRømer
 {
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_from_rømer_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRømer()
+            .ToFahrenheit());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void
+        Test_double_extension_generic_from_rømer_and_to_fahrenheit_with_invalid_values_throws_out_of_range_exception(
+            double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Rømer>()
+            .To<Fahrenheit>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
     [Theory]
     [InlineData(-1000d, -3422.285714285714d)]
     [InlineData(0d, 6.285714285714285d)]

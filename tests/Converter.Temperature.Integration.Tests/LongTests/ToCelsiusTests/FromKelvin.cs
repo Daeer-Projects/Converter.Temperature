@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Celsius;
@@ -41,13 +42,47 @@ public class FromKelvin
             .Be(expected);
     }
 
-    [Fact]
-    public void Test_long_extension_from_kelvin_and_to_celsius_with_min_value_returns_correct_long_value()
+    [Theory]
+    [InlineData(long.MinValue)]
+    [InlineData(-9223372036854775536L)]
+    public void Test_long_extension_from_kelvin_and_to_celsius_with_invalid_values_throws_out_of_range_exception(
+        long input)
     {
         // Arrange.
-        const long expected = long.MinValue;
-        const long input = long.MinValue;
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromKelvin()
+            .ToCelsius());
 
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(long.MinValue)]
+    [InlineData(-9223372036854775536L)]
+    public void
+        Test_long_extension_generic_from_kelvin_and_to_celsius_with_invalid_values_throws_out_of_range_exception(
+            long input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Kelvin>()
+            .To<Celsius>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(-9223372036854775535L, -9223372036854775808L)]
+    [InlineData(-9223372036854775534L, -9223372036854775807L)]
+    public void Test_long_extension_from_kelvin_and_to_celsius_with_boundary_values_returns_correct_long_value(
+        long input,
+        long expected)
+    {
+        // Arrange.
         // Act.
         long result = input.FromKelvin()
             .ToCelsius();
@@ -57,13 +92,15 @@ public class FromKelvin
             .Be(expected);
     }
 
-    [Fact]
-    public void Test_long_extension_generic_from_kelvin_and_to_celsius_with_min_value_returns_correct_long_value()
+    [Theory]
+    [InlineData(-9223372036854775535L, -9223372036854775808L)]
+    [InlineData(-9223372036854775534L, -9223372036854775807L)]
+    public void
+        Test_long_extension_generic_from_kelvin_and_to_celsius_with_boundary_values_returns_correct_long_value(
+            long input,
+            long expected)
     {
         // Arrange.
-        const long expected = long.MinValue;
-        const long input = long.MinValue;
-
         // Act.
         long result = input.From<Kelvin>()
             .To<Celsius>();

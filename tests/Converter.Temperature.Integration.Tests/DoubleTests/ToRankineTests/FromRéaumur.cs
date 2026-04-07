@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Rankine;
@@ -43,5 +44,37 @@ public class FromRéaumur
         // Assert.
         result.Should()
             .BeApproximately(expected, 1e-12);
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_from_réaumur_to_rankine_with_invalid_parameter_throws_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRéaumur()
+            .ToRankine());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(double.MinValue)]
+    [InlineData(double.MaxValue)]
+    public void Test_double_extension_generic_from_réaumur_to_rankine_with_invalid_parameter_throws_exception(
+        double input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Réaumur>()
+            .To<Rankine>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
     }
 }

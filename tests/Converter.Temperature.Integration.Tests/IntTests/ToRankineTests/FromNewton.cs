@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Rankine;
@@ -13,6 +14,8 @@ public class FromNewton
     [InlineData(-33, 312)]
     [InlineData(0, 492)]
     [InlineData(33, 672)]
+    [InlineData(-393705425, -2147483645)]
+    [InlineData(393705245, 2147483646)]
     public void Test_int_extensions_from_newton_to_rankine_returns_correct_int_value(
         int input,
         int expected)
@@ -31,6 +34,8 @@ public class FromNewton
     [InlineData(-33, 312)]
     [InlineData(0, 492)]
     [InlineData(33, 672)]
+    [InlineData(-393705425, -2147483645)]
+    [InlineData(393705245, 2147483646)]
     public void Test_int_extensions_generic_from_newton_to_rankine_returns_correct_int_value(
         int input,
         int expected)
@@ -43,5 +48,35 @@ public class FromNewton
         // Assert.
         result.Should()
             .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(393705246)]
+    public void Test_int_extensions_from_newton_to_rankine_with_invalid_parameter_throws_exception(
+        int input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromNewton()
+            .ToRankine());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(393705246)]
+    public void Test_int_extensions_generic_from_newton_to_rankine_with_invalid_parameter_throws_exception(
+        int input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Newton>()
+            .To<Rankine>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
     }
 }

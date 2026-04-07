@@ -14,9 +14,13 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToCelsius(int input)
     {
-        double calculatedValue = (input - 7.5d) * 40d / 21d;
-        int celsiusTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        return celsiusTemp;
+        decimal result = (input - 7.5m) * 40m / 21m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -28,9 +32,13 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToFahrenheit(int input)
     {
-        double calculatedValue = (input - 7.5d) * 24d / 7d + 32d;
-        int fahrenheitTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        return fahrenheitTemp;
+        decimal result = (input - 7.5m) * 24m / 7m + 32m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -43,17 +51,13 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToKelvin(int input)
     {
-        double calculatedValue = (input - 7.5d) * 40d / 21d + 273.15d;
-        int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 7.5m) * 40m / 21m + 273.15m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        int kelvinTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinTemp;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -81,17 +85,13 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToRankine(int input)
     {
-        double calculatedValue = (input - 7.5d) * 24d / 7d + 491.67d;
-        int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (input - 7.5m) * 24m / 7m + 491.67m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        int rankineTemp = (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-
-        return rankineTemp;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -116,9 +116,13 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToDelisle(int input)
     {
-        double result = (60d - input) * 20d / 7d;
-        int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return delisleTemp;
+        decimal result = (60m - input) * 20m / 7m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -131,9 +135,13 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToNewton(int input)
     {
-        double result = (input - 7.5) * 22 / 35;
-        int newtonTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return newtonTemp;
+        decimal result = (input - 7.5m) * 22m / 35m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -146,8 +154,12 @@ internal static class RømerIntConversions
     /// </returns>
     internal static int RømerToRéaumur(int input)
     {
-        double result = (input - 7.5) * 32 / 21;
-        int réaumurTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return réaumurTemp;
+        decimal result = (input - 7.5m) * 32m / 21m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }

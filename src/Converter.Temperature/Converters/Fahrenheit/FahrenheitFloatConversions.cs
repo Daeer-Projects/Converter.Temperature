@@ -17,7 +17,7 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float celsiusTemp = (input - 32) * 5 / 9;
-        if (float.IsPositiveInfinity(celsiusTemp) || float.IsNegativeInfinity(celsiusTemp))
+        if (float.IsInfinity(celsiusTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -50,7 +50,7 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float kelvinTemp = (input + 459.67f) * 5f / 9f;
-        if (float.IsPositiveInfinity(kelvinTemp) || float.IsNegativeInfinity(kelvinTemp))
+        if (float.IsInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -86,6 +86,11 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float rankineTemp = input + 459.67f;
+        if (float.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -101,7 +106,7 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float rømerTemp = (input - 32f) * 7 / 24 + 7.5f;
-        if (float.IsPositiveInfinity(rømerTemp) || float.IsNegativeInfinity(rømerTemp))
+        if (float.IsInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -121,7 +126,7 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float delisleTemp = (212f - input) * 5 / 6;
-        if (float.IsPositiveInfinity(delisleTemp) || float.IsNegativeInfinity(delisleTemp))
+        if (float.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -141,7 +146,7 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float newtonTemp = (input - 32) * 11 / 60;
-        if (float.IsPositiveInfinity(newtonTemp) || float.IsNegativeInfinity(newtonTemp))
+        if (float.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -161,7 +166,7 @@ internal static class FahrenheitFloatConversions
         float input)
     {
         float réaumurTemp = (input - 32) * 4 / 9;
-        if (float.IsPositiveInfinity(réaumurTemp) || float.IsNegativeInfinity(réaumurTemp))
+        if (float.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

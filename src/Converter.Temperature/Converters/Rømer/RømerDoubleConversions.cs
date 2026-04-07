@@ -15,6 +15,11 @@ internal static class RømerDoubleConversions
     internal static double RømerToCelsius(double input)
     {
         double celsiusTemp = (input - 7.5d) * 40d / 21d;
+        if (double.IsInfinity(celsiusTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return celsiusTemp;
     }
 
@@ -28,6 +33,11 @@ internal static class RømerDoubleConversions
     internal static double RømerToFahrenheit(double input)
     {
         double fahrenheitTemp = (input - 7.5d) * 24d / 7d + 32d;
+        if (double.IsInfinity(fahrenheitTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
         return fahrenheitTemp;
     }
 
@@ -42,7 +52,7 @@ internal static class RømerDoubleConversions
     internal static double RømerToKelvin(double input)
     {
         double kelvinTemp = (input - 7.5d) * 40d / 21d + 273.15d;
-        if (double.IsPositiveInfinity(kelvinTemp) || double.IsNegativeInfinity(kelvinTemp))
+        if (double.IsInfinity(kelvinTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -76,7 +86,7 @@ internal static class RømerDoubleConversions
     internal static double RømerToRankine(double input)
     {
         double rankineTemp = (input - 7.5d) * 24d / 7d + 491.67d;
-        if (double.IsPositiveInfinity(rankineTemp) || double.IsNegativeInfinity(rankineTemp))
+        if (double.IsInfinity(rankineTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -107,7 +117,7 @@ internal static class RømerDoubleConversions
     internal static double RømerToDelisle(double input)
     {
         double delisleTemp = (60d - input) * 20d / 7d;
-        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        if (double.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -126,7 +136,7 @@ internal static class RømerDoubleConversions
     internal static double RømerToNewton(double input)
     {
         double newtonTemp = (input - 7.5d) * 22d / 35d;
-        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        if (double.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -145,7 +155,7 @@ internal static class RømerDoubleConversions
     internal static double RømerToRéaumur(double input)
     {
         double réaumurTemp = (input - 7.5d) * 32d / 21d;
-        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        if (double.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }

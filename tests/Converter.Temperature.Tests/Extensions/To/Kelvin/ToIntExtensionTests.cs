@@ -132,37 +132,39 @@ public sealed class ToIntExtensionTests : BaseToExtensionTests<KelvinInt, int>
     }
 
     [Theory]
-    [InlineData(int.MaxValue)]
-    [InlineData(int.MinValue)]
-    public void Test_to_kelvin_from_fahrenheit_with_invalid_parameter_throws_exception(
-        int temp)
+    [InlineData(int.MaxValue, 1193046726)]
+    [InlineData(int.MinValue, -1193046216)]
+    public void Test_to_kelvin_from_fahrenheit_extreme_values_return_expected(
+        int temp,
+        int expected)
     {
         // Arrange.
         FahrenheitInt input = new(temp);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.ToKelvin());
+        int result = input.ToKelvin();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     [Theory]
-    [InlineData(int.MaxValue)]
-    [InlineData(int.MinValue)]
-    public void Test_to_kelvin_generic_from_fahrenheit_with_invalid_parameter_throws_exception(
-        int temp)
+    [InlineData(int.MaxValue, 1193046726)]
+    [InlineData(int.MinValue, -1193046216)]
+    public void Test_to_kelvin_generic_from_fahrenheit_extreme_values_return_expected(
+        int temp,
+        int expected)
     {
         // Arrange.
         FahrenheitInt input = new(temp);
 
         // Act.
-        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.To<TemperatureTypes.Kelvin>());
+        int result = input.To<TemperatureTypes.Kelvin>();
 
         // Assert.
-        result.Message.Should()
-            .Contain("Value out of range for type.");
+        result.Should()
+            .Be(expected);
     }
 
     [Fact]

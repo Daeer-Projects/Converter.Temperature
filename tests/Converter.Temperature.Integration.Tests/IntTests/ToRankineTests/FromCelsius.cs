@@ -10,12 +10,15 @@ namespace Converter.Temperature.Integration.Tests.IntTests.ToRankineTests;
 
 public class FromCelsius
 {
-    [Fact]
-    public void Test_int_extensions_from_celsius_to_rankine_returns_correct_value()
+    [Theory]
+    [InlineData(200, 852)]
+    [InlineData(1193046197, 2147483646)]
+    [InlineData(-1193046743, -2147483646)]
+    public void Test_int_extensions_from_celsius_to_rankine_returns_correct_value(
+        int input,
+        int expected)
     {
         // Arrange.
-        const int expected = 852;
-        const int input = 200;
 
         // Act.
         int result = input.FromCelsius()
@@ -26,12 +29,15 @@ public class FromCelsius
             .Be(expected);
     }
 
-    [Fact]
-    public void Test_int_extensions_generic_from_celsius_to_rankine_returns_correct_value()
+    [Theory]
+    [InlineData(200, 852)]
+    [InlineData(1193046197, 2147483646)]
+    [InlineData(-1193046743, -2147483646)]
+    public void Test_int_extensions_generic_from_celsius_to_rankine_returns_correct_value(
+        int input,
+        int expected)
     {
         // Arrange.
-        const int expected = 852;
-        const int input = 200;
 
         // Act.
         int result = input.From<Celsius>()
@@ -45,6 +51,8 @@ public class FromCelsius
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
+    [InlineData(1193046198)]
+    [InlineData(-1193046745)]
     public void Test_int_extensions_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
         int input)
     {
@@ -61,6 +69,8 @@ public class FromCelsius
     [Theory]
     [InlineData(int.MinValue)]
     [InlineData(int.MaxValue)]
+    [InlineData(1193046198)]
+    [InlineData(-1193046745)]
     public void Test_int_extensions_generic_from_celsius_to_rankine_with_invalid_parameter_throws_exception(
         int input)
     {

@@ -46,7 +46,6 @@ public class FromGas
             .BeApproximately(expected, 1e-4f);
     }
 
-
     [Theory]
     [InlineData(0.24f)]
     [InlineData(10.1f)]

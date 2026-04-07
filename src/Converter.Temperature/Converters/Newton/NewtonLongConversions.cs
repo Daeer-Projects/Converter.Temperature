@@ -16,18 +16,13 @@ internal static class NewtonLongConversions
     internal static long NewtonToCelsius(
         long input)
     {
-        const double calculatedValue = 1 * 100d / 33d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 100m / 33m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 100d / 33d;
-        long celsiusResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return celsiusResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -41,18 +36,13 @@ internal static class NewtonLongConversions
     internal static long NewtonToFahrenheit(
         long input)
     {
-        const double calculatedValue = 1 * 60d / 11d + 32d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 60m / 11m + 32m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 60d / 11d + 32d;
-        long fahrenheitResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return fahrenheitResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -66,18 +56,13 @@ internal static class NewtonLongConversions
     internal static long NewtonToKelvin(
         long input)
     {
-        const double calculatedValue = 1 * 100d / 33d + 273.15d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 100m / 33m + 273.15m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 100d / 33d + 273.15d;
-        long kelvinResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -107,18 +92,13 @@ internal static class NewtonLongConversions
     internal static long NewtonToRankine(
         long input)
     {
-        const double calculatedValue = 1 * 60d / 11d + 491.67d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 60m / 11m + 491.67m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 60d / 11d + 491.67d;
-        long rankineResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rankineResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -132,18 +112,13 @@ internal static class NewtonLongConversions
     internal static long NewtonToRømer(
         long input)
     {
-        const double calculatedValue = 1 * 35d / 22d + 7.5d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 35m / 22m + 7.5m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 35d / 22d + 7.5d;
-        long rømerResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rømerResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -157,18 +132,13 @@ internal static class NewtonLongConversions
     internal static long NewtonToDelisle(
         long input)
     {
-        const double calculatedValue = (33d - 1) * 50d / 11d;
-        long maxValue = long.MaxValue - (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        long minValue = long.MinValue + (long)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (33m - input) * 50m / 11m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (33d - input) * 50d / 11d;
-        long delisleResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return delisleResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -195,17 +165,12 @@ internal static class NewtonLongConversions
     internal static long NewtonToRéaumur(
         long input)
     {
-        const double calculatedValue = 1 * 80d / 33d;
-        long maxValue = long.MaxValue - (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        long minValue = long.MinValue + (long)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 80m / 33m;
+        if (result is < long.MinValue - 0.5m or > long.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 80d / 33d;
-        long réaumurResult = (long)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return réaumurResult;
+        return (long)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }

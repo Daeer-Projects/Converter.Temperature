@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Celsius;
@@ -32,6 +33,76 @@ public class FromRéaumur
     [InlineData(0L, 0L)]
     [InlineData(80L, 100L)]
     public void Test_long_extensions_generic_from_réaumur_to_celsius_returns_correct_long_value(
+        long input,
+        long expected)
+    {
+        // Arrange.
+        // Act.
+        long result = input.From<Réaumur>()
+            .To<Celsius>();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(long.MinValue)]
+    [InlineData(long.MaxValue)]
+    [InlineData(-7378697629483820647L)]
+    [InlineData(7378697629483820647L)]
+    public void Test_long_extension_from_réaumur_to_celsius_with_invalid_values_throws_out_of_range_exception(
+        long input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromRéaumur()
+            .ToCelsius());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(long.MinValue)]
+    [InlineData(long.MaxValue)]
+    [InlineData(-7378697629483820647L)]
+    [InlineData(7378697629483820647L)]
+    public void Test_long_extension_generic_from_réaumur_to_celsius_with_invalid_values_throws_out_of_range_exception(
+        long input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Réaumur>()
+            .To<Celsius>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(-7378697629483820646L, -9223372036854775808L)]
+    [InlineData(7378697629483820645L, 9223372036854775806L)]
+    public void Test_long_extension_from_réaumur_to_celsius_with_boundary_values_returns_correct_long_value(
+        long input,
+        long expected)
+    {
+        // Arrange.
+        // Act.
+        long result = input.FromRéaumur()
+            .ToCelsius();
+
+        // Assert.
+        result.Should()
+            .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(-7378697629483820646L, -9223372036854775808L)]
+    [InlineData(7378697629483820645L, 9223372036854775806L)]
+    public void Test_long_extension_generic_from_réaumur_to_celsius_with_boundary_values_returns_correct_long_value(
         long input,
         long expected)
     {

@@ -30,9 +30,13 @@ internal static class RankineIntConversions
     internal static int RankineToCelsius(
         int input)
     {
-        double result = (input - 491.67d) * 5 / 9;
-        int celsiusTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return celsiusTemp;
+        decimal result = (input - 491.67m) * 5m / 9m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -46,9 +50,13 @@ internal static class RankineIntConversions
     internal static int RankineToFahrenheit(
         int input)
     {
-        double result = input - 459.67d;
-        int fahrenheitTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return fahrenheitTemp;
+        decimal result = input - 459.67m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -62,9 +70,13 @@ internal static class RankineIntConversions
     internal static int RankineToKelvin(
         int input)
     {
-        double result = input * 5d / 9d;
-        int kelvinTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return kelvinTemp;
+        decimal result = input * 5m / 9m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -94,9 +106,13 @@ internal static class RankineIntConversions
     internal static int RankineToRømer(
         int input)
     {
-        double result = (input - 491.67) * 7 / 24 + 7.5;
-        int rømerTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return rømerTemp;
+        decimal result = (input - 491.67m) * 7m / 24m + 7.5m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -110,9 +126,13 @@ internal static class RankineIntConversions
     internal static int RankineToDelisle(
         int input)
     {
-        double result = (671.67 - input) * 5 / 6;
-        int delisleTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return delisleTemp;
+        decimal result = (671.67m - input) * 5m / 6m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -126,9 +146,13 @@ internal static class RankineIntConversions
     internal static int RankineToNewton(
         int input)
     {
-        double result = (input - 491.67) * 11 / 60;
-        int newtonTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return newtonTemp;
+        decimal result = (input - 491.67m) * 11m / 60m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -142,8 +166,12 @@ internal static class RankineIntConversions
     internal static int RankineToRéaumur(
         int input)
     {
-        double result = (input - 491.67) * 4 / 9;
-        int réaumurTemp = (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
-        return réaumurTemp;
+        decimal result = (input - 491.67m) * 4m / 9m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }

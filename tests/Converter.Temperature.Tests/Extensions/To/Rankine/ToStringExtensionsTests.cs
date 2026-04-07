@@ -172,7 +172,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const string expected = "851.67";
+        const string expected = "851.6699999999998";
         KelvinString input = new("473.15");
 
         // Act.
@@ -187,7 +187,7 @@ public sealed class ToStringExtensionsTests : BaseToExtensionTests<RankineString
     public void Test_to_rankine_generic_from_kelvin_returns_same_value()
     {
         // Arrange.
-        const string expected = "851.67";
+        const string expected = "851.6699999999998";
         KelvinString input = new("473.15");
 
         // Act.

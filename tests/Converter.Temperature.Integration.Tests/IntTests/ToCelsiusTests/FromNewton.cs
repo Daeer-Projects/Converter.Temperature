@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Celsius;
@@ -13,6 +14,8 @@ public class FromNewton
     [InlineData(-33, -100)]
     [InlineData(0, 0)]
     [InlineData(33, 100)]
+    [InlineData(-708669604, -2147483648)]
+    [InlineData(708669603, 2147483645)]
     public void Test_int_extensions_from_newton_to_celsius_returns_correct_int_value(
         int input,
         int expected)
@@ -31,6 +34,8 @@ public class FromNewton
     [InlineData(-33, -100)]
     [InlineData(0, 0)]
     [InlineData(33, 100)]
+    [InlineData(-708669604, -2147483648)]
+    [InlineData(708669603, 2147483645)]
     public void Test_int_extensions_generic_from_newton_to_celsius_returns_correct_int_value(
         int input,
         int expected)
@@ -43,5 +48,35 @@ public class FromNewton
         // Assert.
         result.Should()
             .Be(expected);
+    }
+
+    [Theory]
+    [InlineData(708669604)]
+    public void Test_int_extensions_from_newton_to_celsius_with_invalid_parameter_throws_exception(
+        int input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.FromNewton()
+            .ToCelsius());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
+    }
+
+    [Theory]
+    [InlineData(708669604)]
+    public void Test_int_extensions_generic_from_newton_to_celsius_with_invalid_parameter_throws_exception(
+        int input)
+    {
+        // Arrange.
+        // Act.
+        ArgumentOutOfRangeException result = Assert.Throws<ArgumentOutOfRangeException>(() => input.From<Newton>()
+            .To<Celsius>());
+
+        // Assert.
+        result.Message.Should()
+            .Contain("Value out of range for type.");
     }
 }

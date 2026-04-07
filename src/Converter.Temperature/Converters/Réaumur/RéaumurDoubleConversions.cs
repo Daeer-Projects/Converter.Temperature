@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Converters.Celsius;
 
 namespace Converter.Temperature.Converters.Réaumur;
@@ -17,7 +18,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToCelsius(double input)
     {
-        return input * 5d / 4d;
+        double celsiusTemp = input * 5d / 4d;
+        if (double.IsInfinity(celsiusTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return celsiusTemp;
     }
 
     /// <summary>
@@ -30,7 +37,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToFahrenheit(double input)
     {
-        return input * 9d / 4d + 32d;
+        double fahrenheitTemp = input * 9d / 4d + 32d;
+        if (double.IsInfinity(fahrenheitTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return fahrenheitTemp;
     }
 
     /// <summary>
@@ -43,7 +56,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToKelvin(double input)
     {
-        return input * 5d / 4d + 273.15d;
+        double kelvinTemp = input * 5d / 4d + 273.15d;
+        if (double.IsInfinity(kelvinTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return kelvinTemp;
     }
 
     /// <summary>
@@ -70,7 +89,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToRankine(double input)
     {
-        return input * 9d / 4d + 491.67d;
+        double rankineTemp = input * 9d / 4d + 491.67d;
+        if (double.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return rankineTemp;
     }
 
     /// <summary>
@@ -83,7 +108,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToRømer(double input)
     {
-        return input * 21d / 32d + 7.5d;
+        double rømerTemp = input * 21d / 32d + 7.5d;
+        if (double.IsInfinity(rømerTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return rømerTemp;
     }
 
     /// <summary>
@@ -96,7 +127,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToDelisle(double input)
     {
-        return (80d - input) * 15d / 8d;
+        double delisleTemp = (80d - input) * 15d / 8d;
+        if (double.IsInfinity(delisleTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return delisleTemp;
     }
 
     /// <summary>
@@ -109,7 +146,13 @@ internal static class RéaumurDoubleConversions
     /// </returns>
     internal static double RéaumurToNewton(double input)
     {
-        return input * 33d / 80d;
+        double newtonTemp = input * 33d / 80d;
+        if (double.IsInfinity(newtonTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
+        }
+
+        return newtonTemp;
     }
 
     /// <summary>

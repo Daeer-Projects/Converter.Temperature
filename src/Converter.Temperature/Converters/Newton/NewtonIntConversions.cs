@@ -16,18 +16,13 @@ internal static class NewtonIntConversions
     internal static int NewtonToCelsius(
         int input)
     {
-        const double calculatedValue = 1 * 100d / 33d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 100m / 33m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 100d / 33d;
-        int celsiusResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return celsiusResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -41,18 +36,13 @@ internal static class NewtonIntConversions
     internal static int NewtonToFahrenheit(
         int input)
     {
-        const double calculatedValue = 1 * 60d / 11d + 32d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 60m / 11m + 32m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 60d / 11d + 32d;
-        int fahrenheitResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return fahrenheitResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -66,18 +56,13 @@ internal static class NewtonIntConversions
     internal static int NewtonToKelvin(
         int input)
     {
-        const double calculatedValue = 1 * 100d / 33d + 273.15d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 100m / 33m + 273.15m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 100d / 33d + 273.15d;
-        int kelvinResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return kelvinResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -107,18 +92,13 @@ internal static class NewtonIntConversions
     internal static int NewtonToRankine(
         int input)
     {
-        const double calculatedValue = 1 * 60d / 11d + 491.67d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 60m / 11m + 491.67m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 60d / 11d + 491.67d;
-        int rankineResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rankineResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -132,18 +112,13 @@ internal static class NewtonIntConversions
     internal static int NewtonToRømer(
         int input)
     {
-        const double calculatedValue = 1 * 35d / 22d + 7.5d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 35m / 22m + 7.5m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 35d / 22d + 7.5d;
-        int rømerResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return rømerResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -157,18 +132,13 @@ internal static class NewtonIntConversions
     internal static int NewtonToDelisle(
         int input)
     {
-        const double calculatedValue = (33d - 1) * 50d / 11d;
-        int maxValue = int.MaxValue - (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        int minValue = int.MinValue + (int)Math.Abs(Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero));
-        if (input < minValue || input > maxValue)
+        decimal result = (33m - input) * 50m / 11m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = (33d - input) * 50d / 11d;
-        int delisleResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return delisleResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 
     /// <summary>
@@ -195,17 +165,12 @@ internal static class NewtonIntConversions
     internal static int NewtonToRéaumur(
         int input)
     {
-        const double calculatedValue = 1 * 80d / 33d;
-        int maxValue = int.MaxValue - (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        int minValue = int.MinValue + (int)Math.Round(calculatedValue, 0, MidpointRounding.AwayFromZero);
-        if (input < minValue || input > maxValue)
+        decimal result = input * 80m / 33m;
+        if (result is < int.MinValue - 0.5m or > int.MaxValue + 0.5m)
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
 
-        double convertedTemp = input * 80d / 33d;
-        int réaumurResult = (int)Math.Round(convertedTemp, 0, MidpointRounding.AwayFromZero);
-
-        return réaumurResult;
+        return (int)Math.Round(result, 0, MidpointRounding.AwayFromZero);
     }
 }

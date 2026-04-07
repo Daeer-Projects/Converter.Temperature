@@ -1,3 +1,4 @@
+using System;
 using Converter.Temperature.Extensions.From;
 using Converter.Temperature.Extensions.To;
 using Converter.Temperature.Extensions.To.Celsius;
@@ -43,5 +44,31 @@ public class FromDelisle
         // Assert.
         result.Should()
             .BeApproximately(expected, 1e-12);
+    }
+
+    [Fact]
+    public void Test_delisle_to_celsius_overflow_throws_exception()
+    {
+        // Arrange
+        const double input = double.MinValue;
+
+        // Act
+        Func<double> action = () => input.FromDelisle().ToCelsius();
+
+        // Assert
+        action.Should().Throw<ArgumentOutOfRangeException>();
+    }
+
+    [Fact]
+    public void Test_delisle_to_celsius_underflow_throws_exception()
+    {
+        // Arrange
+        const double input = double.MaxValue;
+
+        // Act
+        Func<double> action = () => input.FromDelisle().ToCelsius();
+
+        // Assert
+        action.Should().Throw<ArgumentOutOfRangeException>();
     }
 }

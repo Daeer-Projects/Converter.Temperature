@@ -16,6 +16,11 @@ internal static class KelvinDoubleConversions
         double firstTemp)
     {
         double celsiusTemp = firstTemp - 273.15;
+        if (double.IsInfinity(celsiusTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
+
         return celsiusTemp;
     }
 
@@ -31,7 +36,7 @@ internal static class KelvinDoubleConversions
         double firstTemp)
     {
         double fahrenheitTemp = firstTemp * 9d / 5d - 459.67d;
-        if (double.IsPositiveInfinity(fahrenheitTemp) || double.IsNegativeInfinity(fahrenheitTemp))
+        if (double.IsInfinity(fahrenheitTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
         }
@@ -79,7 +84,12 @@ internal static class KelvinDoubleConversions
     internal static double KelvinToRankine(
         double firstTemp)
     {
-        double rankineTemp = firstTemp * 1.8;
+        double rankineTemp = firstTemp * 9d / 5d;
+        if (double.IsInfinity(rankineTemp))
+        {
+            throw new ArgumentOutOfRangeException(nameof(firstTemp), Constants.ValueOutOfRangeForType);
+        }
+
         return rankineTemp;
     }
 
@@ -95,7 +105,7 @@ internal static class KelvinDoubleConversions
         double input)
     {
         double rømerTemp = (input - 273.15) * 21 / 40 + 7.5;
-        if (double.IsPositiveInfinity(rømerTemp) || double.IsNegativeInfinity(rømerTemp))
+        if (double.IsInfinity(rømerTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -114,8 +124,8 @@ internal static class KelvinDoubleConversions
     internal static double KelvinToDelisle(
         double input)
     {
-        double delisleTemp = (373.15 - input) * 1.5;
-        if (double.IsPositiveInfinity(delisleTemp) || double.IsNegativeInfinity(delisleTemp))
+        double delisleTemp = (373.15 - input) * 3d / 2d;
+        if (double.IsInfinity(delisleTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -135,7 +145,7 @@ internal static class KelvinDoubleConversions
         double input)
     {
         double newtonTemp = (input - 273.15) * 33 / 100;
-        if (double.IsPositiveInfinity(newtonTemp) || double.IsNegativeInfinity(newtonTemp))
+        if (double.IsInfinity(newtonTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
@@ -155,7 +165,7 @@ internal static class KelvinDoubleConversions
         double input)
     {
         double réaumurTemp = (input - 273.15) * 4 / 5;
-        if (double.IsPositiveInfinity(réaumurTemp) || double.IsNegativeInfinity(réaumurTemp))
+        if (double.IsInfinity(réaumurTemp))
         {
             throw new ArgumentOutOfRangeException(nameof(input), Constants.ValueOutOfRangeForType);
         }
