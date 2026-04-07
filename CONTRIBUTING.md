@@ -38,7 +38,7 @@ Start by reading the code base and you will notice how things should be laid out
 * Usings within the namespace
   * `System` usings first
 * Constructors will be the first item in a class
-* Write unit tests as much as possible using the "Arrange/Act/Asset" pattern.
+* Write unit tests as much as possible using the "Arrange/Act/Assert" pattern.
 
 ## Conclusion
 
